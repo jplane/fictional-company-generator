@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "selected_backend": "docx-js / PptxGenJS / openpyxl with native LibreOffice and local PDF rasterization",
+  "skills": [
+    {
+      "name": "docx",
+      "path": "C:\\Users\\jolan\\.copilot\\skills\\docx",
+      "bundled_version": "0.22.333",
+      "instructions_sha256": "1c4df72061111588437a86cd1551b8183c131048efb8861cab659804d5bdcbd4",
+      "license_sha256": "6f8bd7f4d8ec5cb52b7a59ccb9e8c14c2a4ba529cb5adfc5e0bc676892b8ca79",
+      "permission": "User explicitly confirmed applicable authorization before use.",
+      "review": "Loaded instructions and reviewed local license. No external uploads or redistribution of skill materials."
+    },
+    {
+      "name": "pptx",
+      "path": "C:\\Users\\jolan\\.copilot\\skills\\pptx",
+      "bundled_version": "0.22.333",
+      "instructions_sha256": "dc13de59b4eda6bd679105d7bce85b2802333f918e98819eb8163e7b0218c7b4",
+      "license_sha256": "6f8bd7f4d8ec5cb52b7a59ccb9e8c14c2a4ba529cb5adfc5e0bc676892b8ca79",
+      "permission": "User explicitly confirmed applicable authorization before use.",
+      "review": "Loaded instructions and reviewed local license. No external uploads or redistribution of skill materials."
+    },
+    {
+      "name": "xlsx",
+      "path": "C:\\Users\\jolan\\.copilot\\skills\\xlsx",
+      "bundled_version": "0.22.333",
+      "instructions_sha256": "7de127f835149f9c755fdf70d2ce4320e78a720dacf9f82495165de63b52732d",
+      "license_sha256": "6f8bd7f4d8ec5cb52b7a59ccb9e8c14c2a4ba529cb5adfc5e0bc676892b8ca79",
+      "permission": "User explicitly confirmed applicable authorization before use.",
+      "review": "Loaded instructions and reviewed local license. No external uploads or redistribution of skill materials."
+    }
+  ],
+  "tool_versions": {
+    "python": "3.14.6",
+    "docx": "9.7.1",
+    "pptxgenjs": "4.0.1",
+    "openpyxl": "3.1.5",
+    "libreoffice": "26.8.0.3",
+    "poppler": "25.07.0",
+    "pymupdf": "1.28.2",
+    "pillow": "12.3.0"
+  },
+  "installations": [
+    {
+      "channel": "winget",
+      "id": "TheDocumentFoundation.LibreOffice",
+      "version": "26.8.0.3",
+      "installer_sha256": "4aa6c6e1895f4055104effcb556bd3362d20c6ad707c149543304f395ef9db95",
+      "result": "Installer hash verified; publisher installer completed."
+    },
+    {
+      "channel": "winget",
+      "id": "oschwartz10612.Poppler",
+      "version": "25.07.0-0",
+      "result": "Installer hash verified; approved third-party Windows distribution installed."
+    }
+  ],
+  "windows_adaptation": "Upstream recalc helper assumes Linux/macOS macro paths. Run-local scripts instead use the same LibreOffice calculation engine through native Windows headless import/export, an isolated profile under build, and explicit cached-result/error/expected-value checks. Installed PyMuPDF rasterizes intermediate PDFs and Pillow assembles review galleries; Poppler was installed and version-probed but not needed for these renders. No proprietary helper code copied or edited.",
+  "pilot_results": [
+    {
+      "document_id": "doc-0001",
+      "artifact_sha256": "a876bc2293deee330cc0d5b7f67cd5dd3ec4f1c33640a66fff864d59e53d642b",
+      "draft_sha256": "e886551c5afae5c2b00a339c01afefc1aeab68aa09d3a5830fe2aa7007130961",
+      "status": "passed",
+      "evidence": "498-word publishable release; reviewed all two rendered pages, dateline, scope, approved executive quote, boilerplate, and contact. Office/extracted/rendered text matches draft.",
+      "measurements": {
+        "delivered_words": 498,
+        "discussion_words": 0,
+        "meaningful_slides": 0,
+        "distinct_testable_requirements": 0,
+        "useful_analysis_modules": 0
+      },
+      "recalculation": null
+    },
+    {
+      "document_id": "doc-0002",
+      "artifact_sha256": "27cb5c01ce6b806895150db3650ef75dd0e53e8d4770f963c945dec7176cd14f",
+      "draft_sha256": "ee5c4c7874f2a30762fc457ad0f419ef670a13c5f8e868200e4f8307dd17399b",
+      "status": "passed",
+      "evidence": "11-slide customer engineering presentation; independent agent inspected every slide and reverified corrected slides 1, 5, 9, 11. No clipping, overlap, or blocked readability. Minor isolated final title word retained.",
+      "measurements": {
+        "delivered_words": 353,
+        "discussion_words": 0,
+        "meaningful_slides": 11,
+        "distinct_testable_requirements": 0,
+        "useful_analysis_modules": 0
+      },
+      "recalculation": null
+    },
+    {
+      "document_id": "doc-0008",
+      "artifact_sha256": "221f244b50882d16ad6d43ac291839720a45114f75516f61293931be6ea9d6bd",
+      "draft_sha256": "432e3f1046562d627431c24660a503af909ad85831c85f3a82aa192c207facea",
+      "status": "passed",
+      "evidence": "Six distinct formula-linked operating analyses; all nine rendered pages reviewed. Fixed clipped chart placement. Native LibreOffice recalculation retains 56 formula caches, zero errors, and 13 expected value checks.",
+      "measurements": {
+        "delivered_words": 289,
+        "discussion_words": 0,
+        "meaningful_slides": 0,
+        "distinct_testable_requirements": 0,
+        "useful_analysis_modules": 6
+      },
+      "recalculation": {
+        "status": "passed",
+        "engine": "LibreOffice 26.8.0.3 native Windows headless import/export",
+        "formula_count": 56,
+        "formula_errors": 0,
+        "expected_values_checked": 13,
+        "note": "All formulas retain cached results; income, allocation, ratio, and trend expectations checked."
+      }
+    }
+  ],
+  "blockers": [],
+  "review_limitations": "Preflight certifies actual planned pilots, not ungenerated bulk outputs. Every subsequent document still requires its own QA receipt."
+}

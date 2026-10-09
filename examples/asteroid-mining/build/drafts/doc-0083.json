@@ -1,0 +1,470 @@
+{
+  "document_id": "doc-0083",
+  "canon_sha256": "842ce5bcbc2a42e00df27a5c3ee4f41ab4b059bb36e3464daacc08a2ce0b85cd",
+  "plan_sha256": "c247168d3a13428603cf0978a3efb83d746a3260f553acf6cf38d57b4a89cd58",
+  "title": "AstroDig LLC - Q3 2020 Operating Results",
+  "publication_date": "2020-10-15",
+  "content_depth": "medium",
+  "claims": [
+    {
+      "id": "claim-1",
+      "record_id": "financial-2020-q3",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "year": 2020,
+        "quarter": 3,
+        "period_end": "2020-09-30",
+        "revenue_usd": 2808000,
+        "cogs_usd": 1067040,
+        "opex_usd": 3499600,
+        "operating_income_usd": -1758640,
+        "headcount": 70,
+        "engineering_services_usd": 1909440,
+        "instrument_development_usd": 617760,
+        "mission_analysis_usd": 280800,
+        "research_development_usd": 2519712,
+        "program_operations_usd": 629928,
+        "corporate_administration_usd": 349960,
+        "contracted_backlog_usd": 22464000,
+        "completed_work_packages": 30,
+        "accepted_reference_runs": 70,
+        "rejected_reference_runs": 2,
+        "development_focus": "reduced-scope integration",
+        "principal_risk": "schedule compression",
+        "management_interpretation": "Preserve verification work while deferring optional feature expansion.",
+        "limitation": "The revised integration scope does not accelerate the mining date.",
+        "revenue_policy": "Recognize engineering and development revenue against accepted contracted work; do not recognize projected asteroid sales.",
+        "cost_driver": "Research and verification capacity is maintained ahead of mission deployment.",
+        "outlook": "Continue the approved ground-development scope; no asteroid commodity revenue is included in the operating outlook."
+      }
+    },
+    {
+      "id": "claim-2",
+      "record_id": "strategy-2020",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "year": 2020,
+        "title": "Funding reset and program focus",
+        "campaign": "reduced-scope integration",
+        "decision_rationale": "Preserve verification work while deferring optional feature expansion.",
+        "principal_risk": "schedule compression",
+        "limitation": "The revised integration scope does not accelerate the mining date.",
+        "gates": [
+          {
+            "year": 2028,
+            "gate": "Prospecting spacecraft design review",
+            "status": "planned",
+            "dependency": "verified payload interfaces and approved funding"
+          },
+          {
+            "year": 2030,
+            "gate": "Direct asteroid characterization",
+            "status": "planned",
+            "dependency": "launch access, mission authorization, and spacecraft performance"
+          },
+          {
+            "year": 2032,
+            "gate": "Resource extraction demonstration",
+            "status": "goal",
+            "dependency": "characterization evidence, extraction readiness, and funded mission operations"
+          }
+        ],
+        "revenue_source": "engineering services, instrument development, and mission analysis",
+        "mining_revenue_status": "none",
+        "flight_status": "no completed asteroid mining mission",
+        "customer_personas": [
+          "mission-design teams",
+          "instrument-development teams",
+          "verification managers"
+        ],
+        "capital_priority": "verification capability and controlled development hardware",
+        "alternative": "Expand optional functionality before closing verification evidence",
+        "alternative_disposition": "Defer optional scope until reference evidence is accepted",
+        "release_decision": "Authorize the defined ground-development campaign only",
+        "release_authority_id": "person-riley",
+        "scope_owner_id": "person-quinn",
+        "verification_owner_id": "person-sasha",
+        "operations_owner_id": "person-devon",
+        "control": "Stop expansion when a critical verification discrepancy remains open.",
+        "quarterly_priorities": [
+          "Reconcile requirements and preserve the reference configuration.",
+          "Complete controlled reference trials and record discrepancies.",
+          "Review campaign evidence and close owned corrective actions.",
+          "Consolidate accepted results into the next design baseline."
+        ]
+      }
+    },
+    {
+      "id": "claim-3",
+      "record_id": "company",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "name": "AstroDig LLC",
+        "industry": "aerospace engineering and asteroid resource technology",
+        "currency": "USD",
+        "fiscal_year_end": "12-31",
+        "founded_on": "2013-01-01",
+        "headquarters": "Boulder, Colorado",
+        "mission": "Develop robotic prospecting and extraction systems for asteroid resources.",
+        "business_model": "Earn aerospace engineering, instrument-development, and mission-analysis revenue while developing asteroid resource technology.",
+        "mining_goal_year": 2032,
+        "goal_status": "aspirational and contingent on flight validation, funding, launch access, and mission authorization",
+        "resource_focus": "water-bearing material for potential in-space use; no commercial extraction revenue assumed",
+        "media_email": "media@astrodig.example",
+        "media_contact_id": "person-jordan",
+        "boilerplate": "AstroDig LLC is an aerospace engineering company based in Boulder, Colorado. Founded in 2013, the company develops mission-analysis tools, robotic prospecting instruments, and controlled extraction test systems. Its long-term objective is an asteroid resource demonstration by 2032, subject to technical, financial, and mission-readiness gates."
+      }
+    },
+    {
+      "id": "claim-4",
+      "record_id": "financial-2020-q1",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "year": 2020,
+        "quarter": 1,
+        "period_end": "2020-03-31",
+        "revenue_usd": 2160000,
+        "cogs_usd": 820800,
+        "opex_usd": 2692000,
+        "operating_income_usd": -1352800,
+        "headcount": 62,
+        "engineering_services_usd": 1468800,
+        "instrument_development_usd": 475200,
+        "mission_analysis_usd": 216000,
+        "research_development_usd": 1938240,
+        "program_operations_usd": 484560,
+        "corporate_administration_usd": 269200,
+        "contracted_backlog_usd": 12960000,
+        "completed_work_packages": 28,
+        "accepted_reference_runs": 64,
+        "rejected_reference_runs": 5,
+        "development_focus": "reduced-scope integration",
+        "principal_risk": "schedule compression",
+        "management_interpretation": "Preserve verification work while deferring optional feature expansion.",
+        "limitation": "The revised integration scope does not accelerate the mining date.",
+        "revenue_policy": "Recognize engineering and development revenue against accepted contracted work; do not recognize projected asteroid sales.",
+        "cost_driver": "Research and verification capacity is maintained ahead of mission deployment.",
+        "outlook": "Continue the approved ground-development scope; no asteroid commodity revenue is included in the operating outlook."
+      }
+    },
+    {
+      "id": "claim-5",
+      "record_id": "financial-2020-q2",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "year": 2020,
+        "quarter": 2,
+        "period_end": "2020-06-30",
+        "revenue_usd": 2484000,
+        "cogs_usd": 943920,
+        "opex_usd": 3095800,
+        "operating_income_usd": -1555720,
+        "headcount": 66,
+        "engineering_services_usd": 1689120,
+        "instrument_development_usd": 546480,
+        "mission_analysis_usd": 248400,
+        "research_development_usd": 2228976,
+        "program_operations_usd": 557244,
+        "corporate_administration_usd": 309580,
+        "contracted_backlog_usd": 17388000,
+        "completed_work_packages": 29,
+        "accepted_reference_runs": 67,
+        "rejected_reference_runs": 6,
+        "development_focus": "reduced-scope integration",
+        "principal_risk": "schedule compression",
+        "management_interpretation": "Preserve verification work while deferring optional feature expansion.",
+        "limitation": "The revised integration scope does not accelerate the mining date.",
+        "revenue_policy": "Recognize engineering and development revenue against accepted contracted work; do not recognize projected asteroid sales.",
+        "cost_driver": "Research and verification capacity is maintained ahead of mission deployment.",
+        "outlook": "Continue the approved ground-development scope; no asteroid commodity revenue is included in the operating outlook."
+      }
+    },
+    {
+      "id": "claim-6",
+      "record_id": "term-31",
+      "path": [
+        "data",
+        "definition"
+      ],
+      "value": "Remaining contracted engineering work at a stated date; not recognized revenue or a guarantee of future collection."
+    }
+  ],
+  "sections": [
+    {
+      "role": "financial_results",
+      "heading": "Q3 2020 Operating Review",
+      "text": "Funding reset and program focus\n\nUSD; calendar fiscal year; engineering and development operations.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "financial_results",
+      "heading": "Operating result at a glance",
+      "text": "Revenue: $2,808,000\n\nOperating result: $-1,758,640\n\nPeriod-end headcount: 70",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "financial_results",
+      "heading": "Revenue to operating result",
+      "text": "Research and verification capacity is maintained ahead of mission deployment.\n\nDevelopment spending remains distinct from prospective mining economics.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "financial_results",
+      "heading": "Where recognized revenue comes from",
+      "text": "Recognize engineering and development revenue against accepted contracted work; do not recognize projected asteroid sales.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "financial_results",
+      "heading": "Development resources dominate spending",
+      "text": "Research and development is the largest operating-expense category.\n\nProgram operations and administration remain separately identifiable.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "financial_results",
+      "heading": "Quarterly recognition profile",
+      "text": "Quarterly revenue reflects accepted contracted work, not asteroid sales.\n\nOnly periods available at publication are included.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3",
+        "claim-4",
+        "claim-5"
+      ]
+    },
+    {
+      "role": "operating_review",
+      "heading": "Delivery and reference evidence",
+      "text": "Completed work packages: 30.\n\nAccepted reference runs: 70.\n\nRejected reference runs retained: 2.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "operating_review",
+      "heading": "Commitments are not collections",
+      "text": "Contracted backlog at period end: $22,464,000.\n\nRemaining contracted engineering work at a stated date; not recognized revenue or a guarantee of future collection.\n\nNo cash-flow or liquidity conclusion is derived from this snapshot.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3",
+        "claim-6"
+      ]
+    },
+    {
+      "role": "operating_review",
+      "heading": "Development priority and tradeoff",
+      "text": "Preserve verification work while deferring optional feature expansion.\n\nAlternative: Expand optional functionality before closing verification evidence.\n\nDisposition: Defer optional scope until reference evidence is accepted.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "outlook_and_risks",
+      "heading": "Risk, response, and evidence boundary",
+      "text": "Principal risk: schedule compression.\n\nStop expansion when a critical verification discrepancy remains open.\n\nThe revised integration scope does not accelerate the mining date.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "outlook_and_risks",
+      "heading": "Labeled operating outlook",
+      "text": "Continue the approved ground-development scope; no asteroid commodity revenue is included in the operating outlook.\n\nNo commercial asteroid extraction revenue is assumed.\n\nThe 2032 demonstration remains conditional.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    }
+  ],
+  "slides": [
+    {
+      "heading": "Q3 2020 Operating Review",
+      "body": [
+        "Funding reset and program focus",
+        "USD; calendar fiscal year; engineering and development operations."
+      ],
+      "layout": "cover",
+      "badge": "INTERNAL"
+    },
+    {
+      "heading": "Operating result at a glance",
+      "body": [
+        "Revenue: $2,808,000",
+        "Operating result: $-1,758,640",
+        "Period-end headcount: 70"
+      ],
+      "layout": "stats"
+    },
+    {
+      "heading": "Revenue to operating result",
+      "body": [
+        "Research and verification capacity is maintained ahead of mission deployment.",
+        "Development spending remains distinct from prospective mining economics."
+      ],
+      "layout": "chart",
+      "chart": {
+        "labels": [
+          "Revenue",
+          "COGS",
+          "Opex",
+          "Operating result"
+        ],
+        "values": [
+          2808000,
+          1067040,
+          3499600,
+          -1758640
+        ]
+      }
+    },
+    {
+      "heading": "Where recognized revenue comes from",
+      "body": [
+        "Recognize engineering and development revenue against accepted contracted work; do not recognize projected asteroid sales."
+      ],
+      "layout": "chart",
+      "chart": {
+        "labels": [
+          "Engineering",
+          "Instruments",
+          "Mission analysis"
+        ],
+        "values": [
+          1909440,
+          617760,
+          280800
+        ]
+      }
+    },
+    {
+      "heading": "Development resources dominate spending",
+      "body": [
+        "Research and development is the largest operating-expense category.",
+        "Program operations and administration remain separately identifiable."
+      ],
+      "layout": "chart",
+      "chart": {
+        "labels": [
+          "R&D",
+          "Program operations",
+          "Administration"
+        ],
+        "values": [
+          2519712,
+          629928,
+          349960
+        ]
+      }
+    },
+    {
+      "heading": "Quarterly recognition profile",
+      "body": [
+        "Quarterly revenue reflects accepted contracted work, not asteroid sales.",
+        "Only periods available at publication are included."
+      ],
+      "layout": "chart",
+      "chart": {
+        "labels": [
+          "Q1",
+          "Q2",
+          "Q3"
+        ],
+        "values": [
+          2160000,
+          2484000,
+          2808000
+        ]
+      }
+    },
+    {
+      "heading": "Delivery and reference evidence",
+      "body": [
+        "Completed work packages: 30.",
+        "Accepted reference runs: 70.",
+        "Rejected reference runs retained: 2."
+      ],
+      "layout": "stats"
+    },
+    {
+      "heading": "Commitments are not collections",
+      "body": [
+        "Contracted backlog at period end: $22,464,000.",
+        "Remaining contracted engineering work at a stated date; not recognized revenue or a guarantee of future collection.",
+        "No cash-flow or liquidity conclusion is derived from this snapshot."
+      ],
+      "layout": "statement"
+    },
+    {
+      "heading": "Development priority and tradeoff",
+      "body": [
+        "Preserve verification work while deferring optional feature expansion.",
+        "Alternative: Expand optional functionality before closing verification evidence.",
+        "Disposition: Defer optional scope until reference evidence is accepted."
+      ],
+      "layout": "cards"
+    },
+    {
+      "heading": "Risk, response, and evidence boundary",
+      "body": [
+        "Principal risk: schedule compression.",
+        "Stop expansion when a critical verification discrepancy remains open.",
+        "The revised integration scope does not accelerate the mining date."
+      ],
+      "layout": "cards"
+    },
+    {
+      "heading": "Labeled operating outlook",
+      "body": [
+        "Continue the approved ground-development scope; no asteroid commodity revenue is included in the operating outlook.",
+        "No commercial asteroid extraction revenue is assumed.",
+        "The 2032 demonstration remains conditional."
+      ],
+      "layout": "closing"
+    }
+  ],
+  "measurements": {
+    "delivered_words": 212,
+    "discussion_words": 0,
+    "meaningful_slides": 11,
+    "distinct_testable_requirements": 0,
+    "useful_analysis_modules": 0
+  }
+}

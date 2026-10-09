@@ -1,0 +1,9 @@
+{
+  "documents": 150,
+  "formats": {
+    "docx": 50,
+    "pptx": 50,
+    "xlsx": 50
+  },
+  "validation": "structure, hashes, claims, and QA receipt presence; not independent semantic certification"
+}

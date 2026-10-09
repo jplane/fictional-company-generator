@@ -1,0 +1,814 @@
+{
+  "schema_version": 1,
+  "documents": [
+    {
+      "document_id": "doc-0008",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-01.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-01.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0009",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-01.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-01.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0001",
+      "status": "passed",
+      "evidence": "Reviewed all 2 rendered pages in docx-01.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-01.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0003",
+      "status": "passed",
+      "evidence": "Reviewed all 6 rendered pages in docx-01.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-01.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0004",
+      "status": "passed",
+      "evidence": "Reviewed all 6 rendered pages in docx-01.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-01.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0005",
+      "status": "passed",
+      "evidence": "Reviewed all 5 rendered pages in docx-01.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-01.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0018",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-01.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-01.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0019",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-01.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-01.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0011",
+      "status": "passed",
+      "evidence": "Reviewed all 2 rendered pages in docx-01.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-01.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0013",
+      "status": "passed",
+      "evidence": "Reviewed all 6 rendered pages in docx-01.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-01.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0014",
+      "status": "passed",
+      "evidence": "Reviewed all 6 rendered pages in docx-01.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-01.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0015",
+      "status": "passed",
+      "evidence": "Reviewed all 5 rendered pages in docx-01.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-01.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0028",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-01.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-01.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0029",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-01.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-01.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0021",
+      "status": "passed",
+      "evidence": "Reviewed all 2 rendered pages in docx-01.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-01.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0023",
+      "status": "passed",
+      "evidence": "Reviewed all 6 rendered pages in docx-01.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-01.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0024",
+      "status": "passed",
+      "evidence": "Reviewed all 6 rendered pages in docx-02.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-02.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0025",
+      "status": "passed",
+      "evidence": "Reviewed all 5 rendered pages in docx-02.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-02.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0038",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-01.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-01.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0039",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-01.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-01.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0031",
+      "status": "passed",
+      "evidence": "Reviewed all 2 rendered pages in docx-02.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-02.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0033",
+      "status": "passed",
+      "evidence": "Reviewed all 6 rendered pages in docx-02.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-02.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0034",
+      "status": "passed",
+      "evidence": "Reviewed all 6 rendered pages in docx-02.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-02.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0035",
+      "status": "passed",
+      "evidence": "Reviewed all 5 rendered pages in docx-02.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-02.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0048",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-01.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-01.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0049",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-01.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-01.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0041",
+      "status": "passed",
+      "evidence": "Reviewed all 2 rendered pages in docx-02.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-02.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0043",
+      "status": "passed",
+      "evidence": "Reviewed all 6 rendered pages in docx-02.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-02.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0044",
+      "status": "passed",
+      "evidence": "Reviewed all 6 rendered pages in docx-02.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-02.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0045",
+      "status": "passed",
+      "evidence": "Reviewed all 5 rendered pages in docx-02.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-02.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0051",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-02.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-02.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0059",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-02.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-02.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0060",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-02.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-02.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0052",
+      "status": "passed",
+      "evidence": "Reviewed all 2 rendered pages in docx-03.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-03.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0054",
+      "status": "passed",
+      "evidence": "Reviewed all 6 rendered pages in docx-03.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-03.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0055",
+      "status": "passed",
+      "evidence": "Reviewed all 6 rendered pages in docx-03.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-03.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0056",
+      "status": "passed",
+      "evidence": "Reviewed all 5 rendered pages in docx-03.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-03.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0062",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-02.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-02.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0070",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-02.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-02.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0071",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-02.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-02.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0063",
+      "status": "passed",
+      "evidence": "Reviewed all 2 rendered pages in docx-03.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-03.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0065",
+      "status": "passed",
+      "evidence": "Reviewed all 6 rendered pages in docx-03.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-03.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0066",
+      "status": "passed",
+      "evidence": "Reviewed all 6 rendered pages in docx-03.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-03.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0067",
+      "status": "passed",
+      "evidence": "Reviewed all 5 rendered pages in docx-03.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-03.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0073",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-02.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-02.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0081",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-02.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-02.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0082",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-02.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-02.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0074",
+      "status": "passed",
+      "evidence": "Reviewed all 2 rendered pages in docx-03.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-03.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0076",
+      "status": "passed",
+      "evidence": "Reviewed all 6 rendered pages in docx-03.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-03.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0077",
+      "status": "passed",
+      "evidence": "Reviewed all 6 rendered pages in docx-04.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-04.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0078",
+      "status": "passed",
+      "evidence": "Reviewed all 5 rendered pages in docx-04.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-04.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0084",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-02.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-02.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0092",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-03.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-03.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0093",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-03.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-03.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0085",
+      "status": "passed",
+      "evidence": "Reviewed all 2 rendered pages in docx-04.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-04.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0087",
+      "status": "passed",
+      "evidence": "Reviewed all 6 rendered pages in docx-04.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-04.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0088",
+      "status": "passed",
+      "evidence": "Reviewed all 3 rendered pages in xlsx-03.png. Sixteen controls remain navigable in a wide traceability matrix with wrapped cells, repeated print headers, separate acceptance/method/dependency/disposition/owner columns and a scope/release-gate sheet. Corrected full-size ScoutMap 14.0 pages 1 and 2 verified separated column headings and complete content.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-03.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0089",
+      "status": "passed",
+      "evidence": "Reviewed all 5 rendered pages in docx-04.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-04.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0094",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-03.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-03.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0095",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-03.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-03.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0103",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-03.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-03.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0104",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-03.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-03.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0096",
+      "status": "passed",
+      "evidence": "Reviewed all 2 rendered pages in docx-04.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-04.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0098",
+      "status": "passed",
+      "evidence": "Reviewed all 6 rendered pages in docx-04.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-04.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0099",
+      "status": "passed",
+      "evidence": "Reviewed all 3 rendered pages in xlsx-03.png. Sixteen controls remain navigable in a wide traceability matrix with wrapped cells, repeated print headers, separate acceptance/method/dependency/disposition/owner columns and a scope/release-gate sheet. Corrected full-size ScoutMap 14.0 pages 1 and 2 verified separated column headings and complete content.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-03.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0100",
+      "status": "passed",
+      "evidence": "Reviewed all 5 rendered pages in docx-04.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-04.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0105",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-03.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-03.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0106",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-03.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-03.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0114",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-04.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-04.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0115",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-04.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-04.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0107",
+      "status": "passed",
+      "evidence": "Reviewed all 2 rendered pages in docx-04.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-04.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0109",
+      "status": "passed",
+      "evidence": "Reviewed all 6 rendered pages in docx-04.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-04.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0110",
+      "status": "passed",
+      "evidence": "Reviewed all 3 rendered pages in xlsx-04.png. Sixteen controls remain navigable in a wide traceability matrix with wrapped cells, repeated print headers, separate acceptance/method/dependency/disposition/owner columns and a scope/release-gate sheet. Corrected full-size ScoutMap 14.0 pages 1 and 2 verified separated column headings and complete content.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-04.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0111",
+      "status": "passed",
+      "evidence": "Reviewed all 5 rendered pages in docx-05.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-05.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0116",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-04.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-04.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0117",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-04.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-04.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0125",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-04.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-04.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0126",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-04.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-04.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0118",
+      "status": "passed",
+      "evidence": "Reviewed all 2 rendered pages in docx-05.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-05.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0120",
+      "status": "passed",
+      "evidence": "Reviewed all 6 rendered pages in docx-05.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-05.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0121",
+      "status": "passed",
+      "evidence": "Reviewed all 3 rendered pages in xlsx-04.png. Sixteen controls remain navigable in a wide traceability matrix with wrapped cells, repeated print headers, separate acceptance/method/dependency/disposition/owner columns and a scope/release-gate sheet. Corrected full-size ScoutMap 14.0 pages 1 and 2 verified separated column headings and complete content.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-04.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0122",
+      "status": "passed",
+      "evidence": "Reviewed all 5 rendered pages in docx-05.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-05.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0127",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-04.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-04.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0128",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-04.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-04.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0136",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-05.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-05.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0137",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-05.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-05.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0129",
+      "status": "passed",
+      "evidence": "Reviewed all 2 rendered pages in docx-05.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-05.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0131",
+      "status": "passed",
+      "evidence": "Reviewed all 6 rendered pages in docx-05.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-05.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0132",
+      "status": "passed",
+      "evidence": "Reviewed all 3 rendered pages in xlsx-05.png. Sixteen controls remain navigable in a wide traceability matrix with wrapped cells, repeated print headers, separate acceptance/method/dependency/disposition/owner columns and a scope/release-gate sheet. Corrected full-size ScoutMap 14.0 pages 1 and 2 verified separated column headings and complete content.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-05.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0133",
+      "status": "passed",
+      "evidence": "Reviewed all 5 rendered pages in docx-05.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-05.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0138",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-05.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-05.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0139",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-05.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-05.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0147",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-05.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-05.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0148",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-05.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-05.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0140",
+      "status": "passed",
+      "evidence": "Reviewed all 2 rendered pages in docx-05.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-05.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0142",
+      "status": "passed",
+      "evidence": "Reviewed all 6 rendered pages in docx-05.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-05.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0143",
+      "status": "passed",
+      "evidence": "Reviewed all 3 rendered pages in xlsx-05.png. Sixteen controls remain navigable in a wide traceability matrix with wrapped cells, repeated print headers, separate acceptance/method/dependency/disposition/owner columns and a scope/release-gate sheet. Corrected full-size ScoutMap 14.0 pages 1 and 2 verified separated column headings and complete content.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-05.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0144",
+      "status": "passed",
+      "evidence": "Reviewed all 5 rendered pages in docx-05.png. Consistent Letter-page margins, readable body/heading hierarchy, retained headers and page footers, no blank pages or observed overlap. Full-size late-year specification, transcript closing page and corrected press-release quote page also inspected. Rendered body text matches the grounded draft.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\docx-05.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0149",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-05.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-05.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    },
+    {
+      "document_id": "doc-0150",
+      "status": "passed",
+      "evidence": "Reviewed all 9 rendered pages in xlsx-05.png. Source and analytical tables align with chart/interpretation areas and business headers/footers. Source measure labels widened after full-size clipping was found; corrected source page inspected. Financial-workbook comparison bars now start at zero; corrected full-size comparison chart inspected. No observed cropped charts or overlapping content. Inputs, formulas and caches separately checked.",
+      "reviewed_gallery": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\asteroid-mining\\build\\renders\\review-galleries\\xlsx-05.png",
+      "review_resolution": "All-page gallery review, supplemented by full-resolution dense/corrected layouts.",
+      "issues": []
+    }
+  ],
+  "actual_corrections": [
+    "Fixed clipped financial source-table labels and units/header widths.",
+    "Separated technical matrix column headings and repeated headers on continuation pages.",
+    "Removed irrelevant currency labeling from technical specifications.",
+    "Fixed press-release quote attribution punctuation.",
+    "Separated service-economics workbook analyses from quarterly operating report modules.",
+    "Fixed nonzero comparison-bar baselines and verified corrected charts."
+  ],
+  "limitations": "Gallery review covers every rendered page for layout; full-resolution reading was performed on dense and corrected representative layouts, not every individual page."
+}

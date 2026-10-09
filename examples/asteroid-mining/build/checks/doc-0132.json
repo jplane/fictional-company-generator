@@ -1,0 +1,24 @@
+{
+  "document_id": "doc-0132",
+  "artifact_sha256": "4118aa13fffa0cda03421a4e60af36d61a658264f50e5e50136ac5e719822bbf",
+  "draft_sha256": "fe1d38e3cd6a1586587107bb4fa62eb4a0e5da9ed13a0b0d3cda2e170dc1a0ae",
+  "pages": 3,
+  "package_integrity": "passed",
+  "extracted_text": "passed",
+  "render_text_issues": [],
+  "recalculation": {
+    "status": "passed",
+    "engine": "LibreOffice 26.8.0.3 native Windows headless import/export",
+    "formula_count": 0,
+    "formula_errors": 0,
+    "expected_values_checked": 0,
+    "note": "Specification workbooks contain source requirements, not financial formulas."
+  },
+  "measurements": {
+    "delivered_words": 1612,
+    "discussion_words": 0,
+    "meaningful_slides": 0,
+    "distinct_testable_requirements": 16,
+    "useful_analysis_modules": 0
+  }
+}

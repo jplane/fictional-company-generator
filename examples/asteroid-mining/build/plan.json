@@ -1,0 +1,2960 @@
+{
+  "schema_version": 1,
+  "canon_sha256": "842ce5bcbc2a42e00df27a5c3ee4f41ab4b059bb36e3464daacc08a2ce0b85cd",
+  "documents": [
+    {
+      "id": "doc-0008",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q1 2013 Operating Results",
+      "filename": "2013-04-15 - AstroDig LLC - Q1 2013 Operating Results.xlsx",
+      "publication_date": "2013-04-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2013-q1"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0009",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q2 2013 Operating Results",
+      "filename": "2013-07-15 - AstroDig LLC - Q2 2013 Operating Results.xlsx",
+      "publication_date": "2013-07-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2013-q2"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0001",
+      "type": "press_release",
+      "format": "docx",
+      "title": "AstroDig LLC - Releases RegolithWorks 1.0 for Mission-Analysis Feasibility",
+      "filename": "2013-08-15 - AstroDig LLC - Releases RegolithWorks 1.0 for Mission-Analysis Feasibility.docx",
+      "publication_date": "2013-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-regolithworks-2013"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ]
+    },
+    {
+      "id": "doc-0002",
+      "type": "product_presentation",
+      "format": "pptx",
+      "title": "AstroDig LLC - RegolithWorks 1.0 - Ground Campaign Overview",
+      "filename": "2013-08-15 - AstroDig LLC - RegolithWorks 1.0 - Ground Campaign Overview.pptx",
+      "publication_date": "2013-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2013"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ]
+    },
+    {
+      "id": "doc-0003",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "AstroDig LLC - RegolithWorks 1.0 - Controlled Test Specification",
+      "filename": "2013-08-15 - AstroDig LLC - RegolithWorks 1.0 - Controlled Test Specification.docx",
+      "publication_date": "2013-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2013"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0004",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "AstroDig LLC - ScoutMap 1.0 - Analysis and Verification Specification",
+      "filename": "2013-08-15 - AstroDig LLC - ScoutMap 1.0 - Analysis and Verification Specification.docx",
+      "publication_date": "2013-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-scoutmap-2013"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0005",
+      "type": "meeting_transcript",
+      "format": "docx",
+      "title": "AstroDig LLC - Engineering foundation - Q3 Leadership Review Transcript",
+      "filename": "2013-10-15 - AstroDig LLC - Engineering foundation - Q3 Leadership Review Transcript.docx",
+      "publication_date": "2013-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2013-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ]
+    },
+    {
+      "id": "doc-0006",
+      "type": "board_deck",
+      "format": "pptx",
+      "title": "AstroDig LLC - Engineering foundation - Capital and Readiness Briefing",
+      "filename": "2013-10-15 - AstroDig LLC - Engineering foundation - Capital and Readiness Briefing.pptx",
+      "publication_date": "2013-10-15",
+      "audience": "board",
+      "anchor_ids": [
+        "financial-2013-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ]
+    },
+    {
+      "id": "doc-0010",
+      "type": "quarterly_report",
+      "format": "pptx",
+      "title": "AstroDig LLC - Q3 2013 Operating Results",
+      "filename": "2013-10-15 - AstroDig LLC - Q3 2013 Operating Results.pptx",
+      "publication_date": "2013-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2013-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0007",
+      "type": "annual_report",
+      "format": "pptx",
+      "title": "AstroDig LLC - 2013 Annual Business and Financial Review",
+      "filename": "2014-02-15 - AstroDig LLC - 2013 Annual Business and Financial Review.pptx",
+      "publication_date": "2014-02-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2013-annual"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ]
+    },
+    {
+      "id": "doc-0018",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q1 2014 Operating Results",
+      "filename": "2014-04-15 - AstroDig LLC - Q1 2014 Operating Results.xlsx",
+      "publication_date": "2014-04-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2014-q1"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0019",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q2 2014 Operating Results",
+      "filename": "2014-07-15 - AstroDig LLC - Q2 2014 Operating Results.xlsx",
+      "publication_date": "2014-07-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2014-q2"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0011",
+      "type": "press_release",
+      "format": "docx",
+      "title": "AstroDig LLC - Releases RegolithWorks 2.0 for Trajectory Screening",
+      "filename": "2014-08-15 - AstroDig LLC - Releases RegolithWorks 2.0 for Trajectory Screening.docx",
+      "publication_date": "2014-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-regolithworks-2014"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ]
+    },
+    {
+      "id": "doc-0012",
+      "type": "product_presentation",
+      "format": "pptx",
+      "title": "AstroDig LLC - RegolithWorks 2.0 - Ground Campaign Overview",
+      "filename": "2014-08-15 - AstroDig LLC - RegolithWorks 2.0 - Ground Campaign Overview.pptx",
+      "publication_date": "2014-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2014"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ]
+    },
+    {
+      "id": "doc-0013",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "AstroDig LLC - RegolithWorks 2.0 - Controlled Test Specification",
+      "filename": "2014-08-15 - AstroDig LLC - RegolithWorks 2.0 - Controlled Test Specification.docx",
+      "publication_date": "2014-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2014"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0014",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "AstroDig LLC - ScoutMap 2.0 - Analysis and Verification Specification",
+      "filename": "2014-08-15 - AstroDig LLC - ScoutMap 2.0 - Analysis and Verification Specification.docx",
+      "publication_date": "2014-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-scoutmap-2014"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0015",
+      "type": "meeting_transcript",
+      "format": "docx",
+      "title": "AstroDig LLC - Target-screening discipline - Q3 Leadership Review Transcript",
+      "filename": "2014-10-15 - AstroDig LLC - Target-screening discipline - Q3 Leadership Review Transcript.docx",
+      "publication_date": "2014-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2014-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ]
+    },
+    {
+      "id": "doc-0016",
+      "type": "board_deck",
+      "format": "pptx",
+      "title": "AstroDig LLC - Target-screening discipline - Capital and Readiness Briefing",
+      "filename": "2014-10-15 - AstroDig LLC - Target-screening discipline - Capital and Readiness Briefing.pptx",
+      "publication_date": "2014-10-15",
+      "audience": "board",
+      "anchor_ids": [
+        "financial-2014-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ]
+    },
+    {
+      "id": "doc-0020",
+      "type": "quarterly_report",
+      "format": "pptx",
+      "title": "AstroDig LLC - Q3 2014 Operating Results",
+      "filename": "2014-10-15 - AstroDig LLC - Q3 2014 Operating Results.pptx",
+      "publication_date": "2014-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2014-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0017",
+      "type": "annual_report",
+      "format": "pptx",
+      "title": "AstroDig LLC - 2014 Annual Business and Financial Review",
+      "filename": "2015-02-15 - AstroDig LLC - 2014 Annual Business and Financial Review.pptx",
+      "publication_date": "2015-02-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2014-annual"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ]
+    },
+    {
+      "id": "doc-0028",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q1 2015 Operating Results",
+      "filename": "2015-04-15 - AstroDig LLC - Q1 2015 Operating Results.xlsx",
+      "publication_date": "2015-04-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2015-q1"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0029",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q2 2015 Operating Results",
+      "filename": "2015-07-15 - AstroDig LLC - Q2 2015 Operating Results.xlsx",
+      "publication_date": "2015-07-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2015-q2"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0021",
+      "type": "press_release",
+      "format": "docx",
+      "title": "AstroDig LLC - Releases RegolithWorks 3.0 for Spectral Planning",
+      "filename": "2015-08-15 - AstroDig LLC - Releases RegolithWorks 3.0 for Spectral Planning.docx",
+      "publication_date": "2015-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-regolithworks-2015"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ]
+    },
+    {
+      "id": "doc-0022",
+      "type": "product_presentation",
+      "format": "pptx",
+      "title": "AstroDig LLC - RegolithWorks 3.0 - Ground Campaign Overview",
+      "filename": "2015-08-15 - AstroDig LLC - RegolithWorks 3.0 - Ground Campaign Overview.pptx",
+      "publication_date": "2015-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2015"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ]
+    },
+    {
+      "id": "doc-0023",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "AstroDig LLC - RegolithWorks 3.0 - Controlled Test Specification",
+      "filename": "2015-08-15 - AstroDig LLC - RegolithWorks 3.0 - Controlled Test Specification.docx",
+      "publication_date": "2015-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2015"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0024",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "AstroDig LLC - ScoutMap 3.0 - Analysis and Verification Specification",
+      "filename": "2015-08-15 - AstroDig LLC - ScoutMap 3.0 - Analysis and Verification Specification.docx",
+      "publication_date": "2015-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-scoutmap-2015"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0025",
+      "type": "meeting_transcript",
+      "format": "docx",
+      "title": "AstroDig LLC - Resource-characterization studies - Q3 Leadership Review Transcript",
+      "filename": "2015-10-15 - AstroDig LLC - Resource-characterization studies - Q3 Leadership Review Transcript.docx",
+      "publication_date": "2015-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2015-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ]
+    },
+    {
+      "id": "doc-0026",
+      "type": "board_deck",
+      "format": "pptx",
+      "title": "AstroDig LLC - Resource-characterization studies - Capital and Readiness Briefing",
+      "filename": "2015-10-15 - AstroDig LLC - Resource-characterization studies - Capital and Readiness Briefing.pptx",
+      "publication_date": "2015-10-15",
+      "audience": "board",
+      "anchor_ids": [
+        "financial-2015-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ]
+    },
+    {
+      "id": "doc-0030",
+      "type": "quarterly_report",
+      "format": "pptx",
+      "title": "AstroDig LLC - Q3 2015 Operating Results",
+      "filename": "2015-10-15 - AstroDig LLC - Q3 2015 Operating Results.pptx",
+      "publication_date": "2015-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2015-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0027",
+      "type": "annual_report",
+      "format": "pptx",
+      "title": "AstroDig LLC - 2015 Annual Business and Financial Review",
+      "filename": "2016-02-15 - AstroDig LLC - 2015 Annual Business and Financial Review.pptx",
+      "publication_date": "2016-02-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2015-annual"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ]
+    },
+    {
+      "id": "doc-0038",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q1 2016 Operating Results",
+      "filename": "2016-04-15 - AstroDig LLC - Q1 2016 Operating Results.xlsx",
+      "publication_date": "2016-04-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2016-q1"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0039",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q2 2016 Operating Results",
+      "filename": "2016-07-15 - AstroDig LLC - Q2 2016 Operating Results.xlsx",
+      "publication_date": "2016-07-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2016-q2"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0031",
+      "type": "press_release",
+      "format": "docx",
+      "title": "AstroDig LLC - Releases RegolithWorks 4.0 for Thermal-Vacuum Commissioning",
+      "filename": "2016-08-15 - AstroDig LLC - Releases RegolithWorks 4.0 for Thermal-Vacuum Commissioning.docx",
+      "publication_date": "2016-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-regolithworks-2016"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ]
+    },
+    {
+      "id": "doc-0032",
+      "type": "product_presentation",
+      "format": "pptx",
+      "title": "AstroDig LLC - RegolithWorks 4.0 - Ground Campaign Overview",
+      "filename": "2016-08-15 - AstroDig LLC - RegolithWorks 4.0 - Ground Campaign Overview.pptx",
+      "publication_date": "2016-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2016"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ]
+    },
+    {
+      "id": "doc-0033",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "AstroDig LLC - RegolithWorks 4.0 - Controlled Test Specification",
+      "filename": "2016-08-15 - AstroDig LLC - RegolithWorks 4.0 - Controlled Test Specification.docx",
+      "publication_date": "2016-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2016"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0034",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "AstroDig LLC - ScoutMap 4.0 - Analysis and Verification Specification",
+      "filename": "2016-08-15 - AstroDig LLC - ScoutMap 4.0 - Analysis and Verification Specification.docx",
+      "publication_date": "2016-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-scoutmap-2016"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0035",
+      "type": "meeting_transcript",
+      "format": "docx",
+      "title": "AstroDig LLC - Closed-chamber bench commissioning - Q3 Leadership Review Transcript",
+      "filename": "2016-10-15 - AstroDig LLC - Closed-chamber bench commissioning - Q3 Leadership Review Transcript.docx",
+      "publication_date": "2016-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2016-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ]
+    },
+    {
+      "id": "doc-0036",
+      "type": "board_deck",
+      "format": "pptx",
+      "title": "AstroDig LLC - Closed-chamber bench commissioning - Capital and Readiness Briefing",
+      "filename": "2016-10-15 - AstroDig LLC - Closed-chamber bench commissioning - Capital and Readiness Briefing.pptx",
+      "publication_date": "2016-10-15",
+      "audience": "board",
+      "anchor_ids": [
+        "financial-2016-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ]
+    },
+    {
+      "id": "doc-0040",
+      "type": "quarterly_report",
+      "format": "pptx",
+      "title": "AstroDig LLC - Q3 2016 Operating Results",
+      "filename": "2016-10-15 - AstroDig LLC - Q3 2016 Operating Results.pptx",
+      "publication_date": "2016-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2016-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0037",
+      "type": "annual_report",
+      "format": "pptx",
+      "title": "AstroDig LLC - 2016 Annual Business and Financial Review",
+      "filename": "2017-02-15 - AstroDig LLC - 2016 Annual Business and Financial Review.pptx",
+      "publication_date": "2017-02-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2016-annual"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ]
+    },
+    {
+      "id": "doc-0048",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q1 2017 Operating Results",
+      "filename": "2017-04-15 - AstroDig LLC - Q1 2017 Operating Results.xlsx",
+      "publication_date": "2017-04-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2017-q1"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0049",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q2 2017 Operating Results",
+      "filename": "2017-07-15 - AstroDig LLC - Q2 2017 Operating Results.xlsx",
+      "publication_date": "2017-07-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2017-q2"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0041",
+      "type": "press_release",
+      "format": "docx",
+      "title": "AstroDig LLC - Releases RegolithWorks 5.0 for Capture-Cartridge Testing",
+      "filename": "2017-08-15 - AstroDig LLC - Releases RegolithWorks 5.0 for Capture-Cartridge Testing.docx",
+      "publication_date": "2017-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-regolithworks-2017"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ]
+    },
+    {
+      "id": "doc-0042",
+      "type": "product_presentation",
+      "format": "pptx",
+      "title": "AstroDig LLC - RegolithWorks 5.0 - Ground Campaign Overview",
+      "filename": "2017-08-15 - AstroDig LLC - RegolithWorks 5.0 - Ground Campaign Overview.pptx",
+      "publication_date": "2017-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2017"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ]
+    },
+    {
+      "id": "doc-0043",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "AstroDig LLC - RegolithWorks 5.0 - Controlled Test Specification",
+      "filename": "2017-08-15 - AstroDig LLC - RegolithWorks 5.0 - Controlled Test Specification.docx",
+      "publication_date": "2017-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2017"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0044",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "AstroDig LLC - ScoutMap 5.0 - Analysis and Verification Specification",
+      "filename": "2017-08-15 - AstroDig LLC - ScoutMap 5.0 - Analysis and Verification Specification.docx",
+      "publication_date": "2017-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-scoutmap-2017"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0045",
+      "type": "meeting_transcript",
+      "format": "docx",
+      "title": "AstroDig LLC - Capture and containment iteration - Q3 Leadership Review Transcript",
+      "filename": "2017-10-15 - AstroDig LLC - Capture and containment iteration - Q3 Leadership Review Transcript.docx",
+      "publication_date": "2017-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2017-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ]
+    },
+    {
+      "id": "doc-0046",
+      "type": "board_deck",
+      "format": "pptx",
+      "title": "AstroDig LLC - Capture and containment iteration - Capital and Readiness Briefing",
+      "filename": "2017-10-15 - AstroDig LLC - Capture and containment iteration - Capital and Readiness Briefing.pptx",
+      "publication_date": "2017-10-15",
+      "audience": "board",
+      "anchor_ids": [
+        "financial-2017-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ]
+    },
+    {
+      "id": "doc-0050",
+      "type": "quarterly_report",
+      "format": "pptx",
+      "title": "AstroDig LLC - Q3 2017 Operating Results",
+      "filename": "2017-10-15 - AstroDig LLC - Q3 2017 Operating Results.pptx",
+      "publication_date": "2017-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2017-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0051",
+      "type": "financial_model",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q3 2017 Service Economics and Development Spending",
+      "filename": "2017-10-15 - AstroDig LLC - Q3 2017 Service Economics and Development Spending.xlsx",
+      "publication_date": "2017-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2017-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ]
+    },
+    {
+      "id": "doc-0047",
+      "type": "annual_report",
+      "format": "pptx",
+      "title": "AstroDig LLC - 2017 Annual Business and Financial Review",
+      "filename": "2018-02-15 - AstroDig LLC - 2017 Annual Business and Financial Review.pptx",
+      "publication_date": "2018-02-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2017-annual"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ]
+    },
+    {
+      "id": "doc-0059",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q1 2018 Operating Results",
+      "filename": "2018-04-15 - AstroDig LLC - Q1 2018 Operating Results.xlsx",
+      "publication_date": "2018-04-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2018-q1"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0060",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q2 2018 Operating Results",
+      "filename": "2018-07-15 - AstroDig LLC - Q2 2018 Operating Results.xlsx",
+      "publication_date": "2018-07-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2018-q2"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0052",
+      "type": "press_release",
+      "format": "docx",
+      "title": "AstroDig LLC - Releases RegolithWorks 6.0 for Autonomy Rehearsal",
+      "filename": "2018-08-15 - AstroDig LLC - Releases RegolithWorks 6.0 for Autonomy Rehearsal.docx",
+      "publication_date": "2018-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-regolithworks-2018"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ]
+    },
+    {
+      "id": "doc-0053",
+      "type": "product_presentation",
+      "format": "pptx",
+      "title": "AstroDig LLC - RegolithWorks 6.0 - Ground Campaign Overview",
+      "filename": "2018-08-15 - AstroDig LLC - RegolithWorks 6.0 - Ground Campaign Overview.pptx",
+      "publication_date": "2018-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2018"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ]
+    },
+    {
+      "id": "doc-0054",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "AstroDig LLC - RegolithWorks 6.0 - Controlled Test Specification",
+      "filename": "2018-08-15 - AstroDig LLC - RegolithWorks 6.0 - Controlled Test Specification.docx",
+      "publication_date": "2018-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2018"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0055",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "AstroDig LLC - ScoutMap 6.0 - Analysis and Verification Specification",
+      "filename": "2018-08-15 - AstroDig LLC - ScoutMap 6.0 - Analysis and Verification Specification.docx",
+      "publication_date": "2018-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-scoutmap-2018"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0056",
+      "type": "meeting_transcript",
+      "format": "docx",
+      "title": "AstroDig LLC - Autonomy-in-the-loop development - Q3 Leadership Review Transcript",
+      "filename": "2018-10-15 - AstroDig LLC - Autonomy-in-the-loop development - Q3 Leadership Review Transcript.docx",
+      "publication_date": "2018-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2018-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ]
+    },
+    {
+      "id": "doc-0057",
+      "type": "board_deck",
+      "format": "pptx",
+      "title": "AstroDig LLC - Autonomy-in-the-loop development - Capital and Readiness Briefing",
+      "filename": "2018-10-15 - AstroDig LLC - Autonomy-in-the-loop development - Capital and Readiness Briefing.pptx",
+      "publication_date": "2018-10-15",
+      "audience": "board",
+      "anchor_ids": [
+        "financial-2018-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ]
+    },
+    {
+      "id": "doc-0061",
+      "type": "quarterly_report",
+      "format": "pptx",
+      "title": "AstroDig LLC - Q3 2018 Operating Results",
+      "filename": "2018-10-15 - AstroDig LLC - Q3 2018 Operating Results.pptx",
+      "publication_date": "2018-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2018-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0062",
+      "type": "financial_model",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q3 2018 Service Economics and Development Spending",
+      "filename": "2018-10-15 - AstroDig LLC - Q3 2018 Service Economics and Development Spending.xlsx",
+      "publication_date": "2018-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2018-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ]
+    },
+    {
+      "id": "doc-0058",
+      "type": "annual_report",
+      "format": "pptx",
+      "title": "AstroDig LLC - 2018 Annual Business and Financial Review",
+      "filename": "2019-02-15 - AstroDig LLC - 2018 Annual Business and Financial Review.pptx",
+      "publication_date": "2019-02-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2018-annual"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ]
+    },
+    {
+      "id": "doc-0070",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q1 2019 Operating Results",
+      "filename": "2019-04-15 - AstroDig LLC - Q1 2019 Operating Results.xlsx",
+      "publication_date": "2019-04-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2019-q1"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0071",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q2 2019 Operating Results",
+      "filename": "2019-07-15 - AstroDig LLC - Q2 2019 Operating Results.xlsx",
+      "publication_date": "2019-07-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2019-q2"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0063",
+      "type": "press_release",
+      "format": "docx",
+      "title": "AstroDig LLC - Releases RegolithWorks 7.0 for Payload Interface Integration",
+      "filename": "2019-08-15 - AstroDig LLC - Releases RegolithWorks 7.0 for Payload Interface Integration.docx",
+      "publication_date": "2019-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-regolithworks-2019"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ]
+    },
+    {
+      "id": "doc-0064",
+      "type": "product_presentation",
+      "format": "pptx",
+      "title": "AstroDig LLC - RegolithWorks 7.0 - Ground Campaign Overview",
+      "filename": "2019-08-15 - AstroDig LLC - RegolithWorks 7.0 - Ground Campaign Overview.pptx",
+      "publication_date": "2019-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2019"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ]
+    },
+    {
+      "id": "doc-0065",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "AstroDig LLC - RegolithWorks 7.0 - Controlled Test Specification",
+      "filename": "2019-08-15 - AstroDig LLC - RegolithWorks 7.0 - Controlled Test Specification.docx",
+      "publication_date": "2019-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2019"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0066",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "AstroDig LLC - ScoutMap 7.0 - Analysis and Verification Specification",
+      "filename": "2019-08-15 - AstroDig LLC - ScoutMap 7.0 - Analysis and Verification Specification.docx",
+      "publication_date": "2019-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-scoutmap-2019"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0067",
+      "type": "meeting_transcript",
+      "format": "docx",
+      "title": "AstroDig LLC - Integrated payload architecture - Q3 Leadership Review Transcript",
+      "filename": "2019-10-15 - AstroDig LLC - Integrated payload architecture - Q3 Leadership Review Transcript.docx",
+      "publication_date": "2019-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2019-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ]
+    },
+    {
+      "id": "doc-0068",
+      "type": "board_deck",
+      "format": "pptx",
+      "title": "AstroDig LLC - Integrated payload architecture - Capital and Readiness Briefing",
+      "filename": "2019-10-15 - AstroDig LLC - Integrated payload architecture - Capital and Readiness Briefing.pptx",
+      "publication_date": "2019-10-15",
+      "audience": "board",
+      "anchor_ids": [
+        "financial-2019-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ]
+    },
+    {
+      "id": "doc-0072",
+      "type": "quarterly_report",
+      "format": "pptx",
+      "title": "AstroDig LLC - Q3 2019 Operating Results",
+      "filename": "2019-10-15 - AstroDig LLC - Q3 2019 Operating Results.pptx",
+      "publication_date": "2019-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2019-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0073",
+      "type": "financial_model",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q3 2019 Service Economics and Development Spending",
+      "filename": "2019-10-15 - AstroDig LLC - Q3 2019 Service Economics and Development Spending.xlsx",
+      "publication_date": "2019-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2019-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ]
+    },
+    {
+      "id": "doc-0069",
+      "type": "annual_report",
+      "format": "pptx",
+      "title": "AstroDig LLC - 2019 Annual Business and Financial Review",
+      "filename": "2020-02-15 - AstroDig LLC - 2019 Annual Business and Financial Review.pptx",
+      "publication_date": "2020-02-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2019-annual"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ]
+    },
+    {
+      "id": "doc-0081",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q1 2020 Operating Results",
+      "filename": "2020-04-15 - AstroDig LLC - Q1 2020 Operating Results.xlsx",
+      "publication_date": "2020-04-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2020-q1"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0082",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q2 2020 Operating Results",
+      "filename": "2020-07-15 - AstroDig LLC - Q2 2020 Operating Results.xlsx",
+      "publication_date": "2020-07-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2020-q2"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0074",
+      "type": "press_release",
+      "format": "docx",
+      "title": "AstroDig LLC - Releases RegolithWorks 8.0 for Reduced-Scope Integration",
+      "filename": "2020-08-15 - AstroDig LLC - Releases RegolithWorks 8.0 for Reduced-Scope Integration.docx",
+      "publication_date": "2020-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-regolithworks-2020"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ]
+    },
+    {
+      "id": "doc-0075",
+      "type": "product_presentation",
+      "format": "pptx",
+      "title": "AstroDig LLC - RegolithWorks 8.0 - Ground Campaign Overview",
+      "filename": "2020-08-15 - AstroDig LLC - RegolithWorks 8.0 - Ground Campaign Overview.pptx",
+      "publication_date": "2020-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2020"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ]
+    },
+    {
+      "id": "doc-0076",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "AstroDig LLC - RegolithWorks 8.0 - Controlled Test Specification",
+      "filename": "2020-08-15 - AstroDig LLC - RegolithWorks 8.0 - Controlled Test Specification.docx",
+      "publication_date": "2020-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2020"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0077",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "AstroDig LLC - ScoutMap 8.0 - Analysis and Verification Specification",
+      "filename": "2020-08-15 - AstroDig LLC - ScoutMap 8.0 - Analysis and Verification Specification.docx",
+      "publication_date": "2020-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-scoutmap-2020"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0078",
+      "type": "meeting_transcript",
+      "format": "docx",
+      "title": "AstroDig LLC - Funding reset and program focus - Q3 Leadership Review Transcript",
+      "filename": "2020-10-15 - AstroDig LLC - Funding reset and program focus - Q3 Leadership Review Transcript.docx",
+      "publication_date": "2020-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2020-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ]
+    },
+    {
+      "id": "doc-0079",
+      "type": "board_deck",
+      "format": "pptx",
+      "title": "AstroDig LLC - Funding reset and program focus - Capital and Readiness Briefing",
+      "filename": "2020-10-15 - AstroDig LLC - Funding reset and program focus - Capital and Readiness Briefing.pptx",
+      "publication_date": "2020-10-15",
+      "audience": "board",
+      "anchor_ids": [
+        "financial-2020-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ]
+    },
+    {
+      "id": "doc-0083",
+      "type": "quarterly_report",
+      "format": "pptx",
+      "title": "AstroDig LLC - Q3 2020 Operating Results",
+      "filename": "2020-10-15 - AstroDig LLC - Q3 2020 Operating Results.pptx",
+      "publication_date": "2020-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2020-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0084",
+      "type": "financial_model",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q3 2020 Service Economics and Development Spending",
+      "filename": "2020-10-15 - AstroDig LLC - Q3 2020 Service Economics and Development Spending.xlsx",
+      "publication_date": "2020-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2020-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ]
+    },
+    {
+      "id": "doc-0080",
+      "type": "annual_report",
+      "format": "pptx",
+      "title": "AstroDig LLC - 2020 Annual Business and Financial Review",
+      "filename": "2021-02-15 - AstroDig LLC - 2020 Annual Business and Financial Review.pptx",
+      "publication_date": "2021-02-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2020-annual"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ]
+    },
+    {
+      "id": "doc-0092",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q1 2021 Operating Results",
+      "filename": "2021-04-15 - AstroDig LLC - Q1 2021 Operating Results.xlsx",
+      "publication_date": "2021-04-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2021-q1"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0093",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q2 2021 Operating Results",
+      "filename": "2021-07-15 - AstroDig LLC - Q2 2021 Operating Results.xlsx",
+      "publication_date": "2021-07-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2021-q2"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0085",
+      "type": "press_release",
+      "format": "docx",
+      "title": "AstroDig LLC - Releases RegolithWorks 9.0 for Contact-Sequence Rehearsal",
+      "filename": "2021-08-15 - AstroDig LLC - Releases RegolithWorks 9.0 for Contact-Sequence Rehearsal.docx",
+      "publication_date": "2021-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-regolithworks-2021"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ]
+    },
+    {
+      "id": "doc-0086",
+      "type": "product_presentation",
+      "format": "pptx",
+      "title": "AstroDig LLC - RegolithWorks 9.0 - Ground Campaign Overview",
+      "filename": "2021-08-15 - AstroDig LLC - RegolithWorks 9.0 - Ground Campaign Overview.pptx",
+      "publication_date": "2021-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2021"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ]
+    },
+    {
+      "id": "doc-0087",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "AstroDig LLC - RegolithWorks 9.0 - Controlled Test Specification",
+      "filename": "2021-08-15 - AstroDig LLC - RegolithWorks 9.0 - Controlled Test Specification.docx",
+      "publication_date": "2021-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2021"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0088",
+      "type": "product_spec",
+      "format": "xlsx",
+      "title": "AstroDig LLC - ScoutMap 9.0 - Analysis and Verification Specification",
+      "filename": "2021-08-15 - AstroDig LLC - ScoutMap 9.0 - Analysis and Verification Specification.xlsx",
+      "publication_date": "2021-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-scoutmap-2021"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0089",
+      "type": "meeting_transcript",
+      "format": "docx",
+      "title": "AstroDig LLC - Navigation and contact rehearsal - Q3 Leadership Review Transcript",
+      "filename": "2021-10-15 - AstroDig LLC - Navigation and contact rehearsal - Q3 Leadership Review Transcript.docx",
+      "publication_date": "2021-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2021-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ]
+    },
+    {
+      "id": "doc-0090",
+      "type": "board_deck",
+      "format": "pptx",
+      "title": "AstroDig LLC - Navigation and contact rehearsal - Capital and Readiness Briefing",
+      "filename": "2021-10-15 - AstroDig LLC - Navigation and contact rehearsal - Capital and Readiness Briefing.pptx",
+      "publication_date": "2021-10-15",
+      "audience": "board",
+      "anchor_ids": [
+        "financial-2021-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ]
+    },
+    {
+      "id": "doc-0094",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q3 2021 Operating Results",
+      "filename": "2021-10-15 - AstroDig LLC - Q3 2021 Operating Results.xlsx",
+      "publication_date": "2021-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2021-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0095",
+      "type": "financial_model",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q3 2021 Service Economics and Development Spending",
+      "filename": "2021-10-15 - AstroDig LLC - Q3 2021 Service Economics and Development Spending.xlsx",
+      "publication_date": "2021-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2021-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ]
+    },
+    {
+      "id": "doc-0091",
+      "type": "annual_report",
+      "format": "pptx",
+      "title": "AstroDig LLC - 2021 Annual Business and Financial Review",
+      "filename": "2022-02-15 - AstroDig LLC - 2021 Annual Business and Financial Review.pptx",
+      "publication_date": "2022-02-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2021-annual"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ]
+    },
+    {
+      "id": "doc-0103",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q1 2022 Operating Results",
+      "filename": "2022-04-15 - AstroDig LLC - Q1 2022 Operating Results.xlsx",
+      "publication_date": "2022-04-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2022-q1"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0104",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q2 2022 Operating Results",
+      "filename": "2022-07-15 - AstroDig LLC - Q2 2022 Operating Results.xlsx",
+      "publication_date": "2022-07-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2022-q2"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0096",
+      "type": "press_release",
+      "format": "docx",
+      "title": "AstroDig LLC - Releases RegolithWorks 10.0 for Sealed Volatile-Handling Trials",
+      "filename": "2022-08-15 - AstroDig LLC - Releases RegolithWorks 10.0 for Sealed Volatile-Handling Trials.docx",
+      "publication_date": "2022-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-regolithworks-2022"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ]
+    },
+    {
+      "id": "doc-0097",
+      "type": "product_presentation",
+      "format": "pptx",
+      "title": "AstroDig LLC - RegolithWorks 10.0 - Ground Campaign Overview",
+      "filename": "2022-08-15 - AstroDig LLC - RegolithWorks 10.0 - Ground Campaign Overview.pptx",
+      "publication_date": "2022-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2022"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ]
+    },
+    {
+      "id": "doc-0098",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "AstroDig LLC - RegolithWorks 10.0 - Controlled Test Specification",
+      "filename": "2022-08-15 - AstroDig LLC - RegolithWorks 10.0 - Controlled Test Specification.docx",
+      "publication_date": "2022-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2022"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0099",
+      "type": "product_spec",
+      "format": "xlsx",
+      "title": "AstroDig LLC - ScoutMap 10.0 - Analysis and Verification Specification",
+      "filename": "2022-08-15 - AstroDig LLC - ScoutMap 10.0 - Analysis and Verification Specification.xlsx",
+      "publication_date": "2022-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-scoutmap-2022"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0100",
+      "type": "meeting_transcript",
+      "format": "docx",
+      "title": "AstroDig LLC - Volatile-handling controls - Q3 Leadership Review Transcript",
+      "filename": "2022-10-15 - AstroDig LLC - Volatile-handling controls - Q3 Leadership Review Transcript.docx",
+      "publication_date": "2022-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2022-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ]
+    },
+    {
+      "id": "doc-0101",
+      "type": "board_deck",
+      "format": "pptx",
+      "title": "AstroDig LLC - Volatile-handling controls - Capital and Readiness Briefing",
+      "filename": "2022-10-15 - AstroDig LLC - Volatile-handling controls - Capital and Readiness Briefing.pptx",
+      "publication_date": "2022-10-15",
+      "audience": "board",
+      "anchor_ids": [
+        "financial-2022-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ]
+    },
+    {
+      "id": "doc-0105",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q3 2022 Operating Results",
+      "filename": "2022-10-15 - AstroDig LLC - Q3 2022 Operating Results.xlsx",
+      "publication_date": "2022-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2022-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0106",
+      "type": "financial_model",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q3 2022 Service Economics and Development Spending",
+      "filename": "2022-10-15 - AstroDig LLC - Q3 2022 Service Economics and Development Spending.xlsx",
+      "publication_date": "2022-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2022-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ]
+    },
+    {
+      "id": "doc-0102",
+      "type": "annual_report",
+      "format": "pptx",
+      "title": "AstroDig LLC - 2022 Annual Business and Financial Review",
+      "filename": "2023-02-15 - AstroDig LLC - 2022 Annual Business and Financial Review.pptx",
+      "publication_date": "2023-02-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2022-annual"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ]
+    },
+    {
+      "id": "doc-0114",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q1 2023 Operating Results",
+      "filename": "2023-04-15 - AstroDig LLC - Q1 2023 Operating Results.xlsx",
+      "publication_date": "2023-04-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2023-q1"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0115",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q2 2023 Operating Results",
+      "filename": "2023-07-15 - AstroDig LLC - Q2 2023 Operating Results.xlsx",
+      "publication_date": "2023-07-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2023-q2"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0107",
+      "type": "press_release",
+      "format": "docx",
+      "title": "AstroDig LLC - Releases RegolithWorks 11.0 for Prospecting Mission Concept",
+      "filename": "2023-08-15 - AstroDig LLC - Releases RegolithWorks 11.0 for Prospecting Mission Concept.docx",
+      "publication_date": "2023-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-regolithworks-2023"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ]
+    },
+    {
+      "id": "doc-0108",
+      "type": "product_presentation",
+      "format": "pptx",
+      "title": "AstroDig LLC - RegolithWorks 11.0 - Ground Campaign Overview",
+      "filename": "2023-08-15 - AstroDig LLC - RegolithWorks 11.0 - Ground Campaign Overview.pptx",
+      "publication_date": "2023-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2023"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ]
+    },
+    {
+      "id": "doc-0109",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "AstroDig LLC - RegolithWorks 11.0 - Controlled Test Specification",
+      "filename": "2023-08-15 - AstroDig LLC - RegolithWorks 11.0 - Controlled Test Specification.docx",
+      "publication_date": "2023-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2023"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0110",
+      "type": "product_spec",
+      "format": "xlsx",
+      "title": "AstroDig LLC - ScoutMap 11.0 - Analysis and Verification Specification",
+      "filename": "2023-08-15 - AstroDig LLC - ScoutMap 11.0 - Analysis and Verification Specification.xlsx",
+      "publication_date": "2023-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-scoutmap-2023"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0111",
+      "type": "meeting_transcript",
+      "format": "docx",
+      "title": "AstroDig LLC - Mission concept consolidation - Q3 Leadership Review Transcript",
+      "filename": "2023-10-15 - AstroDig LLC - Mission concept consolidation - Q3 Leadership Review Transcript.docx",
+      "publication_date": "2023-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2023-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ]
+    },
+    {
+      "id": "doc-0112",
+      "type": "board_deck",
+      "format": "pptx",
+      "title": "AstroDig LLC - Mission concept consolidation - Capital and Readiness Briefing",
+      "filename": "2023-10-15 - AstroDig LLC - Mission concept consolidation - Capital and Readiness Briefing.pptx",
+      "publication_date": "2023-10-15",
+      "audience": "board",
+      "anchor_ids": [
+        "financial-2023-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ]
+    },
+    {
+      "id": "doc-0116",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q3 2023 Operating Results",
+      "filename": "2023-10-15 - AstroDig LLC - Q3 2023 Operating Results.xlsx",
+      "publication_date": "2023-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2023-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0117",
+      "type": "financial_model",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q3 2023 Service Economics and Development Spending",
+      "filename": "2023-10-15 - AstroDig LLC - Q3 2023 Service Economics and Development Spending.xlsx",
+      "publication_date": "2023-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2023-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ]
+    },
+    {
+      "id": "doc-0113",
+      "type": "annual_report",
+      "format": "pptx",
+      "title": "AstroDig LLC - 2023 Annual Business and Financial Review",
+      "filename": "2024-02-15 - AstroDig LLC - 2023 Annual Business and Financial Review.pptx",
+      "publication_date": "2024-02-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2023-annual"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ]
+    },
+    {
+      "id": "doc-0125",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q1 2024 Operating Results",
+      "filename": "2024-04-15 - AstroDig LLC - Q1 2024 Operating Results.xlsx",
+      "publication_date": "2024-04-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2024-q1"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0126",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q2 2024 Operating Results",
+      "filename": "2024-07-15 - AstroDig LLC - Q2 2024 Operating Results.xlsx",
+      "publication_date": "2024-07-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2024-q2"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0118",
+      "type": "press_release",
+      "format": "docx",
+      "title": "AstroDig LLC - Releases RegolithWorks 12.0 for Flight-Interface Development",
+      "filename": "2024-08-15 - AstroDig LLC - Releases RegolithWorks 12.0 for Flight-Interface Development.docx",
+      "publication_date": "2024-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-regolithworks-2024"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ]
+    },
+    {
+      "id": "doc-0119",
+      "type": "product_presentation",
+      "format": "pptx",
+      "title": "AstroDig LLC - RegolithWorks 12.0 - Ground Campaign Overview",
+      "filename": "2024-08-15 - AstroDig LLC - RegolithWorks 12.0 - Ground Campaign Overview.pptx",
+      "publication_date": "2024-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2024"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ]
+    },
+    {
+      "id": "doc-0120",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "AstroDig LLC - RegolithWorks 12.0 - Controlled Test Specification",
+      "filename": "2024-08-15 - AstroDig LLC - RegolithWorks 12.0 - Controlled Test Specification.docx",
+      "publication_date": "2024-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2024"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0121",
+      "type": "product_spec",
+      "format": "xlsx",
+      "title": "AstroDig LLC - ScoutMap 12.0 - Analysis and Verification Specification",
+      "filename": "2024-08-15 - AstroDig LLC - ScoutMap 12.0 - Analysis and Verification Specification.xlsx",
+      "publication_date": "2024-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-scoutmap-2024"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0122",
+      "type": "meeting_transcript",
+      "format": "docx",
+      "title": "AstroDig LLC - Flight-interface engineering - Q3 Leadership Review Transcript",
+      "filename": "2024-10-15 - AstroDig LLC - Flight-interface engineering - Q3 Leadership Review Transcript.docx",
+      "publication_date": "2024-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2024-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ]
+    },
+    {
+      "id": "doc-0123",
+      "type": "board_deck",
+      "format": "pptx",
+      "title": "AstroDig LLC - Flight-interface engineering - Capital and Readiness Briefing",
+      "filename": "2024-10-15 - AstroDig LLC - Flight-interface engineering - Capital and Readiness Briefing.pptx",
+      "publication_date": "2024-10-15",
+      "audience": "board",
+      "anchor_ids": [
+        "financial-2024-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ]
+    },
+    {
+      "id": "doc-0127",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q3 2024 Operating Results",
+      "filename": "2024-10-15 - AstroDig LLC - Q3 2024 Operating Results.xlsx",
+      "publication_date": "2024-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2024-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0128",
+      "type": "financial_model",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q3 2024 Service Economics and Development Spending",
+      "filename": "2024-10-15 - AstroDig LLC - Q3 2024 Service Economics and Development Spending.xlsx",
+      "publication_date": "2024-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2024-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ]
+    },
+    {
+      "id": "doc-0124",
+      "type": "annual_report",
+      "format": "pptx",
+      "title": "AstroDig LLC - 2024 Annual Business and Financial Review",
+      "filename": "2025-02-15 - AstroDig LLC - 2024 Annual Business and Financial Review.pptx",
+      "publication_date": "2025-02-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2024-annual"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ]
+    },
+    {
+      "id": "doc-0136",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q1 2025 Operating Results",
+      "filename": "2025-04-15 - AstroDig LLC - Q1 2025 Operating Results.xlsx",
+      "publication_date": "2025-04-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2025-q1"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0137",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q2 2025 Operating Results",
+      "filename": "2025-07-15 - AstroDig LLC - Q2 2025 Operating Results.xlsx",
+      "publication_date": "2025-07-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2025-q2"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0129",
+      "type": "press_release",
+      "format": "docx",
+      "title": "AstroDig LLC - Releases RegolithWorks 13.0 for Prospecting Payload Review",
+      "filename": "2025-08-15 - AstroDig LLC - Releases RegolithWorks 13.0 for Prospecting Payload Review.docx",
+      "publication_date": "2025-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-regolithworks-2025"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ]
+    },
+    {
+      "id": "doc-0130",
+      "type": "product_presentation",
+      "format": "pptx",
+      "title": "AstroDig LLC - RegolithWorks 13.0 - Ground Campaign Overview",
+      "filename": "2025-08-15 - AstroDig LLC - RegolithWorks 13.0 - Ground Campaign Overview.pptx",
+      "publication_date": "2025-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2025"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ]
+    },
+    {
+      "id": "doc-0131",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "AstroDig LLC - RegolithWorks 13.0 - Controlled Test Specification",
+      "filename": "2025-08-15 - AstroDig LLC - RegolithWorks 13.0 - Controlled Test Specification.docx",
+      "publication_date": "2025-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2025"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0132",
+      "type": "product_spec",
+      "format": "xlsx",
+      "title": "AstroDig LLC - ScoutMap 13.0 - Analysis and Verification Specification",
+      "filename": "2025-08-15 - AstroDig LLC - ScoutMap 13.0 - Analysis and Verification Specification.xlsx",
+      "publication_date": "2025-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-scoutmap-2025"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0133",
+      "type": "meeting_transcript",
+      "format": "docx",
+      "title": "AstroDig LLC - Prospecting architecture review - Q3 Leadership Review Transcript",
+      "filename": "2025-10-15 - AstroDig LLC - Prospecting architecture review - Q3 Leadership Review Transcript.docx",
+      "publication_date": "2025-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2025-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ]
+    },
+    {
+      "id": "doc-0134",
+      "type": "board_deck",
+      "format": "pptx",
+      "title": "AstroDig LLC - Prospecting architecture review - Capital and Readiness Briefing",
+      "filename": "2025-10-15 - AstroDig LLC - Prospecting architecture review - Capital and Readiness Briefing.pptx",
+      "publication_date": "2025-10-15",
+      "audience": "board",
+      "anchor_ids": [
+        "financial-2025-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ]
+    },
+    {
+      "id": "doc-0138",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q3 2025 Operating Results",
+      "filename": "2025-10-15 - AstroDig LLC - Q3 2025 Operating Results.xlsx",
+      "publication_date": "2025-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2025-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0139",
+      "type": "financial_model",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q3 2025 Service Economics and Development Spending",
+      "filename": "2025-10-15 - AstroDig LLC - Q3 2025 Service Economics and Development Spending.xlsx",
+      "publication_date": "2025-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2025-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ]
+    },
+    {
+      "id": "doc-0135",
+      "type": "annual_report",
+      "format": "pptx",
+      "title": "AstroDig LLC - 2025 Annual Business and Financial Review",
+      "filename": "2026-02-15 - AstroDig LLC - 2025 Annual Business and Financial Review.pptx",
+      "publication_date": "2026-02-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2025-annual"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ]
+    },
+    {
+      "id": "doc-0147",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q1 2026 Operating Results",
+      "filename": "2026-04-15 - AstroDig LLC - Q1 2026 Operating Results.xlsx",
+      "publication_date": "2026-04-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2026-q1"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0148",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q2 2026 Operating Results",
+      "filename": "2026-07-15 - AstroDig LLC - Q2 2026 Operating Results.xlsx",
+      "publication_date": "2026-07-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2026-q2"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0140",
+      "type": "press_release",
+      "format": "docx",
+      "title": "AstroDig LLC - Releases RegolithWorks 14.0 for 2032 Demonstration Gate Review",
+      "filename": "2026-08-15 - AstroDig LLC - Releases RegolithWorks 14.0 for 2032 Demonstration Gate Review.docx",
+      "publication_date": "2026-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-regolithworks-2026"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ]
+    },
+    {
+      "id": "doc-0141",
+      "type": "product_presentation",
+      "format": "pptx",
+      "title": "AstroDig LLC - RegolithWorks 14.0 - Ground Campaign Overview",
+      "filename": "2026-08-15 - AstroDig LLC - RegolithWorks 14.0 - Ground Campaign Overview.pptx",
+      "publication_date": "2026-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2026"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ]
+    },
+    {
+      "id": "doc-0142",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "AstroDig LLC - RegolithWorks 14.0 - Controlled Test Specification",
+      "filename": "2026-08-15 - AstroDig LLC - RegolithWorks 14.0 - Controlled Test Specification.docx",
+      "publication_date": "2026-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-regolithworks-2026"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0143",
+      "type": "product_spec",
+      "format": "xlsx",
+      "title": "AstroDig LLC - ScoutMap 14.0 - Analysis and Verification Specification",
+      "filename": "2026-08-15 - AstroDig LLC - ScoutMap 14.0 - Analysis and Verification Specification.xlsx",
+      "publication_date": "2026-08-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-scoutmap-2026"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ]
+    },
+    {
+      "id": "doc-0144",
+      "type": "meeting_transcript",
+      "format": "docx",
+      "title": "AstroDig LLC - Demonstration readiness planning - Q3 Leadership Review Transcript",
+      "filename": "2026-10-15 - AstroDig LLC - Demonstration readiness planning - Q3 Leadership Review Transcript.docx",
+      "publication_date": "2026-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2026-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ]
+    },
+    {
+      "id": "doc-0145",
+      "type": "board_deck",
+      "format": "pptx",
+      "title": "AstroDig LLC - Demonstration readiness planning - Capital and Readiness Briefing",
+      "filename": "2026-10-15 - AstroDig LLC - Demonstration readiness planning - Capital and Readiness Briefing.pptx",
+      "publication_date": "2026-10-15",
+      "audience": "board",
+      "anchor_ids": [
+        "financial-2026-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ]
+    },
+    {
+      "id": "doc-0149",
+      "type": "quarterly_report",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q3 2026 Operating Results",
+      "filename": "2026-10-15 - AstroDig LLC - Q3 2026 Operating Results.xlsx",
+      "publication_date": "2026-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2026-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ]
+    },
+    {
+      "id": "doc-0150",
+      "type": "financial_model",
+      "format": "xlsx",
+      "title": "AstroDig LLC - Q3 2026 Service Economics and Development Spending",
+      "filename": "2026-10-15 - AstroDig LLC - Q3 2026 Service Economics and Development Spending.xlsx",
+      "publication_date": "2026-10-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2026-q3"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ]
+    },
+    {
+      "id": "doc-0146",
+      "type": "annual_report",
+      "format": "pptx",
+      "title": "AstroDig LLC - 2026 Annual Business and Financial Review",
+      "filename": "2027-02-15 - AstroDig LLC - 2026 Annual Business and Financial Review.pptx",
+      "publication_date": "2027-02-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2026-annual"
+      ],
+      "revision": 1,
+      "content_depth": "medium",
+      "required_sections": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ]
+    }
+  ],
+  "warnings": [
+    "Fiscal-year 2013-2026 coverage includes a reporting publication tail through February 15, 2027.",
+    "Full-year 2026 and later publication dates belong to the requested invented history; they are not real-world actuals available on October 8, 2026.",
+    "Q4 results appear in annual reporting rather than separate Q4 report deliverables.",
+    "The 2032 mining demonstration remains prospective; no completed mining mission, resource reserve, or commodity-sales revenue is claimed."
+  ]
+}

@@ -1,0 +1,2423 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-10-09T11:54:25.099972+00:00",
+  "reviewer": "Independent presentation visual QA; no delegated agents",
+  "scope": "All 50 PPTX entries in build\\plan.json; existing local LibreOffice/PyMuPDF renders; no artifact or business-fact edits.",
+  "prior_fix_context": "This is an independent review of the current post-pilot artifacts. The requester reports earlier title, layout-repetition and spacing fixes; this receipt does not claim the initial pre-fix inspection was flawless or independently certify those earlier versions.",
+  "limitations": [
+    "All slides were visually examined in complete contact sheets, not all at individual-slide resolution. Eight selected dense or suspect slides were additionally opened as individual full-size PNGs.",
+    "Forty-two decks have contact-sheet-only visual coverage. Subtle glyph clipping, exact font-size legibility, and small chart-label collisions may not be detectable at that scale.",
+    "This review uses existing LibreOffice PDF/PyMuPDF PNG output. Native Microsoft PowerPoint rendering, animations, speaker notes, interactive behavior and accessibility were not tested.",
+    "Visual presentation only: no re-audit of business facts, dates, financial arithmetic, canon or semantic content was undertaken. Mechanical receipts were used solely to verify current artifact hashes and slide counts.",
+    "Passed means no blocking visual defect was observed within this stated coverage, not flawless design. Minor projection-readability, whitespace and wrapping concerns are retained per document."
+  ],
+  "summary": {
+    "planned_pptx": 50,
+    "reviewed_decks": 50,
+    "complete_contact_sheets_reviewed": 50,
+    "slides_covered_by_contact_sheets": 606,
+    "individual_full_size_slides_reviewed": 8,
+    "decks_with_individual_full_size_review": 8,
+    "passed": 50,
+    "blocked": 0,
+    "blocking_issues": []
+  },
+  "documents": [
+    {
+      "document_id": "doc-0002",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - RegolithWorks 1.0 - Ground Campaign Overview': complete contact sheet covering slides 1-11 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. Full-size slide 5 confirms all five evidence-grid text blocks are contained, with aligned card borders, consistent padding and clear footer separation. Examined the wrapped cover title and badge, decision cards, callout boundaries, numbered containment/recovery rows, evidence grid, five-step process cards, use-case/input cards and dark closing slide. Titles stay separate from body content; card edges/columns and numbered rows align consistently. No charts are present. No visible clipping, overlapping text, footer collisions or edge-margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5,
+            6
+          ],
+          "description": "Technical row/grid text is visually smaller than the surrounding headings and generous whitespace; potentially less comfortable for distant projection, although no cut-off or overlap is visible."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            7
+          ],
+          "description": "Five narrow process cards create short wrapped lines and substantial empty lower card space. The sequence remains aligned and readable, but this is a polish opportunity rather than an overflow defect."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0002\\contact-sheet.png",
+        "build\\renders\\doc-0002\\page-005.png"
+      ],
+      "artifact_sha256": "27cb5c01ce6b806895150db3650ef75dd0e53e8d4770f963c945dec7176cd14f",
+      "slide_count": 11,
+      "full_size_slides_reviewed": [
+        5
+      ],
+      "mechanical_receipt": "build\\checks\\doc-0002.json"
+    },
+    {
+      "document_id": "doc-0006",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - Engineering foundation - Capital and Readiness Briefing': complete contact sheet covering slides 1-12 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. Full-size slide 11 confirms four complete action rows, intact owner/date text and a clear gap above the footer. Examined the two-line cover/title separation, decision and scope callouts, income/spending and quarterly bar-chart geometry, capacity cards, risk/gate cards, option comparison, four action/owner rows and dark conclusion. Positive/negative bars, plot margins and adjacent narrative blocks remain separate; rows/cards are aligned and the body stays above the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5
+          ],
+          "description": "Chart ticks and data labels are visually small relative to the plot, and raw integer tick formatting is less scannable than abbreviated monetary scales. No label collision is apparent in the contact sheet."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            11
+          ],
+          "description": "Long action/owner sentences wrap into dense two-line rows. The rows remain distinct, but a more concise visual treatment would improve scanning."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0006\\contact-sheet.png",
+        "build\\renders\\doc-0006\\page-011.png"
+      ],
+      "artifact_sha256": "74e95669ba856d67151b28d483e68ded04314ab84f5297cec8dd007c3adfa704",
+      "slide_count": 12,
+      "full_size_slides_reviewed": [
+        11
+      ],
+      "mechanical_receipt": "build\\checks\\doc-0006.json"
+    },
+    {
+      "document_id": "doc-0010",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - Q3 2013 Operating Results': complete contact sheet covering slides 1-11 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. Full-size slide 3 confirms the chart and explanatory column remain separate and the negative-result label is intact; its proximity to a gridline is noted below. Examined the cover, operating-result cards, four chart slides (income/spending, revenue sources, spending categories and available quarters), delivery cards, backlog callout, tradeoff/risk cards and dark outlook. Bar extents, negative operating-result labels and narrative columns remain inside their slide regions; headings and card tops are aligned. No visible clipped content, overlap, footer collision or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Chart ticks/data labels are small in the overall composition and the ungrouped integer axis ticks are harder to scan than abbreviated monetary scales; the bars and category labels remain visually distinct."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            3
+          ],
+          "description": "The negative operating-result data label sits very close to a horizontal gridline. The number remains legible at individual-slide scale, but gridline/label separation could be improved."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0010\\contact-sheet.png",
+        "build\\renders\\doc-0010\\page-003.png"
+      ],
+      "artifact_sha256": "a8dc868f8d1b82206ec3f8067335cfb42e8befa851030fb3ffec00fdedfc9d6e",
+      "slide_count": 11,
+      "full_size_slides_reviewed": [
+        3
+      ],
+      "mechanical_receipt": "build\\checks\\doc-0010.json"
+    },
+    {
+      "document_id": "doc-0007",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - 2013 Annual Business and Financial Review': complete contact sheet covering slides 1-14 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. Full-size slide 14 confirms the dense gate paragraphs are completely contained in three aligned cards, with strong body contrast and clear footer separation. Examined all cover/cards/callouts, four chart slides (income/spending, revenue sources, spending categories and quarter profile), delivery/tradeoff/risk cards, annual reconciliation, available-year comparison, leadership rows and final mission-gate cards. Long gate text stays inside the cards; chart and narrative columns remain separate, and body/leadership rows clear the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Chart ticks/data labels are small in the overall composition, and ungrouped integer axis ticks are harder to scan than abbreviated monetary scales; no blocking label collision is apparent."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            14
+          ],
+          "description": "The mission-gate cards contain multiple short wrapped lines and are denser than the other three-card slides. They remain contained, but could be easier to scan."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0007\\contact-sheet.png",
+        "build\\renders\\doc-0007\\page-014.png"
+      ],
+      "artifact_sha256": "0a60b08b290eb1dc3ccb296883184e081396138b204fe2f805a17b0817c30484",
+      "slide_count": 14,
+      "full_size_slides_reviewed": [
+        14
+      ],
+      "mechanical_receipt": "build\\checks\\doc-0007.json"
+    },
+    {
+      "document_id": "doc-0012",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - RegolithWorks 2.0 - Ground Campaign Overview': complete contact sheet covering slides 1-11 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the wrapped cover title and badge, decision cards, callout boundaries, numbered containment/recovery rows, evidence grid, five-step process cards, use-case/input cards and dark closing slide. Titles stay separate from body content; card edges/columns and numbered rows align consistently. No charts are present. No visible clipping, overlapping text, footer collisions or edge-margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5,
+            6
+          ],
+          "description": "Technical row/grid text is visually smaller than the surrounding headings and generous whitespace; potentially less comfortable for distant projection, although no cut-off or overlap is visible."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            7
+          ],
+          "description": "Five narrow process cards create short wrapped lines and substantial empty lower card space. The sequence remains aligned and readable, but this is a polish opportunity rather than an overflow defect."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0012\\contact-sheet.png"
+      ],
+      "artifact_sha256": "41461d56e51c39abc711eb866c907ff4c4b6bdf19ac78783acf8eaf3f2187c06",
+      "slide_count": 11,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0012.json"
+    },
+    {
+      "document_id": "doc-0016",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - Target-screening discipline - Capital and Readiness Briefing': complete contact sheet covering slides 1-12 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the two-line cover/title separation, decision and scope callouts, income/spending and quarterly bar-chart geometry, capacity cards, risk/gate cards, option comparison, four action/owner rows and dark conclusion. Positive/negative bars, plot margins and adjacent narrative blocks remain separate; rows/cards are aligned and the body stays above the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5
+          ],
+          "description": "Chart ticks and data labels are visually small relative to the plot, and raw integer tick formatting is less scannable than abbreviated monetary scales. No label collision is apparent in the contact sheet."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            11
+          ],
+          "description": "Long action/owner sentences wrap into dense two-line rows. The rows remain distinct, but a more concise visual treatment would improve scanning."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0016\\contact-sheet.png"
+      ],
+      "artifact_sha256": "c1f7e842c61c6d4d42f2d1803b38b5b5d8993951aeb039b2893f4e74066cc20f",
+      "slide_count": 12,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0016.json"
+    },
+    {
+      "document_id": "doc-0020",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - Q3 2014 Operating Results': complete contact sheet covering slides 1-11 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the cover, operating-result cards, four chart slides (income/spending, revenue sources, spending categories and available quarters), delivery cards, backlog callout, tradeoff/risk cards and dark outlook. Bar extents, negative operating-result labels and narrative columns remain inside their slide regions; headings and card tops are aligned. No visible clipped content, overlap, footer collision or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Chart ticks/data labels are small in the overall composition and the ungrouped integer axis ticks are harder to scan than abbreviated monetary scales; the bars and category labels remain visually distinct."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0020\\contact-sheet.png"
+      ],
+      "artifact_sha256": "7a72c13ea73f5d3b2f206f39d6058898c1904e84973c3b930f3ad5d0cc5b3f10",
+      "slide_count": 11,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0020.json"
+    },
+    {
+      "document_id": "doc-0017",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - 2014 Annual Business and Financial Review': complete contact sheet covering slides 1-14 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined all cover/cards/callouts, four chart slides (income/spending, revenue sources, spending categories and quarter profile), delivery/tradeoff/risk cards, annual reconciliation, available-year comparison, leadership rows and final mission-gate cards. Long gate text stays inside the cards; chart and narrative columns remain separate, and body/leadership rows clear the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Chart ticks/data labels are small in the overall composition, and ungrouped integer axis ticks are harder to scan than abbreviated monetary scales; no blocking label collision is apparent."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            14
+          ],
+          "description": "The mission-gate cards contain multiple short wrapped lines and are denser than the other three-card slides. They remain contained, but could be easier to scan."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0017\\contact-sheet.png"
+      ],
+      "artifact_sha256": "c01eaa03139fec1b6b86896fab432a7fc4aa60b1f634a572e382fcaf02938dbb",
+      "slide_count": 14,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0017.json"
+    },
+    {
+      "document_id": "doc-0022",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - RegolithWorks 3.0 - Ground Campaign Overview': complete contact sheet covering slides 1-11 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the wrapped cover title and badge, decision cards, callout boundaries, numbered containment/recovery rows, evidence grid, five-step process cards, use-case/input cards and dark closing slide. Titles stay separate from body content; card edges/columns and numbered rows align consistently. No charts are present. No visible clipping, overlapping text, footer collisions or edge-margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5,
+            6
+          ],
+          "description": "Technical row/grid text is visually smaller than the surrounding headings and generous whitespace; potentially less comfortable for distant projection, although no cut-off or overlap is visible."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            7
+          ],
+          "description": "Five narrow process cards create short wrapped lines and substantial empty lower card space. The sequence remains aligned and readable, but this is a polish opportunity rather than an overflow defect."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0022\\contact-sheet.png"
+      ],
+      "artifact_sha256": "8eb9742e1cba5eaa573de5cb22806589bc7ee0f71bc8cc82ad14bf0b15b72284",
+      "slide_count": 11,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0022.json"
+    },
+    {
+      "document_id": "doc-0026",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - Resource-characterization studies - Capital and Readiness Briefing': complete contact sheet covering slides 1-12 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. Full-size slide 11 confirms the suspected date wrap is a real but nonblocking line break, not clipping; all four action rows are complete and clear of the footer. Examined the two-line cover/title separation, decision and scope callouts, income/spending and quarterly bar-chart geometry, capacity cards, risk/gate cards, option comparison, four action/owner rows and dark conclusion. Positive/negative bars, plot margins and adjacent narrative blocks remain separate; rows/cards are aligned and the body stays above the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5
+          ],
+          "description": "Chart ticks and data labels are visually small relative to the plot, and raw integer tick formatting is less scannable than abbreviated monetary scales. No label collision is apparent in the contact sheet."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            11
+          ],
+          "description": "Long action/owner sentences wrap into dense two-line rows. The rows remain distinct, but a more concise visual treatment would improve scanning."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            11
+          ],
+          "description": "Action row 1 splits the date after '2015-' onto the next line ('11-15.'). Both pieces are intact, but keeping the date together would improve polish."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0026\\contact-sheet.png",
+        "build\\renders\\doc-0026\\page-011.png"
+      ],
+      "artifact_sha256": "36fc1f9c63bb95d03add4478d8175d831da8b3db81483d5798d69a9b161d6341",
+      "slide_count": 12,
+      "full_size_slides_reviewed": [
+        11
+      ],
+      "mechanical_receipt": "build\\checks\\doc-0026.json"
+    },
+    {
+      "document_id": "doc-0030",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - Q3 2015 Operating Results': complete contact sheet covering slides 1-11 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the cover, operating-result cards, four chart slides (income/spending, revenue sources, spending categories and available quarters), delivery cards, backlog callout, tradeoff/risk cards and dark outlook. Bar extents, negative operating-result labels and narrative columns remain inside their slide regions; headings and card tops are aligned. No visible clipped content, overlap, footer collision or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Chart ticks/data labels are small in the overall composition and the ungrouped integer axis ticks are harder to scan than abbreviated monetary scales; the bars and category labels remain visually distinct."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0030\\contact-sheet.png"
+      ],
+      "artifact_sha256": "c79dad6e404dd524504f6b6ea6865f721712642c322b451afb75ffba19f0106a",
+      "slide_count": 11,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0030.json"
+    },
+    {
+      "document_id": "doc-0027",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - 2015 Annual Business and Financial Review': complete contact sheet covering slides 1-14 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined all cover/cards/callouts, four chart slides (income/spending, revenue sources, spending categories and quarter profile), delivery/tradeoff/risk cards, annual reconciliation, available-year comparison, leadership rows and final mission-gate cards. Long gate text stays inside the cards; chart and narrative columns remain separate, and body/leadership rows clear the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Chart ticks/data labels are small in the overall composition, and ungrouped integer axis ticks are harder to scan than abbreviated monetary scales; no blocking label collision is apparent."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            14
+          ],
+          "description": "The mission-gate cards contain multiple short wrapped lines and are denser than the other three-card slides. They remain contained, but could be easier to scan."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0027\\contact-sheet.png"
+      ],
+      "artifact_sha256": "9ab079b5fed771d8d8e8e69bf2bc476f0a706d7a4bfe6b21600c33a5b8296f7e",
+      "slide_count": 14,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0027.json"
+    },
+    {
+      "document_id": "doc-0032",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - RegolithWorks 4.0 - Ground Campaign Overview': complete contact sheet covering slides 1-11 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the wrapped cover title and badge, decision cards, callout boundaries, numbered containment/recovery rows, evidence grid, five-step process cards, use-case/input cards and dark closing slide. Titles stay separate from body content; card edges/columns and numbered rows align consistently. No charts are present. No visible clipping, overlapping text, footer collisions or edge-margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5,
+            6
+          ],
+          "description": "Technical row/grid text is visually smaller than the surrounding headings and generous whitespace; potentially less comfortable for distant projection, although no cut-off or overlap is visible."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            7
+          ],
+          "description": "Five narrow process cards create short wrapped lines and substantial empty lower card space. The sequence remains aligned and readable, but this is a polish opportunity rather than an overflow defect."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0032\\contact-sheet.png"
+      ],
+      "artifact_sha256": "ef76d07a2f844205cef747b52582fba6ed33f0f37cda749799003dde57252206",
+      "slide_count": 11,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0032.json"
+    },
+    {
+      "document_id": "doc-0036",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - Closed-chamber bench commissioning - Capital and Readiness Briefing': complete contact sheet covering slides 1-12 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the two-line cover/title separation, decision and scope callouts, income/spending and quarterly bar-chart geometry, capacity cards, risk/gate cards, option comparison, four action/owner rows and dark conclusion. Positive/negative bars, plot margins and adjacent narrative blocks remain separate; rows/cards are aligned and the body stays above the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5
+          ],
+          "description": "Chart ticks and data labels are visually small relative to the plot, and raw integer tick formatting is less scannable than abbreviated monetary scales. No label collision is apparent in the contact sheet."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            11
+          ],
+          "description": "Long action/owner sentences wrap into dense two-line rows. The rows remain distinct, but a more concise visual treatment would improve scanning."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0036\\contact-sheet.png"
+      ],
+      "artifact_sha256": "cfb15e8ee23fcf742bddfac55ca1b8031079f91f138ffa56d26912e41ba8701f",
+      "slide_count": 12,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0036.json"
+    },
+    {
+      "document_id": "doc-0040",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - Q3 2016 Operating Results': complete contact sheet covering slides 1-11 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the cover, operating-result cards, four chart slides (income/spending, revenue sources, spending categories and available quarters), delivery cards, backlog callout, tradeoff/risk cards and dark outlook. Bar extents, negative operating-result labels and narrative columns remain inside their slide regions; headings and card tops are aligned. No visible clipped content, overlap, footer collision or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Chart ticks/data labels are small in the overall composition and the ungrouped integer axis ticks are harder to scan than abbreviated monetary scales; the bars and category labels remain visually distinct."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0040\\contact-sheet.png"
+      ],
+      "artifact_sha256": "2d352220d325127f19f0812ae95b218ca9aec5454463dfdec89086a84aa893e4",
+      "slide_count": 11,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0040.json"
+    },
+    {
+      "document_id": "doc-0037",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - 2016 Annual Business and Financial Review': complete contact sheet covering slides 1-14 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined all cover/cards/callouts, four chart slides (income/spending, revenue sources, spending categories and quarter profile), delivery/tradeoff/risk cards, annual reconciliation, available-year comparison, leadership rows and final mission-gate cards. Long gate text stays inside the cards; chart and narrative columns remain separate, and body/leadership rows clear the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Chart ticks/data labels are small in the overall composition, and ungrouped integer axis ticks are harder to scan than abbreviated monetary scales; no blocking label collision is apparent."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            14
+          ],
+          "description": "The mission-gate cards contain multiple short wrapped lines and are denser than the other three-card slides. They remain contained, but could be easier to scan."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0037\\contact-sheet.png"
+      ],
+      "artifact_sha256": "8f891d7939b4fb0dac2bdcb3e16d854f625d0751f03fc6c2b2a19d67816b2cf5",
+      "slide_count": 14,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0037.json"
+    },
+    {
+      "document_id": "doc-0042",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - RegolithWorks 5.0 - Ground Campaign Overview': complete contact sheet covering slides 1-11 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the wrapped cover title and badge, decision cards, callout boundaries, numbered containment/recovery rows, evidence grid, five-step process cards, use-case/input cards and dark closing slide. Titles stay separate from body content; card edges/columns and numbered rows align consistently. No charts are present. No visible clipping, overlapping text, footer collisions or edge-margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5,
+            6
+          ],
+          "description": "Technical row/grid text is visually smaller than the surrounding headings and generous whitespace; potentially less comfortable for distant projection, although no cut-off or overlap is visible."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            7
+          ],
+          "description": "Five narrow process cards create short wrapped lines and substantial empty lower card space. The sequence remains aligned and readable, but this is a polish opportunity rather than an overflow defect."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0042\\contact-sheet.png"
+      ],
+      "artifact_sha256": "f4a48f71b72c81958adf92a62bcfdee03fd3dde45ed3a0dd479722c9129e8445",
+      "slide_count": 11,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0042.json"
+    },
+    {
+      "document_id": "doc-0046",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - Capture and containment iteration - Capital and Readiness Briefing': complete contact sheet covering slides 1-12 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the two-line cover/title separation, decision and scope callouts, income/spending and quarterly bar-chart geometry, capacity cards, risk/gate cards, option comparison, four action/owner rows and dark conclusion. Positive/negative bars, plot margins and adjacent narrative blocks remain separate; rows/cards are aligned and the body stays above the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5
+          ],
+          "description": "Chart ticks and data labels are visually small relative to the plot, and raw integer tick formatting is less scannable than abbreviated monetary scales. No label collision is apparent in the contact sheet."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            11
+          ],
+          "description": "Long action/owner sentences wrap into dense two-line rows. The rows remain distinct, but a more concise visual treatment would improve scanning."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0046\\contact-sheet.png"
+      ],
+      "artifact_sha256": "d2c878cd4e7b92863cd8f00406b91840b53079602f4f1b76f56a45e3726f2089",
+      "slide_count": 12,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0046.json"
+    },
+    {
+      "document_id": "doc-0050",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - Q3 2017 Operating Results': complete contact sheet covering slides 1-11 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the cover, operating-result cards, four chart slides (income/spending, revenue sources, spending categories and available quarters), delivery cards, backlog callout, tradeoff/risk cards and dark outlook. Bar extents, negative operating-result labels and narrative columns remain inside their slide regions; headings and card tops are aligned. No visible clipped content, overlap, footer collision or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Chart ticks/data labels are small in the overall composition and the ungrouped integer axis ticks are harder to scan than abbreviated monetary scales; the bars and category labels remain visually distinct."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0050\\contact-sheet.png"
+      ],
+      "artifact_sha256": "d55937d374263ab90bc4f444a6ad28617c78654048521cf482a76dfb6e06a459",
+      "slide_count": 11,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0050.json"
+    },
+    {
+      "document_id": "doc-0047",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - 2017 Annual Business and Financial Review': complete contact sheet covering slides 1-14 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined all cover/cards/callouts, four chart slides (income/spending, revenue sources, spending categories and quarter profile), delivery/tradeoff/risk cards, annual reconciliation, available-year comparison, leadership rows and final mission-gate cards. Long gate text stays inside the cards; chart and narrative columns remain separate, and body/leadership rows clear the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Chart ticks/data labels are small in the overall composition, and ungrouped integer axis ticks are harder to scan than abbreviated monetary scales; no blocking label collision is apparent."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            14
+          ],
+          "description": "The mission-gate cards contain multiple short wrapped lines and are denser than the other three-card slides. They remain contained, but could be easier to scan."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0047\\contact-sheet.png"
+      ],
+      "artifact_sha256": "92fd2c931f9a74a6c76f7489f98cbdea331ed6dad22ce46d7cc05202c6ea0fcb",
+      "slide_count": 14,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0047.json"
+    },
+    {
+      "document_id": "doc-0053",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - RegolithWorks 6.0 - Ground Campaign Overview': complete contact sheet covering slides 1-11 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the wrapped cover title and badge, decision cards, callout boundaries, numbered containment/recovery rows, evidence grid, five-step process cards, use-case/input cards and dark closing slide. Titles stay separate from body content; card edges/columns and numbered rows align consistently. No charts are present. No visible clipping, overlapping text, footer collisions or edge-margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5,
+            6
+          ],
+          "description": "Technical row/grid text is visually smaller than the surrounding headings and generous whitespace; potentially less comfortable for distant projection, although no cut-off or overlap is visible."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            7
+          ],
+          "description": "Five narrow process cards create short wrapped lines and substantial empty lower card space. The sequence remains aligned and readable, but this is a polish opportunity rather than an overflow defect."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0053\\contact-sheet.png"
+      ],
+      "artifact_sha256": "db8502d89dde523dd068ad58a2b18e8cc4b5b7a171794b7be8ff86e924ef18dd",
+      "slide_count": 11,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0053.json"
+    },
+    {
+      "document_id": "doc-0057",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - Autonomy-in-the-loop development - Capital and Readiness Briefing': complete contact sheet covering slides 1-12 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the two-line cover/title separation, decision and scope callouts, income/spending and quarterly bar-chart geometry, capacity cards, risk/gate cards, option comparison, four action/owner rows and dark conclusion. Positive/negative bars, plot margins and adjacent narrative blocks remain separate; rows/cards are aligned and the body stays above the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5
+          ],
+          "description": "Chart ticks and data labels are visually small relative to the plot, and raw integer tick formatting is less scannable than abbreviated monetary scales. No label collision is apparent in the contact sheet."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            11
+          ],
+          "description": "Long action/owner sentences wrap into dense two-line rows. The rows remain distinct, but a more concise visual treatment would improve scanning."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0057\\contact-sheet.png"
+      ],
+      "artifact_sha256": "b6ae733fcbda24ab6f658901437af8bcbf1c3f93bcfbedaa53ba3b3368aee161",
+      "slide_count": 12,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0057.json"
+    },
+    {
+      "document_id": "doc-0061",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - Q3 2018 Operating Results': complete contact sheet covering slides 1-11 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the cover, operating-result cards, four chart slides (income/spending, revenue sources, spending categories and available quarters), delivery cards, backlog callout, tradeoff/risk cards and dark outlook. Bar extents, negative operating-result labels and narrative columns remain inside their slide regions; headings and card tops are aligned. No visible clipped content, overlap, footer collision or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Chart ticks/data labels are small in the overall composition and the ungrouped integer axis ticks are harder to scan than abbreviated monetary scales; the bars and category labels remain visually distinct."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0061\\contact-sheet.png"
+      ],
+      "artifact_sha256": "2bf1682c29f406f605461c38cf8376d4cd6605c62f8c12b15eb1d8e4d8afae70",
+      "slide_count": 11,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0061.json"
+    },
+    {
+      "document_id": "doc-0058",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - 2018 Annual Business and Financial Review': complete contact sheet covering slides 1-14 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined all cover/cards/callouts, four chart slides (income/spending, revenue sources, spending categories and quarter profile), delivery/tradeoff/risk cards, annual reconciliation, available-year comparison, leadership rows and final mission-gate cards. Long gate text stays inside the cards; chart and narrative columns remain separate, and body/leadership rows clear the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Chart ticks/data labels are small in the overall composition, and ungrouped integer axis ticks are harder to scan than abbreviated monetary scales; no blocking label collision is apparent."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            14
+          ],
+          "description": "The mission-gate cards contain multiple short wrapped lines and are denser than the other three-card slides. They remain contained, but could be easier to scan."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0058\\contact-sheet.png"
+      ],
+      "artifact_sha256": "a1a87863b561f5c1a85b14a4e0882f17e58a2d0013fac22e54095652921adf56",
+      "slide_count": 14,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0058.json"
+    },
+    {
+      "document_id": "doc-0064",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - RegolithWorks 7.0 - Ground Campaign Overview': complete contact sheet covering slides 1-11 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the wrapped cover title and badge, decision cards, callout boundaries, numbered containment/recovery rows, evidence grid, five-step process cards, use-case/input cards and dark closing slide. Titles stay separate from body content; card edges/columns and numbered rows align consistently. No charts are present. No visible clipping, overlapping text, footer collisions or edge-margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5,
+            6
+          ],
+          "description": "Technical row/grid text is visually smaller than the surrounding headings and generous whitespace; potentially less comfortable for distant projection, although no cut-off or overlap is visible."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            7
+          ],
+          "description": "Five narrow process cards create short wrapped lines and substantial empty lower card space. The sequence remains aligned and readable, but this is a polish opportunity rather than an overflow defect."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0064\\contact-sheet.png"
+      ],
+      "artifact_sha256": "6c1e4621223b0ee81c244b1ca6d1aa51bf0c57c729f386d2a29d295b9d720101",
+      "slide_count": 11,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0064.json"
+    },
+    {
+      "document_id": "doc-0068",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - Integrated payload architecture - Capital and Readiness Briefing': complete contact sheet covering slides 1-12 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the two-line cover/title separation, decision and scope callouts, income/spending and quarterly bar-chart geometry, capacity cards, risk/gate cards, option comparison, four action/owner rows and dark conclusion. Positive/negative bars, plot margins and adjacent narrative blocks remain separate; rows/cards are aligned and the body stays above the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5
+          ],
+          "description": "Chart ticks and data labels are visually small relative to the plot, and raw integer tick formatting is less scannable than abbreviated monetary scales. No label collision is apparent in the contact sheet."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            11
+          ],
+          "description": "Long action/owner sentences wrap into dense two-line rows. The rows remain distinct, but a more concise visual treatment would improve scanning."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0068\\contact-sheet.png"
+      ],
+      "artifact_sha256": "0d1032274876ed53711c45c070b27424c4518894581f81c30251271763ac023f",
+      "slide_count": 12,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0068.json"
+    },
+    {
+      "document_id": "doc-0072",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - Q3 2019 Operating Results': complete contact sheet covering slides 1-11 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the cover, operating-result cards, four chart slides (income/spending, revenue sources, spending categories and available quarters), delivery cards, backlog callout, tradeoff/risk cards and dark outlook. Bar extents, negative operating-result labels and narrative columns remain inside their slide regions; headings and card tops are aligned. No visible clipped content, overlap, footer collision or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Chart ticks/data labels are small in the overall composition and the ungrouped integer axis ticks are harder to scan than abbreviated monetary scales; the bars and category labels remain visually distinct."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0072\\contact-sheet.png"
+      ],
+      "artifact_sha256": "502a67d109c30f6f7320c022d6174f83d8e228d15b8efd00a8ca721cc0d327f0",
+      "slide_count": 11,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0072.json"
+    },
+    {
+      "document_id": "doc-0069",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - 2019 Annual Business and Financial Review': complete contact sheet covering slides 1-14 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined all cover/cards/callouts, four chart slides (income/spending, revenue sources, spending categories and quarter profile), delivery/tradeoff/risk cards, annual reconciliation, available-year comparison, leadership rows and final mission-gate cards. Long gate text stays inside the cards; chart and narrative columns remain separate, and body/leadership rows clear the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Chart ticks/data labels are small in the overall composition, and ungrouped integer axis ticks are harder to scan than abbreviated monetary scales; no blocking label collision is apparent."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            14
+          ],
+          "description": "The mission-gate cards contain multiple short wrapped lines and are denser than the other three-card slides. They remain contained, but could be easier to scan."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0069\\contact-sheet.png"
+      ],
+      "artifact_sha256": "04202b8c0ff502dc2afab689319f52f9b2cddd46d69d07d0c329600411abfee3",
+      "slide_count": 14,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0069.json"
+    },
+    {
+      "document_id": "doc-0075",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - RegolithWorks 8.0 - Ground Campaign Overview': complete contact sheet covering slides 1-11 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the wrapped cover title and badge, decision cards, callout boundaries, numbered containment/recovery rows, evidence grid, five-step process cards, use-case/input cards and dark closing slide. Titles stay separate from body content; card edges/columns and numbered rows align consistently. No charts are present. No visible clipping, overlapping text, footer collisions or edge-margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5,
+            6
+          ],
+          "description": "Technical row/grid text is visually smaller than the surrounding headings and generous whitespace; potentially less comfortable for distant projection, although no cut-off or overlap is visible."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            7
+          ],
+          "description": "Five narrow process cards create short wrapped lines and substantial empty lower card space. The sequence remains aligned and readable, but this is a polish opportunity rather than an overflow defect."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0075\\contact-sheet.png"
+      ],
+      "artifact_sha256": "a8be53f86ddc97c4faf3860e07cb6315fc71d415cc819042bbac3e3b7b8e1242",
+      "slide_count": 11,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0075.json"
+    },
+    {
+      "document_id": "doc-0079",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - Funding reset and program focus - Capital and Readiness Briefing': complete contact sheet covering slides 1-12 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the two-line cover/title separation, decision and scope callouts, income/spending and quarterly bar-chart geometry, capacity cards, risk/gate cards, option comparison, four action/owner rows and dark conclusion. Positive/negative bars, plot margins and adjacent narrative blocks remain separate; rows/cards are aligned and the body stays above the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5
+          ],
+          "description": "Chart ticks and data labels are visually small relative to the plot, and raw integer tick formatting is less scannable than abbreviated monetary scales. No label collision is apparent in the contact sheet."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            11
+          ],
+          "description": "Long action/owner sentences wrap into dense two-line rows. The rows remain distinct, but a more concise visual treatment would improve scanning."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0079\\contact-sheet.png"
+      ],
+      "artifact_sha256": "fb786f6ee23ca586962891b71b22b762ab2cb82cc3e5f3619decf61906734629",
+      "slide_count": 12,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0079.json"
+    },
+    {
+      "document_id": "doc-0083",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - Q3 2020 Operating Results': complete contact sheet covering slides 1-11 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the cover, operating-result cards, four chart slides (income/spending, revenue sources, spending categories and available quarters), delivery cards, backlog callout, tradeoff/risk cards and dark outlook. Bar extents, negative operating-result labels and narrative columns remain inside their slide regions; headings and card tops are aligned. No visible clipped content, overlap, footer collision or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Chart ticks/data labels are small in the overall composition and the ungrouped integer axis ticks are harder to scan than abbreviated monetary scales; the bars and category labels remain visually distinct."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0083\\contact-sheet.png"
+      ],
+      "artifact_sha256": "626f8db9693e886352a62b4e6dd198a26d41a8d6102296623a11229de4bdf928",
+      "slide_count": 11,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0083.json"
+    },
+    {
+      "document_id": "doc-0080",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - 2020 Annual Business and Financial Review': complete contact sheet covering slides 1-14 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined all cover/cards/callouts, four chart slides (income/spending, revenue sources, spending categories and quarter profile), delivery/tradeoff/risk cards, annual reconciliation, available-year comparison, leadership rows and final mission-gate cards. Long gate text stays inside the cards; chart and narrative columns remain separate, and body/leadership rows clear the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Chart ticks/data labels are small in the overall composition, and ungrouped integer axis ticks are harder to scan than abbreviated monetary scales; no blocking label collision is apparent."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            14
+          ],
+          "description": "The mission-gate cards contain multiple short wrapped lines and are denser than the other three-card slides. They remain contained, but could be easier to scan."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0080\\contact-sheet.png"
+      ],
+      "artifact_sha256": "0367496d5e956d15ea05154f5478bcbc1e8be8e82348bc48ae642f3fb7148580",
+      "slide_count": 14,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0080.json"
+    },
+    {
+      "document_id": "doc-0086",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - RegolithWorks 9.0 - Ground Campaign Overview': complete contact sheet covering slides 1-11 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the wrapped cover title and badge, decision cards, callout boundaries, numbered containment/recovery rows, evidence grid, five-step process cards, use-case/input cards and dark closing slide. Titles stay separate from body content; card edges/columns and numbered rows align consistently. No charts are present. No visible clipping, overlapping text, footer collisions or edge-margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5,
+            6
+          ],
+          "description": "Technical row/grid text is visually smaller than the surrounding headings and generous whitespace; potentially less comfortable for distant projection, although no cut-off or overlap is visible."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            7
+          ],
+          "description": "Five narrow process cards create short wrapped lines and substantial empty lower card space. The sequence remains aligned and readable, but this is a polish opportunity rather than an overflow defect."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0086\\contact-sheet.png"
+      ],
+      "artifact_sha256": "bbea9b79390c772e6e618449a3274eda306d9665b88d56c026d6fb999962b2e3",
+      "slide_count": 11,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0086.json"
+    },
+    {
+      "document_id": "doc-0090",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - Navigation and contact rehearsal - Capital and Readiness Briefing': complete contact sheet covering slides 1-12 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the two-line cover/title separation, decision and scope callouts, income/spending and quarterly bar-chart geometry, capacity cards, risk/gate cards, option comparison, four action/owner rows and dark conclusion. Positive/negative bars, plot margins and adjacent narrative blocks remain separate; rows/cards are aligned and the body stays above the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5
+          ],
+          "description": "Chart ticks and data labels are visually small relative to the plot, and raw integer tick formatting is less scannable than abbreviated monetary scales. No label collision is apparent in the contact sheet."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            11
+          ],
+          "description": "Long action/owner sentences wrap into dense two-line rows. The rows remain distinct, but a more concise visual treatment would improve scanning."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0090\\contact-sheet.png"
+      ],
+      "artifact_sha256": "50aab9322b4ebe408865f8cf2ca56ae2ae22bbf9d7889e38d88cd6787e23a967",
+      "slide_count": 12,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0090.json"
+    },
+    {
+      "document_id": "doc-0091",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - 2021 Annual Business and Financial Review': complete contact sheet covering slides 1-14 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined all cover/cards/callouts, four chart slides (income/spending, revenue sources, spending categories and quarter profile), delivery/tradeoff/risk cards, annual reconciliation, available-year comparison, leadership rows and final mission-gate cards. Long gate text stays inside the cards; chart and narrative columns remain separate, and body/leadership rows clear the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Chart ticks/data labels are small in the overall composition, and ungrouped integer axis ticks are harder to scan than abbreviated monetary scales; no blocking label collision is apparent."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            14
+          ],
+          "description": "The mission-gate cards contain multiple short wrapped lines and are denser than the other three-card slides. They remain contained, but could be easier to scan."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0091\\contact-sheet.png"
+      ],
+      "artifact_sha256": "7ccb368e8c58791a52e030f18d4cf3c72af94206170828fd461a0b7e14c9a44d",
+      "slide_count": 14,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0091.json"
+    },
+    {
+      "document_id": "doc-0097",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - RegolithWorks 10.0 - Ground Campaign Overview': complete contact sheet covering slides 1-11 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the wrapped cover title and badge, decision cards, callout boundaries, numbered containment/recovery rows, evidence grid, five-step process cards, use-case/input cards and dark closing slide. Titles stay separate from body content; card edges/columns and numbered rows align consistently. No charts are present. No visible clipping, overlapping text, footer collisions or edge-margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5,
+            6
+          ],
+          "description": "Technical row/grid text is visually smaller than the surrounding headings and generous whitespace; potentially less comfortable for distant projection, although no cut-off or overlap is visible."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            7
+          ],
+          "description": "Five narrow process cards create short wrapped lines and substantial empty lower card space. The sequence remains aligned and readable, but this is a polish opportunity rather than an overflow defect."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0097\\contact-sheet.png"
+      ],
+      "artifact_sha256": "127407fc63ae6a1ee73ab5d39e41108a0bca8eb726d3c52eeed80e5b5f95e41c",
+      "slide_count": 11,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0097.json"
+    },
+    {
+      "document_id": "doc-0101",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - Volatile-handling controls - Capital and Readiness Briefing': complete contact sheet covering slides 1-12 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the two-line cover/title separation, decision and scope callouts, income/spending and quarterly bar-chart geometry, capacity cards, risk/gate cards, option comparison, four action/owner rows and dark conclusion. Positive/negative bars, plot margins and adjacent narrative blocks remain separate; rows/cards are aligned and the body stays above the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5
+          ],
+          "description": "Chart ticks and data labels are visually small relative to the plot, and raw integer tick formatting is less scannable than abbreviated monetary scales. No label collision is apparent in the contact sheet."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            11
+          ],
+          "description": "Long action/owner sentences wrap into dense two-line rows. The rows remain distinct, but a more concise visual treatment would improve scanning."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0101\\contact-sheet.png"
+      ],
+      "artifact_sha256": "511081c91b630b34daeea511d75c303a0efb88809e2582054f6c3f92ae3ad82d",
+      "slide_count": 12,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0101.json"
+    },
+    {
+      "document_id": "doc-0102",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - 2022 Annual Business and Financial Review': complete contact sheet covering slides 1-14 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined all cover/cards/callouts, four chart slides (income/spending, revenue sources, spending categories and quarter profile), delivery/tradeoff/risk cards, annual reconciliation, available-year comparison, leadership rows and final mission-gate cards. Long gate text stays inside the cards; chart and narrative columns remain separate, and body/leadership rows clear the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Chart ticks/data labels are small in the overall composition, and ungrouped integer axis ticks are harder to scan than abbreviated monetary scales; no blocking label collision is apparent."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            14
+          ],
+          "description": "The mission-gate cards contain multiple short wrapped lines and are denser than the other three-card slides. They remain contained, but could be easier to scan."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0102\\contact-sheet.png"
+      ],
+      "artifact_sha256": "c55d7a2ad3989ffafc0b02ffeb5634924d8f8ab1e9335bcef3b72055249a357b",
+      "slide_count": 14,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0102.json"
+    },
+    {
+      "document_id": "doc-0108",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - RegolithWorks 11.0 - Ground Campaign Overview': complete contact sheet covering slides 1-11 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the wrapped cover title and badge, decision cards, callout boundaries, numbered containment/recovery rows, evidence grid, five-step process cards, use-case/input cards and dark closing slide. Titles stay separate from body content; card edges/columns and numbered rows align consistently. No charts are present. No visible clipping, overlapping text, footer collisions or edge-margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5,
+            6
+          ],
+          "description": "Technical row/grid text is visually smaller than the surrounding headings and generous whitespace; potentially less comfortable for distant projection, although no cut-off or overlap is visible."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            7
+          ],
+          "description": "Five narrow process cards create short wrapped lines and substantial empty lower card space. The sequence remains aligned and readable, but this is a polish opportunity rather than an overflow defect."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0108\\contact-sheet.png"
+      ],
+      "artifact_sha256": "883e5c987e3d10c6e918fd81fae68ec7f2e4eee5a47d7f874e6aed5a0efe2c1d",
+      "slide_count": 11,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0108.json"
+    },
+    {
+      "document_id": "doc-0112",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - Mission concept consolidation - Capital and Readiness Briefing': complete contact sheet covering slides 1-12 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the two-line cover/title separation, decision and scope callouts, income/spending and quarterly bar-chart geometry, capacity cards, risk/gate cards, option comparison, four action/owner rows and dark conclusion. Positive/negative bars, plot margins and adjacent narrative blocks remain separate; rows/cards are aligned and the body stays above the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5
+          ],
+          "description": "Chart ticks and data labels are visually small relative to the plot, and raw integer tick formatting is less scannable than abbreviated monetary scales. No label collision is apparent in the contact sheet."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            11
+          ],
+          "description": "Long action/owner sentences wrap into dense two-line rows. The rows remain distinct, but a more concise visual treatment would improve scanning."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0112\\contact-sheet.png"
+      ],
+      "artifact_sha256": "8ae321cac29174e1f0de2b32d9d7f6436d8cd3f57b1e108a7ce2104f9301813d",
+      "slide_count": 12,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0112.json"
+    },
+    {
+      "document_id": "doc-0113",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - 2023 Annual Business and Financial Review': complete contact sheet covering slides 1-14 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined all cover/cards/callouts, four chart slides (income/spending, revenue sources, spending categories and quarter profile), delivery/tradeoff/risk cards, annual reconciliation, available-year comparison, leadership rows and final mission-gate cards. Long gate text stays inside the cards; chart and narrative columns remain separate, and body/leadership rows clear the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Chart ticks/data labels are small in the overall composition, and ungrouped integer axis ticks are harder to scan than abbreviated monetary scales; no blocking label collision is apparent."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            14
+          ],
+          "description": "The mission-gate cards contain multiple short wrapped lines and are denser than the other three-card slides. They remain contained, but could be easier to scan."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0113\\contact-sheet.png"
+      ],
+      "artifact_sha256": "07f2f78f8db2dae395bf354ff321bd86e5a62fe8a262d81dcc6458de71c3b724",
+      "slide_count": 14,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0113.json"
+    },
+    {
+      "document_id": "doc-0119",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - RegolithWorks 12.0 - Ground Campaign Overview': complete contact sheet covering slides 1-11 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the wrapped cover title and badge, decision cards, callout boundaries, numbered containment/recovery rows, evidence grid, five-step process cards, use-case/input cards and dark closing slide. Titles stay separate from body content; card edges/columns and numbered rows align consistently. No charts are present. No visible clipping, overlapping text, footer collisions or edge-margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5,
+            6
+          ],
+          "description": "Technical row/grid text is visually smaller than the surrounding headings and generous whitespace; potentially less comfortable for distant projection, although no cut-off or overlap is visible."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            7
+          ],
+          "description": "Five narrow process cards create short wrapped lines and substantial empty lower card space. The sequence remains aligned and readable, but this is a polish opportunity rather than an overflow defect."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0119\\contact-sheet.png"
+      ],
+      "artifact_sha256": "b4e826e90af27eede3757f6eaba0c5ebaff7504a2ca7e8063764dc74ef3e3b0a",
+      "slide_count": 11,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0119.json"
+    },
+    {
+      "document_id": "doc-0123",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - Flight-interface engineering - Capital and Readiness Briefing': complete contact sheet covering slides 1-12 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the two-line cover/title separation, decision and scope callouts, income/spending and quarterly bar-chart geometry, capacity cards, risk/gate cards, option comparison, four action/owner rows and dark conclusion. Positive/negative bars, plot margins and adjacent narrative blocks remain separate; rows/cards are aligned and the body stays above the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5
+          ],
+          "description": "Chart ticks and data labels are visually small relative to the plot, and raw integer tick formatting is less scannable than abbreviated monetary scales. No label collision is apparent in the contact sheet."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            11
+          ],
+          "description": "Long action/owner sentences wrap into dense two-line rows. The rows remain distinct, but a more concise visual treatment would improve scanning."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0123\\contact-sheet.png"
+      ],
+      "artifact_sha256": "da723193daaeccdfb5ec7c8fd699e479a115075647fdb500a8ee7415e7e7314b",
+      "slide_count": 12,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0123.json"
+    },
+    {
+      "document_id": "doc-0124",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - 2024 Annual Business and Financial Review': complete contact sheet covering slides 1-14 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined all cover/cards/callouts, four chart slides (income/spending, revenue sources, spending categories and quarter profile), delivery/tradeoff/risk cards, annual reconciliation, available-year comparison, leadership rows and final mission-gate cards. Long gate text stays inside the cards; chart and narrative columns remain separate, and body/leadership rows clear the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Chart ticks/data labels are small in the overall composition, and ungrouped integer axis ticks are harder to scan than abbreviated monetary scales; no blocking label collision is apparent."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            14
+          ],
+          "description": "The mission-gate cards contain multiple short wrapped lines and are denser than the other three-card slides. They remain contained, but could be easier to scan."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0124\\contact-sheet.png"
+      ],
+      "artifact_sha256": "76f543ff941151850ea3b536c17cbeca658cd4822065cdf938df486b157f04f9",
+      "slide_count": 14,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0124.json"
+    },
+    {
+      "document_id": "doc-0130",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - RegolithWorks 13.0 - Ground Campaign Overview': complete contact sheet covering slides 1-11 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the wrapped cover title and badge, decision cards, callout boundaries, numbered containment/recovery rows, evidence grid, five-step process cards, use-case/input cards and dark closing slide. Titles stay separate from body content; card edges/columns and numbered rows align consistently. No charts are present. No visible clipping, overlapping text, footer collisions or edge-margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5,
+            6
+          ],
+          "description": "Technical row/grid text is visually smaller than the surrounding headings and generous whitespace; potentially less comfortable for distant projection, although no cut-off or overlap is visible."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            7
+          ],
+          "description": "Five narrow process cards create short wrapped lines and substantial empty lower card space. The sequence remains aligned and readable, but this is a polish opportunity rather than an overflow defect."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0130\\contact-sheet.png"
+      ],
+      "artifact_sha256": "4114bdb2c4b7f780bc88c5af8df993e82ce51ecf777c884d726ada67c6d0fe39",
+      "slide_count": 11,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0130.json"
+    },
+    {
+      "document_id": "doc-0134",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - Prospecting architecture review - Capital and Readiness Briefing': complete contact sheet covering slides 1-12 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined the two-line cover/title separation, decision and scope callouts, income/spending and quarterly bar-chart geometry, capacity cards, risk/gate cards, option comparison, four action/owner rows and dark conclusion. Positive/negative bars, plot margins and adjacent narrative blocks remain separate; rows/cards are aligned and the body stays above the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5
+          ],
+          "description": "Chart ticks and data labels are visually small relative to the plot, and raw integer tick formatting is less scannable than abbreviated monetary scales. No label collision is apparent in the contact sheet."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            11
+          ],
+          "description": "Long action/owner sentences wrap into dense two-line rows. The rows remain distinct, but a more concise visual treatment would improve scanning."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0134\\contact-sheet.png"
+      ],
+      "artifact_sha256": "de734c73b434c809eb3ff0615b36e31d171dda9e8779b2baaa69460c73cb1605",
+      "slide_count": 12,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0134.json"
+    },
+    {
+      "document_id": "doc-0135",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - 2025 Annual Business and Financial Review': complete contact sheet covering slides 1-14 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. This deck was reviewed at contact-sheet scale only; no claim of full-size review for its individual slides is made. Examined all cover/cards/callouts, four chart slides (income/spending, revenue sources, spending categories and quarter profile), delivery/tradeoff/risk cards, annual reconciliation, available-year comparison, leadership rows and final mission-gate cards. Long gate text stays inside the cards; chart and narrative columns remain separate, and body/leadership rows clear the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Chart ticks/data labels are small in the overall composition, and ungrouped integer axis ticks are harder to scan than abbreviated monetary scales; no blocking label collision is apparent."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            14
+          ],
+          "description": "The mission-gate cards contain multiple short wrapped lines and are denser than the other three-card slides. They remain contained, but could be easier to scan."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0135\\contact-sheet.png"
+      ],
+      "artifact_sha256": "85fba78d036f1ce8465b0d71f4446e4ef3e103f464344bbc8c58746b1bee70fa",
+      "slide_count": 14,
+      "full_size_slides_reviewed": [],
+      "mechanical_receipt": "build\\checks\\doc-0135.json"
+    },
+    {
+      "document_id": "doc-0141",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - RegolithWorks 14.0 - Ground Campaign Overview': complete contact sheet covering slides 1-11 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. Full-size slide 7 confirms five aligned process cards with complete text, consistent gutters, strong body contrast and no footer collision; excess card whitespace remains a minor issue. Examined the wrapped cover title and badge, decision cards, callout boundaries, numbered containment/recovery rows, evidence grid, five-step process cards, use-case/input cards and dark closing slide. Titles stay separate from body content; card edges/columns and numbered rows align consistently. No charts are present. No visible clipping, overlapping text, footer collisions or edge-margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5,
+            6
+          ],
+          "description": "Technical row/grid text is visually smaller than the surrounding headings and generous whitespace; potentially less comfortable for distant projection, although no cut-off or overlap is visible."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            7
+          ],
+          "description": "Five narrow process cards create short wrapped lines and substantial empty lower card space. The sequence remains aligned and readable, but this is a polish opportunity rather than an overflow defect."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0141\\contact-sheet.png",
+        "build\\renders\\doc-0141\\page-007.png"
+      ],
+      "artifact_sha256": "a80de85354dc6e7320539b5757eeb7957f6f545a4431d1994ce9143e0a7d5885",
+      "slide_count": 11,
+      "full_size_slides_reviewed": [
+        7
+      ],
+      "mechanical_receipt": "build\\checks\\doc-0141.json"
+    },
+    {
+      "document_id": "doc-0145",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - Demonstration readiness planning - Capital and Readiness Briefing': complete contact sheet covering slides 1-12 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. Full-size slide 11 confirms the long final-year scope sentence and all four action rows fit without overlap; the footer is separate. Examined the two-line cover/title separation, decision and scope callouts, income/spending and quarterly bar-chart geometry, capacity cards, risk/gate cards, option comparison, four action/owner rows and dark conclusion. Positive/negative bars, plot margins and adjacent narrative blocks remain separate; rows/cards are aligned and the body stays above the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            4,
+            5
+          ],
+          "description": "Chart ticks and data labels are visually small relative to the plot, and raw integer tick formatting is less scannable than abbreviated monetary scales. No label collision is apparent in the contact sheet."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            11
+          ],
+          "description": "Long action/owner sentences wrap into dense two-line rows. The rows remain distinct, but a more concise visual treatment would improve scanning."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0145\\contact-sheet.png",
+        "build\\renders\\doc-0145\\page-011.png"
+      ],
+      "artifact_sha256": "53fd670efa16f6871e96c9d6c9ee5d0022bf43d29cc96f805fd5a33799428625",
+      "slide_count": 12,
+      "full_size_slides_reviewed": [
+        11
+      ],
+      "mechanical_receipt": "build\\checks\\doc-0145.json"
+    },
+    {
+      "document_id": "doc-0146",
+      "status": "passed",
+      "evidence": "Independent visual review of 'AstroDig LLC - 2026 Annual Business and Financial Review': complete contact sheet covering slides 1-14 was inspected for clipping, overlap, wrapping, footer collisions, chart presentation, contrast, margins and alignment. Full-size slide 3 confirms the larger monetary values and negative-result label fit, with an intact chart, distinct explanatory column and clear footer separation. Examined all cover/cards/callouts, four chart slides (income/spending, revenue sources, spending categories and quarter profile), delivery/tradeoff/risk cards, annual reconciliation, available-year comparison, leadership rows and final mission-gate cards. Long gate text stays inside the cards; chart and narrative columns remain separate, and body/leadership rows clear the footer. No visible clipping, overlap or blocking contrast/margin defects were found at the reviewed scales.",
+      "issues": [
+        {
+          "severity": "minor",
+          "slides": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Chart ticks/data labels are small in the overall composition, and ungrouped integer axis ticks are harder to scan than abbreviated monetary scales; no blocking label collision is apparent."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            14
+          ],
+          "description": "The mission-gate cards contain multiple short wrapped lines and are denser than the other three-card slides. They remain contained, but could be easier to scan."
+        },
+        {
+          "severity": "minor",
+          "slides": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "description": "Footer metadata has low visual prominence and is not readable at contact-sheet scale. No visible footer/content collisions were found; only listed full-size slides were checked at individual-slide scale."
+        }
+      ],
+      "reviewed_images": [
+        "build\\renders\\doc-0146\\contact-sheet.png",
+        "build\\renders\\doc-0146\\page-003.png"
+      ],
+      "artifact_sha256": "f6e9d2c7c8bf247e88ee36ac97fe16bf925d8d898c3caffff8eafeefd15ecdb4",
+      "slide_count": 14,
+      "full_size_slides_reviewed": [
+        3
+      ],
+      "mechanical_receipt": "build\\checks\\doc-0146.json"
+    }
+  ]
+}

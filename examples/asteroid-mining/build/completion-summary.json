@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "canon_sha256": "842ce5bcbc2a42e00df27a5c3ee4f41ab4b059bb36e3464daacc08a2ce0b85cd",
+  "plan_sha256": "c247168d3a13428603cf0978a3efb83d746a3260f553acf6cf38d57b4a89cd58",
+  "company": "AstroDig LLC",
+  "content_depth": "medium",
+  "documents": 150,
+  "formats": {
+    "xlsx": 50,
+    "docx": 50,
+    "pptx": 50
+  },
+  "types": {
+    "quarterly_report": 42,
+    "press_release": 14,
+    "product_presentation": 14,
+    "product_spec": 28,
+    "meeting_transcript": 14,
+    "board_deck": 14,
+    "annual_report": 14,
+    "financial_model": 10
+  },
+  "fiscal_year_counts": {
+    "2013": 10,
+    "2014": 10,
+    "2015": 10,
+    "2016": 10,
+    "2017": 11,
+    "2018": 11,
+    "2019": 11,
+    "2020": 11,
+    "2021": 11,
+    "2022": 11,
+    "2023": 11,
+    "2024": 11,
+    "2025": 11,
+    "2026": 11
+  },
+  "publication_year_counts": {
+    "2013": 9,
+    "2014": 10,
+    "2015": 10,
+    "2016": 10,
+    "2017": 11,
+    "2018": 11,
+    "2019": 11,
+    "2020": 11,
+    "2021": 11,
+    "2022": 11,
+    "2023": 11,
+    "2024": 11,
+    "2025": 11,
+    "2026": 11,
+    "2027": 1
+  },
+  "rendered_pages_and_slides": 1250,
+  "recalculated_formulas": 2642,
+  "warnings": [
+    "Fiscal-year 2013-2026 coverage includes a reporting publication tail through February 15, 2027.",
+    "Full-year 2026 and later publication dates belong to the requested invented history; they are not real-world actuals available on October 8, 2026.",
+    "Q4 results appear in annual reporting rather than separate Q4 report deliverables.",
+    "The 2032 mining demonstration remains prospective; no completed mining mission, resource reserve, or commodity-sales revenue is claimed."
+  ],
+  "blockers": [],
+  "qa_limitations": "Claim checks and automated business invariants are not independent semantic certification. Visual review uses all-page contact sheets/galleries with full-size inspection of dense and corrected layouts; not every page was inspected at full resolution."
+}

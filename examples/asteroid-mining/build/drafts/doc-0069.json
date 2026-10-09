@@ -1,0 +1,719 @@
+{
+  "document_id": "doc-0069",
+  "canon_sha256": "842ce5bcbc2a42e00df27a5c3ee4f41ab4b059bb36e3464daacc08a2ce0b85cd",
+  "plan_sha256": "c247168d3a13428603cf0978a3efb83d746a3260f553acf6cf38d57b4a89cd58",
+  "title": "AstroDig LLC - 2019 Annual Business and Financial Review",
+  "publication_date": "2020-02-15",
+  "content_depth": "medium",
+  "claims": [
+    {
+      "id": "claim-1",
+      "record_id": "financial-2019-annual",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "year": 2019,
+        "quarter": null,
+        "period_end": "2019-12-31",
+        "headcount": 77,
+        "revenue_usd": 11500000,
+        "cogs_usd": 4370000,
+        "opex_usd": 13195000,
+        "operating_income_usd": -6065000,
+        "engineering_services_usd": 7935000,
+        "instrument_development_usd": 2415000,
+        "mission_analysis_usd": 1150000,
+        "research_development_usd": 9500400,
+        "program_operations_usd": 2375100,
+        "corporate_administration_usd": 1319500,
+        "completed_work_packages": 106,
+        "accepted_reference_runs": 246,
+        "rejected_reference_runs": 17,
+        "contracted_backlog_usd": 32085000,
+        "development_focus": "payload interface integration",
+        "principal_risk": "mass and power growth",
+        "management_interpretation": "Control interface revisions before combining independently tested subsystems.",
+        "limitation": "Integrated ground prototypes remain development hardware.",
+        "revenue_policy": "Recognize engineering and development revenue against accepted contracted work; do not recognize projected asteroid sales.",
+        "cost_driver": "Research and verification capacity is maintained ahead of mission deployment.",
+        "outlook": "Continue the approved ground-development scope; no asteroid commodity revenue is included in the operating outlook."
+      }
+    },
+    {
+      "id": "claim-2",
+      "record_id": "strategy-2019",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "year": 2019,
+        "title": "Integrated payload architecture",
+        "campaign": "payload interface integration",
+        "decision_rationale": "Control interface revisions before combining independently tested subsystems.",
+        "principal_risk": "mass and power growth",
+        "limitation": "Integrated ground prototypes remain development hardware.",
+        "gates": [
+          {
+            "year": 2028,
+            "gate": "Prospecting spacecraft design review",
+            "status": "planned",
+            "dependency": "verified payload interfaces and approved funding"
+          },
+          {
+            "year": 2030,
+            "gate": "Direct asteroid characterization",
+            "status": "planned",
+            "dependency": "launch access, mission authorization, and spacecraft performance"
+          },
+          {
+            "year": 2032,
+            "gate": "Resource extraction demonstration",
+            "status": "goal",
+            "dependency": "characterization evidence, extraction readiness, and funded mission operations"
+          }
+        ],
+        "revenue_source": "engineering services, instrument development, and mission analysis",
+        "mining_revenue_status": "none",
+        "flight_status": "no completed asteroid mining mission",
+        "customer_personas": [
+          "mission-design teams",
+          "instrument-development teams",
+          "verification managers"
+        ],
+        "capital_priority": "verification capability and controlled development hardware",
+        "alternative": "Expand optional functionality before closing verification evidence",
+        "alternative_disposition": "Defer optional scope until reference evidence is accepted",
+        "release_decision": "Authorize the defined ground-development campaign only",
+        "release_authority_id": "person-riley",
+        "scope_owner_id": "person-quinn",
+        "verification_owner_id": "person-sasha",
+        "operations_owner_id": "person-devon",
+        "control": "Stop expansion when a critical verification discrepancy remains open.",
+        "quarterly_priorities": [
+          "Reconcile requirements and preserve the reference configuration.",
+          "Complete controlled reference trials and record discrepancies.",
+          "Review campaign evidence and close owned corrective actions.",
+          "Consolidate accepted results into the next design baseline."
+        ]
+      }
+    },
+    {
+      "id": "claim-3",
+      "record_id": "company",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "name": "AstroDig LLC",
+        "industry": "aerospace engineering and asteroid resource technology",
+        "currency": "USD",
+        "fiscal_year_end": "12-31",
+        "founded_on": "2013-01-01",
+        "headquarters": "Boulder, Colorado",
+        "mission": "Develop robotic prospecting and extraction systems for asteroid resources.",
+        "business_model": "Earn aerospace engineering, instrument-development, and mission-analysis revenue while developing asteroid resource technology.",
+        "mining_goal_year": 2032,
+        "goal_status": "aspirational and contingent on flight validation, funding, launch access, and mission authorization",
+        "resource_focus": "water-bearing material for potential in-space use; no commercial extraction revenue assumed",
+        "media_email": "media@astrodig.example",
+        "media_contact_id": "person-jordan",
+        "boilerplate": "AstroDig LLC is an aerospace engineering company based in Boulder, Colorado. Founded in 2013, the company develops mission-analysis tools, robotic prospecting instruments, and controlled extraction test systems. Its long-term objective is an asteroid resource demonstration by 2032, subject to technical, financial, and mission-readiness gates."
+      }
+    },
+    {
+      "id": "claim-4",
+      "record_id": "financial-2019-q1",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "year": 2019,
+        "quarter": 1,
+        "period_end": "2019-03-31",
+        "revenue_usd": 2300000,
+        "cogs_usd": 874000,
+        "opex_usd": 2639000,
+        "operating_income_usd": -1213000,
+        "headcount": 65,
+        "engineering_services_usd": 1587000,
+        "instrument_development_usd": 483000,
+        "mission_analysis_usd": 230000,
+        "research_development_usd": 1900080,
+        "program_operations_usd": 475020,
+        "corporate_administration_usd": 263900,
+        "contracted_backlog_usd": 13800000,
+        "completed_work_packages": 25,
+        "accepted_reference_runs": 57,
+        "rejected_reference_runs": 4,
+        "development_focus": "payload interface integration",
+        "principal_risk": "mass and power growth",
+        "management_interpretation": "Control interface revisions before combining independently tested subsystems.",
+        "limitation": "Integrated ground prototypes remain development hardware.",
+        "revenue_policy": "Recognize engineering and development revenue against accepted contracted work; do not recognize projected asteroid sales.",
+        "cost_driver": "Research and verification capacity is maintained ahead of mission deployment.",
+        "outlook": "Continue the approved ground-development scope; no asteroid commodity revenue is included in the operating outlook."
+      }
+    },
+    {
+      "id": "claim-5",
+      "record_id": "financial-2019-q2",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "year": 2019,
+        "quarter": 2,
+        "period_end": "2019-06-30",
+        "revenue_usd": 2645000,
+        "cogs_usd": 1005100,
+        "opex_usd": 3034850,
+        "operating_income_usd": -1394950,
+        "headcount": 69,
+        "engineering_services_usd": 1825050,
+        "instrument_development_usd": 555450,
+        "mission_analysis_usd": 264500,
+        "research_development_usd": 2185092,
+        "program_operations_usd": 546273,
+        "corporate_administration_usd": 303485,
+        "contracted_backlog_usd": 18515000,
+        "completed_work_packages": 26,
+        "accepted_reference_runs": 60,
+        "rejected_reference_runs": 5,
+        "development_focus": "payload interface integration",
+        "principal_risk": "mass and power growth",
+        "management_interpretation": "Control interface revisions before combining independently tested subsystems.",
+        "limitation": "Integrated ground prototypes remain development hardware.",
+        "revenue_policy": "Recognize engineering and development revenue against accepted contracted work; do not recognize projected asteroid sales.",
+        "cost_driver": "Research and verification capacity is maintained ahead of mission deployment.",
+        "outlook": "Continue the approved ground-development scope; no asteroid commodity revenue is included in the operating outlook."
+      }
+    },
+    {
+      "id": "claim-6",
+      "record_id": "financial-2019-q3",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "year": 2019,
+        "quarter": 3,
+        "period_end": "2019-09-30",
+        "revenue_usd": 2990000,
+        "cogs_usd": 1136200,
+        "opex_usd": 3430700,
+        "operating_income_usd": -1576900,
+        "headcount": 73,
+        "engineering_services_usd": 2063100,
+        "instrument_development_usd": 627900,
+        "mission_analysis_usd": 299000,
+        "research_development_usd": 2470104,
+        "program_operations_usd": 617526,
+        "corporate_administration_usd": 343070,
+        "contracted_backlog_usd": 23920000,
+        "completed_work_packages": 27,
+        "accepted_reference_runs": 63,
+        "rejected_reference_runs": 6,
+        "development_focus": "payload interface integration",
+        "principal_risk": "mass and power growth",
+        "management_interpretation": "Control interface revisions before combining independently tested subsystems.",
+        "limitation": "Integrated ground prototypes remain development hardware.",
+        "revenue_policy": "Recognize engineering and development revenue against accepted contracted work; do not recognize projected asteroid sales.",
+        "cost_driver": "Research and verification capacity is maintained ahead of mission deployment.",
+        "outlook": "Continue the approved ground-development scope; no asteroid commodity revenue is included in the operating outlook."
+      }
+    },
+    {
+      "id": "claim-7",
+      "record_id": "financial-2019-q4",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "year": 2019,
+        "quarter": 4,
+        "period_end": "2019-12-31",
+        "revenue_usd": 3565000,
+        "cogs_usd": 1354700,
+        "opex_usd": 4090450,
+        "operating_income_usd": -1880150,
+        "headcount": 77,
+        "engineering_services_usd": 2459850,
+        "instrument_development_usd": 748650,
+        "mission_analysis_usd": 356500,
+        "research_development_usd": 2945124,
+        "program_operations_usd": 736281,
+        "corporate_administration_usd": 409045,
+        "contracted_backlog_usd": 32085000,
+        "completed_work_packages": 28,
+        "accepted_reference_runs": 66,
+        "rejected_reference_runs": 2,
+        "development_focus": "payload interface integration",
+        "principal_risk": "mass and power growth",
+        "management_interpretation": "Control interface revisions before combining independently tested subsystems.",
+        "limitation": "Integrated ground prototypes remain development hardware.",
+        "revenue_policy": "Recognize engineering and development revenue against accepted contracted work; do not recognize projected asteroid sales.",
+        "cost_driver": "Research and verification capacity is maintained ahead of mission deployment.",
+        "outlook": "Continue the approved ground-development scope; no asteroid commodity revenue is included in the operating outlook."
+      }
+    },
+    {
+      "id": "claim-8",
+      "record_id": "term-31",
+      "path": [
+        "data",
+        "definition"
+      ],
+      "value": "Remaining contracted engineering work at a stated date; not recognized revenue or a guarantee of future collection."
+    },
+    {
+      "id": "claim-9",
+      "record_id": "financial-2018-annual",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "year": 2018,
+        "quarter": null,
+        "period_end": "2018-12-31",
+        "headcount": 60,
+        "revenue_usd": 8200000,
+        "cogs_usd": 3116000,
+        "opex_usd": 10330000,
+        "operating_income_usd": -5246000,
+        "engineering_services_usd": 5740000,
+        "instrument_development_usd": 1640000,
+        "mission_analysis_usd": 820000,
+        "research_development_usd": 7437600,
+        "program_operations_usd": 1859400,
+        "corporate_administration_usd": 1033000,
+        "completed_work_packages": 94,
+        "accepted_reference_runs": 218,
+        "rejected_reference_runs": 18,
+        "contracted_backlog_usd": 22878000,
+        "development_focus": "autonomy rehearsal",
+        "principal_risk": "unsafe state transitions",
+        "management_interpretation": "Make abort behavior deterministic before expanding automated sequences.",
+        "limitation": "Hardware-in-the-loop results are not flight qualification.",
+        "revenue_policy": "Recognize engineering and development revenue against accepted contracted work; do not recognize projected asteroid sales.",
+        "cost_driver": "Research and verification capacity is maintained ahead of mission deployment.",
+        "outlook": "Continue the approved ground-development scope; no asteroid commodity revenue is included in the operating outlook."
+      }
+    },
+    {
+      "id": "claim-10",
+      "record_id": "person-avery",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Avery Rowan"
+    },
+    {
+      "id": "claim-11",
+      "record_id": "person-riley",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Riley Arden"
+    },
+    {
+      "id": "claim-12",
+      "record_id": "person-morgan",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Morgan Vale"
+    },
+    {
+      "id": "claim-13",
+      "record_id": "person-quinn",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Quinn Mercer"
+    },
+    {
+      "id": "claim-14",
+      "record_id": "role-avery-2013",
+      "path": [
+        "data",
+        "title"
+      ],
+      "value": "Chief Executive Officer"
+    },
+    {
+      "id": "claim-15",
+      "record_id": "role-riley-2013",
+      "path": [
+        "data",
+        "title"
+      ],
+      "value": "Chief Technology Officer"
+    },
+    {
+      "id": "claim-16",
+      "record_id": "role-morgan-2013",
+      "path": [
+        "data",
+        "title"
+      ],
+      "value": "Chief Financial Officer"
+    },
+    {
+      "id": "claim-17",
+      "record_id": "role-quinn-2013",
+      "path": [
+        "data",
+        "title"
+      ],
+      "value": "Director of Mission Systems"
+    }
+  ],
+  "sections": [
+    {
+      "role": "financial_results",
+      "heading": "2019 Operating Review",
+      "text": "Integrated payload architecture\n\nUSD; calendar fiscal year; engineering and development operations.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "financial_results",
+      "heading": "Operating result at a glance",
+      "text": "Revenue: $11,500,000\n\nOperating result: $-6,065,000\n\nPeriod-end headcount: 77",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "financial_results",
+      "heading": "Revenue to operating result",
+      "text": "Research and verification capacity is maintained ahead of mission deployment.\n\nDevelopment spending remains distinct from prospective mining economics.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "financial_results",
+      "heading": "Where recognized revenue comes from",
+      "text": "Recognize engineering and development revenue against accepted contracted work; do not recognize projected asteroid sales.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "financial_results",
+      "heading": "Development resources dominate spending",
+      "text": "Research and development is the largest operating-expense category.\n\nProgram operations and administration remain separately identifiable.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "financial_results",
+      "heading": "Quarterly recognition profile",
+      "text": "Quarterly revenue reflects accepted contracted work, not asteroid sales.\n\nOnly periods available at publication are included.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3",
+        "claim-4",
+        "claim-5",
+        "claim-6",
+        "claim-7"
+      ]
+    },
+    {
+      "role": "business_review",
+      "heading": "Delivery and reference evidence",
+      "text": "Completed work packages: 106.\n\nAccepted reference runs: 246.\n\nRejected reference runs retained: 17.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "business_review",
+      "heading": "Commitments are not collections",
+      "text": "Contracted backlog at period end: $32,085,000.\n\nRemaining contracted engineering work at a stated date; not recognized revenue or a guarantee of future collection.\n\nNo cash-flow or liquidity conclusion is derived from this snapshot.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3",
+        "claim-8"
+      ]
+    },
+    {
+      "role": "business_review",
+      "heading": "Development priority and tradeoff",
+      "text": "Control interface revisions before combining independently tested subsystems.\n\nAlternative: Expand optional functionality before closing verification evidence.\n\nDisposition: Defer optional scope until reference evidence is accepted.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "risks",
+      "heading": "Risk, response, and evidence boundary",
+      "text": "Principal risk: mass and power growth.\n\nStop expansion when a critical verification discrepancy remains open.\n\nIntegrated ground prototypes remain development hardware.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "financial_results",
+      "heading": "Annual reconciliation",
+      "text": "Four quarters sum to revenue of $11,500,000.\n\nCOGS: $4,370,000; opex: $13,195,000.\n\nOperating result: $-6,065,000; headcount equals the Q4 snapshot.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3",
+        "claim-4",
+        "claim-5",
+        "claim-6",
+        "claim-7"
+      ]
+    },
+    {
+      "role": "financial_results",
+      "heading": "Available-year comparison",
+      "text": "Prior-year revenue: $8,200,000.\n\nCurrent-year revenue: $11,500,000.\n\nChange: $3,300,000; 40.2%.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3",
+        "claim-9"
+      ]
+    },
+    {
+      "role": "organization",
+      "heading": "Year-end accountable leadership",
+      "text": "Avery Rowan - Chief Executive Officer\n\nRiley Arden - Chief Technology Officer\n\nMorgan Vale - Chief Financial Officer\n\nQuinn Mercer - Director of Mission Systems",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3",
+        "claim-10",
+        "claim-11",
+        "claim-12",
+        "claim-13",
+        "claim-14",
+        "claim-15",
+        "claim-16",
+        "claim-17"
+      ]
+    },
+    {
+      "role": "risks",
+      "heading": "The mission gates remain prospective",
+      "text": "2028: Prospecting spacecraft design review; planned; depends on verified payload interfaces and approved funding.\n\n2030: Direct asteroid characterization; planned; depends on launch access, mission authorization, and spacecraft performance.\n\n2032: Resource extraction demonstration; goal; depends on characterization evidence, extraction readiness, and funded mission operations.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    }
+  ],
+  "slides": [
+    {
+      "heading": "2019 Operating Review",
+      "body": [
+        "Integrated payload architecture",
+        "USD; calendar fiscal year; engineering and development operations."
+      ],
+      "layout": "cover",
+      "badge": "INTERNAL"
+    },
+    {
+      "heading": "Operating result at a glance",
+      "body": [
+        "Revenue: $11,500,000",
+        "Operating result: $-6,065,000",
+        "Period-end headcount: 77"
+      ],
+      "layout": "stats"
+    },
+    {
+      "heading": "Revenue to operating result",
+      "body": [
+        "Research and verification capacity is maintained ahead of mission deployment.",
+        "Development spending remains distinct from prospective mining economics."
+      ],
+      "layout": "chart",
+      "chart": {
+        "labels": [
+          "Revenue",
+          "COGS",
+          "Opex",
+          "Operating result"
+        ],
+        "values": [
+          11500000,
+          4370000,
+          13195000,
+          -6065000
+        ]
+      }
+    },
+    {
+      "heading": "Where recognized revenue comes from",
+      "body": [
+        "Recognize engineering and development revenue against accepted contracted work; do not recognize projected asteroid sales."
+      ],
+      "layout": "chart",
+      "chart": {
+        "labels": [
+          "Engineering",
+          "Instruments",
+          "Mission analysis"
+        ],
+        "values": [
+          7935000,
+          2415000,
+          1150000
+        ]
+      }
+    },
+    {
+      "heading": "Development resources dominate spending",
+      "body": [
+        "Research and development is the largest operating-expense category.",
+        "Program operations and administration remain separately identifiable."
+      ],
+      "layout": "chart",
+      "chart": {
+        "labels": [
+          "R&D",
+          "Program operations",
+          "Administration"
+        ],
+        "values": [
+          9500400,
+          2375100,
+          1319500
+        ]
+      }
+    },
+    {
+      "heading": "Quarterly recognition profile",
+      "body": [
+        "Quarterly revenue reflects accepted contracted work, not asteroid sales.",
+        "Only periods available at publication are included."
+      ],
+      "layout": "chart",
+      "chart": {
+        "labels": [
+          "Q1",
+          "Q2",
+          "Q3",
+          "Q4"
+        ],
+        "values": [
+          2300000,
+          2645000,
+          2990000,
+          3565000
+        ]
+      }
+    },
+    {
+      "heading": "Delivery and reference evidence",
+      "body": [
+        "Completed work packages: 106.",
+        "Accepted reference runs: 246.",
+        "Rejected reference runs retained: 17."
+      ],
+      "layout": "stats"
+    },
+    {
+      "heading": "Commitments are not collections",
+      "body": [
+        "Contracted backlog at period end: $32,085,000.",
+        "Remaining contracted engineering work at a stated date; not recognized revenue or a guarantee of future collection.",
+        "No cash-flow or liquidity conclusion is derived from this snapshot."
+      ],
+      "layout": "statement"
+    },
+    {
+      "heading": "Development priority and tradeoff",
+      "body": [
+        "Control interface revisions before combining independently tested subsystems.",
+        "Alternative: Expand optional functionality before closing verification evidence.",
+        "Disposition: Defer optional scope until reference evidence is accepted."
+      ],
+      "layout": "cards"
+    },
+    {
+      "heading": "Risk, response, and evidence boundary",
+      "body": [
+        "Principal risk: mass and power growth.",
+        "Stop expansion when a critical verification discrepancy remains open.",
+        "Integrated ground prototypes remain development hardware."
+      ],
+      "layout": "cards"
+    },
+    {
+      "heading": "Annual reconciliation",
+      "body": [
+        "Four quarters sum to revenue of $11,500,000.",
+        "COGS: $4,370,000; opex: $13,195,000.",
+        "Operating result: $-6,065,000; headcount equals the Q4 snapshot."
+      ],
+      "layout": "statement"
+    },
+    {
+      "heading": "Available-year comparison",
+      "body": [
+        "Prior-year revenue: $8,200,000.",
+        "Current-year revenue: $11,500,000.",
+        "Change: $3,300,000; 40.2%."
+      ],
+      "layout": "stats"
+    },
+    {
+      "heading": "Year-end accountable leadership",
+      "body": [
+        "Avery Rowan - Chief Executive Officer",
+        "Riley Arden - Chief Technology Officer",
+        "Morgan Vale - Chief Financial Officer",
+        "Quinn Mercer - Director of Mission Systems"
+      ],
+      "layout": "capabilities"
+    },
+    {
+      "heading": "The mission gates remain prospective",
+      "body": [
+        "2028: Prospecting spacecraft design review; planned; depends on verified payload interfaces and approved funding.",
+        "2030: Direct asteroid characterization; planned; depends on launch access, mission authorization, and spacecraft performance.",
+        "2032: Resource extraction demonstration; goal; depends on characterization evidence, extraction readiness, and funded mission operations."
+      ],
+      "layout": "workflow"
+    }
+  ],
+  "measurements": {
+    "delivered_words": 288,
+    "discussion_words": 0,
+    "meaningful_slides": 14,
+    "distinct_testable_requirements": 0,
+    "useful_analysis_modules": 0
+  }
+}

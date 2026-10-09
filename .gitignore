@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+corpus/
+
+# Regenerable working artifacts in published example corpora.
+/examples/**/build/**/*.log
+/examples/**/build/contexts/
+/examples/**/build/renders/
+
+# Non-final plan variants; keep the accepted plan.json.
+/examples/**/build/*-plan.json
+/examples/**/build/plan-*.json

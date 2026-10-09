@@ -1,0 +1,481 @@
+{
+  "document_id": "doc-0150",
+  "canon_sha256": "842ce5bcbc2a42e00df27a5c3ee4f41ab4b059bb36e3464daacc08a2ce0b85cd",
+  "plan_sha256": "c247168d3a13428603cf0978a3efb83d746a3260f553acf6cf38d57b4a89cd58",
+  "title": "AstroDig LLC - Q3 2026 Service Economics and Development Spending",
+  "publication_date": "2026-10-15",
+  "content_depth": "medium",
+  "claims": [
+    {
+      "id": "claim-1",
+      "record_id": "financial-2026-q3",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "year": 2026,
+        "quarter": 3,
+        "period_end": "2026-09-30",
+        "revenue_usd": 15470000,
+        "cogs_usd": 5878600,
+        "opex_usd": 12853100,
+        "operating_income_usd": -3261700,
+        "headcount": 225,
+        "engineering_services_usd": 9591400,
+        "instrument_development_usd": 4331600,
+        "mission_analysis_usd": 1547000,
+        "research_development_usd": 9254232,
+        "program_operations_usd": 2313558,
+        "corporate_administration_usd": 1285310,
+        "contracted_backlog_usd": 123760000,
+        "completed_work_packages": 48,
+        "accepted_reference_runs": 112,
+        "rejected_reference_runs": 3,
+        "development_focus": "2032 demonstration gate review",
+        "principal_risk": "funding and flight dependencies",
+        "management_interpretation": "Retain the 2032 goal while making each intermediate commitment conditional.",
+        "limitation": "Mining has not begun and no mission approval is represented.",
+        "revenue_policy": "Recognize engineering and development revenue against accepted contracted work; do not recognize projected asteroid sales.",
+        "cost_driver": "Research and verification capacity is maintained ahead of mission deployment.",
+        "outlook": "Continue the approved ground-development scope; no asteroid commodity revenue is included in the operating outlook."
+      }
+    },
+    {
+      "id": "claim-2",
+      "record_id": "strategy-2026",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "year": 2026,
+        "title": "Demonstration readiness planning",
+        "campaign": "2032 demonstration gate review",
+        "decision_rationale": "Retain the 2032 goal while making each intermediate commitment conditional.",
+        "principal_risk": "funding and flight dependencies",
+        "limitation": "Mining has not begun and no mission approval is represented.",
+        "gates": [
+          {
+            "year": 2028,
+            "gate": "Prospecting spacecraft design review",
+            "status": "planned",
+            "dependency": "verified payload interfaces and approved funding"
+          },
+          {
+            "year": 2030,
+            "gate": "Direct asteroid characterization",
+            "status": "planned",
+            "dependency": "launch access, mission authorization, and spacecraft performance"
+          },
+          {
+            "year": 2032,
+            "gate": "Resource extraction demonstration",
+            "status": "goal",
+            "dependency": "characterization evidence, extraction readiness, and funded mission operations"
+          }
+        ],
+        "revenue_source": "engineering services, instrument development, and mission analysis",
+        "mining_revenue_status": "none",
+        "flight_status": "no completed asteroid mining mission",
+        "customer_personas": [
+          "mission-design teams",
+          "instrument-development teams",
+          "verification managers"
+        ],
+        "capital_priority": "verification capability and controlled development hardware",
+        "alternative": "Expand optional functionality before closing verification evidence",
+        "alternative_disposition": "Defer optional scope until reference evidence is accepted",
+        "release_decision": "Authorize the defined ground-development campaign only",
+        "release_authority_id": "person-riley",
+        "scope_owner_id": "person-quinn",
+        "verification_owner_id": "person-sasha",
+        "operations_owner_id": "person-devon",
+        "control": "Stop expansion when a critical verification discrepancy remains open.",
+        "quarterly_priorities": [
+          "Reconcile requirements and preserve the reference configuration.",
+          "Complete controlled reference trials and record discrepancies.",
+          "Review campaign evidence and close owned corrective actions.",
+          "Consolidate accepted results into the next design baseline."
+        ]
+      }
+    },
+    {
+      "id": "claim-3",
+      "record_id": "company",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "name": "AstroDig LLC",
+        "industry": "aerospace engineering and asteroid resource technology",
+        "currency": "USD",
+        "fiscal_year_end": "12-31",
+        "founded_on": "2013-01-01",
+        "headquarters": "Boulder, Colorado",
+        "mission": "Develop robotic prospecting and extraction systems for asteroid resources.",
+        "business_model": "Earn aerospace engineering, instrument-development, and mission-analysis revenue while developing asteroid resource technology.",
+        "mining_goal_year": 2032,
+        "goal_status": "aspirational and contingent on flight validation, funding, launch access, and mission authorization",
+        "resource_focus": "water-bearing material for potential in-space use; no commercial extraction revenue assumed",
+        "media_email": "media@astrodig.example",
+        "media_contact_id": "person-jordan",
+        "boilerplate": "AstroDig LLC is an aerospace engineering company based in Boulder, Colorado. Founded in 2013, the company develops mission-analysis tools, robotic prospecting instruments, and controlled extraction test systems. Its long-term objective is an asteroid resource demonstration by 2032, subject to technical, financial, and mission-readiness gates."
+      }
+    },
+    {
+      "id": "claim-4",
+      "record_id": "financial-2026-q1",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "year": 2026,
+        "quarter": 1,
+        "period_end": "2026-03-31",
+        "revenue_usd": 11900000,
+        "cogs_usd": 4522000,
+        "opex_usd": 9887000,
+        "operating_income_usd": -2509000,
+        "headcount": 199,
+        "engineering_services_usd": 7378000,
+        "instrument_development_usd": 3332000,
+        "mission_analysis_usd": 1190000,
+        "research_development_usd": 7118640,
+        "program_operations_usd": 1779660,
+        "corporate_administration_usd": 988700,
+        "contracted_backlog_usd": 71400000,
+        "completed_work_packages": 46,
+        "accepted_reference_runs": 106,
+        "rejected_reference_runs": 6,
+        "development_focus": "2032 demonstration gate review",
+        "principal_risk": "funding and flight dependencies",
+        "management_interpretation": "Retain the 2032 goal while making each intermediate commitment conditional.",
+        "limitation": "Mining has not begun and no mission approval is represented.",
+        "revenue_policy": "Recognize engineering and development revenue against accepted contracted work; do not recognize projected asteroid sales.",
+        "cost_driver": "Research and verification capacity is maintained ahead of mission deployment.",
+        "outlook": "Continue the approved ground-development scope; no asteroid commodity revenue is included in the operating outlook."
+      }
+    },
+    {
+      "id": "claim-5",
+      "record_id": "financial-2026-q2",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "year": 2026,
+        "quarter": 2,
+        "period_end": "2026-06-30",
+        "revenue_usd": 13685000,
+        "cogs_usd": 5200300,
+        "opex_usd": 11370050,
+        "operating_income_usd": -2885350,
+        "headcount": 212,
+        "engineering_services_usd": 8484700,
+        "instrument_development_usd": 3831800,
+        "mission_analysis_usd": 1368500,
+        "research_development_usd": 8186436,
+        "program_operations_usd": 2046609,
+        "corporate_administration_usd": 1137005,
+        "contracted_backlog_usd": 95795000,
+        "completed_work_packages": 47,
+        "accepted_reference_runs": 109,
+        "rejected_reference_runs": 2,
+        "development_focus": "2032 demonstration gate review",
+        "principal_risk": "funding and flight dependencies",
+        "management_interpretation": "Retain the 2032 goal while making each intermediate commitment conditional.",
+        "limitation": "Mining has not begun and no mission approval is represented.",
+        "revenue_policy": "Recognize engineering and development revenue against accepted contracted work; do not recognize projected asteroid sales.",
+        "cost_driver": "Research and verification capacity is maintained ahead of mission deployment.",
+        "outlook": "Continue the approved ground-development scope; no asteroid commodity revenue is included in the operating outlook."
+      }
+    }
+  ],
+  "sections": [
+    {
+      "role": "source_actuals",
+      "heading": "Period and recognized source actuals",
+      "text": "USD; Q3 2026; period ended 2026-09-30. Revenue $15,470,000; COGS $5,878,600; opex $12,853,100; operating result $-3,261,700. Recognize engineering and development revenue against accepted contracted work; do not recognize projected asteroid sales.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "calculations",
+      "heading": "Income reconciliation",
+      "text": "Does recognized revenue cover delivery and operating costs?\n\nOperating result remains negative after both delivery costs and development spending; the reconciliation isolates the reported loss rather than presenting revenue as profit.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "calculations",
+      "heading": "Contracted service economics",
+      "text": "How do the three service categories reconcile, and what share comes from engineering?\n\nRecognized service categories reconcile to revenue. Engineering share describes the revenue base; no category-level profit is inferred because delivery costs are not allocated by service category.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "calculations",
+      "heading": "Development spending intensity",
+      "text": "How does research spending relate to revenue, workforce and total operating expense?\n\nResearch spending per period-end employee and relative to revenue exposes the development load. These ratios are descriptive; no capitalization, cash burn or return on investment is inferred.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "calculations",
+      "heading": "Delivery capacity and evidence quality",
+      "text": "How do delivered work and accepted or rejected trials relate to the workforce snapshot?\n\nCompleted work packages and reference acceptance are separate operating measures. Rejected trials remain in the denominator, and workforce ratios do not claim unused capacity.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "calculations",
+      "heading": "Quarter-to-quarter operating bridge",
+      "text": "Which recognized revenue and cost movements explain the change from Q2 to Q3?\n\nThe bridge reconciles revenue change, delivery-cost change and operating-expense change to the reported operating-result movement. It is an actual-period bridge, not a forecast or a causal attribution.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "calculations",
+      "heading": "Backlog commitment scale",
+      "text": "How large is remaining contracted work relative to current-quarter revenue and period-end headcount?\n\nBacklog coverage and backlog per employee describe commitment scale at a point in time. They are not collection forecasts, cash balances, resource reserves or proof of available delivery capacity.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3"
+      ]
+    },
+    {
+      "role": "assumptions_and_notes",
+      "heading": "Methodology and limitations",
+      "text": "Retain the 2032 goal while making each intermediate commitment conditional. Principal risk: funding and flight dependencies. Mining has not begun and no mission approval is represented. Continue the approved ground-development scope; no asteroid commodity revenue is included in the operating outlook. No forecast, balance sheet, liquidity estimate, resource valuation, or cash-flow conclusion is supplied. Formula-linked analyses use recognized USD amounts and period-end operating snapshots; changing source inputs updates the calculations without changing the stated business scope.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3",
+        "claim-4",
+        "claim-5"
+      ]
+    }
+  ],
+  "slides": [],
+  "model": {
+    "anchor": {
+      "year": 2026,
+      "quarter": 3,
+      "period_end": "2026-09-30",
+      "revenue_usd": 15470000,
+      "cogs_usd": 5878600,
+      "opex_usd": 12853100,
+      "operating_income_usd": -3261700,
+      "headcount": 225,
+      "engineering_services_usd": 9591400,
+      "instrument_development_usd": 4331600,
+      "mission_analysis_usd": 1547000,
+      "research_development_usd": 9254232,
+      "program_operations_usd": 2313558,
+      "corporate_administration_usd": 1285310,
+      "contracted_backlog_usd": 123760000,
+      "completed_work_packages": 48,
+      "accepted_reference_runs": 112,
+      "rejected_reference_runs": 3,
+      "development_focus": "2032 demonstration gate review",
+      "principal_risk": "funding and flight dependencies",
+      "management_interpretation": "Retain the 2032 goal while making each intermediate commitment conditional.",
+      "limitation": "Mining has not begun and no mission approval is represented.",
+      "revenue_policy": "Recognize engineering and development revenue against accepted contracted work; do not recognize projected asteroid sales.",
+      "cost_driver": "Research and verification capacity is maintained ahead of mission deployment.",
+      "outlook": "Continue the approved ground-development scope; no asteroid commodity revenue is included in the operating outlook."
+    },
+    "quarters": [
+      {
+        "year": 2026,
+        "quarter": 1,
+        "period_end": "2026-03-31",
+        "revenue_usd": 11900000,
+        "cogs_usd": 4522000,
+        "opex_usd": 9887000,
+        "operating_income_usd": -2509000,
+        "headcount": 199,
+        "engineering_services_usd": 7378000,
+        "instrument_development_usd": 3332000,
+        "mission_analysis_usd": 1190000,
+        "research_development_usd": 7118640,
+        "program_operations_usd": 1779660,
+        "corporate_administration_usd": 988700,
+        "contracted_backlog_usd": 71400000,
+        "completed_work_packages": 46,
+        "accepted_reference_runs": 106,
+        "rejected_reference_runs": 6,
+        "development_focus": "2032 demonstration gate review",
+        "principal_risk": "funding and flight dependencies",
+        "management_interpretation": "Retain the 2032 goal while making each intermediate commitment conditional.",
+        "limitation": "Mining has not begun and no mission approval is represented.",
+        "revenue_policy": "Recognize engineering and development revenue against accepted contracted work; do not recognize projected asteroid sales.",
+        "cost_driver": "Research and verification capacity is maintained ahead of mission deployment.",
+        "outlook": "Continue the approved ground-development scope; no asteroid commodity revenue is included in the operating outlook."
+      },
+      {
+        "year": 2026,
+        "quarter": 2,
+        "period_end": "2026-06-30",
+        "revenue_usd": 13685000,
+        "cogs_usd": 5200300,
+        "opex_usd": 11370050,
+        "operating_income_usd": -2885350,
+        "headcount": 212,
+        "engineering_services_usd": 8484700,
+        "instrument_development_usd": 3831800,
+        "mission_analysis_usd": 1368500,
+        "research_development_usd": 8186436,
+        "program_operations_usd": 2046609,
+        "corporate_administration_usd": 1137005,
+        "contracted_backlog_usd": 95795000,
+        "completed_work_packages": 47,
+        "accepted_reference_runs": 109,
+        "rejected_reference_runs": 2,
+        "development_focus": "2032 demonstration gate review",
+        "principal_risk": "funding and flight dependencies",
+        "management_interpretation": "Retain the 2032 goal while making each intermediate commitment conditional.",
+        "limitation": "Mining has not begun and no mission approval is represented.",
+        "revenue_policy": "Recognize engineering and development revenue against accepted contracted work; do not recognize projected asteroid sales.",
+        "cost_driver": "Research and verification capacity is maintained ahead of mission deployment.",
+        "outlook": "Continue the approved ground-development scope; no asteroid commodity revenue is included in the operating outlook."
+      },
+      {
+        "year": 2026,
+        "quarter": 3,
+        "period_end": "2026-09-30",
+        "revenue_usd": 15470000,
+        "cogs_usd": 5878600,
+        "opex_usd": 12853100,
+        "operating_income_usd": -3261700,
+        "headcount": 225,
+        "engineering_services_usd": 9591400,
+        "instrument_development_usd": 4331600,
+        "mission_analysis_usd": 1547000,
+        "research_development_usd": 9254232,
+        "program_operations_usd": 2313558,
+        "corporate_administration_usd": 1285310,
+        "contracted_backlog_usd": 123760000,
+        "completed_work_packages": 48,
+        "accepted_reference_runs": 112,
+        "rejected_reference_runs": 3,
+        "development_focus": "2032 demonstration gate review",
+        "principal_risk": "funding and flight dependencies",
+        "management_interpretation": "Retain the 2032 goal while making each intermediate commitment conditional.",
+        "limitation": "Mining has not begun and no mission approval is represented.",
+        "revenue_policy": "Recognize engineering and development revenue against accepted contracted work; do not recognize projected asteroid sales.",
+        "cost_driver": "Research and verification capacity is maintained ahead of mission deployment.",
+        "outlook": "Continue the approved ground-development scope; no asteroid commodity revenue is included in the operating outlook."
+      }
+    ],
+    "source_date": "2026-10-15",
+    "modules": [
+      [
+        "Income reconciliation",
+        "Does recognized revenue cover delivery and operating costs?",
+        "Operating result remains negative after both delivery costs and development spending; the reconciliation isolates the reported loss rather than presenting revenue as profit."
+      ],
+      [
+        "Contracted service economics",
+        "How do the three service categories reconcile, and what share comes from engineering?",
+        "Recognized service categories reconcile to revenue. Engineering share describes the revenue base; no category-level profit is inferred because delivery costs are not allocated by service category."
+      ],
+      [
+        "Development spending intensity",
+        "How does research spending relate to revenue, workforce and total operating expense?",
+        "Research spending per period-end employee and relative to revenue exposes the development load. These ratios are descriptive; no capitalization, cash burn or return on investment is inferred."
+      ],
+      [
+        "Delivery capacity and evidence quality",
+        "How do delivered work and accepted or rejected trials relate to the workforce snapshot?",
+        "Completed work packages and reference acceptance are separate operating measures. Rejected trials remain in the denominator, and workforce ratios do not claim unused capacity."
+      ],
+      [
+        "Quarter-to-quarter operating bridge",
+        "Which recognized revenue and cost movements explain the change from Q2 to Q3?",
+        "The bridge reconciles revenue change, delivery-cost change and operating-expense change to the reported operating-result movement. It is an actual-period bridge, not a forecast or a causal attribution."
+      ],
+      [
+        "Backlog commitment scale",
+        "How large is remaining contracted work relative to current-quarter revenue and period-end headcount?",
+        "Backlog coverage and backlog per employee describe commitment scale at a point in time. They are not collection forecasts, cash balances, resource reserves or proof of available delivery capacity."
+      ]
+    ],
+    "strategy": {
+      "year": 2026,
+      "title": "Demonstration readiness planning",
+      "campaign": "2032 demonstration gate review",
+      "decision_rationale": "Retain the 2032 goal while making each intermediate commitment conditional.",
+      "principal_risk": "funding and flight dependencies",
+      "limitation": "Mining has not begun and no mission approval is represented.",
+      "gates": [
+        {
+          "year": 2028,
+          "gate": "Prospecting spacecraft design review",
+          "status": "planned",
+          "dependency": "verified payload interfaces and approved funding"
+        },
+        {
+          "year": 2030,
+          "gate": "Direct asteroid characterization",
+          "status": "planned",
+          "dependency": "launch access, mission authorization, and spacecraft performance"
+        },
+        {
+          "year": 2032,
+          "gate": "Resource extraction demonstration",
+          "status": "goal",
+          "dependency": "characterization evidence, extraction readiness, and funded mission operations"
+        }
+      ],
+      "revenue_source": "engineering services, instrument development, and mission analysis",
+      "mining_revenue_status": "none",
+      "flight_status": "no completed asteroid mining mission",
+      "customer_personas": [
+        "mission-design teams",
+        "instrument-development teams",
+        "verification managers"
+      ],
+      "capital_priority": "verification capability and controlled development hardware",
+      "alternative": "Expand optional functionality before closing verification evidence",
+      "alternative_disposition": "Defer optional scope until reference evidence is accepted",
+      "release_decision": "Authorize the defined ground-development campaign only",
+      "release_authority_id": "person-riley",
+      "scope_owner_id": "person-quinn",
+      "verification_owner_id": "person-sasha",
+      "operations_owner_id": "person-devon",
+      "control": "Stop expansion when a critical verification discrepancy remains open.",
+      "quarterly_priorities": [
+        "Reconcile requirements and preserve the reference configuration.",
+        "Complete controlled reference trials and record discrepancies.",
+        "Review campaign evidence and close owned corrective actions.",
+        "Consolidate accepted results into the next design baseline."
+      ]
+    }
+  },
+  "measurements": {
+    "delivered_words": 343,
+    "discussion_words": 0,
+    "meaningful_slides": 0,
+    "distinct_testable_requirements": 0,
+    "useful_analysis_modules": 6
+  }
+}

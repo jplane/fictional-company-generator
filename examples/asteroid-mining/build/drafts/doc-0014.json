@@ -1,0 +1,875 @@
+{
+  "document_id": "doc-0014",
+  "canon_sha256": "842ce5bcbc2a42e00df27a5c3ee4f41ab4b059bb36e3464daacc08a2ce0b85cd",
+  "plan_sha256": "c247168d3a13428603cf0978a3efb83d746a3260f553acf6cf38d57b4a89cd58",
+  "title": "AstroDig LLC - ScoutMap 2.0 - Analysis and Verification Specification",
+  "publication_date": "2014-08-15",
+  "content_depth": "medium",
+  "claims": [
+    {
+      "id": "claim-1",
+      "record_id": "milestone-scoutmap-2014",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "product_id": "product-scoutmap",
+        "version": "2.0",
+        "status": "ground_development_release",
+        "year": 2014,
+        "title": "ScoutMap 2.0 Ground Development Release",
+        "campaign": "trajectory screening analysis support",
+        "public_on": "2014-08-15",
+        "location": "Boulder, Colorado",
+        "scope": "Offline analysis and review use",
+        "not_in_scope": "Flight qualification, asteroid resource certification, commercial mining, or mission approval",
+        "release_rationale": "Separate reachable targets from targets with verified resource potential.",
+        "principal_risk": "input uncertainty",
+        "limitation": "Catalog rankings do not establish recoverable resources.",
+        "approved_quote": "Our target-screening discipline work is intended to make the next decision more evidence-based. We are releasing a defined ground-development configuration, not declaring an asteroid mining capability. The 2032 objective remains subject to the evidence and resources needed at each gate.",
+        "quote_speaker_id": "person-avery",
+        "quote_approved_on": "2014-08-15",
+        "availability": "Available to contracted engineering teams through a scoped technical review.",
+        "adoption_requirements": [
+          "approved input or test-material specification",
+          "named technical reviewer",
+          "configuration-controlled reference case"
+        ],
+        "next_step": "Request a technical review through media@astrodig.example; define the reference case and acceptance evidence before campaign access.",
+        "workflow": [
+          "Register configuration and inputs",
+          "Run approved reference checks",
+          "Execute bounded campaign",
+          "Review evidence and discrepancies",
+          "Accept or hold the next configuration"
+        ],
+        "use_cases": [
+          {
+            "name": "Mission trade study",
+            "task": "Compare candidate operating assumptions without asserting resource recoverability.",
+            "user": "mission-design teams"
+          },
+          {
+            "name": "Payload verification campaign",
+            "task": "Link a controlled test sequence to acceptance evidence and configuration identity.",
+            "user": "instrument-development teams"
+          },
+          {
+            "name": "Readiness review",
+            "task": "Identify open discrepancies and distinguish accepted evidence from unresolved dependencies.",
+            "user": "verification managers"
+          }
+        ],
+        "release_controls": [
+          "critical discrepancies block progression",
+          "ground and flight status remain separate",
+          "changes require reviewed evidence"
+        ]
+      }
+    },
+    {
+      "id": "claim-2",
+      "record_id": "product-scoutmap",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "name": "ScoutMap",
+        "owner_id": "person-quinn",
+        "purpose": "Offline mission analysis and target-screening software for aerospace engineering teams."
+      }
+    },
+    {
+      "id": "claim-3",
+      "record_id": "person-quinn",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Quinn Mercer"
+    },
+    {
+      "id": "claim-4",
+      "record_id": "person-sasha",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Sasha Linden"
+    },
+    {
+      "id": "claim-5",
+      "record_id": "requirement-scoutmap-2014-01",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "product_id": "product-scoutmap",
+        "version": "2.0",
+        "requirement_id": "SM-001",
+        "group": "Dataset identity",
+        "statement": "Each analysis shall record the input catalog name, revision, and ingestion date.",
+        "acceptance_criterion": "Open a saved analysis and verify that all three identifiers are retained.",
+        "verification_method": "metadata inspection",
+        "interface": "catalog-interface",
+        "failure_disposition": "A changed catalog can alter ranking independently of algorithm changes.",
+        "owner_id": "person-sasha",
+        "status": "required for development release",
+        "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+      }
+    },
+    {
+      "id": "claim-6",
+      "record_id": "milestone-scoutmap-2014",
+      "path": [
+        "data",
+        "release_controls"
+      ],
+      "value": [
+        "critical discrepancies block progression",
+        "ground and flight status remain separate",
+        "changes require reviewed evidence"
+      ]
+    },
+    {
+      "id": "claim-7",
+      "record_id": "requirement-scoutmap-2014-02",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "product_id": "product-scoutmap",
+        "version": "2.0",
+        "requirement_id": "SM-002",
+        "group": "Units",
+        "statement": "The importer shall reject mixed units that have not been explicitly mapped.",
+        "acceptance_criterion": "Submit an unmapped mixed-unit dataset and verify an actionable rejection.",
+        "verification_method": "negative import test",
+        "interface": "unit-map",
+        "failure_disposition": "Implicit conversion is not permitted.",
+        "owner_id": "person-sasha",
+        "status": "required for development release",
+        "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+      }
+    },
+    {
+      "id": "claim-8",
+      "record_id": "requirement-scoutmap-2014-03",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "product_id": "product-scoutmap",
+        "version": "2.0",
+        "requirement_id": "SM-003",
+        "group": "Missing data",
+        "statement": "A missing required input shall produce an excluded-target reason.",
+        "acceptance_criterion": "Remove a required field and verify exclusion with the field name.",
+        "verification_method": "negative input test",
+        "interface": "input-schema",
+        "failure_disposition": "A missing value shall not be treated as zero.",
+        "owner_id": "person-sasha",
+        "status": "required for development release",
+        "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+      }
+    },
+    {
+      "id": "claim-9",
+      "record_id": "requirement-scoutmap-2014-04",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "product_id": "product-scoutmap",
+        "version": "2.0",
+        "requirement_id": "SM-004",
+        "group": "Screening constraints",
+        "statement": "Each run shall retain the constraint set used for target screening.",
+        "acceptance_criterion": "Reopen a run and compare every saved constraint to its exported record.",
+        "verification_method": "round-trip test",
+        "interface": "constraint-register",
+        "failure_disposition": "Unsaved edits shall not alter accepted results.",
+        "owner_id": "person-sasha",
+        "status": "required for development release",
+        "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+      }
+    },
+    {
+      "id": "claim-10",
+      "record_id": "requirement-scoutmap-2014-05",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "product_id": "product-scoutmap",
+        "version": "2.0",
+        "requirement_id": "SM-005",
+        "group": "Uncertainty",
+        "statement": "A target ranking shall display its input-uncertainty classification.",
+        "acceptance_criterion": "Verify classifications remain attached to all targets after sorting.",
+        "verification_method": "display test",
+        "interface": "uncertainty-model",
+        "failure_disposition": "Ranking position alone is not resource evidence.",
+        "owner_id": "person-sasha",
+        "status": "required for development release",
+        "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+      }
+    },
+    {
+      "id": "claim-11",
+      "record_id": "requirement-scoutmap-2014-06",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "product_id": "product-scoutmap",
+        "version": "2.0",
+        "requirement_id": "SM-006",
+        "group": "Composition alternatives",
+        "statement": "Analysts shall be able to retain more than one composition interpretation.",
+        "acceptance_criterion": "Save two interpretations and verify both remain separately addressable.",
+        "verification_method": "scenario test",
+        "interface": "interpretation-register",
+        "failure_disposition": "Alternative interpretations shall not be averaged silently.",
+        "owner_id": "person-sasha",
+        "status": "required for development release",
+        "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+      }
+    },
+    {
+      "id": "claim-12",
+      "record_id": "requirement-scoutmap-2014-07",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "product_id": "product-scoutmap",
+        "version": "2.0",
+        "requirement_id": "SM-007",
+        "group": "Reproducibility",
+        "statement": "Identical inputs and configuration shall produce identical ordered outputs.",
+        "acceptance_criterion": "Compare two runs byte-for-byte after excluding creation timestamps.",
+        "verification_method": "repeat-run test",
+        "interface": "solver-configuration",
+        "failure_disposition": "Nondeterministic ordering blocks comparison acceptance.",
+        "owner_id": "person-sasha",
+        "status": "required for development release",
+        "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+      }
+    },
+    {
+      "id": "claim-13",
+      "record_id": "requirement-scoutmap-2014-08",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "product_id": "product-scoutmap",
+        "version": "2.0",
+        "requirement_id": "SM-008",
+        "group": "Version boundary",
+        "statement": "An analysis shall record the solver and scoring-model versions.",
+        "acceptance_criterion": "Inspect a completed export and confirm both version identifiers.",
+        "verification_method": "export inspection",
+        "interface": "version-register",
+        "failure_disposition": "A version upgrade shall not rewrite historical analyses.",
+        "owner_id": "person-sasha",
+        "status": "required for development release",
+        "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+      }
+    },
+    {
+      "id": "claim-14",
+      "record_id": "requirement-scoutmap-2014-09",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "product_id": "product-scoutmap",
+        "version": "2.0",
+        "requirement_id": "SM-009",
+        "group": "Feasibility labels",
+        "statement": "Screening results shall distinguish feasible, excluded, and unresolved targets.",
+        "acceptance_criterion": "Exercise all three states and verify separate labels and reasons.",
+        "verification_method": "state coverage",
+        "interface": "screening-engine",
+        "failure_disposition": "Unresolved shall not be presented as feasible.",
+        "owner_id": "person-sasha",
+        "status": "required for development release",
+        "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+      }
+    },
+    {
+      "id": "claim-15",
+      "record_id": "requirement-scoutmap-2014-10",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "product_id": "product-scoutmap",
+        "version": "2.0",
+        "requirement_id": "SM-010",
+        "group": "Sensitivity",
+        "statement": "Analysts shall be able to compare approved constraint variations.",
+        "acceptance_criterion": "Run two named constraint sets and verify a labeled comparison.",
+        "verification_method": "comparison test",
+        "interface": "constraint-register",
+        "failure_disposition": "Sensitivity outputs are not mission commitments.",
+        "owner_id": "person-sasha",
+        "status": "required for development release",
+        "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+      }
+    },
+    {
+      "id": "claim-16",
+      "record_id": "requirement-scoutmap-2014-11",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "product_id": "product-scoutmap",
+        "version": "2.0",
+        "requirement_id": "SM-011",
+        "group": "Audit log",
+        "statement": "Accepted analyses shall retain author, reviewer, and acceptance time.",
+        "acceptance_criterion": "Verify an accepted analysis has all three fields and a review disposition.",
+        "verification_method": "records audit",
+        "interface": "review-register",
+        "failure_disposition": "Unreviewed runs retain draft analysis status.",
+        "owner_id": "person-sasha",
+        "status": "required for development release",
+        "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+      }
+    },
+    {
+      "id": "claim-17",
+      "record_id": "requirement-scoutmap-2014-12",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "product_id": "product-scoutmap",
+        "version": "2.0",
+        "requirement_id": "SM-012",
+        "group": "Export schema",
+        "statement": "The exporter shall produce a versioned tabular schema.",
+        "acceptance_criterion": "Validate exported columns against the registered schema version.",
+        "verification_method": "schema validation",
+        "interface": "export-schema",
+        "failure_disposition": "A changed column name requires a schema revision.",
+        "owner_id": "person-sasha",
+        "status": "required for development release",
+        "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+      }
+    },
+    {
+      "id": "claim-18",
+      "record_id": "requirement-scoutmap-2014-13",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "product_id": "product-scoutmap",
+        "version": "2.0",
+        "requirement_id": "SM-013",
+        "group": "Range validation",
+        "statement": "Out-of-range values shall be rejected with the target identifier.",
+        "acceptance_criterion": "Inject an out-of-range input and verify the identifier in the error.",
+        "verification_method": "negative test",
+        "interface": "input-schema",
+        "failure_disposition": "The importer shall not silently clamp data.",
+        "owner_id": "person-sasha",
+        "status": "required for development release",
+        "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+      }
+    },
+    {
+      "id": "claim-19",
+      "record_id": "requirement-scoutmap-2014-14",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "product_id": "product-scoutmap",
+        "version": "2.0",
+        "requirement_id": "SM-014",
+        "group": "Offline operation",
+        "statement": "Accepted analysis workflows shall run without an external network dependency.",
+        "acceptance_criterion": "Disconnect network access and complete a reference analysis.",
+        "verification_method": "offline test",
+        "interface": "local-runtime",
+        "failure_disposition": "An optional catalog update is not part of acceptance.",
+        "owner_id": "person-sasha",
+        "status": "required for development release",
+        "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+      }
+    },
+    {
+      "id": "claim-20",
+      "record_id": "requirement-scoutmap-2014-15",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "product_id": "product-scoutmap",
+        "version": "2.0",
+        "requirement_id": "SM-015",
+        "group": "Comparison integrity",
+        "statement": "A comparison shall identify changes in both inputs and configuration.",
+        "acceptance_criterion": "Change one input and one setting and verify both change classes.",
+        "verification_method": "change-detection test",
+        "interface": "comparison-engine",
+        "failure_disposition": "An apparent improvement requires a traceable changed variable.",
+        "owner_id": "person-sasha",
+        "status": "required for development release",
+        "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+      }
+    },
+    {
+      "id": "claim-21",
+      "record_id": "requirement-scoutmap-2014-16",
+      "path": [
+        "data"
+      ],
+      "value": {
+        "product_id": "product-scoutmap",
+        "version": "2.0",
+        "requirement_id": "SM-016",
+        "group": "Release gate",
+        "statement": "A development release shall include reviewed reference-case results.",
+        "acceptance_criterion": "Verify reference cases, expected outcomes, discrepancies, and approvals.",
+        "verification_method": "release review",
+        "interface": "reference-suite",
+        "failure_disposition": "Open discrepancies require disposition before release.",
+        "owner_id": "person-sasha",
+        "status": "required for development release",
+        "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+      }
+    }
+  ],
+  "sections": [
+    {
+      "role": "scope",
+      "heading": "Purpose and controlled scope",
+      "text": "ScoutMap 2.0 supports trajectory screening analysis support. This baseline is limited to offline analysis and review use. Separate reachable targets from targets with verified resource potential. The specification controls the relationship between the accepted configuration, its inputs or test materials, and the verification evidence used for a development decision. It does not authorize flight qualification, asteroid resource certification, commercial mining, or mission approval. Catalog rankings do not establish recoverable resources.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2"
+      ]
+    },
+    {
+      "role": "scope",
+      "heading": "Configuration, ownership, and dependencies",
+      "text": "Quinn Mercer owns the product scope; Sasha Linden owns verification. Teams shall register configuration and inputs, complete reference checks, execute the bounded campaign, and review evidence before accepting a subsequent configuration. Adoption requires approved input or test-material specification, named technical reviewer, configuration-controlled reference case. A dependency named below is part of the requirement boundary. Replacing that dependency without review would change the basis on which the acceptance result is interpreted.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2",
+        "claim-3",
+        "claim-4"
+      ]
+    },
+    {
+      "role": "requirements",
+      "heading": "SM-001 - Dataset identity",
+      "text": "Each analysis shall record the input catalog name, revision, and ingestion date.\n\nAcceptance: Open a saved analysis and verify that all three identifiers are retained.\n\nVerification method: metadata inspection. Dependency: catalog-interface. Verification owner: Sasha Linden.\n\nDisposition: A changed catalog can alter ranking independently of algorithm changes. The acceptance record shall identify the evaluated configuration and retain the observed outcome. An unsuccessful verification result is evidence requiring disposition, not permission to replace the criterion after the run. Closure belongs in the signed verification matrix before a development release advances to the next campaign.",
+      "claim_ids": [
+        "claim-5",
+        "claim-4",
+        "claim-6"
+      ]
+    },
+    {
+      "role": "requirements",
+      "heading": "SM-002 - Units",
+      "text": "The importer shall reject mixed units that have not been explicitly mapped.\n\nAcceptance: Submit an unmapped mixed-unit dataset and verify an actionable rejection.\n\nVerification method: negative import test. Dependency: unit-map. Verification owner: Sasha Linden.\n\nDisposition: Implicit conversion is not permitted. The acceptance record shall identify the evaluated configuration and retain the observed outcome. An unsuccessful verification result is evidence requiring disposition, not permission to replace the criterion after the run. Closure belongs in the signed verification matrix before a development release advances to the next campaign.",
+      "claim_ids": [
+        "claim-7",
+        "claim-4",
+        "claim-6"
+      ]
+    },
+    {
+      "role": "requirements",
+      "heading": "SM-003 - Missing data",
+      "text": "A missing required input shall produce an excluded-target reason.\n\nAcceptance: Remove a required field and verify exclusion with the field name.\n\nVerification method: negative input test. Dependency: input-schema. Verification owner: Sasha Linden.\n\nDisposition: A missing value shall not be treated as zero. The acceptance record shall identify the evaluated configuration and retain the observed outcome. An unsuccessful verification result is evidence requiring disposition, not permission to replace the criterion after the run. Closure belongs in the signed verification matrix before a development release advances to the next campaign.",
+      "claim_ids": [
+        "claim-8",
+        "claim-4",
+        "claim-6"
+      ]
+    },
+    {
+      "role": "requirements",
+      "heading": "SM-004 - Screening constraints",
+      "text": "Each run shall retain the constraint set used for target screening.\n\nAcceptance: Reopen a run and compare every saved constraint to its exported record.\n\nVerification method: round-trip test. Dependency: constraint-register. Verification owner: Sasha Linden.\n\nDisposition: Unsaved edits shall not alter accepted results. The acceptance record shall identify the evaluated configuration and retain the observed outcome. An unsuccessful verification result is evidence requiring disposition, not permission to replace the criterion after the run. Closure belongs in the signed verification matrix before a development release advances to the next campaign.",
+      "claim_ids": [
+        "claim-9",
+        "claim-4",
+        "claim-6"
+      ]
+    },
+    {
+      "role": "requirements",
+      "heading": "SM-005 - Uncertainty",
+      "text": "A target ranking shall display its input-uncertainty classification.\n\nAcceptance: Verify classifications remain attached to all targets after sorting.\n\nVerification method: display test. Dependency: uncertainty-model. Verification owner: Sasha Linden.\n\nDisposition: Ranking position alone is not resource evidence. The acceptance record shall identify the evaluated configuration and retain the observed outcome. An unsuccessful verification result is evidence requiring disposition, not permission to replace the criterion after the run. Closure belongs in the signed verification matrix before a development release advances to the next campaign.",
+      "claim_ids": [
+        "claim-10",
+        "claim-4",
+        "claim-6"
+      ]
+    },
+    {
+      "role": "requirements",
+      "heading": "SM-006 - Composition alternatives",
+      "text": "Analysts shall be able to retain more than one composition interpretation.\n\nAcceptance: Save two interpretations and verify both remain separately addressable.\n\nVerification method: scenario test. Dependency: interpretation-register. Verification owner: Sasha Linden.\n\nDisposition: Alternative interpretations shall not be averaged silently. The acceptance record shall identify the evaluated configuration and retain the observed outcome. An unsuccessful verification result is evidence requiring disposition, not permission to replace the criterion after the run. Closure belongs in the signed verification matrix before a development release advances to the next campaign.",
+      "claim_ids": [
+        "claim-11",
+        "claim-4",
+        "claim-6"
+      ]
+    },
+    {
+      "role": "requirements",
+      "heading": "SM-007 - Reproducibility",
+      "text": "Identical inputs and configuration shall produce identical ordered outputs.\n\nAcceptance: Compare two runs byte-for-byte after excluding creation timestamps.\n\nVerification method: repeat-run test. Dependency: solver-configuration. Verification owner: Sasha Linden.\n\nDisposition: Nondeterministic ordering blocks comparison acceptance. The acceptance record shall identify the evaluated configuration and retain the observed outcome. An unsuccessful verification result is evidence requiring disposition, not permission to replace the criterion after the run. Closure belongs in the signed verification matrix before a development release advances to the next campaign.",
+      "claim_ids": [
+        "claim-12",
+        "claim-4",
+        "claim-6"
+      ]
+    },
+    {
+      "role": "requirements",
+      "heading": "SM-008 - Version boundary",
+      "text": "An analysis shall record the solver and scoring-model versions.\n\nAcceptance: Inspect a completed export and confirm both version identifiers.\n\nVerification method: export inspection. Dependency: version-register. Verification owner: Sasha Linden.\n\nDisposition: A version upgrade shall not rewrite historical analyses. The acceptance record shall identify the evaluated configuration and retain the observed outcome. An unsuccessful verification result is evidence requiring disposition, not permission to replace the criterion after the run. Closure belongs in the signed verification matrix before a development release advances to the next campaign.",
+      "claim_ids": [
+        "claim-13",
+        "claim-4",
+        "claim-6"
+      ]
+    },
+    {
+      "role": "requirements",
+      "heading": "SM-009 - Feasibility labels",
+      "text": "Screening results shall distinguish feasible, excluded, and unresolved targets.\n\nAcceptance: Exercise all three states and verify separate labels and reasons.\n\nVerification method: state coverage. Dependency: screening-engine. Verification owner: Sasha Linden.\n\nDisposition: Unresolved shall not be presented as feasible. The acceptance record shall identify the evaluated configuration and retain the observed outcome. An unsuccessful verification result is evidence requiring disposition, not permission to replace the criterion after the run. Closure belongs in the signed verification matrix before a development release advances to the next campaign.",
+      "claim_ids": [
+        "claim-14",
+        "claim-4",
+        "claim-6"
+      ]
+    },
+    {
+      "role": "requirements",
+      "heading": "SM-010 - Sensitivity",
+      "text": "Analysts shall be able to compare approved constraint variations.\n\nAcceptance: Run two named constraint sets and verify a labeled comparison.\n\nVerification method: comparison test. Dependency: constraint-register. Verification owner: Sasha Linden.\n\nDisposition: Sensitivity outputs are not mission commitments. The acceptance record shall identify the evaluated configuration and retain the observed outcome. An unsuccessful verification result is evidence requiring disposition, not permission to replace the criterion after the run. Closure belongs in the signed verification matrix before a development release advances to the next campaign.",
+      "claim_ids": [
+        "claim-15",
+        "claim-4",
+        "claim-6"
+      ]
+    },
+    {
+      "role": "requirements",
+      "heading": "SM-011 - Audit log",
+      "text": "Accepted analyses shall retain author, reviewer, and acceptance time.\n\nAcceptance: Verify an accepted analysis has all three fields and a review disposition.\n\nVerification method: records audit. Dependency: review-register. Verification owner: Sasha Linden.\n\nDisposition: Unreviewed runs retain draft analysis status. The acceptance record shall identify the evaluated configuration and retain the observed outcome. An unsuccessful verification result is evidence requiring disposition, not permission to replace the criterion after the run. Closure belongs in the signed verification matrix before a development release advances to the next campaign.",
+      "claim_ids": [
+        "claim-16",
+        "claim-4",
+        "claim-6"
+      ]
+    },
+    {
+      "role": "requirements",
+      "heading": "SM-012 - Export schema",
+      "text": "The exporter shall produce a versioned tabular schema.\n\nAcceptance: Validate exported columns against the registered schema version.\n\nVerification method: schema validation. Dependency: export-schema. Verification owner: Sasha Linden.\n\nDisposition: A changed column name requires a schema revision. The acceptance record shall identify the evaluated configuration and retain the observed outcome. An unsuccessful verification result is evidence requiring disposition, not permission to replace the criterion after the run. Closure belongs in the signed verification matrix before a development release advances to the next campaign.",
+      "claim_ids": [
+        "claim-17",
+        "claim-4",
+        "claim-6"
+      ]
+    },
+    {
+      "role": "requirements",
+      "heading": "SM-013 - Range validation",
+      "text": "Out-of-range values shall be rejected with the target identifier.\n\nAcceptance: Inject an out-of-range input and verify the identifier in the error.\n\nVerification method: negative test. Dependency: input-schema. Verification owner: Sasha Linden.\n\nDisposition: The importer shall not silently clamp data. The acceptance record shall identify the evaluated configuration and retain the observed outcome. An unsuccessful verification result is evidence requiring disposition, not permission to replace the criterion after the run. Closure belongs in the signed verification matrix before a development release advances to the next campaign.",
+      "claim_ids": [
+        "claim-18",
+        "claim-4",
+        "claim-6"
+      ]
+    },
+    {
+      "role": "requirements",
+      "heading": "SM-014 - Offline operation",
+      "text": "Accepted analysis workflows shall run without an external network dependency.\n\nAcceptance: Disconnect network access and complete a reference analysis.\n\nVerification method: offline test. Dependency: local-runtime. Verification owner: Sasha Linden.\n\nDisposition: An optional catalog update is not part of acceptance. The acceptance record shall identify the evaluated configuration and retain the observed outcome. An unsuccessful verification result is evidence requiring disposition, not permission to replace the criterion after the run. Closure belongs in the signed verification matrix before a development release advances to the next campaign.",
+      "claim_ids": [
+        "claim-19",
+        "claim-4",
+        "claim-6"
+      ]
+    },
+    {
+      "role": "requirements",
+      "heading": "SM-015 - Comparison integrity",
+      "text": "A comparison shall identify changes in both inputs and configuration.\n\nAcceptance: Change one input and one setting and verify both change classes.\n\nVerification method: change-detection test. Dependency: comparison-engine. Verification owner: Sasha Linden.\n\nDisposition: An apparent improvement requires a traceable changed variable. The acceptance record shall identify the evaluated configuration and retain the observed outcome. An unsuccessful verification result is evidence requiring disposition, not permission to replace the criterion after the run. Closure belongs in the signed verification matrix before a development release advances to the next campaign.",
+      "claim_ids": [
+        "claim-20",
+        "claim-4",
+        "claim-6"
+      ]
+    },
+    {
+      "role": "requirements",
+      "heading": "SM-016 - Release gate",
+      "text": "A development release shall include reviewed reference-case results.\n\nAcceptance: Verify reference cases, expected outcomes, discrepancies, and approvals.\n\nVerification method: release review. Dependency: reference-suite. Verification owner: Sasha Linden.\n\nDisposition: Open discrepancies require disposition before release. The acceptance record shall identify the evaluated configuration and retain the observed outcome. An unsuccessful verification result is evidence requiring disposition, not permission to replace the criterion after the run. Closure belongs in the signed verification matrix before a development release advances to the next campaign.",
+      "claim_ids": [
+        "claim-21",
+        "claim-4",
+        "claim-6"
+      ]
+    },
+    {
+      "role": "acceptance_criteria",
+      "heading": "Acceptance matrix and release gate",
+      "text": "Each requirement above is a distinct testable control, not an optional checklist item. The verification matrix shall retain the requirement identifier, method, observed result, responsible reviewer, and discrepancy disposition. Critical discrepancies block progression. Ground-development release status and flight status remain separate throughout review. Any change requires reviewed evidence before it is incorporated into the next accepted configuration.\n\nThe current campaign risk is input uncertainty. Catalog rankings do not establish recoverable resources. The release gate accepts evidence for the defined ground scope only. It does not establish resource recoverability, mission approval, or a commercial output commitment. This distinction shall remain visible in the acceptance record and in technical communication about the release.",
+      "claim_ids": [
+        "claim-1",
+        "claim-2"
+      ]
+    }
+  ],
+  "slides": [],
+  "requirement_rows": [
+    {
+      "product_id": "product-scoutmap",
+      "version": "2.0",
+      "requirement_id": "SM-001",
+      "group": "Dataset identity",
+      "statement": "Each analysis shall record the input catalog name, revision, and ingestion date.",
+      "acceptance_criterion": "Open a saved analysis and verify that all three identifiers are retained.",
+      "verification_method": "metadata inspection",
+      "interface": "catalog-interface",
+      "failure_disposition": "A changed catalog can alter ranking independently of algorithm changes.",
+      "owner_id": "person-sasha",
+      "status": "required for development release",
+      "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+    },
+    {
+      "product_id": "product-scoutmap",
+      "version": "2.0",
+      "requirement_id": "SM-002",
+      "group": "Units",
+      "statement": "The importer shall reject mixed units that have not been explicitly mapped.",
+      "acceptance_criterion": "Submit an unmapped mixed-unit dataset and verify an actionable rejection.",
+      "verification_method": "negative import test",
+      "interface": "unit-map",
+      "failure_disposition": "Implicit conversion is not permitted.",
+      "owner_id": "person-sasha",
+      "status": "required for development release",
+      "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+    },
+    {
+      "product_id": "product-scoutmap",
+      "version": "2.0",
+      "requirement_id": "SM-003",
+      "group": "Missing data",
+      "statement": "A missing required input shall produce an excluded-target reason.",
+      "acceptance_criterion": "Remove a required field and verify exclusion with the field name.",
+      "verification_method": "negative input test",
+      "interface": "input-schema",
+      "failure_disposition": "A missing value shall not be treated as zero.",
+      "owner_id": "person-sasha",
+      "status": "required for development release",
+      "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+    },
+    {
+      "product_id": "product-scoutmap",
+      "version": "2.0",
+      "requirement_id": "SM-004",
+      "group": "Screening constraints",
+      "statement": "Each run shall retain the constraint set used for target screening.",
+      "acceptance_criterion": "Reopen a run and compare every saved constraint to its exported record.",
+      "verification_method": "round-trip test",
+      "interface": "constraint-register",
+      "failure_disposition": "Unsaved edits shall not alter accepted results.",
+      "owner_id": "person-sasha",
+      "status": "required for development release",
+      "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+    },
+    {
+      "product_id": "product-scoutmap",
+      "version": "2.0",
+      "requirement_id": "SM-005",
+      "group": "Uncertainty",
+      "statement": "A target ranking shall display its input-uncertainty classification.",
+      "acceptance_criterion": "Verify classifications remain attached to all targets after sorting.",
+      "verification_method": "display test",
+      "interface": "uncertainty-model",
+      "failure_disposition": "Ranking position alone is not resource evidence.",
+      "owner_id": "person-sasha",
+      "status": "required for development release",
+      "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+    },
+    {
+      "product_id": "product-scoutmap",
+      "version": "2.0",
+      "requirement_id": "SM-006",
+      "group": "Composition alternatives",
+      "statement": "Analysts shall be able to retain more than one composition interpretation.",
+      "acceptance_criterion": "Save two interpretations and verify both remain separately addressable.",
+      "verification_method": "scenario test",
+      "interface": "interpretation-register",
+      "failure_disposition": "Alternative interpretations shall not be averaged silently.",
+      "owner_id": "person-sasha",
+      "status": "required for development release",
+      "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+    },
+    {
+      "product_id": "product-scoutmap",
+      "version": "2.0",
+      "requirement_id": "SM-007",
+      "group": "Reproducibility",
+      "statement": "Identical inputs and configuration shall produce identical ordered outputs.",
+      "acceptance_criterion": "Compare two runs byte-for-byte after excluding creation timestamps.",
+      "verification_method": "repeat-run test",
+      "interface": "solver-configuration",
+      "failure_disposition": "Nondeterministic ordering blocks comparison acceptance.",
+      "owner_id": "person-sasha",
+      "status": "required for development release",
+      "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+    },
+    {
+      "product_id": "product-scoutmap",
+      "version": "2.0",
+      "requirement_id": "SM-008",
+      "group": "Version boundary",
+      "statement": "An analysis shall record the solver and scoring-model versions.",
+      "acceptance_criterion": "Inspect a completed export and confirm both version identifiers.",
+      "verification_method": "export inspection",
+      "interface": "version-register",
+      "failure_disposition": "A version upgrade shall not rewrite historical analyses.",
+      "owner_id": "person-sasha",
+      "status": "required for development release",
+      "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+    },
+    {
+      "product_id": "product-scoutmap",
+      "version": "2.0",
+      "requirement_id": "SM-009",
+      "group": "Feasibility labels",
+      "statement": "Screening results shall distinguish feasible, excluded, and unresolved targets.",
+      "acceptance_criterion": "Exercise all three states and verify separate labels and reasons.",
+      "verification_method": "state coverage",
+      "interface": "screening-engine",
+      "failure_disposition": "Unresolved shall not be presented as feasible.",
+      "owner_id": "person-sasha",
+      "status": "required for development release",
+      "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+    },
+    {
+      "product_id": "product-scoutmap",
+      "version": "2.0",
+      "requirement_id": "SM-010",
+      "group": "Sensitivity",
+      "statement": "Analysts shall be able to compare approved constraint variations.",
+      "acceptance_criterion": "Run two named constraint sets and verify a labeled comparison.",
+      "verification_method": "comparison test",
+      "interface": "constraint-register",
+      "failure_disposition": "Sensitivity outputs are not mission commitments.",
+      "owner_id": "person-sasha",
+      "status": "required for development release",
+      "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+    },
+    {
+      "product_id": "product-scoutmap",
+      "version": "2.0",
+      "requirement_id": "SM-011",
+      "group": "Audit log",
+      "statement": "Accepted analyses shall retain author, reviewer, and acceptance time.",
+      "acceptance_criterion": "Verify an accepted analysis has all three fields and a review disposition.",
+      "verification_method": "records audit",
+      "interface": "review-register",
+      "failure_disposition": "Unreviewed runs retain draft analysis status.",
+      "owner_id": "person-sasha",
+      "status": "required for development release",
+      "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+    },
+    {
+      "product_id": "product-scoutmap",
+      "version": "2.0",
+      "requirement_id": "SM-012",
+      "group": "Export schema",
+      "statement": "The exporter shall produce a versioned tabular schema.",
+      "acceptance_criterion": "Validate exported columns against the registered schema version.",
+      "verification_method": "schema validation",
+      "interface": "export-schema",
+      "failure_disposition": "A changed column name requires a schema revision.",
+      "owner_id": "person-sasha",
+      "status": "required for development release",
+      "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+    },
+    {
+      "product_id": "product-scoutmap",
+      "version": "2.0",
+      "requirement_id": "SM-013",
+      "group": "Range validation",
+      "statement": "Out-of-range values shall be rejected with the target identifier.",
+      "acceptance_criterion": "Inject an out-of-range input and verify the identifier in the error.",
+      "verification_method": "negative test",
+      "interface": "input-schema",
+      "failure_disposition": "The importer shall not silently clamp data.",
+      "owner_id": "person-sasha",
+      "status": "required for development release",
+      "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+    },
+    {
+      "product_id": "product-scoutmap",
+      "version": "2.0",
+      "requirement_id": "SM-014",
+      "group": "Offline operation",
+      "statement": "Accepted analysis workflows shall run without an external network dependency.",
+      "acceptance_criterion": "Disconnect network access and complete a reference analysis.",
+      "verification_method": "offline test",
+      "interface": "local-runtime",
+      "failure_disposition": "An optional catalog update is not part of acceptance.",
+      "owner_id": "person-sasha",
+      "status": "required for development release",
+      "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+    },
+    {
+      "product_id": "product-scoutmap",
+      "version": "2.0",
+      "requirement_id": "SM-015",
+      "group": "Comparison integrity",
+      "statement": "A comparison shall identify changes in both inputs and configuration.",
+      "acceptance_criterion": "Change one input and one setting and verify both change classes.",
+      "verification_method": "change-detection test",
+      "interface": "comparison-engine",
+      "failure_disposition": "An apparent improvement requires a traceable changed variable.",
+      "owner_id": "person-sasha",
+      "status": "required for development release",
+      "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+    },
+    {
+      "product_id": "product-scoutmap",
+      "version": "2.0",
+      "requirement_id": "SM-016",
+      "group": "Release gate",
+      "statement": "A development release shall include reviewed reference-case results.",
+      "acceptance_criterion": "Verify reference cases, expected outcomes, discrepancies, and approvals.",
+      "verification_method": "release review",
+      "interface": "reference-suite",
+      "failure_disposition": "Open discrepancies require disposition before release.",
+      "owner_id": "person-sasha",
+      "status": "required for development release",
+      "traceability": "ScoutMap 2.0 controlled acceptance baseline"
+    }
+  ],
+  "measurements": {
+    "delivered_words": 1608,
+    "discussion_words": 0,
+    "meaningful_slides": 0,
+    "distinct_testable_requirements": 16,
+    "useful_analysis_modules": 0
+  }
+}

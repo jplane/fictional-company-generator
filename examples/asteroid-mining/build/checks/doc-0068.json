@@ -1,0 +1,17 @@
+{
+  "document_id": "doc-0068",
+  "artifact_sha256": "0d1032274876ed53711c45c070b27424c4518894581f81c30251271763ac023f",
+  "draft_sha256": "00642b24d8a2306e5ec480de74c84ddf98f905000bbba4829ee4be94339124df",
+  "pages": 12,
+  "package_integrity": "passed",
+  "extracted_text": "passed",
+  "render_text_issues": [],
+  "recalculation": null,
+  "measurements": {
+    "delivered_words": 285,
+    "discussion_words": 0,
+    "meaningful_slides": 12,
+    "distinct_testable_requirements": 0,
+    "useful_analysis_modules": 0
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "company_name": "AstroDig LLC",
+  "industry": "aerospace engineering and asteroid resource technology",
+  "start_year": 2013,
+  "years": 14,
+  "documents": 150,
+  "seed": 42,
+  "content_depth": "medium",
+  "document_types": [
+    "press_release",
+    "product_presentation",
+    "meeting_transcript",
+    "product_spec",
+    "quarterly_report",
+    "annual_report",
+    "board_deck",
+    "financial_model"
+  ]
+}

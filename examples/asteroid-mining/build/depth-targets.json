@@ -1,0 +1,2054 @@
+{
+  "schema_version": 1,
+  "plan_sha256": "c247168d3a13428603cf0978a3efb83d746a3260f553acf6cf38d57b4a89cd58",
+  "documents": [
+    {
+      "document_id": "doc-0008",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0009",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0001",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0002",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 10,
+      "target_max": 13,
+      "coverage": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0003",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0004",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0005",
+      "content_depth": "medium",
+      "measure": "discussion_words",
+      "target_min": 1500,
+      "target_max": 2500,
+      "coverage": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0006",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 12,
+      "target_max": 15,
+      "coverage": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0010",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 10,
+      "target_max": 13,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0007",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 14,
+      "target_max": 18,
+      "coverage": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0018",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0019",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0011",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0012",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 10,
+      "target_max": 13,
+      "coverage": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0013",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0014",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0015",
+      "content_depth": "medium",
+      "measure": "discussion_words",
+      "target_min": 1500,
+      "target_max": 2500,
+      "coverage": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0016",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 12,
+      "target_max": 15,
+      "coverage": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0020",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 10,
+      "target_max": 13,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0017",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 14,
+      "target_max": 18,
+      "coverage": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0028",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0029",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0021",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0022",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 10,
+      "target_max": 13,
+      "coverage": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0023",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0024",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0025",
+      "content_depth": "medium",
+      "measure": "discussion_words",
+      "target_min": 1500,
+      "target_max": 2500,
+      "coverage": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0026",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 12,
+      "target_max": 15,
+      "coverage": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0030",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 10,
+      "target_max": 13,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0027",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 14,
+      "target_max": 18,
+      "coverage": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0038",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0039",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0031",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0032",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 10,
+      "target_max": 13,
+      "coverage": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0033",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0034",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0035",
+      "content_depth": "medium",
+      "measure": "discussion_words",
+      "target_min": 1500,
+      "target_max": 2500,
+      "coverage": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0036",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 12,
+      "target_max": 15,
+      "coverage": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0040",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 10,
+      "target_max": 13,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0037",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 14,
+      "target_max": 18,
+      "coverage": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0048",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0049",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0041",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0042",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 10,
+      "target_max": 13,
+      "coverage": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0043",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0044",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0045",
+      "content_depth": "medium",
+      "measure": "discussion_words",
+      "target_min": 1500,
+      "target_max": 2500,
+      "coverage": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0046",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 12,
+      "target_max": 15,
+      "coverage": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0050",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 10,
+      "target_max": 13,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0051",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0047",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 14,
+      "target_max": 18,
+      "coverage": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0059",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0060",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0052",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0053",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 10,
+      "target_max": 13,
+      "coverage": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0054",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0055",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0056",
+      "content_depth": "medium",
+      "measure": "discussion_words",
+      "target_min": 1500,
+      "target_max": 2500,
+      "coverage": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0057",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 12,
+      "target_max": 15,
+      "coverage": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0061",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 10,
+      "target_max": 13,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0062",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0058",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 14,
+      "target_max": 18,
+      "coverage": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0070",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0071",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0063",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0064",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 10,
+      "target_max": 13,
+      "coverage": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0065",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0066",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0067",
+      "content_depth": "medium",
+      "measure": "discussion_words",
+      "target_min": 1500,
+      "target_max": 2500,
+      "coverage": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0068",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 12,
+      "target_max": 15,
+      "coverage": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0072",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 10,
+      "target_max": 13,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0073",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0069",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 14,
+      "target_max": 18,
+      "coverage": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0081",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0082",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0074",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0075",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 10,
+      "target_max": 13,
+      "coverage": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0076",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0077",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0078",
+      "content_depth": "medium",
+      "measure": "discussion_words",
+      "target_min": 1500,
+      "target_max": 2500,
+      "coverage": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0079",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 12,
+      "target_max": 15,
+      "coverage": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0083",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 10,
+      "target_max": 13,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0084",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0080",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 14,
+      "target_max": 18,
+      "coverage": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0092",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0093",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0085",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0086",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 10,
+      "target_max": 13,
+      "coverage": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0087",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0088",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0089",
+      "content_depth": "medium",
+      "measure": "discussion_words",
+      "target_min": 1500,
+      "target_max": 2500,
+      "coverage": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0090",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 12,
+      "target_max": 15,
+      "coverage": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0094",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0095",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0091",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 14,
+      "target_max": 18,
+      "coverage": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0103",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0104",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0096",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0097",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 10,
+      "target_max": 13,
+      "coverage": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0098",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0099",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0100",
+      "content_depth": "medium",
+      "measure": "discussion_words",
+      "target_min": 1500,
+      "target_max": 2500,
+      "coverage": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0101",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 12,
+      "target_max": 15,
+      "coverage": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0105",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0106",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0102",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 14,
+      "target_max": 18,
+      "coverage": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0114",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0115",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0107",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0108",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 10,
+      "target_max": 13,
+      "coverage": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0109",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0110",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0111",
+      "content_depth": "medium",
+      "measure": "discussion_words",
+      "target_min": 1500,
+      "target_max": 2500,
+      "coverage": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0112",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 12,
+      "target_max": 15,
+      "coverage": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0116",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0117",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0113",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 14,
+      "target_max": 18,
+      "coverage": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0125",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0126",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0118",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0119",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 10,
+      "target_max": 13,
+      "coverage": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0120",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0121",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0122",
+      "content_depth": "medium",
+      "measure": "discussion_words",
+      "target_min": 1500,
+      "target_max": 2500,
+      "coverage": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0123",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 12,
+      "target_max": 15,
+      "coverage": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0127",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0128",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0124",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 14,
+      "target_max": 18,
+      "coverage": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0136",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0137",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0129",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0130",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 10,
+      "target_max": 13,
+      "coverage": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0131",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0132",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0133",
+      "content_depth": "medium",
+      "measure": "discussion_words",
+      "target_min": 1500,
+      "target_max": 2500,
+      "coverage": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0134",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 12,
+      "target_max": 15,
+      "coverage": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0138",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0139",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0135",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 14,
+      "target_max": 18,
+      "coverage": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0147",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0148",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0140",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0141",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 10,
+      "target_max": 13,
+      "coverage": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0142",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0143",
+      "content_depth": "medium",
+      "measure": "distinct_testable_requirements",
+      "target_min": 16,
+      "target_max": 20,
+      "coverage": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0144",
+      "content_depth": "medium",
+      "measure": "discussion_words",
+      "target_min": 1500,
+      "target_max": 2500,
+      "coverage": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0145",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 12,
+      "target_max": 15,
+      "coverage": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0149",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "financial_results",
+        "operating_review",
+        "outlook_and_risks"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0150",
+      "content_depth": "medium",
+      "measure": "useful_analysis_modules",
+      "target_min": 6,
+      "target_max": 6,
+      "coverage": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0146",
+      "content_depth": "medium",
+      "measure": "meaningful_slides",
+      "target_min": 14,
+      "target_max": 18,
+      "coverage": [
+        "financial_results",
+        "business_review",
+        "organization",
+        "risks"
+      ],
+      "adaptation_rationale": null
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "document_id": "doc-0104",
+  "artifact_sha256": "fd49f4eecaf52f5849d70d005025826ba0b70847153e5607e5b170236349d33a",
+  "draft_sha256": "a7e284c081ba64b97bde64a99dc21444051305a9072fbd5bf3a77cac419ea554",
+  "pages": 9,
+  "package_integrity": "passed",
+  "extracted_text": "passed",
+  "render_text_issues": [],
+  "recalculation": {
+    "status": "passed",
+    "engine": "LibreOffice 26.8.0.3 native Windows headless import/export",
+    "formula_count": 65,
+    "formula_errors": 0,
+    "expected_values_checked": 13,
+    "note": "All formulas retain cached results; income, allocation, ratio, and trend expectations checked."
+  },
+  "measurements": {
+    "delivered_words": 299,
+    "discussion_words": 0,
+    "meaningful_slides": 0,
+    "distinct_testable_requirements": 0,
+    "useful_analysis_modules": 6
+  }
+}
