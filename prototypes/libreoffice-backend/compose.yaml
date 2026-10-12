@@ -3,10 +3,12 @@ services:
     build:
       context: .
     user: "${POC_UID:-10001}:${POC_GID:-10001}"
+    environment:
+      CORPUS_ROOT: /corpus
     volumes:
       - type: bind
-        source: ./output
-        target: /output
+        source: "${CORPUS_ROOT:-./output}"
+        target: /corpus
         bind:
           create_host_path: false
       - type: bind
@@ -15,3 +17,17 @@ services:
         read_only: true
         bind:
           create_host_path: false
+    command:
+      - python3
+      - -m
+      - office_backend
+      - --canon
+      - /corpus/canon.json
+      - --plan
+      - /corpus/build/plan.json
+      - --contexts
+      - /corpus/build/contexts
+      - --drafts
+      - /corpus/build/drafts
+      - --root
+      - /corpus

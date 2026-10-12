@@ -282,6 +282,42 @@ Final documents have no synthetic/fake/fictional/AI-generation labeling.
 The helper scans common self-description phrases in drafts and Office XML;
 manual semantic/genre review must check the entire document and its properties.
 
+### Backend export structures
+
+The container CLI consumes the actual canon, frozen plan, per-document
+date-filtered context, and grounded draft. It never creates replacement canon
+or prose. The supported structures below are rendered; unknown top-level,
+section, slide, table, or chart fields stop export with an explicit error.
+
+A section may contain simple tables with `title`, `headers`, and `rows`. DOCX
+renders each table with its section. XLSX renders section content and tables
+on a named worksheet. An XLSX table cell may be an explicit formula object; its
+optional expected value is checked after LibreOffice Calc recalculation:
+
+```json
+{"formula": "=SUM(B2:B4)", "expected_value": 17}
+```
+
+Formula expressions may not link to an external workbook. A draft without
+formula cells remains a narrative/source workbook; the backend does not invent
+calculations or claim formula results were verified.
+
+PPTX drafts may add top-level `slides`, with exactly one slide per grounded
+section. Each slide has a matching `heading` and complete section `text` as a
+string or list of strings in `body`. Supported optional fields are `subtitle`,
+`badge`, `notes`, `layout`, `chart`, and `tables`. Layouts are `cover`, `cards`,
+`grid`, `statement`, `capabilities`, `workflow`, `stats`, `chart`, `closing`,
+and `content`. A simple chart has text `labels`, finite numeric `values`, and
+optional `kind` (`bar`, `column`, `line`, `pie`, or `doughnut`) and `title`.
+Speaker notes must repeat material present in the cited section. Unsupported
+layout/data shapes or mismatches between slides and sections are rejected,
+never dropped silently.
+
+`claims` and `measurements` are private receipts and are not rendered.
+`requirement_rows` render as a traceability table in DOCX or XLSX; structured
+`model` data render into an XLSX source-model worksheet. IDs, claim receipts,
+hashes, and generation provenance are not placed in business-facing content.
+
 ## Manifest and QA
 
 The manifest lives at `build\manifest.json`. Paths are relative to `--root`, and may
@@ -308,6 +344,11 @@ contain exactly one entry per plan document. Package audit verifies CRCs,
 parsable XML, and mandatory parts, not full OOXML schema conformance.
 Each artifact's basename must exactly match the corresponding plan `filename`;
 a generic filename is rejected even when the bytes and hash are valid.
+The container writes `build\manifest.json` only after the complete plan is
+exported. An invocation restricted with `--document` writes
+`build\backend-pilot-manifest.json` and `build\backend-pilot-evidence.json`,
+explicitly scoped to selected plan items; these are not complete-corpus
+receipts and cannot satisfy the full-plan audit.
 
 `build\qa.json` records honest review evidence:
 
@@ -344,10 +385,13 @@ a generic filename is rejected even when the bytes and hash are valid.
 ```
 
 For XLSX also require `recalculation` with `status: "passed"` and nonempty
-`evidence` identifying Microsoft Excel, its version, the actual recalculation
-operation, and zero-error formula scan. Word/PowerPoint visual-review evidence
-must identify the Microsoft Office application/version that produced the
-reviewed pages/slides. A substitute engine is not valid evidence.
+`evidence` identifying the pinned container's LibreOffice Calc version, actual
+recalculation operation, formula count, cached-result checks, and formula-error
+scan. If the source draft has no formulas, state this explicitly and do not
+claim expected formula values were verified. DOCX/PPTX visual-review evidence
+must identify the pinned container's LibreOffice Writer/Impress version and
+the rendered pages/slides inspected. Never describe these as Microsoft Office
+operations or Office-fidelity certification.
 Every document requires `depth_review` with passed status, nonempty evidence,
 and `content_depth` equal to the plan. Evidence should cite actual delivered
 coverage, measurements, and useful analyses against `build\depth-targets.json`;
@@ -356,13 +400,15 @@ Changing a plan, draft, or output invalidates its QA receipt. The audit checks r
 presence and hashes; it cannot independently establish that a human or AI
 actually performed the claimed review.
 
-Generation must pass the local Microsoft Office prerequisite in
+Generation must pass the pinned container build and runtime preflight in
 `references\dependencies.md` before any corpus artifacts are created. Record
-Office application versions, actual automation connection evidence, reviewed
-skill/MCP sources and revisions, and pilot results in `build\preflight.json`.
-This workflow receipt is not independently enforced by the Python audit.
-Missing/unavailable Office or a noncompliant backend means notify the user and
-stop, including on resume; do not fall back to another engine.
+Docker/Compose versions, image digest and repository revision, container
+Python/package and LibreOffice versions, helper-mount and smoke-test evidence,
+and actual pilot results in `build\preflight.json`. State plainly that
+LibreOffice pagination, formatting, and calculation may differ from Office;
+do not claim Office fidelity. The preflight receipt is not independently
+enforced by the Python audit. A missing image, application, or capability is a
+stop condition; do not fall back to another engine.
 
 ## Depth targets
 

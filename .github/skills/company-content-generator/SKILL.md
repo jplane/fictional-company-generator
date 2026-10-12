@@ -19,65 +19,47 @@ When installed elsewhere, use the resolved absolute script path.
 
 ## Dependencies and preflight
 
-**Microsoft Office is a hard prerequisite for corpus generation.** Use only
-reviewed skills and/or MCPs that actually drive locally installed Microsoft
-Word, PowerPoint, and Excel for the selected formats. A tool that merely reads
-or writes Office-compatible files does not qualify. Skill names such as `docx`,
-`pptx`, `xlsx`, or `officecli` are not evidence of a Microsoft Office backend.
-There is no default third-party document backend.
+Document export uses the repository's pinned LibreOffice backend container
+described in `references\dependencies.md`. Its pinned Python tools author DOCX,
+XLSX, and PPTX from the agent-prepared artifacts; LibreOffice Writer, Calc, and
+Impress recalculate/render them. The host needs Docker Engine and Docker Compose
+v2 (or an interactive Dev Container built from the same Dockerfile), not local
+Microsoft Office. There is no alternate document backend.
 
-| Selected format | Required local application and capability |
-|---|---|
-| DOCX | Microsoft Word: author/save, extract, paginate, and render |
-| PPTX | Microsoft PowerPoint: author/save, extract, and render every slide |
-| XLSX | Microsoft Excel: author/save, recalculate, reopen cached values, and inspect layout |
+Before creating the output directory, canon, plan, contexts, or drafts:
 
-**Never fall back to LibreOffice, OpenOffice, standalone OOXML generators,
-third-party rendering/calculation engines, or cloud-only Office access.** Do not
-use `soffice`, npm `docx`/`pptxgenjs`, `openpyxl`, or an independent OfficeCLI
-engine as a replacement. Generic diagram/PDF skills are not dependencies;
-create charts/diagrams and export QA views through Microsoft Office. Read-only
-ZIP/XML/hash checks and inspection of Office-exported images/PDFs may support
-QA, but cannot replace Office authoring, rendering, or Excel recalculation.
+1. Determine the selected formats from the request/intake. Verify Docker Engine
+   and Compose v2, inspect the pinned base image/dependency locks, build the
+   backend image, and run its focused smoke suite. Confirm imports for
+   `python-docx`, `openpyxl`, `python-pptx`, and `pypdf`, plus
+   `soffice --version`.
+2. If the container cannot build, the contract helper is not mounted read-only,
+   a selected exporter is unavailable, or Writer/Calc/Impress cannot perform
+   its required operation, stop before corpus generation. State the concrete
+   blocker and use no substitute renderer or calculator.
+3. Use only the prepared local canon, plan, date-filtered contexts, and
+   claim-checked drafts as exporter inputs. The backend CLI must not seed a
+   different canon, select a new type mix, call an AI model, or fabricate
+   replacement prose. Do not retrieve real employee/company data or upload
+   corpus content to external services.
+4. After freezing the canon/plan and validating grounded drafts, run one actual
+   planned item per selected format through the input-driven CLI before bulk
+   export. Confirm the exported file uses the exact planned filename, contains
+   the draft's content, and has a rendered PDF/page preview. XLSX formula
+   expressions and cached values must survive Calc recalculation; check
+   expected values and scan all sheets for formula errors. A draft without
+   formulas is not grounds for inventing calculations.
+5. Inspect every pilot preview for readability, clipping, tables, charts, and
+   pagination. Then record image hashes/paths, LibreOffice and package
+   versions, CLI evidence, container/image revision, and limitations in
+   `build\preflight.json`. Successful conversion is not itself visual review.
+6. Keep source inputs and existing outputs unchanged. If generation or QA
+   fails, preserve accepted files, report the exact completed count, and use a
+   new output revision for retries.
 
-Before creating the output directory, canon, plan, or drafts:
-
-1. Determine the selected formats from the request/intake. Verify the matching
-   Microsoft Office desktop applications are installed on the user's machine
-   and accessible to the selected automation backend. A DOCX-only run needs
-   Word, not PowerPoint or Excel. Web subscriptions, executable/registry
-   detection, or Office file associations alone do not prove usable automation.
-2. If an application is absent, inaccessible, unlicensed, or its availability
-   cannot be verified, notify the user: "Generation stopped: local Microsoft
-   Office is required. Missing or unavailable: <applications/capabilities>.
-   No fallback was used." Then stop. Do not continue with canon/planning-only
-   generation, install substitutes, create a partial corpus, or bypass the
-   check with a cloud-only MCP. Maintaining this skill and running helper tests
-   are not corpus generation and do not require Office.
-3. Discover reviewed Microsoft Office-backed skills/MCPs and verify their
-   source, revision, license, actual application connection, and operations.
-   If no compliant backend is available, notify the user and stop even when
-   Office is installed. Use the acquisition guide only with authorization;
-   loading this skill does not install skills, MCPs, packages, or Office.
-   Do not invent an auto-installing `dependencies` frontmatter field.
-4. Verify Python 3.10+ for the canon helper and only the selected Office
-   automation dependencies. Select one compliant backend; never switch to a
-   non-Office backend after a failure. Use only local run content; do not
-   retrieve real employee/company data or upload the canon/drafts to external
-   services.
-5. After freezing the canon/plan, complete one actual planned document per
-   selected format in Microsoft Office before bulk generation. Word and
-   PowerPoint pilots must render in those applications and pass visual review.
-   Excel must recalculate in Microsoft Excel, retain formulas/cached values,
-   and pass a zero-error scan with checked expected values.
-6. Record local Office application versions, connection/probe evidence,
-   sources/revisions, selected skills/MCPs, and pilot results in
-   `build\preflight.json`. This is an agent-maintained workflow receipt, not an
-   automatically enforced audit gate. Do not mark it passed until verified.
-
-If Office becomes unavailable on resume or during export/QA, notify the user,
-stop without falling back, and preserve existing files. Report completed
-documents and the blocker honestly; never claim a partial corpus is complete.
+LibreOffice is not Microsoft Office. It may paginate, format, or calculate
+differently; never claim Microsoft Office QA or Office fidelity. This
+limitation must appear in preflight and final reporting.
 
 ## Required intake
 
@@ -348,13 +330,13 @@ project. Do not run examples with an unset path or assume the example is intake.
    time-of-knowledge, and author authority. Do not reinterpret a revenue value
    as profit or an announced acquisition as closed.
 
-5. **Export through Microsoft Office.** Invoke only the reviewed Microsoft
-   Office-backed skills/MCPs selected during preflight and obey their QA
-   requirements. If the required application or compliant backend is
-   unavailable, notify the user and stop; there is no fallback.
+5. **Export through the pinned backend container.** Run
+   `python3 -m office_backend` with the prepared `--canon`, `--plan`,
+   `--contexts`, `--drafts`, and `--root` paths as documented in
+   `prototypes\libreoffice-backend\README.md`. If the selected image, contract,
+   authoring library, or LibreOffice operation is unavailable, stop and report
+   the blocker; do not switch engines or generate substitute drafts.
    Do not deliver renamed text files or just draft JSON.
-   Missing Office rendering/recalculation is a blocker, not permission to use
-   another engine or fake files.
    See `references\content-types.md` for layouts and format expectations.
    Put deliverables under `documents` using the exact planned filenames. Use
    normal company branding, a business title, appropriate publication/effective
@@ -363,11 +345,13 @@ project. Do not run examples with an unset path or assume the example is intake.
    or Office properties.
 
    For financial XLSX, link derived totals and margins to source cells using
-   formulas, explicitly state currency and units, preserve formula caches via
-   Microsoft Excel recalculation, and check for formula errors. For presentations,
-   use charts, timelines, and meaningful layouts; render with Microsoft
-   PowerPoint and visually inspect every deck. For Word, render with Microsoft
-   Word and verify pagination, tables, headers, and footer labeling.
+   grounded formula structures, explicitly state currency and units, preserve
+   formula caches through LibreOffice Calc recalculation, and check expected
+   values and formula errors. Do not fabricate workbook calculations when the
+   draft lacks grounded inputs. For presentations, use charts, timelines, and
+   meaningful layouts; render each slide through LibreOffice Impress and
+   inspect every preview. Render DOCX through LibreOffice Writer and verify
+   pagination, tables, headers, and footer labeling.
 
 6. **Audit and resume safely.** Validate drafts before rendering. Write
    `build\manifest.json` only for completed documents with paths and SHA-256 hashes.
@@ -381,17 +365,19 @@ project. Do not run examples with an unset path or assume the example is intake.
    ```
 
    This is **structural and claim-receipt validation**, not semantic, visual, or
-   Excel-calculation certification. Complete those reviews separately and write
+   recalculation certification. Complete those reviews separately and write
    results to `build\qa.json` using the documented contract. Audit requires passed
-   semantic, genre, depth, and visual reviews for every document, and recalculation for
-   XLSX. Structural genre-section and self-description scans do not independently
-   prove authentic writing or exhaustive absence of disclaimers.
+   semantic, genre, depth, and visual reviews for every document, and a verified
+   LibreOffice recalculation receipt for XLSX. Structural genre-section and
+   self-description scans do not independently prove authentic writing or
+   exhaustive absence of disclaimers.
    Check receipts are honest evidence, never prefilled success flags.
 
-   On resume, recheck local Microsoft Office availability before continuing,
-   verify canon/plan hashes, audit completed outputs, and skip
-   only verified documents. A partial corpus must be reported as partial.
-   Retry failed documents without changing IDs, dates, facts, or unrelated files.
+   On resume, recheck that the pinned container image and operations remain
+   available, verify canon/plan/context/draft hashes and backend evidence, and
+   skip only verified documents. A selected-document pilot or partial corpus
+   must be reported as partial. Retry in a new output revision without changing
+   IDs, dates, facts, accepted drafts, or unrelated files.
 
 ## Consistency rules
 

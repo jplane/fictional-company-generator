@@ -1,4 +1,4 @@
-"""Isolated, contract-driven DOCX/XLSX pilot using headless LibreOffice."""
+"""LibreOffice conversion, rendering, and recalculation primitives for the corpus CLI."""
 
 from __future__ import annotations
 
@@ -831,19 +831,11 @@ def run_demo(output_dir: Path) -> dict[str, Any]:
     return results
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(
-        description="Generate and validate a contract-driven synthetic DOCX/XLSX pilot."
-    )
-    parser.add_argument(
-        "--output",
-        type=Path,
-        default=Path("/output"),
-        help="empty output directory or new child under the mounted output directory",
-    )
-    args = parser.parse_args()
-    run_demo(args.output)
+def main(argv=None) -> int:
+    from document_export import main as export_main
+
+    return export_main(argv)
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

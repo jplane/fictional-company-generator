@@ -198,8 +198,10 @@ Workbooks contain meaningful source, calculation, and notes/assumptions sheets
 with navigable layouts. Formulas derive totals/margins from source cells and
 remain updateable. Put methodology and normal business-source notes in the
 workbook; raw generation claims/hashes belong in `build`. Recalculate with
-Microsoft Excel and verify
-expected values and cached results, not just formula syntax.
+LibreOffice Calc in the pinned container and verify expected values, cached
+results, and formula errors, not just formula syntax. This is not a claim of
+Microsoft Excel calculation fidelity; when drafts contain no formulas, do not
+invent them or claim formula recalculation coverage.
 
 ## Planning behavior
 
@@ -254,11 +256,13 @@ appears anywhere, including notes, comments, hidden worksheet content, or Office
 properties. Required section roles and automated phrase scans are structural
 guards, not proof of convincing prose or exhaustive coverage.
 
-Render every Word document with Microsoft Word and every presentation with
-Microsoft PowerPoint. Recalculate workbooks in Microsoft Excel. Review XLSX column widths,
-readability, chart ranges, formula caches, and error cells. Inspect representative
-cross-format documents about the same event together. A clean ZIP/XML audit is
-not proof of coherent prose, readable layout, or calculated formulas.
-Use only reviewed skills/MCPs backed by locally installed Microsoft Office.
-If a required Office application or capability is unavailable, notify the user
-and stop; do not substitute another rendering/calculation engine.
+Render every Word document with LibreOffice Writer and every presentation with
+LibreOffice Impress in the pinned backend container. Recalculate workbooks in
+LibreOffice Calc. Review XLSX column widths, readability, chart ranges, formula
+caches, and error cells. Inspect representative cross-format documents about
+the same event together. A clean ZIP/XML audit is not proof of coherent prose,
+readable layout, or calculated formulas. Record the container and engine
+versions and honest render/recalculation evidence. LibreOffice behavior may
+differ from Microsoft Office; never claim Office fidelity. If a required
+container operation is unavailable, stop rather than substitute a different
+rendering/calculation engine.

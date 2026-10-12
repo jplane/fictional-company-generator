@@ -1,116 +1,168 @@
-# LibreOffice backend proof of concept
+# Container document backend
 
-This isolated prototype exercises a bounded slice of the company's date-filtered
-context/draft contract for exactly one planned DOCX product specification and one
-planned XLSX traceability matrix. It uses the repository's standard-library
-`company.py` helper through a read-only bind mount, a seeded test canon, and
-four small requirement records. It never reads `examples/` corpora or any
-user/company files. The Compose batch runtime does not mount the rest of the
-repository; the Dev Container mounts the repository as an editable workspace.
-The existing company-content workflow remains Microsoft-Office-backed and does
-not invoke this prototype.
+This prototype exports **prepared** company-corpus artifacts. The agent still
+handles intake, creates and validates the canon and plan, derives date-filtered
+contexts, and writes grounded drafts under the company-content-generator skill.
+The Python CLI does not seed a canon, select document types, call an AI model,
+or replace supplied draft content. It validates the supplied context/draft
+contract, authors each planned output, recalculates XLSX files, renders all
+formats to PDF, and saves page previews and engine evidence under `build/`.
 
-## Quick start
+The existing content-generation workflow invokes this backend only after the
+skill has prepared and validated the corpus inputs. LibreOffice is a pinned
+container renderer/calculation engine, not Microsoft Office and not an Office
+fidelity certification.
 
-The host needs Docker Engine and the Docker Compose v2 plugin; it does not need
-Python, Office, LibreOffice, or a package installer.
+## Inputs and CLI
 
-Create the output directory first so Docker does not create a root-owned host
-directory. In PowerShell from the repository root:
+The host needs Docker Engine and Docker Compose v2. Python, Office, LibreOffice,
+and document-generation packages are supplied by the pinned container.
+
+For a corpus already prepared by the skill, set `CORPUS_ROOT` to that corpus
+directory. The default Compose command uses:
+
+```text
+python3 -m office_backend \
+  --canon /corpus/canon.json \
+  --plan /corpus/build/plan.json \
+  --contexts /corpus/build/contexts \
+  --drafts /corpus/build/drafts \
+  --root /corpus
+```
+
+PowerShell example:
+
+```powershell
+$env:CORPUS_ROOT = 'C:\Users\you\Documents\Jimworks-v2'
+docker compose -f prototypes\libreoffice-backend\compose.yaml run --build --rm backend
+```
+
+The equivalent CLI arguments are required: `--canon`, `--plan`, `--contexts`,
+`--drafts`, and `--root` (or `--output-root`). Normally they point to the
+prepared files and corpus root inside the container. If the output root is new,
+the CLI safely stages the canon, plan, request, and selected contexts/drafts
+there without changing the source inputs.
+
+To run a bounded two-document pilot against an existing corpus from a read-only
+source mount, create an empty output directory first and pass the selected IDs:
+
+```powershell
+New-Item -ItemType Directory -Force 'C:\temp\jimworks-pilot' | Out-Null
+docker run --rm `
+  --mount 'type=bind,source=C:\Users\you\Documents\Jimworks-v2,target=/inputs,readonly' `
+  --mount 'type=bind,source=C:\temp\jimworks-pilot,target=/output' `
+  --mount 'type=bind,source=C:\path\to\fictional-company-generator,target=/workspace,readonly' `
+  --mount 'type=bind,source=C:\path\to\fictional-company-generator\.github\skills\company-content-generator\scripts\company.py,target=/app/company_contract.py,readonly' `
+  --workdir /workspace/prototypes/libreoffice-backend `
+  jplane-libreoffice-backend `
+  python3 -m office_backend `
+  --canon /inputs/canon.json `
+  --plan /inputs/build/plan.json `
+  --contexts /inputs/build/contexts `
+  --drafts /inputs/build/drafts `
+  --root /output/jimworks-pilot `
+  --document doc-0003 `
+  --document doc-0004
+```
+
+The image name in this example can instead be any tag built from this
+directory's Dockerfile. `--document` may be repeated. Without it, all planned
+documents and all matching contexts/drafts are required. Every provided
+context is recomputed from the canon and plan through the repository contract
+helper, and every selected draft is checked for matching IDs, fingerprints,
+claims, required sections, and supported export structures.
+
+The output layout remains:
+
+```text
+<root>\
+  canon.json
+  documents\
+    <exact planned filenames>
+  build\
+    request.json
+    plan.json
+    contexts\
+    drafts\
+    manifest.json                 # only when the complete plan is exported
+    backend-pilot-manifest.json   # selected documents only
+    backend-evidence.json
+    backend-pilot-evidence.json
+    backend-export.log
+    renders\<document-id>\
+      document.pdf
+      doc-<id>-page-<n>.png
+```
+
+The CLI refuses symlinked output roots/directories, plan mismatches, missing or
+unplanned selected IDs, unsupported draft structures, and existing document,
+manifest, evidence, log, or render outputs. It does not overwrite inputs or
+create a success-shaped manifest for partial exports. A selected-document run
+gets an explicitly partial pilot manifest and evidence receipt; only an
+all-documents run writes the normal `build/manifest.json`. Semantic, genre,
+depth, and human visual review remain required before `build/qa.json` may be
+marked passed and the corpus audited.
+
+## Dev Container and tests
+
+For interactive development, open the repository root in VS Code with the Dev
+Containers extension and choose **Reopen in Container**. It builds the same
+pinned runtime, runs as the unprivileged `app` user, and mounts the repository
+contract helper read-only at `/app/company_contract.py`. Mount the prepared
+corpus at `/corpus` before invoking the CLI with the arguments above.
+
+The Compose image runs the same CLI. Prepare a disposable corpus root for
+smoke tests; unit tests build their own canonical inputs in temporary folders:
 
 ```powershell
 New-Item -ItemType Directory -Force prototypes\libreoffice-backend\output | Out-Null
+docker compose -f prototypes\libreoffice-backend\compose.yaml run --build --rm backend `
+  python3 -m unittest discover -s tests -v
 ```
 
-On a POSIX shell, use `mkdir -p prototypes/libreoffice-backend/output`.
-Then build the image and run the contract pilot:
+The test-only `run_demo` helper exercises a small product-spec fixture; it is
+not reachable through the production CLI. Its generated fixture is not
+evidence of a user's supplied documents.
 
-```text
-docker compose -f prototypes/libreoffice-backend/compose.yaml run --build --rm backend
+## Supported content structures
+
+DOCX exports every section's heading and text, section tables, and optional
+requirement rows. XLSX exports an overview, a worksheet for each section,
+section tables, optional requirement rows, and structured `model` data. An
+XLSX table cell may contain an explicit formula object:
+
+```json
+{"formula": "=SUM(B2:B4)", "expected_value": 17}
 ```
 
-It writes `canon.json`, the two planned documents under `documents/`, and
-contract contexts, drafts, recalculation evidence, PDFs, and PNG page previews
-under `build/` in `prototypes/libreoffice-backend/output/`. The pilot validates
-both drafts against the repository helper, renders DOCX and XLSX to PDF,
-checks extracted PDF text and pages, rasterizes every page for visual review,
-and checks XLSX formulas, cached values, and error cells.
+LibreOffice must preserve the formula and cached result; the backend rejects
+formula errors and external-workbook links. Workbooks without formulas are
+recalculated and reported as having no formula results to verify; the exporter
+does not invent spreadsheet calculations.
 
-Run the smoke suite in an isolated temporary directory:
+PPTX exports one slide per grounded section, preserving section text and
+speaker notes. It supports the built-in slide layouts `cover`, `cards`, `grid`,
+`statement`, `capabilities`, `workflow`, `stats`, `chart`, `closing`, and
+`content`, optional confidentiality badges/subtitles, tables (up to 6 columns
+and 10 rows per slide), and simple charts with text labels and finite numeric
+values. Slides must map one-to-one to sections and contain the section's full
+text. Unknown fields, unsupported cell/object values, unsupported layouts, and
+unmapped slide content cause an explicit error rather than being silently
+discarded.
 
-```text
-docker compose -f prototypes/libreoffice-backend/compose.yaml run --build --rm backend python3 -m unittest discover -s tests -v
-```
+## Pinned runtime and limitations
 
-The test suite includes a real container non-root check, date-filtered contract
-pilot, DOCX/XLSX PDF checks, cached-formula assertions, a deliberate formula
-error, and checks that existing output files/directories are not overwritten.
-The persisted `output/` directory is ignored by Git. Pilot execution refuses
-any nonempty output directory. For another run, select a new child path:
-
-```text
-docker compose -f prototypes/libreoffice-backend/compose.yaml run --rm backend python3 -m office_backend --output /output/contract-pilot-2
-```
-
-On a native Linux host, match the container UID/GID to the directory owner when
-needed:
-
-```sh
-POC_UID="$(id -u)" POC_GID="$(id -g)" docker compose -f prototypes/libreoffice-backend/compose.yaml run --build --rm backend
-```
-
-The default container identity is unprivileged UID/GID `10001`; Compose permits
-overriding it with `POC_UID` and `POC_GID` for bind-mount permission differences.
-In this Compose batch runtime, only the output directory is writable. The source
-helper mount is read-only, and the rest of the repository is not mounted.
-
-## Developer setup (Dev Container)
-
-For interactive development, open the repository root in VS Code with the
-Dev Containers extension and choose **Reopen in Container**. The repository-root
-`.devcontainer/devcontainer.json` builds this same pinned image and opens
-`prototypes/libreoffice-backend` as the workspace. The container runs as the
-unprivileged `app` user; the Python extension is enabled, the repository is
-mounted for editing, and the contract helper is mounted read-only at
-`/app/company_contract.py`.
-
-From the Dev Container's terminal, run the smoke suite and pilot from the
-prototype workspace directory:
-
-```sh
-python3 -m unittest discover -s tests -v
-python3 -m office_backend --output output/devcontainer-pilot
-```
-
-Generated files stay under the Git-ignored `output/` directory. Choose a new
-output subdirectory for each pilot run; existing output is never overwritten.
-The Compose quick start above remains available for a headless, narrowly
-mounted batch run without mounting the repository workspace.
-
-## Pinned runtime
-
-- Debian 12.9 base image pinned by manifest digest:
-  `debian:12.9-slim@sha256:12c396bd585df7ec21d5679bb6a83d4878bc4415ce926c9e5ea6426d23c60bdc`.
-- Python 3.11.2, `python-docx` 0.8.11, `openpyxl` 3.0.9, `pypdf` 3.4.1,
-  LibreOffice Writer/Calc 7.4.7, Liberation fonts, and Poppler tools are
-  exact-pinned in `apt-packages.lock`, resolved against the Debian snapshot
-  dated 2025-02-03.
-- The prototype uses the repository helper for the canon, plan, contexts,
-  claims, and draft checks. These are test-only artifacts, not a generated
-  production corpus.
-
-## Scope and limitations
-
-This is contract/engine smoke evidence, not a production backend, content
-approval, Microsoft Office QA receipt, or Office-compatibility claim. The
-pilot has two basic requirements per specification—below the skill's
-light-depth specification target of 6–10 distinct requirements—and deliberately
-does not claim a depth review. The PDFs receive structural/text checks and page
-previews, but no side-by-side visual comparison with Microsoft Word or Excel.
-LibreOffice may paginate, format, or calculate differently from Office;
-outcomes may also vary with fonts and supported functions.
-
-The prototype does not cover PPTX, macros, add-ins, pivot tables, complex
-templates, or Excel-specific functions. It remains disconnected from the
-production content-generation workflow, whose Microsoft Office prerequisites
-and backend selection are unchanged.
+- Debian 12.9 slim is pinned by image digest; APT packages resolve against the
+  Debian snapshot dated 2025-02-03.
+- Python 3.11.2, python-docx 0.8.11, openpyxl 3.0.9, python-pptx 1.0.2
+  (wheel hash-pinned), pypdf 3.4.1, LibreOffice Writer/Calc/Impress 7.4.7,
+  Liberation fonts, and Poppler are pinned.
+- DOCX/XLSX/PPTX package integrity, extracted text, PDF pages, and PNG previews
+  are checked. XLSX formula expressions, cached values, and error cells are
+  checked after LibreOffice recalculation. The agent must still review the
+  preview images and conduct separate semantic, genre, and depth reviews.
+- LibreOffice pagination, formatting, and formula support can differ from
+  Microsoft Office. This container makes **no Office fidelity claim**.
+- Macros, add-ins, pivot tables, complex templates, and unsupported structured
+  slide/table/chart objects are not covered. The CLI does not generate prose,
+  accept arbitrary Office content, or change a frozen plan/draft.
