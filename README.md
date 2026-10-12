@@ -30,6 +30,13 @@ See `.github\skills\company-content-generator\references\dependencies.md` for
 automation setup, external skill/MCP acquisition, and prerequisite checks.
 Office and companion automation tools are not bundled with this skill.
 
+An isolated prototype at `prototypes\libreoffice-backend` exercises the
+date-filtered context/draft contract for one planned DOCX and XLSX, with
+containerized LibreOffice rendering and formula checks on test fixtures. It is
+not wired into the company-content workflow and does not change its Microsoft
+Office prerequisites or backend selection. See that directory's README for its
+quick start, VS Code Dev Container setup, and fidelity limitations.
+
 ## Use
 
 Ask Copilot to use **company-content-generator** and describe the company and

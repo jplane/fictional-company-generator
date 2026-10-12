@@ -1,0 +1,17 @@
+services:
+  backend:
+    build:
+      context: .
+    user: "${POC_UID:-10001}:${POC_GID:-10001}"
+    volumes:
+      - type: bind
+        source: ./output
+        target: /output
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ../../.github/skills/company-content-generator/scripts/company.py
+        target: /app/company_contract.py
+        read_only: true
+        bind:
+          create_host_path: false

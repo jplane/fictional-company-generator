@@ -1,6 +1,7 @@
 __pycache__/
 *.pyc
 corpus/
+/prototypes/libreoffice-backend/output/
 
 # Regenerable working artifacts in published example corpora.
 /examples/**/build/**/*.log

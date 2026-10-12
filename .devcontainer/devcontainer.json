@@ -1,0 +1,25 @@
+{
+  "name": "LibreOffice Backend POC",
+  "build": {
+    "dockerfile": "../prototypes/libreoffice-backend/Dockerfile",
+    "context": "../prototypes/libreoffice-backend"
+  },
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "workspaceFolder": "/workspace/prototypes/libreoffice-backend",
+  "mounts": [
+    "source=${localWorkspaceFolder}/.github/skills/company-content-generator/scripts/company.py,target=/app/company_contract.py,type=bind,readonly"
+  ],
+  "remoteUser": "app",
+  "updateRemoteUserUID": true,
+  "overrideCommand": true,
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/bin/python3"
+      }
+    }
+  }
+}

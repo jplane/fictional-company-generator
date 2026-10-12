@@ -1,0 +1,9 @@
+fonts-liberation=1:1.07.4-11
+libreoffice-calc-nogui=4:7.4.7-1+deb12u6
+libreoffice-writer-nogui=4:7.4.7-1+deb12u6
+poppler-utils=22.12.0-2+b1
+python3=3.11.2-1+b1
+python3-docx=0.8.11+dfsg1-5
+python3-lxml=4.9.2-1+b1
+python3-openpyxl=3.0.9-1
+python3-pypdf=3.4.1-1+deb12u1
