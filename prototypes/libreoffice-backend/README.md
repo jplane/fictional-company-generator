@@ -111,6 +111,32 @@ pinned runtime, runs as the unprivileged `app` user, and mounts the repository
 contract helper read-only at `/app/company_contract.py`. Mount the prepared
 corpus at `/corpus` before invoking the CLI with the arguments above.
 
+### Selecting the Python package index
+
+The image build defaults to `https://pypi.org/simple`. To use an approved
+Microsoft package proxy, set `PIP_INDEX_URL` in the host environment
+before building. Compose passes it as the Docker build argument; Dev Containers
+passes the same host variable through `localEnv`:
+
+```powershell
+$env:PIP_INDEX_URL = 'https://packagefeedproxy.microsoft.io/pypi/simple/'
+docker compose -f prototypes\libreoffice-backend\compose.yaml build backend
+```
+
+For an interactive Dev Container, set the same variable in the environment
+from which VS Code is launched before **Reopen in Container**. The setting
+must not contain credentials, tokens, query parameters, or fragments. Do not
+put credentials in the URL, build arguments, command lines, or logs. The
+Dockerfile rejects such URLs. Configure any required authentication outside
+this prototype's build argument flow before using an authenticated feed.
+
+The pinned `requirements-pptx.lock` remains hash-verified with
+`--require-hashes`, `--no-deps`, and `--no-cache-dir`, and pip uses only the
+selected index (there is no public-index fallback). The downloaded wheel must
+match the committed SHA-256 regardless of which index serves it. After
+changing the host variable, rebuild the image; an already-built image will not
+change.
+
 The Compose image runs the same CLI. Prepare a disposable corpus root for
 smoke tests; unit tests build their own canonical inputs in temporary folders:
 

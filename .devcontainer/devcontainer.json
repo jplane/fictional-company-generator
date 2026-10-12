@@ -2,7 +2,10 @@
   "name": "LibreOffice Backend POC",
   "build": {
     "dockerfile": "../prototypes/libreoffice-backend/Dockerfile",
-    "context": "../prototypes/libreoffice-backend"
+    "context": "../prototypes/libreoffice-backend",
+    "args": {
+      "PIP_INDEX_URL": "${localEnv:PIP_INDEX_URL:https://pypi.org/simple}"
+    }
   },
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
   "workspaceFolder": "/workspace/prototypes/libreoffice-backend",

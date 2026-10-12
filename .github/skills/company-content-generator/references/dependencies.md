@@ -18,17 +18,27 @@ corpus paths.
 Dependencies are locked in `prototypes\libreoffice-backend\apt-packages.lock`
 and `requirements-pptx.lock`. The Debian base image is digest-pinned; APT
 resolves against the pinned Debian snapshot; the Python PowerPoint wheel uses
-an exact version and SHA-256 hash. Runtime export must use this image built
-from the current repository revision. Do not substitute a host installation,
-cloud converter, Office engine, or another renderer after a failure.
+an exact version and SHA-256 hash. The pip index defaults to public PyPI and
+can be changed at build time with the host `PIP_INDEX_URL` environment
+variable. For the Microsoft package proxy, set it to
+`https://packagefeedproxy.microsoft.io/pypi/simple/`. Only use an approved
+HTTPS package index URL without embedded credentials, tokens, query parameters,
+or fragments. The selected index is used exclusively; locked hashes remain
+enforced and there is no fallback to a second index. Runtime export must use
+this image built from the current repository revision. Do not substitute a host
+installation, cloud converter, Office engine, or another renderer after a
+failure.
 
 ## Preflight
 
 Before creating the chosen corpus output directory, canon, plan, contexts, or
 drafts:
 
-1. Confirm the user has Docker Engine and Compose v2 available, and inspect the
-   repository Dockerfile and dependency locks.
+1. Confirm the user has Docker Engine and Compose v2 available, inspect the
+   repository Dockerfile and dependency locks, and set `PIP_INDEX_URL` to the
+   organization's approved HTTPS package index only when the default public
+   PyPI route is unavailable. Never include credentials or tokens in this
+   build argument.
 2. Build the pinned image and run its focused smoke suite, which checks the
    non-root container user, contract helper mount, formats, PDF previews,
    formula recalculation/error handling, and no-overwrite behavior.
