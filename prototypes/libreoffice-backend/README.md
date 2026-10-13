@@ -13,10 +13,17 @@ skill has prepared and validated the corpus inputs. LibreOffice is a pinned
 container renderer/calculation engine, not Microsoft Office and not an Office
 fidelity certification.
 
+This is one of two run-level backends. The skill checks native Office COM
+capabilities for the selected formats, recommends Native Office if all required
+probes pass and this container otherwise, and asks the user to choose. The
+chosen backend is recorded in the run's `build/preflight.json`; an export
+failure never triggers an automatic switch to the other backend.
+
 ## Inputs and CLI
 
-The host needs Docker Engine and Docker Compose v2. Python, Office, LibreOffice,
-and document-generation packages are supplied by the pinned container.
+The host needs Docker Engine and Docker Compose v2. Python, LibreOffice, and
+document-generation packages are supplied by the pinned container. Microsoft
+Office is not installed or used by this backend.
 
 For a corpus already prepared by the skill, set `CORPUS_ROOT` to that corpus
 directory. The default Compose command uses:

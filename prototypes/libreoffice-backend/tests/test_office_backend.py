@@ -22,7 +22,7 @@ from office_backend import (
     run_demo,
     validate_pdf,
 )
-from document_export import _write_docx, export_documents
+from document_export import _write_docx, _write_xlsx, export_documents
 
 
 class LibreOfficeBackendSmokeTests(unittest.TestCase):
@@ -456,6 +456,58 @@ class ArtifactDrivenExportTests(unittest.TestCase):
         draft_path.write_text(json.dumps(draft), encoding="utf-8")
         with self.assertRaisesRegex(BackendError, "unsupported structures"):
             self._export([item["id"]], self.root / "unsupported")
+
+    def test_xlsx_exports_structured_artifact_data_and_formulas(self):
+        item = next(document for document in self.plan["documents"] if document["format"] == "xlsx")
+        draft = json.loads(json.dumps(self.drafts_by_id[item["id"]]))
+        draft["artifact"] = {
+            "actuals": [{"year": 2022, "revenue_usd": 12000}],
+            "tie_out": {"formula": "=SUM(2, 3)", "expected_value": 5},
+        }
+        path = self.root / "structured-artifact.xlsx"
+        expected_values, _ = _write_xlsx(
+            path,
+            draft,
+            self.contexts_by_id[item["id"]],
+        )
+
+        workbook = load_workbook(path, data_only=False)
+        try:
+            source = workbook["Structured Data"]
+            values = {
+                (source.cell(row, 1).value, source.cell(row, 2).value): source.cell(row, 3).value
+                for row in range(4, source.max_row + 1)
+            }
+            formula_cells = [
+                f"{sheet.title}!{cell.coordinate}"
+                for sheet in workbook.worksheets
+                for row in sheet.iter_rows()
+                for cell in row
+                if cell.data_type == "f"
+            ]
+            self.assertEqual(values[("artifact/actuals/1", "revenue_usd")], 12000)
+            self.assertEqual(values[("artifact", "tie_out")], "=SUM(2, 3)")
+            self.assertEqual(len(formula_cells), 2)
+            self.assertEqual(
+                set(expected_values),
+                {
+                    "Financial Results!B8",
+                    next(reference for reference in formula_cells if reference.startswith("Structured Data!")),
+                },
+            )
+        finally:
+            workbook.close()
+
+    def test_invalid_structured_formula_is_rejected(self):
+        item = next(document for document in self.plan["documents"] if document["format"] == "xlsx")
+        draft = json.loads(json.dumps(self.drafts_by_id[item["id"]]))
+        draft["artifact"] = {"formula": {"formula": "=SUM([other.xlsx]Sheet1!A1:A2)"}}
+        with self.assertRaisesRegex(BackendError, "Invalid structured formula"):
+            _write_xlsx(
+                self.root / "invalid-structured-formula.xlsx",
+                draft,
+                self.contexts_by_id[item["id"]],
+            )
 
     def test_existing_artifacts_are_never_overwritten(self):
         self._export()

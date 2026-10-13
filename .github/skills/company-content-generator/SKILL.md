@@ -19,47 +19,49 @@ When installed elsewhere, use the resolved absolute script path.
 
 ## Dependencies and preflight
 
-Document export uses the repository's pinned LibreOffice backend container
-described in `references\dependencies.md`. Its pinned Python tools author DOCX,
-XLSX, and PPTX from the agent-prepared artifacts; LibreOffice Writer, Calc, and
-Impress recalculate/render them. The host needs Docker Engine and Docker Compose
-v2 (or an interactive Dev Container built from the same Dockerfile), not local
-Microsoft Office. There is no alternate document backend.
+The workflow supports two backends: local Microsoft Office automation and the
+pinned LibreOffice container. Both consume the same validated canon, plan,
+date-filtered contexts, and grounded drafts. Read
+`references\dependencies.md` for backend requirements and limitations.
 
-Before creating the output directory, canon, plan, contexts, or drafts:
+At the start of every new run, before creating the output directory, canon,
+plan, contexts, or drafts:
 
-1. Determine the selected formats from the request/intake. Verify Docker Engine
-   and Compose v2, inspect the pinned base image/dependency locks, build the
-   backend image, and run its focused smoke suite. Confirm imports for
-   `python-docx`, `openpyxl`, `python-pptx`, and `pypdf`, plus
-   `soffice --version`.
-2. If the container cannot build, the contract helper is not mounted read-only,
-   a selected exporter is unavailable, or Writer/Calc/Impress cannot perform
-   its required operation, stop before corpus generation. State the concrete
-   blocker and use no substitute renderer or calculator.
-3. Use only the prepared local canon, plan, date-filtered contexts, and
-   claim-checked drafts as exporter inputs. The backend CLI must not seed a
-   different canon, select a new type mix, call an AI model, or fabricate
-   replacement prose. Do not retrieve real employee/company data or upload
-   corpus content to external services.
-4. After freezing the canon/plan and validating grounded drafts, run one actual
-   planned item per selected format through the input-driven CLI before bulk
-   export. Confirm the exported file uses the exact planned filename, contains
-   the draft's content, and has a rendered PDF/page preview. XLSX formula
-   expressions and cached values must survive Calc recalculation; check
-   expected values and scan all sheets for formula errors. A draft without
-   formulas is not grounds for inventing calculations.
-5. Inspect every pilot preview for readability, clipping, tables, charts, and
-   pagination. Then record image hashes/paths, LibreOffice and package
-   versions, CLI evidence, container/image revision, and limitations in
-   `build\preflight.json`. Successful conversion is not itself visual review.
-6. Keep source inputs and existing outputs unchanged. If generation or QA
-   fails, preserve accepted files, report the exact completed count, and use a
-   new output revision for retries.
+1. Determine the formats needed by the selected document types.
+2. On Windows, run the native Office COM preflight for only those formats.
+   It must establish usable application connections and exercise authoring,
+   rendering, and Excel recalculation where selected; application registration
+   or detection alone is insufficient.
+3. Recommend **Native Office** when every requested format passes its native
+   probe. Otherwise recommend the **LibreOffice container** and explain the
+   missing or unavailable native capability. Verify Docker Engine and Compose
+   v2 if the container is selected.
+4. Ask the user to choose between the available backends, marking the
+   recommendation. Do not auto-select or silently switch after a failure.
+   Record the user's selection, recommendation, requested formats, and probe
+   evidence in `build\preflight.json`; on resume, keep that run's backend.
+5. If the chosen backend is unavailable, stop before generation and report
+   the blocker. Do not fall back to the other backend. If neither backend is
+   available, do not create a partial corpus.
+6. Use only prepared local canon, plan, date-filtered contexts, and
+   claim-checked drafts as exporter inputs.
+   Do not retrieve real employee/company data or upload corpus content to external services.
 
-LibreOffice is not Microsoft Office. It may paginate, format, or calculate
-differently; never claim Microsoft Office QA or Office fidelity. This
-limitation must appear in preflight and final reporting.
+After freezing the canon/plan and validating grounded drafts, export one
+planned item per selected format as a pilot before bulk export. Verify exact
+planned filenames and draft content. Inspect every Word/PowerPoint/LibreOffice
+rendered preview for readability, clipping, tables, charts, and pagination.
+For XLSX, verify formulas, cached values, expected results, and formula errors
+using the selected backend's actual calculation engine. A draft without
+formulas is not grounds for inventing calculations.
+
+Record the selected backend and its actual application/runtime and package
+versions, connection/probe evidence, pilot IDs and hashes, render evidence,
+and limitations in `build\preflight.json`. Successful conversion is not itself
+visual review. LibreOffice is not Microsoft Office and does not establish
+Office fidelity; report its use accurately. Preserve accepted inputs and
+outputs after a failure, report the completed count, and use a new output
+revision for retries.
 
 ## Required intake
 
@@ -330,11 +332,12 @@ project. Do not run examples with an unset path or assume the example is intake.
    time-of-knowledge, and author authority. Do not reinterpret a revenue value
    as profit or an announced acquisition as closed.
 
-5. **Export through the pinned backend container.** Run
-   `python3 -m office_backend` with the prepared `--canon`, `--plan`,
-   `--contexts`, `--drafts`, and `--root` paths as documented in
-   `prototypes\libreoffice-backend\README.md`. If the selected image, contract,
-   authoring library, or LibreOffice operation is unavailable, stop and report
+5. **Export through the selected backend.** Native Office runs use the
+   repository's Windows PowerShell COM exporter for the requested formats.
+   Container runs use `python3 -m office_backend` with the prepared `--canon`,
+   `--plan`, `--contexts`, `--drafts`, and `--root` paths as documented in
+   `prototypes\libreoffice-backend\README.md`. If the selected backend, contract,
+   authoring operation, render, or calculation is unavailable, stop and report
    the blocker; do not switch engines or generate substitute drafts.
    Do not deliver renamed text files or just draft JSON.
    See `references\content-types.md` for layouts and format expectations.
@@ -345,12 +348,13 @@ project. Do not run examples with an unset path or assume the example is intake.
    or Office properties.
 
    For financial XLSX, link derived totals and margins to source cells using
-   grounded formula structures, explicitly state currency and units, preserve
-   formula caches through LibreOffice Calc recalculation, and check expected
-   values and formula errors. Do not fabricate workbook calculations when the
-   draft lacks grounded inputs. For presentations, use charts, timelines, and
-   meaningful layouts; render each slide through LibreOffice Impress and
-   inspect every preview. Render DOCX through LibreOffice Writer and verify
+   grounded formula structures and explicitly state currency and units. Use
+   Excel recalculation for Native Office or LibreOffice Calc for the container,
+   preserve formula caches, and check expected values and formula errors. Do
+   not fabricate workbook calculations when the draft lacks grounded inputs.
+   For presentations, use charts, timelines, and meaningful layouts; render
+   each slide through PowerPoint or LibreOffice Impress and inspect every
+   preview. Render DOCX through Word or LibreOffice Writer and verify
    pagination, tables, headers, and footer labeling.
 
 6. **Audit and resume safely.** Validate drafts before rendering. Write
@@ -367,14 +371,14 @@ project. Do not run examples with an unset path or assume the example is intake.
    This is **structural and claim-receipt validation**, not semantic, visual, or
    recalculation certification. Complete those reviews separately and write
    results to `build\qa.json` using the documented contract. Audit requires passed
-   semantic, genre, depth, and visual reviews for every document, and a verified
-   LibreOffice recalculation receipt for XLSX. Structural genre-section and
+   semantic, genre, depth, and visual reviews for every document, plus
+   recalculation evidence from the selected backend for XLSX. Structural genre-section and
    self-description scans do not independently prove authentic writing or
    exhaustive absence of disclaimers.
    Check receipts are honest evidence, never prefilled success flags.
 
-   On resume, recheck that the pinned container image and operations remain
-   available, verify canon/plan/context/draft hashes and backend evidence, and
+   On resume, recheck the selected backend and its operations, verify
+   canon/plan/context/draft hashes and backend evidence, and
    skip only verified documents. A selected-document pilot or partial corpus
    must be reported as partial. Retry in a new output revision without changing
    IDs, dates, facts, accepted drafts, or unrelated files.

@@ -20,22 +20,24 @@ To use it elsewhere, copy that **entire folder**, including `references` and
 Do not overwrite an existing installation without reviewing it. Start a new
 Copilot session in the target project after installation.
 
-**Requirements:** Python 3.10+ and locally installed Microsoft Office
-applications for the requested formats, accessed through reviewed Office-backed
-skills or MCPs. If Office or a compliant backend is unavailable, the skill
-notifies you and stops before creating any corpus artifacts.
-No substitute tools are installed automatically.
+**Requirements:** Python 3.10+ and one selected document backend:
+locally installed Microsoft Office applications accessed through the repository's
+COM automation, or Docker Engine with Docker Compose v2 for the pinned
+LibreOffice container. Each new run checks selected-format native capabilities,
+recommends Native Office when all probes pass and the container otherwise, then
+asks you to choose. The selected backend is recorded for the run and is never
+silently changed after a failure.
 
 See `.github\skills\company-content-generator\references\dependencies.md` for
-automation setup, external skill/MCP acquisition, and prerequisite checks.
-Office and companion automation tools are not bundled with this skill.
+backend selection, setup, and prerequisite checks. LibreOffice is not
+Microsoft Office and does not establish Microsoft Office rendering or
+calculation fidelity.
 
-An isolated prototype at `prototypes\libreoffice-backend` exercises the
-date-filtered context/draft contract for one planned DOCX and XLSX, with
-containerized LibreOffice rendering and formula checks on test fixtures. It is
-not wired into the company-content workflow and does not change its Microsoft
-Office prerequisites or backend selection. See that directory's README for its
-quick start, VS Code Dev Container setup, and fidelity limitations.
+`prototypes\libreoffice-backend` contains the selectable LibreOffice container
+backend. It consumes the skill's prepared inputs and exports DOCX, XLSX, and
+PPTX through the pinned LibreOffice toolchain. LibreOffice is not Microsoft
+Office and does not establish Office fidelity; see that directory's README for
+setup, contract limits, and testing.
 
 ## Use
 
@@ -54,6 +56,7 @@ or migrated.
 | Volume | Approximate number of final documents |
 | Content types | Press releases, product presentations, meeting transcripts, product specs, quarterly/annual reports, HR policies, board decks, financial workbooks, or additional types you describe |
 | Formats | DOCX, PPTX, XLSX, or a narrower selection appropriate to the content types |
+| Backend | Native Office or the LibreOffice container; the skill recommends one after checking local capabilities |
 | Depth | **Light**, **medium** (default), or **deep** |
 | Output | Explicit path to a new output directory |
 | Grounding | Existing canonical company data or details about products, financials, acquisitions, and organizational changes |
@@ -93,8 +96,8 @@ or migrated.
    not just length. Enrich the canon accordingly, then freeze a dated document
    plan with realistic titles and per-document targets.
 3. **Draft and export.** Write from date-filtered facts so documents cannot
-   reference future developments. Validate claims and export through Microsoft
-   Word, PowerPoint, or Excel.
+   reference future developments. Validate claims and export through the
+   selected native Office applications or the pinned LibreOffice container.
 4. **Review, fix, and repeat.** Verify pilots before bulk generation. Check
    factual consistency, genre, depth, and rendered layouts; recalculate Excel
    formulas. Correct issues and repeat affected QA until the checks pass.

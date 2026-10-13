@@ -602,7 +602,22 @@ def _xlsx_table(
 def _model_leaves(value: Any, path: tuple[str, ...] = ()) -> list[tuple[str, str, Any]]:
     result: list[tuple[str, str, Any]] = []
     if isinstance(value, dict):
-        if set(value) <= {"formula", "expected_value"} and isinstance(value.get("formula"), str):
+        if "formula" in value or "expected_value" in value:
+            if (
+                set(value) - {"formula", "expected_value"}
+                or not isinstance(value.get("formula"), str)
+                or not value["formula"].startswith("=")
+                or "[" in value["formula"]
+                or (
+                    "expected_value" in value
+                    and (
+                        isinstance(value["expected_value"], bool)
+                        or not isinstance(value["expected_value"], (int, float))
+                        or not math.isfinite(value["expected_value"])
+                    )
+                )
+            ):
+                _fail(f"Invalid structured formula at {'/'.join(path)}")
             return [("/".join(path[:-1]), path[-1] if path else "Value", value)]
         for key, item in value.items():
             result.extend(_model_leaves(item, path + (str(key),)))
@@ -709,19 +724,24 @@ def _write_xlsx(
             )
         _style_xlsx_sheet(sheet)
 
+    structured_data = {}
+    if draft.get("artifact") is not None:
+        structured_data["artifact"] = draft["artifact"]
     if draft.get("model") is not None:
-        leaves = _model_leaves(draft["model"])
+        structured_data["model"] = draft["model"]
+    if structured_data:
+        leaves = _model_leaves(structured_data)
         if not leaves:
-            _fail("Structured workbook model is empty")
+            _fail("Structured workbook data is empty")
         model_table = {
-            "title": "Source model data",
-            "headers": ["Model path", "Field", "Value"],
+            "title": "Structured source data",
+            "headers": ["Source path", "Field", "Value"],
             "rows": [[parent, key, value] for parent, key, value in leaves],
         }
-        name = _sheet_name("Source Model", used)
+        name = _sheet_name("Structured Data", used)
         sheet = workbook.create_sheet(name)
-        _xlsx_title(sheet, "Source model data", 3)
-        _xlsx_table(sheet, model_table, 3, formula_expectations, "Source model data")
+        _xlsx_title(sheet, "Structured source data", 3)
+        _xlsx_table(sheet, model_table, 3, formula_expectations, "Structured source data")
         sheet.column_dimensions["A"].width = 42
         sheet.column_dimensions["B"].width = 34
         sheet.column_dimensions["C"].width = 70

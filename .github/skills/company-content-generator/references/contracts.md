@@ -385,13 +385,14 @@ receipts and cannot satisfy the full-plan audit.
 ```
 
 For XLSX also require `recalculation` with `status: "passed"` and nonempty
-`evidence` identifying the pinned container's LibreOffice Calc version, actual
-recalculation operation, formula count, cached-result checks, and formula-error
-scan. If the source draft has no formulas, state this explicitly and do not
-claim expected formula values were verified. DOCX/PPTX visual-review evidence
-must identify the pinned container's LibreOffice Writer/Impress version and
-the rendered pages/slides inspected. Never describe these as Microsoft Office
-operations or Office-fidelity certification.
+`evidence` identifying the selected calculation application/runtime (Microsoft
+Excel or LibreOffice Calc), actual recalculation operation, formula count,
+cached-result checks, and formula-error scan. If the source draft has no
+formulas, state this explicitly and do not claim expected formula values were
+verified. DOCX/PPTX visual-review evidence must identify the selected rendering
+application/runtime (Word/PowerPoint or LibreOffice Writer/Impress) and the
+rendered pages/slides inspected. LibreOffice is not Microsoft Office and does
+not certify Office fidelity.
 Every document requires `depth_review` with passed status, nonempty evidence,
 and `content_depth` equal to the plan. Evidence should cite actual delivered
 coverage, measurements, and useful analyses against `build\depth-targets.json`;
@@ -400,15 +401,17 @@ Changing a plan, draft, or output invalidates its QA receipt. The audit checks r
 presence and hashes; it cannot independently establish that a human or AI
 actually performed the claimed review.
 
-Generation must pass the pinned container build and runtime preflight in
-`references\dependencies.md` before any corpus artifacts are created. Record
-Docker/Compose versions, image digest and repository revision, container
-Python/package and LibreOffice versions, helper-mount and smoke-test evidence,
-and actual pilot results in `build\preflight.json`. State plainly that
-LibreOffice pagination, formatting, and calculation may differ from Office;
-do not claim Office fidelity. The preflight receipt is not independently
-enforced by the Python audit. A missing image, application, or capability is a
-stop condition; do not fall back to another engine.
+Before any corpus artifacts are created, pass the selected-format capability
+check and record the recommended and user-selected backend in
+`build\preflight.json`. For Native Office, record the selected applications,
+versions, COM connection/operation evidence, and source revision. For the
+container, record Docker/Compose versions, image digest and repository
+revision, container Python/package and LibreOffice versions, helper-mount and
+smoke-test evidence. Record actual pilot results for either backend. State
+plainly that LibreOffice pagination, formatting, and calculation may differ
+from Office; do not claim Office fidelity. The preflight receipt is not
+independently enforced by the Python audit. A missing application, image, or
+capability is a stop condition; never fall back to another engine.
 
 ## Depth targets
 

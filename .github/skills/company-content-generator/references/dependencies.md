@@ -1,113 +1,150 @@
-# Container backend dependencies and setup
+# Document backend selection and setup
 
-## Required backend
+The prepared canon, plan, contexts, and grounded drafts are shared inputs for
+two document-export backends. Select exactly one backend for each new run:
 
-Corpus document export runs in the repository's pinned LibreOffice backend
-container. The host does not need Microsoft Office, Python, LibreOffice, or a
-third-party document skill. Docker Engine and the Docker Compose v2 plugin are
-required for the standard local workflow. An interactive Dev Container using
-the same pinned `Dockerfile` is also supported when it can read the prepared
-corpus paths.
+| Backend | Requirements | Authoring, calculation, and rendering |
+|---|---|---|
+| Native Office | Windows, plus usable local Microsoft Office applications for the selected formats | PowerShell COM automation in Word, Excel, and PowerPoint |
+| LibreOffice container | Docker Engine and Docker Compose v2 | Pinned Python authoring packages and LibreOffice Writer, Calc, and Impress |
 
-| Format | Container authoring and QA |
+The container is an independent backend, not Microsoft Office. Its output may
+differ in pagination, formatting, or calculation. Do not describe its
+rendering or recalculation as Microsoft Office QA or claim Office fidelity.
+
+## Per-run capability check and recommendation
+
+Before creating the output directory, canon, plan, contexts, or drafts:
+
+1. Determine the requested formats. Probe only the matching native Office
+   applications: Word for DOCX, PowerPoint for PPTX, and Excel for XLSX.
+2. On Windows, use the first-party COM preflight in
+   `scripts\office_com.ps1 -Command preflight -Formats <selected-formats>`.
+   A passing probe must connect to each selected application, author and
+   reopen a small representative file, report the application version, and
+   exercise the selected format's essential render/calculation operation.
+   COM registration alone is not proof of installed, activated, usable Office.
+3. If every requested native format passes, recommend **Native Office**. If
+   any requested format is absent or its probe fails or is inconclusive,
+   recommend **LibreOffice container**. Explain the missing native capability.
+4. Ask the user to choose a backend for the new run, marking the recommendation.
+   If the container is recommended, verify Docker Engine and Compose v2 are
+   available before accepting that choice. A recommendation is not a silent
+   backend switch.
+5. Record the selected backend, recommendation, selected formats, capability
+   results, application/runtime versions, and any limitations in
+   `build\preflight.json`. On resume, use that run's recorded backend. If it
+   becomes unavailable, stop and preserve files; never change backend
+   automatically after a failure.
+
+If neither backend is usable, stop before corpus generation and report the
+specific blockers. Do not produce a partial corpus or install Office,
+Docker, or document-generation dependencies without authorization.
+
+## Native Microsoft Office
+
+Native Office means locally installed desktop Word, Excel, and PowerPoint
+controlled through Windows PowerShell STA COM automation. Web subscriptions,
+Office file associations, and the presence of a COM registration are not
+enough. The preflight must establish a real application connection and
+exercise the operations required by the selected formats.
+
+| Format | Required native operations |
 |---|---|
-| DOCX | `python-docx`; structural extraction, LibreOffice Writer PDF export, PDF text/page validation, PNG page previews |
-| PPTX | pinned `python-pptx`; package/text checks, LibreOffice Impress PDF export, slide/page count and PNG preview for every slide |
-| XLSX | `openpyxl`; LibreOffice Calc save/recalculation, retained formula/cache and error scan, PDF export and PNG page previews |
+| DOCX | Word author/save, extract, paginate, and PDF render |
+| PPTX | PowerPoint author/save, extract slide text/notes, and render every slide |
+| XLSX | Excel author/save, calculate, reopen cached values, scan formula errors, and render |
 
-Dependencies are locked in `prototypes\libreoffice-backend\apt-packages.lock`
-and `requirements-pptx.lock`. The Debian base image is digest-pinned; APT
-resolves against the pinned Debian snapshot; the Python PowerPoint wheel uses
-an exact version and SHA-256 hash. The pip index defaults to public PyPI and
-can be changed at build time with the host `PIP_INDEX_URL` environment
-variable. For the Microsoft package proxy, set it to
-`https://packagefeedproxy.microsoft.io/pypi/simple/`. Only use an approved
-HTTPS package index URL without embedded credentials, tokens, query parameters,
-or fragments. The selected index is used exclusively; locked hashes remain
-enforced and there is no fallback to a second index. Runtime export must use
-this image built from the current repository revision. Do not substitute a host
-installation, cloud converter, Office engine, or another renderer after a
-failure.
+Run the probe into a new temporary directory. Keep the emitted receipt with
+the run's preflight evidence; do not use it as a substitute for the actual
+planned-document pilot.
 
-## Preflight
+```powershell
+$probe = Join-Path $env:TEMP ("company-office-probe-" + [guid]::NewGuid().ToString("N"))
+& .github\skills\company-content-generator\scripts\office_com.ps1 `
+    -Command preflight `
+    -Formats @("docx", "pptx", "xlsx") `
+    -ProbeDirectory $probe
+```
 
-Before creating the chosen corpus output directory, canon, plan, contexts, or
-drafts:
+Use only the selected formats in `-Formats`. The script must launch isolated,
+run-owned Office instances and stop only those processes. Never close or
+terminate the user's existing Office sessions, alter global security settings,
+or accept unexpected prompts automatically. A failed/inconclusive native
+preflight means Native Office is unavailable for this run; if the user chooses
+it anyway, stop rather than routing to the container.
 
-1. Confirm the user has Docker Engine and Compose v2 available, inspect the
-   repository Dockerfile and dependency locks, and set `PIP_INDEX_URL` to the
-   organization's approved HTTPS package index only when the default public
-   PyPI route is unavailable. Never include credentials or tokens in this
-   build argument.
-2. Build the pinned image and run its focused smoke suite, which checks the
-   non-root container user, contract helper mount, formats, PDF previews,
-   formula recalculation/error handling, and no-overwrite behavior.
-3. Verify the container imports `docx`, `openpyxl`, `pptx`, and `pypdf`, and
-   that `soffice --version` reports the pinned LibreOffice runtime.
-4. If Docker, the pinned build, package imports, helper mount, or required
-   Writer/Calc/Impress operations are unavailable, stop before corpus
-   generation. Report the exact missing capability; do not switch engines.
-5. Keep all run-specific authored files, calculated workbooks, PDFs, previews,
-   logs, manifests, and engine receipts under the selected corpus's `build`.
-   The source canon, plan, contexts, and drafts are read-only workflow inputs.
+Use the prepared-artifact native exporter for each planned document. It must
+write the exact planned filename, verify extracted content, create Office
+render evidence under `build`, and refuse to overwrite outputs. For XLSX,
+preserve supplied formulas, recalculate in Excel, reopen to verify cached
+values, and scan every used cell for formula errors. Never invent formulas
+when the grounded draft supplies none.
 
-The normal full-corpus invocation uses the prepared corpus root:
+## Pinned LibreOffice container
+
+The container exports only the prepared local canon, frozen plan,
+date-filtered contexts, and validated grounded drafts. It does not generate
+prose, seed a different canon, or select the document mix. Its Dockerfile,
+locks, CLI, package-index option, supported draft structures, and test command
+are documented in `prototypes\libreoffice-backend\README.md`.
+
+The standard invocation is:
 
 ```powershell
 $env:CORPUS_ROOT = $outputRoot
 docker compose -f prototypes\libreoffice-backend\compose.yaml run --build --rm backend
 ```
 
-The service calls the Python CLI with explicit paths:
+Use an approved HTTPS `PIP_INDEX_URL` only if public PyPI is unavailable. The
+default is public PyPI. The setting must not contain credentials, tokens, query
+parameters, or fragments; the selected index is exclusive, hash verification
+remains enabled, and there is no second-index fallback:
 
-```text
-python3 -m office_backend
-  --canon /corpus/canon.json
-  --plan /corpus/build/plan.json
-  --contexts /corpus/build/contexts
-  --drafts /corpus/build/drafts
-  --root /corpus
+```powershell
+$env:PIP_INDEX_URL = 'https://packagefeedproxy.microsoft.io/pypi/simple/'
+docker compose -f prototypes\libreoffice-backend\compose.yaml build backend
 ```
 
-Use repeatable `--document <planned-id>` options for a bounded selected-item
-pilot. All required inputs must exist and match the plan; the CLI stages exact
-copies only when the specified output root is new. It rejects symlinks,
-unexpected output-root entries, unplanned IDs, context/draft fingerprint
-mismatches, unsupported draft structures, and any attempt to overwrite a
-document or evidence output.
+Do not place credentials in the URL, build arguments, command lines, source
+files, logs, or image environment. Rebuild after changing the host variable.
+If Docker, Compose, the pinned image, the contract helper, or a required
+Writer/Calc/Impress operation is unavailable, stop; do not use the other
+backend unless the user starts a new run and selects it.
 
-If the CLI or renderer fails, preserve source artifacts, report the exact
-error and partial generated count, and use a new output root for a retry after
-the issue is resolved. Do not delete or overwrite accepted documents to retry.
+The exporter checks package integrity, content extraction, PDF output, and
+page/slide previews. LibreOffice recalculates XLSX and checks retained formulas,
+cached values where supplied, and formula-error cells. A workbook with no
+grounded formulas is reported as having no formula results to verify. Review
+every generated preview separately; successful conversion is not a visual,
+semantic, genre, or depth review.
 
-## Pinned backend QA and honest evidence
+## Shared preflight, QA, and data handling
 
-Each planned output is authored with its specified basename under `documents`.
-The container verifies the repository claim contract, package integrity,
-extracted section text, PDF structure/content, page count, and rasterizes every
-page under `build\renders\<document-id>`. For XLSX, LibreOffice Calc reopens
-and saves the workbook, and the backend checks formula expressions, cached
-values where present, and formula-error cells. A workbook with no supplied
-formulas is reported as containing no formula results to verify; the backend
-does not invent financial calculations.
+For either backend, keep run-specific scripts, logs, temporary files, Office
+outputs, PDFs, previews, and receipts under the selected corpus's `build`
+directory. Final documents alone belong in `documents`. Keep canon, plan,
+contexts, and drafts unchanged after export; an accepted output is never
+overwritten during a retry.
 
-The backend writes `build\manifest.json` only for a complete plan. A
-`--document` run writes an explicitly partial pilot manifest/evidence file
-instead. The separate engine evidence records the backend/runtime version,
-source context/draft hashes, artifact hashes, PDF checks, preview paths, and
-formula outcomes. It is machine evidence only, not a semantic, genre, depth,
-or completed visual review.
+`build\preflight.json` is an agent-maintained receipt. It must identify:
 
-Inspect every rendered page/slide preview. Do not mark a visual review passed
-from successful conversion or image creation alone. Complete separate
-semantic, genre, and depth reviews using the skill's content playbook and
-`build\depth-targets.json`; review page layout, table/chart readability,
-clipping, and formula outputs. Write honest `build\qa.json` receipts only after
-those reviews. Record `LibreOffice` and the exact version in visual and XLSX
-recalculation evidence. Never label this as Microsoft Office rendering,
-Microsoft Excel recalculation, or Office-compatible output.
+- the chosen and recommended backend, selected formats, and timestamp;
+- native application or container/runtime versions and probe evidence;
+- backend implementation source/revision and relevant package/image versions;
+- the planned pilot IDs, output hashes, render evidence, and limitations.
 
-LibreOffice rendering and calculation may differ from Microsoft Office.
-Record that limitation in `build\preflight.json` and do not claim Office
-fidelity. The output container uses no remote document service and does not
-upload canon, context, draft, or document content.
+Do not mark preflight passed based only on a version string, executable
+detection, COM registration, Docker availability, or successful conversion.
+After freezing and validating the plan and drafts, complete one real planned
+pilot per selected format through the chosen backend. Inspect visual output;
+check XLSX formulas, cached values, expected results, and formula errors.
+Record honest semantic, genre, depth, visual, and recalculation reviews in
+`build\qa.json`. The structural Python audit does not certify which application
+created a file or prove those reviews occurred.
+
+Neither backend may retrieve real employee/customer/company data or upload
+canon, contexts, drafts, documents, or previews to an external service.
+Do not switch backends mid-run to recover from an error. Preserve accepted
+artifacts, report the blocker and completed count, and retry only in a new
+output revision after resolving it.

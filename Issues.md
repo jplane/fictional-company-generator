@@ -1,0 +1,7 @@
+# Issues
+
+| Severity | Finding | Impact |
+|---|---|---|
+| Medium | **PowerPoint timeout cleanup can leave Office running** — `.github/skills/company-content-generator/scripts/office_com_export.ps1:46-48,151-153`; the same process filter appears in `office_com.ps1:31`. Cleanup only stops new Office processes with `MainWindowHandle == 0`, but PowerPoint is launched visible and minimized. If the worker times out and is killed, its cleanup does not run. | A run-owned PowerPoint process can remain open even though the timeout error says it was stopped. Track and clean up the exact run-owned process ID instead of filtering by window handle. |
+| Medium | **Native PowerPoint changes chart meaning** — `.github/skills/company-content-generator/scripts/office_com_powerpoint_export_worker.ps1:238-265`; documented chart kinds are in `.github/skills/company-content-generator/references/contracts.md:305-313`. The native renderer ignores `kind` and draws every chart as bars. It also uses absolute values, making negative values appear as positive-direction bars. | Charts can communicate a different visualization or direction than the source data. Implement the documented chart semantics or reject unsupported chart inputs before export. |
+| Low | **Unreferenced Excel worker** — `office_com_excel_export_worker.ps1` has no code or documentation references; the launcher selects `office_com_excel_generic_export_worker.ps1`. | The extra script may be obsolete and could confuse maintenance. Confirm whether it should be retained before committing. |
