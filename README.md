@@ -4,6 +4,13 @@ An AI skill for creating realistic, consistent documents for a fictional company
 over time. It produces DOCX, PPTX, and XLSX content grounded in a shared company
 history, financials, organization, and glossary.
 
+**Key capabilities:** shared company history and date-grounded Office documents;
+configurable genres and **light/medium/deep** detail; attributed statements,
+viewpoints, and evolving sources; portable claim provenance, coverage reporting,
+and simulated access views. Gaps, conflicts, noise, and stale sources are
+**opt-in**; clean, consistent content remains the default. Generation and QA use
+local Microsoft Office.
+
 ## Install
 
 In this repository, the skill is already project-scoped at
@@ -51,6 +58,7 @@ or migrated.
 | Output | Explicit path to a new output directory |
 | Grounding | Existing canonical company data or details about products, financials, acquisitions, and organizational changes |
 | Seed | Optional integer for reproducible structured data; defaults to `42` |
+| Corpus controls | Optional viewpoints, explicit gaps/conflicts/noise/staleness, and fictional visibility/knowledge boundaries; independent of depth |
 
 ### Sample prompts
 
@@ -97,6 +105,10 @@ or migrated.
 
 ## Included example
 
+This is a historical **prior-contract** example, not a template for new runs or
+a corpus validated by the current helper. New runs use schema version 2; there
+is no automatic migration or version-1 validation.
+
 `examples\asteroid-mining` showcases **AstroDig LLC**, a fictional aerospace
 engineering and asteroid resource technology company. It covers fiscal years
 2013-2026 with 150 medium-depth documents: 50 each in DOCX, PPTX, and XLSX,
@@ -113,5 +125,9 @@ dependency or a default configuration for new runs.
 
 The skill's `SKILL.md` contains the generation workflow and output conventions.
 Its `references\content-types.md` covers genres and depth; `references\contracts.md`
-covers structured inputs and helper usage. Those files are the authoritative
+covers structured inputs and helper usage. `references\provenance.md` explains
+portable artifact locations and storage bindings; `references\use-case-layering.md`
+shows how customer-specific decision/evaluation features can be layered above
+the general-purpose generator without implementing them in the core.
+Those files are the authoritative
 instructions rather than duplicated documentation here.

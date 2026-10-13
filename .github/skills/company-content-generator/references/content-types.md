@@ -51,6 +51,30 @@ substantive business document, not the minimum number of sentences necessary
 to fill the required section roles. All depths must satisfy the complete genre.
 Depth controls source granularity, reasoning, useful analyses, and practical
 detail; it does not change the corpus's requested document count.
+It also does not change source validity, attribution, access boundaries,
+provenance completeness, or configured condition counts. Deep is not a
+synonym for difficult, conflicting, or noisy.
+
+### Richness of sources and viewpoints
+
+| Capability | Light | Medium | Deep |
+|---|---|---|---|
+| Statement semantics | Clearly distinguish the included facts, opinions, assumptions, and proposals | Explain their basis and qualifications | Develop dependencies, competing interpretations, and uncertainty where relevant |
+| Viewpoints | Authentic author/audience framing | Substantive differing priorities | Connected, source-grounded viewpoints across documents where requested |
+| Source history | Correct current/historical status | Explain meaningful changes/corrections | Richer version history and longitudinal analysis |
+| Configured gaps/conflicts | Faithful concise omissions or differing assertions | Context and consequences known to the author | Richer development without automatically resolving conflicts or filling gaps |
+| Provenance and visibility | Complete for included substantive claims | Same guarantees | Same guarantees |
+
+Do not force every semantic category into every genre. A deep press release is
+still a press release, not an epistemic inventory. Statements and opinions
+remain attributed; a source's confidence or approval is not proof of truth.
+Use natural language, not visible `FACT`/`OPINION` generation labels.
+
+Deliberate unknowns, undocumented information, omitted sources, and stale
+versions must be configured before freeze. They do not permit broken genre
+sections, empty placeholders, false actuals, or random missing exports.
+The quality review distinguishes faithful source disagreement from an
+accidental authoring error and verifies that added depth did not undo a gap.
 
 ### Measurable planning targets
 

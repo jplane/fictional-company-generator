@@ -1,0 +1,176 @@
+# Portable final-artifact provenance
+
+## Identity is separate from storage
+
+The logical identity is `(corpus_id, document_id, revision)`, bound to a final
+artifact SHA-256. A claim occurrence also binds the accepted draft's SHA-256 and
+canon/plan fingerprints. Physical paths live in the manifest or optional resource
+bindings, not canonical business facts. Moving unchanged artifacts and rebinding
+storage does not change their logical provenance.
+
+Create mappings **after the final Microsoft Office save/recalculation**.
+Reopening and saving, changing prose, rearranging slides, editing formulas, or
+rewriting properties can invalidate the hash and locator even if the visible
+value looks unchanged. Reindex, remap, reverify, and repeat affected QA. Do not
+write artifact hashes back into the frozen canon.
+
+## Exporter handoff
+
+1. Validate the draft against the frozen canon and plan.
+2. Export/save using the verified local Microsoft Office backend.
+3. Record actual final artifact hashes in `build\manifest.json`.
+4. Run `index-artifacts` with canon, plan, manifest, root, and an explicit
+   `build\artifact-index.json` output path.
+5. Associate **every `(section_index, claim_id)` use** with an exact occurrence
+   in the indexed final content. Export-time tracking can help, but final bytes
+   must still be verified. Never choose the first matching token blindly.
+6. Save the associations as `build\claim-locations.json`; run
+   `verify-provenance` and `coverage`, then the complete `audit`.
+
+The CLI calls appear in `SKILL.md`. Complete-corpus commands require the entire
+manifest. For a pilot, `artifact_containers(path, format)` and
+`check_draft(canon, plan, draft)` inspect an individual file/draft without a
+pretend complete manifest. Mapping remains the Office backend/agent's
+responsibility; the helper does not automatically understand natural-language
+claim placement.
+
+## Supported locators
+
+Copy the locator object exactly from the final artifact index. Indices are
+zero-based; Office IDs and package parts are strings. Relationship resolution,
+not guesses about `slide1.xml` or `sheet1.xml`, identifies content.
+
+| Format/container | Locator fields in addition to `kind` |
+|---|---|
+| DOCX `paragraph` | `part`, `index`; paragraphs include referenced header/footer stories and paragraphs within tables |
+| DOCX `table_cell` | `part`, `table`, `row`, `column` |
+| PPTX `shape` | `part`, `slide_id`, `shape_id` |
+| PPTX `slide_cell` | `part`, `slide_id`, `shape_id`, `row`, `column` |
+| PPTX `notes_shape` | `part`, `slide_id`, `shape_id` |
+| XLSX `cell` | `part`, `sheet_id`, `sheet`, `cell` |
+| XLSX `range` | `part`, `sheet_id`, `sheet`, `range` such as `B2:B3` |
+| `chart_point` | Chart `part`, `series`, `component`, `point`, plus owner context: Word `paragraph`, PPTX `slide_id`/`shape_id`, or XLSX `sheet_id`/`sheet` |
+
+Charts support saved series-name/category/value/x/y/bubble-size cache points
+(`tx`, `cat`, `val`, `xVal`, `yVal`, `bubbleSize`) and associated formulas when
+present. Chart indices are version-bound, not persistent semantic IDs.
+
+Paragraph/shape/cell text concatenates split runs and normalizes whitespace.
+An occurrence's `start`/`end` are offsets into that normalized text, with an
+exclusive end. Table/range text joins indexed cell content in row order.
+Every cell of a range must exist in the index. XLSX values are saved scalars or
+formula caches, **not formatted Excel display strings**; styles, currency
+labels, and units still require Excel/semantic QA.
+
+## Occurrence mapping contract
+
+The header contains `schema_version: 2`, `corpus_id`, `canon_sha256`, and
+`plan_sha256`. Every document has exactly the following fields:
+
+```json
+{
+  "document_id": "doc-0001",
+  "revision": 1,
+  "artifact_sha256": "<actual final file SHA-256>",
+  "draft_sha256": "<actual accepted draft JSON SHA-256>",
+  "occurrences": [
+    {
+      "claim_id": "revenue",
+      "section_index": 0,
+      "locator": {
+        "kind": "paragraph",
+        "part": "word/document.xml",
+        "index": 2
+      },
+      "start": 8,
+      "end": 12,
+      "expected_text": "12.0",
+      "rendering": {"scale": 1000000, "decimals": 1}
+    }
+  ]
+}
+```
+
+This illustrative occurrence assumes the final indexed paragraph begins
+`Revenue 12.0` and the canonical claim is `12000000`; offsets must be taken
+from the actual final index. There is no automatic business-text citation
+insertion. Generation IDs belong in build metadata, not Office properties,
+hidden cells, notes, or visible business prose.
+
+Each occurrence requires `claim_id`, `section_index`, `locator`, `start`, `end`,
+and `expected_text`. Optional fields are `rendering` and `formula`.
+`expected_text` must equal both the located excerpt and grounded rendered value,
+not merely contain a similar number. All uses must be covered; one location
+cannot satisfy repeated sections using the same claim.
+Paragraph/table-cell, shape/table-cell, and cell/range aliases cannot disguise
+reuse of the same underlying text span. The index's internal text segments
+support this check; copy locators, not internal segments, into mappings.
+
+Rendering supports positive numeric `scale`, `decimals` from 0-12,
+boolean `grouping`, and string `prefix`/`suffix`. Rounding is half-up.
+Without rendering, normalized string representations must match exactly.
+For numeric Excel caches, match the saved scalar rather than styling it as a
+currency string. Review the visible display separately.
+
+For derived cell/range claims, `formula` is required and must equal the saved
+formula (a list in row order for ranges). All mapped derived cells need nonempty
+saved formulas and caches. A missing cache is an error, not a request to invent
+one. The helper's arithmetic derivation receipt and saved formula evidence are
+distinct checks: formula dependency equivalence and business meaning still
+need Microsoft Excel recalculation/semantic review.
+
+Excel shared-formula followers retain structured saved evidence rather than
+invented expanded formulas: `kind: "shared"`, `index`, `base_cell`,
+`base_formula`, `range`, and `cell`. Copy that exact object into `formula`.
+The reader verifies the shared base and range; relative-reference expansion
+and calculation remain Excel's responsibility. Unsupported array/spill
+followers without their own formula evidence cannot be mapped as derived
+claims; use a supported formula representation or report an export blocker.
+
+`provenance.json` adds record IDs and, for statement claims, source-version IDs,
+speakers, statement kinds, and qualifiers. Derived occurrences list input claim
+IDs. `audit` recomputes this receipt from the final files and mappings, and
+rejects stale, incomplete, ambiguous, reused, or forged evidence.
+
+## Optional storage bindings
+
+`build\resource-bindings.json` has `schema_version: 2`, `corpus_id`, and a
+`bindings` list. Each entry identifies document, revision, artifact hash,
+and exactly one storage kind:
+
+```json
+{
+  "document_id": "doc-0001",
+  "revision": 1,
+  "artifact_sha256": "<same final file hash>",
+  "kind": "sharepoint",
+  "drive_id": "<deployment drive ID>",
+  "item_id": "<deployment item ID>"
+}
+```
+
+A `local` entry instead has a safe relative `path`, with no drive/item IDs.
+At most one binding per document/storage kind is allowed. This is an optional
+reference layer, not an uploader or proof that a remote item exists. Deployment
+must verify remote bytes and assign real ACLs separately.
+
+## Coverage, recipient views, and limits
+
+Coverage distinguishes the fixed plan from delivered artifact/claim/source/
+viewpoint/condition coverage. It does not score a downstream agent or measure
+all possible enterprise topics. Condition evidence remains structural plus
+honest semantic condition review.
+
+`access-view` audits first and selects documents for a canonical principal
+or `public` at `--as-of`. It omits full canon fingerprints, condition
+annotations, and inaccessible source identifiers. The manifest does not copy
+files or create secure isolation. Enforce actual ACLs in the delivery system
+and keep canon/private build metadata out of the recipient's input.
+
+These locators are reproducible within the exact hashed artifact, not promised
+to survive editing. The reader is not full OOXML conformance validation,
+semantic entailment, OCR, hidden-content analysis, or visual certification.
+Unmodeled footnotes, Word floating text boxes, images/SmartArt, embedded
+objects, and unsupported chart cache representations need a supported
+text/cell/shape representation or an explicit export blocker. There is no
+silent alternative engine or generated evidence fallback.

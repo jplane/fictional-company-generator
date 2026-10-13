@@ -13,6 +13,12 @@ Office-compatible file output, an "Office" product name, or a cloud Microsoft
 | PPTX | Microsoft PowerPoint | Author/save, extract slides/notes, render/export every slide |
 | XLSX | Microsoft Excel | Author/save, recalculate, save/reopen formula caches, inspect errors and layout |
 
+For every selected format, the backend must also associate grounded draft
+section/claim uses with final artifact containers. It can record locators during
+export or use the helper's final-file index afterward. See `provenance.md`.
+This is an export handoff requirement, not a requirement to insert generation
+IDs into business text or Office properties.
+
 Verify only the applications needed by the selected formats. A Word-only run
 does not require Excel or PowerPoint. Verify application usability through the
 selected backend before creating a corpus directory, canon, plan, or drafts.
@@ -183,11 +189,30 @@ workflow receipt: the Python package/claim audit does not detect installed Offic
 or certify which application created a file. Do not claim otherwise.
 Continue to provide the contract's `build\qa.json` and `build\manifest.json`,
 including semantic, genre, depth, visual, and Excel recalculation receipts.
+For new schema-version-2 runs, also produce occurrence mappings, verified
+`build\provenance.json`, and recomputed `build\coverage.json`. A matching token
+does not certify correct attribution or meaning; verify these in the pilot and
+semantic review. Configured condition carriers require `condition_review`.
+Single-file pilots may use the helper's read-only `artifact_containers` and
+`check_draft` functions before a complete-corpus manifest exists.
 Recheck Office availability on resume and after backend/version changes.
 
 Inspect body text, notes, comments, hidden workbook content, and properties for
 generation self-labeling. Never prefill passed flags. If any required Microsoft
 Office operation fails, notify the user and stop without a fallback.
+
+The helper uses only standard-library JSON, hash, ZIP, and XML inspection.
+These read-only checks do not author, render, or recalculate Office documents.
+Opt-in integration tests use temporary, test-owned Office documents and must
+not attach to or terminate a user's existing application session.
+
+For skill maintenance, deterministic tests do not require Office:
+`python -m unittest discover -s tests -q`. To additionally check real Office
+save/reopen containers, run the same suite with
+`$env:RUN_OFFICE_PROVENANCE_TESTS = "1"`. Each integration test skips explicitly
+if its application is already running or absent; automation/save/reopen
+failures are failures, not fallback successes. These tiny fixtures are not a
+generated corpus or a visual/semantic quality certification.
 
 ## Authoritative references
 

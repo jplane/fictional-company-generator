@@ -1,6 +1,6 @@
 ---
 name: company-content-generator
-description: Generate realistic, coherent company content across multiple years in DOCX, PPTX, and XLSX, grounded in canonical structured data. Use for fictional company document corpora, press releases, product presentations, meeting transcripts, product specifications, financial reports, HR policies, and additional user-selected content types.
+description: Generate realistic, coherent company content across multiple years in DOCX, PPTX, and XLSX, grounded in canonical facts and attributed statements. Supports viewpoints, source histories, portable provenance, and optional corpus imperfections for general-purpose enterprise content.
 ---
 
 # Company content generator
@@ -9,10 +9,17 @@ Create a company's evolving document corpus, not independent plausible documents
 The company and its people are invented, but each deliverable must read as a
 normal business document authored inside that company. Facts come from a
 single versioned core info set: `canon.json`, including organization and glossary records.
+The canon distinguishes business facts from assertions by fictional sources:
+faithfully reporting an opinion or an erroneous historical assertion does not
+make it an objective fact. This is a general-purpose content generator, not a
+decision or agent-evaluation engine.
 Writers know only what was available at their publication date.
 
 Read `references\contracts.md` and `references\content-types.md` before generating.
 Read `references\dependencies.md` for external sources, installation, and preflight.
+Read `references\provenance.md` before export and final-artifact verification.
+Read `references\use-case-layering.md` only when discussing an optional
+customer/use-case layer; do not implement or invoke its illustrative evaluator.
 The Python helper at `scripts\company.py` uses only the standard library. Resolve
 paths relative to this skill's directory; commands below assume the project root.
 When installed elsewhere, use the resolved absolute script path.
@@ -137,6 +144,12 @@ The chosen output root must contain exactly:
     qa.json
     preflight.json
     depth-targets.json
+    artifact-index.json
+    claim-locations.json
+    provenance.json
+    coverage.json
+    resource-bindings.json  (optional)
+    views\                 (requested simulated delivery manifests)
     drafts\
     contexts\
     scripts\
@@ -162,6 +175,57 @@ an existing corpus without approval; create a new directory/revision instead.
 Older three-file layouts and plans without depth settings are legacy runs:
 preserve their files and receipts. This skill change does not migrate, delete
 files from, or re-certify completed corpora.
+New runs and helper validation require **schema version 2**. Do not validate or
+silently upgrade version-1 corpora, including the historical repository example.
+
+## General-purpose source and viewpoint modeling
+
+Keep canonical actuals and business invariants intact. Add `source_version`
+and `statement` records for attributed content, and `viewpoint` records for
+requested author/audience/focus combinations. Statements distinguish fact,
+opinion, assumption, hypothesis, recommendation, risk, and decision; qualifiers
+express uncertainty, dissent, and unresolved matters. Backward `corrects`,
+`retracts`, and `supersedes` links preserve source history without rewriting it.
+Approval/status and authority are scoped source properties, not universal
+truth or trust scores.
+
+Add only the named people, sources, and structured details needed by the brief.
+Writers use the planned viewpoint and canon-derived role, not stereotypes or a
+requirement that every perspective recommend a decision. Required source
+statements must be represented as attributed value claims.
+
+Author knowledge, author access, and intended reader access are different.
+Use effective-dated fictional groups, knowledge grants, and explicit releases
+when broader publication is intended. `context` and `check` share the same
+projection rules; dependencies and derived claims cannot bypass those rules.
+The helper filters structured inputs; it does not isolate the agent's entire
+memory or enforce real file/service permissions.
+
+## Optional corpus conditions
+
+Default to clean, consistent content. Enable gaps, conflicts, noise, or stale
+sources only when requested, using `corpus_conditions` and canonical `condition`
+instances from the contracts. Do not ask users to configure these for ordinary
+generation. Resolve explicitly requested viewpoints and controls during intake;
+explain any incompatible budget, genre, date, or visibility requirements.
+
+Distinguish information unknown to an author from known information intentionally
+undocumented, and from a source deliberately outside the collection. Unknown
+records are withheld from writer context; undocumented records remain knowable
+but are suppressed from final claims. Follow the context's suppression
+instructions without exporting their IDs or generator rationale.
+
+Intentional conflicts are linked source assertions, never inconsistent actuals.
+Staleness is relative to a declared reference date/newer source. Noise consists
+of complete, grounded adjacent material, not padding or corrupt files.
+Condition instances can require multiple documents; document count stays fixed.
+Enrich missing canonical instances before planning. Missing exports, accidental
+contradictions, and missing genre prerequisites remain errors.
+
+Generator-only condition labels stay private in `build`/the canon. Do not tell
+business authors that a gap/conflict is a test, prescribe expected agent
+behavior, or invent a conclusion. A real author may acknowledge uncertainty or
+missing information only when that acknowledgement is itself grounded.
 
 ## Bounded organization grounding
 
@@ -171,6 +235,9 @@ meetings, quotes, contacts, or other canon relationships that support documents.
 Include referenced departments and managers needed to interpret those roles.
 Never create anonymous staff, one node per employee, or additional names merely
 to match financial headcount. The named-person count need not equal headcount.
+Canonical viewpoint authors are legitimate referenced identities; they need
+not be internal employees. Access-group membership alone does not expand the
+bounded chart or create employment roles.
 
 Preserve stable person/department IDs and full effective-dated role history,
 including title changes and reporting changes. A role assignment itself is a
@@ -194,6 +261,9 @@ It does not alter the requested document count, years, types, or format mix.
 The planner copies the setting into every document; contexts carry it in
 `document.content_depth`, drafts repeat it, and QA verifies that same setting.
 Changing depth after freeze requires a new canon/plan revision and fresh QA.
+Depth never changes condition counts, access rules, provenance completeness, or
+whether imperfections appear. A deep corpus may be clean; a light corpus may
+have an explicitly requested disagreement.
 
 | Depth | Content expectation |
 |---|---|
@@ -243,8 +313,11 @@ when grounded; they must not be used as a self-description of the corpus.
 Quotes and dialogue use named canonical speakers and effective roles without
 generation disclaimers. Facts, obligations, decisions, contacts, quotations,
 requirements, benefits, and metrics needed by a genre must exist in the canon.
-Extend the canon before drafting; do not compensate for missing facts with
-placeholders, lorem ipsum, ungrounded claims, or explanation of the missing data.
+Extend the canon before drafting; do not compensate for missing prerequisites
+with placeholders, lorem ipsum, or ungrounded claims. A deliberately configured
+unknown or undocumented fact must not be silently filled to satisfy a depth
+target. Explain an unknown in prose only when the author has a grounded basis
+to recognize it; otherwise leave it unstated.
 Complete a separate genre review, not merely a citation or ZIP-structure check.
 
 ## Realistic document naming
@@ -369,8 +442,26 @@ project. Do not run examples with an unset path or assume the example is intake.
    PowerPoint and visually inspect every deck. For Word, render with Microsoft
    Word and verify pagination, tables, headers, and footer labeling.
 
-6. **Audit and resume safely.** Validate drafts before rendering. Write
+6. **Verify provenance, audit, and resume safely.** Validate drafts before rendering. Write
    `build\manifest.json` only for completed documents with paths and SHA-256 hashes.
+   After the complete planned corpus has been exported, index its actual content,
+   associate every section/claim use with a distinct final-file occurrence in
+   `build\claim-locations.json`, and verify those mappings. See
+   `references\provenance.md` for exact locators, normalized spans, numeric
+   rendering, formulas, and the storage-independent identity contract:
+
+   ```powershell
+   python .github\skills\company-content-generator\scripts\company.py index-artifacts --canon "$outputRoot\canon.json" --plan "$outputRoot\build\plan.json" --manifest "$outputRoot\build\manifest.json" --root "$outputRoot" --out "$outputRoot\build\artifact-index.json"
+   python .github\skills\company-content-generator\scripts\company.py verify-provenance --canon "$outputRoot\canon.json" --plan "$outputRoot\build\plan.json" --drafts "$outputRoot\build\drafts" --manifest "$outputRoot\build\manifest.json" --locations "$outputRoot\build\claim-locations.json" --root "$outputRoot" --out "$outputRoot\build\provenance.json"
+   python .github\skills\company-content-generator\scripts\company.py coverage --canon "$outputRoot\canon.json" --plan "$outputRoot\build\plan.json" --drafts "$outputRoot\build\drafts" --manifest "$outputRoot\build\manifest.json" --locations "$outputRoot\build\claim-locations.json" --root "$outputRoot" --out "$outputRoot\build\coverage.json"
+   ```
+
+   Do not map a claim to an unrelated identical token, reuse one occurrence
+   for multiple draft sections, or treat text matching as semantic entailment.
+   Pilots use the helper's read-only `artifact_containers` and `check_draft`
+   functions for individual planned files; complete-corpus commands require
+   a complete manifest and must not be satisfied with fake entries.
+
    Audit checks the exact target, mixed formats, source claims, planned
    descriptive filenames, safe file paths, file hashes, and basic Office ZIP/XML
    integrity:
@@ -387,6 +478,11 @@ project. Do not run examples with an unset path or assume the example is intake.
    XLSX. Structural genre-section and self-description scans do not independently
    prove authentic writing or exhaustive absence of disclaimers.
    Check receipts are honest evidence, never prefilled success flags.
+   Documents carrying configured conditions also require `condition_review`.
+   Audit recomputes provenance and coverage from final bytes and drafts; stale
+   or forged receipts fail. It does not independently certify the recorded
+   semantic/visual reviews or infer that all semantic paraphrases of a gap are
+   absent.
 
    On resume, recheck local Microsoft Office availability before continuing,
    verify canon/plan hashes, audit completed outputs, and skip
@@ -414,7 +510,9 @@ project. Do not run examples with an unset path or assume the example is intake.
 - Terms use the glossary's canonical definitions. Record abbreviations and
   synonyms centrally; do not give the same acronym multiple meanings.
 - Fictional risk, disagreement, and changed forecasts are allowed only as
-  explicitly recorded facts, not uncontrolled contradictions.
+  explicitly recorded statements with correct attribution and status.
+  Deliberate factual conflicts require requested condition instances; accidental
+  contradictions and inconsistent canonical actuals remain errors.
 - The seeded helper is reproducible; model-generated prose is not guaranteed
   byte-for-byte reproducible. Preserve accepted drafts and artifact hashes.
 
@@ -426,3 +524,12 @@ realistic name, and contains no generation self-labeling.
 Report the selected content depth, actual counts by year, type, and format, coverage warnings, and any
 remaining blockers. Never claim the corpus is complete merely because a plan
 or draft set exists.
+Deliver verified provenance and coverage under `build`. If a recipient view is
+requested, generate it with `access-view --principal <canonical-person-id-or-public>
+--as-of <YYYY-MM-DD>` and the normal canon/plan/draft/manifest/root arguments.
+The output must be an explicit path under `build\views`. These manifests are
+simulated selections, not ACLs. Do not distribute the full canon or private
+build tree as an agent-visible corpus.
+
+No customer decision question, independent answer key, evaluation partition,
+expected disposition, or decision metric is required to use this skill.

@@ -7,6 +7,7 @@ import tempfile
 import unittest
 import zipfile
 from pathlib import Path
+from xml.sax.saxutils import escape
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,6 +33,8 @@ class CompanyTests(unittest.TestCase):
         record = self.record(doc["anchor_ids"][0])
         key = next(iter(record["data"]))
         return {
+            "schema_version": 2,
+            "corpus_id": self.canon["corpus_id"],
             "document_id": doc["id"], "canon_sha256": company.fingerprint(self.canon),
             "plan_sha256": company.fingerprint(self.plan),
             "title": doc["title"], "publication_date": doc["publication_date"],
@@ -39,7 +42,7 @@ class CompanyTests(unittest.TestCase):
             "claims": [{"id": "c1", "record_id": record["id"],
                         "path": ["data", key], "value": record["data"][key]}],
             "sections": [{"role": role, "heading": role.replace("_", " ").title(),
-                          "text": "Operating review and agreed next steps.",
+                          "text": f"{record['data'][key]} Operating review and agreed next steps.",
                           "claim_ids": ["c1"]} for role in doc["required_sections"]],
         }
 
@@ -149,7 +152,7 @@ class CompanyTests(unittest.TestCase):
 
     def test_org_chart_is_bounded_and_preserves_role_history(self):
         chart = company.org_chart_document(self.canon)
-        self.assertEqual(chart["schema_version"], 1)
+        self.assertEqual(chart["schema_version"], 2)
         self.assertEqual(len(chart["people"]), 6)
         self.assertEqual(len(chart["departments"]), 4)
         self.assertEqual(len(chart["roles"]), 8)
@@ -691,25 +694,56 @@ class CompanyTests(unittest.TestCase):
     def create_audit_fixture(self, root, drafts):
         company.save(root / "canon.json", self.canon)
         (root / "documents").mkdir()
-        manifest = {"schema_version": 1, "canon_sha256": company.fingerprint(self.canon),
+        manifest = {"schema_version": 2, "corpus_id": self.canon["corpus_id"],
+                    "canon_sha256": company.fingerprint(self.canon),
                     "plan_sha256": company.fingerprint(self.plan), "documents": []}
-        qa = {"schema_version": 1, "canon_sha256": company.fingerprint(self.canon),
+        qa = {"schema_version": 2, "corpus_id": self.canon["corpus_id"],
+              "canon_sha256": company.fingerprint(self.canon),
               "plan_sha256": company.fingerprint(self.plan), "documents": []}
         for doc in self.plan["documents"]:
             draft_path = drafts / f"{doc['id']}.json"
             company.save(draft_path, self.draft(doc))
             fmt = doc["format"]
             path = root / "documents" / doc["filename"]
-            # Minimal XML fixtures test the limited package audit, not Office rendering.
-            parts = ["[Content_Types].xml", "_rels/.rels"]
-            parts += {
-                "docx": ["word/document.xml"],
-                "pptx": ["ppt/presentation.xml", "ppt/slides/slide1.xml"],
-                "xlsx": ["xl/workbook.xml", "xl/worksheets/sheet1.xml"],
-            }[fmt]
+            # These content/relationship fixtures exercise read-only checks, not Office rendering.
+            draft = self.draft(doc)
+            bodies = [escape(section["text"]) for section in draft["sections"]]
+            w, p, a, x, r = (company.NS[key] for key in ("w", "p", "a", "x", "r"))
+            rel_ns = "http://schemas.openxmlformats.org/package/2006/relationships"
+            parts = {"[Content_Types].xml": "<Types/>", "_rels/.rels": "<Relationships/>"}
+            if fmt == "docx":
+                parts["word/document.xml"] = (
+                    f'<w:document xmlns:w="{w}"><w:body>'
+                    + "".join(f"<w:p><w:r><w:t>{body}</w:t></w:r></w:p>" for body in bodies)
+                    + "</w:body></w:document>")
+            elif fmt == "pptx":
+                parts["ppt/presentation.xml"] = (
+                    f'<p:presentation xmlns:p="{p}" xmlns:r="{r}">'
+                    '<p:sldIdLst><p:sldId id="256" r:id="rId1"/></p:sldIdLst></p:presentation>')
+                parts["ppt/_rels/presentation.xml.rels"] = (
+                    f'<Relationships xmlns="{rel_ns}"><Relationship Id="rId1" '
+                    f'Type="{r}/slide" Target="slides/slide1.xml"/></Relationships>')
+                parts["ppt/slides/slide1.xml"] = (
+                    f'<p:sld xmlns:p="{p}" xmlns:a="{a}"><p:cSld><p:spTree>'
+                    + "".join(f'<p:sp><p:nvSpPr><p:cNvPr id="{i + 1}"/></p:nvSpPr>'
+                              f"<p:txBody><a:p><a:r><a:t>{body}</a:t></a:r></a:p></p:txBody></p:sp>"
+                              for i, body in enumerate(bodies))
+                    + "</p:spTree></p:cSld></p:sld>")
+            else:
+                parts["xl/workbook.xml"] = (
+                    f'<workbook xmlns="{x}" xmlns:r="{r}"><sheets>'
+                    '<sheet name="Results" sheetId="1" r:id="rId1"/></sheets></workbook>')
+                parts["xl/_rels/workbook.xml.rels"] = (
+                    f'<Relationships xmlns="{rel_ns}"><Relationship Id="rId1" '
+                    f'Type="{r}/worksheet" Target="worksheets/sheet1.xml"/></Relationships>')
+                parts["xl/worksheets/sheet1.xml"] = (
+                    f'<worksheet xmlns="{x}"><sheetData>'
+                    + "".join(f'<row r="{i + 1}"><c r="A{i + 1}" t="inlineStr"><is>'
+                              f"<t>{body}</t></is></c></row>" for i, body in enumerate(bodies))
+                    + "</sheetData></worksheet>")
             with zipfile.ZipFile(path, "w") as package:
-                for part in parts:
-                    package.writestr(part, "<fixture/>")
+                for part, content in parts.items():
+                    package.writestr(part, content)
             digest = company.file_hash(path)
             manifest["documents"].append({
                 "document_id": doc["id"], "path": str(path.relative_to(root)), "sha256": digest})
@@ -726,6 +760,25 @@ class CompanyTests(unittest.TestCase):
                 review["recalculation"] = {"status": "passed", "evidence": "Test fixture only"}
             qa["documents"].append(review)
         (root / "build" / "qa.json").write_text(json.dumps(qa), encoding="utf-8")
+        indexed = company.index_artifacts(self.canon, self.plan, manifest, root)
+        locations = dict(company.receipt_header(self.canon, self.plan), documents=[])
+        for doc in indexed["documents"]:
+            draft_path = drafts / f"{doc['document_id']}.json"
+            draft = company.load(draft_path)
+            value = company.display_value(draft["claims"][0])
+            locations["documents"].append({
+                "document_id": doc["document_id"], "revision": doc["revision"],
+                "artifact_sha256": doc["artifact_sha256"],
+                "draft_sha256": company.file_hash(draft_path),
+                "occurrences": [{"claim_id": "c1", "section_index": i,
+                                 "locator": entry["locator"], "start": 0, "end": len(value),
+                                 "expected_text": value}
+                                for i, entry in enumerate(doc["containers"])]})
+        company.save(root / "build" / "claim-locations.json", locations)
+        provenance = company.verify_provenance(self.canon, self.plan, drafts, manifest, root, locations)
+        company.save(root / "build" / "provenance.json", provenance)
+        company.save(root / "build" / "coverage.json",
+                     company.coverage_report(self.canon, self.plan, drafts, provenance))
         return manifest, qa
 
     def test_audit_rejects_path_escape(self):

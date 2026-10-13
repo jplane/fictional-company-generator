@@ -1,8 +1,18 @@
 # Data contracts
 
 All JSON is UTF-8. Dates are ISO `YYYY-MM-DD`, IDs are stable strings, financial
-amounts are integer USD, and version 1 uses calendar fiscal years. Python 3.10+
+amounts are integer USD, and version 2 uses calendar fiscal years. Python 3.10+
 is required. Invalid input returns a nonzero exit code with an explicit error.
+New canon, plan, context, draft, manifest, QA, and derived receipts use
+`schema_version: 2`. Version-1 validation and automatic migration are not
+supported. Preserve historical files; create a new run for this contract.
+
+`corpus_id` is a logical namespace, not an output path. The helper uses a supplied
+alphanumeric/underscore/hyphen namespace or derives one deterministically from
+the normalized initialization request. Read the resolved value from the canon.
+Canon/plan fingerprints and document revisions distinguish later content.
+Temporal resolution is ISO calendar dates; this contract does not promise
+sub-day knowledge/publication isolation.
 
 ## Request
 
@@ -41,11 +51,44 @@ the helper never initiates AI calls or spawns workers.
 Omission resolves to `medium`; `init` writes that resolved value into the
 canonical request and `build\request.json` without mutating the input config.
 Depth applies to every requested document, not the document count or format mix.
+Depth does not enable imperfections, change access rules, or weaken provenance.
 `references\content-types.md` defines substantive coverage and measurable
 planning targets for each genre. Record run-specific targets and justified
 adaptations in `build\depth-targets.json` before drafting. The helper validates
 the setting and its propagation, not word counts, sheet counts, or analytical
 quality; those require an honest depth review of delivered content.
+
+Optional request fields:
+
+| Field | Meaning |
+|---|---|
+| `corpus_id` | Stable logical namespace, otherwise deterministically derived |
+| `viewpoints` | Distinct canonical viewpoint IDs, each requiring at least one compatible planned document |
+| `corpus_conditions` | Explicit condition requests; omitted means clean generation |
+
+A condition request contains `id`, `kind`, and positive integer `count`.
+Kinds are `unknown`, `undocumented`, `omitted_source`, `conflict`, `noise`,
+and `stale`. Optional exact selectors are `subject_id`, `document_type`,
+`viewpoint_id`, and `period`. Each canonical condition instance must repeat its
+request's selectors. These are instance counts, not document counts or ratios.
+There is no arbitrary selector language, difficulty enum, expected behavior,
+decision question, disposition, or scoring field.
+
+```json
+{
+  "id": "release-disagreement",
+  "kind": "conflict",
+  "count": 1,
+  "subject_id": "product-beacon"
+}
+```
+
+This is one element of a complete request's `corpus_conditions` list. Enrich the
+canon with the matching sources, statements, and condition instance before
+`plan`. `init` creates the ordinary baseline, not fabricated case evidence.
+An explicit requirement that cannot fit the selected formats, dates, visibility,
+or fixed document budget fails before freeze. The helper does not increase the
+target or silently drop required viewpoints/sources.
 
 Additional types are per-request definitions, not installed-skill code edits:
 
@@ -84,7 +127,7 @@ The in-memory bounded organization projection has this shape:
 
 ```json
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "people": [],
   "departments": [],
   "roles": []
@@ -128,7 +171,7 @@ run/revision, not automatic file deletion during validation.
 
 ## Canon
 
-`schema_version`, `request`, and `records` are required. Each record has:
+`schema_version: 2`, `corpus_id`, `request`, and `records` are required. Each record has:
 
 | Field | Meaning |
 |---|---|
@@ -138,6 +181,8 @@ run/revision, not automatic file deletion during validation.
 | `effective_on` | Date the event/state takes effect |
 | `data` | Structured factual object; no prose-only source of truth |
 | `refs` | IDs of dependencies; all must already be knowable |
+| `access_groups` | Optional distinct group IDs, declared in `refs`; absence/empty means unrestricted at the record level |
+| `knowledge_restricted` | Optional boolean; true requires a timely grant to the writer |
 
 Record shape example:
 
@@ -190,14 +235,125 @@ Internal knowability is not public availability. Record `public_on` inside
 of internal context. The helper's date filtering is not access control.
 Keep sensitive fictional internal information out of public press releases.
 
+### Sources, statements, and controls
+
+Use the same record envelope (`id`, `kind`, `known_on`, `effective_on`, `data`,
+`refs`) for the following kinds. Every foreign ID must be declared in `refs`;
+dependencies cannot be future or self references.
+
+| Kind | Required `data` fields | Optional `data` fields / rules |
+|---|---|---|
+| `source_version` | `source_id`, positive `version`, descriptive `title`, `author_id` (person), `audience`, `authority_scope`, `status`, selected/supported `document_type`, `published_on` | `viewpoint_id`; `supersedes` an earlier version of the same source. Status: `draft`, `approved`, `reference`, `retracted`. Publication cannot precede knowability. |
+| `statement` | `subject_id`, `predicate`, `value`, `kind`, `source_version_id`, `speaker_id` | `units`, `period`, `supports[]`, `qualifiers[]`, `corrects`, `retracts`. The statement must be known by its immutable source's publication date. |
+| `viewpoint` | `name`, `author_id`, `audience` | `focus_ids[]`, all referenced and visible to the planned author |
+| `access_group` | Nonempty `members[]` of canonical people | Membership becomes usable only when both known and effective |
+| `knowledge_grant` | `record_id`, `principal_id` (person) | Both known/effective dates must be no later than the writer's publication date |
+| `release` | `record_id`, `groups[]` | Optional boolean `public`; at least one group or public release required, effective/known as of publication |
+| `condition` | `request_id`, `kind`, `subject_id` | See instance contract below; generator-only, not writer-visible |
+
+Statement kinds: `fact`, `opinion`, `assumption`, `hypothesis`, `recommendation`,
+`risk`, `decision`. Qualifiers: `uncertain`, `dissent`, `unresolved`.
+Corrections/retractions are backward relationships within the same
+subject/predicate/period/units scope, not exclusive statement
+types. Linked source/statement histories cannot be cyclic.
+
+An attributed `fact` is what that source asserts, not an independently
+certified objective truth. Differing factual assertions in the same
+subject/predicate/period/units scope require an explicit requested conflict
+unless connected by correction/retraction/source supersession. Opinions may
+differ without being treated as failed actuals reconciliation.
+
+```json
+{
+  "id": "position-engineering",
+  "kind": "statement",
+  "known_on": "2022-02-01",
+  "effective_on": "2022-02-01",
+  "refs": ["product-beacon", "readiness-source-v1", "person-riley"],
+  "data": {
+    "subject_id": "product-beacon",
+    "predicate": "release_readiness",
+    "value": "Additional load testing is needed",
+    "kind": "opinion",
+    "source_version_id": "readiness-source-v1",
+    "speaker_id": "person-riley",
+    "qualifiers": ["uncertain", "unresolved"]
+  }
+}
+```
+
+This record extends a canon containing the referenced source and people. A
+source version links to its author and subject through `refs`; its statements
+link back to the source, avoiding a source -> statement -> source dependency
+cycle. New approved/corrected sources are new records; do not overwrite old
+assertions or embed later corrections into old writer contexts.
+
+Controls (`viewpoint`, `access_group`, `knowledge_grant`, `release`, `condition`)
+are private canonical metadata. Writer records omit them and strip their
+reference IDs/access-policy fields. The context supplies the selected
+viewpoint's name, author, audience, and visible focus separately. A source's
+authority/status is preserved but never converted into a universal trust score.
+
+### Condition instance contract
+
+Each `condition` record corresponds to exactly one requested instance:
+
+- `request_id`, `kind`, and `subject_id` are required.
+- `statement_ids[]`, `source_version_ids[]`, and `blocked_record_ids[]` default
+  to empty lists; all IDs are unique and referenced.
+- Optional `document_type`, `viewpoint_id`, and `period` restrict compatible
+  carrier documents and must agree with corresponding request selectors.
+  Period tokens match canonical topic years (`2022`), financial quarters
+  (`2022-Q1`), or an immutable source statement's exact `period` string.
+  Source-period scope remains available to the planner even when assertions
+  are deliberately suppressed; it does not disclose their values to writers.
+- `conflict` needs at least two statements with differing values in the same
+  subject/predicate/period/units scope. Its subject/period must match those
+  statements. Their source versions are mandatory planned artifacts.
+- `unknown`/`undocumented` need blocked record IDs. Optional source-version IDs
+  choose carriers; otherwise carriers match the subject's anchor/dependencies.
+  Unknown records are excluded from author knowledge. Undocumented records
+  remain writer-visible but are suppressed from final claims and derivations.
+- `omitted_source` needs source-version IDs that must not be planned/exported.
+  Other subject-related documents carry the condition; no missing file is
+  counted as a successful omission.
+- `noise` needs source-version IDs for complete adjacent material. Relevance
+  is relative to the configured subject, not an assertion that the document
+  has no value in any use case.
+- `stale` needs source-version IDs plus `as_of_date`; each old source must have
+  a published superseding version by that reference date.
+
+There must be exactly the requested number of canonical instances before
+planning. Mandatory sources and viewpoints consume the existing budget.
+Compatible instances may share documents; incompatible gap/conflict overlap
+fails. Deliberate controls never excuse broken business actuals, accidental
+unregistered conflicts, failed exports, or missing genre prerequisites.
+
+Structured absence checks do not prove that every semantic paraphrase or
+inference is absent. Configured carriers therefore also need semantic
+`condition_review` in QA.
+
 ## Plan and context
 
-Plan fields: `schema_version`, `canon_sha256`, `documents`, `warnings`.
+Plan fields: `schema_version: 2`, `corpus_id`, `canon_sha256`, `documents`, `warnings`.
 Each document includes `id`, `type`, `format`, `title`, `filename`, `publication_date`,
 `audience`, `anchor_ids`, `revision`, `content_depth`, and `required_sections`. The count is exactly the requested
 target. Formats are allocated evenly. Types and fiscal-year coverage are
 balanced deterministically, preferring less-used anchors; inspect warnings when
 the budget cannot cover all requested years or types.
+
+Every document also carries `author_id`, nullable `viewpoint_id`, `access_groups`,
+nullable `source_version_id`, `required_statement_ids`, `condition_ids`,
+`blocked_record_ids`, and `suppressed_record_ids`. Required source statements
+must be knowable and represented as value claims; their publication date and
+genre come from the source. Requested sources/viewpoints are allocated before
+ordinary balancing, so explicit controls may override even distribution.
+Missing selected-format coverage remains an error.
+
+Default intended access is public for public genres, `group-board` for board
+content, and `group-internal` otherwise. A source may explicitly specify its
+own group list. Public documents cannot have restricted intended access.
+Access groups are delivery metadata, not filesystem/service permissions.
 
 `title` is a natural, subject-specific business title, not a content-type label
 with internal IDs. `filename` is the required export basename, including its
@@ -225,8 +381,8 @@ Existing plans without `filename`, or with the old ID-based titles, must be
 replanned in a new revision. Do not mutate accepted drafts or rename files
 behind an existing manifest: changing the plan invalidates its draft/QA hashes.
 
-Context includes the complete plan item, canon and plan fingerprints, company
-record, all records with `known_on <= publication_date`, and `active_roles`.
+Context includes the sanitized plan item, canon and plan fingerprints, company
+record, records available to the author at publication, and `active_roles`.
 It also includes date-filtered `glossary` and `org_chart` views. `org_chart`
 contains `people`, `departments`, visible role history in `roles`, and an
 `active_roles` snapshot based on both knowability and effective dates. The
@@ -235,12 +391,21 @@ People/departments omitted from the bounded chart are also omitted from writer
 records and are unavailable to draft claims.
 Do not copy future states from an unfiltered canon into a draft.
 
+Projection uses dates, group access, explicit releases, author knowledge grants,
+the bounded organization, and dependencies. A missing business dependency
+removes its dependent record too. Conditions and full access policies are not
+writer inputs. The context's document omits condition IDs, unknown record IDs,
+and access groups; `suppressed_record_ids` instructs the writer not to state
+otherwise known information. These IDs and all other scaffolding stay private.
+
 ## Drafts and grounded claims
 
 Each draft file under `build\drafts` is named `<document-id>.json`. Required fields:
 
 ```json
 {
+  "schema_version": 2,
+  "corpus_id": "<from canon>",
   "document_id": "doc-0001",
   "canon_sha256": "<from plan>",
   "plan_sha256": "<from context>",
@@ -273,6 +438,41 @@ unique IDs; all must be used in a section. Every anchor must have at least one
 claim. Sections may add format-specific structures (tables, charts, slide
 layouts, speaker turns) but retain `role`, `heading`, `text`, and `claim_ids` for review.
 The checker verifies receipts, not the truth of natural-language text.
+Claims for required statements must use `path: ["data", "value"]`.
+Optional `statement_kind` must match the referenced statement's kind (ordinary
+business records are facts). A section's optional `speaker_id` must be visible;
+unless `reported_speech: true`, its attributed statement claims must belong to
+that speaker. Reported speech still needs faithful semantic attribution review.
+Claims cannot reference unknown/suppressed records or their dependent records.
+Direct claims must also be accessible/released to the intended readers, not
+just to the author.
+
+Multi-input derived claims replace `record_id`/`path` with `derivation`:
+
+```json
+{
+  "id": "margin",
+  "value": "25.0",
+  "units": "percent",
+  "derivation": {
+    "operation": "ratio",
+    "inputs": ["income", "revenue"],
+    "rounding": 1
+  }
+}
+```
+
+Both input claims must already be grounded and have units. Operations: `sum`,
+`difference` (two inputs), `product`, and `ratio` (two inputs). Sum/difference
+need matching input/output units; ratios need equal input units and `ratio` or
+`percent` output. Rounding is 0-12 decimal places, half-up. Cyclic references,
+unsupported operations, invalid results, and division by zero fail. This small
+receipt evaluator does not execute arbitrary expressions or replace Excel.
+Derived and primary claim shapes cannot be mixed. Primary units must match
+explicit source units; `_usd` financial fields require `USD`. Product output
+units still need semantic dimensional review: the evaluator is not a general
+unit-conversion or dimensional-algebra engine. Paths cannot expose stripped
+access policies or private dependency references from writer contexts.
 Draft `content_depth` must exactly match the planned setting. Narrative length
 and analytical richness are assessed against the run's depth targets during QA,
 not inferred from the number of JSON sections or claims.
@@ -289,7 +489,8 @@ not escape that directory, including through symbolic links.
 
 ```json
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "corpus_id": "<from canon>",
   "canon_sha256": "<from plan>",
   "plan_sha256": "<from context>",
   "documents": [
@@ -313,7 +514,8 @@ a generic filename is rejected even when the bytes and hash are valid.
 
 ```json
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "corpus_id": "<from canon>",
   "canon_sha256": "<from plan>",
   "plan_sha256": "<from context>",
   "documents": [
@@ -356,6 +558,34 @@ Changing a plan, draft, or output invalidates its QA receipt. The audit checks r
 presence and hashes; it cannot independently establish that a human or AI
 actually performed the claimed review.
 
+Configured carrier documents also require passed `condition_review` with
+nonempty evidence describing actual gap/conflict/noise/staleness inspection.
+Final audit recomputes `build\provenance.json` from `claim-locations.json` and
+final files, and recomputes `build\coverage.json`. Merely setting a passed flag
+cannot satisfy these checks. See `provenance.md` for the mapping/binding schemas.
+All per-section claim uses require distinct final-artifact occurrences.
+
+Coverage reports planned/delivered document/type/format counts, grounded
+record/entity/topic/subject references, periods, viewpoints, statement kinds,
+qualifiers, source versions, claim/occurrence totals, and configured conditions.
+Publication years, canonical topic years, and covered reporting/statement
+periods are separate dimensions; a report published the next year is not
+misclassified as that year's actuals. Period counts are document coverage and
+can include more than one period per document.
+The denominator is the requested plan and grounded claims, not all possible
+enterprise knowledge. It measures structural corpus integrity, not semantic
+depth or an evaluated agent's performance.
+Period coverage describes a document's modeled scope, not a guarantee that a
+suppressed source assertion was delivered; statement and condition coverage
+report that distinction separately.
+
+`access-view` first audits the corpus and returns only eligible document
+identities, revisions/hashes, filenames, and filtered occurrence metadata at
+the requested date/principal. Future/restricted documents and private build
+annotations are omitted. Its output belongs under `build\views`; it does not
+copy artifacts, enforce ACLs, or upload content. Distribute selected evidence,
+not the entire canon/build tree, through a separate deployment tool.
+
 Generation must pass the local Microsoft Office prerequisite in
 `references\dependencies.md` before any corpus artifacts are created. Record
 Office application versions, actual automation connection evidence, reviewed
@@ -372,7 +602,7 @@ review. Cover every planned document, including custom types:
 
 ```json
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "plan_sha256": "<from plan>",
   "documents": [
     {
