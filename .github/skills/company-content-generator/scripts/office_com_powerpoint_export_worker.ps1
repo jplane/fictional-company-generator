@@ -11,6 +11,7 @@ $pdfPath = [IO.Path]::GetFullPath($env:JIMWORKS_OFFICE_EXPORT_PDF_PATH)
 $previewDirectory = [IO.Path]::GetFullPath($env:JIMWORKS_OFFICE_EXPORT_PREVIEW_DIRECTORY)
 $resultPath = [IO.Path]::GetFullPath($env:JIMWORKS_OFFICE_EXPORT_RESULT_PATH)
 $logPath = [IO.Path]::GetFullPath($env:JIMWORKS_OFFICE_EXPORT_LOG_PATH)
+$recordPath = [IO.Path]::GetFullPath($env:JIMWORKS_OFFICE_EXPORT_PROCESS_RECORD_PATH)
 $baselinePids = @()
 if (-not [string]::IsNullOrWhiteSpace($env:JIMWORKS_OFFICE_EXPORT_BASELINE_PIDS)) {
     $baselinePids = @($env:JIMWORKS_OFFICE_EXPORT_BASELINE_PIDS -split "," | ForEach-Object { [int]$_ })
@@ -335,26 +336,38 @@ function Normalize-Text {
     [regex]::Replace($Value, "\s+", " ").Trim().ToLowerInvariant()
 }
 
-function Get-RunOwnedPowerPointProcessId {
-    param([int[]]$BaselinePids)
-    for ($attempt = 0; $attempt -lt 30; $attempt++) {
-        $newProcesses = @(Get-Process -Name POWERPNT -ErrorAction SilentlyContinue |
+function Register-RunOwnedOfficeProcess {
+    param(
+        [Parameter(Mandatory = $true)][string]$ProcessName,
+        [Parameter(Mandatory = $true)][AllowEmptyCollection()][int[]]$BaselinePids,
+        [Parameter(Mandatory = $true)][string]$RecordPath
+    )
+    for ($attempt = 0; $attempt -lt 50; $attempt++) {
+        $newProcesses = @(Get-Process -Name $ProcessName -ErrorAction SilentlyContinue |
             Where-Object { $BaselinePids -notcontains $_.Id })
-        if ($newProcesses.Count -eq 1) {
-            return [int]$newProcesses[0].Id
-        }
         if ($newProcesses.Count -gt 1) {
-            throw "Could not verify a unique run-owned PowerPoint process."
+            throw "Could not verify a unique run-owned $ProcessName process."
+        }
+        if ($newProcesses.Count -eq 1) {
+            $startTicks = $newProcesses[0].StartTime.ToUniversalTime().Ticks
+            $recordStream = [IO.File]::Open($RecordPath, [IO.FileMode]::CreateNew, [IO.FileAccess]::Write, [IO.FileShare]::None)
+            try {
+                $recordBytes = [Text.Encoding]::ASCII.GetBytes("$($newProcesses[0].Id),$startTicks")
+                $recordStream.Write($recordBytes, 0, $recordBytes.Length)
+            } finally {
+                $recordStream.Dispose()
+            }
+            return [int]$newProcesses[0].Id
         }
         Start-Sleep -Milliseconds 100
     }
-    throw "Could not verify a run-owned PowerPoint process."
+    throw "Could not verify a run-owned $ProcessName process."
 }
 
 try {
     Add-Content -LiteralPath $logPath -Value "$(Get-Date -Format o) Starting generic PowerPoint authoring."
     $app = New-Object -ComObject PowerPoint.Application
-    $processId = Get-RunOwnedPowerPointProcessId -BaselinePids $baselinePids
+    $processId = Register-RunOwnedOfficeProcess -ProcessName POWERPNT -BaselinePids $baselinePids -RecordPath $recordPath
     $app.Visible = -1
     $app.WindowState = 2
     $presentations = $app.Presentations

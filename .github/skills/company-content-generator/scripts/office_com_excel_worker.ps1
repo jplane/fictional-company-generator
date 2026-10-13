@@ -10,6 +10,7 @@ $baselinePids = @()
 if (-not [string]::IsNullOrWhiteSpace($env:JIMWORKS_OFFICE_BASELINE_PIDS)) {
     $baselinePids = @($env:JIMWORKS_OFFICE_BASELINE_PIDS -split "," | ForEach-Object { [int]$_ })
 }
+$recordPath = [IO.Path]::GetFullPath($env:JIMWORKS_OFFICE_PROCESS_RECORD_PATH)
 $app = $null
 $workbook = $null
 $worksheet = $null
@@ -20,9 +21,38 @@ $cell = $null
 $failure = $null
 $cleanupErrors = @()
 
+function Register-RunOwnedOfficeProcess {
+    param(
+        [Parameter(Mandatory = $true)][string]$ProcessName,
+        [Parameter(Mandatory = $true)][AllowEmptyCollection()][int[]]$BaselinePids,
+        [Parameter(Mandatory = $true)][string]$RecordPath
+    )
+    for ($attempt = 0; $attempt -lt 50; $attempt++) {
+        $newProcesses = @(Get-Process -Name $ProcessName -ErrorAction SilentlyContinue |
+            Where-Object { $BaselinePids -notcontains $_.Id })
+        if ($newProcesses.Count -gt 1) {
+            throw "Could not verify a unique run-owned $ProcessName process."
+        }
+        if ($newProcesses.Count -eq 1) {
+            $startTicks = $newProcesses[0].StartTime.ToUniversalTime().Ticks
+            $recordStream = [IO.File]::Open($RecordPath, [IO.FileMode]::CreateNew, [IO.FileAccess]::Write, [IO.FileShare]::None)
+            try {
+                $recordBytes = [Text.Encoding]::ASCII.GetBytes("$($newProcesses[0].Id),$startTicks")
+                $recordStream.Write($recordBytes, 0, $recordBytes.Length)
+            } finally {
+                $recordStream.Dispose()
+            }
+            return [int]$newProcesses[0].Id
+        }
+        Start-Sleep -Milliseconds 100
+    }
+    throw "Could not verify a run-owned $ProcessName process."
+}
+
 try {
     Add-Content -LiteralPath $log -Value "$(Get-Date -Format o) Starting isolated Excel connection."
     $app = New-Object -ComObject Excel.Application
+    [void](Register-RunOwnedOfficeProcess -ProcessName EXCEL -BaselinePids $baselinePids -RecordPath $recordPath)
     $app.Visible = $false
     $app.DisplayAlerts = $false
     $app.EnableEvents = $false

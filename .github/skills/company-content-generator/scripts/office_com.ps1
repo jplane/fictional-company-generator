@@ -21,25 +21,55 @@ function Stop-TrackedOfficeProcess {
     param(
         [Parameter(Mandatory = $true)][string]$ProcessName,
         [Parameter(Mandatory = $true)][AllowEmptyCollection()][int[]]$BaselinePids,
-        [Parameter(Mandatory = $true)][datetime]$StartedAt
+        [Parameter(Mandatory = $true)][datetime]$StartedAt,
+        [Parameter(Mandatory = $true)][string]$RecordPath
     )
 
-    $newProcesses = @(Get-Process -Name $ProcessName -ErrorAction SilentlyContinue |
-        Where-Object {
-            $BaselinePids -notcontains $_.Id -and
-            $_.StartTime -ge $StartedAt.AddSeconds(-5) -and
-            $_.MainWindowHandle -eq 0
-        })
-    if ($newProcesses.Count -eq 0) {
-        return
+    # Only the exact process the worker recorded is eligible; no recorded process means nothing is stopped.
+    if (-not (Test-Path -LiteralPath $RecordPath -PathType Leaf)) {
+        return "No run-owned $ProcessName process record exists, so no Office process was stopped and any orphaned Office process must be checked manually."
     }
-    if ($newProcesses.Count -ne 1) {
-        throw "Refusing to stop Office processes because the run-owned $ProcessName process is ambiguous."
+    $parts = @((Get-Content -LiteralPath $RecordPath -Raw).Trim() -split ",")
+    $recordedId = 0
+    $recordedTicks = [long]0
+    if ($parts.Count -ne 2 -or
+        -not [int]::TryParse($parts[0], [ref]$recordedId) -or
+        -not [long]::TryParse($parts[1], [ref]$recordedTicks) -or
+        $recordedId -le 0) {
+        throw "Refusing to stop an Office process because the run-owned process record is malformed: $RecordPath"
     }
-
-    Stop-Process -Id $newProcesses[0].Id -ErrorAction SilentlyContinue
-    if ($null -ne (Get-Process -Id $newProcesses[0].Id -ErrorAction SilentlyContinue)) {
-        throw "Could not stop run-owned $ProcessName process $($newProcesses[0].Id)."
+    if ($BaselinePids -contains $recordedId) {
+        throw "Refusing to stop pre-existing $ProcessName process $recordedId."
+    }
+    try {
+        $process = [Diagnostics.Process]::GetProcessById($recordedId)
+    } catch [ArgumentException] {
+        return "The recorded run-owned $ProcessName process $recordedId had already exited."
+    }
+    try {
+        try {
+            $actualName = $process.ProcessName
+            $actualStart = $process.StartTime
+        } catch [InvalidOperationException] {
+            return "The recorded run-owned $ProcessName process $recordedId had already exited."
+        }
+        if ($actualName -ne $ProcessName -or
+            $actualStart.ToUniversalTime().Ticks -ne $recordedTicks -or
+            $actualStart -lt $StartedAt.AddSeconds(-5)) {
+            return "Recorded $ProcessName process $recordedId no longer matches the run-owned process (its ID was reused); nothing was stopped."
+        }
+        # Terminate through the validated handle so a reused PID cannot be targeted.
+        try {
+            $process.Kill()
+        } catch [InvalidOperationException] {
+            return "The recorded run-owned $ProcessName process $recordedId had already exited."
+        }
+        if (-not $process.WaitForExit(10000)) {
+            throw "Could not stop run-owned $ProcessName process $recordedId."
+        }
+        return "Stopped run-owned $ProcessName process $recordedId."
+    } finally {
+        $process.Dispose()
     }
 }
 
@@ -57,6 +87,9 @@ function Invoke-OfficeWorker {
     $oldDocxPath = $env:JIMWORKS_OFFICE_DOCX_PATH
     $oldPptxPath = $env:JIMWORKS_OFFICE_PPTX_PATH
     $oldPdfPath = $env:JIMWORKS_OFFICE_PDF_PATH
+    $oldRecordPath = $env:JIMWORKS_OFFICE_PROCESS_RECORD_PATH
+    $recordPath = Join-Path $script:resolvedDirectory "$Mode-run-owned-process.txt"
+    $env:JIMWORKS_OFFICE_PROCESS_RECORD_PATH = $recordPath
     $env:JIMWORKS_OFFICE_MODE = $Mode
     $env:JIMWORKS_OFFICE_PROBE_DIR = $script:resolvedDirectory
     $env:JIMWORKS_OFFICE_BASELINE_PIDS = $baselinePids -join ","
@@ -91,21 +124,21 @@ function Invoke-OfficeWorker {
 
         if (-not $worker.WaitForExit($TimeoutSeconds * 1000)) {
             Stop-Process -Id $worker.Id
-            Stop-TrackedOfficeProcess -ProcessName $ProcessName -BaselinePids $baselinePids -StartedAt $startedAt
-            throw "$Mode Office preflight exceeded $TimeoutSeconds seconds; run-owned processes were stopped."
+            $cleanup = Stop-TrackedOfficeProcess -ProcessName $ProcessName -BaselinePids $baselinePids -StartedAt $startedAt -RecordPath $recordPath
+            throw "$Mode Office preflight exceeded $TimeoutSeconds seconds. $cleanup"
         }
 
         $worker.Refresh()
         if ($worker.ExitCode -ne 0) {
             $errorText = (Get-Content -LiteralPath (Join-Path $script:resolvedDirectory "preflight.log") -Raw).Trim()
-            Stop-TrackedOfficeProcess -ProcessName $ProcessName -BaselinePids $baselinePids -StartedAt $startedAt
-            throw "$Mode Office preflight failed with exit code $($worker.ExitCode): $errorText"
+            $cleanup = Stop-TrackedOfficeProcess -ProcessName $ProcessName -BaselinePids $baselinePids -StartedAt $startedAt -RecordPath $recordPath
+            throw "$Mode Office preflight failed with exit code $($worker.ExitCode): $errorText $cleanup"
         }
 
         $resultPath = Join-Path $script:resolvedDirectory "$Mode-result.json"
         if (-not (Test-Path -LiteralPath $resultPath -PathType Leaf)) {
-            Stop-TrackedOfficeProcess -ProcessName $ProcessName -BaselinePids $baselinePids -StartedAt $startedAt
-            throw "$Mode Office worker exited without writing its evidence file."
+            $cleanup = Stop-TrackedOfficeProcess -ProcessName $ProcessName -BaselinePids $baselinePids -StartedAt $startedAt -RecordPath $recordPath
+            throw "$Mode Office worker exited without writing its evidence file. $cleanup"
         }
         $result = Get-Content -LiteralPath $resultPath -Raw | ConvertFrom-Json
         $runOwnedProcessId = [int]$result.process_id
@@ -119,8 +152,8 @@ function Invoke-OfficeWorker {
             Start-Sleep -Milliseconds 200
         }
         if ($null -ne (Get-Process -Id $runOwnedProcessId -ErrorAction SilentlyContinue)) {
-            Stop-TrackedOfficeProcess -ProcessName $ProcessName -BaselinePids $baselinePids -StartedAt $startedAt
-            throw "$Mode Office process did not exit after a successful worker run."
+            $cleanup = Stop-TrackedOfficeProcess -ProcessName $ProcessName -BaselinePids $baselinePids -StartedAt $startedAt -RecordPath $recordPath
+            throw "$Mode Office process did not exit after a successful worker run. $cleanup"
         }
 
         $result
@@ -135,6 +168,7 @@ function Invoke-OfficeWorker {
         $env:JIMWORKS_OFFICE_DOCX_PATH = $oldDocxPath
         $env:JIMWORKS_OFFICE_PPTX_PATH = $oldPptxPath
         $env:JIMWORKS_OFFICE_PDF_PATH = $oldPdfPath
+        $env:JIMWORKS_OFFICE_PROCESS_RECORD_PATH = $oldRecordPath
     }
 }
 
