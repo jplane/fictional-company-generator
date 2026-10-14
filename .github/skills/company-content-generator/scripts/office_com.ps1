@@ -245,9 +245,19 @@ foreach ($format in $selectedFormats) {
 }
 
 $repositoryRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot "..\..\..\.."))
-$repositoryHead = (& git -C $repositoryRoot rev-parse HEAD 2>$null | Out-String).Trim()
-if ($LASTEXITCODE -ne 0) {
-    throw "Could not record the repository revision for the Office backend."
+$repositoryHead = $null
+$revisionStatus = "not-in-git-checkout"
+if (Test-Path -LiteralPath (Join-Path $repositoryRoot ".git")) {
+    $gitCommand = Get-Command -Name git -CommandType Application -ErrorAction SilentlyContinue
+    if ($null -eq $gitCommand) {
+        $revisionStatus = "git-unavailable"
+    } else {
+        $repositoryHead = (& $gitCommand.Source -C $repositoryRoot rev-parse HEAD 2>$null | Out-String).Trim()
+        if ($LASTEXITCODE -ne 0) {
+            throw "Could not record the repository revision for the Office backend."
+        }
+        $revisionStatus = "recorded"
+    }
 }
 
 $preflight = [ordered]@{
@@ -261,6 +271,7 @@ $preflight = [ordered]@{
         worker_source = $workerSources
         exporter_worker_source = $exporterWorkerSources
         revision = $repositoryHead
+        revision_status = $revisionStatus
         source_sha256 = $sourceHashes
         provenance = "First-party local script; no external automation package or network service."
     }

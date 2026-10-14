@@ -131,7 +131,14 @@ overwritten during a retry.
 
 - the chosen and recommended backend, selected formats, and timestamp;
 - native application or container/runtime versions and probe evidence;
-- backend implementation source/revision and relevant package/image versions;
+- Native Office implementation source and source SHA-256 hashes, plus the
+  repository revision when Git metadata is available. Without a `.git` entry,
+  record a null revision with `revision_status: "not-in-git-checkout"` and rely
+  on the source hashes instead of failing preflight. If a `.git` entry exists
+  but Git is unavailable, record a null revision with
+  `revision_status: "git-unavailable"`;
+- container implementation source, repository revision, and relevant
+  package/image versions;
 - the planned pilot IDs, output hashes, render evidence, and limitations.
 
 Do not mark preflight passed based only on a version string, executable

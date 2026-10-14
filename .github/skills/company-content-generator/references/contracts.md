@@ -404,7 +404,12 @@ actually performed the claimed review.
 Before any corpus artifacts are created, pass the selected-format capability
 check and record the recommended and user-selected backend in
 `build\preflight.json`. For Native Office, record the selected applications,
-versions, COM connection/operation evidence, and source revision. For the
+versions, COM connection/operation evidence, implementation source, source
+SHA-256 hashes, and Git revision when available. If the checkout has no `.git`
+entry, record `revision: null` with
+`revision_status: "not-in-git-checkout"` and rely on the hashes; Git metadata
+is not required to pass preflight. If `.git` exists but Git is unavailable,
+record `revision: null` with `revision_status: "git-unavailable"`. For the
 container, record Docker/Compose versions, image digest and repository
 revision, container Python/package and LibreOffice versions, helper-mount and
 smoke-test evidence. Record actual pilot results for either backend. State
