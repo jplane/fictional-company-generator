@@ -283,6 +283,276 @@ class ProvenanceTests(unittest.TestCase):
             with self.assertRaisesRegex(company.Invalid, "external"):
                 company.artifact_containers(self.package(Path(directory), "pptx", parts), "pptx")
 
+    def _xlsx_chart_parts(self, cNvPr_id, chart_body, anchor_tag="twoCellAnchor",
+                          anchor_extra='<xdr:from><xdr:col>1</xdr:col><xdr:colOff>0</xdr:colOff>'
+                          '<xdr:row>1</xdr:row><xdr:rowOff>0</xdr:rowOff></xdr:from>'
+                          '<xdr:to><xdr:col>5</xdr:col><xdr:colOff>0</xdr:colOff>'
+                          '<xdr:row>10</xdr:row><xdr:rowOff>0</xdr:rowOff></xdr:to>'):
+        return self._xlsx_charts_package([
+            {"cNvPr_id": cNvPr_id, "chart_body": chart_body, "anchor_tag": anchor_tag,
+             "anchor_extra": anchor_extra}])
+
+    def _xlsx_charts_package(self, charts, broken_chart_rel=False):
+        """Build a minimal XLSX part set with N chart-bearing graphic frames in
+        one drawing part, each with its own chart relationship/part. `charts`
+        is a list of dicts with cNvPr_id/chart_body and optional anchor_tag/
+        anchor_extra (defaults to a standard twoCellAnchor)."""
+        default_anchor = ('<xdr:from><xdr:col>1</xdr:col><xdr:colOff>0</xdr:colOff>'
+                          '<xdr:row>1</xdr:row><xdr:rowOff>0</xdr:rowOff></xdr:from>'
+                          '<xdr:to><xdr:col>5</xdr:col><xdr:colOff>0</xdr:colOff>'
+                          '<xdr:row>10</xdr:row><xdr:rowOff>0</xdr:rowOff></xdr:to>')
+        x, r, a, c, xdr = (company.NS[k] for k in ("x", "r", "a", "c", "xdr"))
+        rel_ns = "http://schemas.openxmlformats.org/package/2006/relationships"
+        anchors_xml, chart_rels, chart_parts = [], [], {}
+        for index, chart in enumerate(charts, start=1):
+            anchor_tag = chart.get("anchor_tag", "twoCellAnchor")
+            anchor_extra = chart.get("anchor_extra", default_anchor)
+            rel_id = f"chartrel{index}"
+            anchors_xml.append(
+                f'<xdr:{anchor_tag}>{anchor_extra}<xdr:graphicFrame><xdr:nvGraphicFramePr>'
+                f'<xdr:cNvPr id="{chart["cNvPr_id"]}" name="Chart"/><xdr:cNvGraphicFramePr/>'
+                '</xdr:nvGraphicFramePr><xdr:xfrm><a:off x="0" y="0"/><a:ext cx="0" cy="0"/></xdr:xfrm>'
+                f'<a:graphic><a:graphicData uri="{c}"><c:chart xmlns:c="{c}" r:id="{rel_id}"/>'
+                f'</a:graphicData></a:graphic></xdr:graphicFrame><xdr:clientData/></xdr:{anchor_tag}>')
+            if not (broken_chart_rel and index == len(charts)):
+                chart_rels.append(f'<Relationship Id="{rel_id}" Type="{r}/chart" '
+                                  f'Target="charts/chart{index}.xml"/>')
+                chart_parts[f"xl/drawings/charts/chart{index}.xml"] = chart["chart_body"]
+        return {
+            "xl/workbook.xml": f'<workbook xmlns="{x}" xmlns:r="{r}"><sheets>'
+                '<sheet name="Data" sheetId="1" r:id="sheet"/></sheets></workbook>',
+            "xl/_rels/workbook.xml.rels": f'<Relationships xmlns="{rel_ns}">'
+                f'<Relationship Id="sheet" Type="{r}/worksheet" Target="worksheets/sheet1.xml"/>'
+                '</Relationships>',
+            "xl/worksheets/sheet1.xml": f'<worksheet xmlns="{x}"><sheetData><row r="1">'
+                '<c r="A1"><v>1</v></c></row></sheetData><drawing xmlns:r="' + r + '" r:id="drawing"/></worksheet>',
+            "xl/worksheets/_rels/sheet1.xml.rels": f'<Relationships xmlns="{rel_ns}">'
+                f'<Relationship Id="drawing" Type="{r}/drawing" Target="../drawings/drawing1.xml"/>'
+                '</Relationships>',
+            "xl/drawings/drawing1.xml": f'<xdr:wsDr xmlns:xdr="{xdr}" xmlns:a="{a}" xmlns:r="{r}">'
+                + "".join(anchors_xml) + '</xdr:wsDr>',
+            "xl/drawings/_rels/drawing1.xml.rels": f'<Relationships xmlns="{rel_ns}">'
+                + "".join(chart_rels) + '</Relationships>',
+            **chart_parts,
+        }
+
+    def _column_chart_body(self, value="5"):
+        c = company.NS["c"]
+        return (f'<c:chartSpace xmlns:c="{c}"><c:chart><c:title><c:tx><c:rich><a:p '
+                'xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">'
+                '<a:r><a:t>Quarterly Summary</a:t></a:r></a:p></c:rich></c:tx></c:title>'
+                '<c:plotArea><c:barChart><c:barDir val="col"/><c:ser><c:val><c:numRef>'
+                f'<c:f>Data!B2</c:f><c:numCache><c:pt idx="0"><c:v>{value}</c:v></c:pt>'
+                '</c:numCache></c:numRef></c:val></c:ser></c:barChart></c:plotArea>'
+                '</c:chart></c:chartSpace>')
+
+    def test_xlsx_render_targets_reject_unreferenced_orphan_drawing_part(self):
+        """An xl/drawings part not referenced by any worksheet is a malformed/
+        suspicious package and must still block, with a specific diagnostic
+        (not the old blanket 'any drawing part exists' message)."""
+        x, r = company.NS["x"], company.NS["r"]
+        rel_ns = "http://schemas.openxmlformats.org/package/2006/relationships"
+        parts = {
+            "xl/workbook.xml": f'<workbook xmlns="{x}" xmlns:r="{r}"><sheets>'
+                '<sheet name="Data" sheetId="1" r:id="sheet"/></sheets></workbook>',
+            "xl/_rels/workbook.xml.rels": f'<Relationships xmlns="{rel_ns}">'
+                f'<Relationship Id="sheet" Type="{r}/worksheet" Target="worksheets/sheet1.xml"/>'
+                '</Relationships>',
+            "xl/worksheets/sheet1.xml": f'<worksheet xmlns="{x}"><sheetData><row r="1">'
+                '<c r="A1"><v>1</v></c></row></sheetData></worksheet>',
+            "xl/drawings/drawing1.xml": '<xdr:wsDr xmlns:xdr='
+                '"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing"/>',
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            path = self.package(Path(directory), "xlsx", parts)
+            with self.assertRaisesRegex(company.Invalid, "not referenced by any worksheet"):
+                company.verify_render_targets(path, [{"id": "all", "range": "Data!A1:A1"}])
+
+    def test_xlsx_render_targets_reject_unsupported_chart_type(self):
+        """A referenced, well-formed chart object of an unsupported type (pie)
+        must be explicitly reported, not silently substituted or omitted."""
+        c = company.NS["c"]
+        pie = (f'<c:chartSpace xmlns:c="{c}"><c:chart><c:plotArea><c:pieChart>'
+               '<c:ser><c:val><c:numRef><c:f>Data!B2</c:f><c:numCache>'
+               '<c:pt idx="0"><c:v>5</c:v></c:pt></c:numCache></c:numRef></c:val>'
+               '</c:ser></c:pieChart></c:plotArea></c:chart></c:chartSpace>')
+        parts = self._xlsx_chart_parts("2", pie)
+        with tempfile.TemporaryDirectory() as directory:
+            path = self.package(Path(directory), "xlsx", parts)
+            with self.assertRaisesRegex(company.Invalid, "Unsupported chart type: pieChart"):
+                company.verify_render_targets(path, [{"id": "all", "range": "Data!A1:A1"}])
+
+    def test_xlsx_render_targets_accept_supported_column_chart_with_full_coverage(self):
+        """A supported column chart is accepted once both its cell range and
+        its specific source chart object (sheet + shape_id) are targeted."""
+        c = company.NS["c"]
+        column = (f'<c:chartSpace xmlns:c="{c}"><c:chart><c:plotArea><c:barChart>'
+                  '<c:barDir val="col"/><c:ser><c:val><c:numRef><c:f>Data!B2</c:f><c:numCache>'
+                  '<c:pt idx="0"><c:v>5</c:v></c:pt></c:numCache></c:numRef></c:val>'
+                  '</c:ser></c:barChart></c:plotArea></c:chart></c:chartSpace>')
+        parts = self._xlsx_chart_parts("2", column)
+        with tempfile.TemporaryDirectory() as directory:
+            path = self.package(Path(directory), "xlsx", parts)
+            company.verify_render_targets(path, [
+                {"id": "cells", "type": "range", "range": "Data!A1:A1"},
+                {"id": "chart-2", "type": "chart", "sheet": "Data", "shape_id": "2"}])
+            with self.assertRaisesRegex(company.Invalid, "Incomplete chart-object render coverage"):
+                company.verify_render_targets(path, [{"id": "cells", "type": "range", "range": "Data!A1:A1"}])
+            with self.assertRaisesRegex(company.Invalid, "does not match a supported source chart object"):
+                company.verify_render_targets(path, [
+                    {"id": "cells", "type": "range", "range": "Data!A1:A1"},
+                    {"id": "chart-9", "type": "chart", "sheet": "Data", "shape_id": "9"}])
+
+    def test_chart_inventory_duplicate_titles_distinct_source_objects_stay_addressable(self):
+        """Two column charts carrying the identical <c:title> text but distinct
+        shape IDs/data must be inventoried as two separate supported objects
+        with distinct export paths; identity never depends on title text."""
+        parts = self._xlsx_charts_package([
+            {"cNvPr_id": "2", "chart_body": self._column_chart_body("100")},
+            {"cNvPr_id": "3", "chart_body": self._column_chart_body("150")}])
+        with tempfile.TemporaryDirectory() as directory:
+            path = self.package(Path(directory), "xlsx", parts)
+            with zipfile.ZipFile(path) as package:
+                inventory = company.chart_object_inventory(package)
+            supported = {o["shape_id"]: o for o in inventory if o["status"] == "supported"}
+            self.assertEqual(set(supported), {"2", "3"})
+            self.assertEqual(supported["2"]["expected_dom_path"], "/Data/chart[1]")
+            self.assertEqual(supported["3"]["expected_dom_path"], "/Data/chart[2]")
+            company.verify_render_targets(path, [
+                {"id": "cells", "range": "Data!A1:A1"},
+                {"id": "chart-2", "type": "chart", "sheet": "Data", "shape_id": "2"},
+                {"id": "chart-3", "type": "chart", "sheet": "Data", "shape_id": "3"}])
+
+    def test_chart_inventory_identical_start_anchor_disambiguated_by_shape_id(self):
+        """Two charts sharing the exact same twoCellAnchor from/to coordinates
+        must still resolve to two distinct, independently addressable source
+        objects (identity is never collapsed onto the shared anchor)."""
+        parts = self._xlsx_charts_package([
+            {"cNvPr_id": "2", "chart_body": self._column_chart_body("100")},
+            {"cNvPr_id": "3", "chart_body": self._column_chart_body("150")}])
+        with tempfile.TemporaryDirectory() as directory:
+            path = self.package(Path(directory), "xlsx", parts)
+            with zipfile.ZipFile(path) as package:
+                inventory = company.chart_object_inventory(package)
+            anchors = {o["shape_id"]: o["two_cell_anchor"] for o in inventory}
+            self.assertEqual(anchors["2"], anchors["3"])
+            self.assertNotEqual(
+                next(o for o in inventory if o["shape_id"] == "2")["expected_dom_path"],
+                next(o for o in inventory if o["shape_id"] == "3")["expected_dom_path"])
+
+    def test_chart_inventory_rejects_duplicate_source_shape_ids(self):
+        """A malformed drawing part with two graphic frames sharing one shape
+        ID is an ambiguous source and must fail closed, not pick one silently."""
+        parts = self._xlsx_charts_package([
+            {"cNvPr_id": "2", "chart_body": self._column_chart_body("100")},
+            {"cNvPr_id": "2", "chart_body": self._column_chart_body("150")}])
+        with tempfile.TemporaryDirectory() as directory:
+            path = self.package(Path(directory), "xlsx", parts)
+            with zipfile.ZipFile(path) as package:
+                with self.assertRaisesRegex(company.Invalid, "duplicate source shape ID"):
+                    company.chart_object_inventory(package)
+
+    def test_chart_inventory_rejects_broken_chart_relationship(self):
+        """A chart reference whose relationship ID is missing/unresolvable in
+        the drawing part's rels must fail closed, not skip the object."""
+        parts = self._xlsx_charts_package(
+            [{"cNvPr_id": "2", "chart_body": self._column_chart_body("100")}],
+            broken_chart_rel=True)
+        with tempfile.TemporaryDirectory() as directory:
+            path = self.package(Path(directory), "xlsx", parts)
+            with zipfile.ZipFile(path) as package:
+                with self.assertRaisesRegex(company.Invalid, "Missing, external, or wrong chart relationship"):
+                    company.chart_object_inventory(package)
+
+    def test_chart_inventory_reordering_invalidates_stale_target_mapping(self):
+        """Inserting a new chart ahead of an existing one shifts the later
+        chart's export index; a target built from the stale mapping must be
+        rejected rather than silently matching the wrong rendered object."""
+        c = company.NS["c"]
+        line = (f'<c:chartSpace xmlns:c="{c}"><c:chart><c:plotArea><c:lineChart>'
+               '<c:ser><c:val><c:numRef><c:f>Data!B2</c:f><c:numCache>'
+               '<c:pt idx="0"><c:v>20</c:v></c:pt></c:numCache></c:numRef></c:val>'
+               '</c:ser></c:lineChart></c:plotArea></c:chart></c:chartSpace>')
+        parts = self._xlsx_charts_package([{"cNvPr_id": "2", "chart_body": line}])
+        with tempfile.TemporaryDirectory() as directory:
+            path = self.package(Path(directory), "xlsx", parts)
+            with zipfile.ZipFile(path) as package:
+                before = company.chart_object_inventory(package)
+            self.assertEqual(before[0]["expected_dom_path"], "/Data/chart[1]")
+            stale_target = {"id": "chart-2", "type": "chart", "sheet": "Data",
+                            "shape_id": "2", "expected_dom_path": before[0]["expected_dom_path"]}
+            company.verify_render_targets(path, [{"id": "cells", "range": "Data!A1:A1"}, stale_target])
+
+            reordered_parts = self._xlsx_charts_package([
+                {"cNvPr_id": "9", "chart_body": self._column_chart_body("5")},
+                {"cNvPr_id": "2", "chart_body": line}])
+            reordered_path = self.package(Path(directory), "xlsx", reordered_parts)
+            with zipfile.ZipFile(reordered_path) as package:
+                after = company.chart_object_inventory(package)
+            moved = next(o for o in after if o["shape_id"] == "2")
+            self.assertEqual(moved["expected_dom_path"], "/Data/chart[2]")
+            self.assertNotEqual(moved["expected_dom_path"], before[0]["expected_dom_path"])
+            with self.assertRaisesRegex(company.Invalid, "Stale chart target DOM path"):
+                company.verify_render_targets(reordered_path, [
+                    {"id": "cells", "range": "Data!A1:A1"},
+                    stale_target,
+                    {"id": "chart-9", "type": "chart", "sheet": "Data", "shape_id": "9"}])
+        """An xl/drawings part not referenced by any worksheet is a malformed/
+        suspicious package and must still block, with a specific diagnostic
+        (not the old blanket 'any drawing part exists' message)."""
+        x, r = company.NS["x"], company.NS["r"]
+        rel_ns = "http://schemas.openxmlformats.org/package/2006/relationships"
+        parts = {
+            "xl/workbook.xml": f'<workbook xmlns="{x}" xmlns:r="{r}"><sheets>'
+                '<sheet name="Data" sheetId="1" r:id="sheet"/></sheets></workbook>',
+            "xl/_rels/workbook.xml.rels": f'<Relationships xmlns="{rel_ns}">'
+                f'<Relationship Id="sheet" Type="{r}/worksheet" Target="worksheets/sheet1.xml"/>'
+                '</Relationships>',
+            "xl/worksheets/sheet1.xml": f'<worksheet xmlns="{x}"><sheetData><row r="1">'
+                '<c r="A1"><v>1</v></c></row></sheetData></worksheet>',
+            "xl/drawings/drawing1.xml": '<xdr:wsDr xmlns:xdr='
+                '"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing"/>',
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            path = self.package(Path(directory), "xlsx", parts)
+            with self.assertRaisesRegex(company.Invalid, "not referenced by any worksheet"):
+                company.verify_render_targets(path, [{"id": "all", "range": "Data!A1:A1"}])
+
+    def test_xlsx_render_targets_reject_unsupported_chart_type(self):
+        """A referenced, well-formed chart object of an unsupported type (pie)
+        must be explicitly reported, not silently substituted or omitted."""
+        c = company.NS["c"]
+        pie = (f'<c:chartSpace xmlns:c="{c}"><c:chart><c:plotArea><c:pieChart>'
+               '<c:ser><c:val><c:numRef><c:f>Data!B2</c:f><c:numCache>'
+               '<c:pt idx="0"><c:v>5</c:v></c:pt></c:numCache></c:numRef></c:val>'
+               '</c:ser></c:pieChart></c:plotArea></c:chart></c:chartSpace>')
+        parts = self._xlsx_chart_parts("2", pie)
+        with tempfile.TemporaryDirectory() as directory:
+            path = self.package(Path(directory), "xlsx", parts)
+            with self.assertRaisesRegex(company.Invalid, "Unsupported chart type: pieChart"):
+                company.verify_render_targets(path, [{"id": "all", "range": "Data!A1:A1"}])
+
+    def test_xlsx_render_targets_accept_supported_column_chart_with_full_coverage(self):
+        """A supported column chart is accepted once both its cell range and
+        its specific source chart object (sheet + shape_id) are targeted."""
+        c = company.NS["c"]
+        column = (f'<c:chartSpace xmlns:c="{c}"><c:chart><c:plotArea><c:barChart>'
+                  '<c:barDir val="col"/><c:ser><c:val><c:numRef><c:f>Data!B2</c:f><c:numCache>'
+                  '<c:pt idx="0"><c:v>5</c:v></c:pt></c:numCache></c:numRef></c:val>'
+                  '</c:ser></c:barChart></c:plotArea></c:chart></c:chartSpace>')
+        parts = self._xlsx_chart_parts("2", column)
+        with tempfile.TemporaryDirectory() as directory:
+            path = self.package(Path(directory), "xlsx", parts)
+            company.verify_render_targets(path, [
+                {"id": "cells", "type": "range", "range": "Data!A1:A1"},
+                {"id": "chart-2", "type": "chart", "sheet": "Data", "shape_id": "2"}])
+            with self.assertRaisesRegex(company.Invalid, "Incomplete chart-object render coverage"):
+                company.verify_render_targets(path, [{"id": "cells", "type": "range", "range": "Data!A1:A1"}])
+            with self.assertRaisesRegex(company.Invalid, "does not match a supported source chart object"):
+                company.verify_render_targets(path, [
+                    {"id": "cells", "type": "range", "range": "Data!A1:A1"},
+                    {"id": "chart-9", "type": "chart", "sheet": "Data", "shape_id": "9"}])
+
     def test_xlsx_render_targets_reject_any_drawings_part(self):
         """verify_render_targets must keep blocking any XLSX package that contains
         an xl/drawings/*.xml part (i.e. any chart/drawing object), regardless of
@@ -303,8 +573,9 @@ class ProvenanceTests(unittest.TestCase):
         }
         with tempfile.TemporaryDirectory() as directory:
             path = self.package(Path(directory), "xlsx", parts)
-            with self.assertRaisesRegex(company.Invalid, "drawing/chart visual coverage"):
+            with self.assertRaisesRegex(company.Invalid, "not referenced by any worksheet"):
                 company.verify_render_targets(path, [{"id": "all", "range": "Data!A1:A1"}])
+
 
     def test_numeric_cache_round_trip_normalization_retains_raw_evidence(self):
         x, r = company.NS["x"], company.NS["r"]

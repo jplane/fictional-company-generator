@@ -61,8 +61,10 @@ page breaks (never automatic natural-flow pagination): every authored page's
 content must fit within its physical rendered page, each capture rejects a
 rendered page/box-overflow or page-count mismatch against the explicit
 authored break plan, and a one-page document needs no superfluous break.
-Page-dependent fields and unproven formula/drawing/chart features stop the
-bounded workflow explicitly; no fallback was used.
+Page-dependent fields, unproven formula functions, and unsupported
+drawing/chart objects (anything outside the proven column/line
+`twoCellAnchor` chart capture path) stop the bounded workflow explicitly;
+no fallback was used.
 
 Required OfficeCLI/Playwright-capture-adapter capability loss blocks
 generation/resume; preserve existing outputs and report the actual completed

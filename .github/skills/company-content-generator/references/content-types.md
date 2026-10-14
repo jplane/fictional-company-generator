@@ -286,7 +286,12 @@ HTML export captured through the pinned Playwright-Chromium adapter for every
 page/slide or relevant worksheet region; unselected gates are
 `not_selected`. Always review pilots, condition/source-history carriers and
 flagged exceptions. Failed samples require affected-family expansion.
-Review XLSX column widths, readability, chart ranges, formula caches, and error cells. Inspect representative
+Review XLSX column widths, readability, chart ranges, supported chart objects
+(title/legend/axis/series pixels, not just that an SVG exists), formula
+caches, and error cells. Structural chart-object capture (correct identity,
+unclipped/unoccluded bounds) does not by itself certify every visual/semantic
+detail; it is reviewed like any other selected visual under the active QA
+policy. Inspect representative
 cross-format documents about the same event together. A clean ZIP/XML audit is
 not proof of coherent prose, readable layout, or calculated formulas.
 Use OfficeCLI for document authoring/checking/HTML export, and the pinned

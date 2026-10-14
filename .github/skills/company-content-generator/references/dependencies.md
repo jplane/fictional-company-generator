@@ -144,18 +144,40 @@ and running helper tests are not corpus generation.
   contact sheets are an optional triage aid only, never a replacement for
   viewing the full page/slide image. XLSX ranges must cover all relevant
   cells and layouts, including merged-anchor cells and non-default/active
-  sheets (activate the sheet tab before capturing it). The thin runner stops
-  on XLSX drawings because it cannot prove their coverage from cell ranges
-  alone; required chart/drawing support needs a separately proven OfficeCLI
-  region adapter, not an improvised second renderer during generation.
-  (Verified 2026-10-14: the HTML export does render column/line chart
-  objects as inline, anchor-positioned SVG with correct title/legend/axis/
-  series pixels for known cached data — this is not a renderer gap. The gap
-  is verification: the existing cell-range capture only resolves clip
-  bounds from `td[data-path=...]` corner cells and the render-target schema
-  only checks logical cell locators, so neither can bind a declared region
-  to a chart's actual EMU anchor box. The unconditional block stays until an
-  anchor-aware region/coverage check exists.)
+  sheets (activate the sheet tab before capturing it). XLSX chart objects
+  (standard column and line charts anchored with a `twoCellAnchor`) are a
+  supported, independently proven capture path: `chart_object_inventory()`
+  enumerates every chart-bearing graphic frame in the same document order as
+  the verified OfficeCLI HTML-export contract
+  (`WorksheetDrawing.Descendants<GraphicFrame>()`, OfficeCLI commit
+  `b65272a18aef891941451705ff93e8a287f3eb72`,
+  `ExcelHandler.HtmlPreview.Charts.cs:41-48,227-231` and
+  `ExcelHandler.Helpers.Chart.cs:347-372`), keyed by worksheet part + drawing
+  part + source shape ID + chart relationship/part + anchor — never by title
+  or start cell alone, so duplicate titles/start anchors stay independently
+  addressable. `verify_render_targets()` fails closed on any XLSX package
+  containing an **unsupported** drawing/chart object (pie/3-D/combo/other
+  anchor forms, orphan drawing parts) unless every supported chart object
+  also has a matching render target; it never silently omits, substitutes,
+  or shifts a supported chart's index around an unsupported one. The capture
+  adapter's `capture_xlsx_chart()` locates the exact
+  `div.chart-container[data-path='/{sheet}/chart[N]']` (exact-attribute
+  match, never interpolated/fragile partial selectors), requires exactly one
+  visible `svg[viewBox]` chart body (excluding decorative legend-swatch
+  icons, which carry no `viewBox`), and reports real bounds plus
+  clip/occlusion against the document and neighboring objects — a fully or
+  partially overlapping pair of charts is reported as occluded, never
+  accepted as a clean layout by hiding or ignoring the other object. Column
+  and line support is an initial, extensible boundary (see `company.py`'s
+  `SUPPORTED_CHART_KINDS`), not a permanent ban on other chart types;
+  ordinary per-series colors/fonts are not an exhaustively whitelisted style
+  set, and any other chart feature (3-D, combo, unproven styles) must not be
+  claimed as supported by the column/line label. A user-required unsupported
+  chart type must be reported as a specific blocker, never silently omitted
+  or substituted. Source-order identity is bound to the current package
+  state only: editing, reordering, or regenerating a workbook invalidates a
+  previously captured chart target's `expected_dom_path` and the mapping
+  must be recomputed from a fresh inventory, not reused.
 - DOCX output from this skill uses **explicit, deliberate page breaks**, never
   automatic natural-flow pagination; a one-page document needs no superfluous
   break. Every authored page's content must fit its physical rendered page:

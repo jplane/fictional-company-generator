@@ -40,8 +40,9 @@ document-engine fallbacks are not used.
 See `.github\skills\company-content-generator\references\dependencies.md` for
 setup/update, capability checks and limitations. These tools are not bundled.
 OfficeCLI's HTML export plus Playwright-Chromium capture does not certify
-native Office layout fidelity; unsupported fields/formulas/drawing coverage
-remain explicit blockers.
+native Office layout fidelity; unsupported fields/formulas/drawing objects
+remain explicit blockers (standard column/line XLSX charts are a supported,
+identity-bound capture path — see `dependencies.md`).
 
 ## Use
 

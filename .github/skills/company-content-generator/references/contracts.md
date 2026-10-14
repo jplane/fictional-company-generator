@@ -676,10 +676,18 @@ an authoring framework. Store a JSON array of jobs under `build`; each job has:
   dependency order, and include every formula. Unsupported/shared/array forms
   stop rather than inventing values. Empty bindings are valid only for no formulas.
 - `render_targets`: `[{"id": "all"}]` for DOCX/PPTX; for XLSX,
-  `[{"id": "results", "range": "Results!A1:F40"}, ...]`, covering all populated
-  cells. Declare targets even if currently unselected so expansion can render
-  accepted bytes later. XLSX drawing coverage requires a separately proven
-  adapter; the bounded runner stops, rather than pretending cell ranges cover it.
+  `[{"id": "results", "type": "range", "range": "Results!A1:F40"}, ...]`,
+  covering all populated cells. Declare targets even if currently unselected
+  so expansion can render accepted bytes later. Standard column/line chart
+  objects (`twoCellAnchor`-only) are a supported, separately identified
+  target type: `{"id": "...", "type": "chart", "sheet": "...", "shape_id": "..."}`,
+  resolved against a freshly recomputed `chart_object_inventory()`, never a
+  caller-trusted `expected_dom_path`. `verify_render_targets()` fails closed
+  if the package contains any unsupported drawing/chart object, or if any
+  supported chart object lacks a matching target (range-only targets cannot
+  satisfy chart coverage). A target's own `expected_dom_path`, if supplied,
+  must match the current inventory exactly — editing/reordering the workbook
+  invalidates a stale path rather than silently matching the wrong object.
 - `occurrences`: exact exporter-associated entries from the occurrence contract
   in `provenance.md`, never global first-token matches. `assemble` verifies the
   entire real planned set before writing complete-corpus receipts.

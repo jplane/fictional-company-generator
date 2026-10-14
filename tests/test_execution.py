@@ -351,10 +351,23 @@ class RunnerPrimitiveTests(unittest.TestCase):
             def run(self, arguments, operation):
                 return log(operation, arguments)
 
+        def missing_dependency():
+            raise playwright_capture.CaptureError(
+                "Playwright capture adapter unavailable; install the pinned Playwright "
+                "dependency and its matching managed Chromium build before capturing")
+
         with tempfile.TemporaryDirectory() as directory:
             out = Path(directory) / "preflight.json"
-            with self.assertRaisesRegex(playwright_capture.CaptureError, "Playwright capture adapter unavailable"):
-                runner.preflight(FixtureCLI(), ["docx"], out)
+            # Deterministically simulate the "Playwright is not installed" precondition by
+            # forcing the adapter's own lazy-import guard to fail, regardless of whether
+            # Playwright actually happens to be installed in the environment running this
+            # test. This keeps the real CaptureEngine construction path and its genuine
+            # CaptureError/missing-dependency semantics intact rather than widening a catch,
+            # skipping the test, or weakening the preflight's error handling.
+            with patch.object(playwright_capture, "_import_playwright", side_effect=missing_dependency):
+                with self.assertRaisesRegex(playwright_capture.CaptureError,
+                                             "Playwright capture adapter unavailable"):
+                    runner.preflight(FixtureCLI(), ["docx"], out)
             receipt = company.load(out)
             self.assertEqual(receipt["status"], "blocked")
             self.assertIn("Playwright capture adapter unavailable", receipt["blocker"])

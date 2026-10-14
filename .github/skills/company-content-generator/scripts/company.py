@@ -1478,7 +1478,14 @@ NS = {
     "x": "http://schemas.openxmlformats.org/spreadsheetml/2006/main",
     "c": "http://schemas.openxmlformats.org/drawingml/2006/chart",
     "r": "http://schemas.openxmlformats.org/officeDocument/2006/relationships",
+    "xdr": "http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing",
 }
+
+CHART_GRAPHIC_DATA_URI = "http://schemas.openxmlformats.org/drawingml/2006/chart"
+# Initial supported structural cases only: standard column (vertical bar) and
+# line charts anchored with a twoCellAnchor. This is an extensible support
+# boundary, not a permanent ban on other chart types/anchors (see plan.md).
+SUPPORTED_CHART_KINDS = {"barChart": "column", "lineChart": "line"}
 
 
 def normalized(value):
@@ -1539,6 +1546,134 @@ def joined_container(locator, fragments, **metadata):
         content += (" " if content else "") + value
         segments.append({"unit": unit, "start": start, "end": len(content)})
     return dict(metadata, locator=locator, text=content, segments=segments)
+
+
+def two_cell_anchor_point(anchor, tag):
+    node = anchor.find("xdr:" + tag, NS)
+    require(node is not None, f"Incomplete two-cell anchor: missing {tag}")
+    col, row = node.find("xdr:col", NS), node.find("xdr:row", NS)
+    col_off, row_off = node.find("xdr:colOff", NS), node.find("xdr:rowOff", NS)
+    require(col is not None and row is not None and col_off is not None and row_off is not None,
+            f"Incomplete two-cell anchor {tag}: missing col/row/offset")
+    return {"col": int(col.text), "col_off": int(col_off.text),
+            "row": int(row.text), "row_off": int(row_off.text)}
+
+
+def chart_type_of(chart_tree):
+    """Identify a chart part's structural type from its plot area. Rejects
+    combination charts (more than one distinct series-bearing chart kind) and
+    any kind outside SUPPORTED_CHART_KINDS (including 3-D variants, which use
+    distinct tag names such as bar3DChart/line3DChart and are never matched)."""
+    plot_area = chart_tree.find(".//c:chart/c:plotArea", NS)
+    require(plot_area is not None, "Chart part missing a plot area")
+    kinds = [child.tag.rsplit("}", 1)[-1] for child in plot_area
+             if child.tag.rsplit("}", 1)[-1].endswith("Chart")]
+    require(kinds, "Chart part has no recognizable series chart element")
+    require(len(set(kinds)) == 1, f"Unsupported combination chart (series kinds: {sorted(set(kinds))})")
+    kind = kinds[0]
+    require(kind in SUPPORTED_CHART_KINDS, f"Unsupported chart type: {kind}")
+    if kind == "barChart":
+        bar_dir = plot_area.find("c:barChart/c:barDir", NS)
+        require(bar_dir is not None and bar_dir.get("val") == "col",
+                "Unsupported bar chart direction; only column (vertical) bars are supported")
+    return SUPPORTED_CHART_KINDS[kind]
+
+
+def chart_object_inventory(package):
+    """Standard-library inventory of XLSX source chart *objects* (graphic
+    frames), independent of the `chart_point` provenance locators produced by
+    `chart_containers`. Enumerates chart-bearing graphic frames in the same
+    document order used by the verified OfficeCLI HTML-export contract
+    (`WorksheetDrawing.Descendants<GraphicFrame>()`, filtered to chart-bearing
+    frames, indexed before any visual sort): see
+    `ExcelHandler.HtmlPreview.Charts.cs:41-48,227-231` and
+    `ExcelHandler.Helpers.Chart.cs:347-372` at OfficeCLI commit
+    b65272a18aef891941451705ff93e8a287f3eb72.
+
+    Every chart-bearing graphic frame (uri == CHART_GRAPHIC_DATA_URI) consumes
+    an export index, whether or not its specific anchor/chart type is
+    supported, so a later supported chart's `/{sheet}/chart[N]` path is never
+    shifted by an earlier unsupported one. Non-chart drawing objects (pictures,
+    shapes, diagrams) do not consume an index and are reported separately as
+    explicit unsupported blockers. Source identity is worksheet part + drawing
+    part + shape ID + chart relationship/part + anchor, never title or start
+    cell alone, so duplicate titles/start anchors remain distinguishable."""
+    main = "xl/workbook.xml"
+    tree = xml_part(package, main)
+    rels = relationships(package, main)
+    objects = []
+    accounted_drawing_parts = set()
+    seen_sheet_names = set()
+    for sheet in tree.findall("x:sheets/x:sheet", NS):
+        name, sheet_id = sheet.get("name"), sheet.get("sheetId")
+        require(text(name) and name not in seen_sheet_names and text(sheet_id),
+                "Invalid or duplicate worksheet while inventorying charts")
+        seen_sheet_names.add(name)
+        part = related_part(rels, sheet.get("{" + NS["r"] + "}id"), "worksheet")
+        worksheet = xml_part(package, part)
+        sheet_rels = relationships(package, part)
+        for drawing in worksheet.findall("x:drawing", NS):
+            drawing_part = related_part(sheet_rels, drawing.get("{" + NS["r"] + "}id"), "drawing")
+            accounted_drawing_parts.add(drawing_part)
+            drawing_tree = xml_part(package, drawing_part)
+            drawing_rels = relationships(package, drawing_part)
+            export_index = 0
+            shape_ids = set()
+            for anchor in drawing_tree:
+                anchor_kind = anchor.tag.rsplit("}", 1)[-1]
+                if anchor_kind not in ("twoCellAnchor", "oneCellAnchor", "absoluteAnchor"):
+                    continue
+                for frame in anchor.findall(".//xdr:graphicFrame", NS):
+                    cNvPr = frame.find(".//xdr:cNvPr", NS)
+                    require(cNvPr is not None and text(cNvPr.get("id")),
+                            f"{drawing_part}: graphic frame missing a source shape ID")
+                    shape_id = cNvPr.get("id")
+                    require(shape_id not in shape_ids,
+                            f"{drawing_part}: duplicate source shape ID {shape_id}")
+                    shape_ids.add(shape_id)
+                    graphic_data = frame.find(".//a:graphicData", NS)
+                    uri = graphic_data.get("uri") if graphic_data is not None else None
+                    chart_ref = graphic_data.find("c:chart", NS) if graphic_data is not None else None
+                    record = {"sheet": name, "sheet_id": sheet_id, "worksheet_part": part,
+                              "drawing_part": drawing_part, "shape_id": shape_id, "anchor_kind": anchor_kind}
+                    if uri != CHART_GRAPHIC_DATA_URI or chart_ref is None:
+                        record.update(status="unsupported",
+                            reason=f"Unsupported non-chart drawing object (graphicData uri={uri})")
+                        objects.append(record)
+                        continue
+                    # A chart-bearing frame always consumes an export index, matching the
+                    # proven OfficeCLI enumeration, regardless of whether its specific
+                    # anchor/chart type ends up supported below.
+                    export_index += 1
+                    chart_rid = chart_ref.get("{" + NS["r"] + "}id")
+                    require(text(chart_rid), f"{drawing_part}: chart reference missing relationship ID")
+                    chart_part = related_part(drawing_rels, chart_rid, "chart")
+                    record.update(chart_part=chart_part, chart_relationship_id=chart_rid,
+                                  expected_dom_path=f"/{name}/chart[{export_index}]")
+                    if anchor_kind != "twoCellAnchor":
+                        record.update(status="unsupported",
+                            reason=f"Unsupported anchor form {anchor_kind}; only twoCellAnchor is supported")
+                        objects.append(record)
+                        continue
+                    record["two_cell_anchor"] = {"from": two_cell_anchor_point(anchor, "from"),
+                                                  "to": two_cell_anchor_point(anchor, "to")}
+                    try:
+                        record.update(status="supported",
+                                      chart_type=chart_type_of(xml_part(package, chart_part)))
+                    except Invalid as exc:
+                        record.update(status="unsupported", reason=str(exc))
+                    objects.append(record)
+    require(seen_sheet_names, "Workbook has no relationship-ordered worksheets")
+    orphans = [n for n in package.namelist() if n.startswith("xl/drawings/") and n.endswith(".xml")
+               and not n.startswith("xl/drawings/charts/") and n not in accounted_drawing_parts]
+    for orphan in orphans:
+        objects.append({"drawing_part": orphan, "status": "unsupported",
+                        "reason": f"Drawing part not referenced by any worksheet: {orphan}"})
+    supported_keys = [fingerprint({k: v for k, v in o.items() if k != "reason"})
+                      for o in objects if o["status"] == "supported"]
+    require(len(supported_keys) == len(set(supported_keys)),
+            "Ambiguous duplicate supported chart source identity")
+    return objects
 
 
 def chart_containers(package, owner_part, owner, context):
@@ -2251,7 +2386,7 @@ def validate_capture_result(log, capability=None):
     require(isinstance(log.get("source_html_sha256"), str)
             and re.fullmatch(r"[0-9a-f]{64}", log["source_html_sha256"]),
             "Capture evidence missing bound source HTML hash")
-    require(log.get("unit") in ("pages", "slides", "region"), "Capture evidence missing a known coverage unit")
+    require(log.get("unit") in ("pages", "slides", "region", "chart"), "Capture evidence missing a known coverage unit")
     return log
 
 
@@ -2380,8 +2515,12 @@ def verify_render_targets(path, targets):
                 f"{suffix} render target requires an explicit positive '{count_key}' count; "
                 "natural-flow/undeclared page or slide counts are rejected, not inferred")
         return
+    range_targets = [t for t in targets if t.get("type", "range") == "range"]
+    chart_targets = [t for t in targets if t.get("type") == "chart"]
+    require(len(range_targets) + len(chart_targets) == len(targets),
+            "XLSX render target 'type' must be 'range' or 'chart'")
     regions = []
-    for target in targets:
+    for target in range_targets:
         require(isinstance(target.get("range"), str) and "!" in target["range"],
                 "XLSX render target needs Sheet!A1:C3")
         sheet, cells = target["range"].rsplit("!", 1)
@@ -2398,8 +2537,28 @@ def verify_render_targets(path, targets):
                         and start[1] <= col <= end[1] for sheet, start, end in regions),
                     f"Render regions omit {locator['sheet']}!{locator['cell']}")
     with zipfile.ZipFile(path) as package:
-        require(not any(n.startswith("xl/drawings/") and n.endswith(".xml") for n in package.namelist()),
-                "XLSX drawing/chart visual coverage needs an explicitly proven region adapter")
+        inventory = chart_object_inventory(package)
+    unsupported = [o for o in inventory if o["status"] != "supported"]
+    require(not unsupported, "XLSX contains unsupported drawing/chart object(s); add a supported capture "
+            "path or remove them before bulk generation: " +
+            "; ".join(f"{o.get('sheet', '?')}:{o.get('shape_id', o.get('drawing_part', '?'))} ({o['reason']})"
+                      for o in unsupported))
+    supported = {(o["sheet"], o["shape_id"]): o for o in inventory if o["status"] == "supported"}
+    covered = set()
+    for target in chart_targets:
+        require(text(target.get("sheet")) and text(target.get("shape_id")),
+                "XLSX chart render target needs a source sheet and shape_id")
+        key = (target["sheet"], target["shape_id"])
+        require(key not in covered, f"Duplicate chart render target: {key}")
+        require(key in supported, f"Chart render target does not match a supported source chart object: {key}")
+        obj = supported[key]
+        require(target.get("expected_dom_path") in (None, obj["expected_dom_path"]),
+                f"Stale chart target DOM path for {key}; recompute from the current chart object inventory")
+        covered.add(key)
+    require(covered == set(supported.keys()),
+            "Incomplete chart-object render coverage; every supported source chart object needs a target "
+            "(range-only targets cannot satisfy chart coverage)")
+    return supported
 
 
 def validate_preflight(preflight, root):
@@ -2449,6 +2608,25 @@ def validate_preflight(preflight, root):
         if probe["format"] == "xlsx":
             require(probe.get("formula_count") == 2 and "chart_cache_stale" in {
                     log.get("operation") for log in logs}, "Missing saved-formula capability proof")
+        if "chart" in probe["features"]:
+            # A basic cell-only region probe (the mandatory "capture" evidence above) never
+            # exercises chart-object capture at all; "chart" may only be claimed when it is
+            # backed by its own bound column+line two-cell chart capture evidence, not merely
+            # asserted alongside "basic"/"html_screenshots".
+            require(probe["format"] == "xlsx", "Only xlsx probes may claim chart capability")
+            entries = probe.get("chart_capture")
+            require(isinstance(entries, list) and {e.get("chart_type") for e in entries} == {"column", "line"},
+                    "Chart capability claimed without bound column+line chart capture evidence")
+            for entry in entries:
+                require(isinstance(entry, dict) and entry.get("tool") == capture_tool
+                        and entry.get("clipped") is False and entry.get("occluded") is False
+                        and text(entry.get("dom_path")) and text(entry.get("sheet")) and text(entry.get("shape_id")),
+                        "Incomplete/degraded chart capability capture evidence")
+                chart_image = Path(root) / "build" / entry.get("image", "")
+                require_build_path(chart_image, root)
+                require(chart_image.is_file() and file_hash(chart_image) == entry.get("image_sha256")
+                        and chart_image.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"),
+                        "Stale/missing chart capability image")
     require(formats == set(preflight.get("formats", [])) and formats, "Incomplete capability formats")
 
 
@@ -2537,9 +2715,24 @@ def validate_machine(canon, plan, doc, draft_path, artifact_path, root, prefligh
             target = next(t for t in definitions if t["id"] == render["id"])
             result = load(bound_evidence(root, render["result"], "render result"))
             if doc["format"] == "xlsx":
-                require(len(render["images"]) == 1 and result.get("unit") == "region"
-                        and text(result.get("start_cell")) and text(result.get("end_cell")),
-                        f"{identifier}: incomplete worksheet region capture")
+                if target.get("type") == "chart":
+                    require(len(render["images"]) == 1 and result.get("unit") == "chart"
+                            and text(result.get("sheet")) and text(result.get("shape_id"))
+                            and result.get("sheet") == target.get("sheet")
+                            and result.get("shape_id") == target.get("shape_id")
+                            and text(result.get("dom_path"))
+                            and isinstance(result.get("bounds"), dict)
+                            and all(isinstance(result["bounds"].get(k), (int, float)) and result["bounds"][k] > 0
+                                    for k in ("width", "height"))
+                            and result.get("clipped") is False
+                            and result.get("occluded") is False,
+                            f"{identifier}: incomplete/clipped/occluded chart object capture; neighboring "
+                            "objects must not be hidden to fake a clear layout, the layout must actually be "
+                            "clear (re-anchor the overlapping objects)")
+                else:
+                    require(len(render["images"]) == 1 and result.get("unit") == "region"
+                            and text(result.get("start_cell")) and text(result.get("end_cell")),
+                            f"{identifier}: incomplete worksheet region capture")
             else:
                 count_key = "pages" if doc["format"] == "docx" else "slides"
                 unit_key = "page" if doc["format"] == "docx" else "slide"

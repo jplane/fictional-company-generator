@@ -166,7 +166,21 @@ def fixture_commands(fmt):
     return [{"command": "add", "parent": "/", "type": "sheet", "props": {"name": "Results"}},
             {"command": "set", "path": "/Sheet1/A1", "props": {"value": "-2.148"}},
             {"command": "set", "path": "/Sheet1/A2", "props": {"formula": "A1*2"}},
-            {"command": "set", "path": "/Results/A1", "props": {"formula": "Sheet1!A2*2"}}]
+            {"command": "set", "path": "/Results/A1", "props": {"formula": "Sheet1!A2*2"}},
+            # Minimal real column + line two-cell-anchor chart objects: these are the only
+            # supported chart capability tested/certified by this preflight (see
+            # chart_capability_probe below). Placed on Sheet1 so they never collide with the
+            # basic region probe, which captures Results!A1 on a different sheet.
+            {"command": "set", "path": "/Sheet1/C1", "props": {"value": "Q1"}},
+            {"command": "set", "path": "/Sheet1/D1", "props": {"value": "10"}},
+            {"command": "set", "path": "/Sheet1/C2", "props": {"value": "Q2"}},
+            {"command": "set", "path": "/Sheet1/D2", "props": {"value": "20"}},
+            {"command": "add", "parent": "/Sheet1", "type": "chart",
+             "props": {"dataRange": "Sheet1!D1:D2", "categories": "Sheet1!C1:C2",
+                       "chartType": "column", "anchor": "F2:L18", "title": "Capability Probe Column"}},
+            {"command": "add", "parent": "/Sheet1", "type": "chart",
+             "props": {"dataRange": "Sheet1!D1:D2", "categories": "Sheet1!C1:C2",
+                       "chartType": "line", "anchor": "F20:L36", "title": "Capability Probe Line"}}]
 
 
 def html_export_arguments(path, out_html):
@@ -197,6 +211,37 @@ def capture_probe(engine, html_path, fmt, image, tmp_dir):
     if rendered_count is not None:
         log["rendered_count"] = rendered_count
     return log
+
+
+def chart_capability_probe(engine, path, html_path, source_html_sha256, out_dir):
+    """Real column+line two-cell-anchor chart capture proof for the preflight's xlsx
+    probe fixture (see fixture_commands). A basic cell-only region capture does not
+    exercise the chart-object capture path at all, so it must never be treated as
+    chart capability evidence; this is the one place that actually binds it."""
+    with zipfile.ZipFile(path) as package:
+        inventory = company.chart_object_inventory(package)
+    supported = {o["chart_type"]: o for o in inventory if o["status"] == "supported"}
+    company.require({"column", "line"} <= set(supported),
+                    "Preflight chart fixture did not yield both a supported column and line chart object; "
+                    "chart capability cannot be certified")
+    out_dir = Path(out_dir)
+    entries = []
+    for chart_type in ("column", "line"):
+        obj = supported[chart_type]
+        target = {"id": f"chart-probe-{chart_type}", "type": "chart",
+                  "sheet": obj["sheet"], "shape_id": obj["shape_id"]}
+        chart_inventory = {(obj["sheet"], obj["shape_id"]): obj}
+        images, capture_log = capture_target(engine, html_path, "xlsx", target,
+                                             out_dir / chart_type, source_html_sha256, chart_inventory)
+        company.validate_capture_result(capture_log)
+        company.require(capture_log.get("clipped") is False and capture_log.get("occluded") is False,
+                        f"Preflight {chart_type} chart capability probe is clipped/occluded; "
+                        "chart capability cannot be certified from a degraded capture")
+        entries.append({"chart_type": chart_type, "sheet": obj["sheet"], "shape_id": obj["shape_id"],
+                        "dom_path": capture_log["dom_path"], "image_sha256": images[0]["sha256"],
+                        "bounds": capture_log["bounds"], "clipped": capture_log["clipped"],
+                        "occluded": capture_log["occluded"], "tool": capture_log["tool"]})
+    return entries
 
 
 def preflight(cli, formats, out):
@@ -250,6 +295,22 @@ def preflight(cli, formats, out):
                                 "Playwright did not produce a readable PNG; preflight is blocked")
                 company.validate_capture_result(capture_log)
                 probe["image_sha256"] = company.file_hash(image)
+                if fmt == "xlsx":
+                    # A basic cell-only region probe above never exercises chart-object
+                    # capture; certify "chart" only from this dedicated, bound evidence.
+                    chart_entries = chart_capability_probe(
+                        engine, path, html_path, capture_log["source_html_sha256"],
+                        Path(temporary) / "capture-xlsx-chart")
+                    for entry in chart_entries:
+                        permanent = out.parent / f"{out.stem}-xlsx-chart-{entry['chart_type']}.png"
+                        company.require(not permanent.exists(),
+                                        "Preflight chart image already exists; use a new revision")
+                        shutil.move(str(Path(temporary) / "capture-xlsx-chart" /
+                                        entry["chart_type"] / "chart.png"), permanent)
+                        entry["image"] = permanent.name
+                        entry["image_sha256"] = company.file_hash(permanent)
+                    probe["chart_capture"] = chart_entries
+                    probe["features"].append("chart")
                 write_json(out, receipt)
     except (company.Invalid, OSError, subprocess.SubprocessError,
             playwright_capture.CaptureError) as exc:
@@ -295,7 +356,7 @@ def batch_file(root, relative):
     return path
 
 
-def capture_target(engine, html_path, fmt, target, out_dir, source_html_sha256):
+def capture_target(engine, html_path, fmt, target, out_dir, source_html_sha256, chart_inventory=None):
     company.require(company.text(target.get("id")), "Render target requires a stable ID")
     started = timestamp()
     begin = time.monotonic()
@@ -308,7 +369,28 @@ def capture_target(engine, html_path, fmt, target, out_dir, source_html_sha256):
         result = engine.capture_pptx_slides(html_path, out_dir, expected_slides=target["slides"])
         images = [{"slide": s["slide"], "path": s["path"], "sha256": s["sha256"]} for s in result["slides"]]
         unit, rendered_count, extra = "slides", result["rendered_slides"], {}
+    elif fmt == "xlsx" and target.get("type") == "chart":
+        sheet, shape_id = target.get("sheet"), target.get("shape_id")
+        company.require(company.text(sheet) and company.text(shape_id),
+                        "XLSX chart render target needs a source sheet and shape_id")
+        key = (sheet, shape_id)
+        company.require(isinstance(chart_inventory, dict) and key in chart_inventory,
+                        f"Chart render target {key} missing from the freshly verified chart inventory; "
+                        "re-run coverage verification before capture")
+        dom_path = chart_inventory[key]["expected_dom_path"]
+        out_dir = Path(out_dir)
+        out_dir.mkdir(parents=True, exist_ok=True)
+        out_png = out_dir / "chart.png"
+        captured = engine.capture_xlsx_chart(html_path, out_png, sheet, dom_path, shape_id,
+                                             sheet_index=target.get("sheet_index"))
+        images = [{"path": captured["path"], "sha256": captured["sha256"]}]
+        unit, rendered_count = "chart", None
+        extra = {"sheet": sheet, "shape_id": shape_id, "dom_path": captured["dom_path"],
+                "bounds": captured["bounds"], "clipped": captured["clipped"],
+                "occluded": captured["occluded"]}
     else:
+        company.require(fmt == "xlsx" and target.get("type", "range") == "range",
+                        "Unknown render target type")
         region = target.get("range")
         company.require(isinstance(region, str) and "!" in region, "XLSX render target needs Sheet!A1:C3")
         sheet, cells = region.rsplit("!", 1)
@@ -335,7 +417,7 @@ def capture_target(engine, html_path, fmt, target, out_dir, source_html_sha256):
 
 
 def verify_regions(path, targets):
-    company.verify_render_targets(path, targets)
+    return company.verify_render_targets(path, targets)
 
 
 class Runner:
@@ -632,7 +714,18 @@ class Runner:
         corrected = bool(state.get("formula_retry")) or any(count > 1 for count in state["attempts"].values())
         selected = self.selection_for(identifier)
         if selected["visual_required"]:
-            verify_regions(path, targets)
+            chart_inventory = verify_regions(path, targets)
+            if chart_inventory:
+                # The workbook actually contains supported chart objects requiring real
+                # per-chart capture; a basic cell-only region preflight probe never
+                # certifies that. Require the pinned capability's own bound column/line
+                # chart capture evidence (validated above by validate_preflight), not just
+                # the "basic"/"html_screenshots" labels every xlsx probe always carries.
+                xlsx_probe = next(p for p in self.capability["probes"] if p["format"] == "xlsx")
+                company.require("chart" in xlsx_probe["features"] and xlsx_probe.get("chart_capture"),
+                                f"{identifier}: this workbook has supported chart objects, but the pinned "
+                                "preflight never certified chart capture capability (basic region capture "
+                                "alone does not prove chart support); rerun preflight with a chart fixture")
             html_path = self.build / "renders" / identifier / "export.html"
             html_path.parent.mkdir(parents=True, exist_ok=True)
             html_log = self.inspection(state, html_export_arguments(path, html_path), "html_export", digest)
@@ -649,7 +742,7 @@ class Runner:
                 out_dir = self.build / "renders" / identifier / target["id"]
                 operation = f"render-{target['id']}"
                 images, capture_log = capture_target(self.engine(), html_path, doc["format"], target,
-                                                      out_dir, source_html_sha256)
+                                                      out_dir, source_html_sha256, chart_inventory)
                 capture_log["artifact_sha256"] = digest
                 company.validate_capture_result(capture_log, self.capability)
                 capture_log_path = self.build / "tool-results" / f"{identifier}-{operation}.json"

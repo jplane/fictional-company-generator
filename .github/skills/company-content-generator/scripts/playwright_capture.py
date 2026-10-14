@@ -197,6 +197,105 @@ class CaptureEngine:
         finally:
             context.close()
 
+    def capture_xlsx_chart(self, html_path, out_png, sheet_name, dom_path, shape_id,
+                           sheet_index=None, viewport=None):
+        """Capture a single supported chart object addressed by the exact
+        OfficeCLI-assigned export path (e.g. '/Sheet/chart[2]'), scoped to its
+        owning sheet tab. Uses exact attribute-equality selectors only (no
+        interpolated/fragile partial matches); requires the chart-container to
+        be uniquely present and visible, and to contain exactly one rendered
+        SVG chart body. Reports clipping against the container/document and
+        occlusion by neighboring page content without hiding anything to fake
+        a clear layout; callers must treat clipped/occluded evidence as a
+        layout issue, not a silent pass."""
+        context, page = self._open(html_path, viewport or {"width": 1600, "height": 1200})
+        try:
+            if sheet_index is not None:
+                tab = page.locator(f"div.sheet-tab[data-sheet='{sheet_index}']")
+                _require(tab.count() == 1, f"xlsx sheet tab {sheet_index} missing")
+                tab.first.click()
+                page.wait_for_selector(f"div.sheet-content[data-sheet='{sheet_index}'].active")
+            container = page.locator(f"div.chart-container[data-path='{dom_path}']")
+            _require(container.count() == 1,
+                     f"chart object {sheet_name}/{shape_id} ({dom_path}): expected exactly one "
+                     f"rendered chart-container, found {container.count()}")
+            element = container.first
+            _require(element.is_visible(),
+                     f"chart object {sheet_name}/{shape_id} ({dom_path}) is not visible")
+            # The chart body SVG always carries a `viewBox` attribute; legend swatch
+            # icons for line/scatter-style series are small decorative `<svg>` icons
+            # with no `viewBox` and must not be mistaken for a second chart body.
+            svgs = element.locator("svg[viewBox]")
+            svg_count = svgs.count()
+            _require(svg_count == 1,
+                     f"chart object {sheet_name}/{shape_id} ({dom_path}): expected exactly one "
+                     f"supported SVG chart body, found {svg_count}")
+            element.scroll_into_view_if_needed()
+            container_box = element.bounding_box()
+            svg_box = svgs.first.bounding_box()
+            _require(container_box and svg_box,
+                     f"chart object {sheet_name}/{shape_id} ({dom_path}) produced no bounding box "
+                     "(hidden or zero-size element)")
+            _require(container_box["width"] > 0 and container_box["height"] > 0
+                     and svg_box["width"] > 0 and svg_box["height"] > 0,
+                     f"chart object {sheet_name}/{shape_id} ({dom_path}) has a degenerate "
+                     "(zero width/height) bounding box")
+            document_bounds = page.evaluate(
+                "() => ({width: document.documentElement.scrollWidth, "
+                "height: document.documentElement.scrollHeight})")
+            svg_within_container = (
+                svg_box["x"] >= container_box["x"] - 1
+                and svg_box["y"] >= container_box["y"] - 1
+                and svg_box["x"] + svg_box["width"] <= container_box["x"] + container_box["width"] + 1
+                and svg_box["y"] + svg_box["height"] <= container_box["y"] + container_box["height"] + 1
+            )
+            within_document = (
+                container_box["x"] >= 0 and container_box["y"] >= 0
+                and container_box["x"] + container_box["width"] <= document_bounds["width"] + 1
+                and container_box["y"] + container_box["height"] <= document_bounds["height"] + 1
+            )
+            clipped = not (svg_within_container and within_document)
+            occluded = bool(element.evaluate(
+                """el => {
+                    const r = el.getBoundingClientRect();
+                    const inset = 2;
+                    const points = [
+                        [r.left + r.width / 2, r.top + r.height / 2],
+                        [r.left + inset, r.top + inset],
+                        [r.right - inset, r.top + inset],
+                        [r.left + inset, r.bottom - inset],
+                        [r.right - inset, r.bottom - inset],
+                    ];
+                    return points.some(([x, y]) => {
+                        const hit = document.elementFromPoint(x, y);
+                        return !(hit === el || el.contains(hit));
+                    });
+                }"""
+            ))
+            out_png = Path(out_png)
+            out_png.parent.mkdir(parents=True, exist_ok=True)
+            element.screenshot(path=str(out_png))
+            return {
+                "unit": "chart",
+                "sheet": sheet_name,
+                "shape_id": shape_id,
+                "dom_path": dom_path,
+                "bounds": {
+                    "x": container_box["x"], "y": container_box["y"],
+                    "width": container_box["width"], "height": container_box["height"],
+                },
+                "svg_bounds": {
+                    "x": svg_box["x"], "y": svg_box["y"],
+                    "width": svg_box["width"], "height": svg_box["height"],
+                },
+                "clipped": clipped,
+                "occluded": occluded,
+                "path": str(out_png),
+                "sha256": file_sha256(out_png),
+            }
+        finally:
+            context.close()
+
 
 def _text(value):
     return isinstance(value, str) and bool(value.strip())

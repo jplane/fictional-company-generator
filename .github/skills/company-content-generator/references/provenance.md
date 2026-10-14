@@ -57,6 +57,17 @@ Charts support saved series-name/category/value/x/y/bubble-size cache points
 (`tx`, `cat`, `val`, `xVal`, `yVal`, `bubbleSize`) and associated formulas when
 present. Chart indices are version-bound, not persistent semantic IDs.
 
+`chart_point` locates saved *data* inside a chart part (series/component/point
+provenance for content claims). It is a separate, independent concept from
+`chart_object_inventory()`'s chart *object* capture identity (sheet/worksheet
+part/drawing part/shape ID/chart relationship/part/anchor, used to locate and
+capture the chart as a rendered visual region). A chart can satisfy one without
+the other: data-claim provenance does not imply the object is visually
+captured, and a captured/visible chart object does not imply every cached
+series point has been claim-bound. See `dependencies.md` for the supported
+chart-object capture/coverage contract and `contracts.md` for the
+`render_targets` chart entry schema.
+
 Paragraph/shape/cell text concatenates split runs and normalizes whitespace.
 An occurrence's `start`/`end` are offsets into that normalized text, with an
 exclusive end. Table/range text joins indexed cell content in row order.
