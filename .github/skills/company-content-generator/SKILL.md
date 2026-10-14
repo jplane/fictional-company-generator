@@ -26,65 +26,48 @@ When installed elsewhere, use the resolved absolute script path.
 
 ## Dependencies and preflight
 
-**Microsoft Office is a hard prerequisite for corpus generation.** Use only
-reviewed skills and/or MCPs that actually drive locally installed Microsoft
-Word, PowerPoint, and Excel for the selected formats. A tool that merely reads
-or writes Office-compatible files does not qualify. Skill names such as `docx`,
-`pptx`, `xlsx`, or `officecli` are not evidence of a Microsoft Office backend.
-There is no default third-party document backend.
+**[OfficeCLI](https://github.com/iOfficeAI/OfficeCLI) is the sole document
+authoring/HTML-export/formula engine. Microsoft Office is not required.**
+Python 3.10+ provides business, claim, package/hash, provenance, and coverage
+checks, not document authoring. Screenshot pixels never come from OfficeCLI
+itself: a small pinned **Playwright-for-Python + matching managed Chromium**
+adapter (`scripts\playwright_capture.py`) turns OfficeCLI's own static HTML
+export into bound, checked images. OfficeCLI never does screenshotting; the
+browser adapter never authors, edits, or exports Office documents.
 
-| Selected format | Required local application and capability |
-|---|---|
-| DOCX | Microsoft Word: author/save, extract, paginate, and render |
-| PPTX | Microsoft PowerPoint: author/save, extract, and render every slide |
-| XLSX | Microsoft Excel: author/save, recalculate, reopen cached values, and inspect layout |
+Before creating the output directory, canon, plan, or drafts, follow
+`references\dependencies.md`: detect OfficeCLI/skill versions, check official
+releases once, perform authorized installation/update when missing or required,
+verify versioned release checksums and installed version, then run tiny actual
+save/reopen/check/HTML-export/Playwright-capture probes for selected formats.
+Configure only authorized skill/MCP targets. Preserve usable prior binaries;
+do not execute downloaded installers through Invoke-Expression or silently
+update mid-run. Pin OfficeCLI executable/version/hash **and** Playwright
+version/managed-Chromium executable/version/hash in `build\preflight.json`
+(`capture_tool` identity); revalidate changed capabilities on resume.
+Maintaining this skill and running helper tests do not require Microsoft
+Office or generation intake.
 
-**Never fall back to LibreOffice, OpenOffice, standalone OOXML generators,
-third-party rendering/calculation engines, or cloud-only Office access.** Do not
-use `soffice`, npm `docx`/`pptxgenjs`, `openpyxl`, or an independent OfficeCLI
-engine as a replacement. Generic diagram/PDF skills are not dependencies;
-create charts/diagrams and export QA views through Microsoft Office. Read-only
-ZIP/XML/hash checks and inspection of Office-exported images/PDFs may support
-QA, but cannot replace Office authoring, rendering, or Excel recalculation.
+Force `view <file> html --out <path>` for HTML export and the pinned Playwright
+adapter for pixels. Never use OfficeCLI's own `view screenshot --render html`
+image path, native/auto rendering, `refresh`, native page counts, COM,
+LibreOffice/OpenOffice, cloud Office, or standalone OOXML authoring libraries
+as a substitute. Suppress per-command updates and use checked atomic standalone
+batches. Inspect runtime help for unfamiliar operations instead of guessing.
+OfficeCLI layout is not native Office fidelity certification; Playwright
+capture proof is Windows-pinned-version-only and makes no cross-platform or
+pixel-identity guarantee. DOCX output from this skill uses explicit, deliberate
+page breaks (never automatic natural-flow pagination): every authored page's
+content must fit within its physical rendered page, each capture rejects a
+rendered page/box-overflow or page-count mismatch against the explicit
+authored break plan, and a one-page document needs no superfluous break.
+Page-dependent fields and unproven formula/drawing/chart features stop the
+bounded workflow explicitly; no fallback was used.
 
-Before creating the output directory, canon, plan, or drafts:
-
-1. Determine the selected formats from the request/intake. Verify the matching
-   Microsoft Office desktop applications are installed on the user's machine
-   and accessible to the selected automation backend. A DOCX-only run needs
-   Word, not PowerPoint or Excel. Web subscriptions, executable/registry
-   detection, or Office file associations alone do not prove usable automation.
-2. If an application is absent, inaccessible, unlicensed, or its availability
-   cannot be verified, notify the user: "Generation stopped: local Microsoft
-   Office is required. Missing or unavailable: <applications/capabilities>.
-   No fallback was used." Then stop. Do not continue with canon/planning-only
-   generation, install substitutes, create a partial corpus, or bypass the
-   check with a cloud-only MCP. Maintaining this skill and running helper tests
-   are not corpus generation and do not require Office.
-3. Discover reviewed Microsoft Office-backed skills/MCPs and verify their
-   source, revision, license, actual application connection, and operations.
-   If no compliant backend is available, notify the user and stop even when
-   Office is installed. Use the acquisition guide only with authorization;
-   loading this skill does not install skills, MCPs, packages, or Office.
-   Do not invent an auto-installing `dependencies` frontmatter field.
-4. Verify Python 3.10+ for the canon helper and only the selected Office
-   automation dependencies. Select one compliant backend; never switch to a
-   non-Office backend after a failure. Use only local run content; do not
-   retrieve real employee/company data or upload the canon/drafts to external
-   services.
-5. After freezing the canon/plan, complete one actual planned document per
-   selected format in Microsoft Office before bulk generation. Word and
-   PowerPoint pilots must render in those applications and pass visual review.
-   Excel must recalculate in Microsoft Excel, retain formulas/cached values,
-   and pass a zero-error scan with checked expected values.
-6. Record local Office application versions, connection/probe evidence,
-   sources/revisions, selected skills/MCPs, and pilot results in
-   `build\preflight.json`. This is an agent-maintained workflow receipt, not an
-   automatically enforced audit gate. Do not mark it passed until verified.
-
-If Office becomes unavailable on resume or during export/QA, notify the user,
-stop without falling back, and preserve existing files. Report completed
-documents and the blocker honestly; never claim a partial corpus is complete.
+Required OfficeCLI/Playwright-capture-adapter capability loss blocks
+generation/resume; preserve existing outputs and report the actual completed
+count. Do not retrieve real workplace data, upload run content, modify
+personal skills, or install tools without authorization.
 
 ## Required intake
 
@@ -113,6 +96,12 @@ The seed may default to 42. Content depth defaults to **medium**; accept an expl
 **light**, **medium**, or **deep** setting from the user's request and record it as
 `content_depth`. Mention the default during intake; do not require an extra
 question when the user has not specified a depth. See Content depth below.
+QA policy defaults to **FullContentSampledVisual**. Accept **Sampled** (selected
+complete content and visual reviews), **FullContentSampledVisual** (all content,
+selected visual reviews), or **Full** (all content and visual reviews).
+Review scope is independent of light/medium/deep content depth. Every policy
+still checks all files, claims, date/access, required sections, measurable depth,
+structure/issues, hashes, saved formulas, provenance and coverage.
 An existing canon is supported after copying it into the chosen output layout
 and validating its embedded organization, glossary, and business records.
 Map familiar natural-language types to built-in IDs. For additional types, define their
@@ -143,6 +132,12 @@ The chosen output root must contain exactly:
     manifest.json
     qa.json
     preflight.json
+    execution-plan.json
+    review-plan.json
+    runner-state.json
+    machine\
+    tool-results\
+    reviews\
     depth-targets.json
     artifact-index.json
     claim-locations.json
@@ -318,7 +313,8 @@ with placeholders, lorem ipsum, or ungrounded claims. A deliberately configured
 unknown or undocumented fact must not be silently filled to satisfy a depth
 target. Explain an unknown in prose only when the author has a grounded basis
 to recognize it; otherwise leave it unstated.
-Complete a separate genre review, not merely a citation or ZIP-structure check.
+Complete the required genre reviews under the selected QA policy, not merely
+a citation or ZIP-structure check.
 
 ## Realistic document naming
 
@@ -389,8 +385,14 @@ project. Do not run examples with an unset path or assume the example is intake.
    The plan contains the canon's SHA-256 fingerprint, covering the source records
    of the single core artifact, including organization, glossary, and depth setting.
 
-3. **Generate in publication order, in bounded batches.** Start with one pilot
-   document per format. For each plan item, retrieve its date-filtered context:
+3. **Freeze execution and review scope; draft in bounded batches.** Set
+   `build\execution-plan.json` using `execution_plan` and the contract reference.
+   Bind layout revisions/hashes, QA policy, family pilots, flagged exceptions,
+   and a runtime budget only if supplied. Estimate content/visual review counts
+   and confirm image-delivery capacity before bulk work. Deterministic sampling
+   chooses the first and largest normalized draft per genre/format/layout family,
+   plus pilots, condition/source-history carriers and affected exceptions.
+   For each plan item, retrieve its date-filtered context:
 
    ```powershell
    python .github\skills\company-content-generator\scripts\company.py context --canon "$outputRoot\canon.json" --plan "$outputRoot\build\plan.json" --doc doc-0001 --out "$outputRoot\build\contexts\doc-0001.json"
@@ -416,18 +418,21 @@ project. Do not run examples with an unset path or assume the example is intake.
    sections. Do not expose claim receipts in the business prose. Follow the
    content type's voice, audience, and confidentiality.
 
-   A source reference does not prove a paraphrase is correct. Review every
-   section against its claims, verifying units, rounding, tense, negation,
+   A source reference does not prove a paraphrase is correct. For required
+   content reviews, inspect every section against its claims, verifying units, rounding, tense, negation,
    time-of-knowledge, and author authority. Do not reinterpret a revenue value
    as profit or an announced acquisition as closed.
 
-5. **Export through Microsoft Office.** Invoke only the reviewed Microsoft
-   Office-backed skills/MCPs selected during preflight and obey their QA
-   requirements. If the required application or compliant backend is
-   unavailable, notify the user and stop; there is no fallback.
-   Do not deliver renamed text files or just draft JSON.
-   Missing Office rendering/recalculation is a blocker, not permission to use
-   another engine or fake files.
+5. **Execute the shared OfficeCLI runner.** Follow installed OfficeCLI guidance
+   and runtime schema help. Provide checked batch or template/merge jobs,
+   frozen layout files, exact exporter claim associations, grounded expected
+   formula bindings and screenshot targets as described in `contracts.md`.
+   The runner is not a prose generator or genre-authoring framework.
+   Complete one actual planned pilot per layout family and review it fully
+   before bulk use. Freeze accepted layouts, not repeated prose. Stress grounded
+   long titles/text, historical comparisons and numeric/formula/layout edge cases.
+   A missing required capability blocks; separate backend development from
+   generation rather than improvising an unbounded replacement pipeline.
    See `references\content-types.md` for layouts and format expectations.
    Put deliverables under `documents` using the exact planned filenames. Use
    normal company branding, a business title, appropriate publication/effective
@@ -435,12 +440,30 @@ project. Do not run examples with an unset path or assume the example is intake.
    generation provenance, and claim receipts stay in `build`, not visible prose
    or Office properties.
 
-   For financial XLSX, link derived totals and margins to source cells using
-   formulas, explicitly state currency and units, preserve formula caches via
-   Microsoft Excel recalculation, and check for formula errors. For presentations,
-   use charts, timelines, and meaningful layouts; render with Microsoft
-   PowerPoint and visually inspect every deck. For Word, render with Microsoft
-   Word and verify pagination, tables, headers, and footer labeling.
+   For XLSX, write inputs before dependent formulas, state units/currency, save,
+   reopen and verify every cache against independently grounded derived claims.
+   At most one corrective known-order OfficeCLI formula rewrite is allowed.
+   Missing/stale/error/unsupported caches block; no raw cache injection or
+   deferred calculation on open. Render selected complete documents with
+   OfficeCLI HTML, including all pages/slides or relevant worksheet regions.
+   Check all schema/issues and explicit chart caches. Hash/index final saved
+   bytes; later edits invalidate affected renders, mappings and reviews.
+
+   ```powershell
+   python .github\skills\company-content-generator\scripts\officecli_runner.py run --root "$outputRoot" --jobs build\jobs-pilots.json
+   python .github\skills\company-content-generator\scripts\officecli_runner.py run --root "$outputRoot" --jobs build\jobs.json
+   python .github\skills\company-content-generator\scripts\officecli_runner.py assemble --root "$outputRoot" --jobs build\jobs.json
+   ```
+
+   Persist actual pilot reviews under `build\reviews`; the runner never writes
+   editorial/visual passed receipts. Use one grouped review per document.
+   A failed sample blocks the family and requires explicit flagged-family
+   expansion. Undelivered/unreadable images cannot be accepted. Contact sheets
+   are useful only when legible; inspect detailed crops as necessary.
+   One concrete corrective retry per logical operation is persisted across
+   resume; a second failure stops with evidence. Record phase active/wait time.
+   Honor user-supplied budgets at safe checkpoints, without inventing a budget
+   or promising a fixed completion time.
 
 6. **Verify provenance, audit, and resume safely.** Validate drafts before rendering. Write
    `build\manifest.json` only for completed documents with paths and SHA-256 hashes.
@@ -471,11 +494,14 @@ project. Do not run examples with an unset path or assume the example is intake.
    python .github\skills\company-content-generator\scripts\company.py audit --canon "$outputRoot\canon.json" --plan "$outputRoot\build\plan.json" --drafts "$outputRoot\build\drafts" --manifest "$outputRoot\build\manifest.json" --root "$outputRoot"
    ```
 
-   This is **structural and claim-receipt validation**, not semantic, visual, or
-   Excel-calculation certification. Complete those reviews separately and write
-   results to `build\qa.json` using the documented contract. Audit requires passed
-   semantic, genre, depth, and visual reviews for every document, and recalculation for
-   XLSX. Structural genre-section and self-description scans do not independently
+   This is **structural and claim/evidence validation**, not independent semantic
+   or native-rendering certification. Write actual reviews to `build\qa.json`
+   using the execution/review contract. Audit recomputes required selection and
+   checks artifact/draft/machine/render hashes. Required content reviews need
+   semantic, genre and `depth_review`; selected visuals need every required
+   delivered image. Unselected gates are `not_selected`, never passed.
+   Legacy schema-v2 QA without an execution contract retains all-document gates;
+   no silent downgrade or recertification. Structural genre-section and self-description scans do not independently
    prove authentic writing or exhaustive absence of disclaimers.
    Check receipts are honest evidence, never prefilled success flags.
    Documents carrying configured conditions also require `condition_review`.
@@ -484,8 +510,8 @@ project. Do not run examples with an unset path or assume the example is intake.
    semantic/visual reviews or infer that all semantic paraphrases of a gap are
    absent.
 
-   On resume, recheck local Microsoft Office availability before continuing,
-   verify canon/plan hashes, audit completed outputs, and skip
+   On resume, recheck pinned OfficeCLI identity and required capabilities,
+   verify canon/plan/draft/job/layout/final hashes and skip
    only verified documents. A partial corpus must be reported as partial.
    Retry failed documents without changing IDs, dates, facts, or unrelated files.
 
@@ -519,9 +545,10 @@ project. Do not run examples with an unset path or assume the example is intake.
 ## Completion
 
 Deliver root `canon.json`, final documents, and all build inputs/receipts in the
-required layout. Verify each document reads as its actual target genre, has a
-realistic name, and contains no generation self-labeling.
-Report the selected content depth, actual counts by year, type, and format, coverage warnings, and any
+required layout. Complete the selected content/visual reviews and universal
+automatic checks; do not claim unselected documents were editorially reviewed.
+Report content depth, QA policy, actual reviewed/total content and visual counts,
+counts by year/type/format, coverage warnings, OfficeCLI limitations, and any
 remaining blockers. Never claim the corpus is complete merely because a plan
 or draft set exists.
 Deliver verified provenance and coverage under `build`. If a recipient view is

@@ -1,233 +1,224 @@
-# Microsoft Office dependencies and setup
+# OfficeCLI dependency, setup, and capability boundaries
 
-## Hard prerequisite: local Microsoft Office
+## Required components
 
-Corpus generation requires locally installed, licensed, usable Microsoft Office.
-Only skills and/or MCPs that actually automate those applications are eligible.
-Office-compatible file output, an "Office" product name, or a cloud Microsoft
-365 account is not proof of a local Microsoft Office backend.
+Use **[OfficeCLI](https://github.com/iOfficeAI/OfficeCLI)** as the sole document
+engine for authoring, extraction, schema/issues checks, supported formula
+evaluation, and static HTML export. Microsoft Office is **not required**.
+Python 3.10+ performs business/claim validation, read-only package inspection,
+hashing, provenance, coverage, and orchestration; it is not a second authoring
+or calculation engine. Screenshot pixels never come from OfficeCLI: a thin
+pinned **Playwright-for-Python 1.63.0** adapter
+(`scripts\playwright_capture.py`) drives a matching **managed Chromium** build
+to capture OfficeCLI's own HTML export. OfficeCLI does not bundle that browser
+and no longer performs the screenshotting itself. Probe actual image
+production; an executable/version check is not sufficient.
 
-| Selected format | Required application | Required operations |
-|---|---|---|
-| DOCX | Microsoft Word | Author/save, extract content, paginate, render/export QA pages |
-| PPTX | Microsoft PowerPoint | Author/save, extract slides/notes, render/export every slide |
-| XLSX | Microsoft Excel | Author/save, recalculate, save/reopen formula caches, inspect errors and layout |
+Prefer the installed `officecli` skill and runtime help. Resolve conflicting
+companion instructions in favor of this pipeline; do not modify personal skills.
+No LibreOffice, OpenOffice, cloud Office, COM adapter, standalone OOXML authoring
+library, PDF/export plugin, or native rendering/calculation fallback is used.
+OfficeCLI's editable charts and shapes are allowed when their required
+capabilities and visual coverage have actually been proven.
 
-For every selected format, the backend must also associate grounded draft
-section/claim uses with final artifact containers. It can record locators during
-export or use the helper's final-file index afterward. See `provenance.md`.
-This is an export handoff requirement, not a requirement to insert generation
-IDs into business text or Office properties.
+## Authorized install/update setup
 
-Verify only the applications needed by the selected formats. A Word-only run
-does not require Excel or PowerPoint. Verify application usability through the
-selected backend before creating a corpus directory, canon, plan, or drafts.
-Repeat the check before resuming generation.
+Dependency setup includes **installation and updates**, not just detection:
 
-If Office is absent, inaccessible, unlicensed, or cannot be verified, notify the
-user and stop:
+1. Locate `officecli`, inspect `--version`, the installed skill, source/license,
+   and required runtime help. Check the official
+   [release source](https://github.com/iOfficeAI/OfficeCLI/releases) once during
+   setup. Install if absent; update if required capabilities are missing or the
+   user requests an update. Offer compatible available updates without forcing
+   a working installation to change. Disclose an unavailable release lookup;
+   never infer "up to date" from a failed lookup.
+2. Obtain authorization if not already covered. State the target/version,
+   destination, and proposed PATH, skill, or MCP changes. Binary replacement
+   does not authorize overwriting personal skill customizations or registering
+   every detected client. Loading this skill is not installation approval.
+3. Obtain the official **versioned release asset** for the host OS/architecture
+   and its matching published SHA-256. Verify the downloaded bytes **before
+   execution**, then verify `--version`. Missing/mismatched checksum or version
+   blocks required setup. Do not pipe a downloaded installer to
+   `Invoke-Expression`, invent an `update` command, or accept an unpinned latest
+   download as verified. Preserve the prior usable binary until the replacement
+   verifies; do not silently fall back after required update failure.
+4. Configure the selected agent's OfficeCLI skill separately. Consult
+   `officecli install --help` for the installed release before approved
+   selected-agent setup. Bare `officecli install` performs broad binary/skill/MCP
+   setup and is **not** an unscoped default. MCP registration is optional and
+   separately authorized; the checked CLI runner does not require it.
+5. Record source/version/checksum, setup actions and blockers. Reprobe required
+   capabilities after installation/update. Pin the executable version and SHA-256
+   for generation. Never update silently in the document loop. The runner's
+   `setup_action` and `verify_release` helpers support decisions and verification;
+   they deliberately do not download, install, or change PATH.
 
-> Generation stopped: local Microsoft Office is required. Missing or unavailable:
-> \<applications/capabilities\>. No fallback was used.
+Review exact external revisions and licenses before enabling them. Keep content
+local; do not upload drafts/canon or retrieve real workplace data. Additional
+acquisition requires approval. Shared tools may remain outside the corpus;
+run-specific inputs, logs, scripts, and dependencies belong under `build`.
 
-If Office is installed but no compliant skill/MCP can drive it, explain that
-blocker and stop as well. Do not create a canon/planning-only partial corpus,
-install replacements, or switch to cloud-only document operations. On failure
-mid-run, preserve accepted artifacts and report the actual completed count.
-Skill maintenance and standalone deterministic helper tests are exempt: they
-do not generate an Office corpus.
+## Playwright capture adapter setup
 
-## Eligible and excluded tooling
+The adapter is a thin, **optional** dependency: importing
+`scripts\playwright_capture.py` and running the default unit suite never
+require Playwright to be installed (the import is lazy, inside
+`CaptureEngine.__init__`). It is only required to actually capture pixels
+(preflight probes and real renders).
 
-A reviewed skill or MCP may use Windows COM/Office interop, or another verified
-local automation route, to control actual Microsoft Office applications.
-Microsoft documents Word/Excel/PowerPoint application automation; see the
-official references below. On other operating systems, verify an actual native
-Office connection rather than assuming the Windows probe applies.
+1. If an existing testing/session venv already has the pinned Playwright
+   dependency and its matching managed Chromium build working, **no
+   additional install is required** — reuse it as-is.
+2. Otherwise, install the pinned `playwright==1.63.0` package with `pip`
+   scoped to the active virtual environment (never into a global/system
+   interpreter), then run `playwright install chromium` to fetch the matching
+   managed build from the official Playwright CDN. Do not hardcode the
+   current user's name, session ID, or any machine-specific path into this
+   repository; `PLAYWRIGHT_BROWSERS_PATH` (if set at all) is a per-process
+   environment variable for a run, never a committed/global setting.
+3. Honor whatever package index/feed is already configured for the active
+   Python environment (`pip config`, `PIP_INDEX_URL`, a `pip.ini`/`pip.conf`,
+   etc.). Only when a genuinely missing dependency actually requires a fresh
+   install and no feed is otherwise configured does the current user's
+   preferred feed, `https://packagefeedproxy.microsoft.io/pypi/simple/`,
+   apply — this is a personal preference for this consumer, not a value to
+   force on every generic consumer of this skill.
+4. Record the resulting identity in the capability receipt: Playwright
+   version, browser channel, managed Chromium version, its executable path,
+   and its SHA-256 — the same evidentiary treatment as the OfficeCLI
+   executable/version/checksum above. Treat drift in either identity as a
+   capability change requiring revalidation, not a silent pass-through.
 
-There is no default named external document skill. Review the implementation,
-not its name. A `docx`, `pptx`, or `xlsx` skill qualifies only when its selected
-workflow really uses Microsoft Office for authoring, rendering, and calculation.
-Reject instructions that require an incompatible backend; do not load them
-and silently override their mandatory rendering or calculation steps.
+## Preflight, once per capability identity
 
-**Never use LibreOffice, OpenOffice, `soffice`, standalone OOXML generators,
-third-party rendering/calculation engines, or cloud-only Office access as a
-fallback.** Packages such as npm `docx`/`pptxgenjs` and Python `openpyxl` are
-not Microsoft Office authoring engines and are not selected export backends.
-The independent `iOfficeAI/OfficeCLI` engine advertises operation without an
-Office installation; its previously listed skill bundle is not an eligible
-replacement. Do not install it for this workflow.
 
-Create diagrams/charts and QA exports in Microsoft Office rather than requiring
-generic diagram/PDF-generation skills. Read-only JSON, ZIP/XML, hash, extracted
-text, and image/PDF inspection tools may support QA of Office-created outputs.
-They may not substitute for Word/PowerPoint rendering or Excel recalculation.
-The canon helper requires only Python 3.10+ and its standard library.
-
-## Discover and obtain a compliant skill or MCP
-
-Use the host's skill/MCP discovery UI to inspect available candidates and their
-actual source paths. Already installed skills are not implicitly eligible.
-Inspect the complete instructions, referenced scripts, runtime dependencies,
-licenses, and exact revision. Confirm the candidate connects to local Microsoft
-Office and covers every selected capability, including QA.
-
-For an external candidate:
-
-1. Obtain its repository/package source from the publisher or an
-   organization-approved catalog. Do not guess a repository, MCP tool signature,
-   or capability from its name. No external bundle is automatically installed.
-2. Download into a unique review directory outside discoverable skill paths.
-   Pin an exact commit/release and review all code, license/notice files,
-   permissions, local application operations, and network behavior.
-3. Reject candidates that generate documents independently of Microsoft Office,
-   mandate substitute engines, upload content to third parties, or require
-   unrelated permissions. A remote/cloud-only MCP cannot bypass local Office.
-4. Obtain authorization before installing or enabling external code. Copy the
-   complete reviewed skill folder, including helpers/templates/notices, into
-   the chosen project's `.github\skills` or the user's `.copilot\skills`.
-   Do not overwrite an existing skill or copy only `SKILL.md`.
-5. For an MCP, use the host's supported registration procedure for that exact
-   reviewed package/version. Restrict its scope to the required local Office
-   operations. Confirm the loaded source/version and actual connection after
-   reload; a project skill may shadow a personal one.
-
-The following optional download pattern does not execute downloaded code.
-Supply the actual reviewed source and commit first; never run the placeholders:
-
-```powershell
-$sourceRepository = "<approved publisher repository URL>"
-$approvedCommit = "<reviewed full commit ID>"
-if ($sourceRepository.StartsWith("<") -or $approvedCommit.StartsWith("<")) {
-    throw "Provide the approved source and exact reviewed commit first"
-}
-$reviewRoot = Join-Path $env:TEMP ("office-automation-review-" + [guid]::NewGuid().ToString("N"))
-git clone --no-checkout $sourceRepository $reviewRoot
-if ($LASTEXITCODE -ne 0) { throw "Source download failed" }
-git -C $reviewRoot checkout --detach $approvedCommit
-if ($LASTEXITCODE -ne 0) { throw "Cannot check out the approved revision" }
-Get-ChildItem -LiteralPath $reviewRoot -Force
-```
-
-Review the checkout before copying any skill or enabling an MCP. Retain
-applicable licenses/notices. Record the source, exact commit/release, permission
-review, installation scope, and adaptations. Re-review upgrades. Do not pipe
-downloaded installers into `Invoke-Expression`, grant blanket shell permissions,
-or automatically install Microsoft Office. If Office is missing, notify and stop;
-the user can install/activate it through Microsoft or their organization's
-approved channel before requesting another run.
-
-## Local Office availability and connection probes
-
-On Windows, an initial read-only COM registration check can identify missing
-applications without opening documents or touching the user's running sessions.
-Set `$selectedFormats` from the actual request, not from this example:
+**Before creating the output directory, canon, plan, or drafts**, verify Python
+and perform tiny session-owned probes for the selected formats with the runner:
 
 ```powershell
-$selectedFormats = @("docx", "pptx", "xlsx")
-$programIds = @{
-    docx = "Word.Application"
-    pptx = "PowerPoint.Application"
-    xlsx = "Excel.Application"
-}
-$missing = @()
-foreach ($format in $selectedFormats) {
-    if (-not $programIds.ContainsKey($format)) {
-        throw "Unsupported format: $format"
-    }
-    if ($null -eq [type]::GetTypeFromProgID($programIds[$format])) {
-        $missing += $programIds[$format]
-    }
-}
-if ($missing.Count -gt 0) {
-    throw ("Generation stopped: local Microsoft Office is required. Missing or unavailable: " +
-        ($missing -join ", ") + ". No fallback was used.")
-}
+python .github\skills\company-content-generator\scripts\officecli_runner.py preflight --formats docx pptx xlsx --out "$sessionWorkspace\officecli-preflight.json"
 ```
 
-Registration is only an initial check: stale registration, activation, licensing,
-dialogs, or automation permissions can still prevent use. The selected skill/MCP
-must establish a real application connection and report the actual application
-version before generation starts. A successful registration probe alone must
-never mark preflight passed. A failed/inconclusive connection is a stop condition,
-not permission to try a different document engine.
+Resolve `$sessionWorkspace` explicitly; select only the requested formats.
+Copy the verified receipt and referenced probe images into `build` after
+initialization. Never mark preflight passed from a missing tool, skipped test,
+capture-adapter-presence claim, or undisplayed image. The automatic probe
+proves readable image bytes, not that a reviewer has seen them. The Playwright
+adapter must actually be available (installed, matching Chromium reachable) to
+deliver those images for subsequent required visual reviews.
 
-Use an isolated automation session when supported. Never quit or kill the
-user's existing Word, Excel, or PowerPoint sessions. Clean up only instances
-and documents owned by the run, and release automation handles. Do not alter
-global macro/trust/security settings, accept unexpected prompts automatically,
-or terminate applications by process name.
+The built-in probes prove basic authoring/save/reopen, extraction, schema/issues,
+HTML export + Playwright-Chromium capture, and ordered negative/fractional
+cross-sheet formulas. Additional required features need bounded, explicit
+probes and actual family pilots; the default probe is not blanket certification
+of every OfficeCLI feature.
+Do not repeatedly rediscover unchanged help/source or rerun the full maintenance
+suite per batch. Revalidate changed binaries, backends, or required capabilities.
 
-Probe only the selected compliant backend's actual dependencies. Install
-authorized missing automation packages only after a failed probe or manifest
-change; do not install standalone document-generator stacks. Keep run-specific
-scripts, dependency manifests/locks, logs, and exports under `build`.
-Shared installed Office/automation tools may remain outside the corpus.
+Set per-process `OFFICECLI_SKIP_UPDATE=1` and
+`OFFICECLI_NO_AUTO_RESIDENT=1` for checked standalone execution. The shared runner
+does this without modifying global settings. If a separately approved workflow
+uses residents, flush/close only run-owned files before hashing or other tools
+read disk bytes. Never quit unrelated sessions or kill processes by name.
 
-## Mandatory Microsoft Office pilots and QA
+If OfficeCLI, the Playwright capture adapter, or a required operation is
+unavailable, report **"Generation stopped: required OfficeCLI/Playwright
+capability unavailable: <capability>. No fallback was used."** Preserve
+existing outputs and report the actual completed count. Maintaining this skill
+and running helper tests are not corpus generation.
 
-After the connection checks pass and the canon/plan are frozen, use one actual
-planned item per selected format as a pilot. Pilots count toward the requested
-target. No bulk generation until every selected pilot passes.
+## Supported save/check/render path
 
-| Pilot | Passing evidence |
-|---|---|
-| DOCX | Authored/saved with Word; valid package; extracted content matches the grounded draft; genre/depth review; Word-rendered pages inspected for pagination, tables, and branding |
-| PPTX | Authored/saved with PowerPoint; valid package; slide text/notes match the draft; genre/depth review; every PowerPoint-rendered slide checked for overflow/overlap |
-| XLSX | Authored/saved and recalculated with Microsoft Excel; formulas retained; saved cached values readable after reopen; zero formula errors; expected totals/margins and layout checked |
+- Use checked **atomic** batches or template/merge operations, not best-effort
+  success. Check every item, errors, caveats, truncation, and actual saved bytes.
+  Text replacement is not proof that numeric/formula cells retained their types.
+  Never force-overwrite accepted artifacts.
+- HTML export uses `view <file> html --out <path>`; pixels come from the pinned
+  Playwright-Chromium adapter, **never** OfficeCLI's own
+  `view screenshot --render html/auto/native` image path.
+  The adapter captures one scoped image per `div.page[data-page='N']`,
+  visible `div.slide-container[data-slide='N']`, or bounded
+  `td[data-path='/Sheet/A1']` region — never a whole-page/-document capture
+  used as a stand-in for per-unit review. Review every selected page/slide;
+  contact sheets are an optional triage aid only, never a replacement for
+  viewing the full page/slide image. XLSX ranges must cover all relevant
+  cells and layouts, including merged-anchor cells and non-default/active
+  sheets (activate the sheet tab before capturing it). The thin runner stops
+  on XLSX drawings because it cannot prove their coverage from cell ranges
+  alone; required chart/drawing support needs a separately proven OfficeCLI
+  region adapter, not an improvised second renderer during generation.
+  (Verified 2026-10-14: the HTML export does render column/line chart
+  objects as inline, anchor-positioned SVG with correct title/legend/axis/
+  series pixels for known cached data — this is not a renderer gap. The gap
+  is verification: the existing cell-range capture only resolves clip
+  bounds from `td[data-path=...]` corner cells and the render-target schema
+  only checks logical cell locators, so neither can bind a declared region
+  to a chart's actual EMU anchor box. The unconditional block stays until an
+  anchor-aware region/coverage check exists.)
+- DOCX output from this skill uses **explicit, deliberate page breaks**, never
+  automatic natural-flow pagination; a one-page document needs no superfluous
+  break. Every authored page's content must fit its physical rendered page:
+  the capture adapter rejects a page-count mismatch against the explicit
+  break plan and rejects any page whose DOM content overflows its rendered
+  box (clipped/dropped/shrunk-unreadably text is a failure, not an accepted
+  partial page). Redistribute content within the planned page budget instead
+  of writing a custom paginator or accepting an overflowing capture.
+- PPTX layouts with long/wrapping titles must reserve the wrapped title's
+  full height and keep body content clear of it, with a readable minimum
+  font size (no truncation or over-shrinking). This is an ordinary layout
+  fix per affected frozen layout, not a universal overlap/collision
+  checker — intentional overlays elsewhere are not flagged. Run a long-title
+  stress pilot on a layout before bulk use.
+- Do not use `refresh` or `stats --page-count`: they can invoke native Word.
+  Page-dependent TOCs/cross-references and other unproven field capabilities are
+  outside the bounded default path. Required unsupported features block.
+- There is no verified standalone `recalc` command. Write source inputs before
+  dependent formulas, save, reopen, and check **every** formula against a grounded
+  independent expected result. OfficeCLI may remove stale caches rather than
+  refresh them; dependency propagation is not guaranteed. One known-order
+  corrective formula rewrite is allowed, then recheck final caches and issues.
+  Missing, stale, unsupported, error, or unassessed caches block delivery.
+  Never inject raw XML caches, invent values, build a substitute calculator,
+  accept tolerance-based provenance, or rely on Excel calculating on open.
+- Scan all schema/content/structure issues without truncation, and request
+  `chart_cache_stale` explicitly when applicable; the default issue scan omits it.
 
-An API success response or recalculation exit code is not sufficient evidence.
-Inspect results, errors, expected values, and rendered content. Flush/save/close
-run-owned documents before hashing or delivery. Do not alter accepted artifacts
-after recording their hashes.
+OfficeCLI HTML layout is **not native Office fidelity certification**. Automated
+checks cannot certify authentic prose, semantic entailment, substantive depth,
+or that someone actually reviewed an image. These limitations remain visible
+at delivery under every QA policy.
 
-Record application names/versions, local connection/probe evidence, selected
-skill/MCP sources and exact revisions, permission review, pilot IDs/hashes,
-QA evidence, and blockers in `build\preflight.json`. This is an agent-maintained
-workflow receipt: the Python package/claim audit does not detect installed Office
-or certify which application created a file. Do not claim otherwise.
-Continue to provide the contract's `build\qa.json` and `build\manifest.json`,
-including semantic, genre, depth, visual, and Excel recalculation receipts.
-For new schema-version-2 runs, also produce occurrence mappings, verified
-`build\provenance.json`, and recomputed `build\coverage.json`. A matching token
-does not certify correct attribution or meaning; verify these in the pilot and
-semantic review. Configured condition carriers require `condition_review`.
-Single-file pilots may use the helper's read-only `artifact_containers` and
-`check_draft` functions before a complete-corpus manifest exists.
-Recheck Office availability on resume and after backend/version changes.
+## Pilots and efficient execution
 
-Inspect body text, notes, comments, hidden workbook content, and properties for
-generation self-labeling. Never prefill passed flags. If any required Microsoft
-Office operation fails, notify the user and stop without a fallback.
+Pilot each `(genre, format, layout revision/hash)` family before bulk use. Pilots
+count toward the document target and need complete content and visual review.
+Include grounded stress cases: long titles/text, negative/fractional values,
+versions, historical source comparisons, formula dependency ordering, and
+worksheet regions. Freeze accepted layouts/commands, not repetitive prose.
 
-The helper uses only standard-library JSON, hash, ZIP, and XML inspection.
-These read-only checks do not author, render, or recalculate Office documents.
-Opt-in integration tests use temporary, test-owned Office documents and must
-not attach to or terminate a user's existing application session.
+Estimate review workload and image-delivery capacity up front. Use one grouped
+review of content, genre, depth, conditions and selected renders per document.
+QA policy controls review scope independently of content depth. A failed sample
+blocks its family; record the exception and expand affected-sibling review.
+Missing/undelivered/unreadable images cannot count as reviewed.
 
-For skill maintenance, deterministic tests do not require Office:
-`python -m unittest discover -s tests -q`. To additionally check real Office
-save/reopen containers, run the same suite with
-`$env:RUN_OFFICE_PROVENANCE_TESTS = "1"`. Each integration test skips explicitly
-if its application is already running or absent; automation/save/reopen
-failures are failures, not fallback successes. These tiny fixtures are not a
-generated corpus or a visual/semantic quality certification.
+Use `scripts\officecli_runner.py` for mechanics, bounded stages, durable
+checkpoints, pinned tool identity, phase timing, and at most one concrete
+corrective retry per logical operation. A user-supplied runtime budget stops at
+a safe checkpoint; no invented budget or completion promise. Preserve verified
+outputs on resume. Changed facts/drafts/layouts require explicit affected
+revisions and fresh mappings/reviews, not silent replacement.
 
-## Authoritative references
+Separate backend development from generation. A missing capability produces
+evidence and a blocker, not an open-ended framework-building detour. Delegate
+review only when authorized. Do not regenerate a completed corpus merely to
+rewrite historical engine evidence.
 
-Microsoft Office automation and independent-backend exclusion were checked on
-October 9, 2026. Recheck the exact candidate revision before adoption.
+## Maintenance checks
 
-```text
-Microsoft Office automation concepts:
-https://learn.microsoft.com/en-us/office/vba/language/concepts/getting-started/understanding-automation
-Microsoft Word application automation:
-https://learn.microsoft.com/en-us/office/vba/api/word.application
-Microsoft Excel controlling Office applications:
-https://learn.microsoft.com/en-us/office/vba/excel/concepts/working-with-other-applications/controlling-one-microsoft-office-application-from-another
-Microsoft PowerPoint application object:
-https://learn.microsoft.com/en-us/office/vba/api/powerpoint.application
-Excluded independent OfficeCLI source (not an installation recommendation):
-https://github.com/iOfficeAI/OfficeCLI
-```
+`python -m unittest discover -s tests -q` runs standard-library tests without
+Microsoft Office. `RUN_OFFICECLI_TESTS=1` enables actual OfficeCLI integrations.
+Missing tools skip optional maintenance tests explicitly; skips never count as
+passed generation preflight. Tiny fixtures are not a new company corpus or
+editorial/visual certification.

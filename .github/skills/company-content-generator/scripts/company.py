@@ -5,6 +5,7 @@ import calendar
 import copy
 import hashlib
 import json
+import math
 import posixpath
 import random
 import re
@@ -37,6 +38,9 @@ CONDITION_KINDS = ("unknown", "undocumented", "omitted_source", "conflict", "noi
 PRIVATE_KINDS = {"condition", "access_group", "knowledge_grant", "release", "viewpoint"}
 CONTENT_DEPTHS = ("light", "medium", "deep")
 DEFAULT_CONTENT_DEPTH = "medium"
+QA_POLICIES = ("Sampled", "FullContentSampledVisual", "Full")
+DEFAULT_QA_POLICY = "FullContentSampledVisual"
+EXECUTION_VERSION = 1
 MAX_FILENAME_LENGTH = 140
 CONTENT_SECTIONS = {
     "meeting_transcript": ["participants", "discussion", "decisions", "actions"],
@@ -1229,9 +1233,9 @@ def writer_record(record, projected):
 
 def get_context(canon, plan, identifier):
     documents = validate_plan(canon, plan)
+    index = {record["id"]: record for record in canon["records"]}
     require(identifier in documents, f"Unknown document: {identifier}")
     doc = documents[identifier]
-    index = {record["id"]: record for record in canon["records"]}
     projected = project_records(index, doc)
     records = [writer_record(record, projected) for record in projected.values()]
     writer_doc = {key: value for key, value in doc.items()
@@ -1696,9 +1700,22 @@ def spreadsheet_containers(package):
                 content = "true" if raw == "1" else "false"
             else:
                 content = normalized(raw)
+                if kind in (None, "n") and content:
+                    try:
+                        number = Decimal(content)
+                    except InvalidOperation as exc:
+                        raise Invalid(f"{name}!{address}: invalid numeric cache {raw}") from exc
+                    require(number.is_finite(), f"{name}!{address}: nonfinite numeric cache")
+                    if number == number.to_integral_value():
+                        content = str(int(number))
+                    else:
+                        scalar = float(number)
+                        require(math.isfinite(scalar) and scalar != 0,
+                                f"{name}!{address}: numeric cache outside finite scalar range")
+                        content = str(scalar)
             require(kind != "e", f"{name}!{address}: Excel error {raw}")
             require(formula is None or value is not None,
-                    f"{name}!{address}: formula has no saved cached value; recalculate in Excel")
+                    f"{name}!{address}: formula has no saved cached value; evaluate and save with OfficeCLI")
             saved_formula = formula.text if formula is not None else None
             if formula is not None and formula.get("t") == "shared":
                 identifier = formula.get("si")
@@ -1714,6 +1731,8 @@ def spreadsheet_containers(package):
             entries.append({"locator": {"kind": "cell", "part": part, "sheet_id": sheet_id,
                                         "sheet": name, "cell": address},
                             "text": content, "formula": saved_formula})
+            if kind in (None, "n") and raw:
+                entries[-1]["raw_numeric_value"] = raw
         sheet_rels = relationships(package, part)
         for drawing in worksheet.findall("x:drawing", NS):
             drawing_part = related_part(sheet_rels, drawing.get("{" + NS["r"] + "}id"), "drawing")
@@ -2101,6 +2120,486 @@ def audit_package(path, fmt):
         raise Invalid(f"{path}: invalid Office package: {exc}") from exc
 
 
+def execution_plan(canon, plan, layouts, pilot_ids, qa_policy=DEFAULT_QA_POLICY,
+                   revision=1, flagged_ids=None, budget_seconds=None, required_features=None):
+    """Build a separately versioned execution contract without changing business schema."""
+    result = dict(receipt_header(canon, plan), execution_version=EXECUTION_VERSION,
+                  revision=revision, qa_policy=qa_policy, documents=layouts,
+                  pilot_ids=pilot_ids, flagged_ids=flagged_ids or [],
+                  required_features=required_features if required_features is not None else {
+                      fmt: ["basic", "html_screenshots"] for fmt in sorted({d["format"] for d in plan["documents"]})})
+    if budget_seconds is not None:
+        result["budget_seconds"] = budget_seconds
+    validate_execution(canon, plan, result)
+    return result
+
+
+def validate_execution(canon, plan, execution):
+    documents = validate_plan(canon, plan)
+    require(isinstance(execution, dict) and all(execution.get(k) == v
+            for k, v in receipt_header(canon, plan).items()), "Execution fingerprint mismatch")
+    require(execution.get("execution_version") == EXECUTION_VERSION
+            and integer(execution.get("revision")) and execution["revision"] > 0,
+            "Unsupported execution version/revision")
+    require(execution.get("qa_policy") in QA_POLICIES, "Unsupported QA policy")
+    features = execution.get("required_features")
+    require(isinstance(features, dict) and features.keys() == {d["format"] for d in documents.values()}
+            and all(isinstance(values, list) and values and all(text(v) for v in values)
+                    and len(values) == len(set(values)) for values in features.values()),
+            "Required features must cover every selected format")
+    if "budget_seconds" in execution:
+        require(type(execution["budget_seconds"]) in (int, float)
+                and math.isfinite(execution["budget_seconds"]) and execution["budget_seconds"] > 0,
+                "Execution budget must be positive and finite")
+    entries = execution.get("documents")
+    require(isinstance(entries, list), "Execution documents must be a list")
+    layouts = {}
+    for entry in entries:
+        require(isinstance(entry, dict), "Invalid execution layout")
+        identifier = entry.get("document_id")
+        require(identifier in documents and identifier not in layouts, "Invalid/duplicate execution document")
+        require(text(entry.get("layout_revision")), f"{identifier}: missing layout revision")
+        require(isinstance(entry.get("layout_sha256"), str)
+                and re.fullmatch(r"[0-9a-f]{64}", entry["layout_sha256"]),
+                f"{identifier}: invalid layout hash")
+        layouts[identifier] = entry
+    require(layouts.keys() == documents.keys(), "Execution layouts incomplete")
+    for key in ("pilot_ids", "flagged_ids"):
+        ids = execution.get(key)
+        require(isinstance(ids, list) and all(isinstance(i, str) and i in documents for i in ids)
+                and len(ids) == len(set(ids)), f"Invalid execution {key}")
+    families = {identifier: (doc["type"], doc["format"],
+                layouts[identifier]["layout_revision"], layouts[identifier]["layout_sha256"])
+                for identifier, doc in documents.items()}
+    require({families[i] for i in execution["pilot_ids"]} == set(families.values()),
+            "Every layout family needs a pilot")
+    return families
+
+
+def review_selection(canon, plan, drafts, execution, machines=None):
+    """Recompute selection; policy never changes automatic checks or content depth."""
+    families = validate_execution(canon, plan, execution)
+    check_drafts(canon, plan, drafts)
+    machines = {} if machines is None else machines
+    documents = {d["id"]: d for d in plan["documents"]}
+    sizes = {i: sum(len(normalized(s["text"])) for s in
+                   load(Path(drafts) / f"{i}.json")["sections"]) for i in documents}
+    order = lambda i: (documents[i]["publication_date"], i)
+    reasons = {i: set() for i in documents}
+    for family in set(families.values()):
+        members = sorted((i for i in documents if families[i] == family), key=order)
+        reasons[members[0]].add("family_first")
+        largest = min(members, key=lambda i: (-sizes[i], *order(i)))
+        reasons[largest].add("family_largest")
+    for identifier in execution["pilot_ids"]:
+        reasons[identifier].add("pilot")
+    history_ids = set()
+    for record in canon["records"]:
+        for key in ("corrects", "retracts", "supersedes"):
+            previous = record["data"].get(key)
+            if previous:
+                history_ids.update((record["id"], previous))
+                if record["kind"] == "statement":
+                    history_ids.add(record["data"]["source_version_id"])
+    # Include both ends of history links, including the sources of earlier statements.
+    for record in canon["records"]:
+        if record["id"] in history_ids and record["kind"] == "statement":
+            history_ids.add(record["data"]["source_version_id"])
+    flagged = set(execution["flagged_ids"]) | {
+        i for i, machine in machines.items() if machine.get("corrected_failure")}
+    affected = {families[i] for i in flagged}
+    for identifier, doc in documents.items():
+        if doc["condition_ids"]:
+            reasons[identifier].add("condition")
+        if doc.get("source_version_id") in history_ids or (
+                set(doc["anchor_ids"]) | set(doc["required_statement_ids"])) & history_ids:
+            reasons[identifier].add("source_history")
+        if families[identifier] in affected:
+            reasons[identifier].add("affected_family")
+    policy = execution["qa_policy"]
+    return [{
+        "document_id": i, "draft_sha256": file_hash(Path(drafts) / f"{i}.json"),
+        "normalized_content_length": sizes[i], "reasons": sorted(reasons[i]),
+        "content_required": policy != "Sampled" or bool(reasons[i]),
+        "visual_required": policy == "Full" or bool(reasons[i]),
+    } for i in sorted(documents, key=order)]
+
+
+def bound_evidence(root, entry, label):
+    require(isinstance(entry, dict) and text(entry.get("path")), f"Missing {label} evidence")
+    path = Path(root) / entry["path"]
+    require_build_path(path, root)
+    require(path.is_file() and entry.get("sha256") == file_hash(path), f"Stale/missing {label} evidence")
+    return path
+
+
+def validate_capture_result(log, capability=None):
+    """Structural check for Playwright-Chromium capture evidence. Captures are
+    never OfficeCLI subprocess results: this validator is intentionally
+    separate from validate_officecli_result so a Playwright image can never
+    be waved through as fabricated OfficeCLI screenshot evidence."""
+    require(isinstance(log, dict) and log.get("status") == "passed", "Capture evidence missing/failed")
+    tool = log.get("tool")
+    require(isinstance(tool, dict) and tool.get("engine") == "playwright-chromium"
+            and text(tool.get("playwright_version")) and text(tool.get("browser_version"))
+            and isinstance(tool.get("executable_sha256"), str)
+            and re.fullmatch(r"[0-9a-f]{64}", tool["executable_sha256"]),
+            "Capture evidence missing bound Playwright/Chromium identity")
+    if capability is not None:
+        require(tool == capability.get("capture_tool"),
+                "Capture evidence identity does not match the pinned preflight capture engine")
+    require(isinstance(log.get("source_html_sha256"), str)
+            and re.fullmatch(r"[0-9a-f]{64}", log["source_html_sha256"]),
+            "Capture evidence missing bound source HTML hash")
+    require(log.get("unit") in ("pages", "slides", "region"), "Capture evidence missing a known coverage unit")
+    return log
+
+
+def validate_officecli_result(stdout, operation):
+    try:
+        result = json.loads(stdout)
+    except json.JSONDecodeError as exc:
+        raise Invalid(f"{operation}: OfficeCLI did not return complete JSON") from exc
+    require(isinstance(result, dict) and result.get("success") is True,
+            f"{operation}: OfficeCLI reported failure: {result}")
+
+    def check(value):
+        if isinstance(value, dict):
+            for key, item in value.items():
+                require(not (key.lower() in ("warning", "warnings", "caveat", "caveats",
+                            "truncated", "atomicrolledback") and item),
+                        f"{operation}: unresolved caveat/truncation: {key}")
+                require(not (key.lower() == "success" and item is False), f"{operation}: failed batch item")
+                if key.lower() in ("failed", "skipped"):
+                    require(item == 0, f"{operation}: incomplete/failed batch")
+                check(item)
+        elif isinstance(value, list):
+            for item in value:
+                check(item)
+
+    check(result)
+    data = result.get("data")
+    if operation in ("validate", "issues", "chart_cache_stale"):
+        field = "errors" if operation == "validate" else "issues"
+        require(isinstance(data, dict) and data.get("count") == 0 and data.get(field) == [],
+                f"{operation}: issues or incomplete scan: {data}")
+    if operation in ("author", "formula_correction"):
+        require(isinstance(data, dict) and isinstance(data.get("summary"), dict),
+                "author: missing atomic batch summary")
+        summary = data["summary"]
+        require(integer(summary.get("total")) and summary["total"] > 0
+                and summary["total"] == summary.get("executed") == summary.get("succeeded")
+                and summary.get("failed") == summary.get("skipped") == 0, "author: incomplete batch")
+    if operation == "html_export":
+        require(text(data), "html_export: OfficeCLI did not report a written HTML output path")
+    return result
+
+
+def verify_formula_values(path, bindings, claims=None):
+    require(isinstance(bindings, list), "Formula bindings must be a list")
+    expected = {}
+    for binding in bindings:
+        require(isinstance(binding, dict) and text(binding.get("sheet"))
+                and text(binding.get("cell")) and text(binding.get("formula")), "Invalid formula binding")
+        key = (binding["sheet"], binding["cell"])
+        require(key not in expected, "Duplicate expected formula binding")
+        require(type(binding.get("value")) in (int, float, str), "Invalid expected formula value")
+        try:
+            number = Decimal(str(binding["value"]))
+        except InvalidOperation as exc:
+            raise Invalid("Invalid expected formula value") from exc
+        require(number.is_finite(), "Nonfinite expected formula value")
+        if claims is not None:
+            claim = claims.get(binding.get("claim_id"))
+            require(claim is not None and "derivation" in claim
+                    and Decimal(str(claim["value"])) == number,
+                    "Formula expectation must bind an independently grounded derived claim")
+        expected[key] = binding
+    containers = artifact_containers(path, "xlsx")
+    formulas = {(c["locator"]["sheet"], c["locator"]["cell"]): c
+                for c in containers if c["locator"]["kind"] == "cell" and c.get("formula") is not None}
+    require(formulas.keys() == expected.keys(), "Expected formula coverage is incomplete")
+    for key, cell in formulas.items():
+        binding = expected[key]
+        require(cell["formula"] == binding["formula"].lstrip("="),
+                f"{key}: saved formula does not match expected formula")
+        try:
+            actual = Decimal(cell["text"])
+        except InvalidOperation as exc:
+            raise Invalid(f"{key}: missing/error/unsupported formula cache") from exc
+        require(actual.is_finite() and actual == Decimal(str(binding["value"])),
+                f"{key}: stale/incorrect formula cache")
+    return {"formula_count": len(formulas),
+            "evidence": "Reopened every saved formula; exact grounded expected values"}
+
+
+def depth_measure(containers, measure):
+    units = {}
+    for container in containers:
+        segments = container.get("segments")
+        if segments is None:
+            fragments = [(container["locator"], container["text"])]
+        else:
+            fragments = [(s["unit"], container["text"][s["start"]:s["end"]]) for s in segments]
+        for unit, value in fragments:
+            key = fingerprint(unit)
+            require(key not in units or units[key] == value, "Inconsistent delivered text aliases")
+            units[key] = value
+    content = " ".join(units.values())
+    if measure == "delivered_words":
+        return len(content.split())
+    if measure == "delivered_characters":
+        return len(content)
+    if measure == "delivered_containers":
+        return len(units)
+    if measure == "delivered_slides":
+        return len({c["locator"]["slide_id"] for c in containers if "slide_id" in c["locator"]})
+    if measure == "delivered_sheets":
+        return len({c["locator"]["sheet_id"] for c in containers if "sheet_id" in c["locator"]})
+    raise Invalid(f"Unsupported automatic depth measure: {measure}; define a checked measure before generation")
+
+
+def verify_document_title(path, doc):
+    with zipfile.ZipFile(path) as package:
+        require("docProps/core.xml" in package.namelist(), f"{doc['id']}: missing Office title property")
+        core = ElementTree.fromstring(package.read("docProps/core.xml"))
+        title = core.find("{http://purl.org/dc/elements/1.1/}title")
+        require(title is not None and title.text == doc["title"], f"{doc['id']}: wrong Office title property")
+    require(any(normalized(doc["title"]) in c["text"] for c in artifact_containers(path, doc["format"])),
+            f"{doc['id']}: planned business title missing from delivered content")
+
+
+def verify_render_targets(path, targets):
+    require(isinstance(targets, list) and targets and all(isinstance(t, dict) and text(t.get("id"))
+            for t in targets) and len({t["id"] for t in targets}) == len(targets), "Invalid render targets")
+    suffix = Path(path).suffix.lower()
+    if suffix != ".xlsx":
+        require(len(targets) == 1 and targets[0]["id"] == "all", "Full document capture required")
+        count_key = "pages" if suffix == ".docx" else "slides"
+        require(integer(targets[0].get(count_key)) and targets[0][count_key] > 0,
+                f"{suffix} render target requires an explicit positive '{count_key}' count; "
+                "natural-flow/undeclared page or slide counts are rejected, not inferred")
+        return
+    regions = []
+    for target in targets:
+        require(isinstance(target.get("range"), str) and "!" in target["range"],
+                "XLSX render target needs Sheet!A1:C3")
+        sheet, cells = target["range"].rsplit("!", 1)
+        addresses = cells.split(":")
+        require(len(addresses) == 2, "XLSX render range must have two addresses")
+        start, end = map(cell_coordinates, addresses)
+        require(start[0] <= end[0] and start[1] <= end[1], "Reversed render range")
+        regions.append((sheet, start, end))
+    for container in artifact_containers(path, "xlsx"):
+        locator = container["locator"]
+        if locator["kind"] == "cell":
+            row, col = cell_coordinates(locator["cell"])
+            require(any(sheet == locator["sheet"] and start[0] <= row <= end[0]
+                        and start[1] <= col <= end[1] for sheet, start, end in regions),
+                    f"Render regions omit {locator['sheet']}!{locator['cell']}")
+    with zipfile.ZipFile(path) as package:
+        require(not any(n.startswith("xl/drawings/") and n.endswith(".xml") for n in package.namelist()),
+                "XLSX drawing/chart visual coverage needs an explicitly proven region adapter")
+
+
+def validate_preflight(preflight, root):
+    """Preflight schema version 2: OfficeCLI remains the sole authoring/HTML-export/
+    formula engine; a bound Playwright+Chromium `capture_tool` identity is required
+    for every probe image. Version-1 receipts predate the capture adapter and are an
+    explicit migration boundary: they are rejected, not silently reused as new
+    renderer proof."""
+    require(isinstance(preflight, dict) and preflight.get("preflight_version") == 2
+            and preflight.get("status") == "passed" and preflight.get("engine") == "OfficeCLI"
+            and isinstance(preflight.get("tool"), dict) and text(preflight["tool"].get("version"))
+            and isinstance(preflight["tool"].get("sha256"), str)
+            and re.fullmatch(r"[0-9a-f]{64}", preflight["tool"]["sha256"]),
+            "Missing/stale OfficeCLI capability preflight; rerun preflight_version 2 with the capture adapter")
+    capture_tool = preflight.get("capture_tool")
+    require(isinstance(capture_tool, dict) and capture_tool.get("engine") == "playwright-chromium"
+            and text(capture_tool.get("playwright_version")) and text(capture_tool.get("browser_version"))
+            and isinstance(capture_tool.get("executable_sha256"), str)
+            and re.fullmatch(r"[0-9a-f]{64}", capture_tool["executable_sha256"]),
+            "Missing bound Playwright/Chromium capture identity in preflight")
+    probes = preflight.get("probes")
+    require(isinstance(probes, list), "Incomplete OfficeCLI capability probes")
+    formats = set()
+    for probe in probes:
+        require(isinstance(probe, dict) and probe.get("format") in FORMATS
+                and probe["format"] not in formats, "Invalid/duplicate capability probe")
+        formats.add(probe["format"])
+        require(isinstance(probe.get("features"), list)
+                and all(text(f) for f in probe["features"])
+                and {"basic", "html_screenshots"} <= set(probe["features"]), "Incomplete capability features")
+        image = Path(root) / "build" / probe["image"]
+        require_build_path(image, root)
+        require(image.is_file() and file_hash(image) == probe["image_sha256"]
+                and image.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"), "Stale/missing capability image")
+        logs = probe.get("logs", [])
+        require(isinstance(logs, list) and {"create", "author", "validate", "issues", "extract", "html_export"}
+                <= {log.get("operation") for log in logs}, "Incomplete capability operations")
+        for log in logs:
+            require(log.get("returncode") == 0 and log.get("tool") == preflight["tool"],
+                    "Failed/mismatched capability operation")
+            validate_officecli_result(log.get("stdout", ""), log["operation"])
+        capture_log = probe.get("capture")
+        require(isinstance(capture_log, dict) and capture_log.get("tool") == capture_tool
+                and capture_log.get("image_sha256") == probe["image_sha256"],
+                "Missing/mismatched capability capture evidence; a Playwright image needs its own bound evidence")
+        validate_capture_result(capture_log, preflight)
+        if probe["format"] == "xlsx":
+            require(probe.get("formula_count") == 2 and "chart_cache_stale" in {
+                    log.get("operation") for log in logs}, "Missing saved-formula capability proof")
+    require(formats == set(preflight.get("formats", [])) and formats, "Incomplete capability formats")
+
+
+def validate_required_features(execution, preflight):
+    features = {p["format"]: set(p["features"]) for p in preflight["probes"]}
+    require(all(set(required) <= features.get(fmt, set())
+                for fmt, required in execution["required_features"].items()),
+            "Required OfficeCLI features need explicit capability probes")
+
+
+def validate_machine(canon, plan, doc, draft_path, artifact_path, root, preflight):
+    identifier = doc["id"]
+    machine = load(Path(root) / "build" / "machine" / f"{identifier}.json")
+    require(isinstance(machine, dict) and all(machine.get(k) == v for k, v in
+            receipt_header(canon, plan).items()), f"{identifier}: machine fingerprint mismatch")
+    require(machine.get("document_id") == identifier
+            and machine.get("artifact_sha256") == file_hash(artifact_path)
+            and machine.get("draft_sha256") == file_hash(draft_path),
+            f"{identifier}: stale machine evidence")
+    capability = load(bound_evidence(root, machine.get("capability"), "pinned capability"))
+    validate_preflight(capability, root)
+    require(machine.get("engine") == "OfficeCLI" and machine.get("tool") == capability.get("tool")
+            and machine.get("status") == "passed", f"{identifier}: missing OfficeCLI machine checks")
+    checks = machine.get("checks", [])
+    require(isinstance(checks, list) and all(isinstance(c, dict) for c in checks),
+            f"{identifier}: invalid machine checks")
+    required = {"validate", "issues", "extract", "depth", "document"}
+    if doc["format"] == "xlsx":
+        required |= {"formulas", "chart_cache_stale"}
+    require(required <= {c.get("operation") for c in checks}, f"{identifier}: incomplete machine checks")
+    for check in checks:
+        result = load(bound_evidence(root, check, "tool result"))
+        require(result.get("status") == "passed"
+                and result.get("artifact_sha256") == machine["artifact_sha256"]
+                and text(result.get("evidence")), f"{identifier}: failed/unbound automatic check")
+        if check["operation"] in ("validate", "issues", "extract", "chart_cache_stale", "html_export"):
+            require(result.get("tool") == capability["tool"] and result.get("returncode") == 0
+                    and result.get("operation") == check["operation"], f"{identifier}: mismatched tool result")
+            validate_officecli_result(result.get("stdout", ""), check["operation"])
+        if check["operation"] == "formulas":
+            claims = {c["id"]: c for c in load(draft_path)["claims"]}
+            verify_formula_values(artifact_path, result.get("bindings"), claims)
+        if check["operation"] == "depth":
+            targets_path = Path(root) / "build" / "depth-targets.json"
+            targets = load(targets_path)
+            require(result.get("target_sha256") == file_hash(targets_path)
+                    and targets.get("plan_sha256") == fingerprint(plan), "Stale depth measurement")
+            target = next((t for t in targets["documents"] if t["document_id"] == identifier), None)
+            require(target is not None and target["content_depth"] == doc["content_depth"],
+                    "Missing/mismatched depth target")
+            measured = depth_measure(artifact_containers(artifact_path, doc["format"]), target["measure"])
+            require(result.get("measured") == measured and result.get("measure") == target["measure"]
+                    and target["target_min"] <= measured <= target["target_max"], "Failed depth measurement")
+        if check["operation"] == "document":
+            verify_document_title(artifact_path, doc)
+    renders = machine.get("renders")
+    require(isinstance(renders, list), f"{identifier}: render evidence must be a list")
+    render_ids = set()
+    for render in renders:
+        require(isinstance(render, dict) and text(render.get("id")) and render["id"] not in render_ids
+                and render.get("renderer") == "OfficeCLI-HTML+Playwright-Chromium"
+                and render.get("artifact_sha256") == machine["artifact_sha256"],
+                f"{identifier}: invalid/duplicate render evidence")
+        images = render.get("images")
+        require(isinstance(images, list) and images, f"{identifier}: render evidence has no images")
+        for image_entry in images:
+            image = bound_evidence(root, image_entry, "render")
+            require(image.suffix.lower() == ".png" and image.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"),
+                    f"{identifier}: unreadable render evidence")
+        result = load(bound_evidence(root, render.get("result"), "render result"))
+        require(result.get("artifact_sha256") == machine["artifact_sha256"],
+                f"{identifier}: stale capture evidence")
+        validate_capture_result(result, capability)
+        render_ids.add(render["id"])
+    targets = machine.get("render_targets")
+    require(isinstance(targets, list) and all(text(t) for t in targets)
+            and len(targets) == len(set(targets)) and set(targets) == render_ids,
+            f"{identifier}: incomplete render coverage")
+    if renders:
+        require("html_export" in {c.get("operation") for c in checks},
+                f"{identifier}: HTML export evidence required before any render/capture")
+        definitions = machine.get("target_definitions")
+        verify_render_targets(artifact_path, definitions)
+        require({t["id"] for t in definitions} == render_ids, "Incomplete target definition coverage")
+        for render in renders:
+            target = next(t for t in definitions if t["id"] == render["id"])
+            result = load(bound_evidence(root, render["result"], "render result"))
+            if doc["format"] == "xlsx":
+                require(len(render["images"]) == 1 and result.get("unit") == "region"
+                        and text(result.get("start_cell")) and text(result.get("end_cell")),
+                        f"{identifier}: incomplete worksheet region capture")
+            else:
+                count_key = "pages" if doc["format"] == "docx" else "slides"
+                unit_key = "page" if doc["format"] == "docx" else "slide"
+                require(result.get("unit") == count_key and result.get("rendered_count") == target[count_key],
+                        f"{identifier}: incomplete page/slide coverage")
+                require(len(render["images"]) == target[count_key],
+                        f"{identifier}: incomplete page/slide image coverage")
+                covered = {image.get(unit_key) for image in render["images"]}
+                require(covered == set(range(1, target[count_key] + 1)),
+                        f"{identifier}: missing page/slide numbers in coverage")
+                if doc["format"] == "docx":
+                    require(not any(image.get("overflow") for image in render["images"]),
+                            f"{identifier}: overflowing DOCX page accepted as evidence")
+    return machine
+
+
+def make_review_plan(canon, plan, drafts, execution, root, files):
+    preflight_path = Path(root) / "build" / "preflight.json"
+    preflight = load(preflight_path)
+    validate_preflight(preflight, root)
+    validate_required_features(execution, preflight)
+    require(set(preflight["formats"]) >= {d["format"] for d in plan["documents"]},
+            "Incomplete selected-format preflight")
+    machines = {doc["id"]: validate_machine(canon, plan, doc,
+                Path(drafts) / f"{doc['id']}.json", files[doc["id"]], root, preflight)
+                for doc in plan["documents"]}
+    selection = review_selection(canon, plan, drafts, execution, machines)
+    for entry in selection:
+        identifier = entry["document_id"]
+        entry["artifact_sha256"] = file_hash(files[identifier])
+        entry["machine_sha256"] = file_hash(Path(root) / "build" / "machine" / f"{identifier}.json")
+        require(not entry["visual_required"] or machines[identifier]["render_targets"],
+                f"{identifier}: required visual review has no renders")
+    return dict(receipt_header(canon, plan), review_version=EXECUTION_VERSION,
+                execution_sha256=fingerprint(execution), preflight_sha256=file_hash(preflight_path),
+                qa_policy=execution["qa_policy"], documents=selection)
+
+
+def validate_review(review, doc, selected, machine):
+    identifier = doc["id"]
+    for gate in ("semantic_review", "genre_review", "depth_review", "visual_review", "condition_review"):
+        required = (bool(doc["condition_ids"]) if gate == "condition_review" else
+                    selected["visual_required"] if gate == "visual_review" else selected["content_required"])
+        receipt = review.get(gate)
+        require(isinstance(receipt, dict), f"{identifier}: missing {gate}")
+        if not required:
+            require(receipt == {"status": "not_selected"}, f"{identifier}: {gate} must be not_selected")
+            continue
+        require(receipt.get("status") == "passed" and text(receipt.get("evidence")),
+                f"{identifier}: missing/failed {gate}")
+        if gate == "depth_review":
+            require(receipt.get("content_depth") == doc["content_depth"],
+                    f"{identifier}: depth_review content_depth mismatch")
+        if gate == "visual_review":
+            ids = receipt.get("render_ids")
+            require(isinstance(ids, list) and len(ids) == len(set(ids))
+                    and set(ids) == set(machine["render_targets"]) and receipt.get("images_delivered") is True,
+                    f"{identifier}: incomplete/undelivered visual review")
+
+
 def audit(canon, plan, drafts, manifest, root):
     documents = validate_plan(canon, plan)
     check_drafts(canon, plan, drafts)
@@ -2117,6 +2616,20 @@ def audit(canon, plan, drafts, manifest, root):
             and qa.get("plan_sha256") == fingerprint(plan), "QA fingerprint/version mismatch")
     reviews = qa.get("documents")
     require(isinstance(reviews, list), "QA documents must be a list")
+    execution_path = root / "build" / "execution-plan.json"
+    new_contract = execution_path.exists() or "execution_version" in qa
+    selection, machines = {}, {}
+    if new_contract:
+        require(execution_path.is_file(), "Missing execution contract for new QA")
+        execution = load(execution_path)
+        expected = make_review_plan(canon, plan, drafts, execution, root, files)
+        require(expected == load(root / "build" / "review-plan.json"), "Stale/incorrect review selection")
+        require(qa.get("execution_version") == EXECUTION_VERSION
+                and qa.get("execution_sha256") == fingerprint(execution)
+                and qa.get("review_plan_sha256") == fingerprint(expected)
+                and qa.get("qa_policy") == execution["qa_policy"], "QA policy/execution mismatch")
+        selection = {entry["document_id"]: entry for entry in expected["documents"]}
+        machines = {i: load(root / "build" / "machine" / f"{i}.json") for i in files}
     reviewed = set()
     for review in reviews:
         require(isinstance(review, dict), "Invalid QA entry")
@@ -2126,6 +2639,12 @@ def audit(canon, plan, drafts, manifest, root):
         require(review.get("artifact_sha256") == hashes[identifier], f"{identifier}: stale artifact QA")
         require(review.get("draft_sha256") == file_hash(Path(drafts) / f"{identifier}.json"),
                 f"{identifier}: stale draft QA")
+        if new_contract:
+            require(review.get("machine_sha256") == selection[identifier]["machine_sha256"],
+                    f"{identifier}: stale review machine evidence")
+            validate_review(review, documents[identifier], selection[identifier], machines[identifier])
+            reviewed.add(identifier)
+            continue
         gates = ["semantic_review", "genre_review", "depth_review", "visual_review"]
         if documents[identifier]["format"] == "xlsx":
             gates.append("recalculation")
@@ -2148,10 +2667,16 @@ def audit(canon, plan, drafts, manifest, root):
     binding_path = root / "build" / "resource-bindings.json"
     if binding_path.exists():
         validate_bindings(canon, plan, manifest, load(binding_path))
-    return {"documents": len(files), "formats": {
+    result = {"documents": len(files), "formats": {
         fmt: sum(d["format"] == fmt for d in documents.values()) for fmt in FORMATS
     }, "validation": "structure, hashes, claims, final-artifact provenance, coverage, and QA receipts; "
                       "not independent semantic certification"}
+    result["qa_policy"] = qa["qa_policy"] if new_contract else "legacy-all-document"
+    result["review_coverage"] = {
+        "content": sum(e["content_required"] for e in selection.values()) if new_contract else len(files),
+        "visual": sum(e["visual_required"] for e in selection.values()) if new_contract else len(files),
+        "total": len(files)}
+    return result
 
 
 def main(argv=None):

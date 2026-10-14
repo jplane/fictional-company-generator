@@ -691,7 +691,7 @@ class CompanyTests(unittest.TestCase):
             with self.assertRaisesRegex(company.Invalid, "artifact hash mismatch"):
                 company.audit(self.canon, self.plan, root / "build" / "drafts", manifest, root)
 
-    def create_audit_fixture(self, root, drafts):
+    def create_audit_fixture(self, root, drafts, include_titles=False):
         company.save(root / "canon.json", self.canon)
         (root / "documents").mkdir()
         manifest = {"schema_version": 2, "corpus_id": self.canon["corpus_id"],
@@ -708,9 +708,15 @@ class CompanyTests(unittest.TestCase):
             # These content/relationship fixtures exercise read-only checks, not Office rendering.
             draft = self.draft(doc)
             bodies = [escape(section["text"]) for section in draft["sections"]]
+            if include_titles:
+                bodies[0] += escape(" " + doc["title"])
             w, p, a, x, r = (company.NS[key] for key in ("w", "p", "a", "x", "r"))
             rel_ns = "http://schemas.openxmlformats.org/package/2006/relationships"
             parts = {"[Content_Types].xml": "<Types/>", "_rels/.rels": "<Relationships/>"}
+            if include_titles:
+                parts["docProps/core.xml"] = (
+                    '<core xmlns:dc="http://purl.org/dc/elements/1.1/">'
+                    f"<dc:title>{escape(doc['title'])}</dc:title></core>")
             if fmt == "docx":
                 parts["word/document.xml"] = (
                     f'<w:document xmlns:w="{w}"><w:body>'
@@ -1047,49 +1053,50 @@ class CompanyTests(unittest.TestCase):
         self.assertIn("named-person count need not equal headcount", instructions)
         self.assertFalse((ROOT / ".github" / "skills" / "synthetic-company" / "SKILL.md").exists())
 
-    def test_skill_requires_local_microsoft_office_before_generation(self):
+    def test_skill_requires_officecli_not_native_office(self):
         instructions = (SCRIPT.parents[1] / "SKILL.md").read_text(encoding="utf-8")
-        self.assertIn("Microsoft Office is a hard prerequisite for corpus generation", instructions)
+        instructions = " ".join(instructions.split())
+        self.assertIn("Microsoft Office is not required", instructions)
         self.assertIn("Before creating the output directory, canon, plan, or drafts", instructions)
-        self.assertIn("Generation stopped: local Microsoft", instructions)
-        self.assertIn('No fallback was used." Then stop.', instructions)
-        self.assertIn("no compliant backend is available", instructions)
+        self.assertIn("https://github.com/iOfficeAI/OfficeCLI", instructions)
+        self.assertIn("verify versioned release checksums", instructions)
         self.assertIn("Maintaining this skill and running helper tests", instructions)
-        self.assertIn("If Office becomes unavailable on resume", instructions)
-        for excluded in ("LibreOffice", "OpenOffice", "standalone OOXML generators",
-                         "third-party rendering/calculation engines", "cloud-only Office access"):
+        for excluded in ("LibreOffice", "OpenOffice", "standalone OOXML", "COM"):
             self.assertIn(excluded, instructions)
         self.assertNotIn("Canon/planning work can proceed without Office", instructions)
         self.assertNotIn("`docx`, `pptx`, and `xlsx` by default", instructions)
 
-    def test_setup_guide_has_no_non_office_acquisition_or_runtime_fallback(self):
+    def test_setup_guide_covers_authorized_install_updates_and_probes(self):
         guide = (SCRIPT.parents[1] / "references" / "dependencies.md").read_text(encoding="utf-8")
-        for application in ("Word.Application", "PowerPoint.Application", "Excel.Application"):
-            self.assertIn(application, guide)
-        self.assertIn("Registration is only an initial check", guide)
-        self.assertIn("must establish a real application connection", guide)
-        self.assertIn("Do not install it for this workflow", guide)
-        self.assertIn("never mark preflight passed", guide)
-        self.assertIn("Never quit or kill the", guide)
-        self.assertIn("approved publisher repository URL", guide)
+        guide = " ".join(guide.split())
+        for requirement in ("sole document", "Installation", "versioned release asset", "SHA-256",
+                            "before execution", "authorization", "Preserve the prior usable binary",
+                            "MCP registration is optional", "--render html", "OFFICECLI_SKIP_UPDATE=1"):
+            self.assertIn(requirement.lower(), guide.lower())
         for old_command in ("gh skill install iOfficeAI/OfficeCLI", "git clone --filter=blob:none",
                             "soffice --version", "Get-Command soffice", "pdftoppm -v",
                             "import openpyxl", "require.resolve('pptxgenjs')"):
             self.assertNotIn(old_command, guide)
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
-        self.assertIn("stops before creating any corpus artifacts", readme)
-        self.assertIn("No substitute tools are installed automatically", readme)
+        self.assertIn("No tools are installed automatically", readme)
 
-    def test_qa_guidance_requires_microsoft_office_evidence(self):
+    def test_skill_bounds_execution_and_independent_review_scope(self):
+        instructions = (SCRIPT.parents[1] / "SKILL.md").read_text(encoding="utf-8")
+        for requirement in ("FullContentSampledVisual", "execution-plan.json", "review-plan.json",
+                            "corrective retry", "Undelivered/unreadable", "not_selected",
+                            "OfficeCLI runner", "independent of light/medium/deep"):
+            self.assertIn(requirement, instructions)
+
+    def test_no_conflicting_native_requirements_remain_in_maintained_guidance(self):
         references = SCRIPT.parents[1] / "references"
         contracts = (references / "contracts.md").read_text(encoding="utf-8")
-        self.assertIn("identifying Microsoft Excel, its version", contracts)
-        self.assertIn("A substitute engine is not valid evidence", contracts)
-        self.assertIn("not independently enforced by the Python audit", contracts)
-        playbook = (references / "content-types.md").read_text(encoding="utf-8")
-        self.assertIn("document with Microsoft Word", playbook)
-        self.assertIn("Microsoft PowerPoint", playbook)
-        self.assertIn("Recalculate workbooks in Microsoft Excel", playbook)
+        self.assertIn("FullContentSampledVisual", contracts)
+        for path in [SCRIPT.parents[1] / "SKILL.md", ROOT / "README.md", *references.glob("*.md")]:
+            wording = " ".join(path.read_text(encoding="utf-8").split())
+            for forbidden in ("Microsoft Office is a hard prerequisite", "recalculate in Excel",
+                              "Recalculate workbooks in Microsoft Excel", "Word.Application",
+                              "PowerPoint.Application", "Excel.Application", "mandatory native"):
+                self.assertNotIn(forbidden, wording, str(path))
 
 
 if __name__ == "__main__":

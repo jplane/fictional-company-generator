@@ -221,9 +221,9 @@ interchangeable. Requested decisions and supporting rationale need canon records
 Workbooks contain meaningful source, calculation, and notes/assumptions sheets
 with navigable layouts. Formulas derive totals/margins from source cells and
 remain updateable. Put methodology and normal business-source notes in the
-workbook; raw generation claims/hashes belong in `build`. Recalculate with
-Microsoft Excel and verify
-expected values and cached results, not just formula syntax.
+workbook; raw generation claims/hashes belong in `build`. Evaluate/save with
+OfficeCLI and reopen every formula cache against independently grounded
+expected values, not just formula syntax or a calculation-on-open flag.
 
 ## Planning behavior
 
@@ -269,7 +269,7 @@ facts and terminology in canon records. This single core info set precedes prose
 do not invent a person/title in a draft or expand the org chart to cover unnamed
 employees merely because a financial report gives total headcount.
 
-Perform a `genre_review` for every document: does this read as a real instance
+Perform a `genre_review` for every document selected for content review: does this read as a real instance
 of its requested type, for the correct audience, rather than a generic summary,
 template, outline, or data dump? Separately verify selected depth against the
 genre's targets and substantive coverage, using actual delivered measurements.
@@ -278,11 +278,23 @@ appears anywhere, including notes, comments, hidden worksheet content, or Office
 properties. Required section roles and automated phrase scans are structural
 guards, not proof of convincing prose or exhaustive coverage.
 
-Render every Word document with Microsoft Word and every presentation with
-Microsoft PowerPoint. Recalculate workbooks in Microsoft Excel. Review XLSX column widths,
-readability, chart ranges, formula caches, and error cells. Inspect representative
+Apply `Sampled`, `FullContentSampledVisual` (default), or `Full` independently of
+content depth. All files retain structural, claim/date/access, measurable-depth,
+issue/schema, hash, cache, provenance and coverage checks. Selected content
+reviews cover the complete document. Selected visual reviews use OfficeCLI's
+HTML export captured through the pinned Playwright-Chromium adapter for every
+page/slide or relevant worksheet region; unselected gates are
+`not_selected`. Always review pilots, condition/source-history carriers and
+flagged exceptions. Failed samples require affected-family expansion.
+Review XLSX column widths, readability, chart ranges, formula caches, and error cells. Inspect representative
 cross-format documents about the same event together. A clean ZIP/XML audit is
 not proof of coherent prose, readable layout, or calculated formulas.
-Use only reviewed skills/MCPs backed by locally installed Microsoft Office.
-If a required Office application or capability is unavailable, notify the user
-and stop; do not substitute another rendering/calculation engine.
+Use OfficeCLI for document authoring/checking/HTML export, and the pinned
+Playwright-Chromium adapter for capture; never OfficeCLI's own
+`view screenshot --render` path, native/auto rendering, `refresh`, or native
+page counts. Hash/index final saved bytes. No Microsoft Office dependency
+remains; HTML previews do not certify native layout fidelity. An unavailable
+required OfficeCLI/Playwright-capture capability blocks.
+Do not count missing/undisplayed/unreadable images as reviewed or repeat full
+maintenance checks for unchanged batches. See `dependencies.md` for setup,
+supported capabilities, bounded retry and review-capacity planning.

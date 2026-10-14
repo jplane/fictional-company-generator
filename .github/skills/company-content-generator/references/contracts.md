@@ -467,7 +467,8 @@ Both input claims must already be grounded and have units. Operations: `sum`,
 need matching input/output units; ratios need equal input units and `ratio` or
 `percent` output. Rounding is 0-12 decimal places, half-up. Cyclic references,
 unsupported operations, invalid results, and division by zero fail. This small
-receipt evaluator does not execute arbitrary expressions or replace Excel.
+receipt evaluator does not execute arbitrary expressions or replace OfficeCLI
+formula evaluation.
 Derived and primary claim shapes cannot be mixed. Primary units must match
 explicit source units; `_usd` financial fields require `USD`. Product output
 units still need semantic dimensional review: the evaluator is not a general
@@ -510,7 +511,63 @@ parsable XML, and mandatory parts, not full OOXML schema conformance.
 Each artifact's basename must exactly match the corresponding plan `filename`;
 a generic filename is rejected even when the bytes and hash are valid.
 
-`build\qa.json` records honest review evidence:
+### Execution and review scope (new runs)
+
+Business `schema_version` stays **2**. New execution sidecars separately use
+`execution_version: 1` / `review_version: 1`. Create
+`build\execution-plan.json` through `company.execution_plan(canon, plan, layouts,
+pilot_ids, qa_policy="FullContentSampledVisual", revision=1, flagged_ids=[],
+budget_seconds=None)`. Its header is `receipt_header(canon, plan)`; every layout
+entry contains `document_id`, nonempty `layout_revision`, and `layout_sha256`
+for a frozen layout file under `build`. `required_features` maps every selected
+format to tested feature names (default `basic`, `html_screenshots`); additional
+features require explicit bound capability probes, not a version-only claim.
+Every family needs a pilot. Optional
+budget is positive user-supplied seconds, never an inferred time promise.
+
+| Policy | Complete content review | Complete visual review |
+|---|---|---|
+| `Sampled` | Deterministic sample + mandatory documents | Same selection |
+| `FullContentSampledVisual` (default) | Every document | Deterministic sample + mandatory documents |
+| `Full` | Every document | Every document |
+
+Sampling takes first publication/date-ID and largest normalized draft-section
+content per `(type, format, layout revision, layout hash)`, with stable date/ID
+ties. Always include pilots, condition carriers, both ends of source
+supersession/correction/retraction relationships, and flagged exceptions.
+`flagged_ids` and corrected mechanical failures expand **the entire affected
+family** for content and visual review. A failed sample blocks the family;
+record it in a new explicit execution revision before resuming. Do not erase
+findings or reselect an easier sample. Policy changes require an explicit
+execution revision, recomputed review plan and QA; unchanged valid bytes/evidence
+can be reused without reauthoring. Depth remains independently light/medium/deep.
+
+Every policy checks every draft/file for canonical claims, dates/access,
+required genre sections, measurable depth, structure/self-labeling, schema/issues,
+title/filename/hash, supported saved formula values, provenance and coverage.
+These mechanical guards do not certify semantic entailment or substantive depth.
+
+`make_review_plan` recomputes `build\review-plan.json`, bound to canon/plan,
+execution fingerprint, preflight file hash, per-document draft/artifact/machine
+hashes, normalized sizes, selection reasons, and `content_required` /
+`visual_required`. Audit recomputes and compares the entire plan, not policy
+strings or claimed counts. Nonselected gates must be exactly
+`{"status": "not_selected"}`, not successful reviews.
+
+The runner writes `build\machine\<document-id>.json` for complete mechanical
+checks. It binds final artifact/draft hashes, OfficeCLI identity, the
+Playwright-Chromium capture-tool identity, a hash-bound capability snapshot,
+tool-result files, measured depth targets, and actual HTML-export +
+Playwright-capture render targets/results/images. Every required capture
+covers all pages/slides or all populated worksheet regions; cropped or
+partial replacement is not a full review. Content/condition review evidence
+and visual evidence must be written by an actual reviewer, not the runner.
+
+`build\qa.json` records honest review evidence. For new runs it adds
+`execution_version: 1`, `execution_sha256` (execution object's fingerprint),
+`review_plan_sha256` (review-plan object's fingerprint), and `qa_policy`.
+Every document also binds `machine_sha256`; this example is for a selected
+DOCX with no configured condition:
 
 ```json
 {
@@ -518,11 +575,16 @@ a generic filename is rejected even when the bytes and hash are valid.
   "corpus_id": "<from canon>",
   "canon_sha256": "<from plan>",
   "plan_sha256": "<from context>",
+  "execution_version": 1,
+  "execution_sha256": "<execution object fingerprint>",
+  "review_plan_sha256": "<review-plan object fingerprint>",
+  "qa_policy": "FullContentSampledVisual",
   "documents": [
     {
       "document_id": "doc-0001",
       "artifact_sha256": "<same as manifest>",
       "draft_sha256": "<SHA-256 of draft JSON file>",
+      "machine_sha256": "<SHA-256 of machine receipt file>",
       "semantic_review": {
         "status": "passed",
         "evidence": "Reviewed every section against date-filtered claims; no unsupported facts."
@@ -533,24 +595,26 @@ a generic filename is rejected even when the bytes and hash are valid.
       },
       "visual_review": {
         "status": "passed",
+        "images_delivered": true,
+        "render_ids": ["all"],
         "evidence": "Rendered pages and reviewed pagination, tables, footers, and business branding."
       },
       "depth_review": {
         "status": "passed",
         "content_depth": "medium",
         "evidence": "Describe measured delivered content and reviewed substantive coverage against the medium genre targets; never prefill this example as a pass."
-      }
+      },
+      "condition_review": {"status": "not_selected"}
     }
   ]
 }
 ```
 
-For XLSX also require `recalculation` with `status: "passed"` and nonempty
-`evidence` identifying Microsoft Excel, its version, the actual recalculation
-operation, and zero-error formula scan. Word/PowerPoint visual-review evidence
-must identify the Microsoft Office application/version that produced the
-reviewed pages/slides. A substitute engine is not valid evidence.
-Every document requires `depth_review` with passed status, nonempty evidence,
+New-run XLSX machine evidence requires every saved formula to match a grounded
+expected derived value and an explicit `chart_cache_stale` scan, not a
+recalculation-on-open flag. Selected visuals bind every render ID and require
+`images_delivered: true`; missing/undisplayed/unreadable images never count.
+Every selected content review requires `depth_review` with passed status, nonempty evidence,
 and `content_depth` equal to the plan. Evidence should cite actual delivered
 coverage, measurements, and useful analyses against `build\depth-targets.json`;
 length alone or a larger collection of sheets is not evidence of depth.
@@ -586,13 +650,62 @@ annotations are omitted. Its output belongs under `build\views`; it does not
 copy artifacts, enforce ACLs, or upload content. Distribute selected evidence,
 not the entire canon/build tree, through a separate deployment tool.
 
-Generation must pass the local Microsoft Office prerequisite in
-`references\dependencies.md` before any corpus artifacts are created. Record
-Office application versions, actual automation connection evidence, reviewed
-skill/MCP sources and revisions, and pilot results in `build\preflight.json`.
-This workflow receipt is not independently enforced by the Python audit.
-Missing/unavailable Office or a noncompliant backend means notify the user and
-stop, including on resume; do not fall back to another engine.
+Legacy schema-v2 QA with **no execution sidecar** retains the existing
+all-document semantic/genre/depth/visual gates, plus its XLSX `recalculation`
+and carrier condition receipts. That compatibility path does not recertify
+native fidelity or silently upgrade/downgrade old evidence. New sidecars cannot
+bypass enforcement by omitting version/policy fields. No example migration.
+
+Generation passes authorized OfficeCLI dependency/setup and selected-format
+capability probes before corpus creation; see `dependencies.md`. Audit binds
+passed probe logs/images/tool identity, not a version-only assertion. Keep
+immutable capability snapshots so a verified later update does not falsely
+rewrite the authoring engine for accepted historical bytes.
+
+### Thin OfficeCLI runner job contract
+
+The standard-library `scripts\officecli_runner.py` is a mechanical runner, not
+an authoring framework. Store a JSON array of jobs under `build`; each job has:
+
+- `document_id` and `layout_file` (a build-relative frozen layout/template file).
+- Either `batch_file` (a build-relative nonempty atomic DOM command array) **or**
+  `template` plus `data_file` for OfficeCLI merge; never force-overwrite.
+  Authoring batches support checked add/set/remove/move/swap, no raw cache edits.
+- `expected_formulas` for XLSX: every `{sheet, cell, formula, value, claim_id}`.
+  `claim_id` binds an independently checked draft `derivation`; bindings are in
+  dependency order, and include every formula. Unsupported/shared/array forms
+  stop rather than inventing values. Empty bindings are valid only for no formulas.
+- `render_targets`: `[{"id": "all"}]` for DOCX/PPTX; for XLSX,
+  `[{"id": "results", "range": "Results!A1:F40"}, ...]`, covering all populated
+  cells. Declare targets even if currently unselected so expansion can render
+  accepted bytes later. XLSX drawing coverage requires a separately proven
+  adapter; the bounded runner stops, rather than pretending cell ranges cover it.
+- `occurrences`: exact exporter-associated entries from the occurrence contract
+  in `provenance.md`, never global first-token matches. `assemble` verifies the
+  entire real planned set before writing complete-corpus receipts.
+
+Run pilots first with a subset job file. After actually reviewing each pilot,
+write its hash-bound review entry to `build\reviews\<document-id>.json`; all five
+review gates are present (`condition_review` is `not_selected` if no carrier).
+Only then run family siblings. Draft validation/sample sizing requires the
+complete frozen draft set; it does not give writers unfiltered canonical data.
+
+Checkpoints bind canon/plan/draft/job/source/final hashes. Verified completed jobs
+skip mechanical work; changed authoring inputs stop and require an explicit
+affected revision, preserving accepted files. Policy/exception changes rebuild
+only missing review evidence. `assemble` writes manifest/index/mappings/provenance/
+coverage/review-plan, **never** editorial/visual passes or a completed QA audit.
+Run the ordinary `audit` after required reviews populate `qa.json`.
+
+After an initial atomic authoring failure, an approved `correction_file` and
+nonempty `correction_reason` may be supplied without changing the original job.
+They are bound in retry evidence, not used to overwrite a completed artifact.
+For externally corrected read/render failures, `retry_reasons` maps operation
+names (e.g. `render-all`) to concrete corrective actions. One corrective retry is
+persisted across resume; a second failure blocks. Missing/stale numeric caches
+get at most one automatic known-order formula rewrite through OfficeCLI,
+followed by fresh cache/schema/issues/hash checks. No substitute calculator.
+Phase logs distinguish active execution from between-invocation waits.
 
 ## Depth targets
 
@@ -626,6 +739,11 @@ meaningful slides, distinct requirements, or useful analysis modules.
 `adaptation_rationale` records a justified change to the playbook's targets;
 it is not permission to drop required genre sections or unsupported analysis.
 Preserve accepted targets with the run revision. A plan change invalidates
-their binding. The helper does not parse this sidecar or independently measure
-content; the skill's pilot and depth-review workflow must verify coverage,
-targets, and actual delivered measurements honestly.
+their binding. The runner/audit measure saved content using `delivered_words`,
+`delivered_characters`, `delivered_containers`, `delivered_slides` or
+`delivered_sheets`. These are quantity guards, not meaningful-slide/sheet or
+substantive-analysis certification. Genre-specific qualitative targets remain
+part of actual content/pilot review; unsupported required measures need a
+bounded checked adapter before generation, not silent weakening.
+Word/character/container measures deduplicate paragraph/table-cell and other
+physical-text aliases; two locators for the same text cannot inflate depth.

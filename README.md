@@ -9,7 +9,8 @@ configurable genres and **light/medium/deep** detail; attributed statements,
 viewpoints, and evolving sources; portable claim provenance, coverage reporting,
 and simulated access views. Gaps, conflicts, noise, and stale sources are
 **opt-in**; clean, consistent content remains the default. Generation and QA use
-local Microsoft Office.
+[OfficeCLI](https://github.com/iOfficeAI/OfficeCLI) for document operations,
+with no Microsoft Office dependency.
 
 ## Install
 
@@ -27,15 +28,20 @@ To use it elsewhere, copy that **entire folder**, including `references` and
 Do not overwrite an existing installation without reviewing it. Start a new
 Copilot session in the target project after installation.
 
-**Requirements:** Python 3.10+ and locally installed Microsoft Office
-applications for the requested formats, accessed through reviewed Office-backed
-skills or MCPs. If Office or a compliant backend is unavailable, the skill
-notifies you and stops before creating any corpus artifacts.
-No substitute tools are installed automatically.
+**Requirements:** Python 3.10+, reviewed installed OfficeCLI, and the pinned
+Playwright 1.63.0 + matching managed Chromium capture adapter (installed only
+into the active virtual environment, never a system Python). Dependency setup
+explicitly includes authorized OfficeCLI installation/update, official
+versioned assets, SHA-256/version verification, scoped skill/MCP setup, and
+post-update capability probes. No tools are installed automatically. Missing
+required capabilities stop the workflow; native Office and alternative
+document-engine fallbacks are not used.
 
 See `.github\skills\company-content-generator\references\dependencies.md` for
-automation setup, external skill/MCP acquisition, and prerequisite checks.
-Office and companion automation tools are not bundled with this skill.
+setup/update, capability checks and limitations. These tools are not bundled.
+OfficeCLI's HTML export plus Playwright-Chromium capture does not certify
+native Office layout fidelity; unsupported fields/formulas/drawing coverage
+remain explicit blockers.
 
 ## Use
 
@@ -55,6 +61,8 @@ or migrated.
 | Content types | Press releases, product presentations, meeting transcripts, product specs, quarterly/annual reports, HR policies, board decks, financial workbooks, or additional types you describe |
 | Formats | DOCX, PPTX, XLSX, or a narrower selection appropriate to the content types |
 | Depth | **Light**, **medium** (default), or **deep** |
+| QA policy | **Sampled**, **FullContentSampledVisual** (default), or **Full**; independent of depth |
+| Runtime budget | Optional user-supplied budget, enforced at safe checkpoints |
 | Output | Explicit path to a new output directory |
 | Grounding | Existing canonical company data or details about products, financials, acquisitions, and organizational changes |
 | Seed | Optional integer for reproducible structured data; defaults to `42` |
@@ -94,11 +102,16 @@ or migrated.
    not just length. Enrich the canon accordingly, then freeze a dated document
    plan with realistic titles and per-document targets.
 3. **Draft and export.** Write from date-filtered facts so documents cannot
-   reference future developments. Validate claims and export through Microsoft
-   Word, PowerPoint, or Excel.
-4. **Review, fix, and repeat.** Verify pilots before bulk generation. Check
-   factual consistency, genre, depth, and rendered layouts; recalculate Excel
-   formulas. Correct issues and repeat affected QA until the checks pass.
+   reference future developments. Validate claims and execute the shared thin
+   OfficeCLI runner: checked atomic batches/template merges, saved formula checks,
+   forced HTML renders, hash-bound checkpoints and exact exporter associations.
+4. **Review under the selected policy.** Fully review family pilots before bulk
+   use. Sampled reviews selected complete documents; the default reviews all
+   content with sampled visuals; Full reviews all content and visuals. Deterministic
+   family samples always include carriers/exceptions. A failed sample blocks its
+   family and expands review. All policies check every file automatically.
+   Allow one concrete corrective retry, then stop with evidence instead of
+   developing a new backend in-flight.
 5. **Audit delivery.** Verify final files, hashes, and review records. Keep
    provenance in `build\`; automated structural checks do not replace editorial
    and visual review.

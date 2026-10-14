@@ -283,6 +283,61 @@ class ProvenanceTests(unittest.TestCase):
             with self.assertRaisesRegex(company.Invalid, "external"):
                 company.artifact_containers(self.package(Path(directory), "pptx", parts), "pptx")
 
+    def test_xlsx_render_targets_reject_any_drawings_part(self):
+        """verify_render_targets must keep blocking any XLSX package that contains
+        an xl/drawings/*.xml part (i.e. any chart/drawing object), regardless of
+        whether the declared render-target cell ranges otherwise look covered.
+        Region/range coverage of plain cells is not proof of chart-object pixel
+        coverage; see references/dependencies.md capability-probe notes."""
+        x, r = company.NS["x"], company.NS["r"]
+        parts = {
+            "xl/workbook.xml": f'<workbook xmlns="{x}" xmlns:r="{r}"><sheets>'
+                '<sheet name="Data" sheetId="1" r:id="sheet"/></sheets></workbook>',
+            "xl/_rels/workbook.xml.rels": '<Relationships>'
+                f'<Relationship Id="sheet" Type="{r}/worksheet" Target="worksheets/sheet1.xml"/>'
+                '</Relationships>',
+            "xl/worksheets/sheet1.xml": f'<worksheet xmlns="{x}"><sheetData><row r="1">'
+                '<c r="A1"><v>1</v></c></row></sheetData></worksheet>',
+            "xl/drawings/drawing1.xml": '<xdr:wsDr xmlns:xdr='
+                '"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing"/>',
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            path = self.package(Path(directory), "xlsx", parts)
+            with self.assertRaisesRegex(company.Invalid, "drawing/chart visual coverage"):
+                company.verify_render_targets(path, [{"id": "all", "range": "Data!A1:A1"}])
+
+    def test_numeric_cache_round_trip_normalization_retains_raw_evidence(self):
+        x, r = company.NS["x"], company.NS["r"]
+        parts = {
+            "xl/workbook.xml": f'<workbook xmlns="{x}" xmlns:r="{r}"><sheets>'
+                '<sheet name="Ratios" sheetId="1" r:id="sheet"/></sheets></workbook>',
+            "xl/_rels/workbook.xml.rels": '<Relationships>'
+                f'<Relationship Id="sheet" Type="{r}/worksheet" Target="worksheets/sheet1.xml"/>'
+                '</Relationships>',
+            "xl/worksheets/sheet1.xml": f'<worksheet xmlns="{x}"><sheetData><row r="1">'
+                '<c r="A1"><f>ROUND(2148/1000,6)</f><v>2.1480000000000001</v></c>'
+                '<c r="B1" t="n"><v>2.148001</v></c>'
+                '<c r="C1" t="str"><v>2.1480000000000001</v></c>'
+                '<c r="D1"><v>9007199254740993</v></c>'
+                '<c r="E1"><v>0.000001</v></c>'
+                '<c r="F1"><v>12.0</v></c>'
+                '</row></sheetData></worksheet>',
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            entries = company.artifact_containers(self.package(Path(directory), "xlsx", parts), "xlsx")
+            self.assertEqual([entry["text"] for entry in entries],
+                             ["2.148", "2.148001", "2.1480000000000001",
+                              "9007199254740993", "1e-06", "12"])
+            self.assertEqual(entries[0]["raw_numeric_value"], "2.1480000000000001")
+            self.assertEqual(entries[0]["formula"], "ROUND(2148/1000,6)")
+            self.assertNotIn("raw_numeric_value", entries[2])
+            original = parts["xl/worksheets/sheet1.xml"]
+            for invalid in ("NaN", "Infinity", "not-a-number", "1e-9999"):
+                parts["xl/worksheets/sheet1.xml"] = original.replace(
+                    "<v>2.1480000000000001</v>", f"<v>{invalid}</v>", 1)
+                with self.subTest(invalid=invalid), self.assertRaises(company.Invalid):
+                    company.artifact_containers(self.package(Path(directory), "xlsx", parts), "xlsx")
+
     def test_derived_cells_require_real_saved_formulas(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

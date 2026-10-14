@@ -8,7 +8,7 @@ canon/plan fingerprints. Physical paths live in the manifest or optional resourc
 bindings, not canonical business facts. Moving unchanged artifacts and rebinding
 storage does not change their logical provenance.
 
-Create mappings **after the final Microsoft Office save/recalculation**.
+Create mappings **after the final OfficeCLI save and saved-cache verification**.
 Reopening and saving, changing prose, rearranging slides, editing formulas, or
 rewriting properties can invalidate the hash and locator even if the visible
 value looks unchanged. Reindex, remap, reverify, and repeat affected QA. Do not
@@ -17,7 +17,9 @@ write artifact hashes back into the frozen canon.
 ## Exporter handoff
 
 1. Validate the draft against the frozen canon and plan.
-2. Export/save using the verified local Microsoft Office backend.
+2. Author/save with OfficeCLI, using checked standalone batches or flushing
+   run-owned residents. Reopen/check saved formulas and capture required HTML
+   renders. Index only final saved bytes; no Microsoft Office step is required.
 3. Record actual final artifact hashes in `build\manifest.json`.
 4. Run `index-artifacts` with canon, plan, manifest, root, and an explicit
    `build\artifact-index.json` output path.
@@ -60,7 +62,14 @@ An occurrence's `start`/`end` are offsets into that normalized text, with an
 exclusive end. Table/range text joins indexed cell content in row order.
 Every cell of a range must exist in the index. XLSX values are saved scalars or
 formula caches, **not formatted Excel display strings**; styles, currency
-labels, and units still require Excel/semantic QA.
+labels, and units still require OfficeCLI visual and semantic QA.
+Numeric cells use a normalized scalar representation: integral values retain
+exact integer precision, and fractional values use the shortest round-tripping
+binary64 representation. For example, numeric XML `2.1480000000000001` indexes
+as `2.148`, the same binary64 value. The index retains the original XML digits in
+`raw_numeric_value`; string cells are not normalized numerically. This is not
+tolerance-based matching or business rounding. Different scalar values still
+fail exact occurrence matching; OfficeCLI saved-cache expected-value QA remains required.
 
 ## Occurrence mapping contract
 
@@ -117,13 +126,14 @@ formula (a list in row order for ranges). All mapped derived cells need nonempty
 saved formulas and caches. A missing cache is an error, not a request to invent
 one. The helper's arithmetic derivation receipt and saved formula evidence are
 distinct checks: formula dependency equivalence and business meaning still
-need Microsoft Excel recalculation/semantic review.
+need OfficeCLI saved-cache verification and semantic review.
 
 Excel shared-formula followers retain structured saved evidence rather than
 invented expanded formulas: `kind: "shared"`, `index`, `base_cell`,
 `base_formula`, `range`, and `cell`. Copy that exact object into `formula`.
 The reader verifies the shared base and range; relative-reference expansion
-and calculation remain Excel's responsibility. Unsupported array/spill
+and calculation require a separately proven OfficeCLI capability. The default
+runner rejects shared formulas rather than inventing expansion. Unsupported array/spill
 followers without their own formula evidence cannot be mapped as derived
 claims; use a supported formula representation or report an export blocker.
 
