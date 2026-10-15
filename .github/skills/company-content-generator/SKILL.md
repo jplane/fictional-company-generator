@@ -17,7 +17,7 @@ Writers know only what was available at their publication date.
 
 Read `references\contracts.md` and `references\content-types.md` before generating.
 Read `references\dependencies.md` for external sources, installation, and preflight.
-Read `references\provenance.md` before export and final-artifact verification.
+Read `references\provenance.md` before preparing exporter bindings and optional QA.
 Read `references\use-case-layering.md` only when discussing an optional
 customer/use-case layer; do not implement or invoke its illustrative evaluator.
 The Python helper at `scripts\company.py` uses only the standard library. Resolve
@@ -88,22 +88,32 @@ tool where available, for every missing item below before generation:
 - Output location: ask where the corpus should be generated unless an explicit
   path was already supplied. Confirm the resolved location; never silently use
   the working directory, Downloads, or a hardcoded `corpus` folder.
+- Additional QA: explicitly ask during intake, "After generation and its mandatory
+  checks/pilot reviews, should additional corpus QA run?" Offer **No additional QA**
+  (selected by default), **Sampled**, **FullContentSampledVisual**, and **Full**.
+  Reuse an explicitly supplied choice. Do not silently choose for an unavailable
+  user. Record the answer in execution metadata, not the business canon.
 
 Collect only the missing fields in a focused interaction. Do not repeatedly ask
 for values already provided. If the user is unavailable, generation is blocked;
-do not invent a company name, industry, volume, type selection, or output path.
+do not invent a company name, industry, volume, type selection, output path, or QA answer.
 Maintaining this skill is not a request to generate a corpus and needs no intake.
 
 The seed may default to 42. Content depth defaults to **medium**; accept an explicit
 **light**, **medium**, or **deep** setting from the user's request and record it as
 `content_depth`. Mention the default during intake; do not require an extra
 question when the user has not specified a depth. See Content depth below.
-QA policy defaults to **FullContentSampledVisual**. Accept **Sampled** (selected
+Additional corpus QA is **opt-in**, not a prerequisite for generation completion.
+When requested, accept **Sampled** (selected
 complete content and visual reviews), **FullContentSampledVisual** (all content,
 selected visual reviews), or **Full** (all content and visual reviews).
-Review scope is independent of light/medium/deep content depth. Every policy
-still checks all files, claims, date/access, required sections, measurable depth,
-structure/issues, hashes, saved formulas, provenance and coverage.
+Review scope is independent of light/medium/deep content depth. Generation always
+checks all files, claims, date/access, required sections, measurable depth,
+structure/issues, hashes and saved formulas, and fully reviews family pilots.
+Detailed final-artifact provenance, coverage and additional corpus reviews run
+only in the separate QA pass. If selected at intake, invoke that pass automatically
+after verified generation; otherwise stop without running it. A later explicit QA
+request uses accepted files without reauthoring or repeating generation intake.
 An existing canon is supported after copying it into the chosen output layout
 and validating its embedded organization, glossary, and business records.
 Map familiar natural-language types to built-in IDs. For additional types, define their
@@ -132,19 +142,27 @@ The chosen output root must contain exactly:
     request.json
     plan.json
     manifest.json
-    qa.json
+    generation.json
+    qa.json                (only after additional QA reviews)
+    qa-state.json          (additional QA)
     preflight.json
     execution-plan.json
-    review-plan.json
+    review-plan.json        (additional QA)
+    review-work.json        (additional QA; pending gates are not passes)
     runner-state.json
     machine\
+    qa-machine\            (additional QA; generation receipts stay unchanged)
+    document-state\
+    export-bindings\
+    timings.json           (agent-recorded phase spans)
     tool-results\
     reviews\
+    pilot-reviews\         (preserved generation reviews when additional QA starts)
     depth-targets.json
-    artifact-index.json
-    claim-locations.json
-    provenance.json
-    coverage.json
+    artifact-index.json    (additional QA)
+    claim-locations.json   (additional QA)
+    provenance.json        (additional QA)
+    coverage.json          (additional QA)
     resource-bindings.json  (optional)
     views\                 (requested simulated delivery manifests)
     drafts\
@@ -387,20 +405,26 @@ project. Do not run examples with an unset path or assume the example is intake.
    The plan contains the canon's SHA-256 fingerprint, covering the source records
    of the single core artifact, including organization, glossary, and depth setting.
 
-3. **Freeze execution and review scope; draft in bounded batches.** Set
-   `build\execution-plan.json` using `execution_plan` and the contract reference.
-   Bind layout revisions/hashes, QA policy, family pilots, flagged exceptions,
+3. **Freeze execution scope; draft in bounded batches.** For new runs, set
+   `build\execution-plan.json` using `generation_execution_plan` (execution version 2)
+   and the contract reference. Supply the explicit `post_generation_qa` answer.
+   Bind layout revisions/hashes, family pilots, flagged exceptions,
    and a runtime budget only if supplied. Estimate content/visual review counts
-   and confirm image-delivery capacity before bulk work. Deterministic sampling
+   and confirm pilot/selected-QA image-delivery capacity before bulk work. Deterministic sampling
    chooses the first and largest normalized draft per genre/format/layout family,
    plus pilots, condition/source-history carriers and affected exceptions.
-   For each plan item, retrieve its date-filtered context:
+   Use genuinely shared, content-independent layout files: separate document
+   prose/data from layout identity. A family is `(genre, format, layout revision,
+   layout hash)`. Do not generate a new layout per document unless required.
+   Use `family_summary` to report family sizes, pilots, selection reasons and
+   singleton/all-selected warnings; never fake layout reuse to shrink sampling.
+   Prepare the bounded date-filtered contexts together:
 
    ```powershell
-   python .github\skills\company-content-generator\scripts\company.py context --canon "$outputRoot\canon.json" --plan "$outputRoot\build\plan.json" --doc doc-0001 --out "$outputRoot\build\contexts\doc-0001.json"
+   python .github\skills\company-content-generator\scripts\company.py contexts --canon "$outputRoot\canon.json" --plan "$outputRoot\build\plan.json" --out "$outputRoot\build\contexts"
    ```
 
-   Use this context as the only factual input. Never give a writer the unfiltered
+   Each writer uses only its document's context as factual input. Never give a writer the unfiltered
    canon: it includes future actuals, launches, promotions, and acquisitions.
    The context includes date-filtered `org_chart` and `glossary` views.
    `active_roles` identifies the roles effective on that date. Distinguish
@@ -430,6 +454,10 @@ project. Do not run examples with an unset path or assume the example is intake.
    frozen layout files, exact exporter claim associations, grounded expected
    formula bindings and screenshot targets as described in `contracts.md`.
    The runner is not a prose generator or genre-authoring framework.
+   Record `export_bindings` while building jobs. Bind each section/claim use to
+   a checked batch command, exact template target or indexed locator; the helper
+   derives final normalized spans during QA. Do not reconstruct offsets through
+   interactive searches or globally match identical tokens after export.
    Complete one actual planned pilot per layout family and review it fully
    before bulk use. Freeze accepted layouts, not repeated prose. Stress grounded
    long titles/text, historical comparisons and numeric/formula/layout edge cases.
@@ -446,13 +474,15 @@ project. Do not run examples with an unset path or assume the example is intake.
    reopen and verify every cache against independently grounded derived claims.
    At most one corrective known-order OfficeCLI formula rewrite is allowed.
    Missing/stale/error/unsupported caches block; no raw cache injection or
-   deferred calculation on open. Render selected complete documents with
-   OfficeCLI HTML, including all pages/slides or relevant worksheet regions.
+   deferred calculation on open. During generation capture complete pilots and
+   required corrective checks with OfficeCLI HTML; defer other policy-selected
+   captures to QA. Always declare/validate target coverage and supported objects.
    Check all schema/issues and explicit chart caches. Hash/index final saved
    bytes; later edits invalidate affected renders, mappings and reviews.
 
    ```powershell
    python .github\skills\company-content-generator\scripts\officecli_runner.py run --root "$outputRoot" --jobs build\jobs-pilots.json
+   # Inspect every pilot and persist actual reviews before the bulk command.
    python .github\skills\company-content-generator\scripts\officecli_runner.py run --root "$outputRoot" --jobs build\jobs.json
    python .github\skills\company-content-generator\scripts\officecli_runner.py assemble --root "$outputRoot" --jobs build\jobs.json
    ```
@@ -466,56 +496,73 @@ project. Do not run examples with an unset path or assume the example is intake.
    resume; a second failure stops with evidence. Record phase active/wait time.
    Honor user-supplied budgets at safe checkpoints, without inventing a budget
    or promising a fixed completion time.
+   Bulk execution automatically uses up to four independent document workers,
+   bounded by CPUs/eligible jobs; `--workers 1` is the explicit serial override.
+   One owning capture lane reuses one browser. Never run competing runner
+   invocations against the same corpus. A known failure pauses its family;
+   retain findings, correct/review explicitly, and expand affected QA scope.
 
-6. **Verify provenance, audit, and resume safely.** Validate drafts before rendering. Write
-   `build\manifest.json` only for completed documents with paths and SHA-256 hashes.
-   After the complete planned corpus has been exported, index its actual content,
-   associate every section/claim use with a distinct final-file occurrence in
-   `build\claim-locations.json`, and verify those mappings. See
-   `references\provenance.md` for exact locators, normalized spans, numeric
-   rendering, formulas, and the storage-independent identity contract:
-
-   ```powershell
-   python .github\skills\company-content-generator\scripts\company.py index-artifacts --canon "$outputRoot\canon.json" --plan "$outputRoot\build\plan.json" --manifest "$outputRoot\build\manifest.json" --root "$outputRoot" --out "$outputRoot\build\artifact-index.json"
-   python .github\skills\company-content-generator\scripts\company.py verify-provenance --canon "$outputRoot\canon.json" --plan "$outputRoot\build\plan.json" --drafts "$outputRoot\build\drafts" --manifest "$outputRoot\build\manifest.json" --locations "$outputRoot\build\claim-locations.json" --root "$outputRoot" --out "$outputRoot\build\provenance.json"
-   python .github\skills\company-content-generator\scripts\company.py coverage --canon "$outputRoot\canon.json" --plan "$outputRoot\build\plan.json" --drafts "$outputRoot\build\drafts" --manifest "$outputRoot\build\manifest.json" --locations "$outputRoot\build\claim-locations.json" --root "$outputRoot" --out "$outputRoot\build\coverage.json"
-   ```
-
-   Do not map a claim to an unrelated identical token, reuse one occurrence
-   for multiple draft sections, or treat text matching as semantic entailment.
-   Pilots use the helper's read-only `artifact_containers` and `check_draft`
-   functions for individual planned files; complete-corpus commands require
-   a complete manifest and must not be satisfied with fake entries.
-
-   Audit checks the exact target, mixed formats, source claims, planned
-   descriptive filenames, safe file paths, file hashes, and basic Office ZIP/XML
-   integrity:
+6. **Complete generation independently.** `assemble` verifies the entire planned
+   set, generation machine evidence and actual pilot/corrective reviews, then
+   writes `build\manifest.json` and `build\generation.json`. It does not require
+   full provenance/coverage, corpus renders, or `qa.json`. For a standalone recheck:
 
    ```powershell
-   python .github\skills\company-content-generator\scripts\company.py check --canon "$outputRoot\canon.json" --plan "$outputRoot\build\plan.json" --drafts "$outputRoot\build\drafts"
-   python .github\skills\company-content-generator\scripts\company.py audit --canon "$outputRoot\canon.json" --plan "$outputRoot\build\plan.json" --drafts "$outputRoot\build\drafts" --manifest "$outputRoot\build\manifest.json" --root "$outputRoot"
+   python .github\skills\company-content-generator\scripts\company.py audit-generation --canon "$outputRoot\canon.json" --plan "$outputRoot\build\plan.json" --drafts "$outputRoot\build\drafts" --manifest "$outputRoot\build\manifest.json" --root "$outputRoot"
    ```
 
-   This is **structural and claim/evidence validation**, not independent semantic
-   or native-rendering certification. Write actual reviews to `build\qa.json`
-   using the execution/review contract. Audit recomputes required selection and
-   checks artifact/draft/machine/render hashes. Required content reviews need
+   If intake declined additional QA, deliver now: **generation complete;
+   additional corpus QA not requested**. Do not certify unreviewed content,
+   layout, exact final-artifact provenance or complete coverage.
+
+7. **Run additional QA only when selected.** Automatically invoke the separate
+   pass after successful generation if intake selected an intensity. A later
+   explicit request may use `--policy Sampled`, `--policy FullContentSampledVisual`
+   or `--policy Full` without changing canon/drafts/Office files:
+
+   ```powershell
+   python .github\skills\company-content-generator\scripts\officecli_runner.py qa --root "$outputRoot" --jobs build\jobs.json
+   # Perform required reviews in review-work.json; persist actual per-document reviews.
+   python .github\skills\company-content-generator\scripts\officecli_runner.py finalize-qa --root "$outputRoot"
+   ```
+
+   `qa` verifies accepted bytes, resolves private exporter bindings, writes exact
+   mappings/provenance/coverage, determines review scope, and creates only missing
+   selected captures. It writes separate `qa-machine` evidence and a bound
+   `review-plan.json`; `review-work.json` preserves verified existing reviews
+   and marks missing gates pending. Complete actual grouped reviews under
+   `build\reviews`; `finalize-qa` collects them and performs the independent strict
+   audit before marking QA complete. Do not rerun separate indexing, provenance,
+   coverage or audit commands redundantly when this orchestrated pass did them.
+   Required content reviews need
    semantic, genre and `depth_review`; selected visuals need every required
    delivered image. Unselected gates are `not_selected`, never passed.
-   Legacy schema-v2 QA without an execution contract retains all-document gates;
-   no silent downgrade or recertification. Structural genre-section and self-description scans do not independently
+   Documents carrying configured conditions also require `condition_review`.
+   The final audit recomputes selection, provenance and coverage from final bytes
+   and drafts in a fresh validation context; stale/forged receipts fail. It checks
+   evidence, not independent semantic or native-rendering certification.
+   Structural genre-section and self-description scans do not independently
    prove authentic writing or exhaustive absence of disclaimers.
    Check receipts are honest evidence, never prefilled success flags.
-   Documents carrying configured conditions also require `condition_review`.
-   Audit recomputes provenance and coverage from final bytes and drafts; stale
-   or forged receipts fail. It does not independently certify the recorded
-   semantic/visual reviews or infer that all semantic paraphrases of a gap are
-   absent.
+   QA failures preserve generated files and leave QA blocked/pending. Editing
+   accepted bytes requires an explicit affected revision, never a silent repair.
+
+8. **Measure and resume safely.** Use the runner's `phase --action start --name ...`
+   and `phase --action end --id <returned-id>` around actual agent-owned
+   canon/planning, drafting, editorial and visual work (`--pass qa` for QA).
+   Use `--parent` for nested spans and `--document` for document-specific work.
+   End parent spans only after children. Omitted work is unknown, not zero.
+   `summary --root "$outputRoot"` reports wall time separately from overlapping
+   worker/subprocess/capture activity, queue spans, reuse counters, gaps and
+   generation/QA milestones. Never infer where hours went without measurements.
 
    On resume, recheck pinned OfficeCLI identity and required capabilities,
    verify canon/plan/draft/job/layout/final hashes and skip
    only verified documents. A partial corpus must be reported as partial.
    Retry failed documents without changing IDs, dates, facts, or unrelated files.
+   Existing execution-version-1 runs and legacy schema-v2 QA without execution
+   sidecars retain their strict contracts. No automatic downgrade, migration,
+   historical example regeneration, or re-certification is part of this workflow.
 
 ## Consistency rules
 
@@ -546,17 +593,22 @@ project. Do not run examples with an unset path or assume the example is intake.
 
 ## Completion
 
-Deliver root `canon.json`, final documents, and all build inputs/receipts in the
-required layout. Complete the selected content/visual reviews and universal
-automatic checks; do not claim unselected documents were editorially reviewed.
-Report content depth, QA policy, actual reviewed/total content and visual counts,
-counts by year/type/format, coverage warnings, OfficeCLI limitations, and any
-remaining blockers. Never claim the corpus is complete merely because a plan
-or draft set exists.
-Deliver verified provenance and coverage under `build`. If a recipient view is
+Deliver root `canon.json`, final documents, and the actual build inputs/receipts.
+Report generation completion separately from additional QA: not requested,
+pending/awaiting reviews, blocked, or complete. Mandatory generation checks and
+accepted pilot/corrective reviews are required even with no additional QA.
+Report content depth, selected QA intensity if any, actual reviewed/total content
+and visual counts (including pilot work), counts by year/type/format, warnings,
+timing evidence, OfficeCLI limitations and blockers. Do not claim unselected
+documents were reviewed, infer full coverage from the plan, or claim generation
+complete from drafts alone. A selected QA pass is not complete until strict audit
+passes. Verified final-artifact provenance and coverage are delivered under
+`build` only when that pass produces them.
+If a recipient view is
 requested, generate it with `access-view --principal <canonical-person-id-or-public>
 --as-of <YYYY-MM-DD>` and the normal canon/plan/draft/manifest/root arguments.
-The output must be an explicit path under `build\views`. These manifests are
+Completed strict QA/audit is a prerequisite; generation-only output cannot
+produce a certified recipient view. The output must be an explicit path under `build\views`. These manifests are
 simulated selections, not ACLs. Do not distribute the full canon or private
 build tree as an agent-visible corpus.
 

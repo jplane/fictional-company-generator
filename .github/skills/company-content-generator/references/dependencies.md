@@ -224,7 +224,12 @@ worksheet regions. Freeze accepted layouts/commands, not repetitive prose.
 
 Estimate review workload and image-delivery capacity up front. Use one grouped
 review of content, genre, depth, conditions and selected renders per document.
-QA policy controls review scope independently of content depth. A failed sample
+The skill explicitly asks during intake whether to run additional QA, defaulting
+the choice to no additional QA. Mandatory generation checks and full pilot reviews
+still apply. When selected, Sampled/FullContentSampledVisual/Full control the
+separate post-generation pass independently of content depth. Do not capture or
+review every bulk document simply because a QA policy is recorded for later use.
+A failed sample
 blocks its family; record the exception and expand affected-sibling review.
 Missing/undelivered/unreadable images cannot count as reviewed.
 
@@ -234,6 +239,30 @@ corrective retry per logical operation. A user-supplied runtime budget stops at
 a safe checkpoint; no invented budget or completion promise. Preserve verified
 outputs on resume. Changed facts/drafts/layouts require explicit affected
 revisions and fresh mappings/reviews, not silent replacement.
+
+New execution-version-2 runs separate generation completion (`assemble`) from
+additional QA (`qa`, actual reviews, then `finalize-qa`). Exporter-recorded private
+bindings remove manual offset reconstruction; verification still uses actual
+saved bytes. Reuse the helper's operation-scoped validated snapshots rather than
+repeating standalone index/provenance/coverage commands in the orchestrated pass.
+Final independent audit revalidates bytes in a fresh context.
+
+Reuse content-independent layouts, with document-specific prose/data in separate
+jobs. `family_summary` reports singleton families and all-selected visual samples;
+do not introduce a unique layout hash for each document merely because its text
+differs. Existing browser reuse is retained, not reimplemented per document.
+Automatic authoring/check execution uses up to four workers, bounded by available
+CPUs and eligible jobs, with `--workers 1` for explicit serial operation. One
+capture lane owns synchronous Playwright. A run lock and document-owned atomic
+checkpoints prevent competing invocations and aggregate-checkpoint races.
+Required failures are surfaced, not silently retried through another backend.
+
+Record agent-owned planning/drafting/editorial/visual spans with the runner's
+`phase` command, and inspect `summary`. Distinguish wall time, overlapping worker
+activity, capture time and between-invocation gaps; missing phase data is unknown.
+Optimize measured repeated work instead of claiming a timing bottleneck from
+document counts alone. Existing corpora keep their previous contract and are not
+migrated or re-certified by these changes.
 
 Separate backend development from generation. A missing capability produces
 evidence and a blocker, not an open-ended framework-building detour. Delegate

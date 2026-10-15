@@ -62,7 +62,7 @@ or migrated.
 | Content types | Press releases, product presentations, meeting transcripts, product specs, quarterly/annual reports, HR policies, board decks, financial workbooks, or additional types you describe |
 | Formats | DOCX, PPTX, XLSX, or a narrower selection appropriate to the content types |
 | Depth | **Light**, **medium** (default), or **deep** |
-| QA policy | **Sampled**, **FullContentSampledVisual** (default), or **Full**; independent of depth |
+| Additional QA | Asked explicitly during intake: **No additional QA** (default), **Sampled**, **FullContentSampledVisual**, or **Full**; independent of depth |
 | Runtime budget | Optional user-supplied budget, enforced at safe checkpoints |
 | Output | Explicit path to a new output directory |
 | Grounding | Existing canonical company data or details about products, financials, acquisitions, and organizational changes |
@@ -105,17 +105,43 @@ or migrated.
 3. **Draft and export.** Write from date-filtered facts so documents cannot
    reference future developments. Validate claims and execute the shared thin
    OfficeCLI runner: checked atomic batches/template merges, saved formula checks,
-   forced HTML renders, hash-bound checkpoints and exact exporter associations.
-4. **Review under the selected policy.** Fully review family pilots before bulk
-   use. Sampled reviews selected complete documents; the default reviews all
-   content with sampled visuals; Full reviews all content and visuals. Deterministic
-   family samples always include carriers/exceptions. A failed sample blocks its
-   family and expands review. All policies check every file automatically.
+   mandatory pilot HTML captures, hash-bound checkpoints and exporter-recorded
+   claim associations. Shared content-independent layouts amortize pilot work.
+   Bulk authoring uses up to four workers bounded by CPUs/eligible documents,
+   with one reusable capture browser and an explicit `--workers 1` serial override.
+4. **Complete generation.** Fully review family pilots before bulk use and run
+   mechanical checks on every file. Generation completion writes a manifest and
+   generation receipt, not fabricated corpus reviews or full provenance.
    Allow one concrete corrective retry, then stop with evidence instead of
    developing a new backend in-flight.
-5. **Audit delivery.** Verify final files, hashes, and review records. Keep
-   provenance in `build\`; automated structural checks do not replace editorial
-   and visual review.
+5. **Run additional QA only if requested.** Intake explicitly asks whether to run
+   this separate pass after generation, defaulting to no additional QA. Sampled
+   reviews selected complete documents; FullContentSampledVisual reviews all
+   content and sampled visuals; Full reviews all content and visuals. Mandatory
+   selections and affected-family expansion remain. The pass resolves recorded
+   exporter associations, verifies final-file provenance/coverage, captures missing
+   selected visuals and collects actual reviews before an independent final audit.
+   It can also be explicitly invoked later without regenerating files.
+
+Generation and QA have distinct completion states. No additional QA means files
+are generated with mandatory checks and pilot reviews, not that every document
+has been editorially/visually reviewed or its final-artifact provenance certified.
+Existing corpora retain their original strict rules; no upgrade/migration is
+performed. Automated structural checks do not replace editorial/visual review.
+
+For a new-contract corpus, the runner supports:
+
+```powershell
+python .github\skills\company-content-generator\scripts\officecli_runner.py qa --root "C:\CompanyContent\Lumenvale-2022-2024" --jobs build\jobs.json --policy Sampled
+# Complete the required actual reviews under build\reviews, then:
+python .github\skills\company-content-generator\scripts\officecli_runner.py finalize-qa --root "C:\CompanyContent\Lumenvale-2022-2024"
+python .github\skills\company-content-generator\scripts\officecli_runner.py summary --root "C:\CompanyContent\Lumenvale-2022-2024"
+```
+
+The skill records agent-owned planning/drafting/review spans using the runner's
+`phase` command. Timing summaries distinguish wall time, overlapping worker time,
+capture activity and between-invocation gaps; missing agent timing is unknown,
+not zero. No throughput guarantee is inferred from synthetic tests.
 
 ## Included example
 

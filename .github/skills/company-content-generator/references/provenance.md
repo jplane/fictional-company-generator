@@ -8,13 +8,23 @@ canon/plan fingerprints. Physical paths live in the manifest or optional resourc
 bindings, not canonical business facts. Moving unchanged artifacts and rebinding
 storage does not change their logical provenance.
 
-Create mappings **after the final OfficeCLI save and saved-cache verification**.
+Record exporter associations during authoring; resolve exact mappings in the
+explicit QA pass **after the final OfficeCLI save and saved-cache verification**.
 Reopening and saving, changing prose, rearranging slides, editing formulas, or
 rewriting properties can invalidate the hash and locator even if the visible
 value looks unchanged. Reindex, remap, reverify, and repeat affected QA. Do not
 write artifact hashes back into the frozen canon.
 
 ## Exporter handoff
+
+For new execution-version-2 runs, generation persists private associations under
+`build\export-bindings` and completes with a manifest/generation receipt. It does
+not require detailed corpus occurrence mapping or certify complete provenance.
+`officecli_runner.py qa` resolves and verifies those associations, creates the
+index/mappings/provenance/coverage, and prepares additional reviews.
+`finalize-qa` performs an independent strict audit after actual reviews.
+Do not duplicate these full-corpus passes by also invoking each CLI below.
+Existing version-1 execution and direct provenance commands retain the sequence:
 
 1. Validate the draft against the frozen canon and plan.
 2. Author/save with OfficeCLI, using checked standalone batches or flushing
@@ -35,6 +45,66 @@ manifest. For a pilot, `artifact_containers(path, format)` and
 pretend complete manifest. Mapping remains the Office backend/agent's
 responsibility; the helper does not automatically understand natural-language
 claim placement.
+
+## Exporter bindings for new runs
+
+Put a complete `export_bindings` list on each job while authoring, rather than
+calculating final text offsets by hand:
+
+```json
+{
+  "document_id": "doc-0001",
+  "layout_file": "build/layouts/press-release-v1.json",
+  "batch_file": "build/scripts/doc-0001.json",
+  "render_targets": [{"id": "all", "pages": 1}],
+  "export_bindings": [
+    {"section_index": 0, "claim_id": "revenue", "command_index": 2,
+     "fragment": "Revenue reached $12.0 million",
+     "rendering": {"scale": 1000000, "decimals": 1, "prefix": "$", "suffix": " million"}}
+  ]
+}
+```
+
+This is an illustrative binding, not a complete document: every section/claim use
+must be represented. Choose exactly one target form per binding:
+
+- `command_index`: zero-based index in the actual accepted atomic batch. For
+  `set`, the target is its exact `path`. For `add`, the helper uses the successful
+  indexed OfficeCLI result's exact output path, not the command's parent or a
+  first text match. A corrective authoring batch must retain matching binding
+  indices or supply a new affected revision.
+- `target`: exact saved OfficeCLI DOM target for template/merge authoring. Proven
+  automatic translations are Word `/body/p[@paraId=...]`, presentation
+  `/slide[N]/shape[@id=...]`, and workbook `/<sheet>/<cell>`. Word paragraph IDs,
+  slide relationship order/shape IDs, and workbook sheet/cell identity are read
+  from the actual saved package.
+- `locator`: an exact supported final indexed locator, including table cells,
+  notes, header/footer paragraphs, ranges and chart data. This preserves the full
+  locator contract when a backend has an explicit target association but its
+  OfficeCLI DOM translation has not been proven. No manually computed span is
+  needed. Do not guess table/notes DOM paths.
+
+`fragment` optionally identifies grounded text inside that target. The helper
+normalizes it, requires exactly one occurrence of the rendered claim inside the
+fragment, and derives the final span. If the fragment/value appears more than
+once in the bound target, supply an explicit zero-based `occurrence_index` local
+to that target, or a more specific fragment. Missing/ambiguous targets or values
+fail; there is no global first-token search. `rendering` uses the existing exact
+numeric rules below. Derived cells/ranges automatically copy actual saved
+formula evidence for independent verification.
+
+For templates, bind the exact output target associated with the template's
+content slot; the helper is not a prose/template generator and does not infer
+natural-language slot semantics. If a template target cannot be resolved, supply
+an exact indexed association or report the blocker instead of inventing one.
+
+Associations are schema-checked during generation and bind accepted job,
+artifact/draft hashes, commands and successful author result. Exact final-file
+resolution and all-use/physical-span verification occur during QA. Alternatively,
+a job may still supply explicit `occurrences`; strict final-byte checks apply
+unchanged. Bindings never enter OfficeCLI command props, visible text, hidden
+cells, notes or Office properties. Repeated sections still need distinct
+physical occurrences; exporter automation does not relax semantic review.
 
 ## Supported locators
 
@@ -182,7 +252,7 @@ viewpoint/condition coverage. It does not score a downstream agent or measure
 all possible enterprise topics. Condition evidence remains structural plus
 honest semantic condition review.
 
-`access-view` audits first and selects documents for a canonical principal
+`access-view` requires completed strict additional QA, audits first and selects documents for a canonical principal
 or `public` at `--as-of`. It omits full canon fingerprints, condition
 annotations, and inaccessible source identifiers. The manifest does not copy
 files or create secure isolation. Enforce actual ACLs in the delivery system

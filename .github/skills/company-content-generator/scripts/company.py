@@ -10,11 +10,16 @@ import posixpath
 import random
 import re
 import sys
+import time
 import zipfile
 from collections import Counter
+from contextlib import contextmanager
+from contextvars import ContextVar
 from datetime import date, timedelta
 from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
+from functools import wraps
 from pathlib import Path
+from threading import RLock
 from xml.etree import ElementTree
 
 
@@ -41,6 +46,8 @@ DEFAULT_CONTENT_DEPTH = "medium"
 QA_POLICIES = ("Sampled", "FullContentSampledVisual", "Full")
 DEFAULT_QA_POLICY = "FullContentSampledVisual"
 EXECUTION_VERSION = 1
+GENERATION_EXECUTION_VERSION = 2
+_validation_cache = ContextVar("company_validation_cache", default=None)
 MAX_FILENAME_LENGTH = 140
 CONTENT_SECTIONS = {
     "meeting_transcript": ["participants", "discussion", "decisions", "actions"],
@@ -59,6 +66,67 @@ CONTENT_SECTIONS = {
 
 class Invalid(ValueError):
     pass
+
+
+@contextmanager
+def validation_session():
+    """Share immutable validated inputs only within one operation, never across audits."""
+    existing = _validation_cache.get()
+    if existing is not None:
+        yield existing
+        return
+    cache = {"identity": object(), "values": {}, "counts": Counter(), "locks": {}, "lock": RLock()}
+    token = _validation_cache.set(cache)
+    try:
+        yield cache
+    finally:
+        _validation_cache.reset(token)
+
+
+@contextmanager
+def fresh_validation_session():
+    token = _validation_cache.set(None)
+    try:
+        with validation_session() as cache:
+            yield cache
+    finally:
+        _validation_cache.reset(token)
+
+
+def validation_operation(function):
+    @wraps(function)
+    def invoke(*args, **kwargs):
+        with validation_session():
+            return function(*args, **kwargs)
+    return invoke
+
+
+def reused(kind, key):
+    def decorate(function):
+        @wraps(function)
+        def invoke(*args, **kwargs):
+            cache = _validation_cache.get()
+            if cache is None:
+                return function(*args, **kwargs)
+            identity = (kind, key(*args, **kwargs))
+            with cache["lock"]:
+                lock = cache["locks"].setdefault(identity, RLock())
+            with lock:
+                if identity in cache["values"]:
+                    with cache["lock"]:
+                        cache["counts"][kind + "_hits"] += 1
+                    return cache["values"][identity]
+                begin = time.monotonic()
+                try:
+                    result = function(*args, **kwargs)
+                    cache["values"][identity] = result
+                finally:
+                    with cache["lock"]:
+                        cache["counts"][kind + "_computations"] += 1
+                        cache["counts"][kind + "_worker_seconds"] += time.monotonic() - begin
+                return result
+        return invoke
+    return decorate
 
 
 def require(condition, message):
@@ -1129,6 +1197,7 @@ def create_plan(canon):
     return plan
 
 
+@reused("plan", lambda canon, plan: (fingerprint(canon), fingerprint(plan)))
 def validate_plan(canon, plan):
     index = validate_canon(canon)
     registry = type_registry(canon["request"])
@@ -1457,6 +1526,9 @@ def _check_draft(documents, index, canon_sha256, plan_sha256, draft, corpus_id):
             f"{doc['id']}: missing genre sections {set(doc['required_sections']) - roles}")
 
 
+@reused("drafts", lambda canon, plan, directory: (
+    fingerprint(canon), fingerprint(plan), str(Path(directory).resolve()),
+    tuple(sorted((p.name, file_hash(p)) for p in Path(directory).glob("*.json")))))
 def check_drafts(canon, plan, directory):
     documents = validate_plan(canon, plan)
     index = {record["id"]: record for record in canon["records"]}
@@ -1877,6 +1949,7 @@ def spreadsheet_containers(package):
     return entries
 
 
+@reused("artifact", lambda path, fmt: (str(Path(path).resolve()), fmt, file_hash(path)))
 def artifact_containers(path, fmt):
     audit_package(path, fmt)
     try:
@@ -1930,6 +2003,7 @@ def receipt_header(canon, plan):
             "canon_sha256": fingerprint(canon), "plan_sha256": fingerprint(plan)}
 
 
+@validation_operation
 def index_artifacts(canon, plan, manifest, root):
     files = manifest_files(canon, plan, manifest, root)
     return dict(receipt_header(canon, plan), documents=[
@@ -1965,7 +2039,17 @@ def display_value(claim, rendering=None):
 def located_container(containers, locator):
     require(isinstance(locator, dict), "Locator must be an object")
     if locator.get("kind") != "range":
-        matches = [entry for entry in containers if entry["locator"] == locator]
+        cache = _validation_cache.get()
+        key = ("locators", id(containers))
+        if cache is not None:
+            if key not in cache["values"]:
+                lookup = {}
+                for entry in containers:
+                    lookup.setdefault(fingerprint(entry["locator"]), []).append(entry)
+                cache["values"][key] = (containers, lookup)
+            matches = cache["values"][key][1].get(fingerprint(locator), [])
+        else:
+            matches = [entry for entry in containers if entry["locator"] == locator]
         require(len(matches) == 1, "Locator missing or ambiguous; specify an exact indexed container")
         return matches[0]
     require(set(locator) == {"kind", "part", "sheet_id", "sheet", "range"}, "Invalid range locator")
@@ -1984,6 +2068,118 @@ def located_container(containers, locator):
                             formula=[entry.get("formula") for entry in cells])
 
 
+def export_target_locator(path, fmt, containers, target):
+    require(text(target), "Exporter target must be an exact OfficeCLI path")
+    if fmt == "docx":
+        match = re.fullmatch(r"/body/p\[@paraId=([0-9A-Fa-f]+)\]", target)
+        require(match is not None, "Unproven Word exporter target; provide an exact indexed locator")
+        with zipfile.ZipFile(path) as package:
+            paragraphs = xml_part(package, "word/document.xml").findall(".//w:p", NS)
+        matches = [i for i, p in enumerate(paragraphs)
+                   if p.get("{http://schemas.microsoft.com/office/word/2010/wordml}paraId") == match[1]]
+        require(len(matches) == 1, "Missing/ambiguous saved Word paragraph identity")
+        return {"kind": "paragraph", "part": "word/document.xml", "index": matches[0]}
+    if fmt == "pptx":
+        match = re.fullmatch(r"/slide\[([1-9][0-9]*)\]/shape\[@id=([0-9]+)\]", target)
+        require(match is not None, "Unproven presentation target; provide an exact indexed locator")
+        with zipfile.ZipFile(path) as package:
+            main = "ppt/presentation.xml"
+            slides = xml_part(package, main).findall("p:sldIdLst/p:sldId", NS)
+            require(int(match[1]) <= len(slides), "Exporter slide missing")
+            slide = slides[int(match[1]) - 1]
+            part = related_part(relationships(package, main), slide.get("{" + NS["r"] + "}id"), "slide")
+        return {"kind": "shape", "part": part, "slide_id": slide.get("id"), "shape_id": match[2]}
+    require(fmt == "xlsx", "Unsupported exporter format")
+    matches = [c["locator"] for c in containers if c["locator"]["kind"] == "cell"
+               and target == f"/{c['locator']['sheet']}/{c['locator']['cell']}"]
+    require(len(matches) == 1, "Missing/ambiguous saved workbook exporter target")
+    return matches[0]
+
+
+def validate_export_bindings(draft, bindings):
+    require(isinstance(bindings, list) and bindings, "Exporter claim bindings required")
+    expected = {(i, ref) for i, s in enumerate(draft["sections"]) for ref in s["claim_ids"]}
+    represented = set()
+    for binding in bindings:
+        require(isinstance(binding, dict) and not set(binding) - {
+            "claim_id", "section_index", "locator", "command_index", "target",
+            "rendering", "fragment", "occurrence_index"}, "Invalid exporter binding fields")
+        require(integer(binding.get("section_index")) and text(binding.get("claim_id")),
+                "Exporter binding requires section_index and claim_id")
+        pair = (binding["section_index"], binding["claim_id"])
+        require(pair in expected, "Exporter binding references an unknown section/claim use")
+        require(sum(key in binding for key in ("locator", "command_index", "target")) == 1,
+                "Bind exactly one indexed locator, batch command index, or template target")
+        if "locator" in binding:
+            require(isinstance(binding["locator"], dict) and binding["locator"].get("kind") in (
+                "paragraph", "table_cell", "shape", "slide_cell", "notes_shape", "cell", "range", "chart_point"),
+                "Exporter binding needs a supported indexed locator")
+        if "target" in binding:
+            require(text(binding["target"]), "Exporter binding needs an exact nonempty target")
+        if "command_index" in binding:
+            require(integer(binding["command_index"]) and binding["command_index"] >= 0,
+                    "Invalid exporter command index")
+        if "occurrence_index" in binding:
+            require(integer(binding["occurrence_index"]) and binding["occurrence_index"] >= 0,
+                    "Invalid local occurrence index")
+        if "fragment" in binding:
+            require(text(binding["fragment"]), "Exporter fragment must be nonempty")
+        represented.add(pair)
+    require(represented == expected, "Exporter section/claim bindings incomplete")
+
+
+def resolve_export_bindings(path, fmt, draft, bindings, commands=None, author_result=None):
+    validate_export_bindings(draft, bindings)
+    containers = artifact_containers(path, fmt)
+    claims = {c["id"]: c for c in draft["claims"]}
+    result = []
+    for binding in bindings:
+        locator = binding.get("locator")
+        if locator is None:
+            target = binding.get("target")
+            if "command_index" in binding:
+                number = binding["command_index"]
+                require(isinstance(commands, list) and number < len(commands),
+                        "Exporter command index outside checked batch")
+                command = commands[number]
+                if command["command"] == "set":
+                    target = command.get("path")
+                else:
+                    data = author_result.get("data", {}) if isinstance(author_result, dict) else {}
+                    entries = [e for e in data.get("results", []) if e.get("index") == number]
+                    require(len(entries) == 1 and entries[0].get("success") is True,
+                            "Missing checked exporter command result")
+                    match = re.search(r" at (/[^\r\n]+)$", entries[0].get("output", ""))
+                    require(match is not None, "Unproven exporter command target; use an exact locator")
+                    target = match[1]
+            locator = export_target_locator(path, fmt, containers, target)
+        container = located_container(containers, locator)
+        claim = claims[binding["claim_id"]]
+        expected = display_value(claim, binding.get("rendering"))
+        require(expected, "Empty rendered claim cannot be mapped")
+        fragment = normalized(binding.get("fragment", expected))
+        fragments = [m.start() for m in re.finditer(re.escape(fragment), container["text"])]
+        local = [m.start() for m in re.finditer(re.escape(expected), fragment)]
+        require(len(local) == 1, "Exporter fragment must identify exactly one grounded claim value")
+        choices = [offset + local[0] for offset in fragments]
+        if "occurrence_index" in binding:
+            require(binding["occurrence_index"] < len(choices), "Local exporter occurrence missing")
+            start = choices[binding["occurrence_index"]]
+        else:
+            require(len(choices) == 1, "Missing/ambiguous bound value; specify a fragment or local occurrence")
+            start = choices[0]
+        occurrence = {"claim_id": binding["claim_id"], "section_index": binding["section_index"],
+                      "locator": locator, "start": start, "end": start + len(expected),
+                      "expected_text": expected}
+        if "rendering" in binding:
+            occurrence["rendering"] = binding["rendering"]
+        if "derivation" in claim and locator["kind"] in ("cell", "range"):
+            occurrence["formula"] = container.get("formula")
+        result.append(occurrence)
+    return result
+
+
+@validation_operation
 def verify_provenance(canon, plan, drafts, manifest, root, locations):
     check_drafts(canon, plan, drafts)
     version(locations, "Claim locations")
@@ -2269,14 +2465,54 @@ def execution_plan(canon, plan, layouts, pilot_ids, qa_policy=DEFAULT_QA_POLICY,
     return result
 
 
+def generation_execution_plan(canon, plan, layouts, pilot_ids, post_generation_qa,
+                              revision=1, flagged_ids=None, budget_seconds=None,
+                              required_features=None):
+    result = execution_plan(canon, plan, layouts, pilot_ids, revision=revision,
+                            flagged_ids=flagged_ids, budget_seconds=budget_seconds,
+                            required_features=required_features)
+    result.pop("qa_policy")
+    result.update(execution_version=GENERATION_EXECUTION_VERSION,
+                  post_generation_qa=copy.deepcopy(post_generation_qa))
+    validate_execution(canon, plan, result)
+    return result
+
+
+def execution_policy(execution):
+    return (execution["post_generation_qa"]["policy"]
+            if execution["execution_version"] == GENERATION_EXECUTION_VERSION
+            else execution["qa_policy"])
+
+
+def generation_identity(execution):
+    return fingerprint({key: execution[key] for key in (
+        "schema_version", "corpus_id", "canon_sha256", "plan_sha256",
+        "execution_version", "documents", "pilot_ids", "required_features")})
+
+
+def checker_identity():
+    directory = Path(__file__).resolve().parent
+    return {name: file_hash(directory / name) for name in (
+        "company.py", "officecli_runner.py", "playwright_capture.py")}
+
+
 def validate_execution(canon, plan, execution):
     documents = validate_plan(canon, plan)
     require(isinstance(execution, dict) and all(execution.get(k) == v
             for k, v in receipt_header(canon, plan).items()), "Execution fingerprint mismatch")
-    require(execution.get("execution_version") == EXECUTION_VERSION
+    require(execution.get("execution_version") in (EXECUTION_VERSION, GENERATION_EXECUTION_VERSION)
             and integer(execution.get("revision")) and execution["revision"] > 0,
             "Unsupported execution version/revision")
-    require(execution.get("qa_policy") in QA_POLICIES, "Unsupported QA policy")
+    if execution["execution_version"] == GENERATION_EXECUTION_VERSION:
+        choice = execution.get("post_generation_qa")
+        require(isinstance(choice, dict) and set(choice) == {"enabled", "policy"}
+                and type(choice["enabled"]) is bool
+                and (choice["policy"] in QA_POLICIES if choice["enabled"] else choice["policy"] is None)
+                and "qa_policy" not in execution,
+                "Explicit post_generation_qa enabled/policy choice required")
+    else:
+        require("post_generation_qa" not in execution and execution.get("qa_policy") in QA_POLICIES,
+                "Unsupported QA policy")
     features = execution.get("required_features")
     require(isinstance(features, dict) and features.keys() == {d["format"] for d in documents.values()}
             and all(isinstance(values, list) and values and all(text(v) for v in values)
@@ -2299,7 +2535,7 @@ def validate_execution(canon, plan, execution):
                 f"{identifier}: invalid layout hash")
         layouts[identifier] = entry
     require(layouts.keys() == documents.keys(), "Execution layouts incomplete")
-    for key in ("pilot_ids", "flagged_ids"):
+    for key in ("pilot_ids", "flagged_ids") + (("qa_flagged_ids",) if "qa_flagged_ids" in execution else ()):
         ids = execution.get(key)
         require(isinstance(ids, list) and all(isinstance(i, str) and i in documents for i in ids)
                 and len(ids) == len(set(ids)), f"Invalid execution {key}")
@@ -2340,7 +2576,7 @@ def review_selection(canon, plan, drafts, execution, machines=None):
     for record in canon["records"]:
         if record["id"] in history_ids and record["kind"] == "statement":
             history_ids.add(record["data"]["source_version_id"])
-    flagged = set(execution["flagged_ids"]) | {
+    flagged = set(execution["flagged_ids"]) | set(execution.get("qa_flagged_ids", [])) | {
         i for i, machine in machines.items() if machine.get("corrected_failure")}
     affected = {families[i] for i in flagged}
     for identifier, doc in documents.items():
@@ -2351,13 +2587,30 @@ def review_selection(canon, plan, drafts, execution, machines=None):
             reasons[identifier].add("source_history")
         if families[identifier] in affected:
             reasons[identifier].add("affected_family")
-    policy = execution["qa_policy"]
+    policy = execution_policy(execution)
+    generation_only = policy is None
     return [{
         "document_id": i, "draft_sha256": file_hash(Path(drafts) / f"{i}.json"),
         "normalized_content_length": sizes[i], "reasons": sorted(reasons[i]),
-        "content_required": policy != "Sampled" or bool(reasons[i]),
-        "visual_required": policy == "Full" or bool(reasons[i]),
+        "content_required": (i in execution["pilot_ids"] or "affected_family" in reasons[i])
+                            if generation_only else policy != "Sampled" or bool(reasons[i]),
+        "visual_required": (i in execution["pilot_ids"] or "affected_family" in reasons[i])
+                           if generation_only else policy == "Full" or bool(reasons[i]),
     } for i in sorted(documents, key=order)]
+
+
+def family_summary(canon, plan, drafts, execution, machines=None):
+    families = validate_execution(canon, plan, execution)
+    selected = review_selection(canon, plan, drafts, execution, machines)
+    counts = Counter(families.values())
+    return {"families": len(counts), "family_sizes": sorted(counts.values()),
+            "pilots": len(execution["pilot_ids"]),
+            "content_selected": sum(e["content_required"] for e in selected),
+            "visual_selected": sum(e["visual_required"] for e in selected),
+            "selection": selected,
+            "warnings": (["Singleton layout families require individual pilots."] if 1 in counts.values() else [])
+                        + (["Every document is selected for visual review."]
+                           if all(e["visual_required"] for e in selected) else [])}
 
 
 def bound_evidence(root, entry, label):
@@ -2561,6 +2814,7 @@ def verify_render_targets(path, targets):
     return supported
 
 
+@reused("preflight", lambda preflight, root: (fingerprint(preflight), str(Path(root).resolve())))
 def validate_preflight(preflight, root):
     """Preflight schema version 2: OfficeCLI remains the sole authoring/HTML-export/
     formula engine; a bound Playwright+Chromium `capture_tool` identity is required
@@ -2637,15 +2891,30 @@ def validate_required_features(execution, preflight):
             "Required OfficeCLI features need explicit capability probes")
 
 
-def validate_machine(canon, plan, doc, draft_path, artifact_path, root, preflight):
+def validate_machine(canon, plan, doc, draft_path, artifact_path, root, preflight,
+                     machine_directory="machine"):
     identifier = doc["id"]
-    machine = load(Path(root) / "build" / "machine" / f"{identifier}.json")
+    require(machine_directory in ("machine", "qa-machine"), "Invalid machine evidence directory")
+    machine = load(Path(root) / "build" / machine_directory / f"{identifier}.json")
     require(isinstance(machine, dict) and all(machine.get(k) == v for k, v in
             receipt_header(canon, plan).items()), f"{identifier}: machine fingerprint mismatch")
     require(machine.get("document_id") == identifier
             and machine.get("artifact_sha256") == file_hash(artifact_path)
             and machine.get("draft_sha256") == file_hash(draft_path),
             f"{identifier}: stale machine evidence")
+    if machine.get("machine_version") == GENERATION_EXECUTION_VERSION:
+        require(machine.get("checker") == checker_identity(),
+                f"{identifier}: changed checker implementation; use an explicit affected revision")
+        binding_path = Path(root) / "build" / "export-bindings" / f"{identifier}.json"
+        require_build_path(binding_path, root)
+        require(machine.get("export_bindings_sha256") == file_hash(binding_path),
+                f"{identifier}: stale exporter associations")
+        binding = load(binding_path)
+        require(binding.get("document_id") == identifier
+                and binding.get("artifact_sha256") == machine["artifact_sha256"]
+                and binding.get("draft_sha256") == machine["draft_sha256"]
+                and binding.get("job_sha256") == machine.get("job_sha256"),
+                f"{identifier}: exporter associations not bound to generation")
     capability = load(bound_evidence(root, machine.get("capability"), "pinned capability"))
     validate_preflight(capability, root)
     require(machine.get("engine") == "OfficeCLI" and machine.get("tool") == capability.get("tool")
@@ -2706,6 +2975,9 @@ def validate_machine(canon, plan, doc, draft_path, artifact_path, root, prefligh
             and len(targets) == len(set(targets)) and set(targets) == render_ids,
             f"{identifier}: incomplete render coverage")
     if renders:
+        if machine.get("machine_version") == GENERATION_EXECUTION_VERSION:
+            require(machine.get("target_definitions") == machine.get("declared_targets"),
+                    f"{identifier}: captured targets differ from frozen generation targets")
         require("html_export" in {c.get("operation") for c in checks},
                 f"{identifier}: HTML export evidence required before any render/capture")
         definitions = machine.get("target_definitions")
@@ -2749,7 +3021,11 @@ def validate_machine(canon, plan, doc, draft_path, artifact_path, root, prefligh
     return machine
 
 
+@validation_operation
 def make_review_plan(canon, plan, drafts, execution, root, files):
+    require(execution_policy(execution) is not None,
+            "Additional QA not requested; explicitly select a QA policy first")
+    directory = "qa-machine" if execution["execution_version"] == GENERATION_EXECUTION_VERSION else "machine"
     preflight_path = Path(root) / "build" / "preflight.json"
     preflight = load(preflight_path)
     validate_preflight(preflight, root)
@@ -2757,18 +3033,26 @@ def make_review_plan(canon, plan, drafts, execution, root, files):
     require(set(preflight["formats"]) >= {d["format"] for d in plan["documents"]},
             "Incomplete selected-format preflight")
     machines = {doc["id"]: validate_machine(canon, plan, doc,
-                Path(drafts) / f"{doc['id']}.json", files[doc["id"]], root, preflight)
+                Path(drafts) / f"{doc['id']}.json", files[doc["id"]], root, preflight, directory)
                 for doc in plan["documents"]}
+    if execution["execution_version"] == GENERATION_EXECUTION_VERSION:
+        for identifier, machine in machines.items():
+            generation = load(Path(root) / "build" / "machine" / f"{identifier}.json")
+            require(machine.get("machine_version") == GENERATION_EXECUTION_VERSION
+                    and machine.get("generation_sha256") == generation_identity(execution)
+                    and all(machine.get(key) == generation.get(key) for key in (
+                        "job_sha256", "export_bindings_sha256", "declared_targets")),
+                    f"{identifier}: QA machine does not bind the accepted generation inputs")
     selection = review_selection(canon, plan, drafts, execution, machines)
     for entry in selection:
         identifier = entry["document_id"]
         entry["artifact_sha256"] = file_hash(files[identifier])
-        entry["machine_sha256"] = file_hash(Path(root) / "build" / "machine" / f"{identifier}.json")
+        entry["machine_sha256"] = file_hash(Path(root) / "build" / directory / f"{identifier}.json")
         require(not entry["visual_required"] or machines[identifier]["render_targets"],
                 f"{identifier}: required visual review has no renders")
-    return dict(receipt_header(canon, plan), review_version=EXECUTION_VERSION,
+    return dict(receipt_header(canon, plan), review_version=execution["execution_version"],
                 execution_sha256=fingerprint(execution), preflight_sha256=file_hash(preflight_path),
-                qa_policy=execution["qa_policy"], documents=selection)
+                qa_policy=execution_policy(execution), documents=selection)
 
 
 def validate_review(review, doc, selected, machine):
@@ -2793,10 +3077,70 @@ def validate_review(review, doc, selected, machine):
                     f"{identifier}: incomplete/undelivered visual review")
 
 
+def generation_review_path(root, identifier):
+    original = Path(root) / "build" / "pilot-reviews" / f"{identifier}.json"
+    return original if original.exists() else Path(root) / "build" / "reviews" / f"{identifier}.json"
+
+
+@validation_operation
+def audit_generation(canon, plan, drafts, manifest, root):
+    root = Path(root).resolve()
+    execution = load(root / "build" / "execution-plan.json")
+    families = validate_execution(canon, plan, execution)
+    require(execution["execution_version"] == GENERATION_EXECUTION_VERSION,
+            "Generation-only completion requires execution_version 2; existing runs retain strict QA")
+    check_drafts(canon, plan, drafts)
+    files = manifest_files(canon, plan, manifest, root)
+    preflight = load(root / "build" / "preflight.json")
+    validate_preflight(preflight, root)
+    validate_required_features(execution, preflight)
+    docs = {d["id"]: d for d in plan["documents"]}
+    machines = {}
+    for identifier, path in files.items():
+        doc = docs[identifier]
+        machines[identifier] = validate_machine(canon, plan, doc, Path(drafts) / f"{identifier}.json",
+                                                 path, root, preflight)
+        machine = machines[identifier]
+        require(machine.get("machine_version") == GENERATION_EXECUTION_VERSION
+                and machine.get("generation_sha256") == generation_identity(execution),
+                f"{identifier}: stale generation contract")
+        verify_render_targets(path, machine.get("declared_targets"))
+    required_pilots = set(execution["pilot_ids"])
+    affected = {families[i] for i, m in machines.items() if m.get("corrected_failure")}
+    affected.update(families[i] for i in execution["flagged_ids"])
+    required_pilots.update(i for i in docs if families[i] in affected)
+    for identifier in required_pilots:
+        machine = machines[identifier]
+        review = load(generation_review_path(root, identifier))
+        require(review.get("document_id") == identifier
+                and review.get("artifact_sha256") == machine["artifact_sha256"]
+                and review.get("draft_sha256") == machine["draft_sha256"]
+                and review.get("machine_sha256") == file_hash(root / "build" / "machine" / f"{identifier}.json"),
+                f"{identifier}: stale pilot/corrective review")
+        require(machine["renders"], f"{identifier}: pilot/corrective review needs actual captures")
+        validate_review(review, docs[identifier], {"content_required": True, "visual_required": True}, machine)
+    return {"generation_status": "complete", "documents": len(files),
+            "counts": {"formats": dict(Counter(d["format"] for d in docs.values())),
+                       "types": dict(Counter(d["type"] for d in docs.values())),
+                       "publication_years": dict(Counter(d["publication_date"][:4] for d in docs.values()))},
+            "qa_status": "pending" if execution_policy(execution) else "not_requested",
+            "qa_policy": execution_policy(execution), "pilot_and_corrective_reviews": len(required_pilots),
+            "validation": "generation checks and pilot/corrective reviews; corpus QA/provenance not certified"}
+
+
+@validation_operation
 def audit(canon, plan, drafts, manifest, root):
     documents = validate_plan(canon, plan)
     check_drafts(canon, plan, drafts)
     root = Path(root).resolve()
+    execution_path = root / "build" / "execution-plan.json"
+    if execution_path.exists():
+        execution = load(execution_path)
+        validate_execution(canon, plan, execution)
+        if execution["execution_version"] == GENERATION_EXECUTION_VERSION:
+            require(execution_policy(execution) is not None and (root / "build" / "qa.json").is_file(),
+                    "Additional QA incomplete; run the explicit QA pass before audit/access-view")
+            audit_generation(canon, plan, drafts, manifest, root)
     require_build_path(drafts, root)
     files = manifest_files(canon, plan, manifest, root)
     hashes = {identifier: file_hash(path) for identifier, path in files.items()}
@@ -2817,12 +3161,13 @@ def audit(canon, plan, drafts, manifest, root):
         execution = load(execution_path)
         expected = make_review_plan(canon, plan, drafts, execution, root, files)
         require(expected == load(root / "build" / "review-plan.json"), "Stale/incorrect review selection")
-        require(qa.get("execution_version") == EXECUTION_VERSION
+        require(qa.get("execution_version") == execution["execution_version"]
                 and qa.get("execution_sha256") == fingerprint(execution)
                 and qa.get("review_plan_sha256") == fingerprint(expected)
-                and qa.get("qa_policy") == execution["qa_policy"], "QA policy/execution mismatch")
+                and qa.get("qa_policy") == execution_policy(execution), "QA policy/execution mismatch")
         selection = {entry["document_id"]: entry for entry in expected["documents"]}
-        machines = {i: load(root / "build" / "machine" / f"{i}.json") for i in files}
+        directory = "qa-machine" if execution["execution_version"] == GENERATION_EXECUTION_VERSION else "machine"
+        machines = {i: load(root / "build" / directory / f"{i}.json") for i in files}
     reviewed = set()
     for review in reviews:
         require(isinstance(review, dict), "Invalid QA entry")
@@ -2879,18 +3224,18 @@ def main(argv=None):
     init.add_argument("--config", required=True)
     init.add_argument("--out", required=True)
     artifact_commands = ("index-artifacts", "verify-provenance", "coverage", "access-view")
-    for name in ("validate", "plan", "context", "check", "audit") + artifact_commands:
+    for name in ("validate", "plan", "context", "contexts", "check", "audit", "audit-generation") + artifact_commands:
         command = commands.add_parser(name)
         command.add_argument("--canon", required=True)
-        if name in ("context", "check", "audit") + artifact_commands:
+        if name in ("context", "contexts", "check", "audit", "audit-generation") + artifact_commands:
             command.add_argument("--plan", required=True)
-        if name in ("plan", "context") + artifact_commands:
+        if name in ("plan", "context", "contexts") + artifact_commands:
             command.add_argument("--out", required=True)
         if name == "context":
             command.add_argument("--doc", required=True)
-        if name in ("check", "audit", "verify-provenance", "coverage", "access-view"):
+        if name in ("check", "audit", "audit-generation", "verify-provenance", "coverage", "access-view"):
             command.add_argument("--drafts", required=True)
-        if name in ("audit",) + artifact_commands:
+        if name in ("audit", "audit-generation") + artifact_commands:
             command.add_argument("--manifest", required=True)
             command.add_argument("--root", required=True)
         if name in ("verify-provenance", "coverage"):
@@ -2926,11 +3271,24 @@ def main(argv=None):
                 if args.command == "context":
                     save(args.out, get_context(canon, plan, args.doc))
                     result = {"context": args.out}
+                elif args.command == "contexts":
+                    with validation_session():
+                        documents = validate_plan(canon, plan)
+                        for identifier in documents:
+                            path = Path(args.out) / f"{identifier}.json"
+                            context = get_context(canon, plan, identifier)
+                            if path.exists():
+                                require(load(path) == context, f"{identifier}: stale context; use a new revision")
+                            else:
+                                save(path, context)
+                        result = {"contexts": len(documents), "directory": args.out}
                 elif args.command == "check":
                     result = {"drafts": check_drafts(canon, plan, args.drafts),
                               "validation": "claim receipts only; semantic review required"}
                 elif args.command == "audit":
                     result = audit(canon, plan, args.drafts, load(args.manifest), args.root)
+                elif args.command == "audit-generation":
+                    result = audit_generation(canon, plan, args.drafts, load(args.manifest), args.root)
                 elif args.command == "index-artifacts":
                     result = index_artifacts(canon, plan, load(args.manifest), args.root)
                     save(args.out, result)

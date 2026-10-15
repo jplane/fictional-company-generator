@@ -511,10 +511,140 @@ parsable XML, and mandatory parts, not full OOXML schema conformance.
 Each artifact's basename must exactly match the corresponding plan `filename`;
 a generic filename is rejected even when the bytes and hash are valid.
 
-### Execution and review scope (new runs)
+### Generation and optional QA (new runs)
 
-Business `schema_version` stays **2**. New execution sidecars separately use
-`execution_version: 1` / `review_version: 1`. Create
+Business `schema_version` remains **2**. New runs use **execution version 2**
+through `company.generation_execution_plan(canon, plan, layouts, pilot_ids,
+post_generation_qa, revision=1, flagged_ids=[], budget_seconds=None,
+required_features=None)`. `post_generation_qa` is required and must be exactly:
+
+```json
+{"enabled": false, "policy": null}
+```
+
+or, for explicitly requested additional QA:
+
+```json
+{"enabled": true, "policy": "FullContentSampledVisual"}
+```
+
+The other supported intensities are `Sampled` and `Full`. Disabled QA is not a
+fourth intensity. The skill asks this question during intake with **No additional
+QA** selected by default; it must not silently substitute for an unanswered
+question. Reuse a supplied explicit answer. Operational choices are outside
+`canon.json`; enabling later QA does not change business identity or facts.
+
+The factory preserves layout/pilot/feature/budget validation below but replaces
+the old top-level `qa_policy` with `post_generation_qa`. Contradictory flags,
+missing choices and unknown versions fail. `generation_identity` excludes review
+policy/revision/flags/budget, binding only the business identity, execution
+version, frozen layouts, pilots and required capabilities. A new explicit
+execution revision changes review scope without changing authoring inputs.
+The `execution_plan` helper remains the version-1 builder for existing callers;
+it is not the new generation-only entry point.
+
+**Generation completion** requires complete verified files, automatic checks and
+actual full pilot/corrective reviews, not corpus QA. `run` prepares pilots, then
+awaits their reviews before scheduling siblings. `assemble` writes the manifest
+and `build\generation.json` after `audit_generation`; `company.py
+audit-generation` is the standalone recheck. Generation checks retain canonical
+claims/date/access/sections, package integrity/self-description, title/filename,
+depth measurements, OfficeCLI validation/issues/extraction, saved formulas and
+chart-cache scans. Declare and structurally verify all render targets even for
+uncaptured documents. All unproven fields/drawings/charts/formulas still block.
+
+`machine_version: 2` generation receipts stay under `build\machine`. They bind
+`generation_sha256`, `job_sha256`, private `export_bindings_sha256`, actual bytes,
+drafts, capability identities, declared targets and completed mechanical work.
+They also bind the helper/runner/capture-adapter source hashes; changed checkers
+require an explicit affected revision, not silent receipt reuse.
+Private authoring associations live under `build\export-bindings`. Generation
+does not certify every sibling's rendered layout or exact final-file claim
+locations. Capture complete pilots and explicit corrective review documents;
+do not silently perform bulk policy-selected captures when QA is disabled.
+
+`build\generation.json` reports `generation_status: "complete"`, actual count,
+the generation fingerprint, completion timestamp, pilot/corrective-review count
+and the QA state at that milestone (`not_requested` or `pending`).
+Missing/failed generation must be reported as partial/blocked, not completed.
+`qa-state.json` is the authoritative subsequent QA milestone; later QA does not
+rewrite an accepted generation milestone merely to update its historical label.
+
+**Optional QA** is a separate runner command:
+
+```powershell
+python .github\skills\company-content-generator\scripts\officecli_runner.py qa --root "$outputRoot" --jobs build\jobs.json
+# A later explicit choice can add --policy Sampled, FullContentSampledVisual, or Full.
+```
+
+Invoke it automatically after generation if intake selected QA; do not invoke it
+otherwise. It first verifies generation, then prepares missing selected renders
+and separate `build\qa-machine` evidence without reauthoring files. Selection can
+be computed before renders exist; final `make_review_plan` binding still requires
+actual selected renders. Exact mappings, index, verified provenance and coverage
+are assembled in this pass. `review_version: 2` binds the execution fingerprint,
+preflight file, draft/artifact hashes, QA machine hashes and required gates.
+
+`build\review-work.json` holds pending required gates and any reusable actual
+reviews, never invented passes. Reviewers save actual per-document entries under
+`build\reviews`. Entries bind document/artifact/draft, current QA `machine_sha256`
+and stable `generation_machine_sha256`. Unchanged content evidence can be reused
+when only visual scope expands; visuals additionally require their current
+machine binding. The original accepted generation pilot review is preserved at
+`build\pilot-reviews\<id>.json` when additional QA starts, so replacing a combined
+QA review cannot invalidate the pilot gate.
+
+`finalize-qa` collects and validates reviews, writes `qa.json` with
+`execution_version: 2`, and performs a fresh independent strict audit. It never
+authors passes. QA states are `preparing`, `awaiting_reviews`, `blocked`, or
+`complete`; missing required reviews remain pending and prevent completion.
+`audit`/`access-view` require selected, complete QA rather than accepting
+generation-only evidence.
+
+Family sampling/intensities below apply to this optional pass. Corrected QA
+failures persist `qa_flagged_ids` in a newer execution revision and expand both
+content/visual scope for the entire affected family, without changing generation
+checks or claiming its outputs failed. Generation `flagged_ids` and corrected
+generation failures require actual generation corrective reviews. Known failures
+are never waived by choosing no additional QA. An editorial/visual sample failure
+must be retained and its family explicitly flagged before resuming QA.
+
+**Resume and concurrency:** `runner_version: 2` aggregates document-owned durable
+records under `build\document-state`. QA work has a distinct nested `qa_state`;
+it never consumes generation's successful-state evidence or rewrites generation
+machine receipts. Persist attempts before side effects, including captures.
+One concrete corrective retry is allowed across resume; a second failure stops.
+Accepted artifact bytes and identity do not change for policy-only revisions.
+
+The coordinator uses up to four authoring/check workers, bounded by CPUs and
+eligible jobs; `--workers 1` forces serial execution. A single capture lane owns
+and reuses synchronous Playwright. Only the coordinator writes the aggregate
+checkpoint, while each worker atomically writes its own document record. A kernel
+file lock rejects competing mutating invocations; process exit releases the lock,
+so an abandoned lock file is not a stale ownership claim. Failures stop dispatch
+for their family; in-flight jobs checkpoint at safe boundaries. User-supplied
+budgets use accumulated active run wall time across resume, not the sum of
+overlapping worker durations. No automatic tool fallback/concurrency downgrade.
+
+**Timing:** `phase --root ... --action start --name drafting` returns a span ID;
+end it with `phase --root ... --action end --id <id>`. Optional `--pass qa`,
+`--document <id>`, and `--parent <span-id>` bind actual agent work. End children
+first. `summary --root ...` reports runner wall time, worker/subprocess/capture
+activity, document queue spans, cache/computation counts, measurements and
+milestones. Leaf agent spans are elapsed observations, never inferred active
+time. Missing spans are unknown. Do not sum parents/children or overlapping
+worker totals into wall time.
+
+An operation-scoped validated snapshot reuses plans, drafts, capability evidence,
+container indexes and exact locator maps. Artifact indexes are keyed by actual
+byte hashes; fresh independent audit contexts re-read bytes/evidence and
+recompute provenance/coverage. No caller-controlled skip-validation flag or
+mtime-only trust is permitted.
+
+### Existing execution-version-1 and shared review rules
+
+Business `schema_version` stays **2**. Existing execution sidecars separately use
+`execution_version: 1` / `review_version: 1`. Their original builder is
 `build\execution-plan.json` through `company.execution_plan(canon, plan, layouts,
 pilot_ids, qa_policy="FullContentSampledVisual", revision=1, flagged_ids=[],
 budget_seconds=None)`. Its header is `receipt_header(canon, plan)`; every layout
@@ -528,7 +658,7 @@ budget is positive user-supplied seconds, never an inferred time promise.
 | Policy | Complete content review | Complete visual review |
 |---|---|---|
 | `Sampled` | Deterministic sample + mandatory documents | Same selection |
-| `FullContentSampledVisual` (default) | Every document | Deterministic sample + mandatory documents |
+| `FullContentSampledVisual` (version-1 default) | Every document | Deterministic sample + mandatory documents |
 | `Full` | Every document | Every document |
 
 Sampling takes first publication/date-ID and largest normalized draft-section
@@ -681,7 +811,8 @@ an authoring framework. Store a JSON array of jobs under `build`; each job has:
   `claim_id` binds an independently checked draft `derivation`; bindings are in
   dependency order, and include every formula. Unsupported/shared/array forms
   stop rather than inventing values. Empty bindings are valid only for no formulas.
-- `render_targets`: `[{"id": "all"}]` for DOCX/PPTX; for XLSX,
+- `render_targets`: `[{"id": "all", "pages": 2}]` for DOCX or
+  `[{"id": "all", "slides": 10}]` for PPTX; for XLSX,
   `[{"id": "results", "type": "range", "range": "Results!A1:F40"}, ...]`,
   covering all populated cells. Declare targets even if currently unselected
   so expansion can render accepted bytes later. Standard column/line chart
@@ -694,9 +825,15 @@ an authoring framework. Store a JSON array of jobs under `build`; each job has:
   satisfy chart coverage). A target's own `expected_dom_path`, if supplied,
   must match the current inventory exactly — editing/reordering the workbook
   invalidates a stale path rather than silently matching the wrong object.
-- `occurrences`: exact exporter-associated entries from the occurrence contract
+- For execution version 2, `export_bindings`: complete private section/claim
+  associations recorded during authoring, resolved mechanically during QA. See
+  `provenance.md` for batch command indices, exact template targets/indexed locators,
+  local fragments and ambiguity handling. This avoids manually maintaining final
+  normalized offsets. Do not attach private metadata to OfficeCLI command props.
+- Alternatively `occurrences`: exact exporter-associated entries from the occurrence contract
   in `provenance.md`, never global first-token matches. `assemble` verifies the
-  entire real planned set before writing complete-corpus receipts.
+  entire real planned set before writing complete-corpus receipts. Version-1 jobs
+  retain this original required field.
 
 Run pilots first with a subset job file. After actually reviewing each pilot,
 write its hash-bound review entry to `build\reviews\<document-id>.json`; all five
@@ -707,7 +844,7 @@ complete frozen draft set; it does not give writers unfiltered canonical data.
 Checkpoints bind canon/plan/draft/job/source/final hashes. Verified completed jobs
 skip mechanical work; changed authoring inputs stop and require an explicit
 affected revision, preserving accepted files. Policy/exception changes rebuild
-only missing review evidence. `assemble` writes manifest/index/mappings/provenance/
+only missing review evidence. Version-1 `assemble` writes manifest/index/mappings/provenance/
 coverage/review-plan, **never** editorial/visual passes or a completed QA audit.
 Run the ordinary `audit` after required reviews populate `qa.json`.
 

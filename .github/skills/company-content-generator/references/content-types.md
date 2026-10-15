@@ -54,6 +54,9 @@ detail; it does not change the corpus's requested document count.
 It also does not change source validity, attribution, access boundaries,
 provenance completeness, or configured condition counts. Deep is not a
 synonym for difficult, conflicting, or noisy.
+All depths retain mandatory generation checks and fully reviewed family pilots.
+Additional corpus reviews and exact final-artifact provenance verification run
+only when the user selects the separate QA pass; depth never opts into that pass.
 
 ### Richness of sources and viewpoints
 
