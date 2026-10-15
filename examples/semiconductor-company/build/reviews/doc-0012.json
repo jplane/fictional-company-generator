@@ -1,0 +1,38 @@
+{
+  "document_id": "doc-0012",
+  "artifact_sha256": "1451a2a5b0f9f295a9b2b68cbd7987ef454b7617499a4badfc2d37e3264efb13",
+  "draft_sha256": "6082a62dc7cb4d6f481bad672b596dc5128023e37118798b43b8f92d35ba7ec7",
+  "machine_sha256": "0bac4fb94c58c30f54a00f30cc562ce1b1a065b5b1e2f09c01ca829ea66d55eb",
+  "semantic_review": {
+    "status": "passed",
+    "evidence": "SunnySemi LLC - 2025 Production Readiness and Profitable scale: Reviewed every speaker turn against the meeting positions, current role snapshot, Q2 actuals, product operating boundaries, rejected unconditional ramp, decision and three owned/due actions. Preparation, release qualification and board capital authority remain distinct."
+  },
+  "genre_review": {
+    "status": "passed",
+    "evidence": "Reviewed complete delivered content in its business genre: Reviewed every speaker turn against the meeting positions, current role snapshot, Q2 actuals, product operating boundaries, rejected unconditional ramp, decision and three owned/due actions. Preparation, release qualification and board capital authority remain distinct. Ordinary company voice; no placeholders or generation self-labels."
+  },
+  "depth_review": {
+    "status": "passed",
+    "content_depth": "medium",
+    "evidence": "Discussion-only count exceeds 1500 words. Back-and-forth covers alternatives, economic implications, technical dependencies, unresolved adoption schedules and concrete commitments. Saved-content measurement: 1966 delivered_words; draft measures {'document_id': 'doc-0012', 'type': 'meeting_transcript', 'draft_words': 1882, 'discussion_words': 1782, 'requirements': None, 'analysis_modules': None}."
+  },
+  "visual_review": {
+    "status": "passed",
+    "images_delivered": true,
+    "render_ids": [
+      "all"
+    ],
+    "evidence": "Six explicit pages; complete timestamped dialogue and the final decision/action list are readable without clipping. The opening page is a concise meeting-record cover. Inspected 6 complete unit images.",
+    "inspected_images": [
+      "build\\renders\\doc-0012\\all\\page-1.png",
+      "build\\renders\\doc-0012\\all\\page-2.png",
+      "build\\renders\\doc-0012\\all\\page-3.png",
+      "build\\renders\\doc-0012\\all\\page-4.png",
+      "build\\renders\\doc-0012\\all\\page-5.png",
+      "build\\renders\\doc-0012\\all\\page-6.png"
+    ]
+  },
+  "condition_review": {
+    "status": "not_selected"
+  }
+}

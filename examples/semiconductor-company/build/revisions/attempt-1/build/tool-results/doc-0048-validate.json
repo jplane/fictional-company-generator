@@ -1,0 +1,24 @@
+{
+  "arguments": [
+    "validate",
+    "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx"
+  ],
+  "operation": "validate",
+  "started_at": "2026-10-15T16:46:19.556504+00:00",
+  "ended_at": "2026-10-15T16:46:21.325234+00:00",
+  "active_seconds": 1.7687306000152603,
+  "waiting_seconds": 0,
+  "returncode": 0,
+  "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"errors\": []\n  }\n}\n",
+  "stderr": "",
+  "tool": {
+    "version": "1.0.157",
+    "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+  },
+  "corrective": false,
+  "pass": "generation",
+  "repeat_success": true,
+  "artifact_sha256": "3cfc4410ae0aeb06dd097691931b2689ad181e0b259984e71b98c92f1d13ae57",
+  "status": "passed",
+  "evidence": "Checked complete OfficeCLI result without errors/caveats"
+}

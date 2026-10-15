@@ -1,0 +1,402 @@
+[
+  {
+    "document_id": "doc-0044",
+    "type": "product_spec",
+    "draft_words": 1068,
+    "discussion_words": 0,
+    "requirements": 16,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0025",
+    "type": "financial_model",
+    "draft_words": 230,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": 6
+  },
+  {
+    "document_id": "doc-0019",
+    "type": "board_deck",
+    "draft_words": 265,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0013",
+    "type": "meeting_transcript",
+    "draft_words": 1881,
+    "discussion_words": 1780,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0001",
+    "type": "press_release",
+    "draft_words": 559,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0007",
+    "type": "press_release",
+    "draft_words": 589,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0038",
+    "type": "product_presentation",
+    "draft_words": 249,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0050",
+    "type": "financial_model",
+    "draft_words": 230,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": 6
+  },
+  {
+    "document_id": "doc-0027",
+    "type": "product_spec",
+    "draft_words": 1068,
+    "discussion_words": 0,
+    "requirements": 16,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0043",
+    "type": "financial_model",
+    "draft_words": 226,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": 6
+  },
+  {
+    "document_id": "doc-0037",
+    "type": "board_deck",
+    "draft_words": 262,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0033",
+    "type": "meeting_transcript",
+    "draft_words": 1870,
+    "discussion_words": 1771,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0002",
+    "type": "press_release",
+    "draft_words": 589,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0031",
+    "type": "press_release",
+    "draft_words": 559,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0008",
+    "type": "product_presentation",
+    "draft_words": 249,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0014",
+    "type": "financial_model",
+    "draft_words": 226,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": 6
+  },
+  {
+    "document_id": "doc-0009",
+    "type": "product_spec",
+    "draft_words": 1068,
+    "discussion_words": 0,
+    "requirements": 16,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0040",
+    "type": "financial_model",
+    "draft_words": 229,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": 6
+  },
+  {
+    "document_id": "doc-0032",
+    "type": "board_deck",
+    "draft_words": 268,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0026",
+    "type": "meeting_transcript",
+    "draft_words": 1879,
+    "discussion_words": 1780,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0020",
+    "type": "press_release",
+    "draft_words": 559,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0049",
+    "type": "press_release",
+    "draft_words": 589,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0003",
+    "type": "product_presentation",
+    "draft_words": 249,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0024",
+    "type": "product_presentation",
+    "draft_words": 280,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0046",
+    "type": "financial_model",
+    "draft_words": 229,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": 6
+  },
+  {
+    "document_id": "doc-0010",
+    "type": "product_spec",
+    "draft_words": 1068,
+    "discussion_words": 0,
+    "requirements": 16,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0016",
+    "type": "financial_model",
+    "draft_words": 230,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": 6
+  },
+  {
+    "document_id": "doc-0045",
+    "type": "board_deck",
+    "draft_words": 266,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0039",
+    "type": "meeting_transcript",
+    "draft_words": 1882,
+    "discussion_words": 1781,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0015",
+    "type": "press_release",
+    "draft_words": 559,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0021",
+    "type": "press_release",
+    "draft_words": 589,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0004",
+    "type": "product_presentation",
+    "draft_words": 249,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0022",
+    "type": "financial_model",
+    "draft_words": 230,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": 6
+  },
+  {
+    "document_id": "doc-0011",
+    "type": "product_spec",
+    "draft_words": 1068,
+    "discussion_words": 0,
+    "requirements": 16,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0029",
+    "type": "financial_model",
+    "draft_words": 229,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": 6
+  },
+  {
+    "document_id": "doc-0023",
+    "type": "board_deck",
+    "draft_words": 265,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0017",
+    "type": "meeting_transcript",
+    "draft_words": 1878,
+    "discussion_words": 1779,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0028",
+    "type": "press_release",
+    "draft_words": 561,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0034",
+    "type": "press_release",
+    "draft_words": 591,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0005",
+    "type": "product_presentation",
+    "draft_words": 250,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0035",
+    "type": "financial_model",
+    "draft_words": 229,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": 6
+  },
+  {
+    "document_id": "doc-0030",
+    "type": "product_spec",
+    "draft_words": 1068,
+    "discussion_words": 0,
+    "requirements": 16,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0018",
+    "type": "financial_model",
+    "draft_words": 230,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": 6
+  },
+  {
+    "document_id": "doc-0036",
+    "type": "board_deck",
+    "draft_words": 266,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0012",
+    "type": "meeting_transcript",
+    "draft_words": 1882,
+    "discussion_words": 1782,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0041",
+    "type": "press_release",
+    "draft_words": 561,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0047",
+    "type": "press_release",
+    "draft_words": 591,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0006",
+    "type": "product_presentation",
+    "draft_words": 250,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0048",
+    "type": "product_presentation",
+    "draft_words": 281,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": null
+  },
+  {
+    "document_id": "doc-0042",
+    "type": "financial_model",
+    "draft_words": 230,
+    "discussion_words": 0,
+    "requirements": null,
+    "analysis_modules": 6
+  }
+]

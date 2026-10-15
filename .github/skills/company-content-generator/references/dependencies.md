@@ -226,7 +226,7 @@ Estimate review workload and image-delivery capacity up front. Use one grouped
 review of content, genre, depth, conditions and selected renders per document.
 The skill explicitly asks during intake whether to run additional QA, defaulting
 the choice to no additional QA. Mandatory generation checks and full pilot reviews
-still apply. When selected, Sampled/FullContentSampledVisual/Full control the
+still apply. When selected, Sampled/Balanced/Full control the
 separate post-generation pass independently of content depth. Do not capture or
 review every bulk document simply because a QA policy is recorded for later use.
 A failed sample

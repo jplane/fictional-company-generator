@@ -1,0 +1,34 @@
+{
+  "document_id": "doc-0049",
+  "artifact_sha256": "2cb333d0758632f88cd0025c041c902dc765b3b2709f472fa5811cb16027127e",
+  "draft_sha256": "66100b7690365902b4a7f5e2e7e2b071b9244e4f4e13e9729de8c53b03702fa3",
+  "machine_sha256": "c7a6f056aa036122d5cfba65fa7e91b081cbec6b55a2261df58e7c053e08e962",
+  "semantic_review": {
+    "status": "passed",
+    "evidence": "SunnySemi LLC Launches GulfSwitch 3.0 Power Control: Reviewed the complete release against the launched milestone, version-specific capabilities, approved CEO quote, operating constraints, availability, Florida business description and reserved-domain contacts. GulfSwitch efficiency is qualified by its reference conditions; SunCore peak compute is not represented as sustained customer performance."
+  },
+  "genre_review": {
+    "status": "passed",
+    "evidence": "Reviewed complete delivered content in its business genre: Reviewed the complete release against the launched milestone, version-specific capabilities, approved CEO quote, operating constraints, availability, Florida business description and reserved-domain contacts. GulfSwitch efficiency is qualified by its reference conditions; SunCore peak compute is not represented as sustained customer performance. Ordinary company voice; no placeholders or generation self-labels."
+  },
+  "depth_review": {
+    "status": "passed",
+    "content_depth": "medium",
+    "evidence": "Delivered release meets the 450-700 word target and includes practical customer implications, technical scope, adoption sequence and availability rather than only an announcement headline. Saved-content measurement: 610 delivered_words; draft measures {'document_id': 'doc-0049', 'type': 'press_release', 'draft_words': 589, 'discussion_words': 0, 'requirements': None, 'analysis_modules': None}."
+  },
+  "visual_review": {
+    "status": "passed",
+    "images_delivered": true,
+    "render_ids": [
+      "all"
+    ],
+    "evidence": "Two explicit pages; headline, dateline, complete quotation, adoption/availability copy, company boilerplate and media contact are legible with no clipped text. Inspected 2 complete unit images.",
+    "inspected_images": [
+      "build\\renders\\doc-0049\\all\\page-1.png",
+      "build\\renders\\doc-0049\\all\\page-2.png"
+    ]
+  },
+  "condition_review": {
+    "status": "not_selected"
+  }
+}

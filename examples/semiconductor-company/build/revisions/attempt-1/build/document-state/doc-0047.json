@@ -1,0 +1,102 @@
+{
+  "runner_version": 2,
+  "schema_version": 2,
+  "corpus_id": "corpus-76ce98a12405018fd1e8c2e5",
+  "canon_sha256": "caaf762e72fb012b38e89626490ab0988233f06da57675c45f8792fce3796186",
+  "plan_sha256": "39bac5c57c35c359a43d2e650047e32523062a15bccfb31dd68acec47a86896e",
+  "generation_sha256": "b73d793ad90c9e6b0eb7b67f0250ff7202452acf2b0612bde0f74f34269b59b9",
+  "execution_sha256": "d5ea78a43358d2bb5b967b2995bb19992ff6db945768599f31096c8775257bd3",
+  "execution_revision": 1,
+  "effective_workers": 4,
+  "last_checkpoint_at": "2026-10-15T16:46:14.929862+00:00",
+  "active_wall_seconds": 0.9591480999952182,
+  "validation_counts": {
+    "plan_computations": 1,
+    "plan_worker_seconds": 0.17200769996270537,
+    "plan_hits": 2,
+    "drafts_computations": 1,
+    "drafts_worker_seconds": 0.6248017000034451
+  },
+  "documents": {
+    "doc-0047": {
+      "input_sha256": "08d801f245e68a5d05759b99fbae1e137998d1dfc1bef335c959651a83bab743",
+      "stages": [
+        "created"
+      ],
+      "operations": [
+        {
+          "arguments": [
+            "create",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-15 - SunnySemi LLC Launches GulfSwitch 6.0 Power Control.docx"
+          ],
+          "operation": "create",
+          "started_at": "2026-10-15T16:46:10.536497+00:00",
+          "ended_at": "2026-10-15T16:46:11.920236+00:00",
+          "active_seconds": 1.3837641999707557,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": \"Created: C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\documents\\\\2025-08-15 - SunnySemi LLC Launches GulfSwitch 6.0 Power Control.docx\",\n  \"message\": \"Created: C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\documents\\\\2025-08-15 - SunnySemi LLC Launches GulfSwitch 6.0 Power Control.docx\"\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "status": "passed"
+        },
+        {
+          "arguments": [
+            "batch",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-15 - SunnySemi LLC Launches GulfSwitch 6.0 Power Control.docx",
+            "--input",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\build\\scripts\\doc-0047-batch.json",
+            "--stop-on-error"
+          ],
+          "operation": "author",
+          "started_at": "2026-10-15T16:46:12.088672+00:00",
+          "ended_at": "2026-10-15T16:46:14.915502+00:00",
+          "active_seconds": 2.826834500010591,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"results\": [\n      {\n        \"index\": 0,\n        \"success\": true,\n        \"output\": \"Updated /: title=SunnySemi LLC Launches GulfSwitch 6.0 Power Control, author=SunnySemi LLC, docDefaults.font=Calibri, docDefaults.fontSize=11pt\"\n      },\n      {\n        \"index\": 1,\n        \"success\": true,\n        \"output\": \"Updated /section[1]: pageWidth=8.5in, pageHeight=11in, marginTop=0.7in, marginBottom=0.7in, marginLeft=0.8in, marginRight=0.8in\"\n      },\n      {\n        \"index\": 2,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100000]\"\n      },\n      {\n        \"index\": 3,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100002]\",\n        \"warnings\": [\n          {\n            \"message\": \"style 'Title' was not defined in the styles part; added Word's built-in definition ('Title')\",\n            \"code\": \"advisory\"\n          }\n        ]\n      },\n      {\n        \"index\": 4,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100004]\"\n      },\n      {\n        \"index\": 5,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100006]\"\n      },\n      {\n        \"index\": 6,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100008]\"\n      },\n      {\n        \"index\": 7,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010000A]\"\n      },\n      {\n        \"index\": 8,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010000C]\",\n        \"warnings\": [\n          {\n            \"message\": \"style 'Heading1' was not defined in the styles part; added Word's built-in definition ('heading 1')\",\n            \"code\": \"advisory\"\n          }\n        ]\n      },\n      {\n        \"index\": 9,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010000E]\"\n      },\n      {\n        \"index\": 10,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100010]\"\n      },\n      {\n        \"index\": 11,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100012]\",\n        \"warnings\": [\n          {\n            \"message\": \"style 'Heading2' was not defined in the styles part; added Word's built-in definition ('heading 2')\",\n            \"code\": \"advisory\"\n          }\n        ]\n      },\n      {\n        \"index\": 12,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100014]\"\n      },\n      {\n        \"index\": 13,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100016]\"\n      },\n      {\n        \"index\": 14,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100018]\"\n      }\n    ],\n    \"summary\": {\n      \"total\": 15,\n      \"executed\": 15,\n      \"succeeded\": 15,\n      \"failed\": 0,\n      \"skipped\": 0\n    }\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "status": "blocked",
+          "blocker": "author: unresolved caveat/truncation: warnings"
+        }
+      ],
+      "attempts": {
+        "create": 1,
+        "author": 1
+      },
+      "retry_reasons": {},
+      "artifact_sha256": "2a948c72b56b1517c812ffdd2dfe59de3120e000b736c99129e3b947f0636b67"
+    }
+  },
+  "phases": [
+    {
+      "id": "54edd74b-f718-40e4-a2e5-59dff7aac741",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0047",
+      "started_at": "2026-10-15T16:46:10.364696+00:00",
+      "status": "blocked",
+      "active_seconds": 4.565139000013005,
+      "family": [
+        "press_release",
+        "docx",
+        "1",
+        "00532f19aacdbb2f364d247186b0262d4ebce06f2623443ea4e4884ae90f406f"
+      ],
+      "queued_at": "2026-10-15T16:46:10.364421+00:00",
+      "queue_seconds": 0.000275,
+      "ended_at": "2026-10-15T16:46:14.929836+00:00"
+    }
+  ]
+}

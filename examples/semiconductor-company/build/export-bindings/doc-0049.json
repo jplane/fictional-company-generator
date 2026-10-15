@@ -1,0 +1,533 @@
+{
+  "schema_version": 2,
+  "corpus_id": "corpus-76ce98a12405018fd1e8c2e5",
+  "canon_sha256": "caaf762e72fb012b38e89626490ab0988233f06da57675c45f8792fce3796186",
+  "plan_sha256": "647b92bb093e0638d541a8f268fd3c50035a754aa58c5be14676e52f5e7007a9",
+  "document_id": "doc-0049",
+  "artifact_sha256": "2cb333d0758632f88cd0025c041c902dc765b3b2709f472fa5811cb16027127e",
+  "draft_sha256": "66100b7690365902b4a7f5e2e7e2b071b9244e4f4e13e9729de8c53b03702fa3",
+  "job_sha256": "2d51e2b5b2dc126d4cc6ff18c6cc094fed30d95fc1a09029ff71e7133afe8463",
+  "bindings": [
+    {
+      "section_index": 0,
+      "claim_id": "c0001",
+      "command_index": 8,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 0,
+      "claim_id": "c0002",
+      "command_index": 8,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 0,
+      "claim_id": "c0003",
+      "command_index": 8,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 0,
+      "claim_id": "c0004",
+      "command_index": 8,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 0,
+      "claim_id": "c0005",
+      "command_index": 8,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 0,
+      "claim_id": "c0006",
+      "command_index": 8,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 0,
+      "claim_id": "c0007",
+      "command_index": 8,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 1,
+      "claim_id": "c0008",
+      "command_index": 9,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 1,
+      "claim_id": "c0009",
+      "command_index": 9,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 1,
+      "claim_id": "c0010",
+      "command_index": 9,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 1,
+      "claim_id": "c0011",
+      "command_index": 9,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 1,
+      "claim_id": "c0012",
+      "command_index": 9,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 1,
+      "claim_id": "c0013",
+      "command_index": 9,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 2,
+      "claim_id": "c0014",
+      "command_index": 10,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 2,
+      "claim_id": "c0015",
+      "command_index": 10,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 2,
+      "claim_id": "c0016",
+      "command_index": 10,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 3,
+      "claim_id": "c0017",
+      "command_index": 12,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 3,
+      "claim_id": "c0018",
+      "command_index": 12,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 3,
+      "claim_id": "c0019",
+      "command_index": 12,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 3,
+      "claim_id": "c0020",
+      "command_index": 12,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 3,
+      "claim_id": "c0021",
+      "command_index": 12,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 4,
+      "claim_id": "c0022",
+      "command_index": 13,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 4,
+      "claim_id": "c0023",
+      "command_index": 13,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 4,
+      "claim_id": "c0024",
+      "command_index": 13,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 4,
+      "claim_id": "c0025",
+      "command_index": 13,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 5,
+      "claim_id": "c0026",
+      "command_index": 15,
+      "occurrence_index": 0
+    },
+    {
+      "section_index": 6,
+      "claim_id": "c0027",
+      "command_index": 17,
+      "occurrence_index": 0
+    }
+  ],
+  "commands": [
+    {
+      "command": "set",
+      "path": "/",
+      "props": {
+        "title": "SunnySemi LLC Launches GulfSwitch 3.0 Power Control",
+        "author": "SunnySemi LLC",
+        "docDefaults.font": "Calibri",
+        "docDefaults.fontSize": "11pt"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/section[1]",
+      "props": {
+        "pageWidth": "8.5in",
+        "pageHeight": "11in",
+        "marginTop": "0.7in",
+        "marginBottom": "0.7in",
+        "marginLeft": "0.8in",
+        "marginRight": "0.8in"
+      }
+    },
+    {
+      "command": "add",
+      "path": "/styles",
+      "type": "style",
+      "props": {
+        "id": "Title",
+        "name": "Title",
+        "type": "paragraph",
+        "font": "Calibri",
+        "size": "21pt",
+        "bold": "true"
+      }
+    },
+    {
+      "command": "add",
+      "path": "/styles",
+      "type": "style",
+      "props": {
+        "id": "Heading1",
+        "name": "Heading1",
+        "type": "paragraph",
+        "font": "Calibri",
+        "size": "15pt",
+        "bold": "true"
+      }
+    },
+    {
+      "command": "add",
+      "path": "/styles",
+      "type": "style",
+      "props": {
+        "id": "Heading2",
+        "name": "Heading2",
+        "type": "paragraph",
+        "font": "Calibri",
+        "size": "14pt",
+        "bold": "true"
+      }
+    },
+    {
+      "command": "add",
+      "path": "/body",
+      "type": "paragraph",
+      "props": {
+        "text": "SUNNYSEMI LLC | NEWSROOM",
+        "font": "Calibri",
+        "size": "10pt",
+        "color": "087E8B",
+        "spaceAfter": "6pt",
+        "lineSpacing": "1.15x",
+        "firstLineIndent": "440",
+        "bold": "true"
+      }
+    },
+    {
+      "command": "add",
+      "path": "/body",
+      "type": "paragraph",
+      "props": {
+        "text": "SunnySemi LLC Launches GulfSwitch 3.0 Power Control",
+        "font": "Calibri",
+        "size": "21pt",
+        "color": "123B4A",
+        "spaceAfter": "6pt",
+        "lineSpacing": "1.15x",
+        "firstLineIndent": "440",
+        "bold": "true",
+        "style": "Title"
+      }
+    },
+    {
+      "command": "add",
+      "path": "/body",
+      "type": "paragraph",
+      "props": {
+        "text": "2022-08-15 | Tampa, Florida",
+        "font": "Calibri",
+        "size": "10pt",
+        "color": "087E8B",
+        "spaceAfter": "6pt",
+        "lineSpacing": "1.15x",
+        "firstLineIndent": "440"
+      }
+    },
+    {
+      "command": "add",
+      "path": "/body",
+      "type": "paragraph",
+      "props": {
+        "text": "TAMPA, Fla. - SunnySemi LLC today announced that GulfSwitch 3.0 has launched, effective 2022-08-15, expanding its component portfolio for distributed infrastructure. The release brings a version-specific silicon platform together with an evaluation path and clear operating boundaries. It is intended for equipment teams that need to move from a promising component specification to a qualified production design without treating those two steps as interchangeable. Customers can now begin adoption discussions around the released configuration rather than an unspecified future product.",
+        "font": "Calibri",
+        "size": "11pt",
+        "color": "172F38",
+        "spaceAfter": "6pt",
+        "lineSpacing": "1.15x",
+        "firstLineIndent": "440"
+      }
+    },
+    {
+      "command": "add",
+      "path": "/body",
+      "type": "paragraph",
+      "props": {
+        "text": "GulfSwitch 3.0 combines digitally supervised multiphase power control with a documented PMBus subset with 60 V maximum rated input and a 15 A reference-stage output. Efficiency applies only to the stated reference-stage operating point. External switches, inductors, cooling and layout remain customer design responsibilities. Reference-stage efficiency is 95 percent under these conditions: 48 V input, 12 V output, half rated reference-stage load, 25 degrees Celsius ambient; excludes host and enclosure losses. The published boundaries are intended to help customers determine whether the part fits a proposed system before they commit engineering resources. Component characteristics do not remove the need to verify the surrounding board, software and enclosure. The adoption discussion therefore starts with a defined application and operating point, not a general promise that every workload will achieve the same result.",
+        "font": "Calibri",
+        "size": "11pt",
+        "color": "172F38",
+        "spaceAfter": "6pt",
+        "lineSpacing": "1.15x",
+        "firstLineIndent": "440"
+      }
+    },
+    {
+      "command": "add",
+      "path": "/body",
+      "type": "paragraph",
+      "props": {
+        "text": "\"Our priority is to make GulfSwitch 3.0 useful in real equipment, not just impressive in a specification table. Customers need clear operating boundaries, traceable release evidence and an engineering team that helps them qualify the complete design. That is how we intend to earn repeat programs.\" said Avery Rowan, CEO. The release approach connects technical capability with the evidence needed to introduce a component into equipment. It gives design teams a practical basis for discussing integration responsibilities and identifying work that remains on the customer side of the interface.",
+        "font": "Calibri",
+        "size": "11pt",
+        "color": "172F38",
+        "spaceAfter": "6pt",
+        "lineSpacing": "1.15x",
+        "firstLineIndent": "440"
+      }
+    },
+    {
+      "command": "add",
+      "path": "/body",
+      "type": "paragraph",
+      "props": {
+        "text": "SunnySemi LLC | From evaluation to adoption",
+        "font": "Calibri",
+        "size": "15pt",
+        "color": "123B4A",
+        "spaceAfter": "6pt",
+        "lineSpacing": "1.15x",
+        "firstLineIndent": "440",
+        "bold": "true",
+        "pageBreakBefore": "true",
+        "style": "Heading1"
+      }
+    },
+    {
+      "command": "add",
+      "path": "/body",
+      "type": "paragraph",
+      "props": {
+        "text": "Application discussions include distributed infrastructure, industrial controller power stages and embedded compute carrier boards. The reference workflow is straightforward: Configure the power stage, sequence rails, observe telemetry, and handle protection events through the documented host command interface. SunnySemi's adoption support emphasizes package characterization and documented interface compatibility. Those activities give equipment manufacturers a way to compare the component's documented behavior with the requirements of their own design. They are not a substitute for customer acceptance, and they do not imply an endorsement from any equipment manufacturer. Integration scope and the production configuration should be agreed before a customer commits to a ramp.",
+        "font": "Calibri",
+        "size": "11pt",
+        "color": "172F38",
+        "spaceAfter": "6pt",
+        "lineSpacing": "1.15x",
+        "firstLineIndent": "440"
+      }
+    },
+    {
+      "command": "add",
+      "path": "/body",
+      "type": "paragraph",
+      "props": {
+        "text": "Production orders and version-matched evaluation kits are available from the launch date, subject to quotation and allocation. Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example. Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption. Pricing and contractual lead times are supplied through customer-specific quotations. This sequencing allows the engineering discussion to address the intended application before commercial commitments are finalized. Customers should use the matching release material when evaluating the component and should not assume that a later revision has identical interface behavior.",
+        "font": "Calibri",
+        "size": "11pt",
+        "color": "172F38",
+        "spaceAfter": "6pt",
+        "lineSpacing": "1.15x",
+        "firstLineIndent": "440"
+      }
+    },
+    {
+      "command": "add",
+      "path": "/body",
+      "type": "paragraph",
+      "props": {
+        "text": "About SunnySemi LLC",
+        "font": "Calibri",
+        "size": "14pt",
+        "color": "123B4A",
+        "spaceAfter": "6pt",
+        "lineSpacing": "1.15x",
+        "firstLineIndent": "440",
+        "bold": "true",
+        "style": "Heading2"
+      }
+    },
+    {
+      "command": "add",
+      "path": "/body",
+      "type": "paragraph",
+      "props": {
+        "text": "SunnySemi LLC is a Tampa, Florida-based fabless semiconductor designer. Its SunCore edge-inference processors and GulfSwitch power-management devices serve equipment manufacturers building industrial, infrastructure and embedded systems. The company designs silicon and reference platforms in Florida and works with external wafer-fabrication, assembly and test partners. Its Sarasota engineering site supports package characterization, application validation and customer bring-up. SunnySemi combines version-controlled silicon specifications with evaluation hardware and application support so customers can qualify components against their own system requirements. Product information is available at https://sunnysemi.example.",
+        "font": "Calibri",
+        "size": "11pt",
+        "color": "172F38",
+        "spaceAfter": "6pt",
+        "lineSpacing": "1.15x",
+        "firstLineIndent": "440"
+      }
+    },
+    {
+      "command": "add",
+      "path": "/body",
+      "type": "paragraph",
+      "props": {
+        "text": "Media contact",
+        "font": "Calibri",
+        "size": "14pt",
+        "color": "123B4A",
+        "spaceAfter": "6pt",
+        "lineSpacing": "1.15x",
+        "firstLineIndent": "440",
+        "bold": "true",
+        "style": "Heading2"
+      }
+    },
+    {
+      "command": "add",
+      "path": "/body",
+      "type": "paragraph",
+      "props": {
+        "text": "Jordan Ellis | Corporate Communications | media@sunnysemi.example",
+        "font": "Calibri",
+        "size": "11pt",
+        "color": "172F38",
+        "spaceAfter": "6pt",
+        "lineSpacing": "1.15x",
+        "firstLineIndent": "440"
+      }
+    }
+  ],
+  "author_result": {
+    "success": true,
+    "data": {
+      "results": [
+        {
+          "index": 0,
+          "success": true,
+          "output": "Updated /: title=SunnySemi LLC Launches GulfSwitch 3.0 Power Control, author=SunnySemi LLC, docDefaults.font=Calibri, docDefaults.fontSize=11pt"
+        },
+        {
+          "index": 1,
+          "success": true,
+          "output": "Updated /section[1]: pageWidth=8.5in, pageHeight=11in, marginTop=0.7in, marginBottom=0.7in, marginLeft=0.8in, marginRight=0.8in"
+        },
+        {
+          "index": 2,
+          "success": true,
+          "output": "Added style at /styles/Title"
+        },
+        {
+          "index": 3,
+          "success": true,
+          "output": "Added style at /styles/Heading1"
+        },
+        {
+          "index": 4,
+          "success": true,
+          "output": "Added style at /styles/Heading2"
+        },
+        {
+          "index": 5,
+          "success": true,
+          "output": "Added paragraph at /body/p[@paraId=00100000]"
+        },
+        {
+          "index": 6,
+          "success": true,
+          "output": "Added paragraph at /body/p[@paraId=00100002]"
+        },
+        {
+          "index": 7,
+          "success": true,
+          "output": "Added paragraph at /body/p[@paraId=00100004]"
+        },
+        {
+          "index": 8,
+          "success": true,
+          "output": "Added paragraph at /body/p[@paraId=00100006]"
+        },
+        {
+          "index": 9,
+          "success": true,
+          "output": "Added paragraph at /body/p[@paraId=00100008]"
+        },
+        {
+          "index": 10,
+          "success": true,
+          "output": "Added paragraph at /body/p[@paraId=0010000A]"
+        },
+        {
+          "index": 11,
+          "success": true,
+          "output": "Added paragraph at /body/p[@paraId=0010000C]"
+        },
+        {
+          "index": 12,
+          "success": true,
+          "output": "Added paragraph at /body/p[@paraId=0010000E]"
+        },
+        {
+          "index": 13,
+          "success": true,
+          "output": "Added paragraph at /body/p[@paraId=00100010]"
+        },
+        {
+          "index": 14,
+          "success": true,
+          "output": "Added paragraph at /body/p[@paraId=00100012]"
+        },
+        {
+          "index": 15,
+          "success": true,
+          "output": "Added paragraph at /body/p[@paraId=00100014]"
+        },
+        {
+          "index": 16,
+          "success": true,
+          "output": "Added paragraph at /body/p[@paraId=00100016]"
+        },
+        {
+          "index": 17,
+          "success": true,
+          "output": "Added paragraph at /body/p[@paraId=00100018]"
+        }
+      ],
+      "summary": {
+        "total": 18,
+        "executed": 18,
+        "succeeded": 18,
+        "failed": 0,
+        "skipped": 0
+      }
+    }
+  }
+}

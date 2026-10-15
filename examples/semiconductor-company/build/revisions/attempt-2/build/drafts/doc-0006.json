@@ -1,0 +1,406 @@
+{
+  "schema_version": 2,
+  "corpus_id": "corpus-76ce98a12405018fd1e8c2e5",
+  "document_id": "doc-0006",
+  "canon_sha256": "caaf762e72fb012b38e89626490ab0988233f06da57675c45f8792fce3796186",
+  "plan_sha256": "719fd5adce3412ce759a3e19cd383a054d201fc8a6c9f128371110c82d42fa97",
+  "title": "SunnySemi LLC - SunCore 6.0 - Edge Inference Adoption",
+  "publication_date": "2025-08-20",
+  "content_depth": "medium",
+  "claims": [
+    {
+      "id": "c0001",
+      "record_id": "product-beacon",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "SunCore"
+    },
+    {
+      "id": "c0002",
+      "record_id": "release-beacon-2025",
+      "path": [
+        "data",
+        "version"
+      ],
+      "value": "6.0"
+    },
+    {
+      "id": "c0003",
+      "record_id": "milestone-beacon-2025-launched",
+      "path": [
+        "data",
+        "status"
+      ],
+      "value": "launched"
+    },
+    {
+      "id": "c0004",
+      "record_id": "release-beacon-2025",
+      "path": [
+        "data",
+        "release_date"
+      ],
+      "value": "2025-08-15"
+    },
+    {
+      "id": "c0005",
+      "record_id": "company",
+      "path": [
+        "data",
+        "headquarters"
+      ],
+      "value": "Tampa, Florida"
+    },
+    {
+      "id": "c0006",
+      "record_id": "person-quinn",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Quinn Mercer"
+    },
+    {
+      "id": "c0007",
+      "record_id": "role-quinn-initial",
+      "path": [
+        "data",
+        "title"
+      ],
+      "value": "Product Director"
+    },
+    {
+      "id": "c0008",
+      "record_id": "release-beacon-2025",
+      "path": [
+        "data",
+        "customer_problem"
+      ],
+      "value": "Moving industrial inference off a general-purpose host competes with system power, response-time and software-integration constraints."
+    },
+    {
+      "id": "c0009",
+      "record_id": "release-beacon-2025",
+      "path": [
+        "data",
+        "constraints"
+      ],
+      "value": "Peak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design."
+    },
+    {
+      "id": "c0010",
+      "record_id": "release-beacon-2025",
+      "path": [
+        "data",
+        "capability"
+      ],
+      "value": "5 nm inference ASIC with PCIe Gen3 x4 host interface"
+    },
+    {
+      "id": "c0011",
+      "record_id": "release-beacon-2025",
+      "path": [
+        "data",
+        "qualification"
+      ],
+      "value": "Evaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration."
+    },
+    {
+      "id": "c0012",
+      "record_id": "release-beacon-2025",
+      "path": [
+        "data",
+        "metric"
+      ],
+      "value": "256 INT8 TOPS"
+    },
+    {
+      "id": "c0013",
+      "record_id": "release-beacon-2025",
+      "path": [
+        "data",
+        "operating_point"
+      ],
+      "value": "35 W board design budget"
+    },
+    {
+      "id": "c0014",
+      "record_id": "release-beacon-2025",
+      "path": [
+        "data",
+        "constraints"
+      ],
+      "value": "Peak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design."
+    },
+    {
+      "id": "c0015",
+      "record_id": "release-beacon-2025",
+      "path": [
+        "data",
+        "workflow"
+      ],
+      "value": "Capture frames on the host, prepare tensors, submit inference over PCIe, and return results to the host application."
+    },
+    {
+      "id": "c0016",
+      "record_id": "release-beacon-2025",
+      "path": [
+        "data",
+        "use_cases",
+        0
+      ],
+      "value": "high-density edge systems"
+    },
+    {
+      "id": "c0017",
+      "record_id": "release-beacon-2025",
+      "path": [
+        "data",
+        "use_cases",
+        1
+      ],
+      "value": "local equipment anomaly detection"
+    },
+    {
+      "id": "c0018",
+      "record_id": "release-beacon-2025",
+      "path": [
+        "data",
+        "use_cases",
+        2
+      ],
+      "value": "on-device visual inspection"
+    },
+    {
+      "id": "c0019",
+      "record_id": "release-beacon-2025",
+      "path": [
+        "data",
+        "integration_step"
+      ],
+      "value": "Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption."
+    },
+    {
+      "id": "c0020",
+      "record_id": "release-beacon-2025",
+      "path": [
+        "data",
+        "support"
+      ],
+      "value": "release-controlled adoption and milestone-based production support"
+    },
+    {
+      "id": "c0021",
+      "record_id": "release-beacon-2025",
+      "path": [
+        "data",
+        "constraints"
+      ],
+      "value": "Peak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design."
+    },
+    {
+      "id": "c0022",
+      "record_id": "release-beacon-2025",
+      "path": [
+        "data",
+        "exclusions"
+      ],
+      "value": "No regulatory certification, customer benchmark or customer endorsement is asserted."
+    },
+    {
+      "id": "c0023",
+      "record_id": "release-beacon-2025",
+      "path": [
+        "data",
+        "availability"
+      ],
+      "value": "Production orders and version-matched evaluation kits are available from the launch date, subject to quotation and allocation."
+    },
+    {
+      "id": "c0024",
+      "record_id": "operating-2025",
+      "path": [
+        "data",
+        "price_note"
+      ],
+      "value": "Pricing and contractual lead times are supplied through customer-specific quotations."
+    },
+    {
+      "id": "c0025",
+      "record_id": "release-beacon-2025",
+      "path": [
+        "data",
+        "evaluation_step"
+      ],
+      "value": "Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example."
+    },
+    {
+      "id": "c0026",
+      "record_id": "release-beacon-2025",
+      "path": [
+        "data",
+        "integration_step"
+      ],
+      "value": "Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption."
+    }
+  ],
+  "sections": [
+    {
+      "role": "value_proposition",
+      "heading": "SunnySemi LLC - SunCore 6.0 - Edge Inference Adoption",
+      "text": "SunCore 6.0\nlaunched | 2025-08-15\nTampa, Florida\nQuinn Mercer, Product Director",
+      "claim_ids": [
+        "c0001",
+        "c0002",
+        "c0003",
+        "c0004",
+        "c0005",
+        "c0006",
+        "c0007"
+      ],
+      "page_break": false,
+      "visual": [
+        "Released silicon",
+        "Evaluation",
+        "Qualification"
+      ]
+    },
+    {
+      "role": "customer_problem",
+      "heading": "Start with the equipment boundary",
+      "text": "Moving industrial inference off a general-purpose host competes with system power, response-time and software-integration constraints.\nPeak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design.",
+      "claim_ids": [
+        "c0008",
+        "c0009"
+      ],
+      "page_break": false,
+      "visual": [
+        "Workload",
+        "Power",
+        "Integration"
+      ]
+    },
+    {
+      "role": "value_proposition",
+      "heading": "A component and a qualification path",
+      "text": "5 nm inference ASIC with PCIe Gen3 x4 host interface\nEvaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration.",
+      "claim_ids": [
+        "c0010",
+        "c0011"
+      ],
+      "page_break": false,
+      "visual": [
+        "Reference platform",
+        "Acceptance evidence",
+        "Customer configuration"
+      ]
+    },
+    {
+      "role": "capabilities",
+      "heading": "The published operating envelope",
+      "text": "256 INT8 TOPS\n35 W board design budget\nPeak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design.",
+      "claim_ids": [
+        "c0012",
+        "c0013",
+        "c0014"
+      ],
+      "page_break": false,
+      "visual": [
+        "256 INT8 TOPS",
+        "35 W board design budget"
+      ]
+    },
+    {
+      "role": "capabilities",
+      "heading": "What the interface enables",
+      "text": "Capture frames on the host, prepare tensors, submit inference over PCIe, and return results to the host application.\nKeep the host boundary and the version-matched component configuration explicit.",
+      "claim_ids": [
+        "c0015"
+      ],
+      "page_break": false,
+      "visual": [
+        "Host interface",
+        "Component execution",
+        "Status and results"
+      ]
+    },
+    {
+      "role": "use_cases",
+      "heading": "Application paths to evaluate",
+      "text": "high-density edge systems\nlocal equipment anomaly detection\non-device visual inspection\nValidate each use case against the intended system, not the product label.",
+      "claim_ids": [
+        "c0016",
+        "c0017",
+        "c0018"
+      ],
+      "page_break": false,
+      "visual": [
+        "high-density edge systems",
+        "local equipment anomaly detection",
+        "on-device visual inspection"
+      ]
+    },
+    {
+      "role": "use_cases",
+      "heading": "Integration is a shared responsibility",
+      "text": "Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption.\nrelease-controlled adoption and milestone-based production support",
+      "claim_ids": [
+        "c0019",
+        "c0020"
+      ],
+      "page_break": false,
+      "visual": [
+        "Customer workload",
+        "SunnySemi evidence",
+        "Joint qualification"
+      ]
+    },
+    {
+      "role": "capabilities",
+      "heading": "Boundaries that must stay visible",
+      "text": "Peak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design.\nNo regulatory certification, customer benchmark or customer endorsement is asserted.",
+      "claim_ids": [
+        "c0021",
+        "c0022"
+      ],
+      "page_break": false,
+      "visual": [
+        "Component scope",
+        "Board scope",
+        "System scope"
+      ]
+    },
+    {
+      "role": "next_steps",
+      "heading": "Plan adoption around release evidence",
+      "text": "Production orders and version-matched evaluation kits are available from the launch date, subject to quotation and allocation.\nPricing and contractual lead times are supplied through customer-specific quotations.",
+      "claim_ids": [
+        "c0023",
+        "c0024"
+      ],
+      "page_break": false,
+      "visual": [
+        "Evaluate",
+        "Agree configuration",
+        "Quote and allocate"
+      ]
+    },
+    {
+      "role": "next_steps",
+      "heading": "Begin with a version-matched evaluation",
+      "text": "Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example.\nAgree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption.",
+      "claim_ids": [
+        "c0025",
+        "c0026"
+      ],
+      "page_break": false,
+      "visual": [
+        "Evaluation kit",
+        "Interface pack",
+        "Qualification plan"
+      ]
+    }
+  ]
+}

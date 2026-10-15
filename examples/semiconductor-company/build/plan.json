@@ -1,0 +1,1486 @@
+{
+  "schema_version": 2,
+  "corpus_id": "corpus-76ce98a12405018fd1e8c2e5",
+  "canon_sha256": "caaf762e72fb012b38e89626490ab0988233f06da57675c45f8792fce3796186",
+  "documents": [
+    {
+      "id": "doc-0044",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "SunnySemi LLC - SunCore 1.0 Product Specification",
+      "filename": "2020-02-01 - SunnySemi LLC - SunCore 1.0 Product Specification.docx",
+      "publication_date": "2020-02-01",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-beacon-2020-planned"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0025",
+      "type": "financial_model",
+      "format": "xlsx",
+      "title": "SunnySemi LLC - H1 2020 Operating Economics",
+      "filename": "2020-07-15 - SunnySemi LLC - H1 2020 Operating Economics.xlsx",
+      "publication_date": "2020-07-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2020-q2"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0019",
+      "type": "board_deck",
+      "format": "pptx",
+      "title": "SunnySemi LLC - 2020 Midyear Performance and Capacity Decisions",
+      "filename": "2020-07-20 - SunnySemi LLC - 2020 Midyear Performance and Capacity Decisions.pptx",
+      "publication_date": "2020-07-20",
+      "audience": "board",
+      "anchor_ids": [
+        "financial-2020-q2"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-board"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0013",
+      "type": "meeting_transcript",
+      "format": "docx",
+      "title": "SunnySemi LLC - 2020 Production Readiness and Launch discipline",
+      "filename": "2020-07-25 - SunnySemi LLC - 2020 Production Readiness and Launch discipline.docx",
+      "publication_date": "2020-07-25",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-beacon-2020-planned"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0001",
+      "type": "press_release",
+      "format": "docx",
+      "title": "SunnySemi LLC Launches SunCore 1.0 for Industrial Inspection",
+      "filename": "2020-08-15 - SunnySemi LLC Launches SunCore 1.0 for Industrial Inspection.docx",
+      "publication_date": "2020-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-beacon-2020-launched"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0007",
+      "type": "press_release",
+      "format": "docx",
+      "title": "SunnySemi LLC Launches GulfSwitch 1.0 Power Control",
+      "filename": "2020-08-15 - SunnySemi LLC Launches GulfSwitch 1.0 Power Control.docx",
+      "publication_date": "2020-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-prism-2020-launched"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0038",
+      "type": "product_presentation",
+      "format": "pptx",
+      "title": "SunnySemi LLC - SunCore 1.0 - Edge Inference Adoption",
+      "filename": "2020-08-20 - SunnySemi LLC - SunCore 1.0 - Edge Inference Adoption.pptx",
+      "publication_date": "2020-08-20",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-beacon-2020-launched"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0050",
+      "type": "financial_model",
+      "format": "xlsx",
+      "title": "SunnySemi LLC - FY 2020 Operating Economics",
+      "filename": "2021-01-15 - SunnySemi LLC - FY 2020 Operating Economics.xlsx",
+      "publication_date": "2021-01-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2020-q4"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0027",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "SunnySemi LLC - SunCore 2.0 Product Specification",
+      "filename": "2021-02-01 - SunnySemi LLC - SunCore 2.0 Product Specification.docx",
+      "publication_date": "2021-02-01",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-beacon-2021-planned"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0043",
+      "type": "financial_model",
+      "format": "xlsx",
+      "title": "SunnySemi LLC - H1 2021 Operating Economics",
+      "filename": "2021-07-15 - SunnySemi LLC - H1 2021 Operating Economics.xlsx",
+      "publication_date": "2021-07-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2021-q2"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0037",
+      "type": "board_deck",
+      "format": "pptx",
+      "title": "SunnySemi LLC - 2021 Midyear Performance and Capacity Decisions",
+      "filename": "2021-07-20 - SunnySemi LLC - 2021 Midyear Performance and Capacity Decisions.pptx",
+      "publication_date": "2021-07-20",
+      "audience": "board",
+      "anchor_ids": [
+        "financial-2021-q2"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-board"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0033",
+      "type": "meeting_transcript",
+      "format": "docx",
+      "title": "SunnySemi LLC - 2021 Production Readiness and Allocation discipline",
+      "filename": "2021-07-25 - SunnySemi LLC - 2021 Production Readiness and Allocation discipline.docx",
+      "publication_date": "2021-07-25",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-beacon-2021-planned"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0002",
+      "type": "press_release",
+      "format": "docx",
+      "title": "SunnySemi LLC Launches GulfSwitch 2.0 Power Control",
+      "filename": "2021-08-15 - SunnySemi LLC Launches GulfSwitch 2.0 Power Control.docx",
+      "publication_date": "2021-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-prism-2021-launched"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0031",
+      "type": "press_release",
+      "format": "docx",
+      "title": "SunnySemi LLC Launches SunCore 2.0 for Warehouse Automation",
+      "filename": "2021-08-15 - SunnySemi LLC Launches SunCore 2.0 for Warehouse Automation.docx",
+      "publication_date": "2021-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-beacon-2021-launched"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0008",
+      "type": "product_presentation",
+      "format": "pptx",
+      "title": "SunnySemi LLC - SunCore 2.0 - Edge Inference Adoption",
+      "filename": "2021-08-20 - SunnySemi LLC - SunCore 2.0 - Edge Inference Adoption.pptx",
+      "publication_date": "2021-08-20",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-beacon-2021-launched"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0014",
+      "type": "financial_model",
+      "format": "xlsx",
+      "title": "SunnySemi LLC - FY 2021 Operating Economics",
+      "filename": "2022-01-15 - SunnySemi LLC - FY 2021 Operating Economics.xlsx",
+      "publication_date": "2022-01-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2021-q4"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0009",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "SunnySemi LLC - SunCore 3.0 Product Specification",
+      "filename": "2022-02-01 - SunnySemi LLC - SunCore 3.0 Product Specification.docx",
+      "publication_date": "2022-02-01",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-beacon-2022-planned"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0040",
+      "type": "financial_model",
+      "format": "xlsx",
+      "title": "SunnySemi LLC - H1 2022 Operating Economics",
+      "filename": "2022-07-15 - SunnySemi LLC - H1 2022 Operating Economics.xlsx",
+      "publication_date": "2022-07-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2022-q2"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0032",
+      "type": "board_deck",
+      "format": "pptx",
+      "title": "SunnySemi LLC - 2022 Midyear Performance and Capacity Decisions",
+      "filename": "2022-07-20 - SunnySemi LLC - 2022 Midyear Performance and Capacity Decisions.pptx",
+      "publication_date": "2022-07-20",
+      "audience": "board",
+      "anchor_ids": [
+        "financial-2022-q2"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-board"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0026",
+      "type": "meeting_transcript",
+      "format": "docx",
+      "title": "SunnySemi LLC - 2022 Production Readiness and Package readiness",
+      "filename": "2022-07-25 - SunnySemi LLC - 2022 Production Readiness and Package readiness.docx",
+      "publication_date": "2022-07-25",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-beacon-2022-planned"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0020",
+      "type": "press_release",
+      "format": "docx",
+      "title": "SunnySemi LLC Launches SunCore 3.0 for Distributed Infrastructure",
+      "filename": "2022-08-15 - SunnySemi LLC Launches SunCore 3.0 for Distributed Infrastructure.docx",
+      "publication_date": "2022-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-beacon-2022-launched"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0049",
+      "type": "press_release",
+      "format": "docx",
+      "title": "SunnySemi LLC Launches GulfSwitch 3.0 Power Control",
+      "filename": "2022-08-15 - SunnySemi LLC Launches GulfSwitch 3.0 Power Control.docx",
+      "publication_date": "2022-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-prism-2022-launched"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0003",
+      "type": "product_presentation",
+      "format": "pptx",
+      "title": "SunnySemi LLC - SunCore 3.0 - Edge Inference Adoption",
+      "filename": "2022-08-20 - SunnySemi LLC - SunCore 3.0 - Edge Inference Adoption.pptx",
+      "publication_date": "2022-08-20",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-beacon-2022-launched"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0024",
+      "type": "product_presentation",
+      "format": "pptx",
+      "title": "SunnySemi LLC - GulfSwitch 3.0 - Power Stage Adoption",
+      "filename": "2022-08-22 - SunnySemi LLC - GulfSwitch 3.0 - Power Stage Adoption.pptx",
+      "publication_date": "2022-08-22",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-prism-2022-launched"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0046",
+      "type": "financial_model",
+      "format": "xlsx",
+      "title": "SunnySemi LLC - FY 2022 Operating Economics",
+      "filename": "2023-01-15 - SunnySemi LLC - FY 2022 Operating Economics.xlsx",
+      "publication_date": "2023-01-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2022-q4"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0010",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "SunnySemi LLC - SunCore 4.0 Product Specification",
+      "filename": "2023-02-01 - SunnySemi LLC - SunCore 4.0 Product Specification.docx",
+      "publication_date": "2023-02-01",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-beacon-2023-planned"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0016",
+      "type": "financial_model",
+      "format": "xlsx",
+      "title": "SunnySemi LLC - H1 2023 Operating Economics",
+      "filename": "2023-07-15 - SunnySemi LLC - H1 2023 Operating Economics.xlsx",
+      "publication_date": "2023-07-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2023-q2"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0045",
+      "type": "board_deck",
+      "format": "pptx",
+      "title": "SunnySemi LLC - 2023 Midyear Performance and Capacity Decisions",
+      "filename": "2023-07-20 - SunnySemi LLC - 2023 Midyear Performance and Capacity Decisions.pptx",
+      "publication_date": "2023-07-20",
+      "audience": "board",
+      "anchor_ids": [
+        "financial-2023-q2"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-board"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0039",
+      "type": "meeting_transcript",
+      "format": "docx",
+      "title": "SunnySemi LLC - 2023 Production Readiness and Software maturity",
+      "filename": "2023-07-25 - SunnySemi LLC - 2023 Production Readiness and Software maturity.docx",
+      "publication_date": "2023-07-25",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-beacon-2023-planned"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0015",
+      "type": "press_release",
+      "format": "docx",
+      "title": "SunnySemi LLC Launches SunCore 4.0 for Machine-Vision Equipment",
+      "filename": "2023-08-15 - SunnySemi LLC Launches SunCore 4.0 for Machine-Vision Equipment.docx",
+      "publication_date": "2023-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-beacon-2023-launched"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0021",
+      "type": "press_release",
+      "format": "docx",
+      "title": "SunnySemi LLC Launches GulfSwitch 4.0 Power Control",
+      "filename": "2023-08-15 - SunnySemi LLC Launches GulfSwitch 4.0 Power Control.docx",
+      "publication_date": "2023-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-prism-2023-launched"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0004",
+      "type": "product_presentation",
+      "format": "pptx",
+      "title": "SunnySemi LLC - SunCore 4.0 - Edge Inference Adoption",
+      "filename": "2023-08-20 - SunnySemi LLC - SunCore 4.0 - Edge Inference Adoption.pptx",
+      "publication_date": "2023-08-20",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-beacon-2023-launched"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0022",
+      "type": "financial_model",
+      "format": "xlsx",
+      "title": "SunnySemi LLC - FY 2023 Operating Economics",
+      "filename": "2024-01-15 - SunnySemi LLC - FY 2023 Operating Economics.xlsx",
+      "publication_date": "2024-01-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2023-q4"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0011",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "SunnySemi LLC - SunCore 5.0 Product Specification",
+      "filename": "2024-02-01 - SunnySemi LLC - SunCore 5.0 Product Specification.docx",
+      "publication_date": "2024-02-01",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-beacon-2024-planned"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0029",
+      "type": "financial_model",
+      "format": "xlsx",
+      "title": "SunnySemi LLC - H1 2024 Operating Economics",
+      "filename": "2024-07-15 - SunnySemi LLC - H1 2024 Operating Economics.xlsx",
+      "publication_date": "2024-07-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2024-q2"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0023",
+      "type": "board_deck",
+      "format": "pptx",
+      "title": "SunnySemi LLC - 2024 Midyear Performance and Capacity Decisions",
+      "filename": "2024-07-20 - SunnySemi LLC - 2024 Midyear Performance and Capacity Decisions.pptx",
+      "publication_date": "2024-07-20",
+      "audience": "board",
+      "anchor_ids": [
+        "financial-2024-q2"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-board"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0017",
+      "type": "meeting_transcript",
+      "format": "docx",
+      "title": "SunnySemi LLC - 2024 Production Readiness and Thermal accountability",
+      "filename": "2024-07-25 - SunnySemi LLC - 2024 Production Readiness and Thermal accountability.docx",
+      "publication_date": "2024-07-25",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-beacon-2024-planned"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0028",
+      "type": "press_release",
+      "format": "docx",
+      "title": "SunnySemi LLC Launches SunCore 5.0 for Embedded Industrial Computing",
+      "filename": "2024-08-15 - SunnySemi LLC Launches SunCore 5.0 for Embedded Industrial Computing.docx",
+      "publication_date": "2024-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-beacon-2024-launched"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0034",
+      "type": "press_release",
+      "format": "docx",
+      "title": "SunnySemi LLC Launches GulfSwitch 5.0 Power Control",
+      "filename": "2024-08-15 - SunnySemi LLC Launches GulfSwitch 5.0 Power Control.docx",
+      "publication_date": "2024-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-prism-2024-launched"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0005",
+      "type": "product_presentation",
+      "format": "pptx",
+      "title": "SunnySemi LLC - SunCore 5.0 - Edge Inference Adoption",
+      "filename": "2024-08-20 - SunnySemi LLC - SunCore 5.0 - Edge Inference Adoption.pptx",
+      "publication_date": "2024-08-20",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-beacon-2024-launched"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0035",
+      "type": "financial_model",
+      "format": "xlsx",
+      "title": "SunnySemi LLC - FY 2024 Operating Economics",
+      "filename": "2025-01-15 - SunnySemi LLC - FY 2024 Operating Economics.xlsx",
+      "publication_date": "2025-01-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2024-q4"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0030",
+      "type": "product_spec",
+      "format": "docx",
+      "title": "SunnySemi LLC - SunCore 6.0 Product Specification",
+      "filename": "2025-02-01 - SunnySemi LLC - SunCore 6.0 Product Specification.docx",
+      "publication_date": "2025-02-01",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-beacon-2025-planned"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "scope",
+        "requirements",
+        "acceptance_criteria"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0018",
+      "type": "financial_model",
+      "format": "xlsx",
+      "title": "SunnySemi LLC - H1 2025 Operating Economics",
+      "filename": "2025-07-15 - SunnySemi LLC - H1 2025 Operating Economics.xlsx",
+      "publication_date": "2025-07-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2025-q2"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0036",
+      "type": "board_deck",
+      "format": "pptx",
+      "title": "SunnySemi LLC - 2025 Midyear Performance and Capacity Decisions",
+      "filename": "2025-07-20 - SunnySemi LLC - 2025 Midyear Performance and Capacity Decisions.pptx",
+      "publication_date": "2025-07-20",
+      "audience": "board",
+      "anchor_ids": [
+        "financial-2025-q2"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-board"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "executive_summary",
+        "performance",
+        "risks",
+        "decisions_requested"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0012",
+      "type": "meeting_transcript",
+      "format": "docx",
+      "title": "SunnySemi LLC - 2025 Production Readiness and Profitable scale",
+      "filename": "2025-07-25 - SunnySemi LLC - 2025 Production Readiness and Profitable scale.docx",
+      "publication_date": "2025-07-25",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-beacon-2025-planned"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "participants",
+        "discussion",
+        "decisions",
+        "actions"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0041",
+      "type": "press_release",
+      "format": "docx",
+      "title": "SunnySemi LLC Launches SunCore 6.0 for High-Density Edge Systems",
+      "filename": "2025-08-15 - SunnySemi LLC Launches SunCore 6.0 for High-Density Edge Systems.docx",
+      "publication_date": "2025-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-beacon-2025-launched"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0047",
+      "type": "press_release",
+      "format": "docx",
+      "title": "SunnySemi LLC Launches GulfSwitch 6.0 Power Control",
+      "filename": "2025-08-15 - SunnySemi LLC Launches GulfSwitch 6.0 Power Control.docx",
+      "publication_date": "2025-08-15",
+      "audience": "public",
+      "anchor_ids": [
+        "milestone-prism-2025-launched"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "dateline_and_lead",
+        "announcement_details",
+        "attributed_quote",
+        "company_boilerplate",
+        "media_contact"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0006",
+      "type": "product_presentation",
+      "format": "pptx",
+      "title": "SunnySemi LLC - SunCore 6.0 - Edge Inference Adoption",
+      "filename": "2025-08-20 - SunnySemi LLC - SunCore 6.0 - Edge Inference Adoption.pptx",
+      "publication_date": "2025-08-20",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-beacon-2025-launched"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0048",
+      "type": "product_presentation",
+      "format": "pptx",
+      "title": "SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption",
+      "filename": "2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx",
+      "publication_date": "2025-08-22",
+      "audience": "internal",
+      "anchor_ids": [
+        "milestone-prism-2025-launched"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "customer_problem",
+        "value_proposition",
+        "capabilities",
+        "use_cases",
+        "next_steps"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    },
+    {
+      "id": "doc-0042",
+      "type": "financial_model",
+      "format": "xlsx",
+      "title": "SunnySemi LLC - FY 2025 Operating Economics",
+      "filename": "2026-01-15 - SunnySemi LLC - FY 2025 Operating Economics.xlsx",
+      "publication_date": "2026-01-15",
+      "audience": "internal",
+      "anchor_ids": [
+        "financial-2025-q4"
+      ],
+      "revision": 3,
+      "author_id": "person-avery",
+      "viewpoint_id": null,
+      "access_groups": [
+        "group-internal"
+      ],
+      "source_version_id": null,
+      "required_statement_ids": [],
+      "content_depth": "medium",
+      "required_sections": [
+        "source_actuals",
+        "calculations",
+        "assumptions_and_notes"
+      ],
+      "condition_ids": [],
+      "blocked_record_ids": [],
+      "suppressed_record_ids": []
+    }
+  ],
+  "warnings": []
+}

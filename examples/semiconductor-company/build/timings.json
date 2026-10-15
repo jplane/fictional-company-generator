@@ -1,0 +1,38 @@
+{
+  "timing_version": 1,
+  "events": [
+    {
+      "id": "5a26fed0-4c68-48ce-ae79-1a3d8fbbb58e",
+      "name": "corrective-export",
+      "parent": null,
+      "pass": "generation",
+      "document_id": null,
+      "started_at": "2026-10-15T17:15:54.635085+00:00",
+      "status": "passed",
+      "ended_at": "2026-10-15T17:27:33.924162+00:00",
+      "elapsed_seconds": 699.289077
+    },
+    {
+      "id": "20de325e-e6c2-4134-8d5c-7737937034f8",
+      "name": "pilot-editorial-visual-review",
+      "parent": null,
+      "pass": "generation",
+      "document_id": null,
+      "started_at": "2026-10-15T17:16:39.854005+00:00",
+      "status": "passed",
+      "ended_at": "2026-10-15T17:18:01.074865+00:00",
+      "elapsed_seconds": 81.22086
+    },
+    {
+      "id": "d7099bee-72cd-448a-aeda-cb0448a18028",
+      "name": "corrective-content-and-visual-review",
+      "parent": null,
+      "pass": "generation",
+      "document_id": null,
+      "started_at": "2026-10-15T17:22:32.635658+00:00",
+      "status": "passed",
+      "ended_at": "2026-10-15T17:27:33.587944+00:00",
+      "elapsed_seconds": 300.952286
+    }
+  ]
+}

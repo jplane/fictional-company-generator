@@ -1,0 +1,984 @@
+{
+  "schema_version": 2,
+  "corpus_id": "corpus-76ce98a12405018fd1e8c2e5",
+  "document_id": "doc-0044",
+  "canon_sha256": "caaf762e72fb012b38e89626490ab0988233f06da57675c45f8792fce3796186",
+  "plan_sha256": "719fd5adce3412ce759a3e19cd383a054d201fc8a6c9f128371110c82d42fa97",
+  "title": "SunnySemi LLC - SunCore 1.0 Product Specification",
+  "publication_date": "2020-02-01",
+  "content_depth": "medium",
+  "claims": [
+    {
+      "id": "c0001",
+      "record_id": "product-beacon",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "SunCore"
+    },
+    {
+      "id": "c0002",
+      "record_id": "release-beacon-2020",
+      "path": [
+        "data",
+        "version"
+      ],
+      "value": "1.0"
+    },
+    {
+      "id": "c0003",
+      "record_id": "release-beacon-2020",
+      "path": [
+        "data",
+        "capability"
+      ],
+      "value": "12 nm inference ASIC with PCIe Gen3 x4 host interface"
+    },
+    {
+      "id": "c0004",
+      "record_id": "milestone-beacon-2020-planned",
+      "path": [
+        "data",
+        "status"
+      ],
+      "value": "planned"
+    },
+    {
+      "id": "c0005",
+      "record_id": "milestone-beacon-2020-planned",
+      "path": [
+        "data",
+        "target_date"
+      ],
+      "value": "2020-08-15"
+    },
+    {
+      "id": "c0006",
+      "record_id": "release-beacon-2020",
+      "path": [
+        "data",
+        "metric"
+      ],
+      "value": "12 INT8 TOPS"
+    },
+    {
+      "id": "c0007",
+      "record_id": "release-beacon-2020",
+      "path": [
+        "data",
+        "operating_point"
+      ],
+      "value": "12 W board design budget"
+    },
+    {
+      "id": "c0008",
+      "record_id": "release-beacon-2020",
+      "path": [
+        "data",
+        "constraints"
+      ],
+      "value": "Peak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design."
+    },
+    {
+      "id": "c0009",
+      "record_id": "release-beacon-2020",
+      "path": [
+        "data",
+        "workflow"
+      ],
+      "value": "Capture frames on the host, prepare tensors, submit inference over PCIe, and return results to the host application."
+    },
+    {
+      "id": "c0010",
+      "record_id": "release-beacon-2020",
+      "path": [
+        "data",
+        "qualification"
+      ],
+      "value": "Evaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration."
+    },
+    {
+      "id": "c0011",
+      "record_id": "release-beacon-2020",
+      "path": [
+        "data",
+        "integration_step"
+      ],
+      "value": "Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption."
+    },
+    {
+      "id": "c0012",
+      "record_id": "person-riley",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Riley Arden"
+    },
+    {
+      "id": "c0013",
+      "record_id": "role-riley-initial",
+      "path": [
+        "data",
+        "title"
+      ],
+      "value": "VP Engineering"
+    },
+    {
+      "id": "c0014",
+      "record_id": "person-quinn",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Quinn Mercer"
+    },
+    {
+      "id": "c0015",
+      "record_id": "role-quinn-initial",
+      "path": [
+        "data",
+        "title"
+      ],
+      "value": "Product Director"
+    },
+    {
+      "id": "c0016",
+      "record_id": "release-beacon-2020",
+      "path": [
+        "data",
+        "exclusions"
+      ],
+      "value": "No regulatory certification, customer benchmark or customer endorsement is asserted."
+    },
+    {
+      "id": "c0017",
+      "record_id": "req-beacon-2020-01",
+      "path": [
+        "data",
+        "requirement_id"
+      ],
+      "value": "SC-1-01"
+    },
+    {
+      "id": "c0018",
+      "record_id": "req-beacon-2020-01",
+      "path": [
+        "data",
+        "requirement"
+      ],
+      "value": "Enumerate as a PCIe Gen3 x4 endpoint."
+    },
+    {
+      "id": "c0019",
+      "record_id": "req-beacon-2020-01",
+      "path": [
+        "data",
+        "acceptance"
+      ],
+      "value": "Complete cold-boot enumeration on the reference host in 100 consecutive boots."
+    },
+    {
+      "id": "c0020",
+      "record_id": "req-beacon-2020-01",
+      "path": [
+        "data",
+        "method"
+      ],
+      "value": "Reference-board verification"
+    },
+    {
+      "id": "c0021",
+      "record_id": "req-beacon-2020-02",
+      "path": [
+        "data",
+        "requirement_id"
+      ],
+      "value": "SC-1-02"
+    },
+    {
+      "id": "c0022",
+      "record_id": "req-beacon-2020-02",
+      "path": [
+        "data",
+        "requirement"
+      ],
+      "value": "Support signed INT8 multiply-accumulate inference."
+    },
+    {
+      "id": "c0023",
+      "record_id": "req-beacon-2020-02",
+      "path": [
+        "data",
+        "acceptance"
+      ],
+      "value": "Match the published INT8 golden vectors exactly for supported operators."
+    },
+    {
+      "id": "c0024",
+      "record_id": "req-beacon-2020-02",
+      "path": [
+        "data",
+        "method"
+      ],
+      "value": "Reference-board verification"
+    },
+    {
+      "id": "c0025",
+      "record_id": "req-beacon-2020-03",
+      "path": [
+        "data",
+        "requirement_id"
+      ],
+      "value": "SC-1-03"
+    },
+    {
+      "id": "c0026",
+      "record_id": "req-beacon-2020-03",
+      "path": [
+        "data",
+        "requirement"
+      ],
+      "value": "Expose a peak of 12 INT8 TOPS at the rated clock."
+    },
+    {
+      "id": "c0027",
+      "record_id": "req-beacon-2020-03",
+      "path": [
+        "data",
+        "acceptance"
+      ],
+      "value": "Check the architectural operation-count model against the rated configuration."
+    },
+    {
+      "id": "c0028",
+      "record_id": "req-beacon-2020-03",
+      "path": [
+        "data",
+        "method"
+      ],
+      "value": "Reference-board verification"
+    },
+    {
+      "id": "c0029",
+      "record_id": "req-beacon-2020-04",
+      "path": [
+        "data",
+        "requirement_id"
+      ],
+      "value": "SC-1-04"
+    },
+    {
+      "id": "c0030",
+      "record_id": "req-beacon-2020-04",
+      "path": [
+        "data",
+        "requirement"
+      ],
+      "value": "Use a 12 W reference-board design budget."
+    },
+    {
+      "id": "c0031",
+      "record_id": "req-beacon-2020-04",
+      "path": [
+        "data",
+        "acceptance"
+      ],
+      "value": "Measure board input power on the release workload without exceeding the budget."
+    },
+    {
+      "id": "c0032",
+      "record_id": "req-beacon-2020-04",
+      "path": [
+        "data",
+        "method"
+      ],
+      "value": "Reference-board verification"
+    },
+    {
+      "id": "c0033",
+      "record_id": "req-beacon-2020-05",
+      "path": [
+        "data",
+        "requirement_id"
+      ],
+      "value": "SC-1-05"
+    },
+    {
+      "id": "c0034",
+      "record_id": "req-beacon-2020-05",
+      "path": [
+        "data",
+        "requirement"
+      ],
+      "value": "Accept the release compiler's versioned binary model package."
+    },
+    {
+      "id": "c0035",
+      "record_id": "req-beacon-2020-05",
+      "path": [
+        "data",
+        "acceptance"
+      ],
+      "value": "Load a package built with the matching toolchain and reject an incompatible major version."
+    },
+    {
+      "id": "c0036",
+      "record_id": "req-beacon-2020-05",
+      "path": [
+        "data",
+        "method"
+      ],
+      "value": "Reference-board verification"
+    },
+    {
+      "id": "c0037",
+      "record_id": "req-beacon-2020-06",
+      "path": [
+        "data",
+        "requirement_id"
+      ],
+      "value": "SC-1-06"
+    },
+    {
+      "id": "c0038",
+      "record_id": "req-beacon-2020-06",
+      "path": [
+        "data",
+        "requirement"
+      ],
+      "value": "Reject models containing operators outside the supported list."
+    },
+    {
+      "id": "c0039",
+      "record_id": "req-beacon-2020-06",
+      "path": [
+        "data",
+        "acceptance"
+      ],
+      "value": "Return an operator diagnostic before device execution for every negative test."
+    },
+    {
+      "id": "c0040",
+      "record_id": "req-beacon-2020-06",
+      "path": [
+        "data",
+        "method"
+      ],
+      "value": "Reference-board verification"
+    },
+    {
+      "id": "c0041",
+      "record_id": "req-beacon-2020-07",
+      "path": [
+        "data",
+        "requirement_id"
+      ],
+      "value": "SC-1-07"
+    },
+    {
+      "id": "c0042",
+      "record_id": "req-beacon-2020-07",
+      "path": [
+        "data",
+        "requirement"
+      ],
+      "value": "Validate tensor shape, element type and buffer bounds."
+    },
+    {
+      "id": "c0043",
+      "record_id": "req-beacon-2020-07",
+      "path": [
+        "data",
+        "acceptance"
+      ],
+      "value": "Reject malformed dimensions and undersized buffers without DMA outside the allocation."
+    },
+    {
+      "id": "c0044",
+      "record_id": "req-beacon-2020-07",
+      "path": [
+        "data",
+        "method"
+      ],
+      "value": "Reference-board verification"
+    },
+    {
+      "id": "c0045",
+      "record_id": "req-beacon-2020-08",
+      "path": [
+        "data",
+        "requirement_id"
+      ],
+      "value": "SC-1-08"
+    },
+    {
+      "id": "c0046",
+      "record_id": "req-beacon-2020-08",
+      "path": [
+        "data",
+        "requirement"
+      ],
+      "value": "Limit DMA transactions to driver-registered buffers."
+    },
+    {
+      "id": "c0047",
+      "record_id": "req-beacon-2020-08",
+      "path": [
+        "data",
+        "acceptance"
+      ],
+      "value": "Run the invalid-buffer suite with no unauthorized host-memory access."
+    },
+    {
+      "id": "c0048",
+      "record_id": "req-beacon-2020-08",
+      "path": [
+        "data",
+        "method"
+      ],
+      "value": "Reference-board verification"
+    },
+    {
+      "id": "c0049",
+      "record_id": "req-beacon-2020-09",
+      "path": [
+        "data",
+        "requirement_id"
+      ],
+      "value": "SC-1-09"
+    },
+    {
+      "id": "c0050",
+      "record_id": "req-beacon-2020-09",
+      "path": [
+        "data",
+        "requirement"
+      ],
+      "value": "Recover the command interface after a host-issued device reset."
+    },
+    {
+      "id": "c0051",
+      "record_id": "req-beacon-2020-09",
+      "path": [
+        "data",
+        "acceptance"
+      ],
+      "value": "Execute the release smoke workload after 100 repeated reset cycles."
+    },
+    {
+      "id": "c0052",
+      "record_id": "req-beacon-2020-09",
+      "path": [
+        "data",
+        "method"
+      ],
+      "value": "Reference-board verification"
+    },
+    {
+      "id": "c0053",
+      "record_id": "req-beacon-2020-10",
+      "path": [
+        "data",
+        "requirement_id"
+      ],
+      "value": "SC-1-10"
+    },
+    {
+      "id": "c0054",
+      "record_id": "req-beacon-2020-10",
+      "path": [
+        "data",
+        "requirement"
+      ],
+      "value": "Report device temperature and command completion status."
+    },
+    {
+      "id": "c0055",
+      "record_id": "req-beacon-2020-10",
+      "path": [
+        "data",
+        "acceptance"
+      ],
+      "value": "Compare temperature readout with the calibrated reference within 3 degrees Celsius."
+    },
+    {
+      "id": "c0056",
+      "record_id": "req-beacon-2020-10",
+      "path": [
+        "data",
+        "method"
+      ],
+      "value": "Reference-board verification"
+    },
+    {
+      "id": "c0057",
+      "record_id": "req-beacon-2020-11",
+      "path": [
+        "data",
+        "requirement_id"
+      ],
+      "value": "SC-1-11"
+    },
+    {
+      "id": "c0058",
+      "record_id": "req-beacon-2020-11",
+      "path": [
+        "data",
+        "requirement"
+      ],
+      "value": "Throttle work admission before the board's configured thermal limit."
+    },
+    {
+      "id": "c0059",
+      "record_id": "req-beacon-2020-11",
+      "path": [
+        "data",
+        "acceptance"
+      ],
+      "value": "Raise ambient temperature and verify throttling and recovery at configured thresholds."
+    },
+    {
+      "id": "c0060",
+      "record_id": "req-beacon-2020-11",
+      "path": [
+        "data",
+        "method"
+      ],
+      "value": "Reference-board verification"
+    },
+    {
+      "id": "c0061",
+      "record_id": "req-beacon-2020-12",
+      "path": [
+        "data",
+        "requirement_id"
+      ],
+      "value": "SC-1-12"
+    },
+    {
+      "id": "c0062",
+      "record_id": "req-beacon-2020-12",
+      "path": [
+        "data",
+        "requirement"
+      ],
+      "value": "Return distinct invalid-model, timeout and device-fault status codes."
+    },
+    {
+      "id": "c0063",
+      "record_id": "req-beacon-2020-12",
+      "path": [
+        "data",
+        "acceptance"
+      ],
+      "value": "Inject each documented fault and check the driver status and recovery path."
+    },
+    {
+      "id": "c0064",
+      "record_id": "req-beacon-2020-12",
+      "path": [
+        "data",
+        "method"
+      ],
+      "value": "Reference-board verification"
+    },
+    {
+      "id": "c0065",
+      "record_id": "req-beacon-2020-13",
+      "path": [
+        "data",
+        "requirement_id"
+      ],
+      "value": "SC-1-13"
+    },
+    {
+      "id": "c0066",
+      "record_id": "req-beacon-2020-13",
+      "path": [
+        "data",
+        "requirement"
+      ],
+      "value": "Deliver a Linux x86-64 reference driver with a version manifest."
+    },
+    {
+      "id": "c0067",
+      "record_id": "req-beacon-2020-13",
+      "path": [
+        "data",
+        "acceptance"
+      ],
+      "value": "Install on the supported reference image and run the complete release smoke suite."
+    },
+    {
+      "id": "c0068",
+      "record_id": "req-beacon-2020-13",
+      "path": [
+        "data",
+        "method"
+      ],
+      "value": "Reference-board verification"
+    },
+    {
+      "id": "c0069",
+      "record_id": "req-beacon-2020-14",
+      "path": [
+        "data",
+        "requirement_id"
+      ],
+      "value": "SC-1-14"
+    },
+    {
+      "id": "c0070",
+      "record_id": "req-beacon-2020-14",
+      "path": [
+        "data",
+        "requirement"
+      ],
+      "value": "Identify silicon revision, firmware and compiler in each diagnostic bundle."
+    },
+    {
+      "id": "c0071",
+      "record_id": "req-beacon-2020-14",
+      "path": [
+        "data",
+        "acceptance"
+      ],
+      "value": "Recreate an issue report using only the recorded release identifiers and input tensor."
+    },
+    {
+      "id": "c0072",
+      "record_id": "req-beacon-2020-14",
+      "path": [
+        "data",
+        "method"
+      ],
+      "value": "Reference-board verification"
+    },
+    {
+      "id": "c0073",
+      "record_id": "req-beacon-2020-15",
+      "path": [
+        "data",
+        "requirement_id"
+      ],
+      "value": "SC-1-15"
+    },
+    {
+      "id": "c0074",
+      "record_id": "req-beacon-2020-15",
+      "path": [
+        "data",
+        "requirement"
+      ],
+      "value": "Retain functional, power and thermal verification results."
+    },
+    {
+      "id": "c0075",
+      "record_id": "req-beacon-2020-15",
+      "path": [
+        "data",
+        "acceptance"
+      ],
+      "value": "Block production release when any required acceptance result is absent or failing."
+    },
+    {
+      "id": "c0076",
+      "record_id": "req-beacon-2020-15",
+      "path": [
+        "data",
+        "method"
+      ],
+      "value": "Reference-board verification"
+    },
+    {
+      "id": "c0077",
+      "record_id": "req-beacon-2020-16",
+      "path": [
+        "data",
+        "requirement_id"
+      ],
+      "value": "SC-1-16"
+    },
+    {
+      "id": "c0078",
+      "record_id": "req-beacon-2020-16",
+      "path": [
+        "data",
+        "requirement"
+      ],
+      "value": "Review interface-affecting changes before issuing revised packages."
+    },
+    {
+      "id": "c0079",
+      "record_id": "req-beacon-2020-16",
+      "path": [
+        "data",
+        "acceptance"
+      ],
+      "value": "Record compatibility impact and obtain Product and Engineering sign-off."
+    },
+    {
+      "id": "c0080",
+      "record_id": "req-beacon-2020-16",
+      "path": [
+        "data",
+        "method"
+      ],
+      "value": "Reference-board verification"
+    },
+    {
+      "id": "c0081",
+      "record_id": "release-beacon-2020",
+      "path": [
+        "data",
+        "evaluation_step"
+      ],
+      "value": "Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example."
+    }
+  ],
+  "sections": [
+    {
+      "role": "scope",
+      "heading": "Product scope and release basis",
+      "text": "SunCore 1.0 is a 12 nm inference ASIC with PCIe Gen3 x4 host interface. This specification supports the planned release targeted for 2020-08-15; it is not evidence that production release has already occurred. The design envelope is 12 INT8 TOPS with a 12 W board design budget. Peak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design. Engineering must retain the acceptance evidence for the exact silicon, firmware, driver and compiler configuration being released. Interface compatibility is evaluated against that configuration, not inferred from a shared product family name. This document controls the requirements and verification path; commercial allocation remains a separate process.",
+      "claim_ids": [
+        "c0001",
+        "c0002",
+        "c0003",
+        "c0004",
+        "c0005",
+        "c0006",
+        "c0007",
+        "c0008"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "scope",
+      "heading": "Interfaces, dependencies and use boundaries",
+      "text": "Capture frames on the host, prepare tensors, submit inference over PCIe, and return results to the host application. The qualification sequence is: Evaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration. Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption. The host owns capture, tensor preparation and the application response to inference results. The accelerator interface must reject malformed inputs rather than permit unbounded device activity. Customer model coverage is limited by the release operator list. A model that compiles successfully still needs application-level verification. Reference-board results do not establish customer-enclosure thermal performance. Production configuration changes must be reviewed for their effect on compatibility, power and the existing verification evidence.",
+      "claim_ids": [
+        "c0009",
+        "c0010",
+        "c0011"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "scope",
+      "heading": "Verification ownership and document navigation",
+      "text": "Riley Arden, VP Engineering owns engineering evidence; Quinn Mercer, Product Director owns the product acceptance boundary. The following requirements are grouped into host and compute behavior, fault handling and observability, then release and compatibility control. Each numbered requirement includes a concrete acceptance condition. The release checklist must identify the method, configuration and result for every control; a missing result is not an implied pass. Failures require corrective evidence before the release gate can close. Technical exclusions remain explicit: No regulatory certification, customer benchmark or customer endorsement is asserted.",
+      "claim_ids": [
+        "c0012",
+        "c0013",
+        "c0014",
+        "c0015",
+        "c0016"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "requirements",
+      "heading": "01 | Host link",
+      "text": "SC-1-01: Enumerate as a PCIe Gen3 x4 endpoint. Acceptance: Complete cold-boot enumeration on the reference host in 100 consecutive boots. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "claim_ids": [
+        "c0017",
+        "c0018",
+        "c0019",
+        "c0020"
+      ],
+      "page_break": true
+    },
+    {
+      "role": "requirements",
+      "heading": "02 | Arithmetic",
+      "text": "SC-1-02: Support signed INT8 multiply-accumulate inference. Acceptance: Match the published INT8 golden vectors exactly for supported operators. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "claim_ids": [
+        "c0021",
+        "c0022",
+        "c0023",
+        "c0024"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "requirements",
+      "heading": "03 | Peak compute",
+      "text": "SC-1-03: Expose a peak of 12 INT8 TOPS at the rated clock. Acceptance: Check the architectural operation-count model against the rated configuration. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "claim_ids": [
+        "c0025",
+        "c0026",
+        "c0027",
+        "c0028"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "requirements",
+      "heading": "04 | Power envelope",
+      "text": "SC-1-04: Use a 12 W reference-board design budget. Acceptance: Measure board input power on the release workload without exceeding the budget. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "claim_ids": [
+        "c0029",
+        "c0030",
+        "c0031",
+        "c0032"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "requirements",
+      "heading": "05 | Model interface",
+      "text": "SC-1-05: Accept the release compiler's versioned binary model package. Acceptance: Load a package built with the matching toolchain and reject an incompatible major version. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "claim_ids": [
+        "c0033",
+        "c0034",
+        "c0035",
+        "c0036"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "requirements",
+      "heading": "06 | Unsupported operators",
+      "text": "SC-1-06: Reject models containing operators outside the supported list. Acceptance: Return an operator diagnostic before device execution for every negative test. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "claim_ids": [
+        "c0037",
+        "c0038",
+        "c0039",
+        "c0040"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "requirements",
+      "heading": "07 | Tensor validation",
+      "text": "SC-1-07: Validate tensor shape, element type and buffer bounds. Acceptance: Reject malformed dimensions and undersized buffers without DMA outside the allocation. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "claim_ids": [
+        "c0041",
+        "c0042",
+        "c0043",
+        "c0044"
+      ],
+      "page_break": true
+    },
+    {
+      "role": "requirements",
+      "heading": "08 | DMA protection",
+      "text": "SC-1-08: Limit DMA transactions to driver-registered buffers. Acceptance: Run the invalid-buffer suite with no unauthorized host-memory access. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "claim_ids": [
+        "c0045",
+        "c0046",
+        "c0047",
+        "c0048"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "requirements",
+      "heading": "09 | Reset recovery",
+      "text": "SC-1-09: Recover the command interface after a host-issued device reset. Acceptance: Execute the release smoke workload after 100 repeated reset cycles. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "claim_ids": [
+        "c0049",
+        "c0050",
+        "c0051",
+        "c0052"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "requirements",
+      "heading": "10 | Telemetry",
+      "text": "SC-1-10: Report device temperature and command completion status. Acceptance: Compare temperature readout with the calibrated reference within 3 degrees Celsius. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "claim_ids": [
+        "c0053",
+        "c0054",
+        "c0055",
+        "c0056"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "requirements",
+      "heading": "11 | Thermal response",
+      "text": "SC-1-11: Throttle work admission before the board's configured thermal limit. Acceptance: Raise ambient temperature and verify throttling and recovery at configured thresholds. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "claim_ids": [
+        "c0057",
+        "c0058",
+        "c0059",
+        "c0060"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "requirements",
+      "heading": "12 | Error reporting",
+      "text": "SC-1-12: Return distinct invalid-model, timeout and device-fault status codes. Acceptance: Inject each documented fault and check the driver status and recovery path. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "claim_ids": [
+        "c0061",
+        "c0062",
+        "c0063",
+        "c0064"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "requirements",
+      "heading": "13 | Driver package",
+      "text": "SC-1-13: Deliver a Linux x86-64 reference driver with a version manifest. Acceptance: Install on the supported reference image and run the complete release smoke suite. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "claim_ids": [
+        "c0065",
+        "c0066",
+        "c0067",
+        "c0068"
+      ],
+      "page_break": true
+    },
+    {
+      "role": "requirements",
+      "heading": "14 | Reproducibility",
+      "text": "SC-1-14: Identify silicon revision, firmware and compiler in each diagnostic bundle. Acceptance: Recreate an issue report using only the recorded release identifiers and input tensor. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "claim_ids": [
+        "c0069",
+        "c0070",
+        "c0071",
+        "c0072"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "requirements",
+      "heading": "15 | Release evidence",
+      "text": "SC-1-15: Retain functional, power and thermal verification results. Acceptance: Block production release when any required acceptance result is absent or failing. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "claim_ids": [
+        "c0073",
+        "c0074",
+        "c0075",
+        "c0076"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "requirements",
+      "heading": "16 | Change control",
+      "text": "SC-1-16: Review interface-affecting changes before issuing revised packages. Acceptance: Record compatibility impact and obtain Product and Engineering sign-off. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "claim_ids": [
+        "c0077",
+        "c0078",
+        "c0079",
+        "c0080"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "acceptance_criteria",
+      "heading": "Release gate and change control",
+      "text": "Acceptance requires all numbered controls to pass for the version-matched configuration. A functional pass cannot compensate for missing power or thermal evidence. Negative-path results must be retained alongside nominal-path results so that failure containment is auditable. Engineering and Product review interface-affecting changes before distributing a revised package. An unresolved compatibility issue blocks acceptance of the affected configuration rather than being carried silently into customer qualification. Customer-specific constraints remain outside a component-level claim of universal suitability. Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example.",
+      "claim_ids": [
+        "c0081"
+      ],
+      "page_break": false
+    }
+  ]
+}

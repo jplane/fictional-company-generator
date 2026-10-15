@@ -1,0 +1,34 @@
+{
+  "document_id": "doc-0041",
+  "artifact_sha256": "0fcd6a712bbf783d5fd7da2892cc9408047191d1f8042ceb9f4962e765046835",
+  "draft_sha256": "e21634cb5b9e1d65edc9d60037053fdd4d9b73d14f9982695705f5835dc5a835",
+  "machine_sha256": "267641b934af511bed8ca55e242dbef195434512613d3796a8d85ec9c8e6df73",
+  "semantic_review": {
+    "status": "passed",
+    "evidence": "SunnySemi LLC Launches SunCore 6.0 for High-Density Edge Systems: Reviewed the complete release against the launched milestone, version-specific capabilities, approved CEO quote, operating constraints, availability, Florida business description and reserved-domain contacts. GulfSwitch efficiency is qualified by its reference conditions; SunCore peak compute is not represented as sustained customer performance."
+  },
+  "genre_review": {
+    "status": "passed",
+    "evidence": "Reviewed complete delivered content in its business genre: Reviewed the complete release against the launched milestone, version-specific capabilities, approved CEO quote, operating constraints, availability, Florida business description and reserved-domain contacts. GulfSwitch efficiency is qualified by its reference conditions; SunCore peak compute is not represented as sustained customer performance. Ordinary company voice; no placeholders or generation self-labels."
+  },
+  "depth_review": {
+    "status": "passed",
+    "content_depth": "medium",
+    "evidence": "Delivered release meets the 450-700 word target and includes practical customer implications, technical scope, adoption sequence and availability rather than only an announcement headline. Saved-content measurement: 584 delivered_words; draft measures {'document_id': 'doc-0041', 'type': 'press_release', 'draft_words': 561, 'discussion_words': 0, 'requirements': None, 'analysis_modules': None}."
+  },
+  "visual_review": {
+    "status": "passed",
+    "images_delivered": true,
+    "render_ids": [
+      "all"
+    ],
+    "evidence": "Two explicit pages; headline, dateline, complete quotation, adoption/availability copy, company boilerplate and media contact are legible with no clipped text. Inspected 2 complete unit images.",
+    "inspected_images": [
+      "build\\renders\\doc-0041\\all\\page-1.png",
+      "build\\renders\\doc-0041\\all\\page-2.png"
+    ]
+  },
+  "condition_review": {
+    "status": "not_selected"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "arguments": [
+    "view",
+    "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2023-07-15 - SunnySemi LLC - H1 2023 Operating Economics.xlsx",
+    "issues"
+  ],
+  "operation": "issues",
+  "started_at": "2026-10-15T17:19:55.460375+00:00",
+  "ended_at": "2026-10-15T17:19:57.176247+00:00",
+  "active_seconds": 1.7158726999768987,
+  "waiting_seconds": 0,
+  "returncode": 0,
+  "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"issues\": []\n  }\n}\n",
+  "stderr": "",
+  "tool": {
+    "version": "1.0.157",
+    "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+  },
+  "corrective": false,
+  "pass": "generation",
+  "repeat_success": true,
+  "artifact_sha256": "84721a65ce2e89e9b76b5ca21f951e5efba70d14d4d86cd8ac9260357fc06eea",
+  "status": "passed",
+  "evidence": "Checked complete OfficeCLI result without errors/caveats"
+}

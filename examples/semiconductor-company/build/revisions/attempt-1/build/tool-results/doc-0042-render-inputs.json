@@ -1,0 +1,40 @@
+{
+  "operation": "capture",
+  "status": "passed",
+  "started_at": "2026-10-15T16:46:27.410604+00:00",
+  "ended_at": "2026-10-15T16:46:30.310151+00:00",
+  "active_seconds": 2.8985349999857135,
+  "tool": {
+    "engine": "playwright-chromium",
+    "playwright_version": "1.63.0",
+    "channel": "chromium",
+    "headless": true,
+    "chromium_sandbox": true,
+    "browser_version": "153.0.8010.12",
+    "executable_path": "C:\\Users\\jolan\\AppData\\Local\\ms-playwright\\chromium-1243\\chrome-win64\\chrome.exe",
+    "executable_sha256": "9b07943f834485b43c9d54caea2951c78715f9f07070a80ab6658465ebd3e711"
+  },
+  "source_html_sha256": "3e82dc563c14d9869b936f5b1da31e63513ad46d8cc2f41102d9dd54a196f084",
+  "unit": "region",
+  "image_sha256": "ada6a37d8276cd0c6dcbca9fad7b5eac5ae7f11970d7b17e11409a011eb0353a",
+  "lane_timing": {
+    "waiting_seconds": 0.0003453000099398196,
+    "active_seconds": 2.8985349999857135
+  },
+  "elapsed_seconds": 2.899539400008507,
+  "waiting_seconds": 0.0003453000099398196,
+  "start_cell": "A1",
+  "end_cell": "E16",
+  "clip": {
+    "x": 40.5,
+    "y": 62.5,
+    "width": 952.1875,
+    "height": 576.0
+  },
+  "viewport": {
+    "width": 1600,
+    "height": 1200
+  },
+  "artifact_sha256": "9dcd4cf568800d547c8b570d38aba244113a7ae42d48c655cb13793073f9d537",
+  "image_count": 1
+}

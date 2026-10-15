@@ -1,0 +1,323 @@
+{
+  "schema_version": 2,
+  "corpus_id": "corpus-76ce98a12405018fd1e8c2e5",
+  "document_id": "doc-0031",
+  "canon_sha256": "caaf762e72fb012b38e89626490ab0988233f06da57675c45f8792fce3796186",
+  "plan_sha256": "647b92bb093e0638d541a8f268fd3c50035a754aa58c5be14676e52f5e7007a9",
+  "title": "SunnySemi LLC Launches SunCore 2.0 for Warehouse Automation",
+  "publication_date": "2021-08-15",
+  "content_depth": "medium",
+  "claims": [
+    {
+      "id": "c0001",
+      "record_id": "product-beacon",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "SunCore"
+    },
+    {
+      "id": "c0002",
+      "record_id": "release-beacon-2021",
+      "path": [
+        "data",
+        "version"
+      ],
+      "value": "2.0"
+    },
+    {
+      "id": "c0003",
+      "record_id": "release-beacon-2021",
+      "path": [
+        "data",
+        "release_date"
+      ],
+      "value": "2021-08-15"
+    },
+    {
+      "id": "c0004",
+      "record_id": "milestone-beacon-2021-launched",
+      "path": [
+        "data",
+        "status"
+      ],
+      "value": "launched"
+    },
+    {
+      "id": "c0005",
+      "record_id": "release-beacon-2021",
+      "path": [
+        "data",
+        "market"
+      ],
+      "value": "warehouse automation"
+    },
+    {
+      "id": "c0006",
+      "record_id": "company",
+      "path": [
+        "data",
+        "dateline"
+      ],
+      "value": "TAMPA, Fla."
+    },
+    {
+      "id": "c0007",
+      "record_id": "company",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "SunnySemi LLC"
+    },
+    {
+      "id": "c0008",
+      "record_id": "release-beacon-2021",
+      "path": [
+        "data",
+        "metric"
+      ],
+      "value": "24 INT8 TOPS"
+    },
+    {
+      "id": "c0009",
+      "record_id": "release-beacon-2021",
+      "path": [
+        "data",
+        "operating_point"
+      ],
+      "value": "15 W board design budget"
+    },
+    {
+      "id": "c0010",
+      "record_id": "release-beacon-2021",
+      "path": [
+        "data",
+        "capability"
+      ],
+      "value": "12 nm inference ASIC with PCIe Gen3 x4 host interface"
+    },
+    {
+      "id": "c0011",
+      "record_id": "release-beacon-2021",
+      "path": [
+        "data",
+        "constraints"
+      ],
+      "value": "Peak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design."
+    },
+    {
+      "id": "c0012",
+      "record_id": "release-beacon-2021",
+      "path": [
+        "data",
+        "quote"
+      ],
+      "value": "Our priority is to make SunCore 2.0 useful in real equipment, not just impressive in a specification table. Customers need clear operating boundaries, traceable release evidence and an engineering team that helps them qualify the complete design. That is how we intend to earn repeat programs."
+    },
+    {
+      "id": "c0013",
+      "record_id": "person-avery",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Avery Rowan"
+    },
+    {
+      "id": "c0014",
+      "record_id": "role-avery-initial",
+      "path": [
+        "data",
+        "title"
+      ],
+      "value": "CEO"
+    },
+    {
+      "id": "c0015",
+      "record_id": "release-beacon-2021",
+      "path": [
+        "data",
+        "use_cases",
+        0
+      ],
+      "value": "warehouse automation"
+    },
+    {
+      "id": "c0016",
+      "record_id": "release-beacon-2021",
+      "path": [
+        "data",
+        "use_cases",
+        1
+      ],
+      "value": "local equipment anomaly detection"
+    },
+    {
+      "id": "c0017",
+      "record_id": "release-beacon-2021",
+      "path": [
+        "data",
+        "use_cases",
+        2
+      ],
+      "value": "on-device visual inspection"
+    },
+    {
+      "id": "c0018",
+      "record_id": "release-beacon-2021",
+      "path": [
+        "data",
+        "workflow"
+      ],
+      "value": "Capture frames on the host, prepare tensors, submit inference over PCIe, and return results to the host application."
+    },
+    {
+      "id": "c0019",
+      "record_id": "release-beacon-2021",
+      "path": [
+        "data",
+        "support"
+      ],
+      "value": "schedule-backed allocation and repeatable factory test"
+    },
+    {
+      "id": "c0020",
+      "record_id": "release-beacon-2021",
+      "path": [
+        "data",
+        "availability"
+      ],
+      "value": "Production orders and version-matched evaluation kits are available from the launch date, subject to quotation and allocation."
+    },
+    {
+      "id": "c0021",
+      "record_id": "release-beacon-2021",
+      "path": [
+        "data",
+        "evaluation_step"
+      ],
+      "value": "Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example."
+    },
+    {
+      "id": "c0022",
+      "record_id": "release-beacon-2021",
+      "path": [
+        "data",
+        "integration_step"
+      ],
+      "value": "Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption."
+    },
+    {
+      "id": "c0023",
+      "record_id": "operating-2021",
+      "path": [
+        "data",
+        "price_note"
+      ],
+      "value": "Pricing and contractual lead times are supplied through customer-specific quotations."
+    },
+    {
+      "id": "c0024",
+      "record_id": "company",
+      "path": [
+        "data",
+        "boilerplate"
+      ],
+      "value": "SunnySemi LLC is a Tampa, Florida-based fabless semiconductor designer. Its SunCore edge-inference processors and GulfSwitch power-management devices serve equipment manufacturers building industrial, infrastructure and embedded systems. The company designs silicon and reference platforms in Florida and works with external wafer-fabrication, assembly and test partners. Its Sarasota engineering site supports package characterization, application validation and customer bring-up. SunnySemi combines version-controlled silicon specifications with evaluation hardware and application support so customers can qualify components against their own system requirements. Product information is available at https://sunnysemi.example."
+    },
+    {
+      "id": "c0025",
+      "record_id": "company",
+      "path": [
+        "data",
+        "media_contact"
+      ],
+      "value": "Jordan Ellis | Corporate Communications | media@sunnysemi.example"
+    }
+  ],
+  "sections": [
+    {
+      "role": "dateline_and_lead",
+      "heading": "For immediate release",
+      "text": "TAMPA, Fla. - SunnySemi LLC today announced that SunCore 2.0 has launched, effective 2021-08-15, expanding its component portfolio for warehouse automation. The release brings a version-specific silicon platform together with an evaluation path and clear operating boundaries. It is intended for equipment teams that need to move from a promising component specification to a qualified production design without treating those two steps as interchangeable. Customers can now begin adoption discussions around the released configuration rather than an unspecified future product.",
+      "claim_ids": [
+        "c0001",
+        "c0002",
+        "c0003",
+        "c0004",
+        "c0005",
+        "c0006",
+        "c0007"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "announcement_details",
+      "heading": "A defined operating envelope",
+      "text": "SunCore 2.0 combines 12 nm inference ASIC with PCIe Gen3 x4 host interface with 24 INT8 TOPS and a 15 W board design budget. Peak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design. The published boundaries are intended to help customers determine whether the part fits a proposed system before they commit engineering resources. Component characteristics do not remove the need to verify the surrounding board, software and enclosure. The adoption discussion therefore starts with a defined application and operating point, not a general promise that every workload will achieve the same result.",
+      "claim_ids": [
+        "c0008",
+        "c0009",
+        "c0010",
+        "c0011"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "attributed_quote",
+      "heading": "Engineering for repeat programs",
+      "text": "\"Our priority is to make SunCore 2.0 useful in real equipment, not just impressive in a specification table. Customers need clear operating boundaries, traceable release evidence and an engineering team that helps them qualify the complete design. That is how we intend to earn repeat programs.\" said Avery Rowan, CEO. The release approach connects technical capability with the evidence needed to introduce a component into equipment. It gives design teams a practical basis for discussing integration responsibilities and identifying work that remains on the customer side of the interface.",
+      "claim_ids": [
+        "c0012",
+        "c0013",
+        "c0014"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "announcement_details",
+      "heading": "From evaluation to adoption",
+      "text": "Application discussions include warehouse automation, local equipment anomaly detection and on-device visual inspection. The reference workflow is straightforward: Capture frames on the host, prepare tensors, submit inference over PCIe, and return results to the host application. SunnySemi's adoption support emphasizes schedule-backed allocation and repeatable factory test. Those activities give equipment manufacturers a way to compare the component's documented behavior with the requirements of their own design. They are not a substitute for customer acceptance, and they do not imply an endorsement from any equipment manufacturer. Integration scope and the production configuration should be agreed before a customer commits to a ramp.",
+      "claim_ids": [
+        "c0015",
+        "c0016",
+        "c0017",
+        "c0018",
+        "c0019"
+      ],
+      "page_break": true
+    },
+    {
+      "role": "announcement_details",
+      "heading": "Availability and customer qualification",
+      "text": "Production orders and version-matched evaluation kits are available from the launch date, subject to quotation and allocation. Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example. Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption. Pricing and contractual lead times are supplied through customer-specific quotations. This sequencing allows the engineering discussion to address the intended application before commercial commitments are finalized. Customers should use the matching release material when evaluating the component and should not assume that a later revision has identical interface behavior.",
+      "claim_ids": [
+        "c0020",
+        "c0021",
+        "c0022",
+        "c0023"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "company_boilerplate",
+      "heading": "About SunnySemi LLC",
+      "text": "SunnySemi LLC is a Tampa, Florida-based fabless semiconductor designer. Its SunCore edge-inference processors and GulfSwitch power-management devices serve equipment manufacturers building industrial, infrastructure and embedded systems. The company designs silicon and reference platforms in Florida and works with external wafer-fabrication, assembly and test partners. Its Sarasota engineering site supports package characterization, application validation and customer bring-up. SunnySemi combines version-controlled silicon specifications with evaluation hardware and application support so customers can qualify components against their own system requirements. Product information is available at https://sunnysemi.example.",
+      "claim_ids": [
+        "c0024"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "media_contact",
+      "heading": "Media contact",
+      "text": "Jordan Ellis | Corporate Communications | media@sunnysemi.example",
+      "claim_ids": [
+        "c0025"
+      ],
+      "page_break": false
+    }
+  ]
+}

@@ -1,0 +1,512 @@
+{
+  "formula_count": 72,
+  "evidence": "Reopened every saved formula; exact grounded expected values",
+  "bindings": [
+    {
+      "sheet": "Calc",
+      "cell": "B5",
+      "formula": "Inputs!B5-Inputs!B6",
+      "value": 522000000,
+      "claim_id": "c0049"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "B6",
+      "formula": "B5-Inputs!B7",
+      "value": 288000000,
+      "claim_id": "c0050"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "B7",
+      "formula": "B6-Inputs!B8",
+      "value": 0,
+      "claim_id": "c0051"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "B9",
+      "formula": "B5/Inputs!B5",
+      "value": "0.58",
+      "claim_id": "c0052"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "B10",
+      "formula": "B6/Inputs!B5",
+      "value": "0.32",
+      "claim_id": "c0053"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "B12",
+      "formula": "Inputs!B9+Inputs!B10",
+      "value": 900000000,
+      "claim_id": "c0054"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "B13",
+      "formula": "B12-Inputs!B5",
+      "value": 0,
+      "claim_id": "c0055"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "B14",
+      "formula": "Inputs!B9/Inputs!B5",
+      "value": "0.64",
+      "claim_id": "c0056"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "B16",
+      "formula": "Inputs!B11+Inputs!B12+Inputs!B13",
+      "value": 378000000,
+      "claim_id": "c0057"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "B17",
+      "formula": "B16-Inputs!B6",
+      "value": 0,
+      "claim_id": "c0058"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "B18",
+      "formula": "Inputs!B11/Inputs!B6",
+      "value": "0.65",
+      "claim_id": "c0059"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "B20",
+      "formula": "Inputs!B14+Inputs!B15",
+      "value": 234000000,
+      "claim_id": "c0060"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "B21",
+      "formula": "B20-Inputs!B7",
+      "value": 0,
+      "claim_id": "c0061"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "B22",
+      "formula": "Inputs!B14/Inputs!B7",
+      "value": "0.7",
+      "claim_id": "c0062"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "C5",
+      "formula": "Inputs!C5-Inputs!C6",
+      "value": 600300000,
+      "claim_id": "c0063"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "C6",
+      "formula": "C5-Inputs!C7",
+      "value": 331200000,
+      "claim_id": "c0064"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "C7",
+      "formula": "C6-Inputs!C8",
+      "value": 0,
+      "claim_id": "c0065"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "C9",
+      "formula": "C5/Inputs!C5",
+      "value": "0.58",
+      "claim_id": "c0066"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "C10",
+      "formula": "C6/Inputs!C5",
+      "value": "0.32",
+      "claim_id": "c0067"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "C12",
+      "formula": "Inputs!C9+Inputs!C10",
+      "value": 1035000000,
+      "claim_id": "c0068"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "C13",
+      "formula": "C12-Inputs!C5",
+      "value": 0,
+      "claim_id": "c0069"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "C14",
+      "formula": "Inputs!C9/Inputs!C5",
+      "value": "0.64",
+      "claim_id": "c0070"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "C16",
+      "formula": "Inputs!C11+Inputs!C12+Inputs!C13",
+      "value": 434700000,
+      "claim_id": "c0071"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "C17",
+      "formula": "C16-Inputs!C6",
+      "value": 0,
+      "claim_id": "c0072"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "C18",
+      "formula": "Inputs!C11/Inputs!C6",
+      "value": "0.65",
+      "claim_id": "c0073"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "C20",
+      "formula": "Inputs!C14+Inputs!C15",
+      "value": 269100000,
+      "claim_id": "c0074"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "C21",
+      "formula": "C20-Inputs!C7",
+      "value": 0,
+      "claim_id": "c0075"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "C22",
+      "formula": "Inputs!C14/Inputs!C7",
+      "value": "0.7",
+      "claim_id": "c0076"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "C24",
+      "formula": "Inputs!C5-Inputs!B5",
+      "value": 135000000,
+      "claim_id": "c0077"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "C25",
+      "formula": "Inputs!C8-Inputs!B8",
+      "value": 43200000,
+      "claim_id": "c0078"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "C26",
+      "formula": "Inputs!C16-Inputs!B16",
+      "value": 40,
+      "claim_id": "c0079"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "D5",
+      "formula": "Inputs!D5-Inputs!D6",
+      "value": 678600000,
+      "claim_id": "c0080"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "D6",
+      "formula": "D5-Inputs!D7",
+      "value": 374400000,
+      "claim_id": "c0081"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "D7",
+      "formula": "D6-Inputs!D8",
+      "value": 0,
+      "claim_id": "c0082"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "D9",
+      "formula": "D5/Inputs!D5",
+      "value": "0.58",
+      "claim_id": "c0083"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "D10",
+      "formula": "D6/Inputs!D5",
+      "value": "0.32",
+      "claim_id": "c0084"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "D12",
+      "formula": "Inputs!D9+Inputs!D10",
+      "value": 1170000000,
+      "claim_id": "c0085"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "D13",
+      "formula": "D12-Inputs!D5",
+      "value": 0,
+      "claim_id": "c0086"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "D14",
+      "formula": "Inputs!D9/Inputs!D5",
+      "value": "0.64",
+      "claim_id": "c0087"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "D16",
+      "formula": "Inputs!D11+Inputs!D12+Inputs!D13",
+      "value": 491400000,
+      "claim_id": "c0088"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "D17",
+      "formula": "D16-Inputs!D6",
+      "value": 0,
+      "claim_id": "c0089"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "D18",
+      "formula": "Inputs!D11/Inputs!D6",
+      "value": "0.65",
+      "claim_id": "c0090"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "D20",
+      "formula": "Inputs!D14+Inputs!D15",
+      "value": 304200000,
+      "claim_id": "c0091"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "D21",
+      "formula": "D20-Inputs!D7",
+      "value": 0,
+      "claim_id": "c0092"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "D22",
+      "formula": "Inputs!D14/Inputs!D7",
+      "value": "0.7",
+      "claim_id": "c0093"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "D24",
+      "formula": "Inputs!D5-Inputs!C5",
+      "value": 135000000,
+      "claim_id": "c0094"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "D25",
+      "formula": "Inputs!D8-Inputs!C8",
+      "value": 43200000,
+      "claim_id": "c0095"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "D26",
+      "formula": "Inputs!D16-Inputs!C16",
+      "value": 40,
+      "claim_id": "c0096"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "E5",
+      "formula": "Inputs!E5-Inputs!E6",
+      "value": 809100000,
+      "claim_id": "c0097"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "E6",
+      "formula": "E5-Inputs!E7",
+      "value": 446400000,
+      "claim_id": "c0098"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "E7",
+      "formula": "E6-Inputs!E8",
+      "value": 0,
+      "claim_id": "c0099"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "E9",
+      "formula": "E5/Inputs!E5",
+      "value": "0.58",
+      "claim_id": "c0100"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "E10",
+      "formula": "E6/Inputs!E5",
+      "value": "0.32",
+      "claim_id": "c0101"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "E12",
+      "formula": "Inputs!E9+Inputs!E10",
+      "value": 1395000000,
+      "claim_id": "c0102"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "E13",
+      "formula": "E12-Inputs!E5",
+      "value": 0,
+      "claim_id": "c0103"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "E14",
+      "formula": "Inputs!E9/Inputs!E5",
+      "value": "0.64",
+      "claim_id": "c0104"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "E16",
+      "formula": "Inputs!E11+Inputs!E12+Inputs!E13",
+      "value": 585900000,
+      "claim_id": "c0105"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "E17",
+      "formula": "E16-Inputs!E6",
+      "value": 0,
+      "claim_id": "c0106"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "E18",
+      "formula": "Inputs!E11/Inputs!E6",
+      "value": "0.65",
+      "claim_id": "c0107"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "E20",
+      "formula": "Inputs!E14+Inputs!E15",
+      "value": 362700000,
+      "claim_id": "c0108"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "E21",
+      "formula": "E20-Inputs!E7",
+      "value": 0,
+      "claim_id": "c0109"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "E22",
+      "formula": "Inputs!E14/Inputs!E7",
+      "value": "0.7",
+      "claim_id": "c0110"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "E24",
+      "formula": "Inputs!E5-Inputs!D5",
+      "value": 225000000,
+      "claim_id": "c0111"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "E25",
+      "formula": "Inputs!E8-Inputs!D8",
+      "value": 72000000,
+      "claim_id": "c0112"
+    },
+    {
+      "sheet": "Calc",
+      "cell": "E26",
+      "formula": "Inputs!E16-Inputs!D16",
+      "value": 40,
+      "claim_id": "c0113"
+    },
+    {
+      "sheet": "Summary",
+      "cell": "B4",
+      "formula": "Inputs!B5+Inputs!C5+Inputs!D5+Inputs!E5",
+      "value": 4500000000,
+      "claim_id": "c0114"
+    },
+    {
+      "sheet": "Summary",
+      "cell": "B5",
+      "formula": "Inputs!B6+Inputs!C6+Inputs!D6+Inputs!E6",
+      "value": 1890000000,
+      "claim_id": "c0115"
+    },
+    {
+      "sheet": "Summary",
+      "cell": "B6",
+      "formula": "Inputs!B7+Inputs!C7+Inputs!D7+Inputs!E7",
+      "value": 1170000000,
+      "claim_id": "c0116"
+    },
+    {
+      "sheet": "Summary",
+      "cell": "B7",
+      "formula": "Inputs!B8+Inputs!C8+Inputs!D8+Inputs!E8",
+      "value": 1440000000,
+      "claim_id": "c0117"
+    },
+    {
+      "sheet": "Summary",
+      "cell": "B8",
+      "formula": "Inputs!B9+Inputs!C9+Inputs!D9+Inputs!E9",
+      "value": 2880000000,
+      "claim_id": "c0118"
+    },
+    {
+      "sheet": "Summary",
+      "cell": "B9",
+      "formula": "Inputs!B10+Inputs!C10+Inputs!D10+Inputs!E10",
+      "value": 1620000000,
+      "claim_id": "c0119"
+    },
+    {
+      "sheet": "Summary",
+      "cell": "B11",
+      "formula": "B7/B4",
+      "value": "0.32",
+      "claim_id": "c0120"
+    }
+  ],
+  "status": "passed",
+  "artifact_sha256": "df88ca95cdd1b2394a186cc4837bec89701da6754d805b0c6bc547d3802a3557"
+}

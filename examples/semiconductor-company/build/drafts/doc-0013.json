@@ -1,0 +1,1339 @@
+{
+  "schema_version": 2,
+  "corpus_id": "corpus-76ce98a12405018fd1e8c2e5",
+  "document_id": "doc-0013",
+  "canon_sha256": "caaf762e72fb012b38e89626490ab0988233f06da57675c45f8792fce3796186",
+  "plan_sha256": "647b92bb093e0638d541a8f268fd3c50035a754aa58c5be14676e52f5e7007a9",
+  "title": "SunnySemi LLC - 2020 Production Readiness and Launch discipline",
+  "publication_date": "2020-07-25",
+  "content_depth": "medium",
+  "claims": [
+    {
+      "id": "c0001",
+      "record_id": "person-avery",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Avery Rowan"
+    },
+    {
+      "id": "c0002",
+      "record_id": "role-avery-initial",
+      "path": [
+        "data",
+        "title"
+      ],
+      "value": "CEO"
+    },
+    {
+      "id": "c0003",
+      "record_id": "person-riley",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Riley Arden"
+    },
+    {
+      "id": "c0004",
+      "record_id": "role-riley-initial",
+      "path": [
+        "data",
+        "title"
+      ],
+      "value": "VP Engineering"
+    },
+    {
+      "id": "c0005",
+      "record_id": "person-quinn",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Quinn Mercer"
+    },
+    {
+      "id": "c0006",
+      "record_id": "role-quinn-initial",
+      "path": [
+        "data",
+        "title"
+      ],
+      "value": "Product Director"
+    },
+    {
+      "id": "c0007",
+      "record_id": "person-morgan",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Morgan Vale"
+    },
+    {
+      "id": "c0008",
+      "record_id": "role-morgan-initial",
+      "path": [
+        "data",
+        "title"
+      ],
+      "value": "CFO"
+    },
+    {
+      "id": "c0009",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "date"
+      ],
+      "value": "2020-07-25"
+    },
+    {
+      "id": "c0010",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "location"
+      ],
+      "value": "Tampa, Florida"
+    },
+    {
+      "id": "c0011",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "agenda",
+        0
+      ],
+      "value": "Launch discipline"
+    },
+    {
+      "id": "c0012",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "agenda",
+        1
+      ],
+      "value": "SunCore release evidence"
+    },
+    {
+      "id": "c0013",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "agenda",
+        2
+      ],
+      "value": "GulfSwitch adoption"
+    },
+    {
+      "id": "c0014",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "agenda",
+        3
+      ],
+      "value": "Capacity commitment controls"
+    },
+    {
+      "id": "c0015",
+      "record_id": "milestone-beacon-2020-planned",
+      "path": [
+        "data",
+        "status"
+      ],
+      "value": "planned"
+    },
+    {
+      "id": "c0016",
+      "record_id": "milestone-beacon-2020-planned",
+      "path": [
+        "data",
+        "target_date"
+      ],
+      "value": "2020-08-15"
+    },
+    {
+      "id": "c0017",
+      "record_id": "operating-2020",
+      "path": [
+        "data",
+        "theme"
+      ],
+      "value": "Launch discipline"
+    },
+    {
+      "id": "c0018",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        0
+      ],
+      "value": "09:00"
+    },
+    {
+      "id": "c0019",
+      "record_id": "person-avery",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Avery Rowan"
+    },
+    {
+      "id": "c0020",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "positions",
+        "engineering"
+      ],
+      "value": "Do not substitute peak specifications for application qualification."
+    },
+    {
+      "id": "c0021",
+      "record_id": "release-beacon-2020",
+      "path": [
+        "data",
+        "metric"
+      ],
+      "value": "12 INT8 TOPS"
+    },
+    {
+      "id": "c0022",
+      "record_id": "release-beacon-2020",
+      "path": [
+        "data",
+        "operating_point"
+      ],
+      "value": "12 W board design budget"
+    },
+    {
+      "id": "c0023",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        1
+      ],
+      "value": "09:02"
+    },
+    {
+      "id": "c0024",
+      "record_id": "person-riley",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Riley Arden"
+    },
+    {
+      "id": "c0025",
+      "record_id": "operating-2020",
+      "path": [
+        "data",
+        "customer_market"
+      ],
+      "value": "industrial inspection"
+    },
+    {
+      "id": "c0026",
+      "record_id": "operating-2020",
+      "path": [
+        "data",
+        "adoption_support"
+      ],
+      "value": "evaluation-kit shipments and controlled production orders"
+    },
+    {
+      "id": "c0027",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        2
+      ],
+      "value": "09:04"
+    },
+    {
+      "id": "c0028",
+      "record_id": "person-quinn",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Quinn Mercer"
+    },
+    {
+      "id": "c0029",
+      "record_id": "financial-2020-q2",
+      "path": [
+        "data",
+        "revenue_usd"
+      ],
+      "value": 276000000,
+      "units": "USD"
+    },
+    {
+      "id": "c0030",
+      "record_id": "financial-2020-q2",
+      "path": [
+        "data",
+        "operating_income_usd"
+      ],
+      "value": 71760000,
+      "units": "USD"
+    },
+    {
+      "id": "c0031",
+      "record_id": "operating-2020",
+      "path": [
+        "data",
+        "risk"
+      ],
+      "value": "a single qualified substrate route"
+    },
+    {
+      "id": "c0032",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        3
+      ],
+      "value": "09:06"
+    },
+    {
+      "id": "c0033",
+      "record_id": "person-morgan",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Morgan Vale"
+    },
+    {
+      "id": "c0034",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        4
+      ],
+      "value": "09:08"
+    },
+    {
+      "id": "c0035",
+      "record_id": "person-avery",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Avery Rowan"
+    },
+    {
+      "id": "c0036",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        5
+      ],
+      "value": "09:10"
+    },
+    {
+      "id": "c0037",
+      "record_id": "person-riley",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Riley Arden"
+    },
+    {
+      "id": "c0038",
+      "record_id": "release-beacon-2020",
+      "path": [
+        "data",
+        "qualification"
+      ],
+      "value": "Evaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration."
+    },
+    {
+      "id": "c0039",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        6
+      ],
+      "value": "09:12"
+    },
+    {
+      "id": "c0040",
+      "record_id": "person-quinn",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Quinn Mercer"
+    },
+    {
+      "id": "c0041",
+      "record_id": "operating-2020",
+      "path": [
+        "data",
+        "mitigation"
+      ],
+      "value": "qualify a second substrate route before increasing release allocations"
+    },
+    {
+      "id": "c0042",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        7
+      ],
+      "value": "09:14"
+    },
+    {
+      "id": "c0043",
+      "record_id": "person-morgan",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Morgan Vale"
+    },
+    {
+      "id": "c0044",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        8
+      ],
+      "value": "09:16"
+    },
+    {
+      "id": "c0045",
+      "record_id": "person-avery",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Avery Rowan"
+    },
+    {
+      "id": "c0046",
+      "record_id": "release-beacon-2020",
+      "path": [
+        "data",
+        "constraints"
+      ],
+      "value": "Peak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design."
+    },
+    {
+      "id": "c0047",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        9
+      ],
+      "value": "09:18"
+    },
+    {
+      "id": "c0048",
+      "record_id": "person-riley",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Riley Arden"
+    },
+    {
+      "id": "c0049",
+      "record_id": "release-prism-2020",
+      "path": [
+        "data",
+        "metric"
+      ],
+      "value": "48 V maximum rated input"
+    },
+    {
+      "id": "c0050",
+      "record_id": "release-prism-2020",
+      "path": [
+        "data",
+        "operating_point"
+      ],
+      "value": "10 A reference-stage output"
+    },
+    {
+      "id": "c0051",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        10
+      ],
+      "value": "09:20"
+    },
+    {
+      "id": "c0052",
+      "record_id": "person-quinn",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Quinn Mercer"
+    },
+    {
+      "id": "c0053",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        11
+      ],
+      "value": "09:22"
+    },
+    {
+      "id": "c0054",
+      "record_id": "person-morgan",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Morgan Vale"
+    },
+    {
+      "id": "c0055",
+      "record_id": "operating-2020",
+      "path": [
+        "data",
+        "risk"
+      ],
+      "value": "a single qualified substrate route"
+    },
+    {
+      "id": "c0056",
+      "record_id": "operating-2020",
+      "path": [
+        "data",
+        "mitigation"
+      ],
+      "value": "qualify a second substrate route before increasing release allocations"
+    },
+    {
+      "id": "c0057",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        12
+      ],
+      "value": "09:24"
+    },
+    {
+      "id": "c0058",
+      "record_id": "person-avery",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Avery Rowan"
+    },
+    {
+      "id": "c0059",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        13
+      ],
+      "value": "09:26"
+    },
+    {
+      "id": "c0060",
+      "record_id": "person-riley",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Riley Arden"
+    },
+    {
+      "id": "c0061",
+      "record_id": "operating-2020",
+      "path": [
+        "data",
+        "customer_market"
+      ],
+      "value": "industrial inspection"
+    },
+    {
+      "id": "c0062",
+      "record_id": "operating-2020",
+      "path": [
+        "data",
+        "adoption_support"
+      ],
+      "value": "evaluation-kit shipments and controlled production orders"
+    },
+    {
+      "id": "c0063",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        14
+      ],
+      "value": "09:28"
+    },
+    {
+      "id": "c0064",
+      "record_id": "person-quinn",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Quinn Mercer"
+    },
+    {
+      "id": "c0065",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        15
+      ],
+      "value": "09:30"
+    },
+    {
+      "id": "c0066",
+      "record_id": "person-morgan",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Morgan Vale"
+    },
+    {
+      "id": "c0067",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        16
+      ],
+      "value": "09:32"
+    },
+    {
+      "id": "c0068",
+      "record_id": "person-avery",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Avery Rowan"
+    },
+    {
+      "id": "c0069",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "actions",
+        0,
+        "task"
+      ],
+      "value": "Complete version-matched acceptance evidence"
+    },
+    {
+      "id": "c0070",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "actions",
+        0,
+        "due"
+      ],
+      "value": "2020-08-05"
+    },
+    {
+      "id": "c0071",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        17
+      ],
+      "value": "09:34"
+    },
+    {
+      "id": "c0072",
+      "record_id": "person-riley",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Riley Arden"
+    },
+    {
+      "id": "c0073",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "actions",
+        1,
+        "task"
+      ],
+      "value": "Confirm customer evaluation and qualification plans"
+    },
+    {
+      "id": "c0074",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "actions",
+        1,
+        "due"
+      ],
+      "value": "2020-08-08"
+    },
+    {
+      "id": "c0075",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        18
+      ],
+      "value": "09:36"
+    },
+    {
+      "id": "c0076",
+      "record_id": "person-quinn",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Quinn Mercer"
+    },
+    {
+      "id": "c0077",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "actions",
+        2,
+        "task"
+      ],
+      "value": "Review staged manufacturing commitments against accepted schedules"
+    },
+    {
+      "id": "c0078",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "actions",
+        2,
+        "due"
+      ],
+      "value": "2020-08-10"
+    },
+    {
+      "id": "c0079",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        19
+      ],
+      "value": "09:38"
+    },
+    {
+      "id": "c0080",
+      "record_id": "person-morgan",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Morgan Vale"
+    },
+    {
+      "id": "c0081",
+      "record_id": "operating-2020",
+      "path": [
+        "data",
+        "operating_principle"
+      ],
+      "value": "keep first-customer bring-up separate from the production release gate"
+    },
+    {
+      "id": "c0082",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        20
+      ],
+      "value": "09:40"
+    },
+    {
+      "id": "c0083",
+      "record_id": "person-avery",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Avery Rowan"
+    },
+    {
+      "id": "c0084",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        21
+      ],
+      "value": "09:42"
+    },
+    {
+      "id": "c0085",
+      "record_id": "person-riley",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Riley Arden"
+    },
+    {
+      "id": "c0086",
+      "record_id": "release-beacon-2020",
+      "path": [
+        "data",
+        "evaluation_step"
+      ],
+      "value": "Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example."
+    },
+    {
+      "id": "c0087",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        22
+      ],
+      "value": "09:44"
+    },
+    {
+      "id": "c0088",
+      "record_id": "person-quinn",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Quinn Mercer"
+    },
+    {
+      "id": "c0089",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "rejected_alternative"
+      ],
+      "value": "An unconditional production ramp before qualification is complete."
+    },
+    {
+      "id": "c0090",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        23
+      ],
+      "value": "09:46"
+    },
+    {
+      "id": "c0091",
+      "record_id": "person-morgan",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Morgan Vale"
+    },
+    {
+      "id": "c0092",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "decision"
+      ],
+      "value": "Proceed toward the August release subject to evidence gates; qualify a second substrate route before increasing release allocations."
+    },
+    {
+      "id": "c0093",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        24
+      ],
+      "value": "09:48"
+    },
+    {
+      "id": "c0094",
+      "record_id": "person-avery",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Avery Rowan"
+    },
+    {
+      "id": "c0095",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "governance"
+      ],
+      "value": "The meeting authorizes preparation, not a board-level capital approval. Failing release evidence must be escalated to the CEO before production release."
+    },
+    {
+      "id": "c0096",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        25
+      ],
+      "value": "09:50"
+    },
+    {
+      "id": "c0097",
+      "record_id": "person-riley",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Riley Arden"
+    },
+    {
+      "id": "c0098",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "unresolved"
+      ],
+      "value": "Customer-specific adoption schedules remain subject to accepted quotations."
+    },
+    {
+      "id": "c0099",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        26
+      ],
+      "value": "09:52"
+    },
+    {
+      "id": "c0100",
+      "record_id": "person-quinn",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Quinn Mercer"
+    },
+    {
+      "id": "c0101",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "turn_times",
+        27
+      ],
+      "value": "09:54"
+    },
+    {
+      "id": "c0102",
+      "record_id": "person-morgan",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Morgan Vale"
+    },
+    {
+      "id": "c0103",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "decision"
+      ],
+      "value": "Proceed toward the August release subject to evidence gates; qualify a second substrate route before increasing release allocations."
+    },
+    {
+      "id": "c0104",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "governance"
+      ],
+      "value": "The meeting authorizes preparation, not a board-level capital approval. Failing release evidence must be escalated to the CEO before production release."
+    },
+    {
+      "id": "c0105",
+      "record_id": "person-riley",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Riley Arden"
+    },
+    {
+      "id": "c0106",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "actions",
+        0,
+        "task"
+      ],
+      "value": "Complete version-matched acceptance evidence"
+    },
+    {
+      "id": "c0107",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "actions",
+        0,
+        "due"
+      ],
+      "value": "2020-08-05"
+    },
+    {
+      "id": "c0108",
+      "record_id": "person-quinn",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Quinn Mercer"
+    },
+    {
+      "id": "c0109",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "actions",
+        1,
+        "task"
+      ],
+      "value": "Confirm customer evaluation and qualification plans"
+    },
+    {
+      "id": "c0110",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "actions",
+        1,
+        "due"
+      ],
+      "value": "2020-08-08"
+    },
+    {
+      "id": "c0111",
+      "record_id": "person-morgan",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Morgan Vale"
+    },
+    {
+      "id": "c0112",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "actions",
+        2,
+        "task"
+      ],
+      "value": "Review staged manufacturing commitments against accepted schedules"
+    },
+    {
+      "id": "c0113",
+      "record_id": "meeting-2020",
+      "path": [
+        "data",
+        "actions",
+        2,
+        "due"
+      ],
+      "value": "2020-08-10"
+    }
+  ],
+  "sections": [
+    {
+      "role": "participants",
+      "heading": "Meeting record and participants",
+      "text": "2020-07-25 | Tampa, Florida\nAvery Rowan, CEO; Riley Arden, VP Engineering; Quinn Mercer, Product Director; Morgan Vale, CFO.\nAgenda: Launch discipline; SunCore release evidence; GulfSwitch adoption; Capacity commitment controls.\nRelease status: planned; target 2020-08-15.",
+      "claim_ids": [
+        "c0001",
+        "c0002",
+        "c0003",
+        "c0004",
+        "c0005",
+        "c0006",
+        "c0007",
+        "c0008",
+        "c0009",
+        "c0010",
+        "c0011",
+        "c0012",
+        "c0013",
+        "c0014",
+        "c0015",
+        "c0016"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "discussion",
+      "heading": "Discussion | 01",
+      "text": "09:00 | Avery Rowan: Before we discuss allocation, I want us to separate the commercial opportunity from the evidence needed to release a component. Our operating emphasis is Launch discipline. A growing business can create pressure to treat preparation as approval. What exactly do we need to preserve as we move toward the release gate?\n\n09:02 | Riley Arden: The engineering position is simple: Do not substitute peak specifications for application qualification. For SunCore we are working against 12 INT8 TOPS and 12 W board design budget. Those boundaries help us define verification, but they do not tell us how every customer model will behave. I would not present a peak hardware number as a guaranteed application result.",
+      "claim_ids": [
+        "c0017",
+        "c0018",
+        "c0019",
+        "c0020",
+        "c0021",
+        "c0022",
+        "c0023",
+        "c0024"
+      ],
+      "page_break": true
+    },
+    {
+      "role": "discussion",
+      "heading": "Discussion | 02",
+      "text": "09:04 | Quinn Mercer: That distinction matters for industrial inspection. Our support emphasis is evaluation-kit shipments and controlled production orders. I want the customer conversation to start with the intended workload, the host interface and the thermal boundary. If those remain open, a kit shipment is useful evaluation activity, but it is not a completed production qualification.\n\n09:06 | Morgan Vale: Q2 recognized revenue was $276.0 million, with operating income of $71.8 million. Those are strong actuals, but they are not cash balances or a forecast. My concern is a single qualified substrate route. Before we commit to a faster ramp, we should understand whether accepted schedules and release evidence support the manufacturing exposure.",
+      "claim_ids": [
+        "c0025",
+        "c0026",
+        "c0027",
+        "c0028",
+        "c0029",
+        "c0030",
+        "c0031",
+        "c0032",
+        "c0033"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "discussion",
+      "heading": "Discussion | 03",
+      "text": "09:08 | Avery Rowan: Then let us make the alternative explicit. We could approve an unconditional ramp and assume qualification will catch up, or preserve the evidence gates while preparation continues. The latter can leave some shipment opportunities waiting. Why is that the right tradeoff for this release rather than an unnecessary delay to the commercial team?\n\n09:10 | Riley Arden: Because a missing result is not a small administrative gap. A system can enumerate correctly and still fail under a malformed tensor, a repeated reset or a thermal transition. The release controls cover those paths. We need the exact silicon and software combination identified, otherwise a passing result from another configuration is not the evidence we are discussing.",
+      "claim_ids": [
+        "c0034",
+        "c0035",
+        "c0036",
+        "c0037"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "discussion",
+      "heading": "Discussion | 04",
+      "text": "09:12 | Quinn Mercer: I agree with the gate, but I do not want customers left with an abstract instruction to qualify. The evaluation sequence is Evaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration. We can use that sequence to explain what evidence belongs to SunnySemi and what depends on the customer's board or application. Clear ownership should reduce avoidable back-and-forth even when we cannot promise a schedule.\n\n09:14 | Morgan Vale: The financial distinction is similar. Revenue is recognized revenue, not an order-book proxy, and operating income is not liquidity. We can assess the reported economics without pretending we have a full funding model here. My recommendation is to qualify a second substrate route before increasing release allocations. That keeps the capacity discussion tied to evidence rather than enthusiasm about demand.",
+      "claim_ids": [
+        "c0038",
+        "c0039",
+        "c0040",
+        "c0041",
+        "c0042",
+        "c0043"
+      ],
+      "page_break": true
+    },
+    {
+      "role": "discussion",
+      "heading": "Discussion | 05",
+      "text": "09:16 | Avery Rowan: I hear two different gates: a technical gate for the release and a commercial gate for a production commitment. They should inform each other without becoming the same approval. Could a customer complete the relevant interface work but still be unable to adopt the configuration because the thermal design is not ready? I want that boundary explained plainly.\n\n09:18 | Riley Arden: Yes. The device interface can behave correctly while the surrounding system remains unsuitable at the intended operating point. Our technical boundary is Peak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design. The customer must verify the board, cooling and enclosure. We should preserve the configuration in the evidence package so that a later change does not silently inherit the earlier acceptance result.",
+      "claim_ids": [
+        "c0044",
+        "c0045",
+        "c0046",
+        "c0047",
+        "c0048"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "discussion",
+      "heading": "Discussion | 06",
+      "text": "09:20 | Quinn Mercer: For GulfSwitch the same principle appears in a different form. The reference boundary is 48 V maximum rated input with 10 A reference-stage output. External components and layout affect the power stage. I would frame adoption around the documented reference conditions, then ask the customer to validate the intended design. An efficiency headline without those conditions would create the wrong expectation.\n\n09:22 | Morgan Vale: That is why I prefer staged commitments to one large unconditional reservation. We can prepare for successful qualification without treating every discussion as an accepted production schedule. Staging has a cost in flexibility and may defer some opportunities. The benefit is that we do not make the largest irreversible commitment before the relevant uncertainties narrow.",
+      "claim_ids": [
+        "c0049",
+        "c0050",
+        "c0051",
+        "c0052",
+        "c0053",
+        "c0054"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "discussion",
+      "heading": "Discussion | 07",
+      "text": "09:24 | Avery Rowan: Let us test the proposal against this year's operating issue. The risk is a single qualified substrate route. If we describe the mitigation as qualify a second substrate route before increasing release allocations, what should the review actually ask for? I am not asking for a new numerical hurdle today. I am asking how the existing evidence and accepted schedules reach the same decision.\n\n09:26 | Riley Arden: The review should start with the version-matched acceptance pack. It should show the nominal and negative-path results, the configuration and any unresolved exception. A technical pass is not a prediction that every customer will succeed. It is evidence that the released configuration meets its own stated controls and can enter the next adoption discussion honestly.",
+      "claim_ids": [
+        "c0055",
+        "c0056",
+        "c0057",
+        "c0058",
+        "c0059",
+        "c0060"
+      ],
+      "page_break": true
+    },
+    {
+      "role": "discussion",
+      "heading": "Discussion | 08",
+      "text": "09:28 | Quinn Mercer: Then the customer side should show the agreed evaluation boundary and the qualification work still open. For industrial inspection, the support emphasis remains evaluation-kit shipments and controlled production orders. I would rather communicate an explicit dependency than imply an adoption date that has not been accepted. That gives applications support a concrete conversation instead of a generic promise to accelerate.\n\n09:30 | Morgan Vale: And Finance should review the manufacturing commitment against accepted schedules, not substitute total recognized revenue for readiness. The actuals tell us the business is scaling profitably; they do not identify which configuration has cleared its release controls. We should document that distinction when we discuss a capacity increment with the effective approvers.",
+      "claim_ids": [
+        "c0061",
+        "c0062",
+        "c0063",
+        "c0064",
+        "c0065",
+        "c0066"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "discussion",
+      "heading": "Discussion | 09",
+      "text": "09:32 | Avery Rowan: I support the direction, but I want the cost acknowledged. A gate can become a reason to wait indefinitely if no one owns the remaining work. The decision therefore needs named actions and due dates, not only a risk description. Which evidence will Engineering deliver, and which customer commitments will Product bring back for the review?\n\n09:34 | Riley Arden: Engineering's assigned task is Complete version-matched acceptance evidence, due 2020-08-05. That means retaining the actual verification results and making unresolved exceptions visible. I will not close the evidence pack by changing a failed control into an assumption. If the required result is absent, the affected configuration remains blocked until the issue is resolved or escalated.",
+      "claim_ids": [
+        "c0067",
+        "c0068",
+        "c0069",
+        "c0070",
+        "c0071",
+        "c0072"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "discussion",
+      "heading": "Discussion | 10",
+      "text": "09:36 | Quinn Mercer: Product's assigned task is Confirm customer evaluation and qualification plans, due 2020-08-08. The point is to make the handoff specific enough that Engineering and Finance are discussing the same adoption boundary. A request for an evaluation kit does not by itself define a production schedule. We need to preserve that distinction in both the customer discussion and the internal review.\n\n09:38 | Morgan Vale: Finance's assigned task is Review staged manufacturing commitments against accepted schedules, due 2020-08-10. I will use the reported actuals as the economic baseline and keep any unapproved forecast out of that baseline. The commitment discussion should identify what is being staged and what evidence supports it, rather than treat the entire proposed ramp as a single indivisible choice.",
+      "claim_ids": [
+        "c0073",
+        "c0074",
+        "c0075",
+        "c0076",
+        "c0077",
+        "c0078",
+        "c0079",
+        "c0080"
+      ],
+      "page_break": true
+    },
+    {
+      "role": "discussion",
+      "heading": "Discussion | 11",
+      "text": "09:40 | Avery Rowan: Before we record the decision, I want to return to customer communication. The operating principle is to keep first-customer bring-up separate from the production release gate. That should be visible in the release message without publishing our internal capacity discussion. We can describe operating boundaries and the qualification sequence publicly. We should not turn a preparation meeting into an announcement of board approval.\n\n09:42 | Riley Arden: Agreed. The technical copy should distinguish the silicon peak from sustained application behavior and identify the matching release configuration. It should not add a customer benchmark or certification that we have not established. The verification requirements give us a concrete basis for what we can say; customer-specific system results remain outside that component-level statement.",
+      "claim_ids": [
+        "c0081",
+        "c0082",
+        "c0083",
+        "c0084",
+        "c0085"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "discussion",
+      "heading": "Discussion | 12",
+      "text": "09:44 | Quinn Mercer: That also gives us a practical next step: Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example. After that, the applications discussion can define the workload and host boundary. I do not want a release presentation to imply that evaluation alone completes adoption. The customer still needs to approve the production configuration against its own equipment requirements before a ramp is treated as ready.\n\n09:46 | Morgan Vale: I support proceeding with preparation under those conditions. The alternative we are rejecting is An unconditional production ramp before qualification is complete. We are not rejecting growth; we are controlling the order in which we incur commitments. That is consistent with the economics and with the technical dependencies described today. Any broader approval still has to go through its own authority.",
+      "claim_ids": [
+        "c0086",
+        "c0087",
+        "c0088",
+        "c0089",
+        "c0090",
+        "c0091"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "discussion",
+      "heading": "Discussion | 13",
+      "text": "09:48 | Avery Rowan: The decision is Proceed toward the August release subject to evidence gates; qualify a second substrate route before increasing release allocations. The distinction between preparation, qualification and a production commitment should remain in the record. We have not approved a new forecast or waived a release control. If an action uncovers a dependency that changes readiness, bring it back rather than silently carrying it into the release package.\n\n09:50 | Riley Arden: I will keep the release evidence tied to the exact configuration and will make any exception explicit. The governance boundary is The meeting authorizes preparation, not a board-level capital approval. Failing release evidence must be escalated to the CEO before production release. That protects the purpose of the gate: we should be able to explain what passed, what did not and why the production configuration is eligible for the next step.",
+      "claim_ids": [
+        "c0092",
+        "c0093",
+        "c0094",
+        "c0095",
+        "c0096",
+        "c0097"
+      ],
+      "page_break": true
+    },
+    {
+      "role": "discussion",
+      "heading": "Discussion | 14",
+      "text": "09:52 | Quinn Mercer: The remaining open item is Customer-specific adoption schedules remain subject to accepted quotations. I will reflect that in adoption discussions and avoid presenting an unaccepted customer schedule as a commitment. The useful follow-through is a qualification plan with clear responsibilities, not a reassuring sentence that hides the dependency. We can be ambitious about adoption and precise about its conditions.\n\n09:54 | Morgan Vale: Then the record is clear enough for the next review. The reported economics remain actuals; the capacity proposal remains gated; and the named actions identify what evidence comes next. I will keep the manufacturing-commitment discussion separate from any unsupported cash-flow conclusion. That should let us act quickly when the evidence is ready without having to reconstruct today's assumptions.",
+      "claim_ids": [
+        "c0098",
+        "c0099",
+        "c0100",
+        "c0101",
+        "c0102"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "decisions",
+      "heading": "Decision and authority boundary",
+      "text": "Proceed toward the August release subject to evidence gates; qualify a second substrate route before increasing release allocations.\nThe meeting authorizes preparation, not a board-level capital approval. Failing release evidence must be escalated to the CEO before production release.",
+      "claim_ids": [
+        "c0103",
+        "c0104"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "actions",
+      "heading": "Owned follow-through",
+      "text": "Riley Arden: Complete version-matched acceptance evidence - due 2020-08-05.\nQuinn Mercer: Confirm customer evaluation and qualification plans - due 2020-08-08.\nMorgan Vale: Review staged manufacturing commitments against accepted schedules - due 2020-08-10.",
+      "claim_ids": [
+        "c0105",
+        "c0106",
+        "c0107",
+        "c0108",
+        "c0109",
+        "c0110",
+        "c0111",
+        "c0112",
+        "c0113"
+      ],
+      "page_break": false
+    }
+  ]
+}

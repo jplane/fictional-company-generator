@@ -1,0 +1,2099 @@
+[
+  {
+    "command": "set",
+    "path": "/",
+    "props": {
+      "title": "SunnySemi LLC - 2020 Midyear Performance and Capacity Decisions",
+      "author": "SunnySemi LLC",
+      "slideWidth": "33.867cm",
+      "slideHeight": "19.05cm"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "slide",
+    "props": {
+      "background": "123B4A"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[1]",
+    "type": "shape",
+    "props": {
+      "text": "SUNNYSEMI LLC   |   2020-07-20",
+      "x": "1.4cm",
+      "y": "0.4cm",
+      "width": "29cm",
+      "height": "0.7cm",
+      "size": "11pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "BEE5E6",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[1]",
+    "type": "shape",
+    "props": {
+      "text": "SunnySemi LLC - 2020 Midyear Performance and Capacity Decisions",
+      "x": "1.4cm",
+      "y": "1.4cm",
+      "width": "30.8cm",
+      "height": "4.2cm",
+      "size": "36pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[1]",
+    "type": "shape",
+    "props": {
+      "text": "Launch discipline\nTampa, Florida\nAvery Rowan, CEO\nMidyear actuals and a gated capacity decision; confidential board material.",
+      "x": "1.4cm",
+      "y": "6.1cm",
+      "width": "17.2cm",
+      "height": "10.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[1]",
+    "type": "shape",
+    "props": {
+      "text": "1",
+      "x": "20.1cm",
+      "y": "6.3cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[1]",
+    "type": "shape",
+    "props": {
+      "text": "Actual performance",
+      "x": "22.0cm",
+      "y": "6.3cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[1]",
+    "type": "shape",
+    "props": {
+      "text": "2",
+      "x": "20.1cm",
+      "y": "9.666666666666666cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[1]",
+    "type": "shape",
+    "props": {
+      "text": "Release readiness",
+      "x": "22.0cm",
+      "y": "9.666666666666666cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[1]",
+    "type": "shape",
+    "props": {
+      "text": "3",
+      "x": "20.1cm",
+      "y": "13.033333333333333cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[1]",
+    "type": "shape",
+    "props": {
+      "text": "Capacity authority",
+      "x": "22.0cm",
+      "y": "13.033333333333333cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[1]",
+    "type": "shape",
+    "props": {
+      "text": "01  |  BOARD CONFIDENTIAL",
+      "x": "1.4cm",
+      "y": "17.9cm",
+      "width": "30.8cm",
+      "height": "0.6cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "BEE5E6",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[1]",
+    "type": "notes",
+    "props": {
+      "text": "Launch discipline\nTampa, Florida\nAvery Rowan, CEO\nMidyear actuals and a gated capacity decision; confidential board material. Keep the stated operating and authority boundaries explicit."
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "slide",
+    "props": {
+      "background": "F8FBFB"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[2]",
+    "type": "shape",
+    "props": {
+      "text": "SUNNYSEMI LLC   |   2020-07-20",
+      "x": "1.4cm",
+      "y": "0.4cm",
+      "width": "29cm",
+      "height": "0.7cm",
+      "size": "11pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[2]",
+    "type": "shape",
+    "props": {
+      "text": "Recognized revenue and operating income",
+      "x": "1.4cm",
+      "y": "1.4cm",
+      "width": "30.8cm",
+      "height": "4.2cm",
+      "size": "36pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[2]",
+    "type": "shape",
+    "props": {
+      "text": "Q1 revenue: $240.0 million\nQ2 revenue: $276.0 million\nQ2 operating income: $71.8 million\nRevenue and operating income are actuals, not bookings or cash flow.",
+      "x": "1.4cm",
+      "y": "6.1cm",
+      "width": "17.2cm",
+      "height": "10.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[2]",
+    "type": "shape",
+    "props": {
+      "text": "Q1 revenue",
+      "x": "20.1cm",
+      "y": "6.3cm",
+      "width": "11.9cm",
+      "height": "0.8cm",
+      "size": "14pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[2]",
+    "type": "shape",
+    "props": {
+      "text": "",
+      "x": "20.1cm",
+      "y": "7.3cm",
+      "width": "10.347826086956522cm",
+      "height": "0.65cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[2]",
+    "type": "shape",
+    "props": {
+      "text": "Q2 revenue",
+      "x": "20.1cm",
+      "y": "11.149999999999999cm",
+      "width": "11.9cm",
+      "height": "0.8cm",
+      "size": "14pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[2]",
+    "type": "shape",
+    "props": {
+      "text": "",
+      "x": "20.1cm",
+      "y": "12.149999999999999cm",
+      "width": "11.9cm",
+      "height": "0.65cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "E5AB37",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[2]",
+    "type": "shape",
+    "props": {
+      "text": "USD | common scale within this chart",
+      "x": "20.1cm",
+      "y": "16.7cm",
+      "width": "11.9cm",
+      "height": "0.7cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[2]",
+    "type": "shape",
+    "props": {
+      "text": "02  |  BOARD CONFIDENTIAL",
+      "x": "1.4cm",
+      "y": "17.9cm",
+      "width": "30.8cm",
+      "height": "0.6cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[2]",
+    "type": "notes",
+    "props": {
+      "text": "Q1 revenue: $240.0 million\nQ2 revenue: $276.0 million\nQ2 operating income: $71.8 million\nRevenue and operating income are actuals, not bookings or cash flow. Keep the stated operating and authority boundaries explicit."
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "slide",
+    "props": {
+      "background": "F8FBFB"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "SUNNYSEMI LLC   |   2020-07-20",
+      "x": "1.4cm",
+      "y": "0.4cm",
+      "width": "29cm",
+      "height": "0.7cm",
+      "size": "11pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "The Q2 operating-income bridge",
+      "x": "1.4cm",
+      "y": "1.4cm",
+      "width": "30.8cm",
+      "height": "4.2cm",
+      "size": "36pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "Revenue $276.0 million\nLess COGS $127.0 million\nLess operating expense $77.3 million\nOperating income $71.8 million",
+      "x": "1.4cm",
+      "y": "6.1cm",
+      "width": "17.2cm",
+      "height": "10.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "Revenue",
+      "x": "20.1cm",
+      "y": "6.3cm",
+      "width": "11.9cm",
+      "height": "0.8cm",
+      "size": "14pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "",
+      "x": "20.1cm",
+      "y": "7.3cm",
+      "width": "11.9cm",
+      "height": "0.65cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "COGS",
+      "x": "20.1cm",
+      "y": "8.725cm",
+      "width": "11.9cm",
+      "height": "0.8cm",
+      "size": "14pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "",
+      "x": "20.1cm",
+      "y": "9.725cm",
+      "width": "5.474cm",
+      "height": "0.65cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "E5AB37",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "Opex",
+      "x": "20.1cm",
+      "y": "11.149999999999999cm",
+      "width": "11.9cm",
+      "height": "0.8cm",
+      "size": "14pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "",
+      "x": "20.1cm",
+      "y": "12.149999999999999cm",
+      "width": "3.332cm",
+      "height": "0.65cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "Operating income",
+      "x": "20.1cm",
+      "y": "13.575cm",
+      "width": "11.9cm",
+      "height": "0.8cm",
+      "size": "14pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "",
+      "x": "20.1cm",
+      "y": "14.575cm",
+      "width": "3.094cm",
+      "height": "0.65cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "E5AB37",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "USD | common scale within this chart",
+      "x": "20.1cm",
+      "y": "16.7cm",
+      "width": "11.9cm",
+      "height": "0.7cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "03  |  BOARD CONFIDENTIAL",
+      "x": "1.4cm",
+      "y": "17.9cm",
+      "width": "30.8cm",
+      "height": "0.6cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "notes",
+    "props": {
+      "text": "Revenue $276.0 million\nLess COGS $127.0 million\nLess operating expense $77.3 million\nOperating income $71.8 million Keep the stated operating and authority boundaries explicit."
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "slide",
+    "props": {
+      "background": "F8FBFB"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[4]",
+    "type": "shape",
+    "props": {
+      "text": "SUNNYSEMI LLC   |   2020-07-20",
+      "x": "1.4cm",
+      "y": "0.4cm",
+      "width": "29cm",
+      "height": "0.7cm",
+      "size": "11pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[4]",
+    "type": "shape",
+    "props": {
+      "text": "Two silicon franchises fund the strategy",
+      "x": "1.4cm",
+      "y": "1.4cm",
+      "width": "30.8cm",
+      "height": "4.2cm",
+      "size": "36pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[4]",
+    "type": "shape",
+    "props": {
+      "text": "SunCore recognized revenue: $165.6 million\nGulfSwitch recognized revenue: $110.4 million\nOwn differentiated silicon architecture and application validation; use external manufacturing rather than build a wafer fab.",
+      "x": "1.4cm",
+      "y": "6.1cm",
+      "width": "17.2cm",
+      "height": "10.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[4]",
+    "type": "shape",
+    "props": {
+      "text": "SunCore",
+      "x": "20.1cm",
+      "y": "6.3cm",
+      "width": "11.9cm",
+      "height": "0.8cm",
+      "size": "14pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[4]",
+    "type": "shape",
+    "props": {
+      "text": "",
+      "x": "20.1cm",
+      "y": "7.3cm",
+      "width": "11.9cm",
+      "height": "0.65cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[4]",
+    "type": "shape",
+    "props": {
+      "text": "GulfSwitch",
+      "x": "20.1cm",
+      "y": "11.149999999999999cm",
+      "width": "11.9cm",
+      "height": "0.8cm",
+      "size": "14pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[4]",
+    "type": "shape",
+    "props": {
+      "text": "",
+      "x": "20.1cm",
+      "y": "12.149999999999999cm",
+      "width": "7.933333333333334cm",
+      "height": "0.65cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "E5AB37",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[4]",
+    "type": "shape",
+    "props": {
+      "text": "USD | common scale within this chart",
+      "x": "20.1cm",
+      "y": "16.7cm",
+      "width": "11.9cm",
+      "height": "0.7cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[4]",
+    "type": "shape",
+    "props": {
+      "text": "04  |  BOARD CONFIDENTIAL",
+      "x": "1.4cm",
+      "y": "17.9cm",
+      "width": "30.8cm",
+      "height": "0.6cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[4]",
+    "type": "notes",
+    "props": {
+      "text": "SunCore recognized revenue: $165.6 million\nGulfSwitch recognized revenue: $110.4 million\nOwn differentiated silicon architecture and application validation; use external manufacturing rather than build a wafer fab. Keep the stated operating and authority boundaries explicit."
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "slide",
+    "props": {
+      "background": "F8FBFB"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "shape",
+    "props": {
+      "text": "SUNNYSEMI LLC   |   2020-07-20",
+      "x": "1.4cm",
+      "y": "0.4cm",
+      "width": "29cm",
+      "height": "0.7cm",
+      "size": "11pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "shape",
+    "props": {
+      "text": "Manufacturing spend has distinct drivers",
+      "x": "1.4cm",
+      "y": "1.4cm",
+      "width": "30.8cm",
+      "height": "4.2cm",
+      "size": "36pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "shape",
+    "props": {
+      "text": "Wafer cost $82.5 million\nPackage and test $31.7 million\nLogistics $12.7 million\nThese components reconcile to reported COGS.",
+      "x": "1.4cm",
+      "y": "6.1cm",
+      "width": "17.2cm",
+      "height": "10.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "shape",
+    "props": {
+      "text": "Wafer",
+      "x": "20.1cm",
+      "y": "6.3cm",
+      "width": "11.9cm",
+      "height": "0.8cm",
+      "size": "14pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "shape",
+    "props": {
+      "text": "",
+      "x": "20.1cm",
+      "y": "7.3cm",
+      "width": "11.9cm",
+      "height": "0.65cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "shape",
+    "props": {
+      "text": "Package/test",
+      "x": "20.1cm",
+      "y": "9.533333333333333cm",
+      "width": "11.9cm",
+      "height": "0.8cm",
+      "size": "14pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "shape",
+    "props": {
+      "text": "",
+      "x": "20.1cm",
+      "y": "10.533333333333333cm",
+      "width": "4.576923076923077cm",
+      "height": "0.65cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "E5AB37",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "shape",
+    "props": {
+      "text": "Logistics",
+      "x": "20.1cm",
+      "y": "12.766666666666666cm",
+      "width": "11.9cm",
+      "height": "0.8cm",
+      "size": "14pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "shape",
+    "props": {
+      "text": "",
+      "x": "20.1cm",
+      "y": "13.766666666666666cm",
+      "width": "1.8307692307692307cm",
+      "height": "0.65cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "shape",
+    "props": {
+      "text": "USD | common scale within this chart",
+      "x": "20.1cm",
+      "y": "16.7cm",
+      "width": "11.9cm",
+      "height": "0.7cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "shape",
+    "props": {
+      "text": "05  |  BOARD CONFIDENTIAL",
+      "x": "1.4cm",
+      "y": "17.9cm",
+      "width": "30.8cm",
+      "height": "0.6cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "notes",
+    "props": {
+      "text": "Wafer cost $82.5 million\nPackage and test $31.7 million\nLogistics $12.7 million\nThese components reconcile to reported COGS. Keep the stated operating and authority boundaries explicit."
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "slide",
+    "props": {
+      "background": "F8FBFB"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[6]",
+    "type": "shape",
+    "props": {
+      "text": "SUNNYSEMI LLC   |   2020-07-20",
+      "x": "1.4cm",
+      "y": "0.4cm",
+      "width": "29cm",
+      "height": "0.7cm",
+      "size": "11pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[6]",
+    "type": "shape",
+    "props": {
+      "text": "Engineering investment and release accountability",
+      "x": "1.4cm",
+      "y": "1.4cm",
+      "width": "30.8cm",
+      "height": "4.2cm",
+      "size": "36pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[6]",
+    "type": "shape",
+    "props": {
+      "text": "Engineering opex: $54.1 million\nCommercial and administrative opex: $23.2 million\nQ2 ending headcount: 580\nQuinn Mercer owns customer qualification; Riley Arden owns release evidence; the effective CFO owns capacity-commitment review.",
+      "x": "1.4cm",
+      "y": "6.1cm",
+      "width": "17.2cm",
+      "height": "10.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[6]",
+    "type": "shape",
+    "props": {
+      "text": "1",
+      "x": "20.1cm",
+      "y": "6.3cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[6]",
+    "type": "shape",
+    "props": {
+      "text": "Engineering evidence",
+      "x": "22.0cm",
+      "y": "6.3cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[6]",
+    "type": "shape",
+    "props": {
+      "text": "2",
+      "x": "20.1cm",
+      "y": "9.666666666666666cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[6]",
+    "type": "shape",
+    "props": {
+      "text": "Customer qualification",
+      "x": "22.0cm",
+      "y": "9.666666666666666cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[6]",
+    "type": "shape",
+    "props": {
+      "text": "3",
+      "x": "20.1cm",
+      "y": "13.033333333333333cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[6]",
+    "type": "shape",
+    "props": {
+      "text": "Finance sign-off",
+      "x": "22.0cm",
+      "y": "13.033333333333333cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[6]",
+    "type": "shape",
+    "props": {
+      "text": "06  |  BOARD CONFIDENTIAL",
+      "x": "1.4cm",
+      "y": "17.9cm",
+      "width": "30.8cm",
+      "height": "0.6cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[6]",
+    "type": "notes",
+    "props": {
+      "text": "Engineering opex: $54.1 million\nCommercial and administrative opex: $23.2 million\nQ2 ending headcount: 580\nQuinn Mercer owns customer qualification; Riley Arden owns release evidence; the effective CFO owns capacity-commitment review. Keep the stated operating and authority boundaries explicit."
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "slide",
+    "props": {
+      "background": "F8FBFB"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[7]",
+    "type": "shape",
+    "props": {
+      "text": "SUNNYSEMI LLC   |   2020-07-20",
+      "x": "1.4cm",
+      "y": "0.4cm",
+      "width": "29cm",
+      "height": "0.7cm",
+      "size": "11pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[7]",
+    "type": "shape",
+    "props": {
+      "text": "The August release gate is still ahead",
+      "x": "1.4cm",
+      "y": "1.4cm",
+      "width": "30.8cm",
+      "height": "4.2cm",
+      "size": "36pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[7]",
+    "type": "shape",
+    "props": {
+      "text": "SunCore 1.0: 12 INT8 TOPS\nGulfSwitch 1.0: 48 V maximum rated input\nTarget release date: 2020-08-15\nPlanned at this briefing date; completion is not asserted.",
+      "x": "1.4cm",
+      "y": "6.1cm",
+      "width": "17.2cm",
+      "height": "10.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[7]",
+    "type": "shape",
+    "props": {
+      "text": "1",
+      "x": "20.1cm",
+      "y": "6.3cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[7]",
+    "type": "shape",
+    "props": {
+      "text": "Specification",
+      "x": "22.0cm",
+      "y": "6.3cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[7]",
+    "type": "shape",
+    "props": {
+      "text": "2",
+      "x": "20.1cm",
+      "y": "9.666666666666666cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[7]",
+    "type": "shape",
+    "props": {
+      "text": "Verification",
+      "x": "22.0cm",
+      "y": "9.666666666666666cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[7]",
+    "type": "shape",
+    "props": {
+      "text": "3",
+      "x": "20.1cm",
+      "y": "13.033333333333333cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[7]",
+    "type": "shape",
+    "props": {
+      "text": "Production release",
+      "x": "22.0cm",
+      "y": "13.033333333333333cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[7]",
+    "type": "shape",
+    "props": {
+      "text": "07  |  BOARD CONFIDENTIAL",
+      "x": "1.4cm",
+      "y": "17.9cm",
+      "width": "30.8cm",
+      "height": "0.6cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[7]",
+    "type": "notes",
+    "props": {
+      "text": "SunCore 1.0: 12 INT8 TOPS\nGulfSwitch 1.0: 48 V maximum rated input\nTarget release date: 2020-08-15\nPlanned at this briefing date; completion is not asserted. Keep the stated operating and authority boundaries explicit."
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "slide",
+    "props": {
+      "background": "F8FBFB"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[8]",
+    "type": "shape",
+    "props": {
+      "text": "SUNNYSEMI LLC   |   2020-07-20",
+      "x": "1.4cm",
+      "y": "0.4cm",
+      "width": "29cm",
+      "height": "0.7cm",
+      "size": "11pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[8]",
+    "type": "shape",
+    "props": {
+      "text": "Concentrate controls on the binding risk",
+      "x": "1.4cm",
+      "y": "1.4cm",
+      "width": "30.8cm",
+      "height": "4.2cm",
+      "size": "36pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[8]",
+    "type": "shape",
+    "props": {
+      "text": "Risk: a single qualified substrate route\nMitigation: qualify a second substrate route before increasing release allocations\nkeep first-customer bring-up separate from the production release gate",
+      "x": "1.4cm",
+      "y": "6.1cm",
+      "width": "17.2cm",
+      "height": "10.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[8]",
+    "type": "shape",
+    "props": {
+      "text": "1",
+      "x": "20.1cm",
+      "y": "6.3cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[8]",
+    "type": "shape",
+    "props": {
+      "text": "Identify dependency",
+      "x": "22.0cm",
+      "y": "6.3cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[8]",
+    "type": "shape",
+    "props": {
+      "text": "2",
+      "x": "20.1cm",
+      "y": "9.666666666666666cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[8]",
+    "type": "shape",
+    "props": {
+      "text": "Retain evidence",
+      "x": "22.0cm",
+      "y": "9.666666666666666cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[8]",
+    "type": "shape",
+    "props": {
+      "text": "3",
+      "x": "20.1cm",
+      "y": "13.033333333333333cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[8]",
+    "type": "shape",
+    "props": {
+      "text": "Gate commitment",
+      "x": "22.0cm",
+      "y": "13.033333333333333cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[8]",
+    "type": "shape",
+    "props": {
+      "text": "08  |  BOARD CONFIDENTIAL",
+      "x": "1.4cm",
+      "y": "17.9cm",
+      "width": "30.8cm",
+      "height": "0.6cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[8]",
+    "type": "notes",
+    "props": {
+      "text": "Risk: a single qualified substrate route\nMitigation: qualify a second substrate route before increasing release allocations\nkeep first-customer bring-up separate from the production release gate Keep the stated operating and authority boundaries explicit."
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "slide",
+    "props": {
+      "background": "F8FBFB"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[9]",
+    "type": "shape",
+    "props": {
+      "text": "SUNNYSEMI LLC   |   2020-07-20",
+      "x": "1.4cm",
+      "y": "0.4cm",
+      "width": "29cm",
+      "height": "0.7cm",
+      "size": "11pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[9]",
+    "type": "shape",
+    "props": {
+      "text": "Capacity options and transaction context",
+      "x": "1.4cm",
+      "y": "1.4cm",
+      "width": "30.8cm",
+      "height": "4.2cm",
+      "size": "36pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[9]",
+    "type": "shape",
+    "props": {
+      "text": "Preferred: Stage commitments against qualification evidence.\nAlternative: Commit the entire proposed capacity increment immediately.\nStaging limits irreversible commitments but can defer some shipment opportunities.\nCoralKey Packaging: announced, $85.0 million.",
+      "x": "1.4cm",
+      "y": "6.1cm",
+      "width": "17.2cm",
+      "height": "10.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[9]",
+    "type": "shape",
+    "props": {
+      "text": "1",
+      "x": "20.1cm",
+      "y": "6.3cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[9]",
+    "type": "shape",
+    "props": {
+      "text": "Stage commitments",
+      "x": "22.0cm",
+      "y": "6.3cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[9]",
+    "type": "shape",
+    "props": {
+      "text": "2",
+      "x": "20.1cm",
+      "y": "11.35cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[9]",
+    "type": "shape",
+    "props": {
+      "text": "Commit immediately",
+      "x": "22.0cm",
+      "y": "11.35cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[9]",
+    "type": "shape",
+    "props": {
+      "text": "09  |  BOARD CONFIDENTIAL",
+      "x": "1.4cm",
+      "y": "17.9cm",
+      "width": "30.8cm",
+      "height": "0.6cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[9]",
+    "type": "notes",
+    "props": {
+      "text": "Preferred: Stage commitments against qualification evidence.\nAlternative: Commit the entire proposed capacity increment immediately.\nStaging limits irreversible commitments but can defer some shipment opportunities.\nCoralKey Packaging: announced, $85.0 million. Keep the stated operating and authority boundaries explicit."
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "slide",
+    "props": {
+      "background": "123B4A"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[10]",
+    "type": "shape",
+    "props": {
+      "text": "SUNNYSEMI LLC   |   2020-07-20",
+      "x": "1.4cm",
+      "y": "0.4cm",
+      "width": "29cm",
+      "height": "0.7cm",
+      "size": "11pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "BEE5E6",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[10]",
+    "type": "shape",
+    "props": {
+      "text": "Decision requested and authority retained",
+      "x": "1.4cm",
+      "y": "1.4cm",
+      "width": "30.8cm",
+      "height": "4.2cm",
+      "size": "36pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[10]",
+    "type": "shape",
+    "props": {
+      "text": "Approve milestone-based capacity releases; retain existing commercial approval limits and require Finance and Engineering sign-off before each increment.\nRequested; no board approval is recorded in this briefing.\nNo cash balance, debt balance, free-cash-flow measure or forecast is included.",
+      "x": "1.4cm",
+      "y": "6.1cm",
+      "width": "17.2cm",
+      "height": "10.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[10]",
+    "type": "shape",
+    "props": {
+      "text": "1",
+      "x": "20.1cm",
+      "y": "6.3cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[10]",
+    "type": "shape",
+    "props": {
+      "text": "Board direction",
+      "x": "22.0cm",
+      "y": "6.3cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[10]",
+    "type": "shape",
+    "props": {
+      "text": "2",
+      "x": "20.1cm",
+      "y": "9.666666666666666cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[10]",
+    "type": "shape",
+    "props": {
+      "text": "Engineering evidence",
+      "x": "22.0cm",
+      "y": "9.666666666666666cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[10]",
+    "type": "shape",
+    "props": {
+      "text": "3",
+      "x": "20.1cm",
+      "y": "13.033333333333333cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[10]",
+    "type": "shape",
+    "props": {
+      "text": "Finance release",
+      "x": "22.0cm",
+      "y": "13.033333333333333cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[10]",
+    "type": "shape",
+    "props": {
+      "text": "10  |  BOARD CONFIDENTIAL",
+      "x": "1.4cm",
+      "y": "17.9cm",
+      "width": "30.8cm",
+      "height": "0.6cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "BEE5E6",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[10]",
+    "type": "notes",
+    "props": {
+      "text": "Approve milestone-based capacity releases; retain existing commercial approval limits and require Finance and Engineering sign-off before each increment.\nRequested; no board approval is recorded in this briefing.\nNo cash balance, debt balance, free-cash-flow measure or forecast is included. Keep the stated operating and authority boundaries explicit."
+    }
+  }
+]

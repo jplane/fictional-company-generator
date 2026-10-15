@@ -1,0 +1,19 @@
+{
+  "rendered_pages": 2,
+  "pages": [
+    {
+      "page": 1,
+      "path": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\build\\docx-correction-probes\\doc-0047\\page-1.png",
+      "selector": "div.page[data-page='1']",
+      "overflow": false,
+      "sha256": "817246291a82ec7043707afcd6c7cbc219191644d2a1c417d5457531ac7418a6"
+    },
+    {
+      "page": 2,
+      "path": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\build\\docx-correction-probes\\doc-0047\\page-2.png",
+      "selector": "div.page[data-page='2']",
+      "overflow": false,
+      "sha256": "684b3fcaedb70ca1c238c366c3dfb6af509be784cf5a7323acfcb17f369aed0e"
+    }
+  ]
+}

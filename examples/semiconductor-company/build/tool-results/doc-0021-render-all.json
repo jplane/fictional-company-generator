@@ -1,0 +1,29 @@
+{
+  "operation": "capture",
+  "status": "passed",
+  "started_at": "2026-10-15T17:20:19.619696+00:00",
+  "ended_at": "2026-10-15T17:20:20.830520+00:00",
+  "active_seconds": 1.2106098000658676,
+  "tool": {
+    "engine": "playwright-chromium",
+    "playwright_version": "1.63.0",
+    "channel": "chromium",
+    "headless": true,
+    "chromium_sandbox": true,
+    "browser_version": "153.0.8010.12",
+    "executable_path": "C:\\Users\\jolan\\AppData\\Local\\ms-playwright\\chromium-1243\\chrome-win64\\chrome.exe",
+    "executable_sha256": "9b07943f834485b43c9d54caea2951c78715f9f07070a80ab6658465ebd3e711"
+  },
+  "source_html_sha256": "c69649bc5be6ee64dd2c5151667a739a7407e51befbf06485b2a48ecb271e600",
+  "unit": "pages",
+  "image_sha256": "ce4f377a3039aa501af7ca6cbc0b14b359b185ca7aa4c99cdcba29f3f1be74c1",
+  "rendered_count": 2,
+  "lane_timing": {
+    "waiting_seconds": 8.839997462928295e-05,
+    "active_seconds": 1.2106098000658676
+  },
+  "elapsed_seconds": 1.210824599955231,
+  "waiting_seconds": 8.839997462928295e-05,
+  "artifact_sha256": "cf7060f7c41a02c0f8c740ea21645b5e1f7460dac5377983c5cc67a878cbb735",
+  "image_count": 2
+}

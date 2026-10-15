@@ -209,7 +209,10 @@ class ExecutionTests(unittest.TestCase):
             selected = company.review_selection(self.canon, self.plan, drafts, execution)
             self.assertEqual({e["document_id"] for e in selected if e["visual_required"]}, {first, last})
             self.assertEqual(selected, company.review_selection(self.canon, self.plan, drafts, execution))
-            self.assertEqual(self.execution()["qa_policy"], "FullContentSampledVisual")
+            self.assertEqual(self.execution()["qa_policy"], "Balanced")
+            balanced = company.review_selection(self.canon, self.plan, drafts, self.execution("Balanced"))
+            self.assertTrue(all(e["content_required"] for e in balanced))
+            self.assertEqual({e["document_id"] for e in balanced if e["visual_required"]}, {first, last})
             execution["flagged_ids"] = [last]
             expanded = company.review_selection(self.canon, self.plan, drafts, execution)
             self.assertTrue(all(e["visual_required"] and e["content_required"] for e in expanded))

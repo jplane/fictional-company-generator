@@ -1,0 +1,223 @@
+{
+  "schema_version": 2,
+  "corpus_id": "corpus-76ce98a12405018fd1e8c2e5",
+  "canon_sha256": "caaf762e72fb012b38e89626490ab0988233f06da57675c45f8792fce3796186",
+  "plan_sha256": "647b92bb093e0638d541a8f268fd3c50035a754aa58c5be14676e52f5e7007a9",
+  "document_id": "doc-0022",
+  "engine": "OfficeCLI",
+  "tool": {
+    "version": "1.0.157",
+    "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+  },
+  "author_tool": {
+    "version": "1.0.157",
+    "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+  },
+  "capability": {
+    "path": "build\\capabilities\\c5a19c7bce2743110b521a93638258f779b31252ff28bcec2add2517b34286a0.json",
+    "sha256": "e7f902f12d1557f0cd19f972030ccdc967d51f28c10200055882ab3f70795acc"
+  },
+  "status": "passed",
+  "artifact_sha256": "546efbf8f32836d2b13e496effaed2b828da00dc9ad30da468fd34d7777b56ab",
+  "draft_sha256": "939e8af8d5a116c12f8b92da756809137377c1ae7a61cc4dfce8fc573c4dd562",
+  "checks": [
+    {
+      "operation": "document",
+      "path": "build\\tool-results\\doc-0022-document.json",
+      "sha256": "b206b478db59d2abc4b029f5cee6b7f7f883675f7dbef578f1d74c48e418a353"
+    },
+    {
+      "operation": "validate",
+      "path": "build\\tool-results\\doc-0022-validate.json",
+      "sha256": "9de688db7cce96c8a042660993e769a544615d1bf0b84c34b786791f2d6c0e39"
+    },
+    {
+      "operation": "issues",
+      "path": "build\\tool-results\\doc-0022-issues.json",
+      "sha256": "ca0210451def4add6943608309881e61b886dee8c208e94b9a0e78aabe64ddcc"
+    },
+    {
+      "operation": "extract",
+      "path": "build\\tool-results\\doc-0022-extract.json",
+      "sha256": "c6a4fed3af13db1c787732ad3bd38190389cab6c3d035bbc42013707d634e27a"
+    },
+    {
+      "operation": "chart_cache_stale",
+      "path": "build\\tool-results\\doc-0022-chart-cache.json",
+      "sha256": "4ddcbd0281f51e47f1eca3e358b53e424281ef602b85818d5bab6e40ae7733bf"
+    },
+    {
+      "operation": "formulas",
+      "path": "build\\tool-results\\doc-0022-formulas.json",
+      "sha256": "ce651256c19584b44ac05fe6002da45dc0f9c326c0ecdf83c28099641b9fb564"
+    },
+    {
+      "operation": "html_export",
+      "path": "build\\tool-results\\doc-0022-html_export.json",
+      "sha256": "4421e02e805aaa40e1a900c25db36825bf67aee1b86d815a4c24697baa3dc542"
+    },
+    {
+      "operation": "depth",
+      "path": "build\\tool-results\\doc-0022-depth.json",
+      "sha256": "cd49ea789188106751c5ddebe65d7ea9897125e8df2c4a823cc22465fd626b0c"
+    }
+  ],
+  "renders": [
+    {
+      "id": "inputs",
+      "images": [
+        {
+          "path": "build\\renders\\doc-0022\\inputs\\region.png",
+          "sha256": "ec1dacd7ddce73d84cd97e49a0a3cedf9b9b105b877f5ac9cd4306d2808473ea"
+        }
+      ],
+      "renderer": "OfficeCLI-HTML+Playwright-Chromium",
+      "artifact_sha256": "546efbf8f32836d2b13e496effaed2b828da00dc9ad30da468fd34d7777b56ab",
+      "result": {
+        "path": "build\\tool-results\\doc-0022-render-inputs.json",
+        "sha256": "63a9d4192f9631a5807c11b7d187f930c3167b452dc9fde90c8eb3eaf3ad5633"
+      }
+    },
+    {
+      "id": "calc-top",
+      "images": [
+        {
+          "path": "build\\renders\\doc-0022\\calc-top\\region.png",
+          "sha256": "a07aef159d456bb8eae23457d95ac0688247d6acdd4abab6119b957e90535bc2"
+        }
+      ],
+      "renderer": "OfficeCLI-HTML+Playwright-Chromium",
+      "artifact_sha256": "546efbf8f32836d2b13e496effaed2b828da00dc9ad30da468fd34d7777b56ab",
+      "result": {
+        "path": "build\\tool-results\\doc-0022-render-calc-top.json",
+        "sha256": "1a4fa71eca9ab2f8d08ad8fc09eee3264d131dc8d7ac42d2feb067ed2b2d41d8"
+      }
+    },
+    {
+      "id": "calc-bottom",
+      "images": [
+        {
+          "path": "build\\renders\\doc-0022\\calc-bottom\\region.png",
+          "sha256": "2ab79a27c865462087e9034bf3debdf3702fb3aef7be703c684f90c3b340035f"
+        }
+      ],
+      "renderer": "OfficeCLI-HTML+Playwright-Chromium",
+      "artifact_sha256": "546efbf8f32836d2b13e496effaed2b828da00dc9ad30da468fd34d7777b56ab",
+      "result": {
+        "path": "build\\tool-results\\doc-0022-render-calc-bottom.json",
+        "sha256": "f507075d5fba5ff7bf034fe3d301c4287d1da64ed9c37113fab7fda59925e6a4"
+      }
+    },
+    {
+      "id": "summary",
+      "images": [
+        {
+          "path": "build\\renders\\doc-0022\\summary\\region.png",
+          "sha256": "1f3553e7e409ed0bd32f04893dd3b84fc0044d4f9c4646726685ed394c886edf"
+        }
+      ],
+      "renderer": "OfficeCLI-HTML+Playwright-Chromium",
+      "artifact_sha256": "546efbf8f32836d2b13e496effaed2b828da00dc9ad30da468fd34d7777b56ab",
+      "result": {
+        "path": "build\\tool-results\\doc-0022-render-summary.json",
+        "sha256": "ca0cb8ecb0df704de2769e573e37d081f5c9372fe422943cff12bd7b2740136f"
+      }
+    },
+    {
+      "id": "notes",
+      "images": [
+        {
+          "path": "build\\renders\\doc-0022\\notes\\region.png",
+          "sha256": "a6d5edf5d6691739ad1618cfa0bef77c43cb1502334c19f0ad89b65e71ecb37f"
+        }
+      ],
+      "renderer": "OfficeCLI-HTML+Playwright-Chromium",
+      "artifact_sha256": "546efbf8f32836d2b13e496effaed2b828da00dc9ad30da468fd34d7777b56ab",
+      "result": {
+        "path": "build\\tool-results\\doc-0022-render-notes.json",
+        "sha256": "1768d5dc9d82b440a03a723e59a0326720ee39c5b1c1195b5a5cbc4a0f31f442"
+      }
+    }
+  ],
+  "render_targets": [
+    "inputs",
+    "calc-top",
+    "calc-bottom",
+    "summary",
+    "notes"
+  ],
+  "target_definitions": [
+    {
+      "id": "inputs",
+      "type": "range",
+      "range": "Inputs!A1:E16",
+      "sheet_index": 0
+    },
+    {
+      "id": "calc-top",
+      "type": "range",
+      "range": "Calc!A1:E14",
+      "sheet_index": 1
+    },
+    {
+      "id": "calc-bottom",
+      "type": "range",
+      "range": "Calc!A15:E26",
+      "sheet_index": 1
+    },
+    {
+      "id": "summary",
+      "type": "range",
+      "range": "Summary!A1:E20",
+      "sheet_index": 2
+    },
+    {
+      "id": "notes",
+      "type": "range",
+      "range": "Notes!A1:E14",
+      "sheet_index": 3
+    }
+  ],
+  "corrected_failure": false,
+  "machine_version": 2,
+  "generation_sha256": "fa58b323f157f623c4cecccd342414725168b9bcde95830696be712024bd7324",
+  "declared_targets": [
+    {
+      "id": "inputs",
+      "type": "range",
+      "range": "Inputs!A1:E16",
+      "sheet_index": 0
+    },
+    {
+      "id": "calc-top",
+      "type": "range",
+      "range": "Calc!A1:E14",
+      "sheet_index": 1
+    },
+    {
+      "id": "calc-bottom",
+      "type": "range",
+      "range": "Calc!A15:E26",
+      "sheet_index": 1
+    },
+    {
+      "id": "summary",
+      "type": "range",
+      "range": "Summary!A1:E20",
+      "sheet_index": 2
+    },
+    {
+      "id": "notes",
+      "type": "range",
+      "range": "Notes!A1:E14",
+      "sheet_index": 3
+    }
+  ],
+  "job_sha256": "4c4ae4c174791cd9f339245dbc3787d7502e1943b537a2fd8c9c935564644449",
+  "checker": {
+    "company.py": "cd82c505ada3537b654c435fd057189ab67a8aafaadacf58fb27e0b984f8b886",
+    "officecli_runner.py": "2eb42e037f244eb097e40050280838fb4f7ddfd37605417b6ea85d62efbae2f6",
+    "playwright_capture.py": "38b160b3cd1dfd4afa8bf404676cab639af628b7a6067b1792e3b2a7659deaa3"
+  },
+  "export_bindings_sha256": "f39754b9a7a977eee610d538e7b2975571240195e01548f9833fd7785e31eb0d"
+}

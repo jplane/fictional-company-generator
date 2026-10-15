@@ -281,7 +281,7 @@ appears anywhere, including notes, comments, hidden worksheet content, or Office
 properties. Required section roles and automated phrase scans are structural
 guards, not proof of convincing prose or exhaustive coverage.
 
-Apply `Sampled`, `FullContentSampledVisual` (default), or `Full` independently of
+Apply `Sampled`, `Balanced` (default), or `Full` independently of
 content depth. All files retain structural, claim/date/access, measurable-depth,
 issue/schema, hash, cache, provenance and coverage checks. Selected content
 reviews cover the complete document. Selected visual reviews use OfficeCLI's

@@ -1,0 +1,17 @@
+{
+  "company_name": "SunnySemi LLC",
+  "industry": "semiconductors",
+  "start_year": 2020,
+  "years": 6,
+  "documents": 50,
+  "seed": 42,
+  "content_depth": "medium",
+  "document_types": [
+    "press_release",
+    "product_presentation",
+    "meeting_transcript",
+    "product_spec",
+    "board_deck",
+    "financial_model"
+  ]
+}

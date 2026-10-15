@@ -1,0 +1,247 @@
+{
+  "runner_version": 2,
+  "schema_version": 2,
+  "corpus_id": "corpus-76ce98a12405018fd1e8c2e5",
+  "canon_sha256": "caaf762e72fb012b38e89626490ab0988233f06da57675c45f8792fce3796186",
+  "plan_sha256": "719fd5adce3412ce759a3e19cd383a054d201fc8a6c9f128371110c82d42fa97",
+  "generation_sha256": "24ef185c029a958971b3b99be69b821e1f84ed45c80dcfece90d1b143ce141b0",
+  "execution_sha256": "806fff93ab06125c0d2cc305756dc2aa86ef387838f398a54be6f97d83f4cb90",
+  "execution_revision": 2,
+  "effective_workers": 4,
+  "last_checkpoint_at": "2026-10-15T17:12:17.034233+00:00",
+  "active_wall_seconds": 11.41713349998463,
+  "validation_counts": {
+    "plan_computations": 1,
+    "plan_worker_seconds": 0.46250320004764944,
+    "plan_hits": 6,
+    "drafts_computations": 1,
+    "drafts_worker_seconds": 0.8972732999827713,
+    "artifact_computations": 4,
+    "artifact_worker_seconds": 0.20884609990753233
+  },
+  "documents": {
+    "doc-0048": {
+      "input_sha256": "7f9f3b22627817a2763df43ac1dc9d5bcf02d5c84c87e1920b7d17f8322db49d",
+      "stages": [
+        "created",
+        "authored",
+        "complete"
+      ],
+      "operations": [
+        {
+          "arguments": [
+            "create",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx"
+          ],
+          "operation": "create",
+          "started_at": "2026-10-15T17:12:00.305966+00:00",
+          "ended_at": "2026-10-15T17:12:02.311194+00:00",
+          "active_seconds": 2.0052350999903865,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": \"Created: C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\documents\\\\2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx\",\n  \"message\": \"Created: C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\documents\\\\2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx\"\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "status": "passed"
+        },
+        {
+          "arguments": [
+            "batch",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx",
+            "--input",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\build\\scripts\\doc-0048-batch.json",
+            "--stop-on-error"
+          ],
+          "operation": "author",
+          "started_at": "2026-10-15T17:12:02.425752+00:00",
+          "ended_at": "2026-10-15T17:12:05.620641+00:00",
+          "active_seconds": 3.194890499988105,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"outputFile\": \"C:\\\\Users\\\\jolan\\\\AppData\\\\Local\\\\Temp\\\\officecli_batch_7b75623f8f53442baab064ce525ac488.json\",\n    \"outputSize\": 9662,\n    \"results\": [\n      {\n        \"index\": 0,\n        \"success\": true\n      },\n      {\n        \"index\": 1,\n        \"success\": true\n      },\n      {\n        \"index\": 2,\n        \"success\": true\n      },\n      {\n        \"index\": 3,\n        \"success\": true\n      },\n      {\n        \"index\": 4,\n        \"success\": true\n      },\n      {\n        \"index\": 5,\n        \"success\": true\n      },\n      {\n        \"index\": 6,\n        \"success\": true\n      },\n      {\n        \"index\": 7,\n        \"success\": true\n      },\n      {\n        \"index\": 8,\n        \"success\": true\n      },\n      {\n        \"index\": 9,\n        \"success\": true\n      },\n      {\n        \"index\": 10,\n        \"success\": true\n      },\n      {\n        \"index\": 11,\n        \"success\": true\n      },\n      {\n        \"index\": 12,\n        \"success\": true\n      },\n      {\n        \"index\": 13,\n        \"success\": true\n      },\n      {\n        \"index\": 14,\n        \"success\": true\n      },\n      {\n        \"index\": 15,\n        \"success\": true\n      },\n      {\n        \"index\": 16,\n        \"success\": true\n      },\n      {\n        \"index\": 17,\n        \"success\": true\n      },\n      {\n        \"index\": 18,\n        \"success\": true\n      },\n      {\n        \"index\": 19,\n        \"success\": true\n      },\n      {\n        \"index\": 20,\n        \"success\": true\n      },\n      {\n        \"index\": 21,\n        \"success\": true\n      },\n      {\n        \"index\": 22,\n        \"success\": true\n      },\n      {\n        \"index\": 23,\n        \"success\": true\n      },\n      {\n        \"index\": 24,\n        \"success\": true\n      },\n      {\n        \"index\": 25,\n        \"success\": true\n      },\n      {\n        \"index\": 26,\n        \"success\": true\n      },\n      {\n        \"index\": 27,\n        \"success\": true\n      },\n      {\n        \"index\": 28,\n        \"success\": true\n      },\n      {\n        \"index\": 29,\n        \"success\": true\n      },\n      {\n        \"index\": 30,\n        \"success\": true\n      },\n      {\n        \"index\": 31,\n        \"success\": true\n      },\n      {\n        \"index\": 32,\n        \"success\": true\n      },\n      {\n        \"index\": 33,\n        \"success\": true\n      },\n      {\n        \"index\": 34,\n        \"success\": true\n      },\n      {\n        \"index\": 35,\n        \"success\": true\n      },\n      {\n        \"index\": 36,\n        \"success\": true\n      },\n      {\n        \"index\": 37,\n        \"success\": true\n      },\n      {\n        \"index\": 38,\n        \"success\": true\n      },\n      {\n        \"index\": 39,\n        \"success\": true\n      },\n      {\n        \"index\": 40,\n        \"success\": true\n      },\n      {\n        \"index\": 41,\n        \"success\": true\n      },\n      {\n        \"index\": 42,\n        \"success\": true\n      },\n      {\n        \"index\": 43,\n        \"success\": true\n      },\n      {\n        \"index\": 44,\n        \"success\": true\n      },\n      {\n        \"index\": 45,\n        \"success\": true\n      },\n      {\n        \"index\": 46,\n        \"success\": true\n      },\n      {\n        \"index\": 47,\n        \"success\": true\n      },\n      {\n        \"index\": 48,\n        \"success\": true\n      },\n      {\n        \"index\": 49,\n        \"success\": true\n      },\n      {\n        \"index\": 50,\n        \"success\": true\n      },\n      {\n        \"index\": 51,\n        \"success\": true\n      },\n      {\n        \"index\": 52,\n        \"success\": true\n      },\n      {\n        \"index\": 53,\n        \"success\": true\n      },\n      {\n        \"index\": 54,\n        \"success\": true\n      },\n      {\n        \"index\": 55,\n        \"success\": true\n      },\n      {\n        \"index\": 56,\n        \"success\": true\n      },\n      {\n        \"index\": 57,\n        \"success\": true\n      },\n      {\n        \"index\": 58,\n        \"success\": true\n      },\n      {\n        \"index\": 59,\n        \"success\": true\n      },\n      {\n        \"index\": 60,\n        \"success\": true\n      },\n      {\n        \"index\": 61,\n        \"success\": true\n      },\n      {\n        \"index\": 62,\n        \"success\": true\n      },\n      {\n        \"index\": 63,\n        \"success\": true\n      },\n      {\n        \"index\": 64,\n        \"success\": true\n      },\n      {\n        \"index\": 65,\n        \"success\": true\n      },\n      {\n        \"index\": 66,\n        \"success\": true\n      },\n      {\n        \"index\": 67,\n        \"success\": true\n      },\n      {\n        \"index\": 68,\n        \"success\": true\n      },\n      {\n        \"index\": 69,\n        \"success\": true\n      },\n      {\n        \"index\": 70,\n        \"success\": true\n      },\n      {\n        \"index\": 71,\n        \"success\": true\n      },\n      {\n        \"index\": 72,\n        \"success\": true\n      },\n      {\n        \"index\": 73,\n        \"success\": true\n      },\n      {\n        \"index\": 74,\n        \"success\": true\n      },\n      {\n        \"index\": 75,\n        \"success\": true\n      },\n      {\n        \"index\": 76,\n        \"success\": true\n      },\n      {\n        \"index\": 77,\n        \"success\": true\n      },\n      {\n        \"index\": 78,\n        \"success\": true\n      },\n      {\n        \"index\": 79,\n        \"success\": true\n      },\n      {\n        \"index\": 80,\n        \"success\": true\n      },\n      {\n        \"index\": 81,\n        \"success\": true\n      },\n      {\n        \"index\": 82,\n        \"success\": true\n      },\n      {\n        \"index\": 83,\n        \"success\": true\n      },\n      {\n        \"index\": 84,\n        \"success\": true\n      },\n      {\n        \"index\": 85,\n        \"success\": true\n      },\n      {\n        \"index\": 86,\n        \"success\": true\n      },\n      {\n        \"index\": 87,\n        \"success\": true\n      },\n      {\n        \"index\": 88,\n        \"success\": true\n      },\n      {\n        \"index\": 89,\n        \"success\": true\n      },\n      {\n        \"index\": 90,\n        \"success\": true\n      },\n      {\n        \"index\": 91,\n        \"success\": true\n      },\n      {\n        \"index\": 92,\n        \"success\": true\n      },\n      {\n        \"index\": 93,\n        \"success\": true\n      },\n      {\n        \"index\": 94,\n        \"success\": true\n      },\n      {\n        \"index\": 95,\n        \"success\": true\n      },\n      {\n        \"index\": 96,\n        \"success\": true\n      },\n      {\n        \"index\": 97,\n        \"success\": true\n      },\n      {\n        \"index\": 98,\n        \"success\": true\n      },\n      {\n        \"index\": 99,\n        \"success\": true\n      },\n      {\n        \"index\": 100,\n        \"success\": true\n      },\n      {\n        \"index\": 101,\n        \"success\": true\n      },\n      {\n        \"index\": 102,\n        \"success\": true\n      },\n      {\n        \"index\": 103,\n        \"success\": true\n      },\n      {\n        \"index\": 104,\n        \"success\": true\n      },\n      {\n        \"index\": 105,\n        \"success\": true\n      },\n      {\n        \"index\": 106,\n        \"success\": true\n      },\n      {\n        \"index\": 107,\n        \"success\": true\n      },\n      {\n        \"index\": 108,\n        \"success\": true\n      },\n      {\n        \"index\": 109,\n        \"success\": true\n      },\n      {\n        \"index\": 110,\n        \"success\": true\n      },\n      {\n        \"index\": 111,\n        \"success\": true\n      },\n      {\n        \"index\": 112,\n        \"success\": true\n      },\n      {\n        \"index\": 113,\n        \"success\": true\n      },\n      {\n        \"index\": 114,\n        \"success\": true\n      },\n      {\n        \"index\": 115,\n        \"success\": true\n      },\n      {\n        \"index\": 116,\n        \"success\": true\n      },\n      {\n        \"index\": 117,\n        \"success\": true\n      },\n      {\n        \"index\": 118,\n        \"success\": true\n      }\n    ],\n    \"summary\": {\n      \"total\": 119,\n      \"executed\": 119,\n      \"succeeded\": 119,\n      \"failed\": 0,\n      \"skipped\": 0\n    }\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "status": "passed"
+        },
+        {
+          "arguments": [
+            "validate",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx"
+          ],
+          "operation": "validate",
+          "started_at": "2026-10-15T17:12:05.818507+00:00",
+          "ended_at": "2026-10-15T17:12:07.483071+00:00",
+          "active_seconds": 1.6645643999800086,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"errors\": []\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "repeat_success": true,
+          "artifact_sha256": "d1a31202ed60d53d9df1ab38ff88f428f3ac83f989329d5b35911f252e9684f7",
+          "status": "passed",
+          "evidence": "Checked complete OfficeCLI result without errors/caveats"
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx",
+            "issues"
+          ],
+          "operation": "issues",
+          "started_at": "2026-10-15T17:12:07.567671+00:00",
+          "ended_at": "2026-10-15T17:12:09.645203+00:00",
+          "active_seconds": 2.0775306000141427,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"issues\": []\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "repeat_success": true,
+          "artifact_sha256": "d1a31202ed60d53d9df1ab38ff88f428f3ac83f989329d5b35911f252e9684f7",
+          "status": "passed",
+          "evidence": "Checked complete OfficeCLI result without errors/caveats"
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx",
+            "text"
+          ],
+          "operation": "extract",
+          "started_at": "2026-10-15T17:12:09.733427+00:00",
+          "ended_at": "2026-10-15T17:12:11.565731+00:00",
+          "active_seconds": 1.8323065000004135,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"totalSlides\": 10,\n    \"slides\": [\n      {\n        \"index\": 1,\n        \"path\": \"/slide[1]\",\n        \"texts\": [\n          \"SUNNYSEMI LLC   |   2025-08-22\",\n          \"SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption\",\n          \"GulfSwitch 6.0\\nlaunched | 2025-08-15\\nTampa, Florida\\nQuinn Mercer, Product Director\",\n          \"1\",\n          \"Released silicon\",\n          \"2\",\n          \"Evaluation\",\n          \"3\",\n          \"Qualification\",\n          \"01  |  PRODUCT BRIEFING\"\n        ]\n      },\n      {\n        \"index\": 2,\n        \"path\": \"/slide[2]\",\n        \"texts\": [\n          \"SUNNYSEMI LLC   |   2025-08-22\",\n          \"Start with the equipment boundary\",\n          \"High-density embedded boards need controlled power sequencing and observable fault behavior without losing sight of board-level thermal limits.\\nEfficiency applies only to the stated reference-stage operating point. External switches, inductors, cooling and layout remain customer design responsibilities.\",\n          \"1\",\n          \"Workload\",\n          \"2\",\n          \"Power\",\n          \"3\",\n          \"Integration\",\n          \"02  |  PRODUCT BRIEFING\"\n        ]\n      },\n      {\n        \"index\": 3,\n        \"path\": \"/slide[3]\",\n        \"texts\": [\n          \"SUNNYSEMI LLC   |   2025-08-22\",\n          \"A component and a qualification path\",\n          \"digitally supervised multiphase power control with a documented PMBus subset\\nEvaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration.\",\n          \"1\",\n          \"Reference platform\",\n          \"2\",\n          \"Acceptance evidence\",\n          \"3\",\n          \"Customer configuration\",\n          \"03  |  PRODUCT BRIEFING\"\n        ]\n      },\n      {\n        \"index\": 4,\n        \"path\": \"/slide[4]\",\n        \"texts\": [\n          \"SUNNYSEMI LLC   |   2025-08-22\",\n          \"The published operating envelope\",\n          \"100 V maximum rated input\\n24 A reference-stage output\\nEfficiency applies only to the stated reference-stage operating point. External switches, inductors, cooling and layout remain customer design responsibilities.\",\n          \"1\",\n          \"100 V maximum rated input\",\n          \"2\",\n          \"24 A reference-stage output\",\n          \"04  |  PRODUCT BRIEFING\"\n        ]\n      },\n      {\n        \"index\": 5,\n        \"path\": \"/slide[5]\",\n        \"texts\": [\n          \"SUNNYSEMI LLC   |   2025-08-22\",\n          \"What the interface enables\",\n          \"Configure the power stage, sequence rails, observe telemetry, and handle protection events through the documented host command interface.\\nKeep the host boundary and the version-matched component configuration explicit.\",\n          \"1\",\n          \"Host interface\",\n          \"2\",\n          \"Component execution\",\n          \"3\",\n          \"Status and results\",\n          \"05  |  PRODUCT BRIEFING\"\n        ]\n      },\n      {\n        \"index\": 6,\n        \"path\": \"/slide[6]\",\n        \"texts\": [\n          \"SUNNYSEMI LLC   |   2025-08-22\",\n          \"Application paths to evaluate\",\n          \"high-density edge systems\\nindustrial controller power stages\\nembedded compute carrier boards\\nValidate each use case against the intended system, not the product label.\",\n          \"1\",\n          \"high-density edge systems\",\n          \"2\",\n          \"industrial controller power stages\",\n          \"3\",\n          \"embedded compute carrier boards\",\n          \"06  |  PRODUCT BRIEFING\"\n        ]\n      },\n      {\n        \"index\": 7,\n        \"path\": \"/slide[7]\",\n        \"texts\": [\n          \"SUNNYSEMI LLC   |   2025-08-22\",\n          \"Integration is a shared responsibility\",\n          \"Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption.\\nrelease-controlled adoption and milestone-based production support\",\n          \"1\",\n          \"Customer workload\",\n          \"2\",\n          \"SunnySemi evidence\",\n          \"3\",\n          \"Joint qualification\",\n          \"07  |  PRODUCT BRIEFING\"\n        ]\n      },\n      {\n        \"index\": 8,\n        \"path\": \"/slide[8]\",\n        \"texts\": [\n          \"SUNNYSEMI LLC   |   2025-08-22\",\n          \"Boundaries that must stay visible\",\n          \"Efficiency applies only to the stated reference-stage operating point. External switches, inductors, cooling and layout remain customer design responsibilities.\\n97 percent reference-stage efficiency: 48 V input, 12 V output, half rated reference-stage load, 25 degrees Celsius ambient; excludes host and enclosure losses.\\nNo regulatory certification, customer benchmark or customer endorsement is asserted.\",\n          \"1\",\n          \"Component scope\",\n          \"2\",\n          \"Board scope\",\n          \"3\",\n          \"System scope\",\n          \"08  |  PRODUCT BRIEFING\"\n        ]\n      },\n      {\n        \"index\": 9,\n        \"path\": \"/slide[9]\",\n        \"texts\": [\n          \"SUNNYSEMI LLC   |   2025-08-22\",\n          \"Plan adoption around release evidence\",\n          \"Production orders and version-matched evaluation kits are available from the launch date, subject to quotation and allocation.\\nPricing and contractual lead times are supplied through customer-specific quotations.\",\n          \"1\",\n          \"Evaluate\",\n          \"2\",\n          \"Agree configuration\",\n          \"3\",\n          \"Quote and allocate\",\n          \"09  |  PRODUCT BRIEFING\"\n        ]\n      },\n      {\n        \"index\": 10,\n        \"path\": \"/slide[10]\",\n        \"texts\": [\n          \"SUNNYSEMI LLC   |   2025-08-22\",\n          \"Begin with a version-matched evaluation\",\n          \"Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example.\\nAgree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption.\",\n          \"1\",\n          \"Evaluation kit\",\n          \"2\",\n          \"Interface pack\",\n          \"3\",\n          \"Qualification plan\",\n          \"10  |  PRODUCT BRIEFING\"\n        ]\n      }\n    ]\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "repeat_success": true,
+          "artifact_sha256": "d1a31202ed60d53d9df1ab38ff88f428f3ac83f989329d5b35911f252e9684f7",
+          "status": "passed",
+          "evidence": "Checked complete OfficeCLI result without errors/caveats"
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx",
+            "html",
+            "--out",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\build\\renders\\doc-0048\\export.html"
+          ],
+          "operation": "html_export",
+          "started_at": "2026-10-15T17:12:11.670617+00:00",
+          "ended_at": "2026-10-15T17:12:14.042048+00:00",
+          "active_seconds": 2.3714248000178486,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\"success\": true, \"data\": \"C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\build\\\\renders\\\\doc-0048\\\\export.html\"}",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "repeat_success": true,
+          "artifact_sha256": "d1a31202ed60d53d9df1ab38ff88f428f3ac83f989329d5b35911f252e9684f7",
+          "status": "passed",
+          "evidence": "Checked complete OfficeCLI result without errors/caveats"
+        }
+      ],
+      "attempts": {
+        "create": 1,
+        "author": 1,
+        "validate": 1,
+        "issues": 1,
+        "extract": 1,
+        "html_export": 1
+      },
+      "retry_reasons": {},
+      "artifact_sha256": "d1a31202ed60d53d9df1ab38ff88f428f3ac83f989329d5b35911f252e9684f7",
+      "author_tool": {
+        "version": "1.0.157",
+        "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+      },
+      "captures": [
+        {
+          "operation": "capture",
+          "status": "passed",
+          "started_at": "2026-10-15T17:12:14.223711+00:00",
+          "pass": "generation",
+          "artifact_sha256": "d1a31202ed60d53d9df1ab38ff88f428f3ac83f989329d5b35911f252e9684f7",
+          "corrective": false,
+          "active_seconds": 2.6351203999947757,
+          "ended_at": "2026-10-15T17:12:16.883779+00:00",
+          "tool": {
+            "engine": "playwright-chromium",
+            "playwright_version": "1.63.0",
+            "channel": "chromium",
+            "headless": true,
+            "chromium_sandbox": true,
+            "browser_version": "153.0.8010.12",
+            "executable_path": "C:\\Users\\jolan\\AppData\\Local\\ms-playwright\\chromium-1243\\chrome-win64\\chrome.exe",
+            "executable_sha256": "9b07943f834485b43c9d54caea2951c78715f9f07070a80ab6658465ebd3e711"
+          },
+          "source_html_sha256": "672aa56966df279072f2b059928a4eec53347208f87ac2005277c90900cb8cc9",
+          "unit": "slides",
+          "image_sha256": "3aab692a5815149f4dc1eb8421f99091df59f681664efe45944ba0500fb29df7",
+          "rendered_count": 10,
+          "lane_timing": {
+            "waiting_seconds": 5.789997521787882e-05,
+            "active_seconds": 2.6351203999947757
+          },
+          "elapsed_seconds": 2.6601094000507146,
+          "waiting_seconds": 5.789997521787882e-05,
+          "image_count": 10
+        }
+      ]
+    }
+  },
+  "phases": [
+    {
+      "id": "c2046ab3-534e-44a1-a834-fa3ef7ca1d79",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0048",
+      "started_at": "2026-10-15T17:11:59.695497+00:00",
+      "status": "passed",
+      "active_seconds": 17.338695899990853,
+      "family": [
+        "product_presentation",
+        "pptx",
+        "1",
+        "672d3bddab87c64bbd48671f5dfee716f646095c326e0749428e287fd37820ef"
+      ],
+      "queued_at": "2026-10-15T17:11:59.695268+00:00",
+      "queue_seconds": 0.000229,
+      "ended_at": "2026-10-15T17:12:17.034197+00:00"
+    }
+  ]
+}

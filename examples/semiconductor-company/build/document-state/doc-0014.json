@@ -1,0 +1,496 @@
+{
+  "runner_version": 2,
+  "schema_version": 2,
+  "corpus_id": "corpus-76ce98a12405018fd1e8c2e5",
+  "canon_sha256": "caaf762e72fb012b38e89626490ab0988233f06da57675c45f8792fce3796186",
+  "plan_sha256": "647b92bb093e0638d541a8f268fd3c50035a754aa58c5be14676e52f5e7007a9",
+  "generation_sha256": "fa58b323f157f623c4cecccd342414725168b9bcde95830696be712024bd7324",
+  "execution_sha256": "6825194973e06d519b411f9b7d1c86c4d87a478245fcb340e2b3ad3a6cb515c6",
+  "execution_revision": 3,
+  "effective_workers": 4,
+  "last_checkpoint_at": "2026-10-15T17:19:24.680659+00:00",
+  "active_wall_seconds": 90.28393929998856,
+  "validation_counts": {
+    "plan_computations": 2,
+    "plan_worker_seconds": 0.3531691000680439,
+    "plan_hits": 31,
+    "drafts_computations": 2,
+    "drafts_worker_seconds": 1.297449300007429,
+    "artifact_computations": 27,
+    "artifact_worker_seconds": 0.9935854005161673,
+    "artifact_hits": 88,
+    "preflight_computations": 1,
+    "preflight_worker_seconds": 0.01609029993414879,
+    "preflight_hits": 26
+  },
+  "last_result": {
+    "status": "passed",
+    "pass": "generation",
+    "workers": 4,
+    "completed_this_invocation": [
+      "doc-0012",
+      "doc-0030",
+      "doc-0036",
+      "doc-0042",
+      "doc-0047",
+      "doc-0048"
+    ],
+    "failures": {},
+    "generation_completed_total": 6,
+    "planned_total": 50,
+    "family_summary": {
+      "scope": "generation_pilots",
+      "families": 6,
+      "family_sizes": [
+        6,
+        6,
+        6,
+        8,
+        12,
+        12
+      ],
+      "pilots": 6,
+      "content_selected": 50,
+      "visual_selected": 50,
+      "warnings": [
+        "Every document is selected for visual review."
+      ]
+    },
+    "awaiting_pilot_or_corrective_reviews": [],
+    "awaiting_corrections": [],
+    "remaining": []
+  },
+  "between_invocations_seconds": 92.018542,
+  "documents": {
+    "doc-0014": {
+      "input_sha256": "5af3f4ea764cc37923de02e4da32515b7a876c19aa406eb9c072f7930c0be9a2",
+      "stages": [
+        "created",
+        "authored",
+        "complete"
+      ],
+      "operations": [
+        {
+          "arguments": [
+            "create",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2022-01-15 - SunnySemi LLC - FY 2021 Operating Economics.xlsx"
+          ],
+          "operation": "create",
+          "started_at": "2026-10-15T17:19:00.623654+00:00",
+          "ended_at": "2026-10-15T17:19:02.301363+00:00",
+          "active_seconds": 1.6777069999370724,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": \"Created: C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\documents\\\\2022-01-15 - SunnySemi LLC - FY 2021 Operating Economics.xlsx\",\n  \"message\": \"Created: C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\documents\\\\2022-01-15 - SunnySemi LLC - FY 2021 Operating Economics.xlsx\"\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "status": "passed"
+        },
+        {
+          "arguments": [
+            "batch",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2022-01-15 - SunnySemi LLC - FY 2021 Operating Economics.xlsx",
+            "--input",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\build\\scripts\\doc-0014-batch.json",
+            "--stop-on-error"
+          ],
+          "operation": "author",
+          "started_at": "2026-10-15T17:19:02.390452+00:00",
+          "ended_at": "2026-10-15T17:19:04.896982+00:00",
+          "active_seconds": 2.506551699945703,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"outputFile\": \"C:\\\\Users\\\\jolan\\\\AppData\\\\Local\\\\Temp\\\\officecli_batch_11e7920067c84cfdab7a637fbfb8a1b1.json\",\n    \"outputSize\": 59696,\n    \"results\": [\n      {\n        \"index\": 0,\n        \"success\": true\n      },\n      {\n        \"index\": 1,\n        \"success\": true\n      },\n      {\n        \"index\": 2,\n        \"success\": true\n      },\n      {\n        \"index\": 3,\n        \"success\": true\n      },\n      {\n        \"index\": 4,\n        \"success\": true\n      },\n      {\n        \"index\": 5,\n        \"success\": true\n      },\n      {\n        \"index\": 6,\n        \"success\": true\n      },\n      {\n        \"index\": 7,\n        \"success\": true\n      },\n      {\n        \"index\": 8,\n        \"success\": true\n      },\n      {\n        \"index\": 9,\n        \"success\": true\n      },\n      {\n        \"index\": 10,\n        \"success\": true\n      },\n      {\n        \"index\": 11,\n        \"success\": true\n      },\n      {\n        \"index\": 12,\n        \"success\": true\n      },\n      {\n        \"index\": 13,\n        \"success\": true\n      },\n      {\n        \"index\": 14,\n        \"success\": true\n      },\n      {\n        \"index\": 15,\n        \"success\": true\n      },\n      {\n        \"index\": 16,\n        \"success\": true\n      },\n      {\n        \"index\": 17,\n        \"success\": true\n      },\n      {\n        \"index\": 18,\n        \"success\": true\n      },\n      {\n        \"index\": 19,\n        \"success\": true\n      },\n      {\n        \"index\": 20,\n        \"success\": true\n      },\n      {\n        \"index\": 21,\n        \"success\": true\n      },\n      {\n        \"index\": 22,\n        \"success\": true\n      },\n      {\n        \"index\": 23,\n        \"success\": true\n      },\n      {\n        \"index\": 24,\n        \"success\": true\n      },\n      {\n        \"index\": 25,\n        \"success\": true\n      },\n      {\n        \"index\": 26,\n        \"success\": true\n      },\n      {\n        \"index\": 27,\n        \"success\": true\n      },\n      {\n        \"index\": 28,\n        \"success\": true\n      },\n      {\n        \"index\": 29,\n        \"success\": true\n      },\n      {\n        \"index\": 30,\n        \"success\": true\n      },\n      {\n        \"index\": 31,\n        \"success\": true\n      },\n      {\n        \"index\": 32,\n        \"success\": true\n      },\n      {\n        \"index\": 33,\n        \"success\": true\n      },\n      {\n        \"index\": 34,\n        \"success\": true\n      },\n      {\n        \"index\": 35,\n        \"success\": true\n      },\n      {\n        \"index\": 36,\n        \"success\": true\n      },\n      {\n        \"index\": 37,\n        \"success\": true\n      },\n      {\n        \"index\": 38,\n        \"success\": true\n      },\n      {\n        \"index\": 39,\n        \"success\": true\n      },\n      {\n        \"index\": 40,\n        \"success\": true\n      },\n      {\n        \"index\": 41,\n        \"success\": true\n      },\n      {\n        \"index\": 42,\n        \"success\": true\n      },\n      {\n        \"index\": 43,\n        \"success\": true\n      },\n      {\n        \"index\": 44,\n        \"success\": true\n      },\n      {\n        \"index\": 45,\n        \"success\": true\n      },\n      {\n        \"index\": 46,\n        \"success\": true\n      },\n      {\n        \"index\": 47,\n        \"success\": true\n      },\n      {\n        \"index\": 48,\n        \"success\": true\n      },\n      {\n        \"index\": 49,\n        \"success\": true\n      },\n      {\n        \"index\": 50,\n        \"success\": true\n      },\n      {\n        \"index\": 51,\n        \"success\": true\n      },\n      {\n        \"index\": 52,\n        \"success\": true\n      },\n      {\n        \"index\": 53,\n        \"success\": true\n      },\n      {\n        \"index\": 54,\n        \"success\": true\n      },\n      {\n        \"index\": 55,\n        \"success\": true\n      },\n      {\n        \"index\": 56,\n        \"success\": true\n      },\n      {\n        \"index\": 57,\n        \"success\": true\n      },\n      {\n        \"index\": 58,\n        \"success\": true\n      },\n      {\n        \"index\": 59,\n        \"success\": true\n      },\n      {\n        \"index\": 60,\n        \"success\": true\n      },\n      {\n        \"index\": 61,\n        \"success\": true\n      },\n      {\n        \"index\": 62,\n        \"success\": true\n      },\n      {\n        \"index\": 63,\n        \"success\": true\n      },\n      {\n        \"index\": 64,\n        \"success\": true\n      },\n      {\n        \"index\": 65,\n        \"success\": true\n      },\n      {\n        \"index\": 66,\n        \"success\": true\n      },\n      {\n        \"index\": 67,\n        \"success\": true\n      },\n      {\n        \"index\": 68,\n        \"success\": true\n      },\n      {\n        \"index\": 69,\n        \"success\": true\n      },\n      {\n        \"index\": 70,\n        \"success\": true\n      },\n      {\n        \"index\": 71,\n        \"success\": true\n      },\n      {\n        \"index\": 72,\n        \"success\": true\n      },\n      {\n        \"index\": 73,\n        \"success\": true\n      },\n      {\n        \"index\": 74,\n        \"success\": true\n      },\n      {\n        \"index\": 75,\n        \"success\": true\n      },\n      {\n        \"index\": 76,\n        \"success\": true\n      },\n      {\n        \"index\": 77,\n        \"success\": true\n      },\n      {\n        \"index\": 78,\n        \"success\": true\n      },\n      {\n        \"index\": 79,\n        \"success\": true\n      },\n      {\n        \"index\": 80,\n        \"success\": true\n      },\n      {\n        \"index\": 81,\n        \"success\": true\n      },\n      {\n        \"index\": 82,\n        \"success\": true\n      },\n      {\n        \"index\": 83,\n        \"success\": true\n      },\n      {\n        \"index\": 84,\n        \"success\": true\n      },\n      {\n        \"index\": 85,\n        \"success\": true\n      },\n      {\n        \"index\": 86,\n        \"success\": true\n      },\n      {\n        \"index\": 87,\n        \"success\": true\n      },\n      {\n        \"index\": 88,\n        \"success\": true\n      },\n      {\n        \"index\": 89,\n        \"success\": true\n      },\n      {\n        \"index\": 90,\n        \"success\": true\n      },\n      {\n        \"index\": 91,\n        \"success\": true\n      },\n      {\n        \"index\": 92,\n        \"success\": true\n      },\n      {\n        \"index\": 93,\n        \"success\": true\n      },\n      {\n        \"index\": 94,\n        \"success\": true\n      },\n      {\n        \"index\": 95,\n        \"success\": true\n      },\n      {\n        \"index\": 96,\n        \"success\": true\n      },\n      {\n        \"index\": 97,\n        \"success\": true\n      },\n      {\n        \"index\": 98,\n        \"success\": true\n      },\n      {\n        \"index\": 99,\n        \"success\": true\n      },\n      {\n        \"index\": 100,\n        \"success\": true\n      },\n      {\n        \"index\": 101,\n        \"success\": true\n      },\n      {\n        \"index\": 102,\n        \"success\": true\n      },\n      {\n        \"index\": 103,\n        \"success\": true\n      },\n      {\n        \"index\": 104,\n        \"success\": true\n      },\n      {\n        \"index\": 105,\n        \"success\": true\n      },\n      {\n        \"index\": 106,\n        \"success\": true\n      },\n      {\n        \"index\": 107,\n        \"success\": true\n      },\n      {\n        \"index\": 108,\n        \"success\": true\n      },\n      {\n        \"index\": 109,\n        \"success\": true\n      },\n      {\n        \"index\": 110,\n        \"success\": true\n      },\n      {\n        \"index\": 111,\n        \"success\": true\n      },\n      {\n        \"index\": 112,\n        \"success\": true\n      },\n      {\n        \"index\": 113,\n        \"success\": true\n      },\n      {\n        \"index\": 114,\n        \"success\": true\n      },\n      {\n        \"index\": 115,\n        \"success\": true\n      },\n      {\n        \"index\": 116,\n        \"success\": true\n      },\n      {\n        \"index\": 117,\n        \"success\": true\n      },\n      {\n        \"index\": 118,\n        \"success\": true\n      },\n      {\n        \"index\": 119,\n        \"success\": true\n      },\n      {\n        \"index\": 120,\n        \"success\": true\n      },\n      {\n        \"index\": 121,\n        \"success\": true\n      },\n      {\n        \"index\": 122,\n        \"success\": true\n      },\n      {\n        \"index\": 123,\n        \"success\": true\n      },\n      {\n        \"index\": 124,\n        \"success\": true\n      },\n      {\n        \"index\": 125,\n        \"success\": true\n      },\n      {\n        \"index\": 126,\n        \"success\": true\n      },\n      {\n        \"index\": 127,\n        \"success\": true\n      },\n      {\n        \"index\": 128,\n        \"success\": true\n      },\n      {\n        \"index\": 129,\n        \"success\": true\n      },\n      {\n        \"index\": 130,\n        \"success\": true\n      },\n      {\n        \"index\": 131,\n        \"success\": true\n      },\n      {\n        \"index\": 132,\n        \"success\": true\n      },\n      {\n        \"index\": 133,\n        \"success\": true\n      },\n      {\n        \"index\": 134,\n        \"success\": true\n      },\n      {\n        \"index\": 135,\n        \"success\": true\n      },\n      {\n        \"index\": 136,\n        \"success\": true\n      },\n      {\n        \"index\": 137,\n        \"success\": true\n      },\n      {\n        \"index\": 138,\n        \"success\": true\n      },\n      {\n        \"index\": 139,\n        \"success\": true\n      },\n      {\n        \"index\": 140,\n        \"success\": true\n      },\n      {\n        \"index\": 141,\n        \"success\": true\n      },\n      {\n        \"index\": 142,\n        \"success\": true\n      },\n      {\n        \"index\": 143,\n        \"success\": true\n      },\n      {\n        \"index\": 144,\n        \"success\": true\n      },\n      {\n        \"index\": 145,\n        \"success\": true\n      },\n      {\n        \"index\": 146,\n        \"success\": true\n      },\n      {\n        \"index\": 147,\n        \"success\": true\n      },\n      {\n        \"index\": 148,\n        \"success\": true\n      },\n      {\n        \"index\": 149,\n        \"success\": true\n      },\n      {\n        \"index\": 150,\n        \"success\": true\n      },\n      {\n        \"index\": 151,\n        \"success\": true\n      },\n      {\n        \"index\": 152,\n        \"success\": true\n      },\n      {\n        \"index\": 153,\n        \"success\": true\n      },\n      {\n        \"index\": 154,\n        \"success\": true\n      },\n      {\n        \"index\": 155,\n        \"success\": true\n      },\n      {\n        \"index\": 156,\n        \"success\": true\n      },\n      {\n        \"index\": 157,\n        \"success\": true\n      },\n      {\n        \"index\": 158,\n        \"success\": true\n      },\n      {\n        \"index\": 159,\n        \"success\": true\n      },\n      {\n        \"index\": 160,\n        \"success\": true\n      },\n      {\n        \"index\": 161,\n        \"success\": true\n      },\n      {\n        \"index\": 162,\n        \"success\": true\n      },\n      {\n        \"index\": 163,\n        \"success\": true\n      },\n      {\n        \"index\": 164,\n        \"success\": true\n      },\n      {\n        \"index\": 165,\n        \"success\": true\n      },\n      {\n        \"index\": 166,\n        \"success\": true\n      },\n      {\n        \"index\": 167,\n        \"success\": true\n      },\n      {\n        \"index\": 168,\n        \"success\": true\n      },\n      {\n        \"index\": 169,\n        \"success\": true\n      },\n      {\n        \"index\": 170,\n        \"success\": true\n      },\n      {\n        \"index\": 171,\n        \"success\": true\n      },\n      {\n        \"index\": 172,\n        \"success\": true\n      },\n      {\n        \"index\": 173,\n        \"success\": true\n      },\n      {\n        \"index\": 174,\n        \"success\": true\n      },\n      {\n        \"index\": 175,\n        \"success\": true\n      },\n      {\n        \"index\": 176,\n        \"success\": true\n      },\n      {\n        \"index\": 177,\n        \"success\": true\n      },\n      {\n        \"index\": 178,\n        \"success\": true\n      },\n      {\n        \"index\": 179,\n        \"success\": true\n      },\n      {\n        \"index\": 180,\n        \"success\": true\n      },\n      {\n        \"index\": 181,\n        \"success\": true\n      },\n      {\n        \"index\": 182,\n        \"success\": true\n      },\n      {\n        \"index\": 183,\n        \"success\": true\n      },\n      {\n        \"index\": 184,\n        \"success\": true\n      },\n      {\n        \"index\": 185,\n        \"success\": true\n      },\n      {\n        \"index\": 186,\n        \"success\": true\n      },\n      {\n        \"index\": 187,\n        \"success\": true\n      },\n      {\n        \"index\": 188,\n        \"success\": true\n      },\n      {\n        \"index\": 189,\n        \"success\": true\n      },\n      {\n        \"index\": 190,\n        \"success\": true\n      },\n      {\n        \"index\": 191,\n        \"success\": true\n      },\n      {\n        \"index\": 192,\n        \"success\": true\n      },\n      {\n        \"index\": 193,\n        \"success\": true\n      },\n      {\n        \"index\": 194,\n        \"success\": true\n      },\n      {\n        \"index\": 195,\n        \"success\": true\n      },\n      {\n        \"index\": 196,\n        \"success\": true\n      },\n      {\n        \"index\": 197,\n        \"success\": true\n      },\n      {\n        \"index\": 198,\n        \"success\": true\n      },\n      {\n        \"index\": 199,\n        \"success\": true\n      },\n      {\n        \"index\": 200,\n        \"success\": true\n      },\n      {\n        \"index\": 201,\n        \"success\": true\n      },\n      {\n        \"index\": 202,\n        \"success\": true\n      },\n      {\n        \"index\": 203,\n        \"success\": true\n      },\n      {\n        \"index\": 204,\n        \"success\": true\n      },\n      {\n        \"index\": 205,\n        \"success\": true\n      },\n      {\n        \"index\": 206,\n        \"success\": true\n      },\n      {\n        \"index\": 207,\n        \"success\": true\n      },\n      {\n        \"index\": 208,\n        \"success\": true\n      },\n      {\n        \"index\": 209,\n        \"success\": true\n      },\n      {\n        \"index\": 210,\n        \"success\": true\n      },\n      {\n        \"index\": 211,\n        \"success\": true\n      },\n      {\n        \"index\": 212,\n        \"success\": true\n      },\n      {\n        \"index\": 213,\n        \"success\": true\n      },\n      {\n        \"index\": 214,\n        \"success\": true\n      },\n      {\n        \"index\": 215,\n        \"success\": true\n      },\n      {\n        \"index\": 216,\n        \"success\": true\n      },\n      {\n        \"index\": 217,\n        \"success\": true\n      },\n      {\n        \"index\": 218,\n        \"success\": true\n      },\n      {\n        \"index\": 219,\n        \"success\": true\n      },\n      {\n        \"index\": 220,\n        \"success\": true\n      },\n      {\n        \"index\": 221,\n        \"success\": true\n      },\n      {\n        \"index\": 222,\n        \"success\": true\n      },\n      {\n        \"index\": 223,\n        \"success\": true\n      },\n      {\n        \"index\": 224,\n        \"success\": true\n      },\n      {\n        \"index\": 225,\n        \"success\": true\n      },\n      {\n        \"index\": 226,\n        \"success\": true\n      },\n      {\n        \"index\": 227,\n        \"success\": true\n      },\n      {\n        \"index\": 228,\n        \"success\": true\n      },\n      {\n        \"index\": 229,\n        \"success\": true\n      },\n      {\n        \"index\": 230,\n        \"success\": true\n      },\n      {\n        \"index\": 231,\n        \"success\": true\n      },\n      {\n        \"index\": 232,\n        \"success\": true\n      },\n      {\n        \"index\": 233,\n        \"success\": true\n      },\n      {\n        \"index\": 234,\n        \"success\": true\n      },\n      {\n        \"index\": 235,\n        \"success\": true\n      },\n      {\n        \"index\": 236,\n        \"success\": true\n      },\n      {\n        \"index\": 237,\n        \"success\": true\n      },\n      {\n        \"index\": 238,\n        \"success\": true\n      },\n      {\n        \"index\": 239,\n        \"success\": true\n      },\n      {\n        \"index\": 240,\n        \"success\": true\n      },\n      {\n        \"index\": 241,\n        \"success\": true\n      },\n      {\n        \"index\": 242,\n        \"success\": true\n      },\n      {\n        \"index\": 243,\n        \"success\": true\n      },\n      {\n        \"index\": 244,\n        \"success\": true\n      },\n      {\n        \"index\": 245,\n        \"success\": true\n      },\n      {\n        \"index\": 246,\n        \"success\": true\n      },\n      {\n        \"index\": 247,\n        \"success\": true\n      },\n      {\n        \"index\": 248,\n        \"success\": true\n      },\n      {\n        \"index\": 249,\n        \"success\": true\n      },\n      {\n        \"index\": 250,\n        \"success\": true\n      },\n      {\n        \"index\": 251,\n        \"success\": true\n      },\n      {\n        \"index\": 252,\n        \"success\": true\n      },\n      {\n        \"index\": 253,\n        \"success\": true\n      },\n      {\n        \"index\": 254,\n        \"success\": true\n      },\n      {\n        \"index\": 255,\n        \"success\": true\n      },\n      {\n        \"index\": 256,\n        \"success\": true\n      },\n      {\n        \"index\": 257,\n        \"success\": true\n      },\n      {\n        \"index\": 258,\n        \"success\": true\n      },\n      {\n        \"index\": 259,\n        \"success\": true\n      },\n      {\n        \"index\": 260,\n        \"success\": true\n      },\n      {\n        \"index\": 261,\n        \"success\": true\n      },\n      {\n        \"index\": 262,\n        \"success\": true\n      },\n      {\n        \"index\": 263,\n        \"success\": true\n      },\n      {\n        \"index\": 264,\n        \"success\": true\n      },\n      {\n        \"index\": 265,\n        \"success\": true\n      },\n      {\n        \"index\": 266,\n        \"success\": true\n      },\n      {\n        \"index\": 267,\n        \"success\": true\n      },\n      {\n        \"index\": 268,\n        \"success\": true\n      },\n      {\n        \"index\": 269,\n        \"success\": true\n      },\n      {\n        \"index\": 270,\n        \"success\": true\n      },\n      {\n        \"index\": 271,\n        \"success\": true\n      },\n      {\n        \"index\": 272,\n        \"success\": true\n      },\n      {\n        \"index\": 273,\n        \"success\": true\n      },\n      {\n        \"index\": 274,\n        \"success\": true\n      },\n      {\n        \"index\": 275,\n        \"success\": true\n      },\n      {\n        \"index\": 276,\n        \"success\": true\n      },\n      {\n        \"index\": 277,\n        \"success\": true\n      },\n      {\n        \"index\": 278,\n        \"success\": true\n      },\n      {\n        \"index\": 279,\n        \"success\": true\n      },\n      {\n        \"index\": 280,\n        \"success\": true\n      },\n      {\n        \"index\": 281,\n        \"success\": true\n      },\n      {\n        \"index\": 282,\n        \"success\": true\n      },\n      {\n        \"index\": 283,\n        \"success\": true\n      },\n      {\n        \"index\": 284,\n        \"success\": true\n      },\n      {\n        \"index\": 285,\n        \"success\": true\n      },\n      {\n        \"index\": 286,\n        \"success\": true\n      },\n      {\n        \"index\": 287,\n        \"success\": true\n      },\n      {\n        \"index\": 288,\n        \"success\": true\n      },\n      {\n        \"index\": 289,\n        \"success\": true\n      },\n      {\n        \"index\": 290,\n        \"success\": true\n      },\n      {\n        \"index\": 291,\n        \"success\": true\n      },\n      {\n        \"index\": 292,\n        \"success\": true\n      },\n      {\n        \"index\": 293,\n        \"success\": true\n      },\n      {\n        \"index\": 294,\n        \"success\": true\n      },\n      {\n        \"index\": 295,\n        \"success\": true\n      },\n      {\n        \"index\": 296,\n        \"success\": true\n      },\n      {\n        \"index\": 297,\n        \"success\": true\n      },\n      {\n        \"index\": 298,\n        \"success\": true\n      },\n      {\n        \"index\": 299,\n        \"success\": true\n      },\n      {\n        \"index\": 300,\n        \"success\": true\n      },\n      {\n        \"index\": 301,\n        \"success\": true\n      },\n      {\n        \"index\": 302,\n        \"success\": true\n      },\n      {\n        \"index\": 303,\n        \"success\": true\n      },\n      {\n        \"index\": 304,\n        \"success\": true\n      },\n      {\n        \"index\": 305,\n        \"success\": true\n      },\n      {\n        \"index\": 306,\n        \"success\": true\n      },\n      {\n        \"index\": 307,\n        \"success\": true\n      },\n      {\n        \"index\": 308,\n        \"success\": true\n      },\n      {\n        \"index\": 309,\n        \"success\": true\n      },\n      {\n        \"index\": 310,\n        \"success\": true\n      },\n      {\n        \"index\": 311,\n        \"success\": true\n      },\n      {\n        \"index\": 312,\n        \"success\": true\n      },\n      {\n        \"index\": 313,\n        \"success\": true\n      },\n      {\n        \"index\": 314,\n        \"success\": true\n      },\n      {\n        \"index\": 315,\n        \"success\": true\n      },\n      {\n        \"index\": 316,\n        \"success\": true\n      },\n      {\n        \"index\": 317,\n        \"success\": true\n      },\n      {\n        \"index\": 318,\n        \"success\": true\n      },\n      {\n        \"index\": 319,\n        \"success\": true\n      },\n      {\n        \"index\": 320,\n        \"success\": true\n      },\n      {\n        \"index\": 321,\n        \"success\": true\n      },\n      {\n        \"index\": 322,\n        \"success\": true\n      },\n      {\n        \"index\": 323,\n        \"success\": true\n      },\n      {\n        \"index\": 324,\n        \"success\": true\n      },\n      {\n        \"index\": 325,\n        \"success\": true\n      },\n      {\n        \"index\": 326,\n        \"success\": true\n      },\n      {\n        \"index\": 327,\n        \"success\": true\n      },\n      {\n        \"index\": 328,\n        \"success\": true\n      },\n      {\n        \"index\": 329,\n        \"success\": true\n      },\n      {\n        \"index\": 330,\n        \"success\": true\n      },\n      {\n        \"index\": 331,\n        \"success\": true\n      },\n      {\n        \"index\": 332,\n        \"success\": true\n      },\n      {\n        \"index\": 333,\n        \"success\": true\n      },\n      {\n        \"index\": 334,\n        \"success\": true\n      },\n      {\n        \"index\": 335,\n        \"success\": true\n      },\n      {\n        \"index\": 336,\n        \"success\": true\n      },\n      {\n        \"index\": 337,\n        \"success\": true\n      },\n      {\n        \"index\": 338,\n        \"success\": true\n      },\n      {\n        \"index\": 339,\n        \"success\": true\n      },\n      {\n        \"index\": 340,\n        \"success\": true\n      },\n      {\n        \"index\": 341,\n        \"success\": true\n      },\n      {\n        \"index\": 342,\n        \"success\": true\n      },\n      {\n        \"index\": 343,\n        \"success\": true\n      },\n      {\n        \"index\": 344,\n        \"success\": true\n      },\n      {\n        \"index\": 345,\n        \"success\": true\n      },\n      {\n        \"index\": 346,\n        \"success\": true\n      },\n      {\n        \"index\": 347,\n        \"success\": true\n      },\n      {\n        \"index\": 348,\n        \"success\": true\n      },\n      {\n        \"index\": 349,\n        \"success\": true\n      },\n      {\n        \"index\": 350,\n        \"success\": true\n      },\n      {\n        \"index\": 351,\n        \"success\": true\n      },\n      {\n        \"index\": 352,\n        \"success\": true\n      },\n      {\n        \"index\": 353,\n        \"success\": true\n      },\n      {\n        \"index\": 354,\n        \"success\": true\n      },\n      {\n        \"index\": 355,\n        \"success\": true\n      },\n      {\n        \"index\": 356,\n        \"success\": true\n      },\n      {\n        \"index\": 357,\n        \"success\": true\n      },\n      {\n        \"index\": 358,\n        \"success\": true\n      },\n      {\n        \"index\": 359,\n        \"success\": true\n      },\n      {\n        \"index\": 360,\n        \"success\": true\n      },\n      {\n        \"index\": 361,\n        \"success\": true\n      },\n      {\n        \"index\": 362,\n        \"success\": true\n      },\n      {\n        \"index\": 363,\n        \"success\": true\n      },\n      {\n        \"index\": 364,\n        \"success\": true\n      },\n      {\n        \"index\": 365,\n        \"success\": true\n      },\n      {\n        \"index\": 366,\n        \"success\": true\n      },\n      {\n        \"index\": 367,\n        \"success\": true\n      },\n      {\n        \"index\": 368,\n        \"success\": true\n      },\n      {\n        \"index\": 369,\n        \"success\": true\n      },\n      {\n        \"index\": 370,\n        \"success\": true\n      },\n      {\n        \"index\": 371,\n        \"success\": true\n      },\n      {\n        \"index\": 372,\n        \"success\": true\n      },\n      {\n        \"index\": 373,\n        \"success\": true\n      },\n      {\n        \"index\": 374,\n        \"success\": true\n      },\n      {\n        \"index\": 375,\n        \"success\": true\n      },\n      {\n        \"index\": 376,\n        \"success\": true\n      },\n      {\n        \"index\": 377,\n        \"success\": true\n      },\n      {\n        \"index\": 378,\n        \"success\": true\n      },\n      {\n        \"index\": 379,\n        \"success\": true\n      },\n      {\n        \"index\": 380,\n        \"success\": true\n      },\n      {\n        \"index\": 381,\n        \"success\": true\n      },\n      {\n        \"index\": 382,\n        \"success\": true\n      },\n      {\n        \"index\": 383,\n        \"success\": true\n      },\n      {\n        \"index\": 384,\n        \"success\": true\n      },\n      {\n        \"index\": 385,\n        \"success\": true\n      },\n      {\n        \"index\": 386,\n        \"success\": true\n      },\n      {\n        \"index\": 387,\n        \"success\": true\n      },\n      {\n        \"index\": 388,\n        \"success\": true\n      },\n      {\n        \"index\": 389,\n        \"success\": true\n      },\n      {\n        \"index\": 390,\n        \"success\": true\n      },\n      {\n        \"index\": 391,\n        \"success\": true\n      },\n      {\n        \"index\": 392,\n        \"success\": true\n      },\n      {\n        \"index\": 393,\n        \"success\": true\n      },\n      {\n        \"index\": 394,\n        \"success\": true\n      },\n      {\n        \"index\": 395,\n        \"success\": true\n      },\n      {\n        \"index\": 396,\n        \"success\": true\n      },\n      {\n        \"index\": 397,\n        \"success\": true\n      },\n      {\n        \"index\": 398,\n        \"success\": true\n      },\n      {\n        \"index\": 399,\n        \"success\": true\n      },\n      {\n        \"index\": 400,\n        \"success\": true\n      },\n      {\n        \"index\": 401,\n        \"success\": true\n      },\n      {\n        \"index\": 402,\n        \"success\": true\n      },\n      {\n        \"index\": 403,\n        \"success\": true\n      },\n      {\n        \"index\": 404,\n        \"success\": true\n      },\n      {\n        \"index\": 405,\n        \"success\": true\n      },\n      {\n        \"index\": 406,\n        \"success\": true\n      },\n      {\n        \"index\": 407,\n        \"success\": true\n      },\n      {\n        \"index\": 408,\n        \"success\": true\n      },\n      {\n        \"index\": 409,\n        \"success\": true\n      },\n      {\n        \"index\": 410,\n        \"success\": true\n      },\n      {\n        \"index\": 411,\n        \"success\": true\n      },\n      {\n        \"index\": 412,\n        \"success\": true\n      },\n      {\n        \"index\": 413,\n        \"success\": true\n      },\n      {\n        \"index\": 414,\n        \"success\": true\n      },\n      {\n        \"index\": 415,\n        \"success\": true\n      },\n      {\n        \"index\": 416,\n        \"success\": true\n      },\n      {\n        \"index\": 417,\n        \"success\": true\n      }\n    ],\n    \"summary\": {\n      \"total\": 418,\n      \"executed\": 418,\n      \"succeeded\": 418,\n      \"failed\": 0,\n      \"skipped\": 0\n    }\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "status": "passed"
+        },
+        {
+          "arguments": [
+            "validate",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2022-01-15 - SunnySemi LLC - FY 2021 Operating Economics.xlsx"
+          ],
+          "operation": "validate",
+          "started_at": "2026-10-15T17:19:05.045176+00:00",
+          "ended_at": "2026-10-15T17:19:06.803819+00:00",
+          "active_seconds": 1.7586450999369845,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"errors\": []\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "repeat_success": true,
+          "artifact_sha256": "282c03f4a9a74b8e2146ed2ba69a9070a221c25804c7d929b3981052ed28b19a",
+          "status": "passed",
+          "evidence": "Checked complete OfficeCLI result without errors/caveats"
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2022-01-15 - SunnySemi LLC - FY 2021 Operating Economics.xlsx",
+            "issues"
+          ],
+          "operation": "issues",
+          "started_at": "2026-10-15T17:19:06.905734+00:00",
+          "ended_at": "2026-10-15T17:19:09.024517+00:00",
+          "active_seconds": 2.1187827000394464,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"issues\": []\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "repeat_success": true,
+          "artifact_sha256": "282c03f4a9a74b8e2146ed2ba69a9070a221c25804c7d929b3981052ed28b19a",
+          "status": "passed",
+          "evidence": "Checked complete OfficeCLI result without errors/caveats"
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2022-01-15 - SunnySemi LLC - FY 2021 Operating Economics.xlsx",
+            "text"
+          ],
+          "operation": "extract",
+          "started_at": "2026-10-15T17:19:09.119683+00:00",
+          "ended_at": "2026-10-15T17:19:11.073136+00:00",
+          "active_seconds": 1.9534617000026628,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"sheets\": [\n      {\n        \"name\": \"Inputs\",\n        \"rows\": [\n          {\n            \"row\": 1,\n            \"cells\": {\n              \"A1\": \"SunnySemi LLC - FY 2021 Operating Economics\"\n            }\n          },\n          {\n            \"row\": 2,\n            \"cells\": {}\n          },\n          {\n            \"row\": 3,\n            \"cells\": {\n              \"A3\": \"USD unless noted; headcount is point-in-time.\"\n            }\n          },\n          {\n            \"row\": 4,\n            \"cells\": {\n              \"B4\": \"Q1 2021\",\n              \"C4\": \"Q2 2021\",\n              \"D4\": \"Q3 2021\",\n              \"E4\": \"Q4 2021\"\n            }\n          },\n          {\n            \"row\": 5,\n            \"cells\": {\n              \"A5\": \"Recognized revenue\",\n              \"B5\": \"480000000\",\n              \"C5\": \"552000000\",\n              \"D5\": \"624000000\",\n              \"E5\": \"744000000\"\n            }\n          },\n          {\n            \"row\": 6,\n            \"cells\": {\n              \"A6\": \"Cost of goods sold\",\n              \"B6\": \"211200000\",\n              \"C6\": \"242880000\",\n              \"D6\": \"274560000\",\n              \"E6\": \"327360000\"\n            }\n          },\n          {\n            \"row\": 7,\n            \"cells\": {\n              \"A7\": \"Operating expense\",\n              \"B7\": \"129600000\",\n              \"C7\": \"149040000\",\n              \"D7\": \"168480000\",\n              \"E7\": \"200880000\"\n            }\n          },\n          {\n            \"row\": 8,\n            \"cells\": {\n              \"A8\": \"Operating income\",\n              \"B8\": \"139200000\",\n              \"C8\": \"160080000\",\n              \"D8\": \"180960000\",\n              \"E8\": \"215760000\"\n            }\n          },\n          {\n            \"row\": 9,\n            \"cells\": {\n              \"A9\": \"SunCore revenue\",\n              \"B9\": \"297600000\",\n              \"C9\": \"342240000\",\n              \"D9\": \"386880000\",\n              \"E9\": \"461280000\"\n            }\n          },\n          {\n            \"row\": 10,\n            \"cells\": {\n              \"A10\": \"GulfSwitch revenue\",\n              \"B10\": \"182400000\",\n              \"C10\": \"209760000\",\n              \"D10\": \"237120000\",\n              \"E10\": \"282720000\"\n            }\n          },\n          {\n            \"row\": 11,\n            \"cells\": {\n              \"A11\": \"Wafer cost\",\n              \"B11\": \"137280000\",\n              \"C11\": \"157872000\",\n              \"D11\": \"178464000\",\n              \"E11\": \"212784000\"\n            }\n          },\n          {\n            \"row\": 12,\n            \"cells\": {\n              \"A12\": \"Package and test cost\",\n              \"B12\": \"52800000\",\n              \"C12\": \"60720000\",\n              \"D12\": \"68640000\",\n              \"E12\": \"81840000\"\n            }\n          },\n          {\n            \"row\": 13,\n            \"cells\": {\n              \"A13\": \"Logistics cost\",\n              \"B13\": \"21120000\",\n              \"C13\": \"24288000\",\n              \"D13\": \"27456000\",\n              \"E13\": \"32736000\"\n            }\n          },\n          {\n            \"row\": 14,\n            \"cells\": {\n              \"A14\": \"Engineering opex\",\n              \"B14\": \"90720000\",\n              \"C14\": \"104328000\",\n              \"D14\": \"117936000\",\n              \"E14\": \"140616000\"\n            }\n          },\n          {\n            \"row\": 15,\n            \"cells\": {\n              \"A15\": \"Commercial/admin opex\",\n              \"B15\": \"38880000\",\n              \"C15\": \"44712000\",\n              \"D15\": \"50544000\",\n              \"E15\": \"60264000\"\n            }\n          },\n          {\n            \"row\": 16,\n            \"cells\": {\n              \"A16\": \"Ending headcount\",\n              \"B16\": \"890\",\n              \"C16\": \"920\",\n              \"D16\": \"950\",\n              \"E16\": \"980\"\n            }\n          },\n          {\n            \"row\": 17,\n            \"cells\": {}\n          },\n          {\n            \"row\": 18,\n            \"cells\": {}\n          },\n          {\n            \"row\": 19,\n            \"cells\": {}\n          },\n          {\n            \"row\": 20,\n            \"cells\": {}\n          },\n          {\n            \"row\": 21,\n            \"cells\": {}\n          },\n          {\n            \"row\": 22,\n            \"cells\": {}\n          },\n          {\n            \"row\": 23,\n            \"cells\": {}\n          },\n          {\n            \"row\": 24,\n            \"cells\": {}\n          },\n          {\n            \"row\": 25,\n            \"cells\": {}\n          },\n          {\n            \"row\": 26,\n            \"cells\": {}\n          },\n          {\n            \"row\": 27,\n            \"cells\": {}\n          },\n          {\n            \"row\": 28,\n            \"cells\": {}\n          },\n          {\n            \"row\": 29,\n            \"cells\": {}\n          },\n          {\n            \"row\": 30,\n            \"cells\": {}\n          },\n          {\n            \"row\": 31,\n            \"cells\": {}\n          },\n          {\n            \"row\": 32,\n            \"cells\": {}\n          },\n          {\n            \"row\": 33,\n            \"cells\": {}\n          },\n          {\n            \"row\": 34,\n            \"cells\": {}\n          },\n          {\n            \"row\": 35,\n            \"cells\": {}\n          },\n          {\n            \"row\": 36,\n            \"cells\": {}\n          }\n        ]\n      },\n      {\n        \"name\": \"Calc\",\n        \"rows\": [\n          {\n            \"row\": 1,\n            \"cells\": {\n              \"A1\": \"Operating economics | formula-linked actuals\"\n            }\n          },\n          {\n            \"row\": 2,\n            \"cells\": {}\n          },\n          {\n            \"row\": 3,\n            \"cells\": {\n              \"B3\": \"Q1 2021\",\n              \"C3\": \"Q2 2021\",\n              \"D3\": \"Q3 2021\",\n              \"E3\": \"Q4 2021\"\n            }\n          },\n          {\n            \"row\": 4,\n            \"cells\": {\n              \"A4\": \"1 | Income reconciliation\"\n            }\n          },\n          {\n            \"row\": 5,\n            \"cells\": {\n              \"A5\": \"Gross profit\",\n              \"B5\": \"268800000\",\n              \"C5\": \"309120000\",\n              \"D5\": \"349440000\",\n              \"E5\": \"416640000\"\n            }\n          },\n          {\n            \"row\": 6,\n            \"cells\": {\n              \"A6\": \"Calculated operating income\",\n              \"B6\": \"139200000\",\n              \"C6\": \"160080000\",\n              \"D6\": \"180960000\",\n              \"E6\": \"215760000\"\n            }\n          },\n          {\n            \"row\": 7,\n            \"cells\": {\n              \"A7\": \"Income reconciliation difference\",\n              \"B7\": \"0\",\n              \"C7\": \"0\",\n              \"D7\": \"0\",\n              \"E7\": \"0\"\n            }\n          },\n          {\n            \"row\": 8,\n            \"cells\": {\n              \"A8\": \"2 | Margins\"\n            }\n          },\n          {\n            \"row\": 9,\n            \"cells\": {\n              \"A9\": \"Gross margin (ratio)\",\n              \"B9\": \"0.56\",\n              \"C9\": \"0.56\",\n              \"D9\": \"0.56\",\n              \"E9\": \"0.56\"\n            }\n          },\n          {\n            \"row\": 10,\n            \"cells\": {\n              \"A10\": \"Operating margin (ratio)\",\n              \"B10\": \"0.29\",\n              \"C10\": \"0.29\",\n              \"D10\": \"0.29\",\n              \"E10\": \"0.29\"\n            }\n          },\n          {\n            \"row\": 11,\n            \"cells\": {\n              \"A11\": \"3 | Product mix\"\n            }\n          },\n          {\n            \"row\": 12,\n            \"cells\": {\n              \"A12\": \"Combined product revenue\",\n              \"B12\": \"480000000\",\n              \"C12\": \"552000000\",\n              \"D12\": \"624000000\",\n              \"E12\": \"744000000\"\n            }\n          },\n          {\n            \"row\": 13,\n            \"cells\": {\n              \"A13\": \"Revenue mix difference\",\n              \"B13\": \"0\",\n              \"C13\": \"0\",\n              \"D13\": \"0\",\n              \"E13\": \"0\"\n            }\n          },\n          {\n            \"row\": 14,\n            \"cells\": {\n              \"A14\": \"SunCore share (ratio)\",\n              \"B14\": \"0.62\",\n              \"C14\": \"0.62\",\n              \"D14\": \"0.62\",\n              \"E14\": \"0.62\"\n            }\n          },\n          {\n            \"row\": 15,\n            \"cells\": {\n              \"A15\": \"4 | Manufacturing costs\"\n            }\n          },\n          {\n            \"row\": 16,\n            \"cells\": {\n              \"A16\": \"Combined manufacturing costs\",\n              \"B16\": \"211200000\",\n              \"C16\": \"242880000\",\n              \"D16\": \"274560000\",\n              \"E16\": \"327360000\"\n            }\n          },\n          {\n            \"row\": 17,\n            \"cells\": {\n              \"A17\": \"Manufacturing cost difference\",\n              \"B17\": \"0\",\n              \"C17\": \"0\",\n              \"D17\": \"0\",\n              \"E17\": \"0\"\n            }\n          },\n          {\n            \"row\": 18,\n            \"cells\": {\n              \"A18\": \"Wafer share (ratio)\",\n              \"B18\": \"0.65\",\n              \"C18\": \"0.65\",\n              \"D18\": \"0.65\",\n              \"E18\": \"0.65\"\n            }\n          },\n          {\n            \"row\": 19,\n            \"cells\": {\n              \"A19\": \"5 | Operating investment\"\n            }\n          },\n          {\n            \"row\": 20,\n            \"cells\": {\n              \"A20\": \"Combined operating expenses\",\n              \"B20\": \"129600000\",\n              \"C20\": \"149040000\",\n              \"D20\": \"168480000\",\n              \"E20\": \"200880000\"\n            }\n          },\n          {\n            \"row\": 21,\n            \"cells\": {\n              \"A21\": \"Opex difference\",\n              \"B21\": \"0\",\n              \"C21\": \"0\",\n              \"D21\": \"0\",\n              \"E21\": \"0\"\n            }\n          },\n          {\n            \"row\": 22,\n            \"cells\": {\n              \"A22\": \"Engineering share (ratio)\",\n              \"B22\": \"0.7\",\n              \"C22\": \"0.7\",\n              \"D22\": \"0.7\",\n              \"E22\": \"0.7\"\n            }\n          },\n          {\n            \"row\": 23,\n            \"cells\": {\n              \"A23\": \"6 | Sequential actuals\"\n            }\n          },\n          {\n            \"row\": 24,\n            \"cells\": {\n              \"A24\": \"Revenue change vs prior quarter\",\n              \"B24\": \"No prior quarter in scope\",\n              \"C24\": \"72000000\",\n              \"D24\": \"72000000\",\n              \"E24\": \"120000000\"\n            }\n          },\n          {\n            \"row\": 25,\n            \"cells\": {\n              \"A25\": \"Operating-income change\",\n              \"B25\": \"No prior quarter in scope\",\n              \"C25\": \"20880000\",\n              \"D25\": \"20880000\",\n              \"E25\": \"34800000\"\n            }\n          },\n          {\n            \"row\": 26,\n            \"cells\": {\n              \"A26\": \"Ending headcount change\",\n              \"B26\": \"No prior quarter in scope\",\n              \"C26\": \"30\",\n              \"D26\": \"30\",\n              \"E26\": \"30\"\n            }\n          },\n          {\n            \"row\": 27,\n            \"cells\": {}\n          },\n          {\n            \"row\": 28,\n            \"cells\": {}\n          },\n          {\n            \"row\": 29,\n            \"cells\": {}\n          },\n          {\n            \"row\": 30,\n            \"cells\": {}\n          },\n          {\n            \"row\": 31,\n            \"cells\": {}\n          },\n          {\n            \"row\": 32,\n            \"cells\": {}\n          },\n          {\n            \"row\": 33,\n            \"cells\": {}\n          },\n          {\n            \"row\": 34,\n            \"cells\": {}\n          },\n          {\n            \"row\": 35,\n            \"cells\": {}\n          },\n          {\n            \"row\": 36,\n            \"cells\": {}\n          }\n        ]\n      },\n      {\n        \"name\": \"Summary\",\n        \"rows\": [\n          {\n            \"row\": 1,\n            \"cells\": {\n              \"A1\": \"Management view | available-period actuals\"\n            }\n          },\n          {\n            \"row\": 2,\n            \"cells\": {}\n          },\n          {\n            \"row\": 3,\n            \"cells\": {}\n          },\n          {\n            \"row\": 4,\n            \"cells\": {\n              \"A4\": \"Recognized revenue\",\n              \"B4\": \"2400000000\"\n            }\n          },\n          {\n            \"row\": 5,\n            \"cells\": {\n              \"A5\": \"COGS\",\n              \"B5\": \"1056000000\"\n            }\n          },\n          {\n            \"row\": 6,\n            \"cells\": {\n              \"A6\": \"Operating expense\",\n              \"B6\": \"648000000\"\n            }\n          },\n          {\n            \"row\": 7,\n            \"cells\": {\n              \"A7\": \"Operating income\",\n              \"B7\": \"696000000\"\n            }\n          },\n          {\n            \"row\": 8,\n            \"cells\": {\n              \"A8\": \"SunCore revenue\",\n              \"B8\": \"1488000000\"\n            }\n          },\n          {\n            \"row\": 9,\n            \"cells\": {\n              \"A9\": \"GulfSwitch revenue\",\n              \"B9\": \"912000000\"\n            }\n          },\n          {\n            \"row\": 10,\n            \"cells\": {}\n          },\n          {\n            \"row\": 11,\n            \"cells\": {\n              \"A11\": \"Operating margin (ratio)\",\n              \"B11\": \"0.29\"\n            }\n          },\n          {\n            \"row\": 12,\n            \"cells\": {}\n          },\n          {\n            \"row\": 13,\n            \"cells\": {}\n          },\n          {\n            \"row\": 14,\n            \"cells\": {\n              \"A14\": \"Income\",\n              \"B14\": \"Reconciliation differences on Calc must be zero; investigate any divergence.\"\n            }\n          },\n          {\n            \"row\": 15,\n            \"cells\": {\n              \"A15\": \"Margins\",\n              \"B15\": \"Gross margin excludes operating expense; operating margin includes it.\"\n            }\n          },\n          {\n            \"row\": 16,\n            \"cells\": {\n              \"A16\": \"Product mix\",\n              \"B16\": \"Product totals reconcile to revenue; a mix shift is not a customer-count measure.\"\n            }\n          },\n          {\n            \"row\": 17,\n            \"cells\": {\n              \"A17\": \"Manufacturing\",\n              \"B17\": \"Wafer, package/test and logistics are separate cost drivers; do not double count.\"\n            }\n          },\n          {\n            \"row\": 18,\n            \"cells\": {\n              \"A18\": \"Investment\",\n              \"B18\": \"Engineering is an operating expense here, not a capital expenditure or cash-flow proxy.\"\n            }\n          },\n          {\n            \"row\": 19,\n            \"cells\": {\n              \"A19\": \"Trend\",\n              \"B19\": \"Sequential changes are absolute movements, not forecasts or annualized growth rates.\"\n            }\n          },\n          {\n            \"row\": 20,\n            \"cells\": {\n              \"E20\": \"USD basis\"\n            }\n          },\n          {\n            \"row\": 21,\n            \"cells\": {}\n          },\n          {\n            \"row\": 22,\n            \"cells\": {}\n          },\n          {\n            \"row\": 23,\n            \"cells\": {}\n          },\n          {\n            \"row\": 24,\n            \"cells\": {}\n          },\n          {\n            \"row\": 25,\n            \"cells\": {}\n          },\n          {\n            \"row\": 26,\n            \"cells\": {}\n          },\n          {\n            \"row\": 27,\n            \"cells\": {}\n          },\n          {\n            \"row\": 28,\n            \"cells\": {}\n          },\n          {\n            \"row\": 29,\n            \"cells\": {}\n          },\n          {\n            \"row\": 30,\n            \"cells\": {}\n          },\n          {\n            \"row\": 31,\n            \"cells\": {}\n          },\n          {\n            \"row\": 32,\n            \"cells\": {}\n          },\n          {\n            \"row\": 33,\n            \"cells\": {}\n          },\n          {\n            \"row\": 34,\n            \"cells\": {}\n          },\n          {\n            \"row\": 35,\n            \"cells\": {}\n          },\n          {\n            \"row\": 36,\n            \"cells\": {}\n          }\n        ]\n      },\n      {\n        \"name\": \"Notes\",\n        \"rows\": [\n          {\n            \"row\": 1,\n            \"cells\": {\n              \"A1\": \"Sources, methodology and limitations\"\n            }\n          },\n          {\n            \"row\": 2,\n            \"cells\": {}\n          },\n          {\n            \"row\": 3,\n            \"cells\": {}\n          },\n          {\n            \"row\": 4,\n            \"cells\": {\n              \"A4\": \"Basis\",\n              \"B4\": \"USD; calendar fiscal years; recognized revenue, not bookings; operating income excludes no additional adjustments and is not net income or cash flow.\"\n            }\n          },\n          {\n            \"row\": 5,\n            \"cells\": {\n              \"A5\": \"Operating emphasis\",\n              \"B5\": \"Allocation discipline\"\n            }\n          },\n          {\n            \"row\": 6,\n            \"cells\": {\n              \"A6\": \"Risk\",\n              \"B6\": \"long wafer-start commitments\"\n            }\n          },\n          {\n            \"row\": 7,\n            \"cells\": {\n              \"A7\": \"Mitigation\",\n              \"B7\": \"match wafer reservations to accepted customer schedules\"\n            }\n          },\n          {\n            \"row\": 8,\n            \"cells\": {\n              \"A8\": \"Strategy\",\n              \"B8\": \"Own differentiated silicon architecture and application validation; use external manufacturing rather than build a wafer fab.\"\n            }\n          },\n          {\n            \"row\": 9,\n            \"cells\": {\n              \"A9\": \"Liquidity\",\n              \"B9\": \"No cash balance, debt balance, free-cash-flow measure or forecast is included.\"\n            }\n          },\n          {\n            \"row\": 10,\n            \"cells\": {\n              \"A10\": \"Availability\",\n              \"B10\": \"Only quarters knowable on the publication date are included.\"\n            }\n          },\n          {\n            \"row\": 11,\n            \"cells\": {\n              \"A11\": \"Formula controls\",\n              \"B11\": \"Inputs precede formulas; saved formula values are checked after reopening.\"\n            }\n          },\n          {\n            \"row\": 12,\n            \"cells\": {\n              \"A12\": \"Color convention\",\n              \"B12\": \"Blue numbers are source inputs. Green numbers are formula-linked outputs.\"\n            }\n          },\n          {\n            \"row\": 13,\n            \"cells\": {\n              \"A13\": \"Scope\",\n              \"B13\": \"This is an operating-economics workbook, not a balance sheet or cash-flow model.\"\n            }\n          },\n          {\n            \"row\": 14,\n            \"cells\": {\n              \"E14\": \"End of notes\"\n            }\n          },\n          {\n            \"row\": 15,\n            \"cells\": {}\n          },\n          {\n            \"row\": 16,\n            \"cells\": {}\n          },\n          {\n            \"row\": 17,\n            \"cells\": {}\n          },\n          {\n            \"row\": 18,\n            \"cells\": {}\n          },\n          {\n            \"row\": 19,\n            \"cells\": {}\n          },\n          {\n            \"row\": 20,\n            \"cells\": {}\n          },\n          {\n            \"row\": 21,\n            \"cells\": {}\n          },\n          {\n            \"row\": 22,\n            \"cells\": {}\n          },\n          {\n            \"row\": 23,\n            \"cells\": {}\n          },\n          {\n            \"row\": 24,\n            \"cells\": {}\n          },\n          {\n            \"row\": 25,\n            \"cells\": {}\n          },\n          {\n            \"row\": 26,\n            \"cells\": {}\n          },\n          {\n            \"row\": 27,\n            \"cells\": {}\n          },\n          {\n            \"row\": 28,\n            \"cells\": {}\n          },\n          {\n            \"row\": 29,\n            \"cells\": {}\n          },\n          {\n            \"row\": 30,\n            \"cells\": {}\n          },\n          {\n            \"row\": 31,\n            \"cells\": {}\n          },\n          {\n            \"row\": 32,\n            \"cells\": {}\n          },\n          {\n            \"row\": 33,\n            \"cells\": {}\n          },\n          {\n            \"row\": 34,\n            \"cells\": {}\n          },\n          {\n            \"row\": 35,\n            \"cells\": {}\n          },\n          {\n            \"row\": 36,\n            \"cells\": {}\n          }\n        ]\n      }\n    ]\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "repeat_success": true,
+          "artifact_sha256": "282c03f4a9a74b8e2146ed2ba69a9070a221c25804c7d929b3981052ed28b19a",
+          "status": "passed",
+          "evidence": "Checked complete OfficeCLI result without errors/caveats"
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2022-01-15 - SunnySemi LLC - FY 2021 Operating Economics.xlsx",
+            "issues",
+            "--type",
+            "chart_cache_stale"
+          ],
+          "operation": "chart_cache_stale",
+          "started_at": "2026-10-15T17:19:11.175466+00:00",
+          "ended_at": "2026-10-15T17:19:12.902287+00:00",
+          "active_seconds": 1.726821899996139,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"issues\": []\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "repeat_success": true,
+          "artifact_sha256": "282c03f4a9a74b8e2146ed2ba69a9070a221c25804c7d929b3981052ed28b19a",
+          "status": "passed",
+          "evidence": "Complete chart-cache issue scan"
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2022-01-15 - SunnySemi LLC - FY 2021 Operating Economics.xlsx",
+            "html",
+            "--out",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\build\\renders\\doc-0014\\export.html"
+          ],
+          "operation": "html_export",
+          "started_at": "2026-10-15T17:19:13.060673+00:00",
+          "ended_at": "2026-10-15T17:19:15.305843+00:00",
+          "active_seconds": 2.245168499997817,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\"success\": true, \"data\": \"C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\build\\\\renders\\\\doc-0014\\\\export.html\"}",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "repeat_success": true,
+          "artifact_sha256": "282c03f4a9a74b8e2146ed2ba69a9070a221c25804c7d929b3981052ed28b19a",
+          "status": "passed",
+          "evidence": "Checked complete OfficeCLI result without errors/caveats"
+        }
+      ],
+      "attempts": {
+        "create": 1,
+        "author": 1,
+        "validate": 1,
+        "issues": 1,
+        "extract": 1,
+        "chart_cache_stale": 1,
+        "html_export": 1
+      },
+      "retry_reasons": {},
+      "artifact_sha256": "282c03f4a9a74b8e2146ed2ba69a9070a221c25804c7d929b3981052ed28b19a",
+      "author_tool": {
+        "version": "1.0.157",
+        "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+      },
+      "captures": [
+        {
+          "operation": "capture",
+          "status": "passed",
+          "started_at": "2026-10-15T17:19:15.427715+00:00",
+          "pass": "generation",
+          "artifact_sha256": "282c03f4a9a74b8e2146ed2ba69a9070a221c25804c7d929b3981052ed28b19a",
+          "corrective": false,
+          "active_seconds": 1.0873114001005888,
+          "ended_at": "2026-10-15T17:19:17.794801+00:00",
+          "tool": {
+            "engine": "playwright-chromium",
+            "playwright_version": "1.63.0",
+            "channel": "chromium",
+            "headless": true,
+            "chromium_sandbox": true,
+            "browser_version": "153.0.8010.12",
+            "executable_path": "C:\\Users\\jolan\\AppData\\Local\\ms-playwright\\chromium-1243\\chrome-win64\\chrome.exe",
+            "executable_sha256": "9b07943f834485b43c9d54caea2951c78715f9f07070a80ab6658465ebd3e711"
+          },
+          "source_html_sha256": "c742ff0877c7cbc88b5d5bb0c616f55cf331abbe1951fe0dda1e1bfe7fa0be18",
+          "unit": "region",
+          "image_sha256": "0a5ffdc50255ff5da1bbbda006bbf9fcbbb4543cd0f8759b98c9dd5f376bbec0",
+          "lane_timing": {
+            "waiting_seconds": 1.276660899980925,
+            "active_seconds": 1.0873114001005888
+          },
+          "elapsed_seconds": 2.367124899988994,
+          "waiting_seconds": 1.276660899980925,
+          "start_cell": "A1",
+          "end_cell": "E16",
+          "clip": {
+            "x": 40.5,
+            "y": 62.5,
+            "width": 952.1875,
+            "height": 576.0
+          },
+          "viewport": {
+            "width": 1600,
+            "height": 1200
+          },
+          "image_count": 1
+        },
+        {
+          "operation": "capture",
+          "status": "passed",
+          "started_at": "2026-10-15T17:19:17.840117+00:00",
+          "pass": "generation",
+          "artifact_sha256": "282c03f4a9a74b8e2146ed2ba69a9070a221c25804c7d929b3981052ed28b19a",
+          "corrective": false,
+          "active_seconds": 1.0960831000702456,
+          "ended_at": "2026-10-15T17:19:18.939946+00:00",
+          "tool": {
+            "engine": "playwright-chromium",
+            "playwright_version": "1.63.0",
+            "channel": "chromium",
+            "headless": true,
+            "chromium_sandbox": true,
+            "browser_version": "153.0.8010.12",
+            "executable_path": "C:\\Users\\jolan\\AppData\\Local\\ms-playwright\\chromium-1243\\chrome-win64\\chrome.exe",
+            "executable_sha256": "9b07943f834485b43c9d54caea2951c78715f9f07070a80ab6658465ebd3e711"
+          },
+          "source_html_sha256": "c742ff0877c7cbc88b5d5bb0c616f55cf331abbe1951fe0dda1e1bfe7fa0be18",
+          "unit": "region",
+          "image_sha256": "b209455091a01990a70912d2a294a9a7cd55776d22d558d89331b3cccb88e529",
+          "lane_timing": {
+            "waiting_seconds": 7.499998901039362e-05,
+            "active_seconds": 1.0960831000702456
+          },
+          "elapsed_seconds": 1.0998717000475153,
+          "waiting_seconds": 7.499998901039362e-05,
+          "start_cell": "A1",
+          "end_cell": "E14",
+          "clip": {
+            "x": 40.5,
+            "y": 62.5,
+            "width": 952.1875,
+            "height": 504.0
+          },
+          "viewport": {
+            "width": 1600,
+            "height": 1200
+          },
+          "image_count": 1
+        },
+        {
+          "operation": "capture",
+          "status": "passed",
+          "started_at": "2026-10-15T17:19:18.993911+00:00",
+          "pass": "generation",
+          "artifact_sha256": "282c03f4a9a74b8e2146ed2ba69a9070a221c25804c7d929b3981052ed28b19a",
+          "corrective": false,
+          "active_seconds": 1.1506742000347003,
+          "ended_at": "2026-10-15T17:19:20.148691+00:00",
+          "tool": {
+            "engine": "playwright-chromium",
+            "playwright_version": "1.63.0",
+            "channel": "chromium",
+            "headless": true,
+            "chromium_sandbox": true,
+            "browser_version": "153.0.8010.12",
+            "executable_path": "C:\\Users\\jolan\\AppData\\Local\\ms-playwright\\chromium-1243\\chrome-win64\\chrome.exe",
+            "executable_sha256": "9b07943f834485b43c9d54caea2951c78715f9f07070a80ab6658465ebd3e711"
+          },
+          "source_html_sha256": "c742ff0877c7cbc88b5d5bb0c616f55cf331abbe1951fe0dda1e1bfe7fa0be18",
+          "unit": "region",
+          "image_sha256": "8c80a3953f686923917a81316023903bccee47b6bb5f756d39b42a38b0572a8e",
+          "lane_timing": {
+            "waiting_seconds": 0.00013940001372247934,
+            "active_seconds": 1.1506742000347003
+          },
+          "elapsed_seconds": 1.1548199999378994,
+          "waiting_seconds": 0.00013940001372247934,
+          "start_cell": "A15",
+          "end_cell": "E26",
+          "clip": {
+            "x": 40.5,
+            "y": 566.5,
+            "width": 952.1875,
+            "height": 432.0
+          },
+          "viewport": {
+            "width": 1600,
+            "height": 1200
+          },
+          "image_count": 1
+        },
+        {
+          "operation": "capture",
+          "status": "passed",
+          "started_at": "2026-10-15T17:19:20.219075+00:00",
+          "pass": "generation",
+          "artifact_sha256": "282c03f4a9a74b8e2146ed2ba69a9070a221c25804c7d929b3981052ed28b19a",
+          "corrective": false,
+          "active_seconds": 1.1880910999607295,
+          "ended_at": "2026-10-15T17:19:22.400003+00:00",
+          "tool": {
+            "engine": "playwright-chromium",
+            "playwright_version": "1.63.0",
+            "channel": "chromium",
+            "headless": true,
+            "chromium_sandbox": true,
+            "browser_version": "153.0.8010.12",
+            "executable_path": "C:\\Users\\jolan\\AppData\\Local\\ms-playwright\\chromium-1243\\chrome-win64\\chrome.exe",
+            "executable_sha256": "9b07943f834485b43c9d54caea2951c78715f9f07070a80ab6658465ebd3e711"
+          },
+          "source_html_sha256": "c742ff0877c7cbc88b5d5bb0c616f55cf331abbe1951fe0dda1e1bfe7fa0be18",
+          "unit": "region",
+          "image_sha256": "dda1a94b212fc28b3f429188212232b5c84f446179595ead5c436569648c30a7",
+          "lane_timing": {
+            "waiting_seconds": 0.9889926000032574,
+            "active_seconds": 1.1880910999607295
+          },
+          "elapsed_seconds": 2.1809668000787497,
+          "waiting_seconds": 0.9889926000032574,
+          "start_cell": "A1",
+          "end_cell": "E20",
+          "clip": {
+            "x": 40.5,
+            "y": 62.5,
+            "width": 952.1875,
+            "height": 840.0
+          },
+          "viewport": {
+            "width": 1600,
+            "height": 1200
+          },
+          "image_count": 1
+        },
+        {
+          "operation": "capture",
+          "status": "passed",
+          "started_at": "2026-10-15T17:19:22.458428+00:00",
+          "pass": "generation",
+          "artifact_sha256": "282c03f4a9a74b8e2146ed2ba69a9070a221c25804c7d929b3981052ed28b19a",
+          "corrective": false,
+          "active_seconds": 1.0502829999895766,
+          "ended_at": "2026-10-15T17:19:24.501669+00:00",
+          "tool": {
+            "engine": "playwright-chromium",
+            "playwright_version": "1.63.0",
+            "channel": "chromium",
+            "headless": true,
+            "chromium_sandbox": true,
+            "browser_version": "153.0.8010.12",
+            "executable_path": "C:\\Users\\jolan\\AppData\\Local\\ms-playwright\\chromium-1243\\chrome-win64\\chrome.exe",
+            "executable_sha256": "9b07943f834485b43c9d54caea2951c78715f9f07070a80ab6658465ebd3e711"
+          },
+          "source_html_sha256": "c742ff0877c7cbc88b5d5bb0c616f55cf331abbe1951fe0dda1e1bfe7fa0be18",
+          "unit": "region",
+          "image_sha256": "2f483efa855a5ab04c09b358502f7b9cba0e56ab688f3456bdf2bfa1c448a733",
+          "lane_timing": {
+            "waiting_seconds": 0.9894443999510258,
+            "active_seconds": 1.0502829999895766
+          },
+          "elapsed_seconds": 2.043294999981299,
+          "waiting_seconds": 0.9894443999510258,
+          "start_cell": "A1",
+          "end_cell": "E14",
+          "clip": {
+            "x": 40.5,
+            "y": 62.5,
+            "width": 952.1875,
+            "height": 784.0
+          },
+          "viewport": {
+            "width": 1600,
+            "height": 1200
+          },
+          "image_count": 1
+        }
+      ]
+    }
+  },
+  "phases": [
+    {
+      "id": "290fd716-3ea7-4c25-bdb9-49e40f8368ba",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0014",
+      "started_at": "2026-10-15T17:19:00.273535+00:00",
+      "status": "passed",
+      "active_seconds": 24.40708429994993,
+      "family": [
+        "financial_model",
+        "xlsx",
+        "1",
+        "eaa0c5c0bb506cdf19e6dc0bc71fc907bdf385da1b9d38f3cef0666d30675f38"
+      ],
+      "queued_at": "2026-10-15T17:19:00.273256+00:00",
+      "queue_seconds": 0.000279,
+      "ended_at": "2026-10-15T17:19:24.680629+00:00"
+    }
+  ]
+}

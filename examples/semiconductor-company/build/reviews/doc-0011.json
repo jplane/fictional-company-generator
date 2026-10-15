@@ -1,0 +1,36 @@
+{
+  "document_id": "doc-0011",
+  "artifact_sha256": "81420f9701b5e656ff1094da1e2c410b669090dc176ac2c2c03d2e46ef0a4549",
+  "draft_sha256": "5c04f972c2066b50fc6907fa8694eb1585e98584e946681410795e3f60a793db",
+  "machine_sha256": "105aee3dce60925f068a7dfe849cc5bc529a37aa37a6aef61161fc44cc7b8670",
+  "semantic_review": {
+    "status": "passed",
+    "evidence": "SunnySemi LLC - SunCore 5.0 Product Specification: Reviewed scope, host/compute controls, malformed-input and DMA boundaries, resets, telemetry, thermal behavior, software identity, retained evidence and change control against the 16 version-specific source requirements. Planned status is not described as a completed launch."
+  },
+  "genre_review": {
+    "status": "passed",
+    "evidence": "Reviewed complete delivered content in its business genre: Reviewed scope, host/compute controls, malformed-input and DMA boundaries, resets, telemetry, thermal behavior, software identity, retained evidence and change control against the 16 version-specific source requirements. Planned status is not described as a completed launch. Ordinary company voice; no placeholders or generation self-labels."
+  },
+  "depth_review": {
+    "status": "passed",
+    "content_depth": "medium",
+    "evidence": "16 distinct numbered controls with methods and acceptance criteria, plus substantive interface, ownership, negative-path and release-control explanation. Saved-content measurement: 1170 delivered_words; draft measures {'document_id': 'doc-0011', 'type': 'product_spec', 'draft_words': 1068, 'discussion_words': 0, 'requirements': 16, 'analysis_modules': None}."
+  },
+  "visual_review": {
+    "status": "passed",
+    "images_delivered": true,
+    "render_ids": [
+      "all"
+    ],
+    "evidence": "Four deliberately broken pages; all requirement numbers, full acceptance conditions and the release gate remain readable. No overflow, missing controls or orphaned acceptance text. Inspected 4 complete unit images.",
+    "inspected_images": [
+      "build\\renders\\doc-0011\\all\\page-1.png",
+      "build\\renders\\doc-0011\\all\\page-2.png",
+      "build\\renders\\doc-0011\\all\\page-3.png",
+      "build\\renders\\doc-0011\\all\\page-4.png"
+    ]
+  },
+  "condition_review": {
+    "status": "not_selected"
+  }
+}

@@ -1082,7 +1082,7 @@ class CompanyTests(unittest.TestCase):
 
     def test_skill_bounds_execution_and_independent_review_scope(self):
         instructions = (SCRIPT.parents[1] / "SKILL.md").read_text(encoding="utf-8")
-        for requirement in ("FullContentSampledVisual", "execution-plan.json", "review-plan.json",
+        for requirement in ("Balanced", "execution-plan.json", "review-plan.json",
                             "corrective retry", "Undelivered/unreadable", "not_selected",
                             "OfficeCLI runner", "independent of light/medium/deep"):
             self.assertIn(requirement, instructions)
@@ -1090,7 +1090,7 @@ class CompanyTests(unittest.TestCase):
     def test_no_conflicting_native_requirements_remain_in_maintained_guidance(self):
         references = SCRIPT.parents[1] / "references"
         contracts = (references / "contracts.md").read_text(encoding="utf-8")
-        self.assertIn("FullContentSampledVisual", contracts)
+        self.assertIn("Balanced", contracts)
         for path in [SCRIPT.parents[1] / "SKILL.md", ROOT / "README.md", *references.glob("*.md")]:
             wording = " ".join(path.read_text(encoding="utf-8").split())
             for forbidden in ("Microsoft Office is a hard prerequisite", "recalculate in Excel",

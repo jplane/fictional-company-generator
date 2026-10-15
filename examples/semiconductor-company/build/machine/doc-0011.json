@@ -1,0 +1,117 @@
+{
+  "schema_version": 2,
+  "corpus_id": "corpus-76ce98a12405018fd1e8c2e5",
+  "canon_sha256": "caaf762e72fb012b38e89626490ab0988233f06da57675c45f8792fce3796186",
+  "plan_sha256": "647b92bb093e0638d541a8f268fd3c50035a754aa58c5be14676e52f5e7007a9",
+  "document_id": "doc-0011",
+  "engine": "OfficeCLI",
+  "tool": {
+    "version": "1.0.157",
+    "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+  },
+  "author_tool": {
+    "version": "1.0.157",
+    "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+  },
+  "capability": {
+    "path": "build\\capabilities\\c5a19c7bce2743110b521a93638258f779b31252ff28bcec2add2517b34286a0.json",
+    "sha256": "e7f902f12d1557f0cd19f972030ccdc967d51f28c10200055882ab3f70795acc"
+  },
+  "status": "passed",
+  "artifact_sha256": "81420f9701b5e656ff1094da1e2c410b669090dc176ac2c2c03d2e46ef0a4549",
+  "draft_sha256": "5c04f972c2066b50fc6907fa8694eb1585e98584e946681410795e3f60a793db",
+  "checks": [
+    {
+      "operation": "document",
+      "path": "build\\tool-results\\doc-0011-document.json",
+      "sha256": "8a9f37c4efef56dc9d26bc13cd764a2be7fd84c4a47c695a0edfc0b5810015e0"
+    },
+    {
+      "operation": "validate",
+      "path": "build\\tool-results\\doc-0011-validate.json",
+      "sha256": "bca8e5b9fbec74cabd2d5aeab0165b9c793ff29ef896d595ba5a15e22e572666"
+    },
+    {
+      "operation": "issues",
+      "path": "build\\tool-results\\doc-0011-issues.json",
+      "sha256": "ee1aabbf3f9ad36600f116648474d2cdf44a67f06000a1a319beab632e8e8e07"
+    },
+    {
+      "operation": "extract",
+      "path": "build\\tool-results\\doc-0011-extract.json",
+      "sha256": "133daa7fc0ee78c2a73c231643a603149096e3f501b2425786b0ace71382b5d4"
+    },
+    {
+      "operation": "html_export",
+      "path": "build\\tool-results\\doc-0011-html_export.json",
+      "sha256": "fec664181efb6f18a23bed9df84d96d26b8af83a4761a167b6cd4e9e0251764e"
+    },
+    {
+      "operation": "depth",
+      "path": "build\\tool-results\\doc-0011-depth.json",
+      "sha256": "1b3b9b2424408773d5510f4d04c84d7fd76b73878a04d691c0e29ab918014b11"
+    }
+  ],
+  "renders": [
+    {
+      "id": "all",
+      "images": [
+        {
+          "path": "build\\renders\\doc-0011\\all\\page-1.png",
+          "sha256": "8e48fa1872abc705e843601a7925e79eaafbe58ed09deaf92973425268240022",
+          "page": 1,
+          "overflow": false
+        },
+        {
+          "path": "build\\renders\\doc-0011\\all\\page-2.png",
+          "sha256": "7989fcd0e130aba5ed309e68d74f219553e123133135e407a6a299b1f96b78f1",
+          "page": 2,
+          "overflow": false
+        },
+        {
+          "path": "build\\renders\\doc-0011\\all\\page-3.png",
+          "sha256": "215eb64131556000c582e63e104fae3edb8e75218f1d2dd086ce4af78eacf1e9",
+          "page": 3,
+          "overflow": false
+        },
+        {
+          "path": "build\\renders\\doc-0011\\all\\page-4.png",
+          "sha256": "17326725ec85fe7bf9919dfa97933f089813a51c71b100fe0a4bbcb2f77d02e7",
+          "page": 4,
+          "overflow": false
+        }
+      ],
+      "renderer": "OfficeCLI-HTML+Playwright-Chromium",
+      "artifact_sha256": "81420f9701b5e656ff1094da1e2c410b669090dc176ac2c2c03d2e46ef0a4549",
+      "result": {
+        "path": "build\\tool-results\\doc-0011-render-all.json",
+        "sha256": "ab56829bec161a75403fe8b193f312233845708103a2496323a067fc929c475c"
+      }
+    }
+  ],
+  "render_targets": [
+    "all"
+  ],
+  "target_definitions": [
+    {
+      "id": "all",
+      "pages": 4
+    }
+  ],
+  "corrected_failure": false,
+  "machine_version": 2,
+  "generation_sha256": "fa58b323f157f623c4cecccd342414725168b9bcde95830696be712024bd7324",
+  "declared_targets": [
+    {
+      "id": "all",
+      "pages": 4
+    }
+  ],
+  "job_sha256": "49268c9e22cd14eb14aa00f43ca02b603d3a2c2ff859e7d25b6f44816e3551bd",
+  "checker": {
+    "company.py": "cd82c505ada3537b654c435fd057189ab67a8aafaadacf58fb27e0b984f8b886",
+    "officecli_runner.py": "2eb42e037f244eb097e40050280838fb4f7ddfd37605417b6ea85d62efbae2f6",
+    "playwright_capture.py": "38b160b3cd1dfd4afa8bf404676cab639af628b7a6067b1792e3b2a7659deaa3"
+  },
+  "export_bindings_sha256": "1b8b997d206cd3924308dd8e454b27671c5bc166af4b19ef5457a78ba945e626"
+}

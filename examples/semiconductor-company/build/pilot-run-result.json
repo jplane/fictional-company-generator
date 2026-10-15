@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "pass": "generation",
+  "workers": 4,
+  "completed_this_invocation": [
+    "doc-0012",
+    "doc-0030",
+    "doc-0036",
+    "doc-0042",
+    "doc-0047",
+    "doc-0048"
+  ],
+  "failures": {},
+  "generation_completed_total": 6,
+  "planned_total": 50,
+  "family_summary": {
+    "scope": "generation_pilots",
+    "families": 6,
+    "family_sizes": [
+      6,
+      6,
+      6,
+      8,
+      12,
+      12
+    ],
+    "pilots": 6,
+    "content_selected": 50,
+    "visual_selected": 50,
+    "warnings": [
+      "Every document is selected for visual review."
+    ]
+  },
+  "awaiting_pilot_or_corrective_reviews": [],
+  "awaiting_corrections": [],
+  "remaining": []
+}

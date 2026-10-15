@@ -1,0 +1,623 @@
+[
+  {
+    "command": "set",
+    "path": "/",
+    "props": {
+      "title": "SunnySemi LLC - 2024 Production Readiness and Thermal accountability",
+      "author": "SunnySemi LLC",
+      "docDefaults.font": "Calibri",
+      "docDefaults.fontSize": "11pt"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/section[1]",
+    "props": {
+      "pageWidth": "8.5in",
+      "pageHeight": "11in",
+      "marginTop": "0.7in",
+      "marginBottom": "0.7in",
+      "marginLeft": "0.8in",
+      "marginRight": "0.8in"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/styles",
+    "type": "style",
+    "props": {
+      "id": "Title",
+      "name": "Title",
+      "type": "paragraph",
+      "font": "Calibri",
+      "size": "21pt",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/styles",
+    "type": "style",
+    "props": {
+      "id": "Heading1",
+      "name": "Heading1",
+      "type": "paragraph",
+      "font": "Calibri",
+      "size": "15pt",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/styles",
+    "type": "style",
+    "props": {
+      "id": "Heading2",
+      "name": "Heading2",
+      "type": "paragraph",
+      "font": "Calibri",
+      "size": "14pt",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SUNNYSEMI LLC | INTERNAL",
+      "font": "Calibri",
+      "size": "10pt",
+      "color": "087E8B",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SunnySemi LLC - 2024 Production Readiness and Thermal accountability",
+      "font": "Calibri",
+      "size": "21pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Title"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "2024-07-25 | Tampa, Florida",
+      "font": "Calibri",
+      "size": "10pt",
+      "color": "087E8B",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Meeting record and participants",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "2024-07-25 | Tampa, Florida\nAvery Rowan, CEO; Riley Arden, VP Engineering; Quinn Mercer, Product Director; Casey Marlow, CFO.\nAgenda: Thermal accountability; SunCore release evidence; GulfSwitch adoption; Capacity commitment controls.\nRelease status: planned; target 2024-08-15.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SunnySemi LLC | Discussion | 01",
+      "font": "Calibri",
+      "size": "15pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "pageBreakBefore": "true",
+      "style": "Heading1"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "09:00 | Avery Rowan: Before we discuss allocation, I want us to separate the commercial opportunity from the evidence needed to release a component. Our operating emphasis is Thermal accountability. A growing business can create pressure to treat preparation as approval. What exactly do we need to preserve as we move toward the release gate?\n\n09:02 | Riley Arden: The engineering position is simple: Do not substitute peak specifications for application qualification. For SunCore we are working against 160 INT8 TOPS and 28 W board design budget. Those boundaries help us define verification, but they do not tell us how every customer model will behave. I would not present a peak hardware number as a guaranteed application result.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Discussion | 02",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "09:04 | Quinn Mercer: That distinction matters for embedded industrial computing. Our support emphasis is customer thermal reviews and power-aware deployment. I want the customer conversation to start with the intended workload, the host interface and the thermal boundary. If those remain open, a kit shipment is useful evaluation activity, but it is not a completed production qualification.\n\n09:06 | Casey Marlow: Q2 recognized revenue was $3220.0 million, with operating income of $1223.6 million. Those are strong actuals, but they are not cash balances or a forecast. My concern is customer enclosures with inadequate thermal headroom. Before we commit to a faster ramp, we should understand whether accepted schedules and release evidence support the manufacturing exposure.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Discussion | 03",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "09:08 | Avery Rowan: Then let us make the alternative explicit. We could approve an unconditional ramp and assume qualification will catch up, or preserve the evidence gates while preparation continues. The latter can leave some shipment opportunities waiting. Why is that the right tradeoff for this release rather than an unnecessary delay to the commercial team?\n\n09:10 | Riley Arden: Because a missing result is not a small administrative gap. A system can enumerate correctly and still fail under a malformed tensor, a repeated reset or a thermal transition. The release controls cover those paths. We need the exact silicon and software combination identified, otherwise a passing result from another configuration is not the evidence we are discussing.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SunnySemi LLC | Discussion | 04",
+      "font": "Calibri",
+      "size": "15pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "pageBreakBefore": "true",
+      "style": "Heading1"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "09:12 | Quinn Mercer: I agree with the gate, but I do not want customers left with an abstract instruction to qualify. The evaluation sequence is Evaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration. We can use that sequence to explain what evidence belongs to SunnySemi and what depends on the customer's board or application. Clear ownership should reduce avoidable back-and-forth even when we cannot promise a schedule.\n\n09:14 | Casey Marlow: The financial distinction is similar. Revenue is recognized revenue, not an order-book proxy, and operating income is not liquidity. We can assess the reported economics without pretending we have a full funding model here. My recommendation is to require board-level thermal evidence before ramp approval. That keeps the capacity discussion tied to evidence rather than enthusiasm about demand.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Discussion | 05",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "09:16 | Avery Rowan: I hear two different gates: a technical gate for the release and a commercial gate for a production commitment. They should inform each other without becoming the same approval. Could a customer complete the relevant interface work but still be unable to adopt the configuration because the thermal design is not ready? I want that boundary explained plainly.\n\n09:18 | Riley Arden: Yes. The device interface can behave correctly while the surrounding system remains unsuitable at the intended operating point. Our technical boundary is Peak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design. The customer must verify the board, cooling and enclosure. We should preserve the configuration in the evidence package so that a later change does not silently inherit the earlier acceptance result.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Discussion | 06",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "09:20 | Quinn Mercer: For GulfSwitch the same principle appears in a different form. The reference boundary is 80 V maximum rated input with 20 A reference-stage output. External components and layout affect the power stage. I would frame adoption around the documented reference conditions, then ask the customer to validate the intended design. An efficiency headline without those conditions would create the wrong expectation.\n\n09:22 | Casey Marlow: That is why I prefer staged commitments to one large unconditional reservation. We can prepare for successful qualification without treating every discussion as an accepted production schedule. Staging has a cost in flexibility and may defer some opportunities. The benefit is that we do not make the largest irreversible commitment before the relevant uncertainties narrow.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SunnySemi LLC | Discussion | 07",
+      "font": "Calibri",
+      "size": "15pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "pageBreakBefore": "true",
+      "style": "Heading1"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "09:24 | Avery Rowan: Let us test the proposal against this year's operating issue. The risk is customer enclosures with inadequate thermal headroom. If we describe the mitigation as require board-level thermal evidence before ramp approval, what should the review actually ask for? I am not asking for a new numerical hurdle today. I am asking how the existing evidence and accepted schedules reach the same decision.\n\n09:26 | Riley Arden: The review should start with the version-matched acceptance pack. It should show the nominal and negative-path results, the configuration and any unresolved exception. A technical pass is not a prediction that every customer will succeed. It is evidence that the released configuration meets its own stated controls and can enter the next adoption discussion honestly.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Discussion | 08",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "09:28 | Quinn Mercer: Then the customer side should show the agreed evaluation boundary and the qualification work still open. For embedded industrial computing, the support emphasis remains customer thermal reviews and power-aware deployment. I would rather communicate an explicit dependency than imply an adoption date that has not been accepted. That gives applications support a concrete conversation instead of a generic promise to accelerate.\n\n09:30 | Casey Marlow: And Finance should review the manufacturing commitment against accepted schedules, not substitute total recognized revenue for readiness. The actuals tell us the business is scaling profitably; they do not identify which configuration has cleared its release controls. We should document that distinction when we discuss a capacity increment with the effective approvers.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Discussion | 09",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "09:32 | Avery Rowan: I support the direction, but I want the cost acknowledged. A gate can become a reason to wait indefinitely if no one owns the remaining work. The decision therefore needs named actions and due dates, not only a risk description. Which evidence will Engineering deliver, and which customer commitments will Product bring back for the review?\n\n09:34 | Riley Arden: Engineering's assigned task is Complete version-matched acceptance evidence, due 2024-08-05. That means retaining the actual verification results and making unresolved exceptions visible. I will not close the evidence pack by changing a failed control into an assumption. If the required result is absent, the affected configuration remains blocked until the issue is resolved or escalated.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SunnySemi LLC | Discussion | 10",
+      "font": "Calibri",
+      "size": "15pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "pageBreakBefore": "true",
+      "style": "Heading1"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "09:36 | Quinn Mercer: Product's assigned task is Confirm customer evaluation and qualification plans, due 2024-08-08. The point is to make the handoff specific enough that Engineering and Finance are discussing the same adoption boundary. A request for an evaluation kit does not by itself define a production schedule. We need to preserve that distinction in both the customer discussion and the internal review.\n\n09:38 | Casey Marlow: Finance's assigned task is Review staged manufacturing commitments against accepted schedules, due 2024-08-10. I will use the reported actuals as the economic baseline and keep any unapproved forecast out of that baseline. The commitment discussion should identify what is being staged and what evidence supports it, rather than treat the entire proposed ramp as a single indivisible choice.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Discussion | 11",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "09:40 | Avery Rowan: Before we record the decision, I want to return to customer communication. The operating principle is to prefer a verified operating point to an unsupported peak-performance claim. That should be visible in the release message without publishing our internal capacity discussion. We can describe operating boundaries and the qualification sequence publicly. We should not turn a preparation meeting into an announcement of board approval.\n\n09:42 | Riley Arden: Agreed. The technical copy should distinguish the silicon peak from sustained application behavior and identify the matching release configuration. It should not add a customer benchmark or certification that we have not established. The verification requirements give us a concrete basis for what we can say; customer-specific system results remain outside that component-level statement.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Discussion | 12",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "09:44 | Quinn Mercer: That also gives us a practical next step: Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example. After that, the applications discussion can define the workload and host boundary. I do not want a release presentation to imply that evaluation alone completes adoption. The customer still needs to approve the production configuration against its own equipment requirements before a ramp is treated as ready.\n\n09:46 | Casey Marlow: I support proceeding with preparation under those conditions. The alternative we are rejecting is An unconditional production ramp before qualification is complete. We are not rejecting growth; we are controlling the order in which we incur commitments. That is consistent with the economics and with the technical dependencies described today. Any broader approval still has to go through its own authority.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SunnySemi LLC | Discussion | 13",
+      "font": "Calibri",
+      "size": "15pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "pageBreakBefore": "true",
+      "style": "Heading1"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "09:48 | Avery Rowan: The decision is Proceed toward the August release subject to evidence gates; require board-level thermal evidence before ramp approval. The distinction between preparation, qualification and a production commitment should remain in the record. We have not approved a new forecast or waived a release control. If an action uncovers a dependency that changes readiness, bring it back rather than silently carrying it into the release package.\n\n09:50 | Riley Arden: I will keep the release evidence tied to the exact configuration and will make any exception explicit. The governance boundary is The meeting authorizes preparation, not a board-level capital approval. Failing release evidence must be escalated to the CEO before production release. That protects the purpose of the gate: we should be able to explain what passed, what did not and why the production configuration is eligible for the next step.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Discussion | 14",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "09:52 | Quinn Mercer: The remaining open item is Customer-specific adoption schedules remain subject to accepted quotations. I will reflect that in adoption discussions and avoid presenting an unaccepted customer schedule as a commitment. The useful follow-through is a qualification plan with clear responsibilities, not a reassuring sentence that hides the dependency. We can be ambitious about adoption and precise about its conditions.\n\n09:54 | Casey Marlow: Then the record is clear enough for the next review. The reported economics remain actuals; the capacity proposal remains gated; and the named actions identify what evidence comes next. I will keep the manufacturing-commitment discussion separate from any unsupported cash-flow conclusion. That should let us act quickly when the evidence is ready without having to reconstruct today's assumptions.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Decision and authority boundary",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Proceed toward the August release subject to evidence gates; require board-level thermal evidence before ramp approval.\nThe meeting authorizes preparation, not a board-level capital approval. Failing release evidence must be escalated to the CEO before production release.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Owned follow-through",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Riley Arden: Complete version-matched acceptance evidence - due 2024-08-05.\nQuinn Mercer: Confirm customer evaluation and qualification plans - due 2024-08-08.\nCasey Marlow: Review staged manufacturing commitments against accepted schedules - due 2024-08-10.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  }
+]

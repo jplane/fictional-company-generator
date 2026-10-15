@@ -1,0 +1,4914 @@
+{
+  "schema_version": 2,
+  "corpus_id": "corpus-76ce98a12405018fd1e8c2e5",
+  "request": {
+    "company_name": "SunnySemi LLC",
+    "industry": "semiconductors",
+    "start_year": 2020,
+    "years": 6,
+    "documents": 50,
+    "seed": 42,
+    "content_depth": "medium",
+    "document_types": [
+      "press_release",
+      "product_presentation",
+      "meeting_transcript",
+      "product_spec",
+      "board_deck",
+      "financial_model"
+    ]
+  },
+  "records": [
+    {
+      "id": "company",
+      "kind": "company",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "name": "SunnySemi LLC",
+        "industry": "semiconductors",
+        "currency": "USD",
+        "fiscal_year_end": "12-31",
+        "headquarters": "Tampa, Florida",
+        "dateline": "TAMPA, Fla.",
+        "founded_year": 2016,
+        "operating_model": "fabless semiconductor designer",
+        "engineering_site": "Sarasota, Florida",
+        "website": "https://sunnysemi.example",
+        "boilerplate": "SunnySemi LLC is a Tampa, Florida-based fabless semiconductor designer. Its SunCore edge-inference processors and GulfSwitch power-management devices serve equipment manufacturers building industrial, infrastructure and embedded systems. The company designs silicon and reference platforms in Florida and works with external wafer-fabrication, assembly and test partners. Its Sarasota engineering site supports package characterization, application validation and customer bring-up. SunnySemi combines version-controlled silicon specifications with evaluation hardware and application support so customers can qualify components against their own system requirements. Product information is available at https://sunnysemi.example.",
+        "media_contact": "Jordan Ellis | Corporate Communications | media@sunnysemi.example",
+        "finance_basis": "USD; calendar fiscal years; recognized revenue, not bookings; operating income excludes no additional adjustments and is not net income or cash flow."
+      },
+      "refs": []
+    },
+    {
+      "id": "dept-executive",
+      "kind": "department",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "name": "Executive"
+      },
+      "refs": []
+    },
+    {
+      "id": "dept-finance",
+      "kind": "department",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "name": "Finance"
+      },
+      "refs": []
+    },
+    {
+      "id": "dept-engineering",
+      "kind": "department",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "name": "Engineering"
+      },
+      "refs": []
+    },
+    {
+      "id": "dept-people",
+      "kind": "department",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "name": "People Operations"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-avery",
+      "kind": "person",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "name": "Avery Rowan"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-morgan",
+      "kind": "person",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "name": "Morgan Vale"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-riley",
+      "kind": "person",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "name": "Riley Arden"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-jordan",
+      "kind": "person",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "name": "Jordan Ellis",
+        "communications_email": "media@sunnysemi.example"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-casey",
+      "kind": "person",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "name": "Casey Marlow"
+      },
+      "refs": []
+    },
+    {
+      "id": "person-quinn",
+      "kind": "person",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "name": "Quinn Mercer"
+      },
+      "refs": []
+    },
+    {
+      "id": "role-avery-initial",
+      "kind": "role",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "person_id": "person-avery",
+        "department_id": "dept-executive",
+        "title": "CEO",
+        "reports_to": null
+      },
+      "refs": [
+        "person-avery",
+        "dept-executive"
+      ]
+    },
+    {
+      "id": "role-morgan-initial",
+      "kind": "role",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "person_id": "person-morgan",
+        "department_id": "dept-finance",
+        "title": "CFO",
+        "reports_to": "person-avery"
+      },
+      "refs": [
+        "person-morgan",
+        "dept-finance",
+        "person-avery"
+      ]
+    },
+    {
+      "id": "role-riley-initial",
+      "kind": "role",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "person_id": "person-riley",
+        "department_id": "dept-engineering",
+        "title": "VP Engineering",
+        "reports_to": "person-avery"
+      },
+      "refs": [
+        "person-riley",
+        "dept-engineering",
+        "person-avery"
+      ]
+    },
+    {
+      "id": "role-jordan-initial",
+      "kind": "role",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "person_id": "person-jordan",
+        "department_id": "dept-people",
+        "title": "Head of People",
+        "reports_to": "person-avery"
+      },
+      "refs": [
+        "person-jordan",
+        "dept-people",
+        "person-avery"
+      ]
+    },
+    {
+      "id": "role-casey-initial",
+      "kind": "role",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "person_id": "person-casey",
+        "department_id": "dept-finance",
+        "title": "Finance Director",
+        "reports_to": "person-morgan"
+      },
+      "refs": [
+        "person-casey",
+        "dept-finance",
+        "person-morgan"
+      ]
+    },
+    {
+      "id": "role-quinn-initial",
+      "kind": "role",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "person_id": "person-quinn",
+        "department_id": "dept-engineering",
+        "title": "Product Director",
+        "reports_to": "person-riley"
+      },
+      "refs": [
+        "person-quinn",
+        "dept-engineering",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "group-internal",
+      "kind": "access_group",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "members": [
+          "person-avery",
+          "person-morgan",
+          "person-riley",
+          "person-jordan",
+          "person-casey",
+          "person-quinn"
+        ]
+      },
+      "refs": [
+        "person-avery",
+        "person-morgan",
+        "person-riley",
+        "person-jordan",
+        "person-casey",
+        "person-quinn"
+      ]
+    },
+    {
+      "id": "group-board",
+      "kind": "access_group",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "members": [
+          "person-avery",
+          "person-morgan"
+        ]
+      },
+      "refs": [
+        "person-avery",
+        "person-morgan"
+      ]
+    },
+    {
+      "id": "role-casey-cfo",
+      "kind": "role",
+      "known_on": "2021-07-01",
+      "effective_on": "2021-07-01",
+      "data": {
+        "person_id": "person-casey",
+        "department_id": "dept-finance",
+        "title": "CFO",
+        "reports_to": "person-avery"
+      },
+      "refs": [
+        "person-casey",
+        "dept-finance",
+        "person-avery"
+      ]
+    },
+    {
+      "id": "role-morgan-strategy",
+      "kind": "role",
+      "known_on": "2021-07-01",
+      "effective_on": "2021-07-01",
+      "data": {
+        "person_id": "person-morgan",
+        "department_id": "dept-executive",
+        "title": "Chief Strategy Officer",
+        "reports_to": "person-avery"
+      },
+      "refs": [
+        "person-morgan",
+        "dept-executive",
+        "person-avery"
+      ]
+    },
+    {
+      "id": "product-beacon",
+      "kind": "product",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "name": "SunCore",
+        "owner_id": "person-quinn",
+        "category": "edge-inference processor"
+      },
+      "refs": [
+        "person-quinn"
+      ]
+    },
+    {
+      "id": "milestone-beacon-2020-planned",
+      "kind": "milestone",
+      "known_on": "2020-02-01",
+      "effective_on": "2020-08-15",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "1.0",
+        "status": "planned",
+        "target_date": "2020-08-15"
+      },
+      "refs": [
+        "product-beacon"
+      ]
+    },
+    {
+      "id": "milestone-beacon-2020-launched",
+      "kind": "milestone",
+      "known_on": "2020-08-15",
+      "effective_on": "2020-08-15",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "1.0",
+        "status": "launched"
+      },
+      "refs": [
+        "product-beacon"
+      ]
+    },
+    {
+      "id": "milestone-beacon-2021-planned",
+      "kind": "milestone",
+      "known_on": "2021-02-01",
+      "effective_on": "2021-08-15",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "2.0",
+        "status": "planned",
+        "target_date": "2021-08-15"
+      },
+      "refs": [
+        "product-beacon"
+      ]
+    },
+    {
+      "id": "milestone-beacon-2021-launched",
+      "kind": "milestone",
+      "known_on": "2021-08-15",
+      "effective_on": "2021-08-15",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "2.0",
+        "status": "launched"
+      },
+      "refs": [
+        "product-beacon"
+      ]
+    },
+    {
+      "id": "milestone-beacon-2022-planned",
+      "kind": "milestone",
+      "known_on": "2022-02-01",
+      "effective_on": "2022-08-15",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "3.0",
+        "status": "planned",
+        "target_date": "2022-08-15"
+      },
+      "refs": [
+        "product-beacon"
+      ]
+    },
+    {
+      "id": "milestone-beacon-2022-launched",
+      "kind": "milestone",
+      "known_on": "2022-08-15",
+      "effective_on": "2022-08-15",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "3.0",
+        "status": "launched"
+      },
+      "refs": [
+        "product-beacon"
+      ]
+    },
+    {
+      "id": "milestone-beacon-2023-planned",
+      "kind": "milestone",
+      "known_on": "2023-02-01",
+      "effective_on": "2023-08-15",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "4.0",
+        "status": "planned",
+        "target_date": "2023-08-15"
+      },
+      "refs": [
+        "product-beacon"
+      ]
+    },
+    {
+      "id": "milestone-beacon-2023-launched",
+      "kind": "milestone",
+      "known_on": "2023-08-15",
+      "effective_on": "2023-08-15",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "4.0",
+        "status": "launched"
+      },
+      "refs": [
+        "product-beacon"
+      ]
+    },
+    {
+      "id": "milestone-beacon-2024-planned",
+      "kind": "milestone",
+      "known_on": "2024-02-01",
+      "effective_on": "2024-08-15",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "5.0",
+        "status": "planned",
+        "target_date": "2024-08-15"
+      },
+      "refs": [
+        "product-beacon"
+      ]
+    },
+    {
+      "id": "milestone-beacon-2024-launched",
+      "kind": "milestone",
+      "known_on": "2024-08-15",
+      "effective_on": "2024-08-15",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "5.0",
+        "status": "launched"
+      },
+      "refs": [
+        "product-beacon"
+      ]
+    },
+    {
+      "id": "milestone-beacon-2025-planned",
+      "kind": "milestone",
+      "known_on": "2025-02-01",
+      "effective_on": "2025-08-15",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "6.0",
+        "status": "planned",
+        "target_date": "2025-08-15"
+      },
+      "refs": [
+        "product-beacon"
+      ]
+    },
+    {
+      "id": "milestone-beacon-2025-launched",
+      "kind": "milestone",
+      "known_on": "2025-08-15",
+      "effective_on": "2025-08-15",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "6.0",
+        "status": "launched"
+      },
+      "refs": [
+        "product-beacon"
+      ]
+    },
+    {
+      "id": "product-prism",
+      "kind": "product",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "name": "GulfSwitch",
+        "owner_id": "person-quinn",
+        "category": "power-management controller"
+      },
+      "refs": [
+        "person-quinn"
+      ]
+    },
+    {
+      "id": "milestone-prism-2020-planned",
+      "kind": "milestone",
+      "known_on": "2020-02-01",
+      "effective_on": "2020-08-15",
+      "data": {
+        "product_id": "product-prism",
+        "version": "1.0",
+        "status": "planned",
+        "target_date": "2020-08-15"
+      },
+      "refs": [
+        "product-prism"
+      ]
+    },
+    {
+      "id": "milestone-prism-2020-launched",
+      "kind": "milestone",
+      "known_on": "2020-08-15",
+      "effective_on": "2020-08-15",
+      "data": {
+        "product_id": "product-prism",
+        "version": "1.0",
+        "status": "launched"
+      },
+      "refs": [
+        "product-prism"
+      ]
+    },
+    {
+      "id": "milestone-prism-2021-planned",
+      "kind": "milestone",
+      "known_on": "2021-02-01",
+      "effective_on": "2021-08-15",
+      "data": {
+        "product_id": "product-prism",
+        "version": "2.0",
+        "status": "planned",
+        "target_date": "2021-08-15"
+      },
+      "refs": [
+        "product-prism"
+      ]
+    },
+    {
+      "id": "milestone-prism-2021-launched",
+      "kind": "milestone",
+      "known_on": "2021-08-15",
+      "effective_on": "2021-08-15",
+      "data": {
+        "product_id": "product-prism",
+        "version": "2.0",
+        "status": "launched"
+      },
+      "refs": [
+        "product-prism"
+      ]
+    },
+    {
+      "id": "milestone-prism-2022-planned",
+      "kind": "milestone",
+      "known_on": "2022-02-01",
+      "effective_on": "2022-08-15",
+      "data": {
+        "product_id": "product-prism",
+        "version": "3.0",
+        "status": "planned",
+        "target_date": "2022-08-15"
+      },
+      "refs": [
+        "product-prism"
+      ]
+    },
+    {
+      "id": "milestone-prism-2022-launched",
+      "kind": "milestone",
+      "known_on": "2022-08-15",
+      "effective_on": "2022-08-15",
+      "data": {
+        "product_id": "product-prism",
+        "version": "3.0",
+        "status": "launched"
+      },
+      "refs": [
+        "product-prism"
+      ]
+    },
+    {
+      "id": "milestone-prism-2023-planned",
+      "kind": "milestone",
+      "known_on": "2023-02-01",
+      "effective_on": "2023-08-15",
+      "data": {
+        "product_id": "product-prism",
+        "version": "4.0",
+        "status": "planned",
+        "target_date": "2023-08-15"
+      },
+      "refs": [
+        "product-prism"
+      ]
+    },
+    {
+      "id": "milestone-prism-2023-launched",
+      "kind": "milestone",
+      "known_on": "2023-08-15",
+      "effective_on": "2023-08-15",
+      "data": {
+        "product_id": "product-prism",
+        "version": "4.0",
+        "status": "launched"
+      },
+      "refs": [
+        "product-prism"
+      ]
+    },
+    {
+      "id": "milestone-prism-2024-planned",
+      "kind": "milestone",
+      "known_on": "2024-02-01",
+      "effective_on": "2024-08-15",
+      "data": {
+        "product_id": "product-prism",
+        "version": "5.0",
+        "status": "planned",
+        "target_date": "2024-08-15"
+      },
+      "refs": [
+        "product-prism"
+      ]
+    },
+    {
+      "id": "milestone-prism-2024-launched",
+      "kind": "milestone",
+      "known_on": "2024-08-15",
+      "effective_on": "2024-08-15",
+      "data": {
+        "product_id": "product-prism",
+        "version": "5.0",
+        "status": "launched"
+      },
+      "refs": [
+        "product-prism"
+      ]
+    },
+    {
+      "id": "milestone-prism-2025-planned",
+      "kind": "milestone",
+      "known_on": "2025-02-01",
+      "effective_on": "2025-08-15",
+      "data": {
+        "product_id": "product-prism",
+        "version": "6.0",
+        "status": "planned",
+        "target_date": "2025-08-15"
+      },
+      "refs": [
+        "product-prism"
+      ]
+    },
+    {
+      "id": "milestone-prism-2025-launched",
+      "kind": "milestone",
+      "known_on": "2025-08-15",
+      "effective_on": "2025-08-15",
+      "data": {
+        "product_id": "product-prism",
+        "version": "6.0",
+        "status": "launched"
+      },
+      "refs": [
+        "product-prism"
+      ]
+    },
+    {
+      "id": "acquisition-sable-announced",
+      "kind": "acquisition",
+      "known_on": "2020-05-10",
+      "effective_on": "2020-05-10",
+      "data": {
+        "acquisition_id": "deal-sable",
+        "target": "CoralKey Packaging",
+        "status": "announced",
+        "price_usd": 85000000
+      },
+      "refs": []
+    },
+    {
+      "id": "acquisition-sable-closed",
+      "kind": "acquisition",
+      "known_on": "2020-09-20",
+      "effective_on": "2020-09-20",
+      "data": {
+        "acquisition_id": "deal-sable",
+        "target": "CoralKey Packaging",
+        "status": "closed",
+        "price_usd": 85000000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2020-q1",
+      "kind": "financial",
+      "known_on": "2020-04-15",
+      "effective_on": "2020-04-15",
+      "data": {
+        "year": 2020,
+        "quarter": 1,
+        "period_end": "2020-03-31",
+        "revenue_usd": 240000000,
+        "cogs_usd": 110400000,
+        "opex_usd": 67200000,
+        "operating_income_usd": 62400000,
+        "headcount": 560,
+        "suncore_revenue_usd": 144000000,
+        "gulfswitch_revenue_usd": 96000000,
+        "wafer_cost_usd": 71760000,
+        "packaging_cost_usd": 27600000,
+        "logistics_cost_usd": 11040000,
+        "engineering_opex_usd": 47040000,
+        "commercial_opex_usd": 20160000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2020-q2",
+      "kind": "financial",
+      "known_on": "2020-07-15",
+      "effective_on": "2020-07-15",
+      "data": {
+        "year": 2020,
+        "quarter": 2,
+        "period_end": "2020-06-30",
+        "revenue_usd": 276000000,
+        "cogs_usd": 126960000,
+        "opex_usd": 77280000,
+        "operating_income_usd": 71760000,
+        "headcount": 580,
+        "suncore_revenue_usd": 165600000,
+        "gulfswitch_revenue_usd": 110400000,
+        "wafer_cost_usd": 82524000,
+        "packaging_cost_usd": 31740000,
+        "logistics_cost_usd": 12696000,
+        "engineering_opex_usd": 54096000,
+        "commercial_opex_usd": 23184000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2020-q3",
+      "kind": "financial",
+      "known_on": "2020-10-15",
+      "effective_on": "2020-10-15",
+      "data": {
+        "year": 2020,
+        "quarter": 3,
+        "period_end": "2020-09-30",
+        "revenue_usd": 312000000,
+        "cogs_usd": 143520000,
+        "opex_usd": 87360000,
+        "operating_income_usd": 81120000,
+        "headcount": 600,
+        "suncore_revenue_usd": 187200000,
+        "gulfswitch_revenue_usd": 124800000,
+        "wafer_cost_usd": 93288000,
+        "packaging_cost_usd": 35880000,
+        "logistics_cost_usd": 14352000,
+        "engineering_opex_usd": 61152000,
+        "commercial_opex_usd": 26208000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2020-q4",
+      "kind": "financial",
+      "known_on": "2021-01-15",
+      "effective_on": "2021-01-15",
+      "data": {
+        "year": 2020,
+        "quarter": 4,
+        "period_end": "2020-12-31",
+        "revenue_usd": 372000000,
+        "cogs_usd": 171120000,
+        "opex_usd": 104160000,
+        "operating_income_usd": 96720000,
+        "headcount": 620,
+        "suncore_revenue_usd": 223200000,
+        "gulfswitch_revenue_usd": 148800000,
+        "wafer_cost_usd": 111228000,
+        "packaging_cost_usd": 42780000,
+        "logistics_cost_usd": 17112000,
+        "engineering_opex_usd": 72912000,
+        "commercial_opex_usd": 31248000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2020-annual",
+      "kind": "financial",
+      "known_on": "2021-02-15",
+      "effective_on": "2021-02-15",
+      "data": {
+        "year": 2020,
+        "quarter": null,
+        "period_end": "2020-12-31",
+        "revenue_usd": 1200000000,
+        "cogs_usd": 552000000,
+        "opex_usd": 336000000,
+        "operating_income_usd": 312000000,
+        "headcount": 620,
+        "suncore_revenue_usd": 720000000,
+        "gulfswitch_revenue_usd": 480000000,
+        "wafer_cost_usd": 358800000,
+        "packaging_cost_usd": 138000000,
+        "logistics_cost_usd": 55200000,
+        "engineering_opex_usd": 235200000,
+        "commercial_opex_usd": 100800000
+      },
+      "refs": [
+        "financial-2020-q1",
+        "financial-2020-q2",
+        "financial-2020-q3",
+        "financial-2020-q4"
+      ]
+    },
+    {
+      "id": "financial-2021-q1",
+      "kind": "financial",
+      "known_on": "2021-04-15",
+      "effective_on": "2021-04-15",
+      "data": {
+        "year": 2021,
+        "quarter": 1,
+        "period_end": "2021-03-31",
+        "revenue_usd": 480000000,
+        "cogs_usd": 211200000,
+        "opex_usd": 129600000,
+        "operating_income_usd": 139200000,
+        "headcount": 890,
+        "suncore_revenue_usd": 297600000,
+        "gulfswitch_revenue_usd": 182400000,
+        "wafer_cost_usd": 137280000,
+        "packaging_cost_usd": 52800000,
+        "logistics_cost_usd": 21120000,
+        "engineering_opex_usd": 90720000,
+        "commercial_opex_usd": 38880000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2021-q2",
+      "kind": "financial",
+      "known_on": "2021-07-15",
+      "effective_on": "2021-07-15",
+      "data": {
+        "year": 2021,
+        "quarter": 2,
+        "period_end": "2021-06-30",
+        "revenue_usd": 552000000,
+        "cogs_usd": 242880000,
+        "opex_usd": 149040000,
+        "operating_income_usd": 160080000,
+        "headcount": 920,
+        "suncore_revenue_usd": 342240000,
+        "gulfswitch_revenue_usd": 209760000,
+        "wafer_cost_usd": 157872000,
+        "packaging_cost_usd": 60720000,
+        "logistics_cost_usd": 24288000,
+        "engineering_opex_usd": 104328000,
+        "commercial_opex_usd": 44712000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2021-q3",
+      "kind": "financial",
+      "known_on": "2021-10-15",
+      "effective_on": "2021-10-15",
+      "data": {
+        "year": 2021,
+        "quarter": 3,
+        "period_end": "2021-09-30",
+        "revenue_usd": 624000000,
+        "cogs_usd": 274560000,
+        "opex_usd": 168480000,
+        "operating_income_usd": 180960000,
+        "headcount": 950,
+        "suncore_revenue_usd": 386880000,
+        "gulfswitch_revenue_usd": 237120000,
+        "wafer_cost_usd": 178464000,
+        "packaging_cost_usd": 68640000,
+        "logistics_cost_usd": 27456000,
+        "engineering_opex_usd": 117936000,
+        "commercial_opex_usd": 50544000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2021-q4",
+      "kind": "financial",
+      "known_on": "2022-01-15",
+      "effective_on": "2022-01-15",
+      "data": {
+        "year": 2021,
+        "quarter": 4,
+        "period_end": "2021-12-31",
+        "revenue_usd": 744000000,
+        "cogs_usd": 327360000,
+        "opex_usd": 200880000,
+        "operating_income_usd": 215760000,
+        "headcount": 980,
+        "suncore_revenue_usd": 461280000,
+        "gulfswitch_revenue_usd": 282720000,
+        "wafer_cost_usd": 212784000,
+        "packaging_cost_usd": 81840000,
+        "logistics_cost_usd": 32736000,
+        "engineering_opex_usd": 140616000,
+        "commercial_opex_usd": 60264000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2021-annual",
+      "kind": "financial",
+      "known_on": "2022-02-15",
+      "effective_on": "2022-02-15",
+      "data": {
+        "year": 2021,
+        "quarter": null,
+        "period_end": "2021-12-31",
+        "revenue_usd": 2400000000,
+        "cogs_usd": 1056000000,
+        "opex_usd": 648000000,
+        "operating_income_usd": 696000000,
+        "headcount": 980,
+        "suncore_revenue_usd": 1488000000,
+        "gulfswitch_revenue_usd": 912000000,
+        "wafer_cost_usd": 686400000,
+        "packaging_cost_usd": 264000000,
+        "logistics_cost_usd": 105600000,
+        "engineering_opex_usd": 453600000,
+        "commercial_opex_usd": 194400000
+      },
+      "refs": [
+        "financial-2021-q1",
+        "financial-2021-q2",
+        "financial-2021-q3",
+        "financial-2021-q4"
+      ]
+    },
+    {
+      "id": "financial-2022-q1",
+      "kind": "financial",
+      "known_on": "2022-04-15",
+      "effective_on": "2022-04-15",
+      "data": {
+        "year": 2022,
+        "quarter": 1,
+        "period_end": "2022-03-31",
+        "revenue_usd": 900000000,
+        "cogs_usd": 378000000,
+        "opex_usd": 234000000,
+        "operating_income_usd": 288000000,
+        "headcount": 1430,
+        "suncore_revenue_usd": 576000000,
+        "gulfswitch_revenue_usd": 324000000,
+        "wafer_cost_usd": 245700000,
+        "packaging_cost_usd": 94500000,
+        "logistics_cost_usd": 37800000,
+        "engineering_opex_usd": 163800000,
+        "commercial_opex_usd": 70200000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2022-q2",
+      "kind": "financial",
+      "known_on": "2022-07-15",
+      "effective_on": "2022-07-15",
+      "data": {
+        "year": 2022,
+        "quarter": 2,
+        "period_end": "2022-06-30",
+        "revenue_usd": 1035000000,
+        "cogs_usd": 434700000,
+        "opex_usd": 269100000,
+        "operating_income_usd": 331200000,
+        "headcount": 1470,
+        "suncore_revenue_usd": 662400000,
+        "gulfswitch_revenue_usd": 372600000,
+        "wafer_cost_usd": 282555000,
+        "packaging_cost_usd": 108675000,
+        "logistics_cost_usd": 43470000,
+        "engineering_opex_usd": 188370000,
+        "commercial_opex_usd": 80730000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2022-q3",
+      "kind": "financial",
+      "known_on": "2022-10-15",
+      "effective_on": "2022-10-15",
+      "data": {
+        "year": 2022,
+        "quarter": 3,
+        "period_end": "2022-09-30",
+        "revenue_usd": 1170000000,
+        "cogs_usd": 491400000,
+        "opex_usd": 304200000,
+        "operating_income_usd": 374400000,
+        "headcount": 1510,
+        "suncore_revenue_usd": 748800000,
+        "gulfswitch_revenue_usd": 421200000,
+        "wafer_cost_usd": 319410000,
+        "packaging_cost_usd": 122850000,
+        "logistics_cost_usd": 49140000,
+        "engineering_opex_usd": 212940000,
+        "commercial_opex_usd": 91260000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2022-q4",
+      "kind": "financial",
+      "known_on": "2023-01-15",
+      "effective_on": "2023-01-15",
+      "data": {
+        "year": 2022,
+        "quarter": 4,
+        "period_end": "2022-12-31",
+        "revenue_usd": 1395000000,
+        "cogs_usd": 585900000,
+        "opex_usd": 362700000,
+        "operating_income_usd": 446400000,
+        "headcount": 1550,
+        "suncore_revenue_usd": 892800000,
+        "gulfswitch_revenue_usd": 502200000,
+        "wafer_cost_usd": 380835000,
+        "packaging_cost_usd": 146475000,
+        "logistics_cost_usd": 58590000,
+        "engineering_opex_usd": 253890000,
+        "commercial_opex_usd": 108810000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2022-annual",
+      "kind": "financial",
+      "known_on": "2023-02-15",
+      "effective_on": "2023-02-15",
+      "data": {
+        "year": 2022,
+        "quarter": null,
+        "period_end": "2022-12-31",
+        "revenue_usd": 4500000000,
+        "cogs_usd": 1890000000,
+        "opex_usd": 1170000000,
+        "operating_income_usd": 1440000000,
+        "headcount": 1550,
+        "suncore_revenue_usd": 2880000000,
+        "gulfswitch_revenue_usd": 1620000000,
+        "wafer_cost_usd": 1228500000,
+        "packaging_cost_usd": 472500000,
+        "logistics_cost_usd": 189000000,
+        "engineering_opex_usd": 819000000,
+        "commercial_opex_usd": 351000000
+      },
+      "refs": [
+        "financial-2022-q1",
+        "financial-2022-q2",
+        "financial-2022-q3",
+        "financial-2022-q4"
+      ]
+    },
+    {
+      "id": "financial-2023-q1",
+      "kind": "financial",
+      "known_on": "2023-04-15",
+      "effective_on": "2023-04-15",
+      "data": {
+        "year": 2023,
+        "quarter": 1,
+        "period_end": "2023-03-31",
+        "revenue_usd": 1600000000,
+        "cogs_usd": 640000000,
+        "opex_usd": 400000000,
+        "operating_income_usd": 560000000,
+        "headcount": 2300,
+        "suncore_revenue_usd": 1056000000,
+        "gulfswitch_revenue_usd": 544000000,
+        "wafer_cost_usd": 416000000,
+        "packaging_cost_usd": 160000000,
+        "logistics_cost_usd": 64000000,
+        "engineering_opex_usd": 280000000,
+        "commercial_opex_usd": 120000000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2023-q2",
+      "kind": "financial",
+      "known_on": "2023-07-15",
+      "effective_on": "2023-07-15",
+      "data": {
+        "year": 2023,
+        "quarter": 2,
+        "period_end": "2023-06-30",
+        "revenue_usd": 1840000000,
+        "cogs_usd": 736000000,
+        "opex_usd": 460000000,
+        "operating_income_usd": 644000000,
+        "headcount": 2350,
+        "suncore_revenue_usd": 1214400000,
+        "gulfswitch_revenue_usd": 625600000,
+        "wafer_cost_usd": 478400000,
+        "packaging_cost_usd": 184000000,
+        "logistics_cost_usd": 73600000,
+        "engineering_opex_usd": 322000000,
+        "commercial_opex_usd": 138000000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2023-q3",
+      "kind": "financial",
+      "known_on": "2023-10-15",
+      "effective_on": "2023-10-15",
+      "data": {
+        "year": 2023,
+        "quarter": 3,
+        "period_end": "2023-09-30",
+        "revenue_usd": 2080000000,
+        "cogs_usd": 832000000,
+        "opex_usd": 520000000,
+        "operating_income_usd": 728000000,
+        "headcount": 2400,
+        "suncore_revenue_usd": 1372800000,
+        "gulfswitch_revenue_usd": 707200000,
+        "wafer_cost_usd": 540800000,
+        "packaging_cost_usd": 208000000,
+        "logistics_cost_usd": 83200000,
+        "engineering_opex_usd": 364000000,
+        "commercial_opex_usd": 156000000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2023-q4",
+      "kind": "financial",
+      "known_on": "2024-01-15",
+      "effective_on": "2024-01-15",
+      "data": {
+        "year": 2023,
+        "quarter": 4,
+        "period_end": "2023-12-31",
+        "revenue_usd": 2480000000,
+        "cogs_usd": 992000000,
+        "opex_usd": 620000000,
+        "operating_income_usd": 868000000,
+        "headcount": 2450,
+        "suncore_revenue_usd": 1636800000,
+        "gulfswitch_revenue_usd": 843200000,
+        "wafer_cost_usd": 644800000,
+        "packaging_cost_usd": 248000000,
+        "logistics_cost_usd": 99200000,
+        "engineering_opex_usd": 434000000,
+        "commercial_opex_usd": 186000000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2023-annual",
+      "kind": "financial",
+      "known_on": "2024-02-15",
+      "effective_on": "2024-02-15",
+      "data": {
+        "year": 2023,
+        "quarter": null,
+        "period_end": "2023-12-31",
+        "revenue_usd": 8000000000,
+        "cogs_usd": 3200000000,
+        "opex_usd": 2000000000,
+        "operating_income_usd": 2800000000,
+        "headcount": 2450,
+        "suncore_revenue_usd": 5280000000,
+        "gulfswitch_revenue_usd": 2720000000,
+        "wafer_cost_usd": 2080000000,
+        "packaging_cost_usd": 800000000,
+        "logistics_cost_usd": 320000000,
+        "engineering_opex_usd": 1400000000,
+        "commercial_opex_usd": 600000000
+      },
+      "refs": [
+        "financial-2023-q1",
+        "financial-2023-q2",
+        "financial-2023-q3",
+        "financial-2023-q4"
+      ]
+    },
+    {
+      "id": "financial-2024-q1",
+      "kind": "financial",
+      "known_on": "2024-04-15",
+      "effective_on": "2024-04-15",
+      "data": {
+        "year": 2024,
+        "quarter": 1,
+        "period_end": "2024-03-31",
+        "revenue_usd": 2800000000,
+        "cogs_usd": 1064000000,
+        "opex_usd": 672000000,
+        "operating_income_usd": 1064000000,
+        "headcount": 3520,
+        "suncore_revenue_usd": 1904000000,
+        "gulfswitch_revenue_usd": 896000000,
+        "wafer_cost_usd": 691600000,
+        "packaging_cost_usd": 266000000,
+        "logistics_cost_usd": 106400000,
+        "engineering_opex_usd": 470400000,
+        "commercial_opex_usd": 201600000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2024-q2",
+      "kind": "financial",
+      "known_on": "2024-07-15",
+      "effective_on": "2024-07-15",
+      "data": {
+        "year": 2024,
+        "quarter": 2,
+        "period_end": "2024-06-30",
+        "revenue_usd": 3220000000,
+        "cogs_usd": 1223600000,
+        "opex_usd": 772800000,
+        "operating_income_usd": 1223600000,
+        "headcount": 3580,
+        "suncore_revenue_usd": 2189600000,
+        "gulfswitch_revenue_usd": 1030400000,
+        "wafer_cost_usd": 795340000,
+        "packaging_cost_usd": 305900000,
+        "logistics_cost_usd": 122360000,
+        "engineering_opex_usd": 540960000,
+        "commercial_opex_usd": 231840000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2024-q3",
+      "kind": "financial",
+      "known_on": "2024-10-15",
+      "effective_on": "2024-10-15",
+      "data": {
+        "year": 2024,
+        "quarter": 3,
+        "period_end": "2024-09-30",
+        "revenue_usd": 3640000000,
+        "cogs_usd": 1383200000,
+        "opex_usd": 873600000,
+        "operating_income_usd": 1383200000,
+        "headcount": 3640,
+        "suncore_revenue_usd": 2475200000,
+        "gulfswitch_revenue_usd": 1164800000,
+        "wafer_cost_usd": 899080000,
+        "packaging_cost_usd": 345800000,
+        "logistics_cost_usd": 138320000,
+        "engineering_opex_usd": 611520000,
+        "commercial_opex_usd": 262080000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2024-q4",
+      "kind": "financial",
+      "known_on": "2025-01-15",
+      "effective_on": "2025-01-15",
+      "data": {
+        "year": 2024,
+        "quarter": 4,
+        "period_end": "2024-12-31",
+        "revenue_usd": 4340000000,
+        "cogs_usd": 1649200000,
+        "opex_usd": 1041600000,
+        "operating_income_usd": 1649200000,
+        "headcount": 3700,
+        "suncore_revenue_usd": 2951200000,
+        "gulfswitch_revenue_usd": 1388800000,
+        "wafer_cost_usd": 1071980000,
+        "packaging_cost_usd": 412300000,
+        "logistics_cost_usd": 164920000,
+        "engineering_opex_usd": 729120000,
+        "commercial_opex_usd": 312480000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2024-annual",
+      "kind": "financial",
+      "known_on": "2025-02-15",
+      "effective_on": "2025-02-15",
+      "data": {
+        "year": 2024,
+        "quarter": null,
+        "period_end": "2024-12-31",
+        "revenue_usd": 14000000000,
+        "cogs_usd": 5320000000,
+        "opex_usd": 3360000000,
+        "operating_income_usd": 5320000000,
+        "headcount": 3700,
+        "suncore_revenue_usd": 9520000000,
+        "gulfswitch_revenue_usd": 4480000000,
+        "wafer_cost_usd": 3458000000,
+        "packaging_cost_usd": 1330000000,
+        "logistics_cost_usd": 532000000,
+        "engineering_opex_usd": 2352000000,
+        "commercial_opex_usd": 1008000000
+      },
+      "refs": [
+        "financial-2024-q1",
+        "financial-2024-q2",
+        "financial-2024-q3",
+        "financial-2024-q4"
+      ]
+    },
+    {
+      "id": "financial-2025-q1",
+      "kind": "financial",
+      "known_on": "2025-04-15",
+      "effective_on": "2025-04-15",
+      "data": {
+        "year": 2025,
+        "quarter": 1,
+        "period_end": "2025-03-31",
+        "revenue_usd": 4600000000,
+        "cogs_usd": 1656000000,
+        "opex_usd": 1058000000,
+        "operating_income_usd": 1886000000,
+        "headcount": 4990,
+        "suncore_revenue_usd": 3220000000,
+        "gulfswitch_revenue_usd": 1380000000,
+        "wafer_cost_usd": 1076400000,
+        "packaging_cost_usd": 414000000,
+        "logistics_cost_usd": 165600000,
+        "engineering_opex_usd": 740600000,
+        "commercial_opex_usd": 317400000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2025-q2",
+      "kind": "financial",
+      "known_on": "2025-07-15",
+      "effective_on": "2025-07-15",
+      "data": {
+        "year": 2025,
+        "quarter": 2,
+        "period_end": "2025-06-30",
+        "revenue_usd": 5290000000,
+        "cogs_usd": 1904400000,
+        "opex_usd": 1216700000,
+        "operating_income_usd": 2168900000,
+        "headcount": 5060,
+        "suncore_revenue_usd": 3703000000,
+        "gulfswitch_revenue_usd": 1587000000,
+        "wafer_cost_usd": 1237860000,
+        "packaging_cost_usd": 476100000,
+        "logistics_cost_usd": 190440000,
+        "engineering_opex_usd": 851690000,
+        "commercial_opex_usd": 365010000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2025-q3",
+      "kind": "financial",
+      "known_on": "2025-10-15",
+      "effective_on": "2025-10-15",
+      "data": {
+        "year": 2025,
+        "quarter": 3,
+        "period_end": "2025-09-30",
+        "revenue_usd": 5980000000,
+        "cogs_usd": 2152800000,
+        "opex_usd": 1375400000,
+        "operating_income_usd": 2451800000,
+        "headcount": 5130,
+        "suncore_revenue_usd": 4186000000,
+        "gulfswitch_revenue_usd": 1794000000,
+        "wafer_cost_usd": 1399320000,
+        "packaging_cost_usd": 538200000,
+        "logistics_cost_usd": 215280000,
+        "engineering_opex_usd": 962780000,
+        "commercial_opex_usd": 412620000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2025-q4",
+      "kind": "financial",
+      "known_on": "2026-01-15",
+      "effective_on": "2026-01-15",
+      "data": {
+        "year": 2025,
+        "quarter": 4,
+        "period_end": "2025-12-31",
+        "revenue_usd": 7130000000,
+        "cogs_usd": 2566800000,
+        "opex_usd": 1639900000,
+        "operating_income_usd": 2923300000,
+        "headcount": 5200,
+        "suncore_revenue_usd": 4991000000,
+        "gulfswitch_revenue_usd": 2139000000,
+        "wafer_cost_usd": 1668420000,
+        "packaging_cost_usd": 641700000,
+        "logistics_cost_usd": 256680000,
+        "engineering_opex_usd": 1147930000,
+        "commercial_opex_usd": 491970000
+      },
+      "refs": []
+    },
+    {
+      "id": "financial-2025-annual",
+      "kind": "financial",
+      "known_on": "2026-02-15",
+      "effective_on": "2026-02-15",
+      "data": {
+        "year": 2025,
+        "quarter": null,
+        "period_end": "2025-12-31",
+        "revenue_usd": 23000000000,
+        "cogs_usd": 8280000000,
+        "opex_usd": 5290000000,
+        "operating_income_usd": 9430000000,
+        "headcount": 5200,
+        "suncore_revenue_usd": 16100000000,
+        "gulfswitch_revenue_usd": 6900000000,
+        "wafer_cost_usd": 5382000000,
+        "packaging_cost_usd": 2070000000,
+        "logistics_cost_usd": 828000000,
+        "engineering_opex_usd": 3703000000,
+        "commercial_opex_usd": 1587000000
+      },
+      "refs": [
+        "financial-2025-q1",
+        "financial-2025-q2",
+        "financial-2025-q3",
+        "financial-2025-q4"
+      ]
+    },
+    {
+      "id": "glossary-arr",
+      "kind": "glossary",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "term": "TOPS",
+        "definition": "Trillion integer operations per second at the stated precision; a silicon peak, not application throughput."
+      },
+      "refs": []
+    },
+    {
+      "id": "glossary-ga",
+      "kind": "glossary",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "term": "GA",
+        "definition": "General availability of a product version."
+      },
+      "refs": []
+    },
+    {
+      "id": "glossary-operating-income",
+      "kind": "glossary",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "term": "Operating income",
+        "definition": "Recognized revenue less cost of goods sold and operating expenses."
+      },
+      "refs": []
+    },
+    {
+      "id": "policy-leave-v1",
+      "kind": "policy",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "policy_id": "paid-leave",
+        "version": 1,
+        "owner_id": "person-jordan",
+        "annual_days": 20,
+        "scope": "All full-time employees"
+      },
+      "refs": [
+        "person-jordan"
+      ]
+    },
+    {
+      "id": "policy-leave-v2",
+      "kind": "policy",
+      "known_on": "2020-12-02",
+      "effective_on": "2021-01-01",
+      "data": {
+        "policy_id": "paid-leave",
+        "version": 2,
+        "owner_id": "person-jordan",
+        "annual_days": 22,
+        "scope": "All full-time employees"
+      },
+      "refs": [
+        "person-jordan"
+      ]
+    },
+    {
+      "id": "relationship-media",
+      "kind": "relationship",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "person_id": "person-jordan",
+        "responsibility": "corporate media contact"
+      },
+      "refs": [
+        "person-jordan",
+        "company"
+      ]
+    },
+    {
+      "id": "glossary-fabless",
+      "kind": "glossary",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "term": "Fabless",
+        "definition": "A company that designs semiconductors and contracts external wafer fabrication."
+      },
+      "refs": []
+    },
+    {
+      "id": "glossary-int8",
+      "kind": "glossary",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "term": "INT8",
+        "definition": "Signed eight-bit integer arithmetic used by the SunCore peak-throughput specification."
+      },
+      "refs": []
+    },
+    {
+      "id": "glossary-pmbus",
+      "kind": "glossary",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "term": "PMBus",
+        "definition": "A digital power-management command interface; support is limited to listed commands."
+      },
+      "refs": []
+    },
+    {
+      "id": "glossary-qualification",
+      "kind": "glossary",
+      "known_on": "2020-01-01",
+      "effective_on": "2020-01-01",
+      "data": {
+        "term": "Qualification",
+        "definition": "Documented verification against release criteria; not a regulatory certification."
+      },
+      "refs": []
+    },
+    {
+      "id": "operating-2020",
+      "kind": "operating",
+      "known_on": "2020-01-15",
+      "effective_on": "2020-01-15",
+      "data": {
+        "year": 2020,
+        "theme": "Launch discipline",
+        "customer_market": "industrial inspection",
+        "risk": "a single qualified substrate route",
+        "mitigation": "qualify a second substrate route before increasing release allocations",
+        "operating_principle": "keep first-customer bring-up separate from the production release gate",
+        "adoption_support": "evaluation-kit shipments and controlled production orders",
+        "strategy": "Own differentiated silicon architecture and application validation; use external manufacturing rather than build a wafer fab.",
+        "capacity_option": "Stage commitments against qualification evidence.",
+        "alternative": "Commit the entire proposed capacity increment immediately.",
+        "tradeoff": "Staging limits irreversible commitments but can defer some shipment opportunities.",
+        "board_request": "Approve milestone-based capacity releases; retain existing commercial approval limits and require Finance and Engineering sign-off before each increment.",
+        "board_status": "Requested; no board approval is recorded in this briefing.",
+        "accountability": "Quinn Mercer owns customer qualification; Riley Arden owns release evidence; the effective CFO owns capacity-commitment review.",
+        "liquidity_note": "No cash balance, debt balance, free-cash-flow measure or forecast is included.",
+        "price_note": "Pricing and contractual lead times are supplied through customer-specific quotations."
+      },
+      "refs": [
+        "company",
+        "person-quinn",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "release-beacon-2020",
+      "kind": "release_detail",
+      "known_on": "2020-02-01",
+      "effective_on": "2020-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "1.0",
+        "year": 2020,
+        "metric": "12 INT8 TOPS",
+        "operating_point": "12 W board design budget",
+        "capability": "12 nm inference ASIC with PCIe Gen3 x4 host interface",
+        "customer_problem": "Moving industrial inference off a general-purpose host competes with system power, response-time and software-integration constraints.",
+        "workflow": "Capture frames on the host, prepare tensors, submit inference over PCIe, and return results to the host application.",
+        "use_cases": [
+          "industrial inspection",
+          "local equipment anomaly detection",
+          "on-device visual inspection"
+        ],
+        "constraints": "Peak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design.",
+        "support": "evaluation-kit shipments and controlled production orders",
+        "market": "industrial inspection",
+        "release_date": "2020-08-15",
+        "evaluation_step": "Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example.",
+        "integration_step": "Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption.",
+        "support_email": "applications@sunnysemi.example",
+        "quote_speaker": "person-avery",
+        "quote": "Our priority is to make SunCore 1.0 useful in real equipment, not just impressive in a specification table. Customers need clear operating boundaries, traceable release evidence and an engineering team that helps them qualify the complete design. That is how we intend to earn repeat programs.",
+        "quote_approved": true,
+        "availability": "Production orders and version-matched evaluation kits are available from the launch date, subject to quotation and allocation.",
+        "qualification": "Evaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration.",
+        "exclusions": "No regulatory certification, customer benchmark or customer endorsement is asserted.",
+        "node_nm": 12,
+        "peak_tops": 12,
+        "power_w": 12,
+        "input_max_v": 0,
+        "output_a": 0,
+        "efficiency_percent": 0,
+        "efficiency_conditions": "48 V input, 12 V output, half rated reference-stage load, 25 degrees Celsius ambient; excludes host and enclosure losses."
+      },
+      "refs": [
+        "product-beacon",
+        "person-avery",
+        "operating-2020"
+      ]
+    },
+    {
+      "id": "req-beacon-2020-01",
+      "kind": "requirement",
+      "known_on": "2020-02-01",
+      "effective_on": "2020-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "1.0",
+        "requirement_id": "SC-1-01",
+        "topic": "Host link",
+        "requirement": "Enumerate as a PCIe Gen3 x4 endpoint.",
+        "acceptance": "Complete cold-boot enumeration on the reference host in 100 consecutive boots.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2020-02",
+      "kind": "requirement",
+      "known_on": "2020-02-01",
+      "effective_on": "2020-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "1.0",
+        "requirement_id": "SC-1-02",
+        "topic": "Arithmetic",
+        "requirement": "Support signed INT8 multiply-accumulate inference.",
+        "acceptance": "Match the published INT8 golden vectors exactly for supported operators.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2020-03",
+      "kind": "requirement",
+      "known_on": "2020-02-01",
+      "effective_on": "2020-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "1.0",
+        "requirement_id": "SC-1-03",
+        "topic": "Peak compute",
+        "requirement": "Expose a peak of 12 INT8 TOPS at the rated clock.",
+        "acceptance": "Check the architectural operation-count model against the rated configuration.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2020-04",
+      "kind": "requirement",
+      "known_on": "2020-02-01",
+      "effective_on": "2020-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "1.0",
+        "requirement_id": "SC-1-04",
+        "topic": "Power envelope",
+        "requirement": "Use a 12 W reference-board design budget.",
+        "acceptance": "Measure board input power on the release workload without exceeding the budget.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2020-05",
+      "kind": "requirement",
+      "known_on": "2020-02-01",
+      "effective_on": "2020-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "1.0",
+        "requirement_id": "SC-1-05",
+        "topic": "Model interface",
+        "requirement": "Accept the release compiler's versioned binary model package.",
+        "acceptance": "Load a package built with the matching toolchain and reject an incompatible major version.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2020-06",
+      "kind": "requirement",
+      "known_on": "2020-02-01",
+      "effective_on": "2020-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "1.0",
+        "requirement_id": "SC-1-06",
+        "topic": "Unsupported operators",
+        "requirement": "Reject models containing operators outside the supported list.",
+        "acceptance": "Return an operator diagnostic before device execution for every negative test.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2020-07",
+      "kind": "requirement",
+      "known_on": "2020-02-01",
+      "effective_on": "2020-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "1.0",
+        "requirement_id": "SC-1-07",
+        "topic": "Tensor validation",
+        "requirement": "Validate tensor shape, element type and buffer bounds.",
+        "acceptance": "Reject malformed dimensions and undersized buffers without DMA outside the allocation.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2020-08",
+      "kind": "requirement",
+      "known_on": "2020-02-01",
+      "effective_on": "2020-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "1.0",
+        "requirement_id": "SC-1-08",
+        "topic": "DMA protection",
+        "requirement": "Limit DMA transactions to driver-registered buffers.",
+        "acceptance": "Run the invalid-buffer suite with no unauthorized host-memory access.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2020-09",
+      "kind": "requirement",
+      "known_on": "2020-02-01",
+      "effective_on": "2020-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "1.0",
+        "requirement_id": "SC-1-09",
+        "topic": "Reset recovery",
+        "requirement": "Recover the command interface after a host-issued device reset.",
+        "acceptance": "Execute the release smoke workload after 100 repeated reset cycles.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2020-10",
+      "kind": "requirement",
+      "known_on": "2020-02-01",
+      "effective_on": "2020-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "1.0",
+        "requirement_id": "SC-1-10",
+        "topic": "Telemetry",
+        "requirement": "Report device temperature and command completion status.",
+        "acceptance": "Compare temperature readout with the calibrated reference within 3 degrees Celsius.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2020-11",
+      "kind": "requirement",
+      "known_on": "2020-02-01",
+      "effective_on": "2020-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "1.0",
+        "requirement_id": "SC-1-11",
+        "topic": "Thermal response",
+        "requirement": "Throttle work admission before the board's configured thermal limit.",
+        "acceptance": "Raise ambient temperature and verify throttling and recovery at configured thresholds.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2020-12",
+      "kind": "requirement",
+      "known_on": "2020-02-01",
+      "effective_on": "2020-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "1.0",
+        "requirement_id": "SC-1-12",
+        "topic": "Error reporting",
+        "requirement": "Return distinct invalid-model, timeout and device-fault status codes.",
+        "acceptance": "Inject each documented fault and check the driver status and recovery path.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2020-13",
+      "kind": "requirement",
+      "known_on": "2020-02-01",
+      "effective_on": "2020-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "1.0",
+        "requirement_id": "SC-1-13",
+        "topic": "Driver package",
+        "requirement": "Deliver a Linux x86-64 reference driver with a version manifest.",
+        "acceptance": "Install on the supported reference image and run the complete release smoke suite.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2020-14",
+      "kind": "requirement",
+      "known_on": "2020-02-01",
+      "effective_on": "2020-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "1.0",
+        "requirement_id": "SC-1-14",
+        "topic": "Reproducibility",
+        "requirement": "Identify silicon revision, firmware and compiler in each diagnostic bundle.",
+        "acceptance": "Recreate an issue report using only the recorded release identifiers and input tensor.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2020-15",
+      "kind": "requirement",
+      "known_on": "2020-02-01",
+      "effective_on": "2020-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "1.0",
+        "requirement_id": "SC-1-15",
+        "topic": "Release evidence",
+        "requirement": "Retain functional, power and thermal verification results.",
+        "acceptance": "Block production release when any required acceptance result is absent or failing.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2020-16",
+      "kind": "requirement",
+      "known_on": "2020-02-01",
+      "effective_on": "2020-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "1.0",
+        "requirement_id": "SC-1-16",
+        "topic": "Change control",
+        "requirement": "Review interface-affecting changes before issuing revised packages.",
+        "acceptance": "Record compatibility impact and obtain Product and Engineering sign-off.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "release-prism-2020",
+      "kind": "release_detail",
+      "known_on": "2020-02-01",
+      "effective_on": "2020-02-01",
+      "data": {
+        "product_id": "product-prism",
+        "version": "1.0",
+        "year": 2020,
+        "metric": "48 V maximum rated input",
+        "operating_point": "10 A reference-stage output",
+        "capability": "digitally supervised multiphase power control with a documented PMBus subset",
+        "customer_problem": "High-density embedded boards need controlled power sequencing and observable fault behavior without losing sight of board-level thermal limits.",
+        "workflow": "Configure the power stage, sequence rails, observe telemetry, and handle protection events through the documented host command interface.",
+        "use_cases": [
+          "industrial inspection",
+          "industrial controller power stages",
+          "embedded compute carrier boards"
+        ],
+        "constraints": "Efficiency applies only to the stated reference-stage operating point. External switches, inductors, cooling and layout remain customer design responsibilities.",
+        "support": "evaluation-kit shipments and controlled production orders",
+        "market": "industrial inspection",
+        "release_date": "2020-08-15",
+        "evaluation_step": "Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example.",
+        "integration_step": "Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption.",
+        "support_email": "applications@sunnysemi.example",
+        "quote_speaker": "person-avery",
+        "quote": "Our priority is to make GulfSwitch 1.0 useful in real equipment, not just impressive in a specification table. Customers need clear operating boundaries, traceable release evidence and an engineering team that helps them qualify the complete design. That is how we intend to earn repeat programs.",
+        "quote_approved": true,
+        "availability": "Production orders and version-matched evaluation kits are available from the launch date, subject to quotation and allocation.",
+        "qualification": "Evaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration.",
+        "exclusions": "No regulatory certification, customer benchmark or customer endorsement is asserted.",
+        "node_nm": 180,
+        "peak_tops": 0,
+        "power_w": 0,
+        "input_max_v": 48,
+        "output_a": 10,
+        "efficiency_percent": 94,
+        "efficiency_conditions": "48 V input, 12 V output, half rated reference-stage load, 25 degrees Celsius ambient; excludes host and enclosure losses."
+      },
+      "refs": [
+        "product-prism",
+        "person-avery",
+        "operating-2020"
+      ]
+    },
+    {
+      "id": "meeting-2020",
+      "kind": "meeting",
+      "known_on": "2020-07-25",
+      "effective_on": "2020-07-25",
+      "data": {
+        "title": "2020 Production Readiness and Launch discipline",
+        "date": "2020-07-25",
+        "participants": [
+          "person-avery",
+          "person-riley",
+          "person-quinn",
+          "person-morgan"
+        ],
+        "location": "Tampa, Florida",
+        "turn_times": [
+          "09:00",
+          "09:02",
+          "09:04",
+          "09:06",
+          "09:08",
+          "09:10",
+          "09:12",
+          "09:14",
+          "09:16",
+          "09:18",
+          "09:20",
+          "09:22",
+          "09:24",
+          "09:26",
+          "09:28",
+          "09:30",
+          "09:32",
+          "09:34",
+          "09:36",
+          "09:38",
+          "09:40",
+          "09:42",
+          "09:44",
+          "09:46",
+          "09:48",
+          "09:50",
+          "09:52",
+          "09:54",
+          "09:56",
+          "09:58",
+          "10:00",
+          "10:02",
+          "10:04",
+          "10:06",
+          "10:08",
+          "10:10"
+        ],
+        "agenda": [
+          "Launch discipline",
+          "SunCore release evidence",
+          "GulfSwitch adoption",
+          "Capacity commitment controls"
+        ],
+        "positions": {
+          "chief_executive": "keep first-customer bring-up separate from the production release gate",
+          "engineering": "Do not substitute peak specifications for application qualification.",
+          "product": "Support industrial inspection with evaluation-kit shipments and controlled production orders.",
+          "finance": "Control a single qualified substrate route; qualify a second substrate route before increasing release allocations."
+        },
+        "decision": "Proceed toward the August release subject to evidence gates; qualify a second substrate route before increasing release allocations.",
+        "rejected_alternative": "An unconditional production ramp before qualification is complete.",
+        "unresolved": "Customer-specific adoption schedules remain subject to accepted quotations.",
+        "actions": [
+          {
+            "owner_id": "person-riley",
+            "task": "Complete version-matched acceptance evidence",
+            "due": "2020-08-05"
+          },
+          {
+            "owner_id": "person-quinn",
+            "task": "Confirm customer evaluation and qualification plans",
+            "due": "2020-08-08"
+          },
+          {
+            "owner_id": "person-morgan",
+            "task": "Review staged manufacturing commitments against accepted schedules",
+            "due": "2020-08-10"
+          }
+        ],
+        "governance": "The meeting authorizes preparation, not a board-level capital approval. Failing release evidence must be escalated to the CEO before production release."
+      },
+      "refs": [
+        "company",
+        "person-avery",
+        "person-riley",
+        "person-quinn",
+        "person-morgan",
+        "operating-2020"
+      ]
+    },
+    {
+      "id": "operating-2021",
+      "kind": "operating",
+      "known_on": "2021-01-15",
+      "effective_on": "2021-01-15",
+      "data": {
+        "year": 2021,
+        "theme": "Allocation discipline",
+        "customer_market": "warehouse automation",
+        "risk": "long wafer-start commitments",
+        "mitigation": "match wafer reservations to accepted customer schedules",
+        "operating_principle": "allocate constrained starts to qualified designs rather than unverified demand",
+        "adoption_support": "schedule-backed allocation and repeatable factory test",
+        "strategy": "Own differentiated silicon architecture and application validation; use external manufacturing rather than build a wafer fab.",
+        "capacity_option": "Stage commitments against qualification evidence.",
+        "alternative": "Commit the entire proposed capacity increment immediately.",
+        "tradeoff": "Staging limits irreversible commitments but can defer some shipment opportunities.",
+        "board_request": "Approve milestone-based capacity releases; retain existing commercial approval limits and require Finance and Engineering sign-off before each increment.",
+        "board_status": "Requested; no board approval is recorded in this briefing.",
+        "accountability": "Quinn Mercer owns customer qualification; Riley Arden owns release evidence; the effective CFO owns capacity-commitment review.",
+        "liquidity_note": "No cash balance, debt balance, free-cash-flow measure or forecast is included.",
+        "price_note": "Pricing and contractual lead times are supplied through customer-specific quotations."
+      },
+      "refs": [
+        "company",
+        "person-quinn",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "release-beacon-2021",
+      "kind": "release_detail",
+      "known_on": "2021-02-01",
+      "effective_on": "2021-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "2.0",
+        "year": 2021,
+        "metric": "24 INT8 TOPS",
+        "operating_point": "15 W board design budget",
+        "capability": "12 nm inference ASIC with PCIe Gen3 x4 host interface",
+        "customer_problem": "Moving industrial inference off a general-purpose host competes with system power, response-time and software-integration constraints.",
+        "workflow": "Capture frames on the host, prepare tensors, submit inference over PCIe, and return results to the host application.",
+        "use_cases": [
+          "warehouse automation",
+          "local equipment anomaly detection",
+          "on-device visual inspection"
+        ],
+        "constraints": "Peak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design.",
+        "support": "schedule-backed allocation and repeatable factory test",
+        "market": "warehouse automation",
+        "release_date": "2021-08-15",
+        "evaluation_step": "Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example.",
+        "integration_step": "Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption.",
+        "support_email": "applications@sunnysemi.example",
+        "quote_speaker": "person-avery",
+        "quote": "Our priority is to make SunCore 2.0 useful in real equipment, not just impressive in a specification table. Customers need clear operating boundaries, traceable release evidence and an engineering team that helps them qualify the complete design. That is how we intend to earn repeat programs.",
+        "quote_approved": true,
+        "availability": "Production orders and version-matched evaluation kits are available from the launch date, subject to quotation and allocation.",
+        "qualification": "Evaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration.",
+        "exclusions": "No regulatory certification, customer benchmark or customer endorsement is asserted.",
+        "node_nm": 12,
+        "peak_tops": 24,
+        "power_w": 15,
+        "input_max_v": 0,
+        "output_a": 0,
+        "efficiency_percent": 0,
+        "efficiency_conditions": "48 V input, 12 V output, half rated reference-stage load, 25 degrees Celsius ambient; excludes host and enclosure losses."
+      },
+      "refs": [
+        "product-beacon",
+        "person-avery",
+        "operating-2021"
+      ]
+    },
+    {
+      "id": "req-beacon-2021-01",
+      "kind": "requirement",
+      "known_on": "2021-02-01",
+      "effective_on": "2021-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "2.0",
+        "requirement_id": "SC-2-01",
+        "topic": "Host link",
+        "requirement": "Enumerate as a PCIe Gen3 x4 endpoint.",
+        "acceptance": "Complete cold-boot enumeration on the reference host in 100 consecutive boots.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2021-02",
+      "kind": "requirement",
+      "known_on": "2021-02-01",
+      "effective_on": "2021-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "2.0",
+        "requirement_id": "SC-2-02",
+        "topic": "Arithmetic",
+        "requirement": "Support signed INT8 multiply-accumulate inference.",
+        "acceptance": "Match the published INT8 golden vectors exactly for supported operators.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2021-03",
+      "kind": "requirement",
+      "known_on": "2021-02-01",
+      "effective_on": "2021-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "2.0",
+        "requirement_id": "SC-2-03",
+        "topic": "Peak compute",
+        "requirement": "Expose a peak of 24 INT8 TOPS at the rated clock.",
+        "acceptance": "Check the architectural operation-count model against the rated configuration.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2021-04",
+      "kind": "requirement",
+      "known_on": "2021-02-01",
+      "effective_on": "2021-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "2.0",
+        "requirement_id": "SC-2-04",
+        "topic": "Power envelope",
+        "requirement": "Use a 15 W reference-board design budget.",
+        "acceptance": "Measure board input power on the release workload without exceeding the budget.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2021-05",
+      "kind": "requirement",
+      "known_on": "2021-02-01",
+      "effective_on": "2021-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "2.0",
+        "requirement_id": "SC-2-05",
+        "topic": "Model interface",
+        "requirement": "Accept the release compiler's versioned binary model package.",
+        "acceptance": "Load a package built with the matching toolchain and reject an incompatible major version.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2021-06",
+      "kind": "requirement",
+      "known_on": "2021-02-01",
+      "effective_on": "2021-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "2.0",
+        "requirement_id": "SC-2-06",
+        "topic": "Unsupported operators",
+        "requirement": "Reject models containing operators outside the supported list.",
+        "acceptance": "Return an operator diagnostic before device execution for every negative test.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2021-07",
+      "kind": "requirement",
+      "known_on": "2021-02-01",
+      "effective_on": "2021-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "2.0",
+        "requirement_id": "SC-2-07",
+        "topic": "Tensor validation",
+        "requirement": "Validate tensor shape, element type and buffer bounds.",
+        "acceptance": "Reject malformed dimensions and undersized buffers without DMA outside the allocation.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2021-08",
+      "kind": "requirement",
+      "known_on": "2021-02-01",
+      "effective_on": "2021-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "2.0",
+        "requirement_id": "SC-2-08",
+        "topic": "DMA protection",
+        "requirement": "Limit DMA transactions to driver-registered buffers.",
+        "acceptance": "Run the invalid-buffer suite with no unauthorized host-memory access.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2021-09",
+      "kind": "requirement",
+      "known_on": "2021-02-01",
+      "effective_on": "2021-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "2.0",
+        "requirement_id": "SC-2-09",
+        "topic": "Reset recovery",
+        "requirement": "Recover the command interface after a host-issued device reset.",
+        "acceptance": "Execute the release smoke workload after 100 repeated reset cycles.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2021-10",
+      "kind": "requirement",
+      "known_on": "2021-02-01",
+      "effective_on": "2021-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "2.0",
+        "requirement_id": "SC-2-10",
+        "topic": "Telemetry",
+        "requirement": "Report device temperature and command completion status.",
+        "acceptance": "Compare temperature readout with the calibrated reference within 3 degrees Celsius.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2021-11",
+      "kind": "requirement",
+      "known_on": "2021-02-01",
+      "effective_on": "2021-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "2.0",
+        "requirement_id": "SC-2-11",
+        "topic": "Thermal response",
+        "requirement": "Throttle work admission before the board's configured thermal limit.",
+        "acceptance": "Raise ambient temperature and verify throttling and recovery at configured thresholds.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2021-12",
+      "kind": "requirement",
+      "known_on": "2021-02-01",
+      "effective_on": "2021-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "2.0",
+        "requirement_id": "SC-2-12",
+        "topic": "Error reporting",
+        "requirement": "Return distinct invalid-model, timeout and device-fault status codes.",
+        "acceptance": "Inject each documented fault and check the driver status and recovery path.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2021-13",
+      "kind": "requirement",
+      "known_on": "2021-02-01",
+      "effective_on": "2021-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "2.0",
+        "requirement_id": "SC-2-13",
+        "topic": "Driver package",
+        "requirement": "Deliver a Linux x86-64 reference driver with a version manifest.",
+        "acceptance": "Install on the supported reference image and run the complete release smoke suite.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2021-14",
+      "kind": "requirement",
+      "known_on": "2021-02-01",
+      "effective_on": "2021-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "2.0",
+        "requirement_id": "SC-2-14",
+        "topic": "Reproducibility",
+        "requirement": "Identify silicon revision, firmware and compiler in each diagnostic bundle.",
+        "acceptance": "Recreate an issue report using only the recorded release identifiers and input tensor.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2021-15",
+      "kind": "requirement",
+      "known_on": "2021-02-01",
+      "effective_on": "2021-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "2.0",
+        "requirement_id": "SC-2-15",
+        "topic": "Release evidence",
+        "requirement": "Retain functional, power and thermal verification results.",
+        "acceptance": "Block production release when any required acceptance result is absent or failing.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2021-16",
+      "kind": "requirement",
+      "known_on": "2021-02-01",
+      "effective_on": "2021-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "2.0",
+        "requirement_id": "SC-2-16",
+        "topic": "Change control",
+        "requirement": "Review interface-affecting changes before issuing revised packages.",
+        "acceptance": "Record compatibility impact and obtain Product and Engineering sign-off.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "release-prism-2021",
+      "kind": "release_detail",
+      "known_on": "2021-02-01",
+      "effective_on": "2021-02-01",
+      "data": {
+        "product_id": "product-prism",
+        "version": "2.0",
+        "year": 2021,
+        "metric": "48 V maximum rated input",
+        "operating_point": "12 A reference-stage output",
+        "capability": "digitally supervised multiphase power control with a documented PMBus subset",
+        "customer_problem": "High-density embedded boards need controlled power sequencing and observable fault behavior without losing sight of board-level thermal limits.",
+        "workflow": "Configure the power stage, sequence rails, observe telemetry, and handle protection events through the documented host command interface.",
+        "use_cases": [
+          "warehouse automation",
+          "industrial controller power stages",
+          "embedded compute carrier boards"
+        ],
+        "constraints": "Efficiency applies only to the stated reference-stage operating point. External switches, inductors, cooling and layout remain customer design responsibilities.",
+        "support": "schedule-backed allocation and repeatable factory test",
+        "market": "warehouse automation",
+        "release_date": "2021-08-15",
+        "evaluation_step": "Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example.",
+        "integration_step": "Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption.",
+        "support_email": "applications@sunnysemi.example",
+        "quote_speaker": "person-avery",
+        "quote": "Our priority is to make GulfSwitch 2.0 useful in real equipment, not just impressive in a specification table. Customers need clear operating boundaries, traceable release evidence and an engineering team that helps them qualify the complete design. That is how we intend to earn repeat programs.",
+        "quote_approved": true,
+        "availability": "Production orders and version-matched evaluation kits are available from the launch date, subject to quotation and allocation.",
+        "qualification": "Evaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration.",
+        "exclusions": "No regulatory certification, customer benchmark or customer endorsement is asserted.",
+        "node_nm": 180,
+        "peak_tops": 0,
+        "power_w": 0,
+        "input_max_v": 48,
+        "output_a": 12,
+        "efficiency_percent": 95,
+        "efficiency_conditions": "48 V input, 12 V output, half rated reference-stage load, 25 degrees Celsius ambient; excludes host and enclosure losses."
+      },
+      "refs": [
+        "product-prism",
+        "person-avery",
+        "operating-2021"
+      ]
+    },
+    {
+      "id": "meeting-2021",
+      "kind": "meeting",
+      "known_on": "2021-07-25",
+      "effective_on": "2021-07-25",
+      "data": {
+        "title": "2021 Production Readiness and Allocation discipline",
+        "date": "2021-07-25",
+        "participants": [
+          "person-avery",
+          "person-riley",
+          "person-quinn",
+          "person-casey"
+        ],
+        "location": "Tampa, Florida",
+        "turn_times": [
+          "09:00",
+          "09:02",
+          "09:04",
+          "09:06",
+          "09:08",
+          "09:10",
+          "09:12",
+          "09:14",
+          "09:16",
+          "09:18",
+          "09:20",
+          "09:22",
+          "09:24",
+          "09:26",
+          "09:28",
+          "09:30",
+          "09:32",
+          "09:34",
+          "09:36",
+          "09:38",
+          "09:40",
+          "09:42",
+          "09:44",
+          "09:46",
+          "09:48",
+          "09:50",
+          "09:52",
+          "09:54",
+          "09:56",
+          "09:58",
+          "10:00",
+          "10:02",
+          "10:04",
+          "10:06",
+          "10:08",
+          "10:10"
+        ],
+        "agenda": [
+          "Allocation discipline",
+          "SunCore release evidence",
+          "GulfSwitch adoption",
+          "Capacity commitment controls"
+        ],
+        "positions": {
+          "chief_executive": "allocate constrained starts to qualified designs rather than unverified demand",
+          "engineering": "Do not substitute peak specifications for application qualification.",
+          "product": "Support warehouse automation with schedule-backed allocation and repeatable factory test.",
+          "finance": "Control long wafer-start commitments; match wafer reservations to accepted customer schedules."
+        },
+        "decision": "Proceed toward the August release subject to evidence gates; match wafer reservations to accepted customer schedules.",
+        "rejected_alternative": "An unconditional production ramp before qualification is complete.",
+        "unresolved": "Customer-specific adoption schedules remain subject to accepted quotations.",
+        "actions": [
+          {
+            "owner_id": "person-riley",
+            "task": "Complete version-matched acceptance evidence",
+            "due": "2021-08-05"
+          },
+          {
+            "owner_id": "person-quinn",
+            "task": "Confirm customer evaluation and qualification plans",
+            "due": "2021-08-08"
+          },
+          {
+            "owner_id": "person-casey",
+            "task": "Review staged manufacturing commitments against accepted schedules",
+            "due": "2021-08-10"
+          }
+        ],
+        "governance": "The meeting authorizes preparation, not a board-level capital approval. Failing release evidence must be escalated to the CEO before production release."
+      },
+      "refs": [
+        "company",
+        "person-avery",
+        "person-riley",
+        "person-quinn",
+        "person-casey",
+        "operating-2021"
+      ]
+    },
+    {
+      "id": "operating-2022",
+      "kind": "operating",
+      "known_on": "2022-01-15",
+      "effective_on": "2022-01-15",
+      "data": {
+        "year": 2022,
+        "theme": "Package readiness",
+        "customer_market": "distributed infrastructure",
+        "risk": "package-test capacity becoming the binding constraint",
+        "mitigation": "reserve package-test slots before accepting accelerated ramps",
+        "operating_principle": "release a capacity increment only after package and test readiness are demonstrated together",
+        "adoption_support": "package characterization and documented interface compatibility",
+        "strategy": "Own differentiated silicon architecture and application validation; use external manufacturing rather than build a wafer fab.",
+        "capacity_option": "Stage commitments against qualification evidence.",
+        "alternative": "Commit the entire proposed capacity increment immediately.",
+        "tradeoff": "Staging limits irreversible commitments but can defer some shipment opportunities.",
+        "board_request": "Approve milestone-based capacity releases; retain existing commercial approval limits and require Finance and Engineering sign-off before each increment.",
+        "board_status": "Requested; no board approval is recorded in this briefing.",
+        "accountability": "Quinn Mercer owns customer qualification; Riley Arden owns release evidence; the effective CFO owns capacity-commitment review.",
+        "liquidity_note": "No cash balance, debt balance, free-cash-flow measure or forecast is included.",
+        "price_note": "Pricing and contractual lead times are supplied through customer-specific quotations."
+      },
+      "refs": [
+        "company",
+        "person-quinn",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "release-beacon-2022",
+      "kind": "release_detail",
+      "known_on": "2022-02-01",
+      "effective_on": "2022-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "3.0",
+        "year": 2022,
+        "metric": "48 INT8 TOPS",
+        "operating_point": "18 W board design budget",
+        "capability": "7 nm inference ASIC with PCIe Gen3 x4 host interface",
+        "customer_problem": "Moving industrial inference off a general-purpose host competes with system power, response-time and software-integration constraints.",
+        "workflow": "Capture frames on the host, prepare tensors, submit inference over PCIe, and return results to the host application.",
+        "use_cases": [
+          "distributed infrastructure",
+          "local equipment anomaly detection",
+          "on-device visual inspection"
+        ],
+        "constraints": "Peak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design.",
+        "support": "package characterization and documented interface compatibility",
+        "market": "distributed infrastructure",
+        "release_date": "2022-08-15",
+        "evaluation_step": "Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example.",
+        "integration_step": "Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption.",
+        "support_email": "applications@sunnysemi.example",
+        "quote_speaker": "person-avery",
+        "quote": "Our priority is to make SunCore 3.0 useful in real equipment, not just impressive in a specification table. Customers need clear operating boundaries, traceable release evidence and an engineering team that helps them qualify the complete design. That is how we intend to earn repeat programs.",
+        "quote_approved": true,
+        "availability": "Production orders and version-matched evaluation kits are available from the launch date, subject to quotation and allocation.",
+        "qualification": "Evaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration.",
+        "exclusions": "No regulatory certification, customer benchmark or customer endorsement is asserted.",
+        "node_nm": 7,
+        "peak_tops": 48,
+        "power_w": 18,
+        "input_max_v": 0,
+        "output_a": 0,
+        "efficiency_percent": 0,
+        "efficiency_conditions": "48 V input, 12 V output, half rated reference-stage load, 25 degrees Celsius ambient; excludes host and enclosure losses."
+      },
+      "refs": [
+        "product-beacon",
+        "person-avery",
+        "operating-2022"
+      ]
+    },
+    {
+      "id": "req-beacon-2022-01",
+      "kind": "requirement",
+      "known_on": "2022-02-01",
+      "effective_on": "2022-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "3.0",
+        "requirement_id": "SC-3-01",
+        "topic": "Host link",
+        "requirement": "Enumerate as a PCIe Gen3 x4 endpoint.",
+        "acceptance": "Complete cold-boot enumeration on the reference host in 100 consecutive boots.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2022-02",
+      "kind": "requirement",
+      "known_on": "2022-02-01",
+      "effective_on": "2022-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "3.0",
+        "requirement_id": "SC-3-02",
+        "topic": "Arithmetic",
+        "requirement": "Support signed INT8 multiply-accumulate inference.",
+        "acceptance": "Match the published INT8 golden vectors exactly for supported operators.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2022-03",
+      "kind": "requirement",
+      "known_on": "2022-02-01",
+      "effective_on": "2022-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "3.0",
+        "requirement_id": "SC-3-03",
+        "topic": "Peak compute",
+        "requirement": "Expose a peak of 48 INT8 TOPS at the rated clock.",
+        "acceptance": "Check the architectural operation-count model against the rated configuration.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2022-04",
+      "kind": "requirement",
+      "known_on": "2022-02-01",
+      "effective_on": "2022-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "3.0",
+        "requirement_id": "SC-3-04",
+        "topic": "Power envelope",
+        "requirement": "Use a 18 W reference-board design budget.",
+        "acceptance": "Measure board input power on the release workload without exceeding the budget.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2022-05",
+      "kind": "requirement",
+      "known_on": "2022-02-01",
+      "effective_on": "2022-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "3.0",
+        "requirement_id": "SC-3-05",
+        "topic": "Model interface",
+        "requirement": "Accept the release compiler's versioned binary model package.",
+        "acceptance": "Load a package built with the matching toolchain and reject an incompatible major version.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2022-06",
+      "kind": "requirement",
+      "known_on": "2022-02-01",
+      "effective_on": "2022-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "3.0",
+        "requirement_id": "SC-3-06",
+        "topic": "Unsupported operators",
+        "requirement": "Reject models containing operators outside the supported list.",
+        "acceptance": "Return an operator diagnostic before device execution for every negative test.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2022-07",
+      "kind": "requirement",
+      "known_on": "2022-02-01",
+      "effective_on": "2022-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "3.0",
+        "requirement_id": "SC-3-07",
+        "topic": "Tensor validation",
+        "requirement": "Validate tensor shape, element type and buffer bounds.",
+        "acceptance": "Reject malformed dimensions and undersized buffers without DMA outside the allocation.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2022-08",
+      "kind": "requirement",
+      "known_on": "2022-02-01",
+      "effective_on": "2022-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "3.0",
+        "requirement_id": "SC-3-08",
+        "topic": "DMA protection",
+        "requirement": "Limit DMA transactions to driver-registered buffers.",
+        "acceptance": "Run the invalid-buffer suite with no unauthorized host-memory access.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2022-09",
+      "kind": "requirement",
+      "known_on": "2022-02-01",
+      "effective_on": "2022-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "3.0",
+        "requirement_id": "SC-3-09",
+        "topic": "Reset recovery",
+        "requirement": "Recover the command interface after a host-issued device reset.",
+        "acceptance": "Execute the release smoke workload after 100 repeated reset cycles.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2022-10",
+      "kind": "requirement",
+      "known_on": "2022-02-01",
+      "effective_on": "2022-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "3.0",
+        "requirement_id": "SC-3-10",
+        "topic": "Telemetry",
+        "requirement": "Report device temperature and command completion status.",
+        "acceptance": "Compare temperature readout with the calibrated reference within 3 degrees Celsius.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2022-11",
+      "kind": "requirement",
+      "known_on": "2022-02-01",
+      "effective_on": "2022-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "3.0",
+        "requirement_id": "SC-3-11",
+        "topic": "Thermal response",
+        "requirement": "Throttle work admission before the board's configured thermal limit.",
+        "acceptance": "Raise ambient temperature and verify throttling and recovery at configured thresholds.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2022-12",
+      "kind": "requirement",
+      "known_on": "2022-02-01",
+      "effective_on": "2022-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "3.0",
+        "requirement_id": "SC-3-12",
+        "topic": "Error reporting",
+        "requirement": "Return distinct invalid-model, timeout and device-fault status codes.",
+        "acceptance": "Inject each documented fault and check the driver status and recovery path.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2022-13",
+      "kind": "requirement",
+      "known_on": "2022-02-01",
+      "effective_on": "2022-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "3.0",
+        "requirement_id": "SC-3-13",
+        "topic": "Driver package",
+        "requirement": "Deliver a Linux x86-64 reference driver with a version manifest.",
+        "acceptance": "Install on the supported reference image and run the complete release smoke suite.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2022-14",
+      "kind": "requirement",
+      "known_on": "2022-02-01",
+      "effective_on": "2022-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "3.0",
+        "requirement_id": "SC-3-14",
+        "topic": "Reproducibility",
+        "requirement": "Identify silicon revision, firmware and compiler in each diagnostic bundle.",
+        "acceptance": "Recreate an issue report using only the recorded release identifiers and input tensor.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2022-15",
+      "kind": "requirement",
+      "known_on": "2022-02-01",
+      "effective_on": "2022-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "3.0",
+        "requirement_id": "SC-3-15",
+        "topic": "Release evidence",
+        "requirement": "Retain functional, power and thermal verification results.",
+        "acceptance": "Block production release when any required acceptance result is absent or failing.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2022-16",
+      "kind": "requirement",
+      "known_on": "2022-02-01",
+      "effective_on": "2022-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "3.0",
+        "requirement_id": "SC-3-16",
+        "topic": "Change control",
+        "requirement": "Review interface-affecting changes before issuing revised packages.",
+        "acceptance": "Record compatibility impact and obtain Product and Engineering sign-off.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "release-prism-2022",
+      "kind": "release_detail",
+      "known_on": "2022-02-01",
+      "effective_on": "2022-02-01",
+      "data": {
+        "product_id": "product-prism",
+        "version": "3.0",
+        "year": 2022,
+        "metric": "60 V maximum rated input",
+        "operating_point": "15 A reference-stage output",
+        "capability": "digitally supervised multiphase power control with a documented PMBus subset",
+        "customer_problem": "High-density embedded boards need controlled power sequencing and observable fault behavior without losing sight of board-level thermal limits.",
+        "workflow": "Configure the power stage, sequence rails, observe telemetry, and handle protection events through the documented host command interface.",
+        "use_cases": [
+          "distributed infrastructure",
+          "industrial controller power stages",
+          "embedded compute carrier boards"
+        ],
+        "constraints": "Efficiency applies only to the stated reference-stage operating point. External switches, inductors, cooling and layout remain customer design responsibilities.",
+        "support": "package characterization and documented interface compatibility",
+        "market": "distributed infrastructure",
+        "release_date": "2022-08-15",
+        "evaluation_step": "Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example.",
+        "integration_step": "Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption.",
+        "support_email": "applications@sunnysemi.example",
+        "quote_speaker": "person-avery",
+        "quote": "Our priority is to make GulfSwitch 3.0 useful in real equipment, not just impressive in a specification table. Customers need clear operating boundaries, traceable release evidence and an engineering team that helps them qualify the complete design. That is how we intend to earn repeat programs.",
+        "quote_approved": true,
+        "availability": "Production orders and version-matched evaluation kits are available from the launch date, subject to quotation and allocation.",
+        "qualification": "Evaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration.",
+        "exclusions": "No regulatory certification, customer benchmark or customer endorsement is asserted.",
+        "node_nm": 180,
+        "peak_tops": 0,
+        "power_w": 0,
+        "input_max_v": 60,
+        "output_a": 15,
+        "efficiency_percent": 95,
+        "efficiency_conditions": "48 V input, 12 V output, half rated reference-stage load, 25 degrees Celsius ambient; excludes host and enclosure losses."
+      },
+      "refs": [
+        "product-prism",
+        "person-avery",
+        "operating-2022"
+      ]
+    },
+    {
+      "id": "meeting-2022",
+      "kind": "meeting",
+      "known_on": "2022-07-25",
+      "effective_on": "2022-07-25",
+      "data": {
+        "title": "2022 Production Readiness and Package readiness",
+        "date": "2022-07-25",
+        "participants": [
+          "person-avery",
+          "person-riley",
+          "person-quinn",
+          "person-casey"
+        ],
+        "location": "Tampa, Florida",
+        "turn_times": [
+          "09:00",
+          "09:02",
+          "09:04",
+          "09:06",
+          "09:08",
+          "09:10",
+          "09:12",
+          "09:14",
+          "09:16",
+          "09:18",
+          "09:20",
+          "09:22",
+          "09:24",
+          "09:26",
+          "09:28",
+          "09:30",
+          "09:32",
+          "09:34",
+          "09:36",
+          "09:38",
+          "09:40",
+          "09:42",
+          "09:44",
+          "09:46",
+          "09:48",
+          "09:50",
+          "09:52",
+          "09:54",
+          "09:56",
+          "09:58",
+          "10:00",
+          "10:02",
+          "10:04",
+          "10:06",
+          "10:08",
+          "10:10"
+        ],
+        "agenda": [
+          "Package readiness",
+          "SunCore release evidence",
+          "GulfSwitch adoption",
+          "Capacity commitment controls"
+        ],
+        "positions": {
+          "chief_executive": "release a capacity increment only after package and test readiness are demonstrated together",
+          "engineering": "Do not substitute peak specifications for application qualification.",
+          "product": "Support distributed infrastructure with package characterization and documented interface compatibility.",
+          "finance": "Control package-test capacity becoming the binding constraint; reserve package-test slots before accepting accelerated ramps."
+        },
+        "decision": "Proceed toward the August release subject to evidence gates; reserve package-test slots before accepting accelerated ramps.",
+        "rejected_alternative": "An unconditional production ramp before qualification is complete.",
+        "unresolved": "Customer-specific adoption schedules remain subject to accepted quotations.",
+        "actions": [
+          {
+            "owner_id": "person-riley",
+            "task": "Complete version-matched acceptance evidence",
+            "due": "2022-08-05"
+          },
+          {
+            "owner_id": "person-quinn",
+            "task": "Confirm customer evaluation and qualification plans",
+            "due": "2022-08-08"
+          },
+          {
+            "owner_id": "person-casey",
+            "task": "Review staged manufacturing commitments against accepted schedules",
+            "due": "2022-08-10"
+          }
+        ],
+        "governance": "The meeting authorizes preparation, not a board-level capital approval. Failing release evidence must be escalated to the CEO before production release."
+      },
+      "refs": [
+        "company",
+        "person-avery",
+        "person-riley",
+        "person-quinn",
+        "person-casey",
+        "operating-2022"
+      ]
+    },
+    {
+      "id": "operating-2023",
+      "kind": "operating",
+      "known_on": "2023-01-15",
+      "effective_on": "2023-01-15",
+      "data": {
+        "year": 2023,
+        "theme": "Software maturity",
+        "customer_market": "machine-vision equipment",
+        "risk": "compiler regressions across model updates",
+        "mitigation": "freeze the supported operator set and retain regression evidence",
+        "operating_principle": "treat compiler qualification as part of the hardware delivery promise",
+        "adoption_support": "model-porting support and reproducible application validation",
+        "strategy": "Own differentiated silicon architecture and application validation; use external manufacturing rather than build a wafer fab.",
+        "capacity_option": "Stage commitments against qualification evidence.",
+        "alternative": "Commit the entire proposed capacity increment immediately.",
+        "tradeoff": "Staging limits irreversible commitments but can defer some shipment opportunities.",
+        "board_request": "Approve milestone-based capacity releases; retain existing commercial approval limits and require Finance and Engineering sign-off before each increment.",
+        "board_status": "Requested; no board approval is recorded in this briefing.",
+        "accountability": "Quinn Mercer owns customer qualification; Riley Arden owns release evidence; the effective CFO owns capacity-commitment review.",
+        "liquidity_note": "No cash balance, debt balance, free-cash-flow measure or forecast is included.",
+        "price_note": "Pricing and contractual lead times are supplied through customer-specific quotations."
+      },
+      "refs": [
+        "company",
+        "person-quinn",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "release-beacon-2023",
+      "kind": "release_detail",
+      "known_on": "2023-02-01",
+      "effective_on": "2023-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "4.0",
+        "year": 2023,
+        "metric": "96 INT8 TOPS",
+        "operating_point": "22 W board design budget",
+        "capability": "7 nm inference ASIC with PCIe Gen3 x4 host interface",
+        "customer_problem": "Moving industrial inference off a general-purpose host competes with system power, response-time and software-integration constraints.",
+        "workflow": "Capture frames on the host, prepare tensors, submit inference over PCIe, and return results to the host application.",
+        "use_cases": [
+          "machine-vision equipment",
+          "local equipment anomaly detection",
+          "on-device visual inspection"
+        ],
+        "constraints": "Peak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design.",
+        "support": "model-porting support and reproducible application validation",
+        "market": "machine-vision equipment",
+        "release_date": "2023-08-15",
+        "evaluation_step": "Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example.",
+        "integration_step": "Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption.",
+        "support_email": "applications@sunnysemi.example",
+        "quote_speaker": "person-avery",
+        "quote": "Our priority is to make SunCore 4.0 useful in real equipment, not just impressive in a specification table. Customers need clear operating boundaries, traceable release evidence and an engineering team that helps them qualify the complete design. That is how we intend to earn repeat programs.",
+        "quote_approved": true,
+        "availability": "Production orders and version-matched evaluation kits are available from the launch date, subject to quotation and allocation.",
+        "qualification": "Evaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration.",
+        "exclusions": "No regulatory certification, customer benchmark or customer endorsement is asserted.",
+        "node_nm": 7,
+        "peak_tops": 96,
+        "power_w": 22,
+        "input_max_v": 0,
+        "output_a": 0,
+        "efficiency_percent": 0,
+        "efficiency_conditions": "48 V input, 12 V output, half rated reference-stage load, 25 degrees Celsius ambient; excludes host and enclosure losses."
+      },
+      "refs": [
+        "product-beacon",
+        "person-avery",
+        "operating-2023"
+      ]
+    },
+    {
+      "id": "req-beacon-2023-01",
+      "kind": "requirement",
+      "known_on": "2023-02-01",
+      "effective_on": "2023-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "4.0",
+        "requirement_id": "SC-4-01",
+        "topic": "Host link",
+        "requirement": "Enumerate as a PCIe Gen3 x4 endpoint.",
+        "acceptance": "Complete cold-boot enumeration on the reference host in 100 consecutive boots.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2023-02",
+      "kind": "requirement",
+      "known_on": "2023-02-01",
+      "effective_on": "2023-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "4.0",
+        "requirement_id": "SC-4-02",
+        "topic": "Arithmetic",
+        "requirement": "Support signed INT8 multiply-accumulate inference.",
+        "acceptance": "Match the published INT8 golden vectors exactly for supported operators.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2023-03",
+      "kind": "requirement",
+      "known_on": "2023-02-01",
+      "effective_on": "2023-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "4.0",
+        "requirement_id": "SC-4-03",
+        "topic": "Peak compute",
+        "requirement": "Expose a peak of 96 INT8 TOPS at the rated clock.",
+        "acceptance": "Check the architectural operation-count model against the rated configuration.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2023-04",
+      "kind": "requirement",
+      "known_on": "2023-02-01",
+      "effective_on": "2023-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "4.0",
+        "requirement_id": "SC-4-04",
+        "topic": "Power envelope",
+        "requirement": "Use a 22 W reference-board design budget.",
+        "acceptance": "Measure board input power on the release workload without exceeding the budget.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2023-05",
+      "kind": "requirement",
+      "known_on": "2023-02-01",
+      "effective_on": "2023-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "4.0",
+        "requirement_id": "SC-4-05",
+        "topic": "Model interface",
+        "requirement": "Accept the release compiler's versioned binary model package.",
+        "acceptance": "Load a package built with the matching toolchain and reject an incompatible major version.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2023-06",
+      "kind": "requirement",
+      "known_on": "2023-02-01",
+      "effective_on": "2023-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "4.0",
+        "requirement_id": "SC-4-06",
+        "topic": "Unsupported operators",
+        "requirement": "Reject models containing operators outside the supported list.",
+        "acceptance": "Return an operator diagnostic before device execution for every negative test.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2023-07",
+      "kind": "requirement",
+      "known_on": "2023-02-01",
+      "effective_on": "2023-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "4.0",
+        "requirement_id": "SC-4-07",
+        "topic": "Tensor validation",
+        "requirement": "Validate tensor shape, element type and buffer bounds.",
+        "acceptance": "Reject malformed dimensions and undersized buffers without DMA outside the allocation.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2023-08",
+      "kind": "requirement",
+      "known_on": "2023-02-01",
+      "effective_on": "2023-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "4.0",
+        "requirement_id": "SC-4-08",
+        "topic": "DMA protection",
+        "requirement": "Limit DMA transactions to driver-registered buffers.",
+        "acceptance": "Run the invalid-buffer suite with no unauthorized host-memory access.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2023-09",
+      "kind": "requirement",
+      "known_on": "2023-02-01",
+      "effective_on": "2023-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "4.0",
+        "requirement_id": "SC-4-09",
+        "topic": "Reset recovery",
+        "requirement": "Recover the command interface after a host-issued device reset.",
+        "acceptance": "Execute the release smoke workload after 100 repeated reset cycles.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2023-10",
+      "kind": "requirement",
+      "known_on": "2023-02-01",
+      "effective_on": "2023-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "4.0",
+        "requirement_id": "SC-4-10",
+        "topic": "Telemetry",
+        "requirement": "Report device temperature and command completion status.",
+        "acceptance": "Compare temperature readout with the calibrated reference within 3 degrees Celsius.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2023-11",
+      "kind": "requirement",
+      "known_on": "2023-02-01",
+      "effective_on": "2023-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "4.0",
+        "requirement_id": "SC-4-11",
+        "topic": "Thermal response",
+        "requirement": "Throttle work admission before the board's configured thermal limit.",
+        "acceptance": "Raise ambient temperature and verify throttling and recovery at configured thresholds.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2023-12",
+      "kind": "requirement",
+      "known_on": "2023-02-01",
+      "effective_on": "2023-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "4.0",
+        "requirement_id": "SC-4-12",
+        "topic": "Error reporting",
+        "requirement": "Return distinct invalid-model, timeout and device-fault status codes.",
+        "acceptance": "Inject each documented fault and check the driver status and recovery path.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2023-13",
+      "kind": "requirement",
+      "known_on": "2023-02-01",
+      "effective_on": "2023-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "4.0",
+        "requirement_id": "SC-4-13",
+        "topic": "Driver package",
+        "requirement": "Deliver a Linux x86-64 reference driver with a version manifest.",
+        "acceptance": "Install on the supported reference image and run the complete release smoke suite.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2023-14",
+      "kind": "requirement",
+      "known_on": "2023-02-01",
+      "effective_on": "2023-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "4.0",
+        "requirement_id": "SC-4-14",
+        "topic": "Reproducibility",
+        "requirement": "Identify silicon revision, firmware and compiler in each diagnostic bundle.",
+        "acceptance": "Recreate an issue report using only the recorded release identifiers and input tensor.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2023-15",
+      "kind": "requirement",
+      "known_on": "2023-02-01",
+      "effective_on": "2023-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "4.0",
+        "requirement_id": "SC-4-15",
+        "topic": "Release evidence",
+        "requirement": "Retain functional, power and thermal verification results.",
+        "acceptance": "Block production release when any required acceptance result is absent or failing.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2023-16",
+      "kind": "requirement",
+      "known_on": "2023-02-01",
+      "effective_on": "2023-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "4.0",
+        "requirement_id": "SC-4-16",
+        "topic": "Change control",
+        "requirement": "Review interface-affecting changes before issuing revised packages.",
+        "acceptance": "Record compatibility impact and obtain Product and Engineering sign-off.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "release-prism-2023",
+      "kind": "release_detail",
+      "known_on": "2023-02-01",
+      "effective_on": "2023-02-01",
+      "data": {
+        "product_id": "product-prism",
+        "version": "4.0",
+        "year": 2023,
+        "metric": "60 V maximum rated input",
+        "operating_point": "18 A reference-stage output",
+        "capability": "digitally supervised multiphase power control with a documented PMBus subset",
+        "customer_problem": "High-density embedded boards need controlled power sequencing and observable fault behavior without losing sight of board-level thermal limits.",
+        "workflow": "Configure the power stage, sequence rails, observe telemetry, and handle protection events through the documented host command interface.",
+        "use_cases": [
+          "machine-vision equipment",
+          "industrial controller power stages",
+          "embedded compute carrier boards"
+        ],
+        "constraints": "Efficiency applies only to the stated reference-stage operating point. External switches, inductors, cooling and layout remain customer design responsibilities.",
+        "support": "model-porting support and reproducible application validation",
+        "market": "machine-vision equipment",
+        "release_date": "2023-08-15",
+        "evaluation_step": "Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example.",
+        "integration_step": "Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption.",
+        "support_email": "applications@sunnysemi.example",
+        "quote_speaker": "person-avery",
+        "quote": "Our priority is to make GulfSwitch 4.0 useful in real equipment, not just impressive in a specification table. Customers need clear operating boundaries, traceable release evidence and an engineering team that helps them qualify the complete design. That is how we intend to earn repeat programs.",
+        "quote_approved": true,
+        "availability": "Production orders and version-matched evaluation kits are available from the launch date, subject to quotation and allocation.",
+        "qualification": "Evaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration.",
+        "exclusions": "No regulatory certification, customer benchmark or customer endorsement is asserted.",
+        "node_nm": 180,
+        "peak_tops": 0,
+        "power_w": 0,
+        "input_max_v": 60,
+        "output_a": 18,
+        "efficiency_percent": 96,
+        "efficiency_conditions": "48 V input, 12 V output, half rated reference-stage load, 25 degrees Celsius ambient; excludes host and enclosure losses."
+      },
+      "refs": [
+        "product-prism",
+        "person-avery",
+        "operating-2023"
+      ]
+    },
+    {
+      "id": "meeting-2023",
+      "kind": "meeting",
+      "known_on": "2023-07-25",
+      "effective_on": "2023-07-25",
+      "data": {
+        "title": "2023 Production Readiness and Software maturity",
+        "date": "2023-07-25",
+        "participants": [
+          "person-avery",
+          "person-riley",
+          "person-quinn",
+          "person-casey"
+        ],
+        "location": "Tampa, Florida",
+        "turn_times": [
+          "09:00",
+          "09:02",
+          "09:04",
+          "09:06",
+          "09:08",
+          "09:10",
+          "09:12",
+          "09:14",
+          "09:16",
+          "09:18",
+          "09:20",
+          "09:22",
+          "09:24",
+          "09:26",
+          "09:28",
+          "09:30",
+          "09:32",
+          "09:34",
+          "09:36",
+          "09:38",
+          "09:40",
+          "09:42",
+          "09:44",
+          "09:46",
+          "09:48",
+          "09:50",
+          "09:52",
+          "09:54",
+          "09:56",
+          "09:58",
+          "10:00",
+          "10:02",
+          "10:04",
+          "10:06",
+          "10:08",
+          "10:10"
+        ],
+        "agenda": [
+          "Software maturity",
+          "SunCore release evidence",
+          "GulfSwitch adoption",
+          "Capacity commitment controls"
+        ],
+        "positions": {
+          "chief_executive": "treat compiler qualification as part of the hardware delivery promise",
+          "engineering": "Do not substitute peak specifications for application qualification.",
+          "product": "Support machine-vision equipment with model-porting support and reproducible application validation.",
+          "finance": "Control compiler regressions across model updates; freeze the supported operator set and retain regression evidence."
+        },
+        "decision": "Proceed toward the August release subject to evidence gates; freeze the supported operator set and retain regression evidence.",
+        "rejected_alternative": "An unconditional production ramp before qualification is complete.",
+        "unresolved": "Customer-specific adoption schedules remain subject to accepted quotations.",
+        "actions": [
+          {
+            "owner_id": "person-riley",
+            "task": "Complete version-matched acceptance evidence",
+            "due": "2023-08-05"
+          },
+          {
+            "owner_id": "person-quinn",
+            "task": "Confirm customer evaluation and qualification plans",
+            "due": "2023-08-08"
+          },
+          {
+            "owner_id": "person-casey",
+            "task": "Review staged manufacturing commitments against accepted schedules",
+            "due": "2023-08-10"
+          }
+        ],
+        "governance": "The meeting authorizes preparation, not a board-level capital approval. Failing release evidence must be escalated to the CEO before production release."
+      },
+      "refs": [
+        "company",
+        "person-avery",
+        "person-riley",
+        "person-quinn",
+        "person-casey",
+        "operating-2023"
+      ]
+    },
+    {
+      "id": "operating-2024",
+      "kind": "operating",
+      "known_on": "2024-01-15",
+      "effective_on": "2024-01-15",
+      "data": {
+        "year": 2024,
+        "theme": "Thermal accountability",
+        "customer_market": "embedded industrial computing",
+        "risk": "customer enclosures with inadequate thermal headroom",
+        "mitigation": "require board-level thermal evidence before ramp approval",
+        "operating_principle": "prefer a verified operating point to an unsupported peak-performance claim",
+        "adoption_support": "customer thermal reviews and power-aware deployment",
+        "strategy": "Own differentiated silicon architecture and application validation; use external manufacturing rather than build a wafer fab.",
+        "capacity_option": "Stage commitments against qualification evidence.",
+        "alternative": "Commit the entire proposed capacity increment immediately.",
+        "tradeoff": "Staging limits irreversible commitments but can defer some shipment opportunities.",
+        "board_request": "Approve milestone-based capacity releases; retain existing commercial approval limits and require Finance and Engineering sign-off before each increment.",
+        "board_status": "Requested; no board approval is recorded in this briefing.",
+        "accountability": "Quinn Mercer owns customer qualification; Riley Arden owns release evidence; the effective CFO owns capacity-commitment review.",
+        "liquidity_note": "No cash balance, debt balance, free-cash-flow measure or forecast is included.",
+        "price_note": "Pricing and contractual lead times are supplied through customer-specific quotations."
+      },
+      "refs": [
+        "company",
+        "person-quinn",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "release-beacon-2024",
+      "kind": "release_detail",
+      "known_on": "2024-02-01",
+      "effective_on": "2024-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "5.0",
+        "year": 2024,
+        "metric": "160 INT8 TOPS",
+        "operating_point": "28 W board design budget",
+        "capability": "5 nm inference ASIC with PCIe Gen3 x4 host interface",
+        "customer_problem": "Moving industrial inference off a general-purpose host competes with system power, response-time and software-integration constraints.",
+        "workflow": "Capture frames on the host, prepare tensors, submit inference over PCIe, and return results to the host application.",
+        "use_cases": [
+          "embedded industrial computing",
+          "local equipment anomaly detection",
+          "on-device visual inspection"
+        ],
+        "constraints": "Peak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design.",
+        "support": "customer thermal reviews and power-aware deployment",
+        "market": "embedded industrial computing",
+        "release_date": "2024-08-15",
+        "evaluation_step": "Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example.",
+        "integration_step": "Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption.",
+        "support_email": "applications@sunnysemi.example",
+        "quote_speaker": "person-avery",
+        "quote": "Our priority is to make SunCore 5.0 useful in real equipment, not just impressive in a specification table. Customers need clear operating boundaries, traceable release evidence and an engineering team that helps them qualify the complete design. That is how we intend to earn repeat programs.",
+        "quote_approved": true,
+        "availability": "Production orders and version-matched evaluation kits are available from the launch date, subject to quotation and allocation.",
+        "qualification": "Evaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration.",
+        "exclusions": "No regulatory certification, customer benchmark or customer endorsement is asserted.",
+        "node_nm": 5,
+        "peak_tops": 160,
+        "power_w": 28,
+        "input_max_v": 0,
+        "output_a": 0,
+        "efficiency_percent": 0,
+        "efficiency_conditions": "48 V input, 12 V output, half rated reference-stage load, 25 degrees Celsius ambient; excludes host and enclosure losses."
+      },
+      "refs": [
+        "product-beacon",
+        "person-avery",
+        "operating-2024"
+      ]
+    },
+    {
+      "id": "req-beacon-2024-01",
+      "kind": "requirement",
+      "known_on": "2024-02-01",
+      "effective_on": "2024-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "5.0",
+        "requirement_id": "SC-5-01",
+        "topic": "Host link",
+        "requirement": "Enumerate as a PCIe Gen3 x4 endpoint.",
+        "acceptance": "Complete cold-boot enumeration on the reference host in 100 consecutive boots.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2024-02",
+      "kind": "requirement",
+      "known_on": "2024-02-01",
+      "effective_on": "2024-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "5.0",
+        "requirement_id": "SC-5-02",
+        "topic": "Arithmetic",
+        "requirement": "Support signed INT8 multiply-accumulate inference.",
+        "acceptance": "Match the published INT8 golden vectors exactly for supported operators.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2024-03",
+      "kind": "requirement",
+      "known_on": "2024-02-01",
+      "effective_on": "2024-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "5.0",
+        "requirement_id": "SC-5-03",
+        "topic": "Peak compute",
+        "requirement": "Expose a peak of 160 INT8 TOPS at the rated clock.",
+        "acceptance": "Check the architectural operation-count model against the rated configuration.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2024-04",
+      "kind": "requirement",
+      "known_on": "2024-02-01",
+      "effective_on": "2024-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "5.0",
+        "requirement_id": "SC-5-04",
+        "topic": "Power envelope",
+        "requirement": "Use a 28 W reference-board design budget.",
+        "acceptance": "Measure board input power on the release workload without exceeding the budget.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2024-05",
+      "kind": "requirement",
+      "known_on": "2024-02-01",
+      "effective_on": "2024-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "5.0",
+        "requirement_id": "SC-5-05",
+        "topic": "Model interface",
+        "requirement": "Accept the release compiler's versioned binary model package.",
+        "acceptance": "Load a package built with the matching toolchain and reject an incompatible major version.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2024-06",
+      "kind": "requirement",
+      "known_on": "2024-02-01",
+      "effective_on": "2024-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "5.0",
+        "requirement_id": "SC-5-06",
+        "topic": "Unsupported operators",
+        "requirement": "Reject models containing operators outside the supported list.",
+        "acceptance": "Return an operator diagnostic before device execution for every negative test.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2024-07",
+      "kind": "requirement",
+      "known_on": "2024-02-01",
+      "effective_on": "2024-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "5.0",
+        "requirement_id": "SC-5-07",
+        "topic": "Tensor validation",
+        "requirement": "Validate tensor shape, element type and buffer bounds.",
+        "acceptance": "Reject malformed dimensions and undersized buffers without DMA outside the allocation.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2024-08",
+      "kind": "requirement",
+      "known_on": "2024-02-01",
+      "effective_on": "2024-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "5.0",
+        "requirement_id": "SC-5-08",
+        "topic": "DMA protection",
+        "requirement": "Limit DMA transactions to driver-registered buffers.",
+        "acceptance": "Run the invalid-buffer suite with no unauthorized host-memory access.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2024-09",
+      "kind": "requirement",
+      "known_on": "2024-02-01",
+      "effective_on": "2024-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "5.0",
+        "requirement_id": "SC-5-09",
+        "topic": "Reset recovery",
+        "requirement": "Recover the command interface after a host-issued device reset.",
+        "acceptance": "Execute the release smoke workload after 100 repeated reset cycles.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2024-10",
+      "kind": "requirement",
+      "known_on": "2024-02-01",
+      "effective_on": "2024-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "5.0",
+        "requirement_id": "SC-5-10",
+        "topic": "Telemetry",
+        "requirement": "Report device temperature and command completion status.",
+        "acceptance": "Compare temperature readout with the calibrated reference within 3 degrees Celsius.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2024-11",
+      "kind": "requirement",
+      "known_on": "2024-02-01",
+      "effective_on": "2024-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "5.0",
+        "requirement_id": "SC-5-11",
+        "topic": "Thermal response",
+        "requirement": "Throttle work admission before the board's configured thermal limit.",
+        "acceptance": "Raise ambient temperature and verify throttling and recovery at configured thresholds.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2024-12",
+      "kind": "requirement",
+      "known_on": "2024-02-01",
+      "effective_on": "2024-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "5.0",
+        "requirement_id": "SC-5-12",
+        "topic": "Error reporting",
+        "requirement": "Return distinct invalid-model, timeout and device-fault status codes.",
+        "acceptance": "Inject each documented fault and check the driver status and recovery path.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2024-13",
+      "kind": "requirement",
+      "known_on": "2024-02-01",
+      "effective_on": "2024-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "5.0",
+        "requirement_id": "SC-5-13",
+        "topic": "Driver package",
+        "requirement": "Deliver a Linux x86-64 reference driver with a version manifest.",
+        "acceptance": "Install on the supported reference image and run the complete release smoke suite.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2024-14",
+      "kind": "requirement",
+      "known_on": "2024-02-01",
+      "effective_on": "2024-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "5.0",
+        "requirement_id": "SC-5-14",
+        "topic": "Reproducibility",
+        "requirement": "Identify silicon revision, firmware and compiler in each diagnostic bundle.",
+        "acceptance": "Recreate an issue report using only the recorded release identifiers and input tensor.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2024-15",
+      "kind": "requirement",
+      "known_on": "2024-02-01",
+      "effective_on": "2024-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "5.0",
+        "requirement_id": "SC-5-15",
+        "topic": "Release evidence",
+        "requirement": "Retain functional, power and thermal verification results.",
+        "acceptance": "Block production release when any required acceptance result is absent or failing.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2024-16",
+      "kind": "requirement",
+      "known_on": "2024-02-01",
+      "effective_on": "2024-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "5.0",
+        "requirement_id": "SC-5-16",
+        "topic": "Change control",
+        "requirement": "Review interface-affecting changes before issuing revised packages.",
+        "acceptance": "Record compatibility impact and obtain Product and Engineering sign-off.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "release-prism-2024",
+      "kind": "release_detail",
+      "known_on": "2024-02-01",
+      "effective_on": "2024-02-01",
+      "data": {
+        "product_id": "product-prism",
+        "version": "5.0",
+        "year": 2024,
+        "metric": "80 V maximum rated input",
+        "operating_point": "20 A reference-stage output",
+        "capability": "digitally supervised multiphase power control with a documented PMBus subset",
+        "customer_problem": "High-density embedded boards need controlled power sequencing and observable fault behavior without losing sight of board-level thermal limits.",
+        "workflow": "Configure the power stage, sequence rails, observe telemetry, and handle protection events through the documented host command interface.",
+        "use_cases": [
+          "embedded industrial computing",
+          "industrial controller power stages",
+          "embedded compute carrier boards"
+        ],
+        "constraints": "Efficiency applies only to the stated reference-stage operating point. External switches, inductors, cooling and layout remain customer design responsibilities.",
+        "support": "customer thermal reviews and power-aware deployment",
+        "market": "embedded industrial computing",
+        "release_date": "2024-08-15",
+        "evaluation_step": "Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example.",
+        "integration_step": "Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption.",
+        "support_email": "applications@sunnysemi.example",
+        "quote_speaker": "person-avery",
+        "quote": "Our priority is to make GulfSwitch 5.0 useful in real equipment, not just impressive in a specification table. Customers need clear operating boundaries, traceable release evidence and an engineering team that helps them qualify the complete design. That is how we intend to earn repeat programs.",
+        "quote_approved": true,
+        "availability": "Production orders and version-matched evaluation kits are available from the launch date, subject to quotation and allocation.",
+        "qualification": "Evaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration.",
+        "exclusions": "No regulatory certification, customer benchmark or customer endorsement is asserted.",
+        "node_nm": 180,
+        "peak_tops": 0,
+        "power_w": 0,
+        "input_max_v": 80,
+        "output_a": 20,
+        "efficiency_percent": 96,
+        "efficiency_conditions": "48 V input, 12 V output, half rated reference-stage load, 25 degrees Celsius ambient; excludes host and enclosure losses."
+      },
+      "refs": [
+        "product-prism",
+        "person-avery",
+        "operating-2024"
+      ]
+    },
+    {
+      "id": "meeting-2024",
+      "kind": "meeting",
+      "known_on": "2024-07-25",
+      "effective_on": "2024-07-25",
+      "data": {
+        "title": "2024 Production Readiness and Thermal accountability",
+        "date": "2024-07-25",
+        "participants": [
+          "person-avery",
+          "person-riley",
+          "person-quinn",
+          "person-casey"
+        ],
+        "location": "Tampa, Florida",
+        "turn_times": [
+          "09:00",
+          "09:02",
+          "09:04",
+          "09:06",
+          "09:08",
+          "09:10",
+          "09:12",
+          "09:14",
+          "09:16",
+          "09:18",
+          "09:20",
+          "09:22",
+          "09:24",
+          "09:26",
+          "09:28",
+          "09:30",
+          "09:32",
+          "09:34",
+          "09:36",
+          "09:38",
+          "09:40",
+          "09:42",
+          "09:44",
+          "09:46",
+          "09:48",
+          "09:50",
+          "09:52",
+          "09:54",
+          "09:56",
+          "09:58",
+          "10:00",
+          "10:02",
+          "10:04",
+          "10:06",
+          "10:08",
+          "10:10"
+        ],
+        "agenda": [
+          "Thermal accountability",
+          "SunCore release evidence",
+          "GulfSwitch adoption",
+          "Capacity commitment controls"
+        ],
+        "positions": {
+          "chief_executive": "prefer a verified operating point to an unsupported peak-performance claim",
+          "engineering": "Do not substitute peak specifications for application qualification.",
+          "product": "Support embedded industrial computing with customer thermal reviews and power-aware deployment.",
+          "finance": "Control customer enclosures with inadequate thermal headroom; require board-level thermal evidence before ramp approval."
+        },
+        "decision": "Proceed toward the August release subject to evidence gates; require board-level thermal evidence before ramp approval.",
+        "rejected_alternative": "An unconditional production ramp before qualification is complete.",
+        "unresolved": "Customer-specific adoption schedules remain subject to accepted quotations.",
+        "actions": [
+          {
+            "owner_id": "person-riley",
+            "task": "Complete version-matched acceptance evidence",
+            "due": "2024-08-05"
+          },
+          {
+            "owner_id": "person-quinn",
+            "task": "Confirm customer evaluation and qualification plans",
+            "due": "2024-08-08"
+          },
+          {
+            "owner_id": "person-casey",
+            "task": "Review staged manufacturing commitments against accepted schedules",
+            "due": "2024-08-10"
+          }
+        ],
+        "governance": "The meeting authorizes preparation, not a board-level capital approval. Failing release evidence must be escalated to the CEO before production release."
+      },
+      "refs": [
+        "company",
+        "person-avery",
+        "person-riley",
+        "person-quinn",
+        "person-casey",
+        "operating-2024"
+      ]
+    },
+    {
+      "id": "operating-2025",
+      "kind": "operating",
+      "known_on": "2025-01-15",
+      "effective_on": "2025-01-15",
+      "data": {
+        "year": 2025,
+        "theme": "Profitable scale",
+        "customer_market": "high-density edge systems",
+        "risk": "working-capital exposure from accelerated production commitments",
+        "mitigation": "stage capacity commitments against qualification and accepted schedules",
+        "operating_principle": "protect delivery reliability and operating discipline while scaling profitable demand",
+        "adoption_support": "release-controlled adoption and milestone-based production support",
+        "strategy": "Own differentiated silicon architecture and application validation; use external manufacturing rather than build a wafer fab.",
+        "capacity_option": "Stage commitments against qualification evidence.",
+        "alternative": "Commit the entire proposed capacity increment immediately.",
+        "tradeoff": "Staging limits irreversible commitments but can defer some shipment opportunities.",
+        "board_request": "Approve milestone-based capacity releases; retain existing commercial approval limits and require Finance and Engineering sign-off before each increment.",
+        "board_status": "Requested; no board approval is recorded in this briefing.",
+        "accountability": "Quinn Mercer owns customer qualification; Riley Arden owns release evidence; the effective CFO owns capacity-commitment review.",
+        "liquidity_note": "No cash balance, debt balance, free-cash-flow measure or forecast is included.",
+        "price_note": "Pricing and contractual lead times are supplied through customer-specific quotations."
+      },
+      "refs": [
+        "company",
+        "person-quinn",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "release-beacon-2025",
+      "kind": "release_detail",
+      "known_on": "2025-02-01",
+      "effective_on": "2025-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "6.0",
+        "year": 2025,
+        "metric": "256 INT8 TOPS",
+        "operating_point": "35 W board design budget",
+        "capability": "5 nm inference ASIC with PCIe Gen3 x4 host interface",
+        "customer_problem": "Moving industrial inference off a general-purpose host competes with system power, response-time and software-integration constraints.",
+        "workflow": "Capture frames on the host, prepare tensors, submit inference over PCIe, and return results to the host application.",
+        "use_cases": [
+          "high-density edge systems",
+          "local equipment anomaly detection",
+          "on-device visual inspection"
+        ],
+        "constraints": "Peak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design.",
+        "support": "release-controlled adoption and milestone-based production support",
+        "market": "high-density edge systems",
+        "release_date": "2025-08-15",
+        "evaluation_step": "Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example.",
+        "integration_step": "Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption.",
+        "support_email": "applications@sunnysemi.example",
+        "quote_speaker": "person-avery",
+        "quote": "Our priority is to make SunCore 6.0 useful in real equipment, not just impressive in a specification table. Customers need clear operating boundaries, traceable release evidence and an engineering team that helps them qualify the complete design. That is how we intend to earn repeat programs.",
+        "quote_approved": true,
+        "availability": "Production orders and version-matched evaluation kits are available from the launch date, subject to quotation and allocation.",
+        "qualification": "Evaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration.",
+        "exclusions": "No regulatory certification, customer benchmark or customer endorsement is asserted.",
+        "node_nm": 5,
+        "peak_tops": 256,
+        "power_w": 35,
+        "input_max_v": 0,
+        "output_a": 0,
+        "efficiency_percent": 0,
+        "efficiency_conditions": "48 V input, 12 V output, half rated reference-stage load, 25 degrees Celsius ambient; excludes host and enclosure losses."
+      },
+      "refs": [
+        "product-beacon",
+        "person-avery",
+        "operating-2025"
+      ]
+    },
+    {
+      "id": "req-beacon-2025-01",
+      "kind": "requirement",
+      "known_on": "2025-02-01",
+      "effective_on": "2025-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "6.0",
+        "requirement_id": "SC-6-01",
+        "topic": "Host link",
+        "requirement": "Enumerate as a PCIe Gen3 x4 endpoint.",
+        "acceptance": "Complete cold-boot enumeration on the reference host in 100 consecutive boots.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2025-02",
+      "kind": "requirement",
+      "known_on": "2025-02-01",
+      "effective_on": "2025-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "6.0",
+        "requirement_id": "SC-6-02",
+        "topic": "Arithmetic",
+        "requirement": "Support signed INT8 multiply-accumulate inference.",
+        "acceptance": "Match the published INT8 golden vectors exactly for supported operators.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2025-03",
+      "kind": "requirement",
+      "known_on": "2025-02-01",
+      "effective_on": "2025-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "6.0",
+        "requirement_id": "SC-6-03",
+        "topic": "Peak compute",
+        "requirement": "Expose a peak of 256 INT8 TOPS at the rated clock.",
+        "acceptance": "Check the architectural operation-count model against the rated configuration.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2025-04",
+      "kind": "requirement",
+      "known_on": "2025-02-01",
+      "effective_on": "2025-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "6.0",
+        "requirement_id": "SC-6-04",
+        "topic": "Power envelope",
+        "requirement": "Use a 35 W reference-board design budget.",
+        "acceptance": "Measure board input power on the release workload without exceeding the budget.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2025-05",
+      "kind": "requirement",
+      "known_on": "2025-02-01",
+      "effective_on": "2025-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "6.0",
+        "requirement_id": "SC-6-05",
+        "topic": "Model interface",
+        "requirement": "Accept the release compiler's versioned binary model package.",
+        "acceptance": "Load a package built with the matching toolchain and reject an incompatible major version.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2025-06",
+      "kind": "requirement",
+      "known_on": "2025-02-01",
+      "effective_on": "2025-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "6.0",
+        "requirement_id": "SC-6-06",
+        "topic": "Unsupported operators",
+        "requirement": "Reject models containing operators outside the supported list.",
+        "acceptance": "Return an operator diagnostic before device execution for every negative test.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2025-07",
+      "kind": "requirement",
+      "known_on": "2025-02-01",
+      "effective_on": "2025-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "6.0",
+        "requirement_id": "SC-6-07",
+        "topic": "Tensor validation",
+        "requirement": "Validate tensor shape, element type and buffer bounds.",
+        "acceptance": "Reject malformed dimensions and undersized buffers without DMA outside the allocation.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2025-08",
+      "kind": "requirement",
+      "known_on": "2025-02-01",
+      "effective_on": "2025-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "6.0",
+        "requirement_id": "SC-6-08",
+        "topic": "DMA protection",
+        "requirement": "Limit DMA transactions to driver-registered buffers.",
+        "acceptance": "Run the invalid-buffer suite with no unauthorized host-memory access.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2025-09",
+      "kind": "requirement",
+      "known_on": "2025-02-01",
+      "effective_on": "2025-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "6.0",
+        "requirement_id": "SC-6-09",
+        "topic": "Reset recovery",
+        "requirement": "Recover the command interface after a host-issued device reset.",
+        "acceptance": "Execute the release smoke workload after 100 repeated reset cycles.",
+        "group": "Functional",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2025-10",
+      "kind": "requirement",
+      "known_on": "2025-02-01",
+      "effective_on": "2025-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "6.0",
+        "requirement_id": "SC-6-10",
+        "topic": "Telemetry",
+        "requirement": "Report device temperature and command completion status.",
+        "acceptance": "Compare temperature readout with the calibrated reference within 3 degrees Celsius.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2025-11",
+      "kind": "requirement",
+      "known_on": "2025-02-01",
+      "effective_on": "2025-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "6.0",
+        "requirement_id": "SC-6-11",
+        "topic": "Thermal response",
+        "requirement": "Throttle work admission before the board's configured thermal limit.",
+        "acceptance": "Raise ambient temperature and verify throttling and recovery at configured thresholds.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2025-12",
+      "kind": "requirement",
+      "known_on": "2025-02-01",
+      "effective_on": "2025-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "6.0",
+        "requirement_id": "SC-6-12",
+        "topic": "Error reporting",
+        "requirement": "Return distinct invalid-model, timeout and device-fault status codes.",
+        "acceptance": "Inject each documented fault and check the driver status and recovery path.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2025-13",
+      "kind": "requirement",
+      "known_on": "2025-02-01",
+      "effective_on": "2025-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "6.0",
+        "requirement_id": "SC-6-13",
+        "topic": "Driver package",
+        "requirement": "Deliver a Linux x86-64 reference driver with a version manifest.",
+        "acceptance": "Install on the supported reference image and run the complete release smoke suite.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2025-14",
+      "kind": "requirement",
+      "known_on": "2025-02-01",
+      "effective_on": "2025-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "6.0",
+        "requirement_id": "SC-6-14",
+        "topic": "Reproducibility",
+        "requirement": "Identify silicon revision, firmware and compiler in each diagnostic bundle.",
+        "acceptance": "Recreate an issue report using only the recorded release identifiers and input tensor.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2025-15",
+      "kind": "requirement",
+      "known_on": "2025-02-01",
+      "effective_on": "2025-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "6.0",
+        "requirement_id": "SC-6-15",
+        "topic": "Release evidence",
+        "requirement": "Retain functional, power and thermal verification results.",
+        "acceptance": "Block production release when any required acceptance result is absent or failing.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "req-beacon-2025-16",
+      "kind": "requirement",
+      "known_on": "2025-02-01",
+      "effective_on": "2025-02-01",
+      "data": {
+        "product_id": "product-beacon",
+        "version": "6.0",
+        "requirement_id": "SC-6-16",
+        "topic": "Change control",
+        "requirement": "Review interface-affecting changes before issuing revised packages.",
+        "acceptance": "Record compatibility impact and obtain Product and Engineering sign-off.",
+        "group": "Verification and control",
+        "owner_id": "person-riley",
+        "method": "Reference-board verification"
+      },
+      "refs": [
+        "product-beacon",
+        "person-riley"
+      ]
+    },
+    {
+      "id": "release-prism-2025",
+      "kind": "release_detail",
+      "known_on": "2025-02-01",
+      "effective_on": "2025-02-01",
+      "data": {
+        "product_id": "product-prism",
+        "version": "6.0",
+        "year": 2025,
+        "metric": "100 V maximum rated input",
+        "operating_point": "24 A reference-stage output",
+        "capability": "digitally supervised multiphase power control with a documented PMBus subset",
+        "customer_problem": "High-density embedded boards need controlled power sequencing and observable fault behavior without losing sight of board-level thermal limits.",
+        "workflow": "Configure the power stage, sequence rails, observe telemetry, and handle protection events through the documented host command interface.",
+        "use_cases": [
+          "high-density edge systems",
+          "industrial controller power stages",
+          "embedded compute carrier boards"
+        ],
+        "constraints": "Efficiency applies only to the stated reference-stage operating point. External switches, inductors, cooling and layout remain customer design responsibilities.",
+        "support": "release-controlled adoption and milestone-based production support",
+        "market": "high-density edge systems",
+        "release_date": "2025-08-15",
+        "evaluation_step": "Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example.",
+        "integration_step": "Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption.",
+        "support_email": "applications@sunnysemi.example",
+        "quote_speaker": "person-avery",
+        "quote": "Our priority is to make GulfSwitch 6.0 useful in real equipment, not just impressive in a specification table. Customers need clear operating boundaries, traceable release evidence and an engineering team that helps them qualify the complete design. That is how we intend to earn repeat programs.",
+        "quote_approved": true,
+        "availability": "Production orders and version-matched evaluation kits are available from the launch date, subject to quotation and allocation.",
+        "qualification": "Evaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration.",
+        "exclusions": "No regulatory certification, customer benchmark or customer endorsement is asserted.",
+        "node_nm": 180,
+        "peak_tops": 0,
+        "power_w": 0,
+        "input_max_v": 100,
+        "output_a": 24,
+        "efficiency_percent": 97,
+        "efficiency_conditions": "48 V input, 12 V output, half rated reference-stage load, 25 degrees Celsius ambient; excludes host and enclosure losses."
+      },
+      "refs": [
+        "product-prism",
+        "person-avery",
+        "operating-2025"
+      ]
+    },
+    {
+      "id": "meeting-2025",
+      "kind": "meeting",
+      "known_on": "2025-07-25",
+      "effective_on": "2025-07-25",
+      "data": {
+        "title": "2025 Production Readiness and Profitable scale",
+        "date": "2025-07-25",
+        "participants": [
+          "person-avery",
+          "person-riley",
+          "person-quinn",
+          "person-casey"
+        ],
+        "location": "Tampa, Florida",
+        "turn_times": [
+          "09:00",
+          "09:02",
+          "09:04",
+          "09:06",
+          "09:08",
+          "09:10",
+          "09:12",
+          "09:14",
+          "09:16",
+          "09:18",
+          "09:20",
+          "09:22",
+          "09:24",
+          "09:26",
+          "09:28",
+          "09:30",
+          "09:32",
+          "09:34",
+          "09:36",
+          "09:38",
+          "09:40",
+          "09:42",
+          "09:44",
+          "09:46",
+          "09:48",
+          "09:50",
+          "09:52",
+          "09:54",
+          "09:56",
+          "09:58",
+          "10:00",
+          "10:02",
+          "10:04",
+          "10:06",
+          "10:08",
+          "10:10"
+        ],
+        "agenda": [
+          "Profitable scale",
+          "SunCore release evidence",
+          "GulfSwitch adoption",
+          "Capacity commitment controls"
+        ],
+        "positions": {
+          "chief_executive": "protect delivery reliability and operating discipline while scaling profitable demand",
+          "engineering": "Do not substitute peak specifications for application qualification.",
+          "product": "Support high-density edge systems with release-controlled adoption and milestone-based production support.",
+          "finance": "Control working-capital exposure from accelerated production commitments; stage capacity commitments against qualification and accepted schedules."
+        },
+        "decision": "Proceed toward the August release subject to evidence gates; stage capacity commitments against qualification and accepted schedules.",
+        "rejected_alternative": "An unconditional production ramp before qualification is complete.",
+        "unresolved": "Customer-specific adoption schedules remain subject to accepted quotations.",
+        "actions": [
+          {
+            "owner_id": "person-riley",
+            "task": "Complete version-matched acceptance evidence",
+            "due": "2025-08-05"
+          },
+          {
+            "owner_id": "person-quinn",
+            "task": "Confirm customer evaluation and qualification plans",
+            "due": "2025-08-08"
+          },
+          {
+            "owner_id": "person-casey",
+            "task": "Review staged manufacturing commitments against accepted schedules",
+            "due": "2025-08-10"
+          }
+        ],
+        "governance": "The meeting authorizes preparation, not a board-level capital approval. Failing release evidence must be escalated to the CEO before production release."
+      },
+      "refs": [
+        "company",
+        "person-avery",
+        "person-riley",
+        "person-quinn",
+        "person-casey",
+        "operating-2025"
+      ]
+    }
+  ]
+}

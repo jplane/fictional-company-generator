@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "artifact_sha256": "282c03f4a9a74b8e2146ed2ba69a9070a221c25804c7d929b3981052ed28b19a",
+  "measure": "delivered_sheets",
+  "measured": 4,
+  "target_sha256": "2949c0130fb334d3ffc9eed31403a116a85463781c6681e6fbb0acd6a6aa6259",
+  "evidence": "Measured delivered content against frozen targets; not substantive certification"
+}

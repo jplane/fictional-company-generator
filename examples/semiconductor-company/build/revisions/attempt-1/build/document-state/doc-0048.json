@@ -1,0 +1,159 @@
+{
+  "runner_version": 2,
+  "schema_version": 2,
+  "corpus_id": "corpus-76ce98a12405018fd1e8c2e5",
+  "canon_sha256": "caaf762e72fb012b38e89626490ab0988233f06da57675c45f8792fce3796186",
+  "plan_sha256": "39bac5c57c35c359a43d2e650047e32523062a15bccfb31dd68acec47a86896e",
+  "generation_sha256": "b73d793ad90c9e6b0eb7b67f0250ff7202452acf2b0612bde0f74f34269b59b9",
+  "execution_sha256": "d5ea78a43358d2bb5b967b2995bb19992ff6db945768599f31096c8775257bd3",
+  "execution_revision": 1,
+  "effective_workers": 4,
+  "last_checkpoint_at": "2026-10-15T16:46:23.025901+00:00",
+  "active_wall_seconds": 5.50855979998596,
+  "validation_counts": {
+    "plan_computations": 1,
+    "plan_worker_seconds": 0.17200769996270537,
+    "plan_hits": 6,
+    "drafts_computations": 1,
+    "drafts_worker_seconds": 0.6248017000034451,
+    "artifact_computations": 1,
+    "artifact_worker_seconds": 0.057688700035214424
+  },
+  "documents": {
+    "doc-0048": {
+      "input_sha256": "2c2f9fadaa05a7595d988eb848c9e68174e8c5e452e470aa4b13d051df5cd5f4",
+      "stages": [
+        "created",
+        "authored"
+      ],
+      "operations": [
+        {
+          "arguments": [
+            "create",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx"
+          ],
+          "operation": "create",
+          "started_at": "2026-10-15T16:46:15.089186+00:00",
+          "ended_at": "2026-10-15T16:46:16.951723+00:00",
+          "active_seconds": 1.8625390999950469,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": \"Created: C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\documents\\\\2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx\",\n  \"message\": \"Created: C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\documents\\\\2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx\"\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "status": "passed"
+        },
+        {
+          "arguments": [
+            "batch",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx",
+            "--input",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\build\\scripts\\doc-0048-batch.json",
+            "--stop-on-error"
+          ],
+          "operation": "author",
+          "started_at": "2026-10-15T16:46:17.029604+00:00",
+          "ended_at": "2026-10-15T16:46:19.386285+00:00",
+          "active_seconds": 2.35667760000797,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"outputFile\": \"C:\\\\Users\\\\jolan\\\\AppData\\\\Local\\\\Temp\\\\officecli_batch_230cd26f6ddf423db0e0c9e67ab884cc.json\",\n    \"outputSize\": 9662,\n    \"results\": [\n      {\n        \"index\": 0,\n        \"success\": true\n      },\n      {\n        \"index\": 1,\n        \"success\": true\n      },\n      {\n        \"index\": 2,\n        \"success\": true\n      },\n      {\n        \"index\": 3,\n        \"success\": true\n      },\n      {\n        \"index\": 4,\n        \"success\": true\n      },\n      {\n        \"index\": 5,\n        \"success\": true\n      },\n      {\n        \"index\": 6,\n        \"success\": true\n      },\n      {\n        \"index\": 7,\n        \"success\": true\n      },\n      {\n        \"index\": 8,\n        \"success\": true\n      },\n      {\n        \"index\": 9,\n        \"success\": true\n      },\n      {\n        \"index\": 10,\n        \"success\": true\n      },\n      {\n        \"index\": 11,\n        \"success\": true\n      },\n      {\n        \"index\": 12,\n        \"success\": true\n      },\n      {\n        \"index\": 13,\n        \"success\": true\n      },\n      {\n        \"index\": 14,\n        \"success\": true\n      },\n      {\n        \"index\": 15,\n        \"success\": true\n      },\n      {\n        \"index\": 16,\n        \"success\": true\n      },\n      {\n        \"index\": 17,\n        \"success\": true\n      },\n      {\n        \"index\": 18,\n        \"success\": true\n      },\n      {\n        \"index\": 19,\n        \"success\": true\n      },\n      {\n        \"index\": 20,\n        \"success\": true\n      },\n      {\n        \"index\": 21,\n        \"success\": true\n      },\n      {\n        \"index\": 22,\n        \"success\": true\n      },\n      {\n        \"index\": 23,\n        \"success\": true\n      },\n      {\n        \"index\": 24,\n        \"success\": true\n      },\n      {\n        \"index\": 25,\n        \"success\": true\n      },\n      {\n        \"index\": 26,\n        \"success\": true\n      },\n      {\n        \"index\": 27,\n        \"success\": true\n      },\n      {\n        \"index\": 28,\n        \"success\": true\n      },\n      {\n        \"index\": 29,\n        \"success\": true\n      },\n      {\n        \"index\": 30,\n        \"success\": true\n      },\n      {\n        \"index\": 31,\n        \"success\": true\n      },\n      {\n        \"index\": 32,\n        \"success\": true\n      },\n      {\n        \"index\": 33,\n        \"success\": true\n      },\n      {\n        \"index\": 34,\n        \"success\": true\n      },\n      {\n        \"index\": 35,\n        \"success\": true\n      },\n      {\n        \"index\": 36,\n        \"success\": true\n      },\n      {\n        \"index\": 37,\n        \"success\": true\n      },\n      {\n        \"index\": 38,\n        \"success\": true\n      },\n      {\n        \"index\": 39,\n        \"success\": true\n      },\n      {\n        \"index\": 40,\n        \"success\": true\n      },\n      {\n        \"index\": 41,\n        \"success\": true\n      },\n      {\n        \"index\": 42,\n        \"success\": true\n      },\n      {\n        \"index\": 43,\n        \"success\": true\n      },\n      {\n        \"index\": 44,\n        \"success\": true\n      },\n      {\n        \"index\": 45,\n        \"success\": true\n      },\n      {\n        \"index\": 46,\n        \"success\": true\n      },\n      {\n        \"index\": 47,\n        \"success\": true\n      },\n      {\n        \"index\": 48,\n        \"success\": true\n      },\n      {\n        \"index\": 49,\n        \"success\": true\n      },\n      {\n        \"index\": 50,\n        \"success\": true\n      },\n      {\n        \"index\": 51,\n        \"success\": true\n      },\n      {\n        \"index\": 52,\n        \"success\": true\n      },\n      {\n        \"index\": 53,\n        \"success\": true\n      },\n      {\n        \"index\": 54,\n        \"success\": true\n      },\n      {\n        \"index\": 55,\n        \"success\": true\n      },\n      {\n        \"index\": 56,\n        \"success\": true\n      },\n      {\n        \"index\": 57,\n        \"success\": true\n      },\n      {\n        \"index\": 58,\n        \"success\": true\n      },\n      {\n        \"index\": 59,\n        \"success\": true\n      },\n      {\n        \"index\": 60,\n        \"success\": true\n      },\n      {\n        \"index\": 61,\n        \"success\": true\n      },\n      {\n        \"index\": 62,\n        \"success\": true\n      },\n      {\n        \"index\": 63,\n        \"success\": true\n      },\n      {\n        \"index\": 64,\n        \"success\": true\n      },\n      {\n        \"index\": 65,\n        \"success\": true\n      },\n      {\n        \"index\": 66,\n        \"success\": true\n      },\n      {\n        \"index\": 67,\n        \"success\": true\n      },\n      {\n        \"index\": 68,\n        \"success\": true\n      },\n      {\n        \"index\": 69,\n        \"success\": true\n      },\n      {\n        \"index\": 70,\n        \"success\": true\n      },\n      {\n        \"index\": 71,\n        \"success\": true\n      },\n      {\n        \"index\": 72,\n        \"success\": true\n      },\n      {\n        \"index\": 73,\n        \"success\": true\n      },\n      {\n        \"index\": 74,\n        \"success\": true\n      },\n      {\n        \"index\": 75,\n        \"success\": true\n      },\n      {\n        \"index\": 76,\n        \"success\": true\n      },\n      {\n        \"index\": 77,\n        \"success\": true\n      },\n      {\n        \"index\": 78,\n        \"success\": true\n      },\n      {\n        \"index\": 79,\n        \"success\": true\n      },\n      {\n        \"index\": 80,\n        \"success\": true\n      },\n      {\n        \"index\": 81,\n        \"success\": true\n      },\n      {\n        \"index\": 82,\n        \"success\": true\n      },\n      {\n        \"index\": 83,\n        \"success\": true\n      },\n      {\n        \"index\": 84,\n        \"success\": true\n      },\n      {\n        \"index\": 85,\n        \"success\": true\n      },\n      {\n        \"index\": 86,\n        \"success\": true\n      },\n      {\n        \"index\": 87,\n        \"success\": true\n      },\n      {\n        \"index\": 88,\n        \"success\": true\n      },\n      {\n        \"index\": 89,\n        \"success\": true\n      },\n      {\n        \"index\": 90,\n        \"success\": true\n      },\n      {\n        \"index\": 91,\n        \"success\": true\n      },\n      {\n        \"index\": 92,\n        \"success\": true\n      },\n      {\n        \"index\": 93,\n        \"success\": true\n      },\n      {\n        \"index\": 94,\n        \"success\": true\n      },\n      {\n        \"index\": 95,\n        \"success\": true\n      },\n      {\n        \"index\": 96,\n        \"success\": true\n      },\n      {\n        \"index\": 97,\n        \"success\": true\n      },\n      {\n        \"index\": 98,\n        \"success\": true\n      },\n      {\n        \"index\": 99,\n        \"success\": true\n      },\n      {\n        \"index\": 100,\n        \"success\": true\n      },\n      {\n        \"index\": 101,\n        \"success\": true\n      },\n      {\n        \"index\": 102,\n        \"success\": true\n      },\n      {\n        \"index\": 103,\n        \"success\": true\n      },\n      {\n        \"index\": 104,\n        \"success\": true\n      },\n      {\n        \"index\": 105,\n        \"success\": true\n      },\n      {\n        \"index\": 106,\n        \"success\": true\n      },\n      {\n        \"index\": 107,\n        \"success\": true\n      },\n      {\n        \"index\": 108,\n        \"success\": true\n      },\n      {\n        \"index\": 109,\n        \"success\": true\n      },\n      {\n        \"index\": 110,\n        \"success\": true\n      },\n      {\n        \"index\": 111,\n        \"success\": true\n      },\n      {\n        \"index\": 112,\n        \"success\": true\n      },\n      {\n        \"index\": 113,\n        \"success\": true\n      },\n      {\n        \"index\": 114,\n        \"success\": true\n      },\n      {\n        \"index\": 115,\n        \"success\": true\n      },\n      {\n        \"index\": 116,\n        \"success\": true\n      },\n      {\n        \"index\": 117,\n        \"success\": true\n      },\n      {\n        \"index\": 118,\n        \"success\": true\n      }\n    ],\n    \"summary\": {\n      \"total\": 119,\n      \"executed\": 119,\n      \"succeeded\": 119,\n      \"failed\": 0,\n      \"skipped\": 0\n    }\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "status": "passed"
+        },
+        {
+          "arguments": [
+            "validate",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx"
+          ],
+          "operation": "validate",
+          "started_at": "2026-10-15T16:46:19.556504+00:00",
+          "ended_at": "2026-10-15T16:46:21.325234+00:00",
+          "active_seconds": 1.7687306000152603,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"errors\": []\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "repeat_success": true,
+          "artifact_sha256": "3cfc4410ae0aeb06dd097691931b2689ad181e0b259984e71b98c92f1d13ae57",
+          "status": "passed",
+          "evidence": "Checked complete OfficeCLI result without errors/caveats"
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx",
+            "issues"
+          ],
+          "operation": "issues",
+          "started_at": "2026-10-15T16:46:21.428269+00:00",
+          "ended_at": "2026-10-15T16:46:23.011534+00:00",
+          "active_seconds": 1.5832631000084803,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 20,\n    \"issues\": [\n      {\n        \"id\": \"O1\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[1]/shape[@id=100000]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O2\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[1]/shape[@id=100009]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O3\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[2]/shape[@id=100010]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O4\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[2]/shape[@id=100019]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O5\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[3]/shape[@id=100020]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O6\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[3]/shape[@id=100029]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O7\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[4]/shape[@id=100030]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O8\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[4]/shape[@id=100037]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O9\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[5]/shape[@id=100038]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O10\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[5]/shape[@id=100047]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O11\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[6]/shape[@id=100048]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O12\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[6]/shape[@id=100057]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O13\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[7]/shape[@id=100058]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O14\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[7]/shape[@id=100067]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O15\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[8]/shape[@id=100068]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O16\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[8]/shape[@id=100077]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O17\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[9]/shape[@id=100078]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O18\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[9]/shape[@id=100087]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O19\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[10]/shape[@id=100088]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O20\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[10]/shape[@id=100097]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      }\n    ]\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "repeat_success": true,
+          "artifact_sha256": "3cfc4410ae0aeb06dd097691931b2689ad181e0b259984e71b98c92f1d13ae57",
+          "status": "blocked",
+          "blocker": "issues: issues or incomplete scan: {'count': 20, 'issues': [{'id': 'O1', 'type': 0, 'severity': 1, 'path': '/slide[1]/shape[@id=100000]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O2', 'type': 0, 'severity': 1, 'path': '/slide[1]/shape[@id=100009]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O3', 'type': 0, 'severity': 1, 'path': '/slide[2]/shape[@id=100010]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O4', 'type': 0, 'severity': 1, 'path': '/slide[2]/shape[@id=100019]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O5', 'type': 0, 'severity': 1, 'path': '/slide[3]/shape[@id=100020]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O6', 'type': 0, 'severity': 1, 'path': '/slide[3]/shape[@id=100029]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O7', 'type': 0, 'severity': 1, 'path': '/slide[4]/shape[@id=100030]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O8', 'type': 0, 'severity': 1, 'path': '/slide[4]/shape[@id=100037]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O9', 'type': 0, 'severity': 1, 'path': '/slide[5]/shape[@id=100038]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O10', 'type': 0, 'severity': 1, 'path': '/slide[5]/shape[@id=100047]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O11', 'type': 0, 'severity': 1, 'path': '/slide[6]/shape[@id=100048]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O12', 'type': 0, 'severity': 1, 'path': '/slide[6]/shape[@id=100057]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O13', 'type': 0, 'severity': 1, 'path': '/slide[7]/shape[@id=100058]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O14', 'type': 0, 'severity': 1, 'path': '/slide[7]/shape[@id=100067]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O15', 'type': 0, 'severity': 1, 'path': '/slide[8]/shape[@id=100068]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O16', 'type': 0, 'severity': 1, 'path': '/slide[8]/shape[@id=100077]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O17', 'type': 0, 'severity': 1, 'path': '/slide[9]/shape[@id=100078]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O18', 'type': 0, 'severity': 1, 'path': '/slide[9]/shape[@id=100087]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O19', 'type': 0, 'severity': 1, 'path': '/slide[10]/shape[@id=100088]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O20', 'type': 0, 'severity': 1, 'path': '/slide[10]/shape[@id=100097]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}]}"
+        }
+      ],
+      "attempts": {
+        "create": 1,
+        "author": 1,
+        "validate": 1,
+        "issues": 1
+      },
+      "retry_reasons": {},
+      "artifact_sha256": "3cfc4410ae0aeb06dd097691931b2689ad181e0b259984e71b98c92f1d13ae57",
+      "author_tool": {
+        "version": "1.0.157",
+        "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+      }
+    }
+  },
+  "phases": [
+    {
+      "id": "7f44660e-982e-4ed8-8954-550edc4c0744",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0048",
+      "started_at": "2026-10-15T16:46:14.927404+00:00",
+      "status": "blocked",
+      "active_seconds": 8.098452800011728,
+      "family": [
+        "product_presentation",
+        "pptx",
+        "1",
+        "672d3bddab87c64bbd48671f5dfee716f646095c326e0749428e287fd37820ef"
+      ],
+      "queued_at": "2026-10-15T16:46:14.926266+00:00",
+      "queue_seconds": 0.001138,
+      "ended_at": "2026-10-15T16:46:23.025869+00:00"
+    }
+  ]
+}

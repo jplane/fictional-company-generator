@@ -1,0 +1,27 @@
+{
+  "arguments": [
+    "view",
+    "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-07-15 - SunnySemi LLC - H1 2025 Operating Economics.xlsx",
+    "html",
+    "--out",
+    "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\build\\renders\\doc-0018\\export.html"
+  ],
+  "operation": "html_export",
+  "started_at": "2026-10-15T17:21:21.902472+00:00",
+  "ended_at": "2026-10-15T17:21:24.466542+00:00",
+  "active_seconds": 2.5640692999586463,
+  "waiting_seconds": 0,
+  "returncode": 0,
+  "stdout": "{\"success\": true, \"data\": \"C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\build\\\\renders\\\\doc-0018\\\\export.html\"}",
+  "stderr": "",
+  "tool": {
+    "version": "1.0.157",
+    "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+  },
+  "corrective": false,
+  "pass": "generation",
+  "repeat_success": true,
+  "artifact_sha256": "90488dbb04cc597c2bc81f40a2c11a848408105092e84f34ef438e93ae88360a",
+  "status": "passed",
+  "evidence": "Checked complete OfficeCLI result without errors/caveats"
+}

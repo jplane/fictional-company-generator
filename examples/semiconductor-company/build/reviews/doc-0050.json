@@ -1,0 +1,41 @@
+{
+  "document_id": "doc-0050",
+  "artifact_sha256": "39f48dc807523a1fd06d13b4cc77f8d64f6a4d304222cc754f0642304608a824",
+  "draft_sha256": "46233e567c57836bd1658491d75e4bacd6f3d1f88459e801ce479953ef8c927a",
+  "machine_sha256": "7b42c8bffd767584a6b6297720fc19123ab834ee694e6cfb73788a96696488b9",
+  "semantic_review": {
+    "status": "passed",
+    "evidence": "SunnySemi LLC - FY 2020 Operating Economics: Reviewed all four worksheets and every displayed module against the period actuals and independently grounded formula derivations. Checked income, gross/operating ratios, product reconciliation, manufacturing/opex reconciliations and sequential absolute changes. Headcount is point-in-time; no full funding, cash-flow or forecast claim is made."
+  },
+  "genre_review": {
+    "status": "passed",
+    "evidence": "Reviewed complete delivered content in its business genre: Reviewed all four worksheets and every displayed module against the period actuals and independently grounded formula derivations. Checked income, gross/operating ratios, product reconciliation, manufacturing/opex reconciliations and sequential absolute changes. Headcount is point-in-time; no full funding, cash-flow or forecast claim is made. Ordinary company voice; no placeholders or generation self-labels."
+  },
+  "depth_review": {
+    "status": "passed",
+    "content_depth": "medium",
+    "evidence": "Six distinct useful modules answer income, margin, product-mix, manufacturing-cost, operating-investment and sequential-trend questions. Four sheets provide source, calculation, management interpretation and methodology zones without substituting sheet count for analysis. Saved-content measurement: 4 delivered_sheets; draft measures {'document_id': 'doc-0050', 'type': 'financial_model', 'draft_words': 230, 'discussion_words': 0, 'requirements': None, 'analysis_modules': 6}."
+  },
+  "visual_review": {
+    "status": "passed",
+    "images_delivered": true,
+    "render_ids": [
+      "inputs",
+      "calc-top",
+      "calc-bottom",
+      "summary",
+      "notes"
+    ],
+    "evidence": "All five declared range images inspected, including both Calc ranges and inactive-sheet Summary/Notes captures. Amounts, ratio labels, wrapped notes, color conventions and zero reconciliation differences are legible; no omitted populated region. Inspected 5 complete unit images.",
+    "inspected_images": [
+      "build\\renders\\doc-0050\\inputs\\region.png",
+      "build\\renders\\doc-0050\\calc-top\\region.png",
+      "build\\renders\\doc-0050\\calc-bottom\\region.png",
+      "build\\renders\\doc-0050\\summary\\region.png",
+      "build\\renders\\doc-0050\\notes\\region.png"
+    ]
+  },
+  "condition_review": {
+    "status": "not_selected"
+  }
+}

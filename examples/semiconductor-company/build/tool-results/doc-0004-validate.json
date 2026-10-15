@@ -1,0 +1,24 @@
+{
+  "arguments": [
+    "validate",
+    "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2023-08-20 - SunnySemi LLC - SunCore 4.0 - Edge Inference Adoption.pptx"
+  ],
+  "operation": "validate",
+  "started_at": "2026-10-15T17:20:15.341576+00:00",
+  "ended_at": "2026-10-15T17:20:17.365689+00:00",
+  "active_seconds": 2.02411880006548,
+  "waiting_seconds": 0,
+  "returncode": 0,
+  "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"errors\": []\n  }\n}\n",
+  "stderr": "",
+  "tool": {
+    "version": "1.0.157",
+    "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+  },
+  "corrective": false,
+  "pass": "generation",
+  "repeat_success": true,
+  "artifact_sha256": "1e127586960b769789172a4ad9244842c88bac3d7aa00891830fb8a8eb8d9ea9",
+  "status": "passed",
+  "evidence": "Checked complete OfficeCLI result without errors/caveats"
+}

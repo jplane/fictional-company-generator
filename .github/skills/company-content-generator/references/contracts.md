@@ -525,7 +525,7 @@ required_features=None)`. `post_generation_qa` is required and must be exactly:
 or, for explicitly requested additional QA:
 
 ```json
-{"enabled": true, "policy": "FullContentSampledVisual"}
+{"enabled": true, "policy": "Balanced"}
 ```
 
 The other supported intensities are `Sampled` and `Full`. Disabled QA is not a
@@ -574,7 +574,7 @@ rewrite an accepted generation milestone merely to update its historical label.
 
 ```powershell
 python .github\skills\company-content-generator\scripts\officecli_runner.py qa --root "$outputRoot" --jobs build\jobs.json
-# A later explicit choice can add --policy Sampled, FullContentSampledVisual, or Full.
+# A later explicit choice can add --policy Sampled, Balanced, or Full.
 ```
 
 Invoke it automatically after generation if intake selected QA; do not invoke it
@@ -646,7 +646,7 @@ mtime-only trust is permitted.
 Business `schema_version` stays **2**. Existing execution sidecars separately use
 `execution_version: 1` / `review_version: 1`. Their original builder is
 `build\execution-plan.json` through `company.execution_plan(canon, plan, layouts,
-pilot_ids, qa_policy="FullContentSampledVisual", revision=1, flagged_ids=[],
+pilot_ids, qa_policy="Balanced", revision=1, flagged_ids=[],
 budget_seconds=None)`. Its header is `receipt_header(canon, plan)`; every layout
 entry contains `document_id`, nonempty `layout_revision`, and `layout_sha256`
 for a frozen layout file under `build`. `required_features` maps every selected
@@ -658,7 +658,7 @@ budget is positive user-supplied seconds, never an inferred time promise.
 | Policy | Complete content review | Complete visual review |
 |---|---|---|
 | `Sampled` | Deterministic sample + mandatory documents | Same selection |
-| `FullContentSampledVisual` (version-1 default) | Every document | Deterministic sample + mandatory documents |
+| `Balanced` (version-1 default) | Every document | Deterministic sample + mandatory documents |
 | `Full` | Every document | Every document |
 
 Sampling takes first publication/date-ID and largest normalized draft-section
@@ -714,7 +714,7 @@ DOCX with no configured condition:
   "execution_version": 1,
   "execution_sha256": "<execution object fingerprint>",
   "review_plan_sha256": "<review-plan object fingerprint>",
-  "qa_policy": "FullContentSampledVisual",
+  "qa_policy": "Balanced",
   "documents": [
     {
       "document_id": "doc-0001",

@@ -1,0 +1,203 @@
+[
+  {
+    "command": "set",
+    "path": "/",
+    "props": {
+      "title": "SunnySemi LLC Launches GulfSwitch 6.0 Power Control",
+      "author": "SunnySemi LLC",
+      "docDefaults.font": "Calibri",
+      "docDefaults.fontSize": "11pt"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/section[1]",
+    "props": {
+      "pageWidth": "8.5in",
+      "pageHeight": "11in",
+      "marginTop": "0.7in",
+      "marginBottom": "0.7in",
+      "marginLeft": "0.8in",
+      "marginRight": "0.8in"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SUNNYSEMI LLC | NEWSROOM",
+      "font": "Calibri",
+      "size": "10pt",
+      "color": "087E8B",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SunnySemi LLC Launches GulfSwitch 6.0 Power Control",
+      "font": "Calibri",
+      "size": "21pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "bold": "true",
+      "style": "Title"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "2025-08-15 | Tampa, Florida",
+      "font": "Calibri",
+      "size": "10pt",
+      "color": "087E8B",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "TAMPA, Fla. - SunnySemi LLC today announced that GulfSwitch 6.0 has launched, effective 2025-08-15, expanding its component portfolio for high-density edge systems. The release brings a version-specific silicon platform together with an evaluation path and clear operating boundaries. It is intended for equipment teams that need to move from a promising component specification to a qualified production design without treating those two steps as interchangeable. Customers can now begin adoption discussions around the released configuration rather than an unspecified future product.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "GulfSwitch 6.0 combines digitally supervised multiphase power control with a documented PMBus subset with 100 V maximum rated input and a 24 A reference-stage output. Efficiency applies only to the stated reference-stage operating point. External switches, inductors, cooling and layout remain customer design responsibilities. Reference-stage efficiency is 97 percent under these conditions: 48 V input, 12 V output, half rated reference-stage load, 25 degrees Celsius ambient; excludes host and enclosure losses. The published boundaries are intended to help customers determine whether the part fits a proposed system before they commit engineering resources. Component characteristics do not remove the need to verify the surrounding board, software and enclosure. The adoption discussion therefore starts with a defined application and operating point, not a general promise that every workload will achieve the same result.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "\"Our priority is to make GulfSwitch 6.0 useful in real equipment, not just impressive in a specification table. Customers need clear operating boundaries, traceable release evidence and an engineering team that helps them qualify the complete design. That is how we intend to earn repeat programs.\" said Avery Rowan, CEO. The release approach connects technical capability with the evidence needed to introduce a component into equipment. It gives design teams a practical basis for discussing integration responsibilities and identifying work that remains on the customer side of the interface.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SunnySemi LLC | From evaluation to adoption",
+      "font": "Calibri",
+      "size": "15pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "bold": "true",
+      "pageBreakBefore": "true",
+      "style": "Heading1"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Application discussions include high-density edge systems, industrial controller power stages and embedded compute carrier boards. The reference workflow is straightforward: Configure the power stage, sequence rails, observe telemetry, and handle protection events through the documented host command interface. SunnySemi's adoption support emphasizes release-controlled adoption and milestone-based production support. Those activities give equipment manufacturers a way to compare the component's documented behavior with the requirements of their own design. They are not a substitute for customer acceptance, and they do not imply an endorsement from any equipment manufacturer. Integration scope and the production configuration should be agreed before a customer commits to a ramp.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Production orders and version-matched evaluation kits are available from the launch date, subject to quotation and allocation. Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example. Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption. Pricing and contractual lead times are supplied through customer-specific quotations. This sequencing allows the engineering discussion to address the intended application before commercial commitments are finalized. Customers should use the matching release material when evaluating the component and should not assume that a later revision has identical interface behavior.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "About SunnySemi LLC",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SunnySemi LLC is a Tampa, Florida-based fabless semiconductor designer. Its SunCore edge-inference processors and GulfSwitch power-management devices serve equipment manufacturers building industrial, infrastructure and embedded systems. The company designs silicon and reference platforms in Florida and works with external wafer-fabrication, assembly and test partners. Its Sarasota engineering site supports package characterization, application validation and customer bring-up. SunnySemi combines version-controlled silicon specifications with evaluation hardware and application support so customers can qualify components against their own system requirements. Product information is available at https://sunnysemi.example.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Media contact",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Jordan Ellis | Corporate Communications | media@sunnysemi.example",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x"
+    }
+  }
+]

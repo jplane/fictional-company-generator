@@ -1,0 +1,157 @@
+{
+  "runner_version": 2,
+  "schema_version": 2,
+  "corpus_id": "corpus-76ce98a12405018fd1e8c2e5",
+  "canon_sha256": "caaf762e72fb012b38e89626490ab0988233f06da57675c45f8792fce3796186",
+  "plan_sha256": "719fd5adce3412ce759a3e19cd383a054d201fc8a6c9f128371110c82d42fa97",
+  "generation_sha256": "24ef185c029a958971b3b99be69b821e1f84ed45c80dcfece90d1b143ce141b0",
+  "execution_sha256": "806fff93ab06125c0d2cc305756dc2aa86ef387838f398a54be6f97d83f4cb90",
+  "execution_revision": 2,
+  "effective_workers": 4,
+  "last_checkpoint_at": "2026-10-15T17:11:59.679641+00:00",
+  "active_wall_seconds": 1.582821799966041,
+  "validation_counts": {
+    "plan_computations": 1,
+    "plan_worker_seconds": 0.46250320004764944,
+    "plan_hits": 2,
+    "drafts_computations": 1,
+    "drafts_worker_seconds": 0.8972732999827713
+  },
+  "documents": {
+    "doc-0047": {
+      "input_sha256": "c6c121305ea6ccec0095e902f799b8e3baa8a5c7943aa1759be959d3ccd41e3f",
+      "stages": [
+        "created",
+        "authored"
+      ],
+      "operations": [
+        {
+          "arguments": [
+            "create",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-15 - SunnySemi LLC Launches GulfSwitch 6.0 Power Control.docx"
+          ],
+          "operation": "create",
+          "started_at": "2026-10-15T17:11:50.092749+00:00",
+          "ended_at": "2026-10-15T17:11:51.661734+00:00",
+          "active_seconds": 1.5689882999868132,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": \"Created: C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\documents\\\\2025-08-15 - SunnySemi LLC Launches GulfSwitch 6.0 Power Control.docx\",\n  \"message\": \"Created: C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\documents\\\\2025-08-15 - SunnySemi LLC Launches GulfSwitch 6.0 Power Control.docx\"\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "status": "passed"
+        },
+        {
+          "arguments": [
+            "batch",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-15 - SunnySemi LLC Launches GulfSwitch 6.0 Power Control.docx",
+            "--input",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\build\\scripts\\doc-0047-batch.json",
+            "--stop-on-error"
+          ],
+          "operation": "author",
+          "started_at": "2026-10-15T17:11:51.876996+00:00",
+          "ended_at": "2026-10-15T17:11:55.080211+00:00",
+          "active_seconds": 3.2032199999666773,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"results\": [\n      {\n        \"index\": 0,\n        \"success\": true,\n        \"output\": \"Updated /: title=SunnySemi LLC Launches GulfSwitch 6.0 Power Control, author=SunnySemi LLC, docDefaults.font=Calibri, docDefaults.fontSize=11pt\"\n      },\n      {\n        \"index\": 1,\n        \"success\": true,\n        \"output\": \"Updated /section[1]: pageWidth=8.5in, pageHeight=11in, marginTop=0.7in, marginBottom=0.7in, marginLeft=0.8in, marginRight=0.8in\"\n      },\n      {\n        \"index\": 2,\n        \"success\": true,\n        \"output\": \"Added style at /styles/Title\"\n      },\n      {\n        \"index\": 3,\n        \"success\": true,\n        \"output\": \"Added style at /styles/Heading1\"\n      },\n      {\n        \"index\": 4,\n        \"success\": true,\n        \"output\": \"Added style at /styles/Heading2\"\n      },\n      {\n        \"index\": 5,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100000]\"\n      },\n      {\n        \"index\": 6,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100002]\"\n      },\n      {\n        \"index\": 7,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100004]\"\n      },\n      {\n        \"index\": 8,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100006]\"\n      },\n      {\n        \"index\": 9,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100008]\"\n      },\n      {\n        \"index\": 10,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010000A]\"\n      },\n      {\n        \"index\": 11,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010000C]\"\n      },\n      {\n        \"index\": 12,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010000E]\"\n      },\n      {\n        \"index\": 13,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100010]\"\n      },\n      {\n        \"index\": 14,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100012]\"\n      },\n      {\n        \"index\": 15,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100014]\"\n      },\n      {\n        \"index\": 16,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100016]\"\n      },\n      {\n        \"index\": 17,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100018]\"\n      }\n    ],\n    \"summary\": {\n      \"total\": 18,\n      \"executed\": 18,\n      \"succeeded\": 18,\n      \"failed\": 0,\n      \"skipped\": 0\n    }\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "status": "passed"
+        },
+        {
+          "arguments": [
+            "validate",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-15 - SunnySemi LLC Launches GulfSwitch 6.0 Power Control.docx"
+          ],
+          "operation": "validate",
+          "started_at": "2026-10-15T17:11:55.236777+00:00",
+          "ended_at": "2026-10-15T17:11:57.722595+00:00",
+          "active_seconds": 2.485825299983844,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"errors\": []\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "repeat_success": true,
+          "artifact_sha256": "1cfe56ec42b67fead026f28af1169580ea387af91804d557bfc39bfd97783f73",
+          "status": "passed",
+          "evidence": "Checked complete OfficeCLI result without errors/caveats"
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-15 - SunnySemi LLC Launches GulfSwitch 6.0 Power Control.docx",
+            "issues"
+          ],
+          "operation": "issues",
+          "started_at": "2026-10-15T17:11:57.827286+00:00",
+          "ended_at": "2026-10-15T17:11:59.663709+00:00",
+          "active_seconds": 1.8364212000160478,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 9,\n    \"issues\": [\n      {\n        \"id\": \"F1\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/body/p[@paraId=00100000]\",\n        \"message\": \"Body paragraph missing first-line indent\",\n        \"suggestion\": \"Set first-line indent to 2 characters\"\n      },\n      {\n        \"id\": \"F2\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/body/p[@paraId=00100004]\",\n        \"message\": \"Body paragraph missing first-line indent\",\n        \"suggestion\": \"Set first-line indent to 2 characters\"\n      },\n      {\n        \"id\": \"F3\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/body/p[@paraId=00100006]\",\n        \"message\": \"Body paragraph missing first-line indent\",\n        \"suggestion\": \"Set first-line indent to 2 characters\"\n      },\n      {\n        \"id\": \"F4\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/body/p[@paraId=00100008]\",\n        \"message\": \"Body paragraph missing first-line indent\",\n        \"suggestion\": \"Set first-line indent to 2 characters\"\n      },\n      {\n        \"id\": \"F5\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/body/p[@paraId=0010000A]\",\n        \"message\": \"Body paragraph missing first-line indent\",\n        \"suggestion\": \"Set first-line indent to 2 characters\"\n      },\n      {\n        \"id\": \"F6\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/body/p[@paraId=0010000E]\",\n        \"message\": \"Body paragraph missing first-line indent\",\n        \"suggestion\": \"Set first-line indent to 2 characters\"\n      },\n      {\n        \"id\": \"F7\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/body/p[@paraId=00100010]\",\n        \"message\": \"Body paragraph missing first-line indent\",\n        \"suggestion\": \"Set first-line indent to 2 characters\"\n      },\n      {\n        \"id\": \"F8\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/body/p[@paraId=00100014]\",\n        \"message\": \"Body paragraph missing first-line indent\",\n        \"suggestion\": \"Set first-line indent to 2 characters\"\n      },\n      {\n        \"id\": \"F9\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/body/p[@paraId=00100018]\",\n        \"message\": \"Body paragraph missing first-line indent\",\n        \"suggestion\": \"Set first-line indent to 2 characters\"\n      }\n    ]\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "repeat_success": true,
+          "artifact_sha256": "1cfe56ec42b67fead026f28af1169580ea387af91804d557bfc39bfd97783f73",
+          "status": "blocked",
+          "blocker": "issues: issues or incomplete scan: {'count': 9, 'issues': [{'id': 'F1', 'type': 0, 'severity': 1, 'path': '/body/p[@paraId=00100000]', 'message': 'Body paragraph missing first-line indent', 'suggestion': 'Set first-line indent to 2 characters'}, {'id': 'F2', 'type': 0, 'severity': 1, 'path': '/body/p[@paraId=00100004]', 'message': 'Body paragraph missing first-line indent', 'suggestion': 'Set first-line indent to 2 characters'}, {'id': 'F3', 'type': 0, 'severity': 1, 'path': '/body/p[@paraId=00100006]', 'message': 'Body paragraph missing first-line indent', 'suggestion': 'Set first-line indent to 2 characters'}, {'id': 'F4', 'type': 0, 'severity': 1, 'path': '/body/p[@paraId=00100008]', 'message': 'Body paragraph missing first-line indent', 'suggestion': 'Set first-line indent to 2 characters'}, {'id': 'F5', 'type': 0, 'severity': 1, 'path': '/body/p[@paraId=0010000A]', 'message': 'Body paragraph missing first-line indent', 'suggestion': 'Set first-line indent to 2 characters'}, {'id': 'F6', 'type': 0, 'severity': 1, 'path': '/body/p[@paraId=0010000E]', 'message': 'Body paragraph missing first-line indent', 'suggestion': 'Set first-line indent to 2 characters'}, {'id': 'F7', 'type': 0, 'severity': 1, 'path': '/body/p[@paraId=00100010]', 'message': 'Body paragraph missing first-line indent', 'suggestion': 'Set first-line indent to 2 characters'}, {'id': 'F8', 'type': 0, 'severity': 1, 'path': '/body/p[@paraId=00100014]', 'message': 'Body paragraph missing first-line indent', 'suggestion': 'Set first-line indent to 2 characters'}, {'id': 'F9', 'type': 0, 'severity': 1, 'path': '/body/p[@paraId=00100018]', 'message': 'Body paragraph missing first-line indent', 'suggestion': 'Set first-line indent to 2 characters'}]}"
+        }
+      ],
+      "attempts": {
+        "create": 1,
+        "author": 1,
+        "validate": 1,
+        "issues": 1
+      },
+      "retry_reasons": {},
+      "artifact_sha256": "1cfe56ec42b67fead026f28af1169580ea387af91804d557bfc39bfd97783f73",
+      "author_tool": {
+        "version": "1.0.157",
+        "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+      }
+    }
+  },
+  "phases": [
+    {
+      "id": "ea055934-3b04-460e-9a51-5badd31f133f",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0047",
+      "started_at": "2026-10-15T17:11:49.860842+00:00",
+      "status": "blocked",
+      "active_seconds": 9.818771299964283,
+      "family": [
+        "press_release",
+        "docx",
+        "1",
+        "00532f19aacdbb2f364d247186b0262d4ebce06f2623443ea4e4884ae90f406f"
+      ],
+      "queued_at": "2026-10-15T17:11:49.860560+00:00",
+      "queue_seconds": 0.000282,
+      "ended_at": "2026-10-15T17:11:59.679606+00:00"
+    }
+  ]
+}

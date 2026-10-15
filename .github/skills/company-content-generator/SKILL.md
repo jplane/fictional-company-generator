@@ -90,7 +90,7 @@ tool where available, for every missing item below before generation:
   the working directory, Downloads, or a hardcoded `corpus` folder.
 - Additional QA: explicitly ask during intake, "After generation and its mandatory
   checks/pilot reviews, should additional corpus QA run?" Offer **No additional QA**
-  (selected by default), **Sampled**, **FullContentSampledVisual**, and **Full**.
+  (selected by default), **Sampled**, **Balanced**, and **Full**.
   Reuse an explicitly supplied choice. Do not silently choose for an unavailable
   user. Record the answer in execution metadata, not the business canon.
 
@@ -105,7 +105,7 @@ The seed may default to 42. Content depth defaults to **medium**; accept an expl
 question when the user has not specified a depth. See Content depth below.
 Additional corpus QA is **opt-in**, not a prerequisite for generation completion.
 When requested, accept **Sampled** (selected
-complete content and visual reviews), **FullContentSampledVisual** (all content,
+complete content and visual reviews), **Balanced** (all content,
 selected visual reviews), or **Full** (all content and visual reviews).
 Review scope is independent of light/medium/deep content depth. Generation always
 checks all files, claims, date/access, required sections, measurable depth,
@@ -191,7 +191,8 @@ Older three-file layouts and plans without depth settings are legacy runs:
 preserve their files and receipts. This skill change does not migrate, delete
 files from, or re-certify completed corpora.
 New runs and helper validation require **schema version 2**. Do not validate or
-silently upgrade version-1 corpora, including the historical repository example.
+silently upgrade version-1 corpora. The repository's semiconductor example uses
+schema version 2; its generation receipt does not certify additional corpus QA.
 
 ## General-purpose source and viewpoint modeling
 
@@ -517,7 +518,7 @@ project. Do not run examples with an unset path or assume the example is intake.
 
 7. **Run additional QA only when selected.** Automatically invoke the separate
    pass after successful generation if intake selected an intensity. A later
-   explicit request may use `--policy Sampled`, `--policy FullContentSampledVisual`
+   explicit request may use `--policy Sampled`, `--policy Balanced`
    or `--policy Full` without changing canon/drafts/Office files:
 
    ```powershell
@@ -562,7 +563,7 @@ project. Do not run examples with an unset path or assume the example is intake.
    Retry failed documents without changing IDs, dates, facts, or unrelated files.
    Existing execution-version-1 runs and legacy schema-v2 QA without execution
    sidecars retain their strict contracts. No automatic downgrade, migration,
-   historical example regeneration, or re-certification is part of this workflow.
+   existing corpus regeneration, or re-certification is part of this workflow.
 
 ## Consistency rules
 

@@ -1,9 +1,0 @@
-{
-  "schema_version": 1,
-  "canon_sha256": "842ce5bcbc2a42e00df27a5c3ee4f41ab4b059bb36e3464daacc08a2ce0b85cd",
-  "review": "Business totals, service and cost breakdowns reconcile; all requirements have methods and acceptance criteria; meetings and board requests have named owners and dates.",
-  "financial_scope": "Income and operating snapshots only; no balance sheet, cash-flow model, invented mining revenue, or unsupported cash/runway assumptions.",
-  "business_milestones": "Ground development releases only; future mission gates retain planned or goal status.",
-  "organization": "Eight referenced people; effective-dated finance and mission-systems transitions. Named chart size is not financial headcount.",
-  "public_review": "Public release facts and quotes are available on release date; internal financial data is excluded from press releases."
-}

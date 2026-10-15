@@ -1,0 +1,258 @@
+{
+  "schema_version": 2,
+  "corpus_id": "corpus-76ce98a12405018fd1e8c2e5",
+  "canon_sha256": "caaf762e72fb012b38e89626490ab0988233f06da57675c45f8792fce3796186",
+  "plan_sha256": "647b92bb093e0638d541a8f268fd3c50035a754aa58c5be14676e52f5e7007a9",
+  "documents": [
+    {
+      "document_id": "doc-0001",
+      "path": "documents\\2020-08-15 - SunnySemi LLC Launches SunCore 1.0 for Industrial Inspection.docx",
+      "sha256": "17df5116e91defa98af5f3c3ea780a37069466d57c5b88622bed21b8e06bf9b8"
+    },
+    {
+      "document_id": "doc-0002",
+      "path": "documents\\2021-08-15 - SunnySemi LLC Launches GulfSwitch 2.0 Power Control.docx",
+      "sha256": "f1afaf65142bff156f9ce86ad1c3bc3edeed43bcff199b8dc97eada9fe955a35"
+    },
+    {
+      "document_id": "doc-0003",
+      "path": "documents\\2022-08-20 - SunnySemi LLC - SunCore 3.0 - Edge Inference Adoption.pptx",
+      "sha256": "e662523707f24ba2cae3085a03cc2d1ff570a2d8279b86cae430ef07c12537fa"
+    },
+    {
+      "document_id": "doc-0004",
+      "path": "documents\\2023-08-20 - SunnySemi LLC - SunCore 4.0 - Edge Inference Adoption.pptx",
+      "sha256": "1e127586960b769789172a4ad9244842c88bac3d7aa00891830fb8a8eb8d9ea9"
+    },
+    {
+      "document_id": "doc-0005",
+      "path": "documents\\2024-08-20 - SunnySemi LLC - SunCore 5.0 - Edge Inference Adoption.pptx",
+      "sha256": "552da6cdb8d1958e581bdaed086f70a96c5171f038d15e7bd9d832e04405705a"
+    },
+    {
+      "document_id": "doc-0006",
+      "path": "documents\\2025-08-20 - SunnySemi LLC - SunCore 6.0 - Edge Inference Adoption.pptx",
+      "sha256": "5b0443c2e098ed36bb3a129477a42f5ef0e0e704c79529a7207c995a503cb182"
+    },
+    {
+      "document_id": "doc-0007",
+      "path": "documents\\2020-08-15 - SunnySemi LLC Launches GulfSwitch 1.0 Power Control.docx",
+      "sha256": "e12c9eed1e143033c120aba94c083ebeea69722f2775a4781ea48a2e666ed96c"
+    },
+    {
+      "document_id": "doc-0008",
+      "path": "documents\\2021-08-20 - SunnySemi LLC - SunCore 2.0 - Edge Inference Adoption.pptx",
+      "sha256": "d000819e3a3ee019595abd97a36986c073b6e4c0309e2fe2840025d20147f092"
+    },
+    {
+      "document_id": "doc-0009",
+      "path": "documents\\2022-02-01 - SunnySemi LLC - SunCore 3.0 Product Specification.docx",
+      "sha256": "99b0f73556827aabb30de112f76c398a48229acb6891fadb85244d0e166ab21d"
+    },
+    {
+      "document_id": "doc-0010",
+      "path": "documents\\2023-02-01 - SunnySemi LLC - SunCore 4.0 Product Specification.docx",
+      "sha256": "74b3540e6a276f7a9cb06c9bf8d711f8dcb3855fcf0020b4a501d73cce9d5826"
+    },
+    {
+      "document_id": "doc-0011",
+      "path": "documents\\2024-02-01 - SunnySemi LLC - SunCore 5.0 Product Specification.docx",
+      "sha256": "81420f9701b5e656ff1094da1e2c410b669090dc176ac2c2c03d2e46ef0a4549"
+    },
+    {
+      "document_id": "doc-0012",
+      "path": "documents\\2025-07-25 - SunnySemi LLC - 2025 Production Readiness and Profitable scale.docx",
+      "sha256": "1451a2a5b0f9f295a9b2b68cbd7987ef454b7617499a4badfc2d37e3264efb13"
+    },
+    {
+      "document_id": "doc-0013",
+      "path": "documents\\2020-07-25 - SunnySemi LLC - 2020 Production Readiness and Launch discipline.docx",
+      "sha256": "02db75415a009720f25fab7acede415cd022882a36ada1493237a2f1f6ed4162"
+    },
+    {
+      "document_id": "doc-0014",
+      "path": "documents\\2022-01-15 - SunnySemi LLC - FY 2021 Operating Economics.xlsx",
+      "sha256": "282c03f4a9a74b8e2146ed2ba69a9070a221c25804c7d929b3981052ed28b19a"
+    },
+    {
+      "document_id": "doc-0015",
+      "path": "documents\\2023-08-15 - SunnySemi LLC Launches SunCore 4.0 for Machine-Vision Equipment.docx",
+      "sha256": "6a60191545178967f7fefada6d01c66f856ef6589c8b42681eaa9b25d549cb4b"
+    },
+    {
+      "document_id": "doc-0016",
+      "path": "documents\\2023-07-15 - SunnySemi LLC - H1 2023 Operating Economics.xlsx",
+      "sha256": "84721a65ce2e89e9b76b5ca21f951e5efba70d14d4d86cd8ac9260357fc06eea"
+    },
+    {
+      "document_id": "doc-0017",
+      "path": "documents\\2024-07-25 - SunnySemi LLC - 2024 Production Readiness and Thermal accountability.docx",
+      "sha256": "1a89ddf4002f5599d134b6049961247be9780b1c4e51146d5298e28ab0c8ecb7"
+    },
+    {
+      "document_id": "doc-0018",
+      "path": "documents\\2025-07-15 - SunnySemi LLC - H1 2025 Operating Economics.xlsx",
+      "sha256": "90488dbb04cc597c2bc81f40a2c11a848408105092e84f34ef438e93ae88360a"
+    },
+    {
+      "document_id": "doc-0019",
+      "path": "documents\\2020-07-20 - SunnySemi LLC - 2020 Midyear Performance and Capacity Decisions.pptx",
+      "sha256": "7397dade57639ddd7b9d86664565866e0e8504d749e35f64fbcb8007f960c08a"
+    },
+    {
+      "document_id": "doc-0020",
+      "path": "documents\\2022-08-15 - SunnySemi LLC Launches SunCore 3.0 for Distributed Infrastructure.docx",
+      "sha256": "131f37f14ab8d2629b37b6155c8e68a393859c8bb58abf6baf45aa36dadf25cb"
+    },
+    {
+      "document_id": "doc-0021",
+      "path": "documents\\2023-08-15 - SunnySemi LLC Launches GulfSwitch 4.0 Power Control.docx",
+      "sha256": "cf7060f7c41a02c0f8c740ea21645b5e1f7460dac5377983c5cc67a878cbb735"
+    },
+    {
+      "document_id": "doc-0022",
+      "path": "documents\\2024-01-15 - SunnySemi LLC - FY 2023 Operating Economics.xlsx",
+      "sha256": "546efbf8f32836d2b13e496effaed2b828da00dc9ad30da468fd34d7777b56ab"
+    },
+    {
+      "document_id": "doc-0023",
+      "path": "documents\\2024-07-20 - SunnySemi LLC - 2024 Midyear Performance and Capacity Decisions.pptx",
+      "sha256": "833328ab8ca4d80a9285adfd43d26189d6cca43b2914e4c97985305ba57c9e9f"
+    },
+    {
+      "document_id": "doc-0024",
+      "path": "documents\\2022-08-22 - SunnySemi LLC - GulfSwitch 3.0 - Power Stage Adoption.pptx",
+      "sha256": "d58fb2bee93bd8f18f64c80420818aa739abff85c23fbe4c17e2282ac15e88f1"
+    },
+    {
+      "document_id": "doc-0025",
+      "path": "documents\\2020-07-15 - SunnySemi LLC - H1 2020 Operating Economics.xlsx",
+      "sha256": "f6d660418947cf6ac2d988fbad7dd89aabf3897d61b72076bf5c5eec6eb02477"
+    },
+    {
+      "document_id": "doc-0026",
+      "path": "documents\\2022-07-25 - SunnySemi LLC - 2022 Production Readiness and Package readiness.docx",
+      "sha256": "ae1bf4b71da2949e60f068aab29aa7694d285210107215c8d1b1a89ef95d70ba"
+    },
+    {
+      "document_id": "doc-0027",
+      "path": "documents\\2021-02-01 - SunnySemi LLC - SunCore 2.0 Product Specification.docx",
+      "sha256": "77d5c2078af09e77a02ff147a6a819a9f87d893432af6409112a5385cf7b73a3"
+    },
+    {
+      "document_id": "doc-0028",
+      "path": "documents\\2024-08-15 - SunnySemi LLC Launches SunCore 5.0 for Embedded Industrial Computing.docx",
+      "sha256": "efe9f2037b5a84c7a5e8f10a56f73735892f3c93edbeb4e5fa0b0cf06e2221aa"
+    },
+    {
+      "document_id": "doc-0029",
+      "path": "documents\\2024-07-15 - SunnySemi LLC - H1 2024 Operating Economics.xlsx",
+      "sha256": "b28f64d3ba5d4fa3633e3b36d64369379891c6d78775f46bb41c056ddd057b83"
+    },
+    {
+      "document_id": "doc-0030",
+      "path": "documents\\2025-02-01 - SunnySemi LLC - SunCore 6.0 Product Specification.docx",
+      "sha256": "bf2d8145f05fd44fe1f1e0d4296d3a97e992bb81816d327d0f7de6b3dc6a4e4a"
+    },
+    {
+      "document_id": "doc-0031",
+      "path": "documents\\2021-08-15 - SunnySemi LLC Launches SunCore 2.0 for Warehouse Automation.docx",
+      "sha256": "1ca267ef506d13d944b6ea29ddccd8746840b86e63be5726c1edd97aae014141"
+    },
+    {
+      "document_id": "doc-0032",
+      "path": "documents\\2022-07-20 - SunnySemi LLC - 2022 Midyear Performance and Capacity Decisions.pptx",
+      "sha256": "08d30e7e1a7a48a476b827b3afd3d277b275b5664ec16e482fda7e0343d0f7c7"
+    },
+    {
+      "document_id": "doc-0033",
+      "path": "documents\\2021-07-25 - SunnySemi LLC - 2021 Production Readiness and Allocation discipline.docx",
+      "sha256": "7183fb1a473c3afa1d05783259385adc863f8d1a8e197c1d9691196b98fc2827"
+    },
+    {
+      "document_id": "doc-0034",
+      "path": "documents\\2024-08-15 - SunnySemi LLC Launches GulfSwitch 5.0 Power Control.docx",
+      "sha256": "aaab55f6e1965fe54246d07cd179169bf79f3fbca7c4e2927976a234de49e716"
+    },
+    {
+      "document_id": "doc-0035",
+      "path": "documents\\2025-01-15 - SunnySemi LLC - FY 2024 Operating Economics.xlsx",
+      "sha256": "fec7418d234c17d8e7dc55203526edc557f6b0ebd59645bfd005f5edde630320"
+    },
+    {
+      "document_id": "doc-0036",
+      "path": "documents\\2025-07-20 - SunnySemi LLC - 2025 Midyear Performance and Capacity Decisions.pptx",
+      "sha256": "9aadce63d6ca8c4e1138fe9c93569c638878a2accb55fbffbcf12bf450fdd3ff"
+    },
+    {
+      "document_id": "doc-0037",
+      "path": "documents\\2021-07-20 - SunnySemi LLC - 2021 Midyear Performance and Capacity Decisions.pptx",
+      "sha256": "a4891f32cb452dabddd2bf59a534ef959d93f19666bd94392528a6c88c428e20"
+    },
+    {
+      "document_id": "doc-0038",
+      "path": "documents\\2020-08-20 - SunnySemi LLC - SunCore 1.0 - Edge Inference Adoption.pptx",
+      "sha256": "09453046e750a2bcc1d3cafb28ee26c50650c73182fce311a215446f4de66f59"
+    },
+    {
+      "document_id": "doc-0039",
+      "path": "documents\\2023-07-25 - SunnySemi LLC - 2023 Production Readiness and Software maturity.docx",
+      "sha256": "17b188b0760b656ac099219a1e627ef52eee21ba59a80928f982baa4df04a426"
+    },
+    {
+      "document_id": "doc-0040",
+      "path": "documents\\2022-07-15 - SunnySemi LLC - H1 2022 Operating Economics.xlsx",
+      "sha256": "f25948d6b26fbb756a0dc2ca6e47ceed894ecea8324ee547bb7fe49dbf57c7e0"
+    },
+    {
+      "document_id": "doc-0041",
+      "path": "documents\\2025-08-15 - SunnySemi LLC Launches SunCore 6.0 for High-Density Edge Systems.docx",
+      "sha256": "0fcd6a712bbf783d5fd7da2892cc9408047191d1f8042ceb9f4962e765046835"
+    },
+    {
+      "document_id": "doc-0042",
+      "path": "documents\\2026-01-15 - SunnySemi LLC - FY 2025 Operating Economics.xlsx",
+      "sha256": "e89ab5207eea9adeb54632992179c2928af1616740a98cee4adf18cd6e645462"
+    },
+    {
+      "document_id": "doc-0043",
+      "path": "documents\\2021-07-15 - SunnySemi LLC - H1 2021 Operating Economics.xlsx",
+      "sha256": "09466b67d7b4118521720b3313af1a0f6d5da543abeef90314cbc52ef217e3c2"
+    },
+    {
+      "document_id": "doc-0044",
+      "path": "documents\\2020-02-01 - SunnySemi LLC - SunCore 1.0 Product Specification.docx",
+      "sha256": "baefb9578c985a46bf1252f3237785b215c98b5d63eb30b5c98538ede7ab4f79"
+    },
+    {
+      "document_id": "doc-0045",
+      "path": "documents\\2023-07-20 - SunnySemi LLC - 2023 Midyear Performance and Capacity Decisions.pptx",
+      "sha256": "47c20af190d334cd48b7cc6b3ddc3a5d6a706ad3417cd95833b01f6ffaa903ac"
+    },
+    {
+      "document_id": "doc-0046",
+      "path": "documents\\2023-01-15 - SunnySemi LLC - FY 2022 Operating Economics.xlsx",
+      "sha256": "df88ca95cdd1b2394a186cc4837bec89701da6754d805b0c6bc547d3802a3557"
+    },
+    {
+      "document_id": "doc-0047",
+      "path": "documents\\2025-08-15 - SunnySemi LLC Launches GulfSwitch 6.0 Power Control.docx",
+      "sha256": "0d088501cf398d5f0b05870a2a0acd5252e317511a043afbcdb8f2f684028011"
+    },
+    {
+      "document_id": "doc-0048",
+      "path": "documents\\2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx",
+      "sha256": "4f1976beef84b5a0017668c4f41c18f64f338ce64fab8a83b446bc4c7f078418"
+    },
+    {
+      "document_id": "doc-0049",
+      "path": "documents\\2022-08-15 - SunnySemi LLC Launches GulfSwitch 3.0 Power Control.docx",
+      "sha256": "2cb333d0758632f88cd0025c041c902dc765b3b2709f472fa5811cb16027127e"
+    },
+    {
+      "document_id": "doc-0050",
+      "path": "documents\\2021-01-15 - SunnySemi LLC - FY 2020 Operating Economics.xlsx",
+      "sha256": "39f48dc807523a1fd06d13b4cc77f8d64f6a4d304222cc754f0642304608a824"
+    }
+  ]
+}

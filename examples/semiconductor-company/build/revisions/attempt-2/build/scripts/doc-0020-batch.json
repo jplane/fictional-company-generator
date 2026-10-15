@@ -1,0 +1,242 @@
+[
+  {
+    "command": "set",
+    "path": "/",
+    "props": {
+      "title": "SunnySemi LLC Launches SunCore 3.0 for Distributed Infrastructure",
+      "author": "SunnySemi LLC",
+      "docDefaults.font": "Calibri",
+      "docDefaults.fontSize": "11pt"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/section[1]",
+    "props": {
+      "pageWidth": "8.5in",
+      "pageHeight": "11in",
+      "marginTop": "0.7in",
+      "marginBottom": "0.7in",
+      "marginLeft": "0.8in",
+      "marginRight": "0.8in"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/styles",
+    "type": "style",
+    "props": {
+      "id": "Title",
+      "name": "Title",
+      "type": "paragraph",
+      "font": "Calibri",
+      "size": "21pt",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/styles",
+    "type": "style",
+    "props": {
+      "id": "Heading1",
+      "name": "Heading1",
+      "type": "paragraph",
+      "font": "Calibri",
+      "size": "15pt",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/styles",
+    "type": "style",
+    "props": {
+      "id": "Heading2",
+      "name": "Heading2",
+      "type": "paragraph",
+      "font": "Calibri",
+      "size": "14pt",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SUNNYSEMI LLC | NEWSROOM",
+      "font": "Calibri",
+      "size": "10pt",
+      "color": "087E8B",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SunnySemi LLC Launches SunCore 3.0 for Distributed Infrastructure",
+      "font": "Calibri",
+      "size": "21pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "bold": "true",
+      "style": "Title"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "2022-08-15 | Tampa, Florida",
+      "font": "Calibri",
+      "size": "10pt",
+      "color": "087E8B",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "TAMPA, Fla. - SunnySemi LLC today announced that SunCore 3.0 has launched, effective 2022-08-15, expanding its component portfolio for distributed infrastructure. The release brings a version-specific silicon platform together with an evaluation path and clear operating boundaries. It is intended for equipment teams that need to move from a promising component specification to a qualified production design without treating those two steps as interchangeable. Customers can now begin adoption discussions around the released configuration rather than an unspecified future product.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SunCore 3.0 combines 7 nm inference ASIC with PCIe Gen3 x4 host interface with 48 INT8 TOPS and a 18 W board design budget. Peak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design. The published boundaries are intended to help customers determine whether the part fits a proposed system before they commit engineering resources. Component characteristics do not remove the need to verify the surrounding board, software and enclosure. The adoption discussion therefore starts with a defined application and operating point, not a general promise that every workload will achieve the same result.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "\"Our priority is to make SunCore 3.0 useful in real equipment, not just impressive in a specification table. Customers need clear operating boundaries, traceable release evidence and an engineering team that helps them qualify the complete design. That is how we intend to earn repeat programs.\" said Avery Rowan, CEO. The release approach connects technical capability with the evidence needed to introduce a component into equipment. It gives design teams a practical basis for discussing integration responsibilities and identifying work that remains on the customer side of the interface.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SunnySemi LLC | From evaluation to adoption",
+      "font": "Calibri",
+      "size": "15pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "bold": "true",
+      "pageBreakBefore": "true",
+      "style": "Heading1"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Application discussions include distributed infrastructure, local equipment anomaly detection and on-device visual inspection. The reference workflow is straightforward: Capture frames on the host, prepare tensors, submit inference over PCIe, and return results to the host application. SunnySemi's adoption support emphasizes package characterization and documented interface compatibility. Those activities give equipment manufacturers a way to compare the component's documented behavior with the requirements of their own design. They are not a substitute for customer acceptance, and they do not imply an endorsement from any equipment manufacturer. Integration scope and the production configuration should be agreed before a customer commits to a ramp.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Production orders and version-matched evaluation kits are available from the launch date, subject to quotation and allocation. Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example. Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption. Pricing and contractual lead times are supplied through customer-specific quotations. This sequencing allows the engineering discussion to address the intended application before commercial commitments are finalized. Customers should use the matching release material when evaluating the component and should not assume that a later revision has identical interface behavior.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "About SunnySemi LLC",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SunnySemi LLC is a Tampa, Florida-based fabless semiconductor designer. Its SunCore edge-inference processors and GulfSwitch power-management devices serve equipment manufacturers building industrial, infrastructure and embedded systems. The company designs silicon and reference platforms in Florida and works with external wafer-fabrication, assembly and test partners. Its Sarasota engineering site supports package characterization, application validation and customer bring-up. SunnySemi combines version-controlled silicon specifications with evaluation hardware and application support so customers can qualify components against their own system requirements. Product information is available at https://sunnysemi.example.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Media contact",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Jordan Ellis | Corporate Communications | media@sunnysemi.example",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x"
+    }
+  }
+]

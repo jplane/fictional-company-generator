@@ -1,0 +1,24 @@
+{
+  "arguments": [
+    "validate",
+    "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-15 - SunnySemi LLC Launches SunCore 6.0 for High-Density Edge Systems.docx"
+  ],
+  "operation": "validate",
+  "started_at": "2026-10-15T17:21:11.829719+00:00",
+  "ended_at": "2026-10-15T17:21:16.711435+00:00",
+  "active_seconds": 4.881721599958837,
+  "waiting_seconds": 0,
+  "returncode": 0,
+  "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"errors\": []\n  }\n}\n",
+  "stderr": "",
+  "tool": {
+    "version": "1.0.157",
+    "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+  },
+  "corrective": false,
+  "pass": "generation",
+  "repeat_success": true,
+  "artifact_sha256": "0fcd6a712bbf783d5fd7da2892cc9408047191d1f8042ceb9f4962e765046835",
+  "status": "passed",
+  "evidence": "Checked complete OfficeCLI result without errors/caveats"
+}

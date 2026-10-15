@@ -1,0 +1,143 @@
+{
+  "schema_version": 2,
+  "corpus_id": "corpus-76ce98a12405018fd1e8c2e5",
+  "canon_sha256": "caaf762e72fb012b38e89626490ab0988233f06da57675c45f8792fce3796186",
+  "plan_sha256": "647b92bb093e0638d541a8f268fd3c50035a754aa58c5be14676e52f5e7007a9",
+  "document_id": "doc-0023",
+  "engine": "OfficeCLI",
+  "tool": {
+    "version": "1.0.157",
+    "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+  },
+  "author_tool": {
+    "version": "1.0.157",
+    "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+  },
+  "capability": {
+    "path": "build\\capabilities\\c5a19c7bce2743110b521a93638258f779b31252ff28bcec2add2517b34286a0.json",
+    "sha256": "e7f902f12d1557f0cd19f972030ccdc967d51f28c10200055882ab3f70795acc"
+  },
+  "status": "passed",
+  "artifact_sha256": "833328ab8ca4d80a9285adfd43d26189d6cca43b2914e4c97985305ba57c9e9f",
+  "draft_sha256": "48c4b523be7e85fc856cfe6eafd110449927564de259959f4d09dc32cce62da5",
+  "checks": [
+    {
+      "operation": "document",
+      "path": "build\\tool-results\\doc-0023-document.json",
+      "sha256": "e8e6ef7ba9d58e6fe5b2431f4dce599a8ddf3856ac367c4190117be261087cca"
+    },
+    {
+      "operation": "validate",
+      "path": "build\\tool-results\\doc-0023-validate.json",
+      "sha256": "91be222f9da0dc72b50d7f4e4623eb75121a85e7e40dd7f08451919b42ed47db"
+    },
+    {
+      "operation": "issues",
+      "path": "build\\tool-results\\doc-0023-issues.json",
+      "sha256": "c1d1c792c98cab62954633d80dcd101f26e5112dc873014605b97ac057d4924f"
+    },
+    {
+      "operation": "extract",
+      "path": "build\\tool-results\\doc-0023-extract.json",
+      "sha256": "d8055061571543f0a64f8771a39f77e9d4297ec9d49a4d9eb50f983f965d4b4f"
+    },
+    {
+      "operation": "html_export",
+      "path": "build\\tool-results\\doc-0023-html_export.json",
+      "sha256": "139dac0c6b692d86f6afd2813aef5e1070edae4b579baf00d48bf8d94c6184a2"
+    },
+    {
+      "operation": "depth",
+      "path": "build\\tool-results\\doc-0023-depth.json",
+      "sha256": "11b381095d8c01f09c29b8957764920bd39cdd2d5da102d46fb7a58360e2a3e0"
+    }
+  ],
+  "renders": [
+    {
+      "id": "all",
+      "images": [
+        {
+          "path": "build\\renders\\doc-0023\\all\\slide-1.png",
+          "sha256": "b11be06bd8305f5eabcf8b93c053e3fbdeae7a4f82ef178ef6467274a5449326",
+          "slide": 1
+        },
+        {
+          "path": "build\\renders\\doc-0023\\all\\slide-2.png",
+          "sha256": "b1b9200725241fa0ed91e47b0a2a1cb5f0189a447c51995e43deccf9bc38ea4e",
+          "slide": 2
+        },
+        {
+          "path": "build\\renders\\doc-0023\\all\\slide-3.png",
+          "sha256": "f058439ec494abf5e0238c0b57c653d9d2059e4bfa5b0d12a98f23358c29e200",
+          "slide": 3
+        },
+        {
+          "path": "build\\renders\\doc-0023\\all\\slide-4.png",
+          "sha256": "9a880aa1b6a26a6ce0caa9654aa6deef56fcda33485a50f37d8f385b3e37afb1",
+          "slide": 4
+        },
+        {
+          "path": "build\\renders\\doc-0023\\all\\slide-5.png",
+          "sha256": "bf7433622cd46e5551730cdc7abd1107d2aea4d018ae8c0f1627c9342462621e",
+          "slide": 5
+        },
+        {
+          "path": "build\\renders\\doc-0023\\all\\slide-6.png",
+          "sha256": "dfbfbd630881c51d71147432f783d2f2fa11583d6c7d33ffa08ff18ef45c05e5",
+          "slide": 6
+        },
+        {
+          "path": "build\\renders\\doc-0023\\all\\slide-7.png",
+          "sha256": "9888a541ea4d030f4849006e24fc02e9a0d2699a637c1687c0fc61e4f6a332c1",
+          "slide": 7
+        },
+        {
+          "path": "build\\renders\\doc-0023\\all\\slide-8.png",
+          "sha256": "ef6559503b95779609f22afff0f54db752692e57e01457fed454f9d24063db49",
+          "slide": 8
+        },
+        {
+          "path": "build\\renders\\doc-0023\\all\\slide-9.png",
+          "sha256": "65e9dec3f71d0c609d21158c258900ae11655f052af9a9b98f7f77321ee6e65c",
+          "slide": 9
+        },
+        {
+          "path": "build\\renders\\doc-0023\\all\\slide-10.png",
+          "sha256": "80d6e2dfd32b8810d406f989ecfbcbce20b456c4b530c312ce2304dc1765bb2b",
+          "slide": 10
+        }
+      ],
+      "renderer": "OfficeCLI-HTML+Playwright-Chromium",
+      "artifact_sha256": "833328ab8ca4d80a9285adfd43d26189d6cca43b2914e4c97985305ba57c9e9f",
+      "result": {
+        "path": "build\\tool-results\\doc-0023-render-all.json",
+        "sha256": "8507c09e68ce6702a5d7fb08b180789a25c40d29d1537aec899b7e25c3e77749"
+      }
+    }
+  ],
+  "render_targets": [
+    "all"
+  ],
+  "target_definitions": [
+    {
+      "id": "all",
+      "slides": 10
+    }
+  ],
+  "corrected_failure": false,
+  "machine_version": 2,
+  "generation_sha256": "fa58b323f157f623c4cecccd342414725168b9bcde95830696be712024bd7324",
+  "declared_targets": [
+    {
+      "id": "all",
+      "slides": 10
+    }
+  ],
+  "job_sha256": "f95c7c625640b9909efe280431ff80fbba12f884e761a33bb30bbf90f3b1f600",
+  "checker": {
+    "company.py": "cd82c505ada3537b654c435fd057189ab67a8aafaadacf58fb27e0b984f8b886",
+    "officecli_runner.py": "2eb42e037f244eb097e40050280838fb4f7ddfd37605417b6ea85d62efbae2f6",
+    "playwright_capture.py": "38b160b3cd1dfd4afa8bf404676cab639af628b7a6067b1792e3b2a7659deaa3"
+  },
+  "export_bindings_sha256": "d86a42ac53356c6f05d175015c5310f0c284012738784d7f701b2da22cce0953"
+}

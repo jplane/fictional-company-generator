@@ -1,0 +1,25 @@
+{
+  "arguments": [
+    "view",
+    "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2024-07-20 - SunnySemi LLC - 2024 Midyear Performance and Capacity Decisions.pptx",
+    "issues"
+  ],
+  "operation": "issues",
+  "started_at": "2026-10-15T17:20:31.275514+00:00",
+  "ended_at": "2026-10-15T17:20:33.735403+00:00",
+  "active_seconds": 2.4598927999613807,
+  "waiting_seconds": 0,
+  "returncode": 0,
+  "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"issues\": []\n  }\n}\n",
+  "stderr": "",
+  "tool": {
+    "version": "1.0.157",
+    "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+  },
+  "corrective": false,
+  "pass": "generation",
+  "repeat_success": true,
+  "artifact_sha256": "833328ab8ca4d80a9285adfd43d26189d6cca43b2914e4c97985305ba57c9e9f",
+  "status": "passed",
+  "evidence": "Checked complete OfficeCLI result without errors/caveats"
+}

@@ -1,0 +1,571 @@
+{
+  "schema_version": 2,
+  "corpus_id": "corpus-76ce98a12405018fd1e8c2e5",
+  "document_id": "doc-0045",
+  "canon_sha256": "caaf762e72fb012b38e89626490ab0988233f06da57675c45f8792fce3796186",
+  "plan_sha256": "647b92bb093e0638d541a8f268fd3c50035a754aa58c5be14676e52f5e7007a9",
+  "title": "SunnySemi LLC - 2023 Midyear Performance and Capacity Decisions",
+  "publication_date": "2023-07-20",
+  "content_depth": "medium",
+  "claims": [
+    {
+      "id": "c0001",
+      "record_id": "operating-2023",
+      "path": [
+        "data",
+        "theme"
+      ],
+      "value": "Software maturity"
+    },
+    {
+      "id": "c0002",
+      "record_id": "company",
+      "path": [
+        "data",
+        "headquarters"
+      ],
+      "value": "Tampa, Florida"
+    },
+    {
+      "id": "c0003",
+      "record_id": "person-avery",
+      "path": [
+        "data",
+        "name"
+      ],
+      "value": "Avery Rowan"
+    },
+    {
+      "id": "c0004",
+      "record_id": "role-avery-initial",
+      "path": [
+        "data",
+        "title"
+      ],
+      "value": "CEO"
+    },
+    {
+      "id": "c0005",
+      "record_id": "financial-2023-q1",
+      "path": [
+        "data",
+        "revenue_usd"
+      ],
+      "value": 1600000000,
+      "units": "USD"
+    },
+    {
+      "id": "c0006",
+      "record_id": "financial-2023-q2",
+      "path": [
+        "data",
+        "revenue_usd"
+      ],
+      "value": 1840000000,
+      "units": "USD"
+    },
+    {
+      "id": "c0007",
+      "record_id": "financial-2023-q2",
+      "path": [
+        "data",
+        "operating_income_usd"
+      ],
+      "value": 644000000,
+      "units": "USD"
+    },
+    {
+      "id": "c0008",
+      "record_id": "financial-2023-q2",
+      "path": [
+        "data",
+        "revenue_usd"
+      ],
+      "value": 1840000000,
+      "units": "USD"
+    },
+    {
+      "id": "c0009",
+      "record_id": "financial-2023-q2",
+      "path": [
+        "data",
+        "cogs_usd"
+      ],
+      "value": 736000000,
+      "units": "USD"
+    },
+    {
+      "id": "c0010",
+      "record_id": "financial-2023-q2",
+      "path": [
+        "data",
+        "opex_usd"
+      ],
+      "value": 460000000,
+      "units": "USD"
+    },
+    {
+      "id": "c0011",
+      "record_id": "financial-2023-q2",
+      "path": [
+        "data",
+        "operating_income_usd"
+      ],
+      "value": 644000000,
+      "units": "USD"
+    },
+    {
+      "id": "c0012",
+      "record_id": "financial-2023-q2",
+      "path": [
+        "data",
+        "suncore_revenue_usd"
+      ],
+      "value": 1214400000,
+      "units": "USD"
+    },
+    {
+      "id": "c0013",
+      "record_id": "financial-2023-q2",
+      "path": [
+        "data",
+        "gulfswitch_revenue_usd"
+      ],
+      "value": 625600000,
+      "units": "USD"
+    },
+    {
+      "id": "c0014",
+      "record_id": "operating-2023",
+      "path": [
+        "data",
+        "strategy"
+      ],
+      "value": "Own differentiated silicon architecture and application validation; use external manufacturing rather than build a wafer fab."
+    },
+    {
+      "id": "c0015",
+      "record_id": "financial-2023-q2",
+      "path": [
+        "data",
+        "wafer_cost_usd"
+      ],
+      "value": 478400000,
+      "units": "USD"
+    },
+    {
+      "id": "c0016",
+      "record_id": "financial-2023-q2",
+      "path": [
+        "data",
+        "packaging_cost_usd"
+      ],
+      "value": 184000000,
+      "units": "USD"
+    },
+    {
+      "id": "c0017",
+      "record_id": "financial-2023-q2",
+      "path": [
+        "data",
+        "logistics_cost_usd"
+      ],
+      "value": 73600000,
+      "units": "USD"
+    },
+    {
+      "id": "c0018",
+      "record_id": "financial-2023-q2",
+      "path": [
+        "data",
+        "engineering_opex_usd"
+      ],
+      "value": 322000000,
+      "units": "USD"
+    },
+    {
+      "id": "c0019",
+      "record_id": "financial-2023-q2",
+      "path": [
+        "data",
+        "commercial_opex_usd"
+      ],
+      "value": 138000000,
+      "units": "USD"
+    },
+    {
+      "id": "c0020",
+      "record_id": "financial-2023-q2",
+      "path": [
+        "data",
+        "headcount"
+      ],
+      "value": 2350,
+      "units": "people"
+    },
+    {
+      "id": "c0021",
+      "record_id": "operating-2023",
+      "path": [
+        "data",
+        "accountability"
+      ],
+      "value": "Quinn Mercer owns customer qualification; Riley Arden owns release evidence; the effective CFO owns capacity-commitment review."
+    },
+    {
+      "id": "c0022",
+      "record_id": "release-beacon-2023",
+      "path": [
+        "data",
+        "version"
+      ],
+      "value": "4.0"
+    },
+    {
+      "id": "c0023",
+      "record_id": "release-beacon-2023",
+      "path": [
+        "data",
+        "metric"
+      ],
+      "value": "96 INT8 TOPS"
+    },
+    {
+      "id": "c0024",
+      "record_id": "release-prism-2023",
+      "path": [
+        "data",
+        "version"
+      ],
+      "value": "4.0"
+    },
+    {
+      "id": "c0025",
+      "record_id": "release-prism-2023",
+      "path": [
+        "data",
+        "metric"
+      ],
+      "value": "60 V maximum rated input"
+    },
+    {
+      "id": "c0026",
+      "record_id": "release-beacon-2023",
+      "path": [
+        "data",
+        "release_date"
+      ],
+      "value": "2023-08-15"
+    },
+    {
+      "id": "c0027",
+      "record_id": "operating-2023",
+      "path": [
+        "data",
+        "risk"
+      ],
+      "value": "compiler regressions across model updates"
+    },
+    {
+      "id": "c0028",
+      "record_id": "operating-2023",
+      "path": [
+        "data",
+        "mitigation"
+      ],
+      "value": "freeze the supported operator set and retain regression evidence"
+    },
+    {
+      "id": "c0029",
+      "record_id": "operating-2023",
+      "path": [
+        "data",
+        "operating_principle"
+      ],
+      "value": "treat compiler qualification as part of the hardware delivery promise"
+    },
+    {
+      "id": "c0030",
+      "record_id": "operating-2023",
+      "path": [
+        "data",
+        "capacity_option"
+      ],
+      "value": "Stage commitments against qualification evidence."
+    },
+    {
+      "id": "c0031",
+      "record_id": "operating-2023",
+      "path": [
+        "data",
+        "alternative"
+      ],
+      "value": "Commit the entire proposed capacity increment immediately."
+    },
+    {
+      "id": "c0032",
+      "record_id": "operating-2023",
+      "path": [
+        "data",
+        "tradeoff"
+      ],
+      "value": "Staging limits irreversible commitments but can defer some shipment opportunities."
+    },
+    {
+      "id": "c0033",
+      "record_id": "acquisition-sable-closed",
+      "path": [
+        "data",
+        "target"
+      ],
+      "value": "CoralKey Packaging"
+    },
+    {
+      "id": "c0034",
+      "record_id": "acquisition-sable-closed",
+      "path": [
+        "data",
+        "status"
+      ],
+      "value": "closed"
+    },
+    {
+      "id": "c0035",
+      "record_id": "acquisition-sable-closed",
+      "path": [
+        "data",
+        "price_usd"
+      ],
+      "value": 85000000,
+      "units": "USD"
+    },
+    {
+      "id": "c0036",
+      "record_id": "operating-2023",
+      "path": [
+        "data",
+        "board_request"
+      ],
+      "value": "Approve milestone-based capacity releases; retain existing commercial approval limits and require Finance and Engineering sign-off before each increment."
+    },
+    {
+      "id": "c0037",
+      "record_id": "operating-2023",
+      "path": [
+        "data",
+        "board_status"
+      ],
+      "value": "Requested; no board approval is recorded in this briefing."
+    },
+    {
+      "id": "c0038",
+      "record_id": "operating-2023",
+      "path": [
+        "data",
+        "liquidity_note"
+      ],
+      "value": "No cash balance, debt balance, free-cash-flow measure or forecast is included."
+    }
+  ],
+  "sections": [
+    {
+      "role": "executive_summary",
+      "heading": "SunnySemi LLC - 2023 Midyear Performance and Capacity Decisions",
+      "text": "Software maturity\nTampa, Florida\nAvery Rowan, CEO\nMidyear actuals and a gated capacity decision; confidential board material.",
+      "claim_ids": [
+        "c0001",
+        "c0002",
+        "c0003",
+        "c0004"
+      ],
+      "page_break": false,
+      "visual": [
+        "Actual performance",
+        "Release readiness",
+        "Capacity authority"
+      ]
+    },
+    {
+      "role": "performance",
+      "heading": "Recognized revenue and operating income",
+      "text": "Q1 revenue: $1600.0 million\nQ2 revenue: $1840.0 million\nQ2 operating income: $644.0 million\nRevenue and operating income are actuals, not bookings or cash flow.",
+      "claim_ids": [
+        "c0005",
+        "c0006",
+        "c0007"
+      ],
+      "page_break": false,
+      "bars": [
+        [
+          "Q1 revenue",
+          1600000000
+        ],
+        [
+          "Q2 revenue",
+          1840000000
+        ]
+      ]
+    },
+    {
+      "role": "performance",
+      "heading": "The Q2 operating-income bridge",
+      "text": "Revenue $1840.0 million\nLess COGS $736.0 million\nLess operating expense $460.0 million\nOperating income $644.0 million",
+      "claim_ids": [
+        "c0008",
+        "c0009",
+        "c0010",
+        "c0011"
+      ],
+      "page_break": false,
+      "bars": [
+        [
+          "Revenue",
+          1840000000
+        ],
+        [
+          "COGS",
+          736000000
+        ],
+        [
+          "Opex",
+          460000000
+        ],
+        [
+          "Operating income",
+          644000000
+        ]
+      ]
+    },
+    {
+      "role": "performance",
+      "heading": "Two silicon franchises fund the strategy",
+      "text": "SunCore recognized revenue: $1214.4 million\nGulfSwitch recognized revenue: $625.6 million\nOwn differentiated silicon architecture and application validation; use external manufacturing rather than build a wafer fab.",
+      "claim_ids": [
+        "c0012",
+        "c0013",
+        "c0014"
+      ],
+      "page_break": false,
+      "bars": [
+        [
+          "SunCore",
+          1214400000
+        ],
+        [
+          "GulfSwitch",
+          625600000
+        ]
+      ]
+    },
+    {
+      "role": "performance",
+      "heading": "Manufacturing spend has distinct drivers",
+      "text": "Wafer cost $478.4 million\nPackage and test $184.0 million\nLogistics $73.6 million\nThese components reconcile to reported COGS.",
+      "claim_ids": [
+        "c0015",
+        "c0016",
+        "c0017"
+      ],
+      "page_break": false,
+      "bars": [
+        [
+          "Wafer",
+          478400000
+        ],
+        [
+          "Package/test",
+          184000000
+        ],
+        [
+          "Logistics",
+          73600000
+        ]
+      ]
+    },
+    {
+      "role": "performance",
+      "heading": "Engineering investment and release accountability",
+      "text": "Engineering opex: $322.0 million\nCommercial and administrative opex: $138.0 million\nQ2 ending headcount: 2350\nQuinn Mercer owns customer qualification; Riley Arden owns release evidence; the effective CFO owns capacity-commitment review.",
+      "claim_ids": [
+        "c0018",
+        "c0019",
+        "c0020",
+        "c0021"
+      ],
+      "page_break": false,
+      "visual": [
+        "Engineering evidence",
+        "Customer qualification",
+        "Finance sign-off"
+      ]
+    },
+    {
+      "role": "executive_summary",
+      "heading": "The August release gate is still ahead",
+      "text": "SunCore 4.0: 96 INT8 TOPS\nGulfSwitch 4.0: 60 V maximum rated input\nTarget release date: 2023-08-15\nPlanned at this briefing date; completion is not asserted.",
+      "claim_ids": [
+        "c0022",
+        "c0023",
+        "c0024",
+        "c0025",
+        "c0026"
+      ],
+      "page_break": false,
+      "visual": [
+        "Specification",
+        "Verification",
+        "Production release"
+      ]
+    },
+    {
+      "role": "risks",
+      "heading": "Concentrate controls on the binding risk",
+      "text": "Risk: compiler regressions across model updates\nMitigation: freeze the supported operator set and retain regression evidence\ntreat compiler qualification as part of the hardware delivery promise",
+      "claim_ids": [
+        "c0027",
+        "c0028",
+        "c0029"
+      ],
+      "page_break": false,
+      "visual": [
+        "Identify dependency",
+        "Retain evidence",
+        "Gate commitment"
+      ]
+    },
+    {
+      "role": "risks",
+      "heading": "Capacity options and transaction context",
+      "text": "Preferred: Stage commitments against qualification evidence.\nAlternative: Commit the entire proposed capacity increment immediately.\nStaging limits irreversible commitments but can defer some shipment opportunities.\nCoralKey Packaging: closed, $85.0 million.",
+      "claim_ids": [
+        "c0030",
+        "c0031",
+        "c0032",
+        "c0033",
+        "c0034",
+        "c0035"
+      ],
+      "page_break": false,
+      "visual": [
+        "Stage commitments",
+        "Commit immediately"
+      ]
+    },
+    {
+      "role": "decisions_requested",
+      "heading": "Decision requested and authority retained",
+      "text": "Approve milestone-based capacity releases; retain existing commercial approval limits and require Finance and Engineering sign-off before each increment.\nRequested; no board approval is recorded in this briefing.\nNo cash balance, debt balance, free-cash-flow measure or forecast is included.",
+      "claim_ids": [
+        "c0036",
+        "c0037",
+        "c0038"
+      ],
+      "page_break": false,
+      "visual": [
+        "Board direction",
+        "Engineering evidence",
+        "Finance release"
+      ]
+    }
+  ]
+}

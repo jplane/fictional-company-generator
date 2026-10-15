@@ -1,0 +1,2073 @@
+[
+  {
+    "command": "set",
+    "path": "/",
+    "props": {
+      "title": "SunnySemi LLC - SunCore 6.0 - Edge Inference Adoption",
+      "author": "SunnySemi LLC",
+      "slideWidth": "33.867cm",
+      "slideHeight": "19.05cm"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "slide",
+    "props": {
+      "background": "123B4A"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[1]",
+    "type": "shape",
+    "props": {
+      "text": "SUNNYSEMI LLC   |   2025-08-20",
+      "x": "1.4cm",
+      "y": "0.4cm",
+      "width": "29cm",
+      "height": "0.95cm",
+      "size": "11pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "BEE5E6",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[1]",
+    "type": "shape",
+    "props": {
+      "text": "SunnySemi LLC - SunCore 6.0 - Edge Inference Adoption",
+      "x": "1.4cm",
+      "y": "1.4cm",
+      "width": "30.8cm",
+      "height": "4.2cm",
+      "size": "36pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[1]",
+    "type": "shape",
+    "props": {
+      "text": "SunCore 6.0\nlaunched | 2025-08-15\nTampa, Florida\nQuinn Mercer, Product Director",
+      "x": "1.4cm",
+      "y": "6.1cm",
+      "width": "17.2cm",
+      "height": "10.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[1]",
+    "type": "shape",
+    "props": {
+      "text": "1",
+      "x": "20.1cm",
+      "y": "6.3cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[1]",
+    "type": "shape",
+    "props": {
+      "text": "Released silicon",
+      "x": "22.0cm",
+      "y": "6.3cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[1]",
+    "type": "shape",
+    "props": {
+      "text": "2",
+      "x": "20.1cm",
+      "y": "9.666666666666666cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[1]",
+    "type": "shape",
+    "props": {
+      "text": "Evaluation",
+      "x": "22.0cm",
+      "y": "9.666666666666666cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[1]",
+    "type": "shape",
+    "props": {
+      "text": "3",
+      "x": "20.1cm",
+      "y": "13.033333333333333cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[1]",
+    "type": "shape",
+    "props": {
+      "text": "Qualification",
+      "x": "22.0cm",
+      "y": "13.033333333333333cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[1]",
+    "type": "shape",
+    "props": {
+      "text": "01  |  PRODUCT BRIEFING",
+      "x": "1.4cm",
+      "y": "17.9cm",
+      "width": "30.8cm",
+      "height": "0.9cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "BEE5E6",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[1]",
+    "type": "notes",
+    "props": {
+      "text": "SunCore 6.0\nlaunched | 2025-08-15\nTampa, Florida\nQuinn Mercer, Product Director Keep the stated operating and authority boundaries explicit."
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "slide",
+    "props": {
+      "background": "F8FBFB"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[2]",
+    "type": "shape",
+    "props": {
+      "text": "SUNNYSEMI LLC   |   2025-08-20",
+      "x": "1.4cm",
+      "y": "0.4cm",
+      "width": "29cm",
+      "height": "0.95cm",
+      "size": "11pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[2]",
+    "type": "shape",
+    "props": {
+      "text": "Start with the equipment boundary",
+      "x": "1.4cm",
+      "y": "1.4cm",
+      "width": "30.8cm",
+      "height": "4.2cm",
+      "size": "36pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[2]",
+    "type": "shape",
+    "props": {
+      "text": "Moving industrial inference off a general-purpose host competes with system power, response-time and software-integration constraints.\nPeak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design.",
+      "x": "1.4cm",
+      "y": "6.1cm",
+      "width": "17.2cm",
+      "height": "10.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[2]",
+    "type": "shape",
+    "props": {
+      "text": "1",
+      "x": "20.1cm",
+      "y": "6.3cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[2]",
+    "type": "shape",
+    "props": {
+      "text": "Workload",
+      "x": "22.0cm",
+      "y": "6.3cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[2]",
+    "type": "shape",
+    "props": {
+      "text": "2",
+      "x": "20.1cm",
+      "y": "9.666666666666666cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[2]",
+    "type": "shape",
+    "props": {
+      "text": "Power",
+      "x": "22.0cm",
+      "y": "9.666666666666666cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[2]",
+    "type": "shape",
+    "props": {
+      "text": "3",
+      "x": "20.1cm",
+      "y": "13.033333333333333cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[2]",
+    "type": "shape",
+    "props": {
+      "text": "Integration",
+      "x": "22.0cm",
+      "y": "13.033333333333333cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[2]",
+    "type": "shape",
+    "props": {
+      "text": "02  |  PRODUCT BRIEFING",
+      "x": "1.4cm",
+      "y": "17.9cm",
+      "width": "30.8cm",
+      "height": "0.9cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[2]",
+    "type": "notes",
+    "props": {
+      "text": "Moving industrial inference off a general-purpose host competes with system power, response-time and software-integration constraints.\nPeak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design. Keep the stated operating and authority boundaries explicit."
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "slide",
+    "props": {
+      "background": "F8FBFB"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "SUNNYSEMI LLC   |   2025-08-20",
+      "x": "1.4cm",
+      "y": "0.4cm",
+      "width": "29cm",
+      "height": "0.95cm",
+      "size": "11pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "A component and a qualification path",
+      "x": "1.4cm",
+      "y": "1.4cm",
+      "width": "30.8cm",
+      "height": "4.2cm",
+      "size": "36pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "5 nm inference ASIC with PCIe Gen3 x4 host interface\nEvaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration.",
+      "x": "1.4cm",
+      "y": "6.1cm",
+      "width": "17.2cm",
+      "height": "10.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "1",
+      "x": "20.1cm",
+      "y": "6.3cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "Reference platform",
+      "x": "22.0cm",
+      "y": "6.3cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "2",
+      "x": "20.1cm",
+      "y": "9.666666666666666cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "Acceptance evidence",
+      "x": "22.0cm",
+      "y": "9.666666666666666cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "3",
+      "x": "20.1cm",
+      "y": "13.033333333333333cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "Customer configuration",
+      "x": "22.0cm",
+      "y": "13.033333333333333cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "shape",
+    "props": {
+      "text": "03  |  PRODUCT BRIEFING",
+      "x": "1.4cm",
+      "y": "17.9cm",
+      "width": "30.8cm",
+      "height": "0.9cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[3]",
+    "type": "notes",
+    "props": {
+      "text": "5 nm inference ASIC with PCIe Gen3 x4 host interface\nEvaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration. Keep the stated operating and authority boundaries explicit."
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "slide",
+    "props": {
+      "background": "F8FBFB"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[4]",
+    "type": "shape",
+    "props": {
+      "text": "SUNNYSEMI LLC   |   2025-08-20",
+      "x": "1.4cm",
+      "y": "0.4cm",
+      "width": "29cm",
+      "height": "0.95cm",
+      "size": "11pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[4]",
+    "type": "shape",
+    "props": {
+      "text": "The published operating envelope",
+      "x": "1.4cm",
+      "y": "1.4cm",
+      "width": "30.8cm",
+      "height": "4.2cm",
+      "size": "36pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[4]",
+    "type": "shape",
+    "props": {
+      "text": "256 INT8 TOPS\n35 W board design budget\nPeak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design.",
+      "x": "1.4cm",
+      "y": "6.1cm",
+      "width": "17.2cm",
+      "height": "10.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[4]",
+    "type": "shape",
+    "props": {
+      "text": "1",
+      "x": "20.1cm",
+      "y": "6.3cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[4]",
+    "type": "shape",
+    "props": {
+      "text": "256 INT8 TOPS",
+      "x": "22.0cm",
+      "y": "6.3cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[4]",
+    "type": "shape",
+    "props": {
+      "text": "2",
+      "x": "20.1cm",
+      "y": "11.35cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[4]",
+    "type": "shape",
+    "props": {
+      "text": "35 W board design budget",
+      "x": "22.0cm",
+      "y": "11.35cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[4]",
+    "type": "shape",
+    "props": {
+      "text": "04  |  PRODUCT BRIEFING",
+      "x": "1.4cm",
+      "y": "17.9cm",
+      "width": "30.8cm",
+      "height": "0.9cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[4]",
+    "type": "notes",
+    "props": {
+      "text": "256 INT8 TOPS\n35 W board design budget\nPeak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design. Keep the stated operating and authority boundaries explicit."
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "slide",
+    "props": {
+      "background": "F8FBFB"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "shape",
+    "props": {
+      "text": "SUNNYSEMI LLC   |   2025-08-20",
+      "x": "1.4cm",
+      "y": "0.4cm",
+      "width": "29cm",
+      "height": "0.95cm",
+      "size": "11pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "shape",
+    "props": {
+      "text": "What the interface enables",
+      "x": "1.4cm",
+      "y": "1.4cm",
+      "width": "30.8cm",
+      "height": "4.2cm",
+      "size": "36pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "shape",
+    "props": {
+      "text": "Capture frames on the host, prepare tensors, submit inference over PCIe, and return results to the host application.\nKeep the host boundary and the version-matched component configuration explicit.",
+      "x": "1.4cm",
+      "y": "6.1cm",
+      "width": "17.2cm",
+      "height": "10.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "shape",
+    "props": {
+      "text": "1",
+      "x": "20.1cm",
+      "y": "6.3cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "shape",
+    "props": {
+      "text": "Host interface",
+      "x": "22.0cm",
+      "y": "6.3cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "shape",
+    "props": {
+      "text": "2",
+      "x": "20.1cm",
+      "y": "9.666666666666666cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "shape",
+    "props": {
+      "text": "Component execution",
+      "x": "22.0cm",
+      "y": "9.666666666666666cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "shape",
+    "props": {
+      "text": "3",
+      "x": "20.1cm",
+      "y": "13.033333333333333cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "shape",
+    "props": {
+      "text": "Status and results",
+      "x": "22.0cm",
+      "y": "13.033333333333333cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "shape",
+    "props": {
+      "text": "05  |  PRODUCT BRIEFING",
+      "x": "1.4cm",
+      "y": "17.9cm",
+      "width": "30.8cm",
+      "height": "0.9cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[5]",
+    "type": "notes",
+    "props": {
+      "text": "Capture frames on the host, prepare tensors, submit inference over PCIe, and return results to the host application.\nKeep the host boundary and the version-matched component configuration explicit. Keep the stated operating and authority boundaries explicit."
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "slide",
+    "props": {
+      "background": "F8FBFB"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[6]",
+    "type": "shape",
+    "props": {
+      "text": "SUNNYSEMI LLC   |   2025-08-20",
+      "x": "1.4cm",
+      "y": "0.4cm",
+      "width": "29cm",
+      "height": "0.95cm",
+      "size": "11pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[6]",
+    "type": "shape",
+    "props": {
+      "text": "Application paths to evaluate",
+      "x": "1.4cm",
+      "y": "1.4cm",
+      "width": "30.8cm",
+      "height": "4.2cm",
+      "size": "36pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[6]",
+    "type": "shape",
+    "props": {
+      "text": "high-density edge systems\nlocal equipment anomaly detection\non-device visual inspection\nValidate each use case against the intended system, not the product label.",
+      "x": "1.4cm",
+      "y": "6.1cm",
+      "width": "17.2cm",
+      "height": "10.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[6]",
+    "type": "shape",
+    "props": {
+      "text": "1",
+      "x": "20.1cm",
+      "y": "6.3cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[6]",
+    "type": "shape",
+    "props": {
+      "text": "high-density edge systems",
+      "x": "22.0cm",
+      "y": "6.3cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[6]",
+    "type": "shape",
+    "props": {
+      "text": "2",
+      "x": "20.1cm",
+      "y": "9.666666666666666cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[6]",
+    "type": "shape",
+    "props": {
+      "text": "local equipment anomaly detection",
+      "x": "22.0cm",
+      "y": "9.666666666666666cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[6]",
+    "type": "shape",
+    "props": {
+      "text": "3",
+      "x": "20.1cm",
+      "y": "13.033333333333333cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[6]",
+    "type": "shape",
+    "props": {
+      "text": "on-device visual inspection",
+      "x": "22.0cm",
+      "y": "13.033333333333333cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[6]",
+    "type": "shape",
+    "props": {
+      "text": "06  |  PRODUCT BRIEFING",
+      "x": "1.4cm",
+      "y": "17.9cm",
+      "width": "30.8cm",
+      "height": "0.9cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[6]",
+    "type": "notes",
+    "props": {
+      "text": "high-density edge systems\nlocal equipment anomaly detection\non-device visual inspection\nValidate each use case against the intended system, not the product label. Keep the stated operating and authority boundaries explicit."
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "slide",
+    "props": {
+      "background": "F8FBFB"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[7]",
+    "type": "shape",
+    "props": {
+      "text": "SUNNYSEMI LLC   |   2025-08-20",
+      "x": "1.4cm",
+      "y": "0.4cm",
+      "width": "29cm",
+      "height": "0.95cm",
+      "size": "11pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[7]",
+    "type": "shape",
+    "props": {
+      "text": "Integration is a shared responsibility",
+      "x": "1.4cm",
+      "y": "1.4cm",
+      "width": "30.8cm",
+      "height": "4.2cm",
+      "size": "36pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[7]",
+    "type": "shape",
+    "props": {
+      "text": "Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption.\nrelease-controlled adoption and milestone-based production support",
+      "x": "1.4cm",
+      "y": "6.1cm",
+      "width": "17.2cm",
+      "height": "10.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[7]",
+    "type": "shape",
+    "props": {
+      "text": "1",
+      "x": "20.1cm",
+      "y": "6.3cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[7]",
+    "type": "shape",
+    "props": {
+      "text": "Customer workload",
+      "x": "22.0cm",
+      "y": "6.3cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[7]",
+    "type": "shape",
+    "props": {
+      "text": "2",
+      "x": "20.1cm",
+      "y": "9.666666666666666cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[7]",
+    "type": "shape",
+    "props": {
+      "text": "SunnySemi evidence",
+      "x": "22.0cm",
+      "y": "9.666666666666666cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[7]",
+    "type": "shape",
+    "props": {
+      "text": "3",
+      "x": "20.1cm",
+      "y": "13.033333333333333cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[7]",
+    "type": "shape",
+    "props": {
+      "text": "Joint qualification",
+      "x": "22.0cm",
+      "y": "13.033333333333333cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[7]",
+    "type": "shape",
+    "props": {
+      "text": "07  |  PRODUCT BRIEFING",
+      "x": "1.4cm",
+      "y": "17.9cm",
+      "width": "30.8cm",
+      "height": "0.9cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[7]",
+    "type": "notes",
+    "props": {
+      "text": "Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption.\nrelease-controlled adoption and milestone-based production support Keep the stated operating and authority boundaries explicit."
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "slide",
+    "props": {
+      "background": "F8FBFB"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[8]",
+    "type": "shape",
+    "props": {
+      "text": "SUNNYSEMI LLC   |   2025-08-20",
+      "x": "1.4cm",
+      "y": "0.4cm",
+      "width": "29cm",
+      "height": "0.95cm",
+      "size": "11pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[8]",
+    "type": "shape",
+    "props": {
+      "text": "Boundaries that must stay visible",
+      "x": "1.4cm",
+      "y": "1.4cm",
+      "width": "30.8cm",
+      "height": "4.2cm",
+      "size": "36pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[8]",
+    "type": "shape",
+    "props": {
+      "text": "Peak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design.\nNo regulatory certification, customer benchmark or customer endorsement is asserted.",
+      "x": "1.4cm",
+      "y": "6.1cm",
+      "width": "17.2cm",
+      "height": "10.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[8]",
+    "type": "shape",
+    "props": {
+      "text": "1",
+      "x": "20.1cm",
+      "y": "6.3cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[8]",
+    "type": "shape",
+    "props": {
+      "text": "Component scope",
+      "x": "22.0cm",
+      "y": "6.3cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[8]",
+    "type": "shape",
+    "props": {
+      "text": "2",
+      "x": "20.1cm",
+      "y": "9.666666666666666cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[8]",
+    "type": "shape",
+    "props": {
+      "text": "Board scope",
+      "x": "22.0cm",
+      "y": "9.666666666666666cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[8]",
+    "type": "shape",
+    "props": {
+      "text": "3",
+      "x": "20.1cm",
+      "y": "13.033333333333333cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[8]",
+    "type": "shape",
+    "props": {
+      "text": "System scope",
+      "x": "22.0cm",
+      "y": "13.033333333333333cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[8]",
+    "type": "shape",
+    "props": {
+      "text": "08  |  PRODUCT BRIEFING",
+      "x": "1.4cm",
+      "y": "17.9cm",
+      "width": "30.8cm",
+      "height": "0.9cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[8]",
+    "type": "notes",
+    "props": {
+      "text": "Peak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design.\nNo regulatory certification, customer benchmark or customer endorsement is asserted. Keep the stated operating and authority boundaries explicit."
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "slide",
+    "props": {
+      "background": "F8FBFB"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[9]",
+    "type": "shape",
+    "props": {
+      "text": "SUNNYSEMI LLC   |   2025-08-20",
+      "x": "1.4cm",
+      "y": "0.4cm",
+      "width": "29cm",
+      "height": "0.95cm",
+      "size": "11pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[9]",
+    "type": "shape",
+    "props": {
+      "text": "Plan adoption around release evidence",
+      "x": "1.4cm",
+      "y": "1.4cm",
+      "width": "30.8cm",
+      "height": "4.2cm",
+      "size": "36pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[9]",
+    "type": "shape",
+    "props": {
+      "text": "Production orders and version-matched evaluation kits are available from the launch date, subject to quotation and allocation.\nPricing and contractual lead times are supplied through customer-specific quotations.",
+      "x": "1.4cm",
+      "y": "6.1cm",
+      "width": "17.2cm",
+      "height": "10.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[9]",
+    "type": "shape",
+    "props": {
+      "text": "1",
+      "x": "20.1cm",
+      "y": "6.3cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[9]",
+    "type": "shape",
+    "props": {
+      "text": "Evaluate",
+      "x": "22.0cm",
+      "y": "6.3cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[9]",
+    "type": "shape",
+    "props": {
+      "text": "2",
+      "x": "20.1cm",
+      "y": "9.666666666666666cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[9]",
+    "type": "shape",
+    "props": {
+      "text": "Agree configuration",
+      "x": "22.0cm",
+      "y": "9.666666666666666cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[9]",
+    "type": "shape",
+    "props": {
+      "text": "3",
+      "x": "20.1cm",
+      "y": "13.033333333333333cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[9]",
+    "type": "shape",
+    "props": {
+      "text": "Quote and allocate",
+      "x": "22.0cm",
+      "y": "13.033333333333333cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "172F38",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[9]",
+    "type": "shape",
+    "props": {
+      "text": "09  |  PRODUCT BRIEFING",
+      "x": "1.4cm",
+      "y": "17.9cm",
+      "width": "30.8cm",
+      "height": "0.9cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "087E8B",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[9]",
+    "type": "notes",
+    "props": {
+      "text": "Production orders and version-matched evaluation kits are available from the launch date, subject to quotation and allocation.\nPricing and contractual lead times are supplied through customer-specific quotations. Keep the stated operating and authority boundaries explicit."
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "slide",
+    "props": {
+      "background": "123B4A"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[10]",
+    "type": "shape",
+    "props": {
+      "text": "SUNNYSEMI LLC   |   2025-08-20",
+      "x": "1.4cm",
+      "y": "0.4cm",
+      "width": "29cm",
+      "height": "0.95cm",
+      "size": "11pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "BEE5E6",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[10]",
+    "type": "shape",
+    "props": {
+      "text": "Begin with a version-matched evaluation",
+      "x": "1.4cm",
+      "y": "1.4cm",
+      "width": "30.8cm",
+      "height": "4.2cm",
+      "size": "36pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[10]",
+    "type": "shape",
+    "props": {
+      "text": "Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example.\nAgree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption.",
+      "x": "1.4cm",
+      "y": "6.1cm",
+      "width": "17.2cm",
+      "height": "10.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[10]",
+    "type": "shape",
+    "props": {
+      "text": "1",
+      "x": "20.1cm",
+      "y": "6.3cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[10]",
+    "type": "shape",
+    "props": {
+      "text": "Evaluation kit",
+      "x": "22.0cm",
+      "y": "6.3cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[10]",
+    "type": "shape",
+    "props": {
+      "text": "2",
+      "x": "20.1cm",
+      "y": "9.666666666666666cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[10]",
+    "type": "shape",
+    "props": {
+      "text": "Interface pack",
+      "x": "22.0cm",
+      "y": "9.666666666666666cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[10]",
+    "type": "shape",
+    "props": {
+      "text": "3",
+      "x": "20.1cm",
+      "y": "13.033333333333333cm",
+      "width": "1.5cm",
+      "height": "1.5cm",
+      "size": "22pt",
+      "font": "Calibri",
+      "fill": "087E8B",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[10]",
+    "type": "shape",
+    "props": {
+      "text": "Qualification plan",
+      "x": "22.0cm",
+      "y": "13.033333333333333cm",
+      "width": "9.8cm",
+      "height": "2.8cm",
+      "size": "20pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "FFFFFF",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[10]",
+    "type": "shape",
+    "props": {
+      "text": "10  |  PRODUCT BRIEFING",
+      "x": "1.4cm",
+      "y": "17.9cm",
+      "width": "30.8cm",
+      "height": "0.9cm",
+      "size": "10pt",
+      "font": "Calibri",
+      "fill": "none",
+      "color": "BEE5E6",
+      "geometry": "rect",
+      "valign": "center",
+      "align": "left"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/slide[10]",
+    "type": "notes",
+    "props": {
+      "text": "Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example.\nAgree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption. Keep the stated operating and authority boundaries explicit."
+    }
+  }
+]

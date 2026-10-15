@@ -1,0 +1,27 @@
+{
+  "timing_version": 1,
+  "events": [
+    {
+      "id": "1a76603c-1793-4bd4-a354-a0001abae7e7",
+      "name": "canon-planning",
+      "parent": null,
+      "pass": "generation",
+      "document_id": null,
+      "started_at": "2026-10-15T16:35:48.224243+00:00",
+      "status": "passed",
+      "ended_at": "2026-10-15T16:40:07.132070+00:00",
+      "elapsed_seconds": 258.907827
+    },
+    {
+      "id": "9bb199a9-4833-406d-b900-e33509f4b9c1",
+      "name": "drafting",
+      "parent": null,
+      "pass": "generation",
+      "document_id": null,
+      "started_at": "2026-10-15T16:40:07.462668+00:00",
+      "status": "passed",
+      "ended_at": "2026-10-15T16:46:05.693769+00:00",
+      "elapsed_seconds": 358.231101
+    }
+  ]
+}

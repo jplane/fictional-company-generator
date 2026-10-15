@@ -1,0 +1,22 @@
+{
+  "officecli_source": "https://github.com/iOfficeAI/OfficeCLI",
+  "officecli_release": "v1.0.157",
+  "license": "Apache-2.0",
+  "installed_sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343",
+  "official_checksum_matched": true,
+  "installation_changes": [],
+  "preflight_images_inspected": [
+    "docx",
+    "pptx",
+    "xlsx",
+    "xlsx-chart-column",
+    "xlsx-chart-line"
+  ],
+  "output_location_confirmed": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company",
+  "publication_tail": "2026-01-15 for FY 2025 actuals",
+  "post_generation_qa": {
+    "enabled": false,
+    "policy": null
+  },
+  "business_scenario": "Extraordinarily successful Florida-based fabless semiconductor company"
+}

@@ -401,7 +401,7 @@ class GenerationTests(unittest.TestCase):
     def test_skill_requires_explicit_optional_qa_and_timing(self):
         wording = (execution.baseline.SCRIPT.parents[1] / "SKILL.md").read_text(encoding="utf-8")
         for expected in ("Additional QA:", "No additional QA", "during intake", "Sampled",
-                         "FullContentSampledVisual", "Full", "generation_execution_plan",
+                         "Balanced", "Full", "generation_execution_plan",
                          "finalize-qa", "--workers 1", "phase --action start", "unknown, not zero"):
             self.assertIn(expected, wording)
 
@@ -434,7 +434,7 @@ class GenerationTests(unittest.TestCase):
             fixture.generate()
             engine = fixture.engine()
             try:
-                engine.prepare_qa(fixture.jobs, "FullContentSampledVisual")
+                engine.prepare_qa(fixture.jobs, "Balanced")
                 fixture.review_qa_work()
                 engine.finalize_qa()
                 engine.prepare_qa(fixture.jobs, "Full")

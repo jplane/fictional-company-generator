@@ -7,10 +7,29 @@ history, financials, organization, and glossary.
 **Key capabilities:** shared company history and date-grounded Office documents;
 configurable genres and **light/medium/deep** detail; attributed statements,
 viewpoints, and evolving sources; portable claim provenance, coverage reporting,
-and simulated access views. Gaps, conflicts, noise, and stale sources are
-**opt-in**; clean, consistent content remains the default. Generation and QA use
+and simulated access views through optional additional QA. Gaps, conflicts, noise,
+and stale sources are **opt-in**; clean, consistent content remains the default.
+Generation and QA use
 [OfficeCLI](https://github.com/iOfficeAI/OfficeCLI) for document operations,
-with no Microsoft Office dependency.
+with pinned Playwright-Chromium captures and no Microsoft Office dependency.
+
+## Capabilities
+
+| Capability | What it provides |
+|---|---|
+| Coherent company history | One versioned canon for business actuals, financial reconciliation, products, acquisitions, effective-dated roles, and terminology |
+| Time-aware writing | Publication-date knowledge and effective-date state keep future results, promotions, and announced-but-uncompleted events distinct |
+| Authentic Office content | Genre-specific prose, realistic filenames, presentations, and workbooks with saved, independently checked formula results; deliberate DOCX page breaks |
+| Configurable scope and depth | An exact planned document count, requested years/types/formats, light/medium/deep substance, and custom genres without editing the skill |
+| Perspectives and source history | Attributed facts, opinions, assumptions, risks, recommendations, and decisions; source versions preserve corrections, retractions, and supersession |
+| Optional corpus imperfections | Explicit unknowns, undocumented facts, omitted sources, conflicting assertions, adjacent noise, and stale sources without corrupting canonical actuals |
+| Mandatory generation checks | Every-file mechanical checks, fully reviewed layout-family pilots, corrective review expansion, and hash-bound completion/resume evidence |
+| Opt-in additional QA | Selected content/visual reviews, final-artifact claim locations and hashes, provenance and coverage reports, and audited simulated recipient-view manifests |
+
+Author knowledge, author access, and intended reader access are modeled
+separately. These are fictional visibility rules, not real service permissions
+or ACL enforcement. The skill is a general-purpose content generator: it does
+not require a decision question or produce an independent evaluation answer key.
 
 ## Install
 
@@ -62,7 +81,7 @@ or migrated.
 | Content types | Press releases, product presentations, meeting transcripts, product specs, quarterly/annual reports, HR policies, board decks, financial workbooks, or additional types you describe |
 | Formats | DOCX, PPTX, XLSX, or a narrower selection appropriate to the content types |
 | Depth | **Light**, **medium** (default), or **deep** |
-| Additional QA | Asked explicitly during intake: **No additional QA** (default), **Sampled**, **FullContentSampledVisual**, or **Full**; independent of depth |
+| Additional QA | Asked explicitly during intake: **No additional QA** (default), **Sampled**, **Balanced**, or **Full**; independent of depth |
 | Runtime budget | Optional user-supplied budget, enforced at safe checkpoints |
 | Output | Explicit path to a new output directory |
 | Grounding | Existing canonical company data or details about products, financials, acquisitions, and organizational changes |
@@ -71,14 +90,17 @@ or migrated.
 
 ### Sample prompts
 
-**Mixed company corpus**
+**Semiconductor company corpus (the included example's scope)**
 
-> Use company-content-generator to create about 45 documents for Lumenvale
-> Systems, a fictional industrial analytics software company, covering 2022
-> through 2024. Include press releases, product presentations, meeting
-> transcripts, product specs, quarterly and annual reports, HR policies,
-> and financial workbooks. Use DOCX, PPTX, and XLSX with medium depth.
-> Generate the output in C:\CompanyContent\Lumenvale-2022-2024.
+> Use company-content-generator to create 50 documents for SunnySemi LLC,
+> a fictional, wildly successful semiconductor company based in Florida,
+> covering 2020 through 2025. Include press releases, product presentations,
+> meeting transcripts, product specifications, board decks, and financial
+> workbooks. Use DOCX, PPTX, and XLSX, medium depth, and seed 42. Generate
+> the output in C:\CompanyContent\SunnySemi-2020-2025. No additional QA.
+
+This describes the example's scope, not a byte-for-byte reproduction command.
+Use a new output directory rather than overwriting the included corpus.
 
 **Focused content**
 
@@ -86,6 +108,7 @@ or migrated.
 > Marine, a struggling, fictional sailboat manufacturer, covering 2023 through 2024.
 > Use light depth and focus on product launches and company announcements.
 > Generate the output in C:\CompanyContent\Northstar-press-releases.
+> No additional QA.
 
 **Custom types and richer analysis**
 
@@ -93,7 +116,44 @@ or migrated.
 > a fictional warehouse automation company, covering 2021 through 2025.
 > Include acquisition integration plans, customer onboarding guides, board
 > presentations, and financial workbooks. Use deep depth and seed 17.
-> Ground the content in company history and financial data previously outlined in this chat.
+> Establish the company history, acquisition milestones, product details, and
+> financial breakdowns in the canon before drafting. Generate the output in
+> C:\CompanyContent\Cedarline-2021-2025. Run Balanced additional QA.
+
+**Viewpoints, changing sources, and intentional disagreement**
+
+> Use company-content-generator to create 18 documents for GulfLight Chips,
+> a fictional Florida semiconductor designer, covering 2023 through 2025.
+> Include meeting transcripts, product specifications, and board decks at
+> medium depth. Include engineering and finance viewpoints on launch
+> readiness, with an explicitly attributed disagreement about schedule
+> assumptions and a later source that corrects an earlier estimate.
+> Keep actual financial results consistent and distinguish assumptions
+> from approved decisions. Preserve the source history without giving
+> earlier authors future knowledge. Generate the output in
+> C:\CompanyContent\GulfLight-source-history. Run Sampled additional QA.
+
+**Explicit gaps and stale material**
+
+> Use company-content-generator to create 12 medium-depth documents for
+> Pelican Devices, a fictional sensor manufacturer, covering 2024 through
+> 2025. Include meeting transcripts, product presentations, and board decks.
+> Deliberately leave one supplier qualification result unknown to the
+> authors, omit one otherwise known supporting source from the collection,
+> and include an older planning deck that is stale as of 2025-12-31 relative
+> to a newer approved source. Keep the total at 12 documents, preserve
+> canonical actuals, and do not label these conditions in the business prose.
+> Generate the output in C:\CompanyContent\Pelican-2024-2025.
+> Run Full additional QA.
+
+**Additional QA and a simulated public view of an existing corpus**
+
+> Use company-content-generator to run Full additional QA on the existing
+> corpus at examples\semiconductor-company without regenerating accepted
+> documents. After QA and its strict audit pass, create a simulated public
+> recipient-view manifest as of 2025-12-31 under build\views. Do not treat
+> the manifest as real ACL enforcement or include the private canon/build
+> tree as recipient-visible content.
 
 ## How generation works
 
@@ -116,7 +176,7 @@ or migrated.
    developing a new backend in-flight.
 5. **Run additional QA only if requested.** Intake explicitly asks whether to run
    this separate pass after generation, defaulting to no additional QA. Sampled
-   reviews selected complete documents; FullContentSampledVisual reviews all
+   reviews selected complete documents; Balanced reviews all
    content and sampled visuals; Full reviews all content and visuals. Mandatory
    selections and affected-family expansion remain. The pass resolves recorded
    exporter associations, verifies final-file provenance/coverage, captures missing
@@ -132,10 +192,10 @@ performed. Automated structural checks do not replace editorial/visual review.
 For a new-contract corpus, the runner supports:
 
 ```powershell
-python .github\skills\company-content-generator\scripts\officecli_runner.py qa --root "C:\CompanyContent\Lumenvale-2022-2024" --jobs build\jobs.json --policy Sampled
+python .github\skills\company-content-generator\scripts\officecli_runner.py qa --root "C:\CompanyContent\SunnySemi-2020-2025" --jobs build\jobs.json --policy Sampled
 # Complete the required actual reviews under build\reviews, then:
-python .github\skills\company-content-generator\scripts\officecli_runner.py finalize-qa --root "C:\CompanyContent\Lumenvale-2022-2024"
-python .github\skills\company-content-generator\scripts\officecli_runner.py summary --root "C:\CompanyContent\Lumenvale-2022-2024"
+python .github\skills\company-content-generator\scripts\officecli_runner.py finalize-qa --root "C:\CompanyContent\SunnySemi-2020-2025"
+python .github\skills\company-content-generator\scripts\officecli_runner.py summary --root "C:\CompanyContent\SunnySemi-2020-2025"
 ```
 
 The skill records agent-owned planning/drafting/review spans using the runner's
@@ -145,21 +205,39 @@ not zero. No throughput guarantee is inferred from synthetic tests.
 
 ## Included example
 
-This is a historical **prior-contract** example, not a template for new runs or
-a corpus validated by the current helper. New runs use schema version 2; there
-is no automatic migration or version-1 validation.
+[`examples\semiconductor-company`](examples/semiconductor-company) showcases
+**SunnySemi LLC**, a fictional, wildly successful Florida semiconductor company
+headquartered in Tampa with an engineering site in Sarasota. Its history follows
+SunCore inference ASICs, GulfSwitch power controllers, an acquisition, leadership
+changes, and rapid financial growth over fiscal years **2020-2025**.
 
-`examples\asteroid-mining` showcases **AstroDig LLC**, a fictional aerospace
-engineering and asteroid resource technology company. It covers fiscal years
-2013-2026 with 150 medium-depth documents: 50 each in DOCX, PPTX, and XLSX,
-including reports, press releases, presentations, specs, and meeting transcripts.
+The example contains **50 medium-depth documents**:
+
+| Content type | Count | Format |
+|---|---|---|
+| Press releases | 12 | DOCX |
+| Product specifications | 6 | DOCX |
+| Meeting transcripts | 6 | DOCX |
+| Product presentations | 8 | PPTX |
+| Board decks | 6 | PPTX |
+| Financial workbooks | 12 | XLSX |
+| **Total** | **50** | **24 DOCX, 14 PPTX, 12 XLSX** |
+
+Publication dates extend through **2026-01-15** for the FY2025 financial
+workbook.
 
 `canon.json` holds the shared company facts; `documents\` contains the final
-Office files. The curated `build\` folder preserves the request, accepted plan,
-drafts, generation scripts, and QA/provenance records for inspecting how the
-example was produced. Regenerable logs, contexts, intermediate plans, and renders
-are excluded from Git. The example is for exploration, not a required skill
-dependency or a default configuration for new runs.
+Office files. `build\` preserves the request, accepted plan, drafts, generation
+scripts, exporter bindings, reviews, and machine evidence. Its `manifest.json`
+and `generation.json` record completed schema-version-2 generation.
+All 50 documents received mandatory pilot/corrective content and visual reviews
+in this run. **Additional corpus QA was not requested**: the example does not
+claim certified final-artifact provenance, complete coverage, or native Office
+layout fidelity. Regenerable logs, contexts, intermediate plan variants, and
+renders are excluded from Git.
+
+The example is for exploration, not a required skill dependency or a default
+configuration for new runs.
 
 ## Detailed guidance
 

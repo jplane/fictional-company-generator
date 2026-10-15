@@ -1,0 +1,15 @@
+{
+  "revision": 3,
+  "business_canon_unchanged": true,
+  "user_approved_preservation": true,
+  "prior_attempt": "build/revisions/attempt-2",
+  "corrections": [
+    "Define Word paragraph styles before assigning them.",
+    "Increase slide label and footer text boxes to the exact schema issue minima.",
+    "Select each XLSX worksheet tab explicitly; use unmerged corner cells.",
+    "Set explicit first-line paragraph indentation; verified on all three DOCX family probes."
+  ],
+  "retry_policy": "One correction per logical operation: author warnings and slide issues corrected in revision 2; first DOCX issue-scan correction in revision 3. Repeated operation failures stop.",
+  "scope": "All six affected families require complete corrective content and visual review.",
+  "additional_corpus_qa": "not_requested"
+}

@@ -1,0 +1,42 @@
+{
+  "document_id": "doc-0045",
+  "artifact_sha256": "47c20af190d334cd48b7cc6b3ddc3a5d6a706ad3417cd95833b01f6ffaa903ac",
+  "draft_sha256": "55a5f3a08aa48a5ce8814290c934aa2dc34d39a6e7bec106ac3c8f3e1f92daaf",
+  "machine_sha256": "22bcad81a6089f4d637d6857cf915eb6aa633a4b0b467cf88153d2ee5f4622e2",
+  "semantic_review": {
+    "status": "passed",
+    "evidence": "SunnySemi LLC - 2023 Midyear Performance and Capacity Decisions: Reviewed all ten slides and notes against Q1/Q2 actuals, reconciled product/cost cuts, engineering investment, point-in-time headcount, prospective August release, year-specific risk, transaction status and requested decision. No cash-flow inference or invented approval."
+  },
+  "genre_review": {
+    "status": "passed",
+    "evidence": "Reviewed complete delivered content in its business genre: Reviewed all ten slides and notes against Q1/Q2 actuals, reconciled product/cost cuts, engineering investment, point-in-time headcount, prospective August release, year-specific risk, transaction status and requested decision. No cash-flow inference or invented approval. Ordinary company voice; no placeholders or generation self-labels."
+  },
+  "depth_review": {
+    "status": "passed",
+    "content_depth": "medium",
+    "evidence": "Ten substantive board slides include actual performance visuals, product/release accountability, resource tradeoff, risk mitigation and an explicit decision with retained authority. Saved-content measurement: 10 delivered_slides; draft measures {'document_id': 'doc-0045', 'type': 'board_deck', 'draft_words': 266, 'discussion_words': 0, 'requirements': None, 'analysis_modules': None}."
+  },
+  "visual_review": {
+    "status": "passed",
+    "images_delivered": true,
+    "render_ids": [
+      "all"
+    ],
+    "evidence": "All ten slide images inspected: long cover title wraps cleanly, calibrated financial bars are on common within-chart scales, labels and notes are readable, and text clears titles. The OfficeCLI HTML capture includes surrounding notes/navigation; it is not native Office certification. Inspected 10 complete unit images.",
+    "inspected_images": [
+      "build\\renders\\doc-0045\\all\\slide-1.png",
+      "build\\renders\\doc-0045\\all\\slide-2.png",
+      "build\\renders\\doc-0045\\all\\slide-3.png",
+      "build\\renders\\doc-0045\\all\\slide-4.png",
+      "build\\renders\\doc-0045\\all\\slide-5.png",
+      "build\\renders\\doc-0045\\all\\slide-6.png",
+      "build\\renders\\doc-0045\\all\\slide-7.png",
+      "build\\renders\\doc-0045\\all\\slide-8.png",
+      "build\\renders\\doc-0045\\all\\slide-9.png",
+      "build\\renders\\doc-0045\\all\\slide-10.png"
+    ]
+  },
+  "condition_review": {
+    "status": "not_selected"
+  }
+}

@@ -1,0 +1,556 @@
+{
+  "schema_version": 2,
+  "plan_sha256": "719fd5adce3412ce759a3e19cd383a054d201fc8a6c9f128371110c82d42fa97",
+  "documents": [
+    {
+      "document_id": "doc-0044",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 850,
+      "target_max": 1900,
+      "coverage": [
+        "16 distinct numbered testable requirements; methods, interfaces and release controls"
+      ],
+      "adaptation_rationale": "DOCX words guard explanatory substance; all 16 distinct requirement controls are separately counted and reviewed."
+    },
+    {
+      "document_id": "doc-0025",
+      "content_depth": "medium",
+      "measure": "delivered_sheets",
+      "target_min": 4,
+      "target_max": 4,
+      "coverage": [
+        "Six useful modules: income, margins, product mix, manufacturing cost, operating investment and period trend"
+      ],
+      "adaptation_rationale": "Four navigable sheets implement six distinct analytical modules; sheet count is only a mechanical guard. Module usefulness is separately reviewed."
+    },
+    {
+      "document_id": "doc-0019",
+      "content_depth": "medium",
+      "measure": "delivered_slides",
+      "target_min": 10,
+      "target_max": 10,
+      "coverage": [
+        "10 substantive slides; financial visuals, resource tradeoff, risk and decision requested"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0013",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 1650,
+      "target_max": 2600,
+      "coverage": [
+        "At least 1500 discussion words; alternatives, dependencies, decisions and owned actions"
+      ],
+      "adaptation_rationale": "Delivered words include metadata; the discussion-only count is also recorded and must reach 1500."
+    },
+    {
+      "document_id": "doc-0001",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "Approved quote, technical operating boundaries, adoption and availability"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0007",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "Approved quote, technical operating boundaries, adoption and availability"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0038",
+      "content_depth": "medium",
+      "measure": "delivered_slides",
+      "target_min": 10,
+      "target_max": 10,
+      "coverage": [
+        "10 substantive slides; use cases, workflow, constraints, adoption and next steps"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0050",
+      "content_depth": "medium",
+      "measure": "delivered_sheets",
+      "target_min": 4,
+      "target_max": 4,
+      "coverage": [
+        "Six useful modules: income, margins, product mix, manufacturing cost, operating investment and period trend"
+      ],
+      "adaptation_rationale": "Four navigable sheets implement six distinct analytical modules; sheet count is only a mechanical guard. Module usefulness is separately reviewed."
+    },
+    {
+      "document_id": "doc-0027",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 850,
+      "target_max": 1900,
+      "coverage": [
+        "16 distinct numbered testable requirements; methods, interfaces and release controls"
+      ],
+      "adaptation_rationale": "DOCX words guard explanatory substance; all 16 distinct requirement controls are separately counted and reviewed."
+    },
+    {
+      "document_id": "doc-0043",
+      "content_depth": "medium",
+      "measure": "delivered_sheets",
+      "target_min": 4,
+      "target_max": 4,
+      "coverage": [
+        "Six useful modules: income, margins, product mix, manufacturing cost, operating investment and period trend"
+      ],
+      "adaptation_rationale": "Four navigable sheets implement six distinct analytical modules; sheet count is only a mechanical guard. Module usefulness is separately reviewed."
+    },
+    {
+      "document_id": "doc-0037",
+      "content_depth": "medium",
+      "measure": "delivered_slides",
+      "target_min": 10,
+      "target_max": 10,
+      "coverage": [
+        "10 substantive slides; financial visuals, resource tradeoff, risk and decision requested"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0033",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 1650,
+      "target_max": 2600,
+      "coverage": [
+        "At least 1500 discussion words; alternatives, dependencies, decisions and owned actions"
+      ],
+      "adaptation_rationale": "Delivered words include metadata; the discussion-only count is also recorded and must reach 1500."
+    },
+    {
+      "document_id": "doc-0002",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "Approved quote, technical operating boundaries, adoption and availability"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0031",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "Approved quote, technical operating boundaries, adoption and availability"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0008",
+      "content_depth": "medium",
+      "measure": "delivered_slides",
+      "target_min": 10,
+      "target_max": 10,
+      "coverage": [
+        "10 substantive slides; use cases, workflow, constraints, adoption and next steps"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0014",
+      "content_depth": "medium",
+      "measure": "delivered_sheets",
+      "target_min": 4,
+      "target_max": 4,
+      "coverage": [
+        "Six useful modules: income, margins, product mix, manufacturing cost, operating investment and period trend"
+      ],
+      "adaptation_rationale": "Four navigable sheets implement six distinct analytical modules; sheet count is only a mechanical guard. Module usefulness is separately reviewed."
+    },
+    {
+      "document_id": "doc-0009",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 850,
+      "target_max": 1900,
+      "coverage": [
+        "16 distinct numbered testable requirements; methods, interfaces and release controls"
+      ],
+      "adaptation_rationale": "DOCX words guard explanatory substance; all 16 distinct requirement controls are separately counted and reviewed."
+    },
+    {
+      "document_id": "doc-0040",
+      "content_depth": "medium",
+      "measure": "delivered_sheets",
+      "target_min": 4,
+      "target_max": 4,
+      "coverage": [
+        "Six useful modules: income, margins, product mix, manufacturing cost, operating investment and period trend"
+      ],
+      "adaptation_rationale": "Four navigable sheets implement six distinct analytical modules; sheet count is only a mechanical guard. Module usefulness is separately reviewed."
+    },
+    {
+      "document_id": "doc-0032",
+      "content_depth": "medium",
+      "measure": "delivered_slides",
+      "target_min": 10,
+      "target_max": 10,
+      "coverage": [
+        "10 substantive slides; financial visuals, resource tradeoff, risk and decision requested"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0026",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 1650,
+      "target_max": 2600,
+      "coverage": [
+        "At least 1500 discussion words; alternatives, dependencies, decisions and owned actions"
+      ],
+      "adaptation_rationale": "Delivered words include metadata; the discussion-only count is also recorded and must reach 1500."
+    },
+    {
+      "document_id": "doc-0020",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "Approved quote, technical operating boundaries, adoption and availability"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0049",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "Approved quote, technical operating boundaries, adoption and availability"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0003",
+      "content_depth": "medium",
+      "measure": "delivered_slides",
+      "target_min": 10,
+      "target_max": 10,
+      "coverage": [
+        "10 substantive slides; use cases, workflow, constraints, adoption and next steps"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0024",
+      "content_depth": "medium",
+      "measure": "delivered_slides",
+      "target_min": 10,
+      "target_max": 10,
+      "coverage": [
+        "10 substantive slides; use cases, workflow, constraints, adoption and next steps"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0046",
+      "content_depth": "medium",
+      "measure": "delivered_sheets",
+      "target_min": 4,
+      "target_max": 4,
+      "coverage": [
+        "Six useful modules: income, margins, product mix, manufacturing cost, operating investment and period trend"
+      ],
+      "adaptation_rationale": "Four navigable sheets implement six distinct analytical modules; sheet count is only a mechanical guard. Module usefulness is separately reviewed."
+    },
+    {
+      "document_id": "doc-0010",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 850,
+      "target_max": 1900,
+      "coverage": [
+        "16 distinct numbered testable requirements; methods, interfaces and release controls"
+      ],
+      "adaptation_rationale": "DOCX words guard explanatory substance; all 16 distinct requirement controls are separately counted and reviewed."
+    },
+    {
+      "document_id": "doc-0016",
+      "content_depth": "medium",
+      "measure": "delivered_sheets",
+      "target_min": 4,
+      "target_max": 4,
+      "coverage": [
+        "Six useful modules: income, margins, product mix, manufacturing cost, operating investment and period trend"
+      ],
+      "adaptation_rationale": "Four navigable sheets implement six distinct analytical modules; sheet count is only a mechanical guard. Module usefulness is separately reviewed."
+    },
+    {
+      "document_id": "doc-0045",
+      "content_depth": "medium",
+      "measure": "delivered_slides",
+      "target_min": 10,
+      "target_max": 10,
+      "coverage": [
+        "10 substantive slides; financial visuals, resource tradeoff, risk and decision requested"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0039",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 1650,
+      "target_max": 2600,
+      "coverage": [
+        "At least 1500 discussion words; alternatives, dependencies, decisions and owned actions"
+      ],
+      "adaptation_rationale": "Delivered words include metadata; the discussion-only count is also recorded and must reach 1500."
+    },
+    {
+      "document_id": "doc-0015",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "Approved quote, technical operating boundaries, adoption and availability"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0021",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "Approved quote, technical operating boundaries, adoption and availability"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0004",
+      "content_depth": "medium",
+      "measure": "delivered_slides",
+      "target_min": 10,
+      "target_max": 10,
+      "coverage": [
+        "10 substantive slides; use cases, workflow, constraints, adoption and next steps"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0022",
+      "content_depth": "medium",
+      "measure": "delivered_sheets",
+      "target_min": 4,
+      "target_max": 4,
+      "coverage": [
+        "Six useful modules: income, margins, product mix, manufacturing cost, operating investment and period trend"
+      ],
+      "adaptation_rationale": "Four navigable sheets implement six distinct analytical modules; sheet count is only a mechanical guard. Module usefulness is separately reviewed."
+    },
+    {
+      "document_id": "doc-0011",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 850,
+      "target_max": 1900,
+      "coverage": [
+        "16 distinct numbered testable requirements; methods, interfaces and release controls"
+      ],
+      "adaptation_rationale": "DOCX words guard explanatory substance; all 16 distinct requirement controls are separately counted and reviewed."
+    },
+    {
+      "document_id": "doc-0029",
+      "content_depth": "medium",
+      "measure": "delivered_sheets",
+      "target_min": 4,
+      "target_max": 4,
+      "coverage": [
+        "Six useful modules: income, margins, product mix, manufacturing cost, operating investment and period trend"
+      ],
+      "adaptation_rationale": "Four navigable sheets implement six distinct analytical modules; sheet count is only a mechanical guard. Module usefulness is separately reviewed."
+    },
+    {
+      "document_id": "doc-0023",
+      "content_depth": "medium",
+      "measure": "delivered_slides",
+      "target_min": 10,
+      "target_max": 10,
+      "coverage": [
+        "10 substantive slides; financial visuals, resource tradeoff, risk and decision requested"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0017",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 1650,
+      "target_max": 2600,
+      "coverage": [
+        "At least 1500 discussion words; alternatives, dependencies, decisions and owned actions"
+      ],
+      "adaptation_rationale": "Delivered words include metadata; the discussion-only count is also recorded and must reach 1500."
+    },
+    {
+      "document_id": "doc-0028",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "Approved quote, technical operating boundaries, adoption and availability"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0034",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "Approved quote, technical operating boundaries, adoption and availability"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0005",
+      "content_depth": "medium",
+      "measure": "delivered_slides",
+      "target_min": 10,
+      "target_max": 10,
+      "coverage": [
+        "10 substantive slides; use cases, workflow, constraints, adoption and next steps"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0035",
+      "content_depth": "medium",
+      "measure": "delivered_sheets",
+      "target_min": 4,
+      "target_max": 4,
+      "coverage": [
+        "Six useful modules: income, margins, product mix, manufacturing cost, operating investment and period trend"
+      ],
+      "adaptation_rationale": "Four navigable sheets implement six distinct analytical modules; sheet count is only a mechanical guard. Module usefulness is separately reviewed."
+    },
+    {
+      "document_id": "doc-0030",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 850,
+      "target_max": 1900,
+      "coverage": [
+        "16 distinct numbered testable requirements; methods, interfaces and release controls"
+      ],
+      "adaptation_rationale": "DOCX words guard explanatory substance; all 16 distinct requirement controls are separately counted and reviewed."
+    },
+    {
+      "document_id": "doc-0018",
+      "content_depth": "medium",
+      "measure": "delivered_sheets",
+      "target_min": 4,
+      "target_max": 4,
+      "coverage": [
+        "Six useful modules: income, margins, product mix, manufacturing cost, operating investment and period trend"
+      ],
+      "adaptation_rationale": "Four navigable sheets implement six distinct analytical modules; sheet count is only a mechanical guard. Module usefulness is separately reviewed."
+    },
+    {
+      "document_id": "doc-0036",
+      "content_depth": "medium",
+      "measure": "delivered_slides",
+      "target_min": 10,
+      "target_max": 10,
+      "coverage": [
+        "10 substantive slides; financial visuals, resource tradeoff, risk and decision requested"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0012",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 1650,
+      "target_max": 2600,
+      "coverage": [
+        "At least 1500 discussion words; alternatives, dependencies, decisions and owned actions"
+      ],
+      "adaptation_rationale": "Delivered words include metadata; the discussion-only count is also recorded and must reach 1500."
+    },
+    {
+      "document_id": "doc-0041",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "Approved quote, technical operating boundaries, adoption and availability"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0047",
+      "content_depth": "medium",
+      "measure": "delivered_words",
+      "target_min": 450,
+      "target_max": 700,
+      "coverage": [
+        "Approved quote, technical operating boundaries, adoption and availability"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0006",
+      "content_depth": "medium",
+      "measure": "delivered_slides",
+      "target_min": 10,
+      "target_max": 10,
+      "coverage": [
+        "10 substantive slides; use cases, workflow, constraints, adoption and next steps"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0048",
+      "content_depth": "medium",
+      "measure": "delivered_slides",
+      "target_min": 10,
+      "target_max": 10,
+      "coverage": [
+        "10 substantive slides; use cases, workflow, constraints, adoption and next steps"
+      ],
+      "adaptation_rationale": null
+    },
+    {
+      "document_id": "doc-0042",
+      "content_depth": "medium",
+      "measure": "delivered_sheets",
+      "target_min": 4,
+      "target_max": 4,
+      "coverage": [
+        "Six useful modules: income, margins, product mix, manufacturing cost, operating investment and period trend"
+      ],
+      "adaptation_rationale": "Four navigable sheets implement six distinct analytical modules; sheet count is only a mechanical guard. Module usefulness is separately reviewed."
+    }
+  ]
+}

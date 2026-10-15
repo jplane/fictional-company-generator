@@ -1,0 +1,15 @@
+{
+  "revision": "1",
+  "genre": "financial_model",
+  "format": "xlsx",
+  "colors": {
+    "navy": "123B4A",
+    "teal": "087E8B",
+    "accent": "E5AB37"
+  },
+  "typography": "Calibri; explicit type hierarchy",
+  "pagination": "Explicit authored page breaks for DOCX",
+  "motif": "Numbered teal blocks and calibrated financial bars for PPTX",
+  "geometry": "US Letter 0.8in side margins; PPTX 33.867 x 19.05cm; XLSX four navigable sheets",
+  "engine": "OfficeCLI atomic DOM batches"
+}

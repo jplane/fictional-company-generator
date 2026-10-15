@@ -1,0 +1,904 @@
+{
+  "schema_version": 2,
+  "corpus_id": "corpus-76ce98a12405018fd1e8c2e5",
+  "document_id": "doc-0043",
+  "canon_sha256": "caaf762e72fb012b38e89626490ab0988233f06da57675c45f8792fce3796186",
+  "plan_sha256": "647b92bb093e0638d541a8f268fd3c50035a754aa58c5be14676e52f5e7007a9",
+  "title": "SunnySemi LLC - H1 2021 Operating Economics",
+  "publication_date": "2021-07-15",
+  "content_depth": "medium",
+  "claims": [
+    {
+      "id": "c0001",
+      "record_id": "financial-2021-q1",
+      "path": [
+        "data",
+        "revenue_usd"
+      ],
+      "value": 480000000,
+      "units": "USD"
+    },
+    {
+      "id": "c0002",
+      "record_id": "financial-2021-q2",
+      "path": [
+        "data",
+        "revenue_usd"
+      ],
+      "value": 552000000,
+      "units": "USD"
+    },
+    {
+      "id": "c0003",
+      "record_id": "financial-2021-q1",
+      "path": [
+        "data",
+        "cogs_usd"
+      ],
+      "value": 211200000,
+      "units": "USD"
+    },
+    {
+      "id": "c0004",
+      "record_id": "financial-2021-q2",
+      "path": [
+        "data",
+        "cogs_usd"
+      ],
+      "value": 242880000,
+      "units": "USD"
+    },
+    {
+      "id": "c0005",
+      "record_id": "financial-2021-q1",
+      "path": [
+        "data",
+        "opex_usd"
+      ],
+      "value": 129600000,
+      "units": "USD"
+    },
+    {
+      "id": "c0006",
+      "record_id": "financial-2021-q2",
+      "path": [
+        "data",
+        "opex_usd"
+      ],
+      "value": 149040000,
+      "units": "USD"
+    },
+    {
+      "id": "c0007",
+      "record_id": "financial-2021-q1",
+      "path": [
+        "data",
+        "operating_income_usd"
+      ],
+      "value": 139200000,
+      "units": "USD"
+    },
+    {
+      "id": "c0008",
+      "record_id": "financial-2021-q2",
+      "path": [
+        "data",
+        "operating_income_usd"
+      ],
+      "value": 160080000,
+      "units": "USD"
+    },
+    {
+      "id": "c0009",
+      "record_id": "financial-2021-q1",
+      "path": [
+        "data",
+        "suncore_revenue_usd"
+      ],
+      "value": 297600000,
+      "units": "USD"
+    },
+    {
+      "id": "c0010",
+      "record_id": "financial-2021-q2",
+      "path": [
+        "data",
+        "suncore_revenue_usd"
+      ],
+      "value": 342240000,
+      "units": "USD"
+    },
+    {
+      "id": "c0011",
+      "record_id": "financial-2021-q1",
+      "path": [
+        "data",
+        "gulfswitch_revenue_usd"
+      ],
+      "value": 182400000,
+      "units": "USD"
+    },
+    {
+      "id": "c0012",
+      "record_id": "financial-2021-q2",
+      "path": [
+        "data",
+        "gulfswitch_revenue_usd"
+      ],
+      "value": 209760000,
+      "units": "USD"
+    },
+    {
+      "id": "c0013",
+      "record_id": "financial-2021-q1",
+      "path": [
+        "data",
+        "wafer_cost_usd"
+      ],
+      "value": 137280000,
+      "units": "USD"
+    },
+    {
+      "id": "c0014",
+      "record_id": "financial-2021-q2",
+      "path": [
+        "data",
+        "wafer_cost_usd"
+      ],
+      "value": 157872000,
+      "units": "USD"
+    },
+    {
+      "id": "c0015",
+      "record_id": "financial-2021-q1",
+      "path": [
+        "data",
+        "packaging_cost_usd"
+      ],
+      "value": 52800000,
+      "units": "USD"
+    },
+    {
+      "id": "c0016",
+      "record_id": "financial-2021-q2",
+      "path": [
+        "data",
+        "packaging_cost_usd"
+      ],
+      "value": 60720000,
+      "units": "USD"
+    },
+    {
+      "id": "c0017",
+      "record_id": "financial-2021-q1",
+      "path": [
+        "data",
+        "logistics_cost_usd"
+      ],
+      "value": 21120000,
+      "units": "USD"
+    },
+    {
+      "id": "c0018",
+      "record_id": "financial-2021-q2",
+      "path": [
+        "data",
+        "logistics_cost_usd"
+      ],
+      "value": 24288000,
+      "units": "USD"
+    },
+    {
+      "id": "c0019",
+      "record_id": "financial-2021-q1",
+      "path": [
+        "data",
+        "engineering_opex_usd"
+      ],
+      "value": 90720000,
+      "units": "USD"
+    },
+    {
+      "id": "c0020",
+      "record_id": "financial-2021-q2",
+      "path": [
+        "data",
+        "engineering_opex_usd"
+      ],
+      "value": 104328000,
+      "units": "USD"
+    },
+    {
+      "id": "c0021",
+      "record_id": "financial-2021-q1",
+      "path": [
+        "data",
+        "commercial_opex_usd"
+      ],
+      "value": 38880000,
+      "units": "USD"
+    },
+    {
+      "id": "c0022",
+      "record_id": "financial-2021-q2",
+      "path": [
+        "data",
+        "commercial_opex_usd"
+      ],
+      "value": 44712000,
+      "units": "USD"
+    },
+    {
+      "id": "c0023",
+      "record_id": "financial-2021-q1",
+      "path": [
+        "data",
+        "headcount"
+      ],
+      "value": 890,
+      "units": "people"
+    },
+    {
+      "id": "c0024",
+      "record_id": "financial-2021-q2",
+      "path": [
+        "data",
+        "headcount"
+      ],
+      "value": 920,
+      "units": "people"
+    },
+    {
+      "id": "c0025",
+      "value": 268800000,
+      "units": "USD",
+      "derivation": {
+        "operation": "difference",
+        "inputs": [
+          "c0001",
+          "c0003"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0026",
+      "value": 139200000,
+      "units": "USD",
+      "derivation": {
+        "operation": "difference",
+        "inputs": [
+          "c0025",
+          "c0005"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0027",
+      "value": 0,
+      "units": "USD",
+      "derivation": {
+        "operation": "difference",
+        "inputs": [
+          "c0026",
+          "c0007"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0028",
+      "value": "0.56",
+      "units": "ratio",
+      "derivation": {
+        "operation": "ratio",
+        "inputs": [
+          "c0025",
+          "c0001"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0029",
+      "value": "0.29",
+      "units": "ratio",
+      "derivation": {
+        "operation": "ratio",
+        "inputs": [
+          "c0026",
+          "c0001"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0030",
+      "value": 480000000,
+      "units": "USD",
+      "derivation": {
+        "operation": "sum",
+        "inputs": [
+          "c0009",
+          "c0011"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0031",
+      "value": 0,
+      "units": "USD",
+      "derivation": {
+        "operation": "difference",
+        "inputs": [
+          "c0030",
+          "c0001"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0032",
+      "value": "0.62",
+      "units": "ratio",
+      "derivation": {
+        "operation": "ratio",
+        "inputs": [
+          "c0009",
+          "c0001"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0033",
+      "value": 211200000,
+      "units": "USD",
+      "derivation": {
+        "operation": "sum",
+        "inputs": [
+          "c0013",
+          "c0015",
+          "c0017"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0034",
+      "value": 0,
+      "units": "USD",
+      "derivation": {
+        "operation": "difference",
+        "inputs": [
+          "c0033",
+          "c0003"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0035",
+      "value": "0.65",
+      "units": "ratio",
+      "derivation": {
+        "operation": "ratio",
+        "inputs": [
+          "c0013",
+          "c0003"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0036",
+      "value": 129600000,
+      "units": "USD",
+      "derivation": {
+        "operation": "sum",
+        "inputs": [
+          "c0019",
+          "c0021"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0037",
+      "value": 0,
+      "units": "USD",
+      "derivation": {
+        "operation": "difference",
+        "inputs": [
+          "c0036",
+          "c0005"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0038",
+      "value": "0.7",
+      "units": "ratio",
+      "derivation": {
+        "operation": "ratio",
+        "inputs": [
+          "c0019",
+          "c0005"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0039",
+      "value": 309120000,
+      "units": "USD",
+      "derivation": {
+        "operation": "difference",
+        "inputs": [
+          "c0002",
+          "c0004"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0040",
+      "value": 160080000,
+      "units": "USD",
+      "derivation": {
+        "operation": "difference",
+        "inputs": [
+          "c0039",
+          "c0006"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0041",
+      "value": 0,
+      "units": "USD",
+      "derivation": {
+        "operation": "difference",
+        "inputs": [
+          "c0040",
+          "c0008"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0042",
+      "value": "0.56",
+      "units": "ratio",
+      "derivation": {
+        "operation": "ratio",
+        "inputs": [
+          "c0039",
+          "c0002"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0043",
+      "value": "0.29",
+      "units": "ratio",
+      "derivation": {
+        "operation": "ratio",
+        "inputs": [
+          "c0040",
+          "c0002"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0044",
+      "value": 552000000,
+      "units": "USD",
+      "derivation": {
+        "operation": "sum",
+        "inputs": [
+          "c0010",
+          "c0012"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0045",
+      "value": 0,
+      "units": "USD",
+      "derivation": {
+        "operation": "difference",
+        "inputs": [
+          "c0044",
+          "c0002"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0046",
+      "value": "0.62",
+      "units": "ratio",
+      "derivation": {
+        "operation": "ratio",
+        "inputs": [
+          "c0010",
+          "c0002"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0047",
+      "value": 242880000,
+      "units": "USD",
+      "derivation": {
+        "operation": "sum",
+        "inputs": [
+          "c0014",
+          "c0016",
+          "c0018"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0048",
+      "value": 0,
+      "units": "USD",
+      "derivation": {
+        "operation": "difference",
+        "inputs": [
+          "c0047",
+          "c0004"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0049",
+      "value": "0.65",
+      "units": "ratio",
+      "derivation": {
+        "operation": "ratio",
+        "inputs": [
+          "c0014",
+          "c0004"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0050",
+      "value": 149040000,
+      "units": "USD",
+      "derivation": {
+        "operation": "sum",
+        "inputs": [
+          "c0020",
+          "c0022"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0051",
+      "value": 0,
+      "units": "USD",
+      "derivation": {
+        "operation": "difference",
+        "inputs": [
+          "c0050",
+          "c0006"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0052",
+      "value": "0.7",
+      "units": "ratio",
+      "derivation": {
+        "operation": "ratio",
+        "inputs": [
+          "c0020",
+          "c0006"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0053",
+      "value": 72000000,
+      "units": "USD",
+      "derivation": {
+        "operation": "difference",
+        "inputs": [
+          "c0002",
+          "c0001"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0054",
+      "value": 20880000,
+      "units": "USD",
+      "derivation": {
+        "operation": "difference",
+        "inputs": [
+          "c0008",
+          "c0007"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0055",
+      "value": 30,
+      "units": "people",
+      "derivation": {
+        "operation": "difference",
+        "inputs": [
+          "c0024",
+          "c0023"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0056",
+      "value": 1032000000,
+      "units": "USD",
+      "derivation": {
+        "operation": "sum",
+        "inputs": [
+          "c0001",
+          "c0002"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0057",
+      "value": 454080000,
+      "units": "USD",
+      "derivation": {
+        "operation": "sum",
+        "inputs": [
+          "c0003",
+          "c0004"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0058",
+      "value": 278640000,
+      "units": "USD",
+      "derivation": {
+        "operation": "sum",
+        "inputs": [
+          "c0005",
+          "c0006"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0059",
+      "value": 299280000,
+      "units": "USD",
+      "derivation": {
+        "operation": "sum",
+        "inputs": [
+          "c0007",
+          "c0008"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0060",
+      "value": 639840000,
+      "units": "USD",
+      "derivation": {
+        "operation": "sum",
+        "inputs": [
+          "c0009",
+          "c0010"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0061",
+      "value": 392160000,
+      "units": "USD",
+      "derivation": {
+        "operation": "sum",
+        "inputs": [
+          "c0011",
+          "c0012"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0062",
+      "value": "0.29",
+      "units": "ratio",
+      "derivation": {
+        "operation": "ratio",
+        "inputs": [
+          "c0059",
+          "c0056"
+        ],
+        "rounding": 12
+      }
+    },
+    {
+      "id": "c0063",
+      "record_id": "company",
+      "path": [
+        "data",
+        "finance_basis"
+      ],
+      "value": "USD; calendar fiscal years; recognized revenue, not bookings; operating income excludes no additional adjustments and is not net income or cash flow."
+    },
+    {
+      "id": "c0064",
+      "record_id": "operating-2021",
+      "path": [
+        "data",
+        "theme"
+      ],
+      "value": "Allocation discipline"
+    },
+    {
+      "id": "c0065",
+      "record_id": "operating-2021",
+      "path": [
+        "data",
+        "risk"
+      ],
+      "value": "long wafer-start commitments"
+    },
+    {
+      "id": "c0066",
+      "record_id": "operating-2021",
+      "path": [
+        "data",
+        "mitigation"
+      ],
+      "value": "match wafer reservations to accepted customer schedules"
+    },
+    {
+      "id": "c0067",
+      "record_id": "operating-2021",
+      "path": [
+        "data",
+        "strategy"
+      ],
+      "value": "Own differentiated silicon architecture and application validation; use external manufacturing rather than build a wafer fab."
+    },
+    {
+      "id": "c0068",
+      "record_id": "operating-2021",
+      "path": [
+        "data",
+        "liquidity_note"
+      ],
+      "value": "No cash balance, debt balance, free-cash-flow measure or forecast is included."
+    }
+  ],
+  "sections": [
+    {
+      "role": "source_actuals",
+      "heading": "Period actuals",
+      "text": "Source actuals for available quarters. Revenue, costs and operating income are USD; ending headcount is not a flow. Segment, manufacturing and operating-expense breakdowns reconcile to their reported totals.",
+      "claim_ids": [
+        "c0001",
+        "c0002",
+        "c0003",
+        "c0004",
+        "c0005",
+        "c0006",
+        "c0007",
+        "c0008",
+        "c0009",
+        "c0010",
+        "c0011",
+        "c0012",
+        "c0013",
+        "c0014",
+        "c0015",
+        "c0016",
+        "c0017",
+        "c0018",
+        "c0019",
+        "c0020",
+        "c0021",
+        "c0022",
+        "c0023",
+        "c0024"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "calculations",
+      "heading": "Six operating-economics modules",
+      "text": "Income reconciliation derives gross profit and operating income, then checks the reported result. Margins distinguish gross and operating economics. Product mix reconciles the two product franchises. Manufacturing costs reconcile wafer, package/test and logistics expense. Operating investment separates engineering from commercial and administrative expense. Sequential actuals compare revenue, income and point-in-time headcount without treating the latter as a quarterly flow.",
+      "claim_ids": [
+        "c0025",
+        "c0026",
+        "c0027",
+        "c0028",
+        "c0029",
+        "c0030",
+        "c0031",
+        "c0032",
+        "c0033",
+        "c0034",
+        "c0035",
+        "c0036",
+        "c0037",
+        "c0038",
+        "c0039",
+        "c0040",
+        "c0041",
+        "c0042",
+        "c0043",
+        "c0044",
+        "c0045",
+        "c0046",
+        "c0047",
+        "c0048",
+        "c0049",
+        "c0050",
+        "c0051",
+        "c0052",
+        "c0053",
+        "c0054",
+        "c0055"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "calculations",
+      "heading": "Management interpretation",
+      "text": "Six modules answer different questions; the management view summarizes actuals and interpretation. The model contains no forecast, cash balance, debt balance or valuation.",
+      "claim_ids": [
+        "c0056",
+        "c0057",
+        "c0058",
+        "c0059",
+        "c0060",
+        "c0061",
+        "c0062"
+      ],
+      "page_break": false
+    },
+    {
+      "role": "assumptions_and_notes",
+      "heading": "Basis, controls and limitations",
+      "text": "Basis: USD; calendar fiscal years; recognized revenue, not bookings; operating income excludes no additional adjustments and is not net income or cash flow.\nOperating emphasis: Allocation discipline\nRisk: long wafer-start commitments\nMitigation: match wafer reservations to accepted customer schedules\nStrategy: Own differentiated silicon architecture and application validation; use external manufacturing rather than build a wafer fab.\nLiquidity: No cash balance, debt balance, free-cash-flow measure or forecast is included.\nAvailability: Only quarters knowable on the publication date are included.\nFormula controls: Inputs precede formulas; saved formula values are checked after reopening.\nColor convention: Blue numbers are source inputs. Green numbers are formula-linked outputs.\nScope: This is an operating-economics workbook, not a balance sheet or cash-flow model.",
+      "claim_ids": [
+        "c0063",
+        "c0064",
+        "c0065",
+        "c0066",
+        "c0067",
+        "c0068"
+      ],
+      "page_break": false
+    }
+  ]
+}

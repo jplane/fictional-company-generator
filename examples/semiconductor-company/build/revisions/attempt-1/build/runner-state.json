@@ -1,0 +1,833 @@
+{
+  "runner_version": 2,
+  "schema_version": 2,
+  "corpus_id": "corpus-76ce98a12405018fd1e8c2e5",
+  "canon_sha256": "caaf762e72fb012b38e89626490ab0988233f06da57675c45f8792fce3796186",
+  "plan_sha256": "39bac5c57c35c359a43d2e650047e32523062a15bccfb31dd68acec47a86896e",
+  "documents": {
+    "doc-0030": {
+      "input_sha256": "dff7027b1e3e51491af787b8fbe3c9c4d9acfd9cd48f45e6bef612f3ce8f5692",
+      "stages": [
+        "created"
+      ],
+      "operations": [
+        {
+          "arguments": [
+            "create",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-02-01 - SunnySemi LLC - SunCore 6.0 Product Specification.docx"
+          ],
+          "operation": "create",
+          "started_at": "2026-10-15T16:46:10.536306+00:00",
+          "ended_at": "2026-10-15T16:46:11.947742+00:00",
+          "active_seconds": 1.411437000031583,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": \"Created: C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\documents\\\\2025-02-01 - SunnySemi LLC - SunCore 6.0 Product Specification.docx\",\n  \"message\": \"Created: C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\documents\\\\2025-02-01 - SunnySemi LLC - SunCore 6.0 Product Specification.docx\"\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "status": "passed"
+        },
+        {
+          "arguments": [
+            "batch",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-02-01 - SunnySemi LLC - SunCore 6.0 Product Specification.docx",
+            "--input",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\build\\scripts\\doc-0030-batch.json",
+            "--stop-on-error"
+          ],
+          "operation": "author",
+          "started_at": "2026-10-15T16:46:12.119279+00:00",
+          "ended_at": "2026-10-15T16:46:14.884543+00:00",
+          "active_seconds": 2.765411200001836,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"results\": [\n      {\n        \"index\": 0,\n        \"success\": true,\n        \"output\": \"Updated /: title=SunnySemi LLC - SunCore 6.0 Product Specification, author=SunnySemi LLC, docDefaults.font=Calibri, docDefaults.fontSize=11pt\"\n      },\n      {\n        \"index\": 1,\n        \"success\": true,\n        \"output\": \"Updated /section[1]: pageWidth=8.5in, pageHeight=11in, marginTop=0.7in, marginBottom=0.7in, marginLeft=0.8in, marginRight=0.8in\"\n      },\n      {\n        \"index\": 2,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100000]\"\n      },\n      {\n        \"index\": 3,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100002]\",\n        \"warnings\": [\n          {\n            \"message\": \"style 'Title' was not defined in the styles part; added Word's built-in definition ('Title')\",\n            \"code\": \"advisory\"\n          }\n        ]\n      },\n      {\n        \"index\": 4,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100004]\"\n      },\n      {\n        \"index\": 5,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100006]\",\n        \"warnings\": [\n          {\n            \"message\": \"style 'Heading2' was not defined in the styles part; added Word's built-in definition ('heading 2')\",\n            \"code\": \"advisory\"\n          }\n        ]\n      },\n      {\n        \"index\": 6,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100008]\"\n      },\n      {\n        \"index\": 7,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010000A]\"\n      },\n      {\n        \"index\": 8,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010000C]\"\n      },\n      {\n        \"index\": 9,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010000E]\"\n      },\n      {\n        \"index\": 10,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100010]\"\n      },\n      {\n        \"index\": 11,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100012]\",\n        \"warnings\": [\n          {\n            \"message\": \"style 'Heading1' was not defined in the styles part; added Word's built-in definition ('heading 1')\",\n            \"code\": \"advisory\"\n          }\n        ]\n      },\n      {\n        \"index\": 12,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100014]\"\n      },\n      {\n        \"index\": 13,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100016]\"\n      },\n      {\n        \"index\": 14,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100018]\"\n      },\n      {\n        \"index\": 15,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010001A]\"\n      },\n      {\n        \"index\": 16,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010001C]\"\n      },\n      {\n        \"index\": 17,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010001E]\"\n      },\n      {\n        \"index\": 18,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100020]\"\n      },\n      {\n        \"index\": 19,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100022]\"\n      },\n      {\n        \"index\": 20,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100024]\"\n      },\n      {\n        \"index\": 21,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100026]\"\n      },\n      {\n        \"index\": 22,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100028]\"\n      },\n      {\n        \"index\": 23,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010002A]\"\n      },\n      {\n        \"index\": 24,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010002C]\"\n      },\n      {\n        \"index\": 25,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010002E]\"\n      },\n      {\n        \"index\": 26,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100030]\"\n      },\n      {\n        \"index\": 27,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100032]\"\n      },\n      {\n        \"index\": 28,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100034]\"\n      },\n      {\n        \"index\": 29,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100036]\"\n      },\n      {\n        \"index\": 30,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100038]\"\n      },\n      {\n        \"index\": 31,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010003A]\"\n      },\n      {\n        \"index\": 32,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010003C]\"\n      },\n      {\n        \"index\": 33,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010003E]\"\n      },\n      {\n        \"index\": 34,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100040]\"\n      },\n      {\n        \"index\": 35,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100042]\"\n      },\n      {\n        \"index\": 36,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100044]\"\n      },\n      {\n        \"index\": 37,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100046]\"\n      },\n      {\n        \"index\": 38,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100048]\"\n      },\n      {\n        \"index\": 39,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010004A]\"\n      },\n      {\n        \"index\": 40,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010004C]\"\n      },\n      {\n        \"index\": 41,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010004E]\"\n      },\n      {\n        \"index\": 42,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100050]\"\n      },\n      {\n        \"index\": 43,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100052]\"\n      },\n      {\n        \"index\": 44,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100054]\"\n      }\n    ],\n    \"summary\": {\n      \"total\": 45,\n      \"executed\": 45,\n      \"succeeded\": 45,\n      \"failed\": 0,\n      \"skipped\": 0\n    }\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "status": "blocked",
+          "blocker": "author: unresolved caveat/truncation: warnings"
+        }
+      ],
+      "attempts": {
+        "create": 1,
+        "author": 1
+      },
+      "retry_reasons": {},
+      "artifact_sha256": "9764fcbaed340a1d30a0c147f524dd75e830fe4cb1601e405c9af09757dedad1"
+    },
+    "doc-0047": {
+      "input_sha256": "08d801f245e68a5d05759b99fbae1e137998d1dfc1bef335c959651a83bab743",
+      "stages": [
+        "created"
+      ],
+      "operations": [
+        {
+          "arguments": [
+            "create",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-15 - SunnySemi LLC Launches GulfSwitch 6.0 Power Control.docx"
+          ],
+          "operation": "create",
+          "started_at": "2026-10-15T16:46:10.536497+00:00",
+          "ended_at": "2026-10-15T16:46:11.920236+00:00",
+          "active_seconds": 1.3837641999707557,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": \"Created: C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\documents\\\\2025-08-15 - SunnySemi LLC Launches GulfSwitch 6.0 Power Control.docx\",\n  \"message\": \"Created: C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\documents\\\\2025-08-15 - SunnySemi LLC Launches GulfSwitch 6.0 Power Control.docx\"\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "status": "passed"
+        },
+        {
+          "arguments": [
+            "batch",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-15 - SunnySemi LLC Launches GulfSwitch 6.0 Power Control.docx",
+            "--input",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\build\\scripts\\doc-0047-batch.json",
+            "--stop-on-error"
+          ],
+          "operation": "author",
+          "started_at": "2026-10-15T16:46:12.088672+00:00",
+          "ended_at": "2026-10-15T16:46:14.915502+00:00",
+          "active_seconds": 2.826834500010591,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"results\": [\n      {\n        \"index\": 0,\n        \"success\": true,\n        \"output\": \"Updated /: title=SunnySemi LLC Launches GulfSwitch 6.0 Power Control, author=SunnySemi LLC, docDefaults.font=Calibri, docDefaults.fontSize=11pt\"\n      },\n      {\n        \"index\": 1,\n        \"success\": true,\n        \"output\": \"Updated /section[1]: pageWidth=8.5in, pageHeight=11in, marginTop=0.7in, marginBottom=0.7in, marginLeft=0.8in, marginRight=0.8in\"\n      },\n      {\n        \"index\": 2,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100000]\"\n      },\n      {\n        \"index\": 3,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100002]\",\n        \"warnings\": [\n          {\n            \"message\": \"style 'Title' was not defined in the styles part; added Word's built-in definition ('Title')\",\n            \"code\": \"advisory\"\n          }\n        ]\n      },\n      {\n        \"index\": 4,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100004]\"\n      },\n      {\n        \"index\": 5,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100006]\"\n      },\n      {\n        \"index\": 6,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100008]\"\n      },\n      {\n        \"index\": 7,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010000A]\"\n      },\n      {\n        \"index\": 8,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010000C]\",\n        \"warnings\": [\n          {\n            \"message\": \"style 'Heading1' was not defined in the styles part; added Word's built-in definition ('heading 1')\",\n            \"code\": \"advisory\"\n          }\n        ]\n      },\n      {\n        \"index\": 9,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010000E]\"\n      },\n      {\n        \"index\": 10,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100010]\"\n      },\n      {\n        \"index\": 11,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100012]\",\n        \"warnings\": [\n          {\n            \"message\": \"style 'Heading2' was not defined in the styles part; added Word's built-in definition ('heading 2')\",\n            \"code\": \"advisory\"\n          }\n        ]\n      },\n      {\n        \"index\": 12,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100014]\"\n      },\n      {\n        \"index\": 13,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100016]\"\n      },\n      {\n        \"index\": 14,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100018]\"\n      }\n    ],\n    \"summary\": {\n      \"total\": 15,\n      \"executed\": 15,\n      \"succeeded\": 15,\n      \"failed\": 0,\n      \"skipped\": 0\n    }\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "status": "blocked",
+          "blocker": "author: unresolved caveat/truncation: warnings"
+        }
+      ],
+      "attempts": {
+        "create": 1,
+        "author": 1
+      },
+      "retry_reasons": {},
+      "artifact_sha256": "2a948c72b56b1517c812ffdd2dfe59de3120e000b736c99129e3b947f0636b67"
+    },
+    "doc-0012": {
+      "input_sha256": "8822ecb5bfe8808b2ada4b97e804da56e579133e886684d6a58c499cb306c35c",
+      "stages": [
+        "created"
+      ],
+      "operations": [
+        {
+          "arguments": [
+            "create",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-07-25 - SunnySemi LLC - 2025 Production Readiness and Profitable scale.docx"
+          ],
+          "operation": "create",
+          "started_at": "2026-10-15T16:46:10.536450+00:00",
+          "ended_at": "2026-10-15T16:46:11.906410+00:00",
+          "active_seconds": 1.3699777000001632,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": \"Created: C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\documents\\\\2025-07-25 - SunnySemi LLC - 2025 Production Readiness and Profitable scale.docx\",\n  \"message\": \"Created: C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\documents\\\\2025-07-25 - SunnySemi LLC - 2025 Production Readiness and Profitable scale.docx\"\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "status": "passed"
+        },
+        {
+          "arguments": [
+            "batch",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-07-25 - SunnySemi LLC - 2025 Production Readiness and Profitable scale.docx",
+            "--input",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\build\\scripts\\doc-0012-batch.json",
+            "--stop-on-error"
+          ],
+          "operation": "author",
+          "started_at": "2026-10-15T16:46:12.194389+00:00",
+          "ended_at": "2026-10-15T16:46:15.282221+00:00",
+          "active_seconds": 3.087834199948702,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"results\": [\n      {\n        \"index\": 0,\n        \"success\": true,\n        \"output\": \"Updated /: title=SunnySemi LLC - 2025 Production Readiness and Profitable scale, author=SunnySemi LLC, docDefaults.font=Calibri, docDefaults.fontSize=11pt\"\n      },\n      {\n        \"index\": 1,\n        \"success\": true,\n        \"output\": \"Updated /section[1]: pageWidth=8.5in, pageHeight=11in, marginTop=0.7in, marginBottom=0.7in, marginLeft=0.8in, marginRight=0.8in\"\n      },\n      {\n        \"index\": 2,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100000]\"\n      },\n      {\n        \"index\": 3,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100002]\",\n        \"warnings\": [\n          {\n            \"message\": \"style 'Title' was not defined in the styles part; added Word's built-in definition ('Title')\",\n            \"code\": \"advisory\"\n          }\n        ]\n      },\n      {\n        \"index\": 4,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100004]\"\n      },\n      {\n        \"index\": 5,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100006]\",\n        \"warnings\": [\n          {\n            \"message\": \"style 'Heading2' was not defined in the styles part; added Word's built-in definition ('heading 2')\",\n            \"code\": \"advisory\"\n          }\n        ]\n      },\n      {\n        \"index\": 6,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100008]\"\n      },\n      {\n        \"index\": 7,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100010]\",\n        \"warnings\": [\n          {\n            \"message\": \"style 'Heading1' was not defined in the styles part; added Word's built-in definition ('heading 1')\",\n            \"code\": \"advisory\"\n          }\n        ]\n      },\n      {\n        \"index\": 8,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100012]\"\n      },\n      {\n        \"index\": 9,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100018]\"\n      },\n      {\n        \"index\": 10,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010001A]\"\n      },\n      {\n        \"index\": 11,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100020]\"\n      },\n      {\n        \"index\": 12,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100022]\"\n      },\n      {\n        \"index\": 13,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100028]\"\n      },\n      {\n        \"index\": 14,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010002A]\"\n      },\n      {\n        \"index\": 15,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100030]\"\n      },\n      {\n        \"index\": 16,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100032]\"\n      },\n      {\n        \"index\": 17,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100038]\"\n      },\n      {\n        \"index\": 18,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010003A]\"\n      },\n      {\n        \"index\": 19,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100040]\"\n      },\n      {\n        \"index\": 20,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100042]\"\n      },\n      {\n        \"index\": 21,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100048]\"\n      },\n      {\n        \"index\": 22,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010004A]\"\n      },\n      {\n        \"index\": 23,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100050]\"\n      },\n      {\n        \"index\": 24,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100052]\"\n      },\n      {\n        \"index\": 25,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100058]\"\n      },\n      {\n        \"index\": 26,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010005A]\"\n      },\n      {\n        \"index\": 27,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100060]\"\n      },\n      {\n        \"index\": 28,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100062]\"\n      },\n      {\n        \"index\": 29,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100068]\"\n      },\n      {\n        \"index\": 30,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010006A]\"\n      },\n      {\n        \"index\": 31,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100070]\"\n      },\n      {\n        \"index\": 32,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100072]\"\n      },\n      {\n        \"index\": 33,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100078]\"\n      },\n      {\n        \"index\": 34,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=0010007A]\"\n      },\n      {\n        \"index\": 35,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100080]\"\n      },\n      {\n        \"index\": 36,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100082]\"\n      },\n      {\n        \"index\": 37,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100086]\"\n      },\n      {\n        \"index\": 38,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100088]\"\n      }\n    ],\n    \"summary\": {\n      \"total\": 39,\n      \"executed\": 39,\n      \"succeeded\": 39,\n      \"failed\": 0,\n      \"skipped\": 0\n    }\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "status": "blocked",
+          "blocker": "author: unresolved caveat/truncation: warnings"
+        }
+      ],
+      "attempts": {
+        "create": 1,
+        "author": 1
+      },
+      "retry_reasons": {},
+      "artifact_sha256": "6f6957a00b9f27f3de3abc8a9c4097ea7dd1f46c1d6a28aee9700ca4e077c07f"
+    },
+    "doc-0036": {
+      "input_sha256": "d6fb43357b7eb59281b8aef7007de236477a2fe57390c7320ffb8f2714068e8f",
+      "stages": [
+        "created",
+        "authored"
+      ],
+      "operations": [
+        {
+          "arguments": [
+            "create",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-07-20 - SunnySemi LLC - 2025 Midyear Performance and Capacity Decisions.pptx"
+          ],
+          "operation": "create",
+          "started_at": "2026-10-15T16:46:10.536380+00:00",
+          "ended_at": "2026-10-15T16:46:11.826610+00:00",
+          "active_seconds": 1.2902371000382118,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": \"Created: C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\documents\\\\2025-07-20 - SunnySemi LLC - 2025 Midyear Performance and Capacity Decisions.pptx\",\n  \"message\": \"Created: C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\documents\\\\2025-07-20 - SunnySemi LLC - 2025 Midyear Performance and Capacity Decisions.pptx\"\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "status": "passed"
+        },
+        {
+          "arguments": [
+            "batch",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-07-20 - SunnySemi LLC - 2025 Midyear Performance and Capacity Decisions.pptx",
+            "--input",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\build\\scripts\\doc-0036-batch.json",
+            "--stop-on-error"
+          ],
+          "operation": "author",
+          "started_at": "2026-10-15T16:46:11.890948+00:00",
+          "ended_at": "2026-10-15T16:46:14.221062+00:00",
+          "active_seconds": 2.3301317999721505,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"outputFile\": \"C:\\\\Users\\\\jolan\\\\AppData\\\\Local\\\\Temp\\\\officecli_batch_2e426eac3e2c4a32b07b4cf2d848c289.json\",\n    \"outputSize\": 9838,\n    \"results\": [\n      {\n        \"index\": 0,\n        \"success\": true\n      },\n      {\n        \"index\": 1,\n        \"success\": true\n      },\n      {\n        \"index\": 2,\n        \"success\": true\n      },\n      {\n        \"index\": 3,\n        \"success\": true\n      },\n      {\n        \"index\": 4,\n        \"success\": true\n      },\n      {\n        \"index\": 5,\n        \"success\": true\n      },\n      {\n        \"index\": 6,\n        \"success\": true\n      },\n      {\n        \"index\": 7,\n        \"success\": true\n      },\n      {\n        \"index\": 8,\n        \"success\": true\n      },\n      {\n        \"index\": 9,\n        \"success\": true\n      },\n      {\n        \"index\": 10,\n        \"success\": true\n      },\n      {\n        \"index\": 11,\n        \"success\": true\n      },\n      {\n        \"index\": 12,\n        \"success\": true\n      },\n      {\n        \"index\": 13,\n        \"success\": true\n      },\n      {\n        \"index\": 14,\n        \"success\": true\n      },\n      {\n        \"index\": 15,\n        \"success\": true\n      },\n      {\n        \"index\": 16,\n        \"success\": true\n      },\n      {\n        \"index\": 17,\n        \"success\": true\n      },\n      {\n        \"index\": 18,\n        \"success\": true\n      },\n      {\n        \"index\": 19,\n        \"success\": true\n      },\n      {\n        \"index\": 20,\n        \"success\": true\n      },\n      {\n        \"index\": 21,\n        \"success\": true\n      },\n      {\n        \"index\": 22,\n        \"success\": true\n      },\n      {\n        \"index\": 23,\n        \"success\": true\n      },\n      {\n        \"index\": 24,\n        \"success\": true\n      },\n      {\n        \"index\": 25,\n        \"success\": true\n      },\n      {\n        \"index\": 26,\n        \"success\": true\n      },\n      {\n        \"index\": 27,\n        \"success\": true\n      },\n      {\n        \"index\": 28,\n        \"success\": true\n      },\n      {\n        \"index\": 29,\n        \"success\": true\n      },\n      {\n        \"index\": 30,\n        \"success\": true\n      },\n      {\n        \"index\": 31,\n        \"success\": true\n      },\n      {\n        \"index\": 32,\n        \"success\": true\n      },\n      {\n        \"index\": 33,\n        \"success\": true\n      },\n      {\n        \"index\": 34,\n        \"success\": true\n      },\n      {\n        \"index\": 35,\n        \"success\": true\n      },\n      {\n        \"index\": 36,\n        \"success\": true\n      },\n      {\n        \"index\": 37,\n        \"success\": true\n      },\n      {\n        \"index\": 38,\n        \"success\": true\n      },\n      {\n        \"index\": 39,\n        \"success\": true\n      },\n      {\n        \"index\": 40,\n        \"success\": true\n      },\n      {\n        \"index\": 41,\n        \"success\": true\n      },\n      {\n        \"index\": 42,\n        \"success\": true\n      },\n      {\n        \"index\": 43,\n        \"success\": true\n      },\n      {\n        \"index\": 44,\n        \"success\": true\n      },\n      {\n        \"index\": 45,\n        \"success\": true\n      },\n      {\n        \"index\": 46,\n        \"success\": true\n      },\n      {\n        \"index\": 47,\n        \"success\": true\n      },\n      {\n        \"index\": 48,\n        \"success\": true\n      },\n      {\n        \"index\": 49,\n        \"success\": true\n      },\n      {\n        \"index\": 50,\n        \"success\": true\n      },\n      {\n        \"index\": 51,\n        \"success\": true\n      },\n      {\n        \"index\": 52,\n        \"success\": true\n      },\n      {\n        \"index\": 53,\n        \"success\": true\n      },\n      {\n        \"index\": 54,\n        \"success\": true\n      },\n      {\n        \"index\": 55,\n        \"success\": true\n      },\n      {\n        \"index\": 56,\n        \"success\": true\n      },\n      {\n        \"index\": 57,\n        \"success\": true\n      },\n      {\n        \"index\": 58,\n        \"success\": true\n      },\n      {\n        \"index\": 59,\n        \"success\": true\n      },\n      {\n        \"index\": 60,\n        \"success\": true\n      },\n      {\n        \"index\": 61,\n        \"success\": true\n      },\n      {\n        \"index\": 62,\n        \"success\": true\n      },\n      {\n        \"index\": 63,\n        \"success\": true\n      },\n      {\n        \"index\": 64,\n        \"success\": true\n      },\n      {\n        \"index\": 65,\n        \"success\": true\n      },\n      {\n        \"index\": 66,\n        \"success\": true\n      },\n      {\n        \"index\": 67,\n        \"success\": true\n      },\n      {\n        \"index\": 68,\n        \"success\": true\n      },\n      {\n        \"index\": 69,\n        \"success\": true\n      },\n      {\n        \"index\": 70,\n        \"success\": true\n      },\n      {\n        \"index\": 71,\n        \"success\": true\n      },\n      {\n        \"index\": 72,\n        \"success\": true\n      },\n      {\n        \"index\": 73,\n        \"success\": true\n      },\n      {\n        \"index\": 74,\n        \"success\": true\n      },\n      {\n        \"index\": 75,\n        \"success\": true\n      },\n      {\n        \"index\": 76,\n        \"success\": true\n      },\n      {\n        \"index\": 77,\n        \"success\": true\n      },\n      {\n        \"index\": 78,\n        \"success\": true\n      },\n      {\n        \"index\": 79,\n        \"success\": true\n      },\n      {\n        \"index\": 80,\n        \"success\": true\n      },\n      {\n        \"index\": 81,\n        \"success\": true\n      },\n      {\n        \"index\": 82,\n        \"success\": true\n      },\n      {\n        \"index\": 83,\n        \"success\": true\n      },\n      {\n        \"index\": 84,\n        \"success\": true\n      },\n      {\n        \"index\": 85,\n        \"success\": true\n      },\n      {\n        \"index\": 86,\n        \"success\": true\n      },\n      {\n        \"index\": 87,\n        \"success\": true\n      },\n      {\n        \"index\": 88,\n        \"success\": true\n      },\n      {\n        \"index\": 89,\n        \"success\": true\n      },\n      {\n        \"index\": 90,\n        \"success\": true\n      },\n      {\n        \"index\": 91,\n        \"success\": true\n      },\n      {\n        \"index\": 92,\n        \"success\": true\n      },\n      {\n        \"index\": 93,\n        \"success\": true\n      },\n      {\n        \"index\": 94,\n        \"success\": true\n      },\n      {\n        \"index\": 95,\n        \"success\": true\n      },\n      {\n        \"index\": 96,\n        \"success\": true\n      },\n      {\n        \"index\": 97,\n        \"success\": true\n      },\n      {\n        \"index\": 98,\n        \"success\": true\n      },\n      {\n        \"index\": 99,\n        \"success\": true\n      },\n      {\n        \"index\": 100,\n        \"success\": true\n      },\n      {\n        \"index\": 101,\n        \"success\": true\n      },\n      {\n        \"index\": 102,\n        \"success\": true\n      },\n      {\n        \"index\": 103,\n        \"success\": true\n      },\n      {\n        \"index\": 104,\n        \"success\": true\n      },\n      {\n        \"index\": 105,\n        \"success\": true\n      },\n      {\n        \"index\": 106,\n        \"success\": true\n      },\n      {\n        \"index\": 107,\n        \"success\": true\n      },\n      {\n        \"index\": 108,\n        \"success\": true\n      },\n      {\n        \"index\": 109,\n        \"success\": true\n      },\n      {\n        \"index\": 110,\n        \"success\": true\n      },\n      {\n        \"index\": 111,\n        \"success\": true\n      },\n      {\n        \"index\": 112,\n        \"success\": true\n      },\n      {\n        \"index\": 113,\n        \"success\": true\n      },\n      {\n        \"index\": 114,\n        \"success\": true\n      },\n      {\n        \"index\": 115,\n        \"success\": true\n      },\n      {\n        \"index\": 116,\n        \"success\": true\n      },\n      {\n        \"index\": 117,\n        \"success\": true\n      },\n      {\n        \"index\": 118,\n        \"success\": true\n      },\n      {\n        \"index\": 119,\n        \"success\": true\n      },\n      {\n        \"index\": 120,\n        \"success\": true\n      }\n    ],\n    \"summary\": {\n      \"total\": 121,\n      \"executed\": 121,\n      \"succeeded\": 121,\n      \"failed\": 0,\n      \"skipped\": 0\n    }\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "status": "passed"
+        },
+        {
+          "arguments": [
+            "validate",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-07-20 - SunnySemi LLC - 2025 Midyear Performance and Capacity Decisions.pptx"
+          ],
+          "operation": "validate",
+          "started_at": "2026-10-15T16:46:14.437346+00:00",
+          "ended_at": "2026-10-15T16:46:17.252669+00:00",
+          "active_seconds": 2.8153243000269867,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"errors\": []\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "repeat_success": true,
+          "artifact_sha256": "a089c0e001a4ead6997a945356cade219d07ffb3cc0057a91295c05c26fc33da",
+          "status": "passed",
+          "evidence": "Checked complete OfficeCLI result without errors/caveats"
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-07-20 - SunnySemi LLC - 2025 Midyear Performance and Capacity Decisions.pptx",
+            "issues"
+          ],
+          "operation": "issues",
+          "started_at": "2026-10-15T16:46:17.355833+00:00",
+          "ended_at": "2026-10-15T16:46:19.253819+00:00",
+          "active_seconds": 1.8979850999894552,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 31,\n    \"issues\": [\n      {\n        \"id\": \"O1\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[1]/shape[@id=100000]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O2\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[1]/shape[@id=100009]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O3\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[2]/shape[@id=100010]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O4\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[2]/shape[@id=100013]\",\n        \"message\": \"text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm\"\n      },\n      {\n        \"id\": \"O5\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[2]/shape[@id=100015]\",\n        \"message\": \"text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm\"\n      },\n      {\n        \"id\": \"O6\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[2]/shape[@id=100018]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O7\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[3]/shape[@id=100019]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O8\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[3]/shape[@id=100022]\",\n        \"message\": \"text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm\"\n      },\n      {\n        \"id\": \"O9\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[3]/shape[@id=100024]\",\n        \"message\": \"text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm\"\n      },\n      {\n        \"id\": \"O10\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[3]/shape[@id=100026]\",\n        \"message\": \"text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm\"\n      },\n      {\n        \"id\": \"O11\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[3]/shape[@id=100028]\",\n        \"message\": \"text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm\"\n      },\n      {\n        \"id\": \"O12\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[3]/shape[@id=100031]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O13\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[4]/shape[@id=100032]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O14\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[4]/shape[@id=100035]\",\n        \"message\": \"text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm\"\n      },\n      {\n        \"id\": \"O15\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[4]/shape[@id=100037]\",\n        \"message\": \"text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm\"\n      },\n      {\n        \"id\": \"O16\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[4]/shape[@id=100040]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O17\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[5]/shape[@id=100041]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O18\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[5]/shape[@id=100044]\",\n        \"message\": \"text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm\"\n      },\n      {\n        \"id\": \"O19\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[5]/shape[@id=100046]\",\n        \"message\": \"text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm\"\n      },\n      {\n        \"id\": \"O20\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[5]/shape[@id=100048]\",\n        \"message\": \"text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm\"\n      },\n      {\n        \"id\": \"O21\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[5]/shape[@id=100051]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O22\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[6]/shape[@id=100052]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O23\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[6]/shape[@id=100061]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O24\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[7]/shape[@id=100062]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O25\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[7]/shape[@id=100071]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O26\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[8]/shape[@id=100072]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O27\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[8]/shape[@id=100081]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O28\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[9]/shape[@id=100082]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O29\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[9]/shape[@id=100089]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O30\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[10]/shape[@id=100090]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O31\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[10]/shape[@id=100099]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      }\n    ]\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "repeat_success": true,
+          "artifact_sha256": "a089c0e001a4ead6997a945356cade219d07ffb3cc0057a91295c05c26fc33da",
+          "status": "blocked",
+          "blocker": "issues: issues or incomplete scan: {'count': 31, 'issues': [{'id': 'O1', 'type': 0, 'severity': 1, 'path': '/slide[1]/shape[@id=100000]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O2', 'type': 0, 'severity': 1, 'path': '/slide[1]/shape[@id=100009]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O3', 'type': 0, 'severity': 1, 'path': '/slide[2]/shape[@id=100010]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O4', 'type': 0, 'severity': 1, 'path': '/slide[2]/shape[@id=100013]', 'message': 'text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm'}, {'id': 'O5', 'type': 0, 'severity': 1, 'path': '/slide[2]/shape[@id=100015]', 'message': 'text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm'}, {'id': 'O6', 'type': 0, 'severity': 1, 'path': '/slide[2]/shape[@id=100018]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O7', 'type': 0, 'severity': 1, 'path': '/slide[3]/shape[@id=100019]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O8', 'type': 0, 'severity': 1, 'path': '/slide[3]/shape[@id=100022]', 'message': 'text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm'}, {'id': 'O9', 'type': 0, 'severity': 1, 'path': '/slide[3]/shape[@id=100024]', 'message': 'text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm'}, {'id': 'O10', 'type': 0, 'severity': 1, 'path': '/slide[3]/shape[@id=100026]', 'message': 'text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm'}, {'id': 'O11', 'type': 0, 'severity': 1, 'path': '/slide[3]/shape[@id=100028]', 'message': 'text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm'}, {'id': 'O12', 'type': 0, 'severity': 1, 'path': '/slide[3]/shape[@id=100031]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O13', 'type': 0, 'severity': 1, 'path': '/slide[4]/shape[@id=100032]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O14', 'type': 0, 'severity': 1, 'path': '/slide[4]/shape[@id=100035]', 'message': 'text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm'}, {'id': 'O15', 'type': 0, 'severity': 1, 'path': '/slide[4]/shape[@id=100037]', 'message': 'text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm'}, {'id': 'O16', 'type': 0, 'severity': 1, 'path': '/slide[4]/shape[@id=100040]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O17', 'type': 0, 'severity': 1, 'path': '/slide[5]/shape[@id=100041]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O18', 'type': 0, 'severity': 1, 'path': '/slide[5]/shape[@id=100044]', 'message': 'text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm'}, {'id': 'O19', 'type': 0, 'severity': 1, 'path': '/slide[5]/shape[@id=100046]', 'message': 'text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm'}, {'id': 'O20', 'type': 0, 'severity': 1, 'path': '/slide[5]/shape[@id=100048]', 'message': 'text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm'}, {'id': 'O21', 'type': 0, 'severity': 1, 'path': '/slide[5]/shape[@id=100051]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O22', 'type': 0, 'severity': 1, 'path': '/slide[6]/shape[@id=100052]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O23', 'type': 0, 'severity': 1, 'path': '/slide[6]/shape[@id=100061]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O24', 'type': 0, 'severity': 1, 'path': '/slide[7]/shape[@id=100062]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O25', 'type': 0, 'severity': 1, 'path': '/slide[7]/shape[@id=100071]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O26', 'type': 0, 'severity': 1, 'path': '/slide[8]/shape[@id=100072]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O27', 'type': 0, 'severity': 1, 'path': '/slide[8]/shape[@id=100081]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O28', 'type': 0, 'severity': 1, 'path': '/slide[9]/shape[@id=100082]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O29', 'type': 0, 'severity': 1, 'path': '/slide[9]/shape[@id=100089]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O30', 'type': 0, 'severity': 1, 'path': '/slide[10]/shape[@id=100090]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O31', 'type': 0, 'severity': 1, 'path': '/slide[10]/shape[@id=100099]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}]}"
+        }
+      ],
+      "attempts": {
+        "create": 1,
+        "author": 1,
+        "validate": 1,
+        "issues": 1
+      },
+      "retry_reasons": {},
+      "artifact_sha256": "a089c0e001a4ead6997a945356cade219d07ffb3cc0057a91295c05c26fc33da",
+      "author_tool": {
+        "version": "1.0.157",
+        "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+      }
+    },
+    "doc-0048": {
+      "input_sha256": "2c2f9fadaa05a7595d988eb848c9e68174e8c5e452e470aa4b13d051df5cd5f4",
+      "stages": [
+        "created",
+        "authored"
+      ],
+      "operations": [
+        {
+          "arguments": [
+            "create",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx"
+          ],
+          "operation": "create",
+          "started_at": "2026-10-15T16:46:15.089186+00:00",
+          "ended_at": "2026-10-15T16:46:16.951723+00:00",
+          "active_seconds": 1.8625390999950469,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": \"Created: C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\documents\\\\2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx\",\n  \"message\": \"Created: C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\documents\\\\2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx\"\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "status": "passed"
+        },
+        {
+          "arguments": [
+            "batch",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx",
+            "--input",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\build\\scripts\\doc-0048-batch.json",
+            "--stop-on-error"
+          ],
+          "operation": "author",
+          "started_at": "2026-10-15T16:46:17.029604+00:00",
+          "ended_at": "2026-10-15T16:46:19.386285+00:00",
+          "active_seconds": 2.35667760000797,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"outputFile\": \"C:\\\\Users\\\\jolan\\\\AppData\\\\Local\\\\Temp\\\\officecli_batch_230cd26f6ddf423db0e0c9e67ab884cc.json\",\n    \"outputSize\": 9662,\n    \"results\": [\n      {\n        \"index\": 0,\n        \"success\": true\n      },\n      {\n        \"index\": 1,\n        \"success\": true\n      },\n      {\n        \"index\": 2,\n        \"success\": true\n      },\n      {\n        \"index\": 3,\n        \"success\": true\n      },\n      {\n        \"index\": 4,\n        \"success\": true\n      },\n      {\n        \"index\": 5,\n        \"success\": true\n      },\n      {\n        \"index\": 6,\n        \"success\": true\n      },\n      {\n        \"index\": 7,\n        \"success\": true\n      },\n      {\n        \"index\": 8,\n        \"success\": true\n      },\n      {\n        \"index\": 9,\n        \"success\": true\n      },\n      {\n        \"index\": 10,\n        \"success\": true\n      },\n      {\n        \"index\": 11,\n        \"success\": true\n      },\n      {\n        \"index\": 12,\n        \"success\": true\n      },\n      {\n        \"index\": 13,\n        \"success\": true\n      },\n      {\n        \"index\": 14,\n        \"success\": true\n      },\n      {\n        \"index\": 15,\n        \"success\": true\n      },\n      {\n        \"index\": 16,\n        \"success\": true\n      },\n      {\n        \"index\": 17,\n        \"success\": true\n      },\n      {\n        \"index\": 18,\n        \"success\": true\n      },\n      {\n        \"index\": 19,\n        \"success\": true\n      },\n      {\n        \"index\": 20,\n        \"success\": true\n      },\n      {\n        \"index\": 21,\n        \"success\": true\n      },\n      {\n        \"index\": 22,\n        \"success\": true\n      },\n      {\n        \"index\": 23,\n        \"success\": true\n      },\n      {\n        \"index\": 24,\n        \"success\": true\n      },\n      {\n        \"index\": 25,\n        \"success\": true\n      },\n      {\n        \"index\": 26,\n        \"success\": true\n      },\n      {\n        \"index\": 27,\n        \"success\": true\n      },\n      {\n        \"index\": 28,\n        \"success\": true\n      },\n      {\n        \"index\": 29,\n        \"success\": true\n      },\n      {\n        \"index\": 30,\n        \"success\": true\n      },\n      {\n        \"index\": 31,\n        \"success\": true\n      },\n      {\n        \"index\": 32,\n        \"success\": true\n      },\n      {\n        \"index\": 33,\n        \"success\": true\n      },\n      {\n        \"index\": 34,\n        \"success\": true\n      },\n      {\n        \"index\": 35,\n        \"success\": true\n      },\n      {\n        \"index\": 36,\n        \"success\": true\n      },\n      {\n        \"index\": 37,\n        \"success\": true\n      },\n      {\n        \"index\": 38,\n        \"success\": true\n      },\n      {\n        \"index\": 39,\n        \"success\": true\n      },\n      {\n        \"index\": 40,\n        \"success\": true\n      },\n      {\n        \"index\": 41,\n        \"success\": true\n      },\n      {\n        \"index\": 42,\n        \"success\": true\n      },\n      {\n        \"index\": 43,\n        \"success\": true\n      },\n      {\n        \"index\": 44,\n        \"success\": true\n      },\n      {\n        \"index\": 45,\n        \"success\": true\n      },\n      {\n        \"index\": 46,\n        \"success\": true\n      },\n      {\n        \"index\": 47,\n        \"success\": true\n      },\n      {\n        \"index\": 48,\n        \"success\": true\n      },\n      {\n        \"index\": 49,\n        \"success\": true\n      },\n      {\n        \"index\": 50,\n        \"success\": true\n      },\n      {\n        \"index\": 51,\n        \"success\": true\n      },\n      {\n        \"index\": 52,\n        \"success\": true\n      },\n      {\n        \"index\": 53,\n        \"success\": true\n      },\n      {\n        \"index\": 54,\n        \"success\": true\n      },\n      {\n        \"index\": 55,\n        \"success\": true\n      },\n      {\n        \"index\": 56,\n        \"success\": true\n      },\n      {\n        \"index\": 57,\n        \"success\": true\n      },\n      {\n        \"index\": 58,\n        \"success\": true\n      },\n      {\n        \"index\": 59,\n        \"success\": true\n      },\n      {\n        \"index\": 60,\n        \"success\": true\n      },\n      {\n        \"index\": 61,\n        \"success\": true\n      },\n      {\n        \"index\": 62,\n        \"success\": true\n      },\n      {\n        \"index\": 63,\n        \"success\": true\n      },\n      {\n        \"index\": 64,\n        \"success\": true\n      },\n      {\n        \"index\": 65,\n        \"success\": true\n      },\n      {\n        \"index\": 66,\n        \"success\": true\n      },\n      {\n        \"index\": 67,\n        \"success\": true\n      },\n      {\n        \"index\": 68,\n        \"success\": true\n      },\n      {\n        \"index\": 69,\n        \"success\": true\n      },\n      {\n        \"index\": 70,\n        \"success\": true\n      },\n      {\n        \"index\": 71,\n        \"success\": true\n      },\n      {\n        \"index\": 72,\n        \"success\": true\n      },\n      {\n        \"index\": 73,\n        \"success\": true\n      },\n      {\n        \"index\": 74,\n        \"success\": true\n      },\n      {\n        \"index\": 75,\n        \"success\": true\n      },\n      {\n        \"index\": 76,\n        \"success\": true\n      },\n      {\n        \"index\": 77,\n        \"success\": true\n      },\n      {\n        \"index\": 78,\n        \"success\": true\n      },\n      {\n        \"index\": 79,\n        \"success\": true\n      },\n      {\n        \"index\": 80,\n        \"success\": true\n      },\n      {\n        \"index\": 81,\n        \"success\": true\n      },\n      {\n        \"index\": 82,\n        \"success\": true\n      },\n      {\n        \"index\": 83,\n        \"success\": true\n      },\n      {\n        \"index\": 84,\n        \"success\": true\n      },\n      {\n        \"index\": 85,\n        \"success\": true\n      },\n      {\n        \"index\": 86,\n        \"success\": true\n      },\n      {\n        \"index\": 87,\n        \"success\": true\n      },\n      {\n        \"index\": 88,\n        \"success\": true\n      },\n      {\n        \"index\": 89,\n        \"success\": true\n      },\n      {\n        \"index\": 90,\n        \"success\": true\n      },\n      {\n        \"index\": 91,\n        \"success\": true\n      },\n      {\n        \"index\": 92,\n        \"success\": true\n      },\n      {\n        \"index\": 93,\n        \"success\": true\n      },\n      {\n        \"index\": 94,\n        \"success\": true\n      },\n      {\n        \"index\": 95,\n        \"success\": true\n      },\n      {\n        \"index\": 96,\n        \"success\": true\n      },\n      {\n        \"index\": 97,\n        \"success\": true\n      },\n      {\n        \"index\": 98,\n        \"success\": true\n      },\n      {\n        \"index\": 99,\n        \"success\": true\n      },\n      {\n        \"index\": 100,\n        \"success\": true\n      },\n      {\n        \"index\": 101,\n        \"success\": true\n      },\n      {\n        \"index\": 102,\n        \"success\": true\n      },\n      {\n        \"index\": 103,\n        \"success\": true\n      },\n      {\n        \"index\": 104,\n        \"success\": true\n      },\n      {\n        \"index\": 105,\n        \"success\": true\n      },\n      {\n        \"index\": 106,\n        \"success\": true\n      },\n      {\n        \"index\": 107,\n        \"success\": true\n      },\n      {\n        \"index\": 108,\n        \"success\": true\n      },\n      {\n        \"index\": 109,\n        \"success\": true\n      },\n      {\n        \"index\": 110,\n        \"success\": true\n      },\n      {\n        \"index\": 111,\n        \"success\": true\n      },\n      {\n        \"index\": 112,\n        \"success\": true\n      },\n      {\n        \"index\": 113,\n        \"success\": true\n      },\n      {\n        \"index\": 114,\n        \"success\": true\n      },\n      {\n        \"index\": 115,\n        \"success\": true\n      },\n      {\n        \"index\": 116,\n        \"success\": true\n      },\n      {\n        \"index\": 117,\n        \"success\": true\n      },\n      {\n        \"index\": 118,\n        \"success\": true\n      }\n    ],\n    \"summary\": {\n      \"total\": 119,\n      \"executed\": 119,\n      \"succeeded\": 119,\n      \"failed\": 0,\n      \"skipped\": 0\n    }\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "status": "passed"
+        },
+        {
+          "arguments": [
+            "validate",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx"
+          ],
+          "operation": "validate",
+          "started_at": "2026-10-15T16:46:19.556504+00:00",
+          "ended_at": "2026-10-15T16:46:21.325234+00:00",
+          "active_seconds": 1.7687306000152603,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"errors\": []\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "repeat_success": true,
+          "artifact_sha256": "3cfc4410ae0aeb06dd097691931b2689ad181e0b259984e71b98c92f1d13ae57",
+          "status": "passed",
+          "evidence": "Checked complete OfficeCLI result without errors/caveats"
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2025-08-22 - SunnySemi LLC - GulfSwitch 6.0 - Power Stage Adoption.pptx",
+            "issues"
+          ],
+          "operation": "issues",
+          "started_at": "2026-10-15T16:46:21.428269+00:00",
+          "ended_at": "2026-10-15T16:46:23.011534+00:00",
+          "active_seconds": 1.5832631000084803,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 20,\n    \"issues\": [\n      {\n        \"id\": \"O1\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[1]/shape[@id=100000]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O2\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[1]/shape[@id=100009]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O3\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[2]/shape[@id=100010]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O4\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[2]/shape[@id=100019]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O5\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[3]/shape[@id=100020]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O6\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[3]/shape[@id=100029]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O7\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[4]/shape[@id=100030]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O8\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[4]/shape[@id=100037]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O9\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[5]/shape[@id=100038]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O10\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[5]/shape[@id=100047]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O11\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[6]/shape[@id=100048]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O12\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[6]/shape[@id=100057]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O13\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[7]/shape[@id=100058]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O14\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[7]/shape[@id=100067]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O15\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[8]/shape[@id=100068]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O16\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[8]/shape[@id=100077]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O17\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[9]/shape[@id=100078]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O18\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[9]/shape[@id=100087]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      },\n      {\n        \"id\": \"O19\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[10]/shape[@id=100088]\",\n        \"message\": \"text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm\"\n      },\n      {\n        \"id\": \"O20\",\n        \"type\": 0,\n        \"severity\": 1,\n        \"path\": \"/slide[10]/shape[@id=100097]\",\n        \"message\": \"text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm\"\n      }\n    ]\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "repeat_success": true,
+          "artifact_sha256": "3cfc4410ae0aeb06dd097691931b2689ad181e0b259984e71b98c92f1d13ae57",
+          "status": "blocked",
+          "blocker": "issues: issues or incomplete scan: {'count': 20, 'issues': [{'id': 'O1', 'type': 0, 'severity': 1, 'path': '/slide[1]/shape[@id=100000]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O2', 'type': 0, 'severity': 1, 'path': '/slide[1]/shape[@id=100009]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O3', 'type': 0, 'severity': 1, 'path': '/slide[2]/shape[@id=100010]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O4', 'type': 0, 'severity': 1, 'path': '/slide[2]/shape[@id=100019]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O5', 'type': 0, 'severity': 1, 'path': '/slide[3]/shape[@id=100020]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O6', 'type': 0, 'severity': 1, 'path': '/slide[3]/shape[@id=100029]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O7', 'type': 0, 'severity': 1, 'path': '/slide[4]/shape[@id=100030]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O8', 'type': 0, 'severity': 1, 'path': '/slide[4]/shape[@id=100037]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O9', 'type': 0, 'severity': 1, 'path': '/slide[5]/shape[@id=100038]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O10', 'type': 0, 'severity': 1, 'path': '/slide[5]/shape[@id=100047]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O11', 'type': 0, 'severity': 1, 'path': '/slide[6]/shape[@id=100048]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O12', 'type': 0, 'severity': 1, 'path': '/slide[6]/shape[@id=100057]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O13', 'type': 0, 'severity': 1, 'path': '/slide[7]/shape[@id=100058]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O14', 'type': 0, 'severity': 1, 'path': '/slide[7]/shape[@id=100067]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O15', 'type': 0, 'severity': 1, 'path': '/slide[8]/shape[@id=100068]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O16', 'type': 0, 'severity': 1, 'path': '/slide[8]/shape[@id=100077]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O17', 'type': 0, 'severity': 1, 'path': '/slide[9]/shape[@id=100078]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O18', 'type': 0, 'severity': 1, 'path': '/slide[9]/shape[@id=100087]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O19', 'type': 0, 'severity': 1, 'path': '/slide[10]/shape[@id=100088]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O20', 'type': 0, 'severity': 1, 'path': '/slide[10]/shape[@id=100097]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}]}"
+        }
+      ],
+      "attempts": {
+        "create": 1,
+        "author": 1,
+        "validate": 1,
+        "issues": 1
+      },
+      "retry_reasons": {},
+      "artifact_sha256": "3cfc4410ae0aeb06dd097691931b2689ad181e0b259984e71b98c92f1d13ae57",
+      "author_tool": {
+        "version": "1.0.157",
+        "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+      }
+    },
+    "doc-0042": {
+      "input_sha256": "e079aac0d90d884aac298419ddaed1376115aedb9827a20a5251615c4def9010",
+      "stages": [
+        "created",
+        "authored"
+      ],
+      "operations": [
+        {
+          "arguments": [
+            "create",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2026-01-15 - SunnySemi LLC - FY 2025 Operating Economics.xlsx"
+          ],
+          "operation": "create",
+          "started_at": "2026-10-15T16:46:15.140381+00:00",
+          "ended_at": "2026-10-15T16:46:17.054861+00:00",
+          "active_seconds": 1.9144809999852441,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": \"Created: C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\documents\\\\2026-01-15 - SunnySemi LLC - FY 2025 Operating Economics.xlsx\",\n  \"message\": \"Created: C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\documents\\\\2026-01-15 - SunnySemi LLC - FY 2025 Operating Economics.xlsx\"\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "status": "passed"
+        },
+        {
+          "arguments": [
+            "batch",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2026-01-15 - SunnySemi LLC - FY 2025 Operating Economics.xlsx",
+            "--input",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\build\\scripts\\doc-0042-batch.json",
+            "--stop-on-error"
+          ],
+          "operation": "author",
+          "started_at": "2026-10-15T16:46:17.132378+00:00",
+          "ended_at": "2026-10-15T16:46:19.842849+00:00",
+          "active_seconds": 2.7104742999654263,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"outputFile\": \"C:\\\\Users\\\\jolan\\\\AppData\\\\Local\\\\Temp\\\\officecli_batch_23a8db06c86a4bb8b3a0a07dc1fecd02.json\",\n    \"outputSize\": 59458,\n    \"results\": [\n      {\n        \"index\": 0,\n        \"success\": true\n      },\n      {\n        \"index\": 1,\n        \"success\": true\n      },\n      {\n        \"index\": 2,\n        \"success\": true\n      },\n      {\n        \"index\": 3,\n        \"success\": true\n      },\n      {\n        \"index\": 4,\n        \"success\": true\n      },\n      {\n        \"index\": 5,\n        \"success\": true\n      },\n      {\n        \"index\": 6,\n        \"success\": true\n      },\n      {\n        \"index\": 7,\n        \"success\": true\n      },\n      {\n        \"index\": 8,\n        \"success\": true\n      },\n      {\n        \"index\": 9,\n        \"success\": true\n      },\n      {\n        \"index\": 10,\n        \"success\": true\n      },\n      {\n        \"index\": 11,\n        \"success\": true\n      },\n      {\n        \"index\": 12,\n        \"success\": true\n      },\n      {\n        \"index\": 13,\n        \"success\": true\n      },\n      {\n        \"index\": 14,\n        \"success\": true\n      },\n      {\n        \"index\": 15,\n        \"success\": true\n      },\n      {\n        \"index\": 16,\n        \"success\": true\n      },\n      {\n        \"index\": 17,\n        \"success\": true\n      },\n      {\n        \"index\": 18,\n        \"success\": true\n      },\n      {\n        \"index\": 19,\n        \"success\": true\n      },\n      {\n        \"index\": 20,\n        \"success\": true\n      },\n      {\n        \"index\": 21,\n        \"success\": true\n      },\n      {\n        \"index\": 22,\n        \"success\": true\n      },\n      {\n        \"index\": 23,\n        \"success\": true\n      },\n      {\n        \"index\": 24,\n        \"success\": true\n      },\n      {\n        \"index\": 25,\n        \"success\": true\n      },\n      {\n        \"index\": 26,\n        \"success\": true\n      },\n      {\n        \"index\": 27,\n        \"success\": true\n      },\n      {\n        \"index\": 28,\n        \"success\": true\n      },\n      {\n        \"index\": 29,\n        \"success\": true\n      },\n      {\n        \"index\": 30,\n        \"success\": true\n      },\n      {\n        \"index\": 31,\n        \"success\": true\n      },\n      {\n        \"index\": 32,\n        \"success\": true\n      },\n      {\n        \"index\": 33,\n        \"success\": true\n      },\n      {\n        \"index\": 34,\n        \"success\": true\n      },\n      {\n        \"index\": 35,\n        \"success\": true\n      },\n      {\n        \"index\": 36,\n        \"success\": true\n      },\n      {\n        \"index\": 37,\n        \"success\": true\n      },\n      {\n        \"index\": 38,\n        \"success\": true\n      },\n      {\n        \"index\": 39,\n        \"success\": true\n      },\n      {\n        \"index\": 40,\n        \"success\": true\n      },\n      {\n        \"index\": 41,\n        \"success\": true\n      },\n      {\n        \"index\": 42,\n        \"success\": true\n      },\n      {\n        \"index\": 43,\n        \"success\": true\n      },\n      {\n        \"index\": 44,\n        \"success\": true\n      },\n      {\n        \"index\": 45,\n        \"success\": true\n      },\n      {\n        \"index\": 46,\n        \"success\": true\n      },\n      {\n        \"index\": 47,\n        \"success\": true\n      },\n      {\n        \"index\": 48,\n        \"success\": true\n      },\n      {\n        \"index\": 49,\n        \"success\": true\n      },\n      {\n        \"index\": 50,\n        \"success\": true\n      },\n      {\n        \"index\": 51,\n        \"success\": true\n      },\n      {\n        \"index\": 52,\n        \"success\": true\n      },\n      {\n        \"index\": 53,\n        \"success\": true\n      },\n      {\n        \"index\": 54,\n        \"success\": true\n      },\n      {\n        \"index\": 55,\n        \"success\": true\n      },\n      {\n        \"index\": 56,\n        \"success\": true\n      },\n      {\n        \"index\": 57,\n        \"success\": true\n      },\n      {\n        \"index\": 58,\n        \"success\": true\n      },\n      {\n        \"index\": 59,\n        \"success\": true\n      },\n      {\n        \"index\": 60,\n        \"success\": true\n      },\n      {\n        \"index\": 61,\n        \"success\": true\n      },\n      {\n        \"index\": 62,\n        \"success\": true\n      },\n      {\n        \"index\": 63,\n        \"success\": true\n      },\n      {\n        \"index\": 64,\n        \"success\": true\n      },\n      {\n        \"index\": 65,\n        \"success\": true\n      },\n      {\n        \"index\": 66,\n        \"success\": true\n      },\n      {\n        \"index\": 67,\n        \"success\": true\n      },\n      {\n        \"index\": 68,\n        \"success\": true\n      },\n      {\n        \"index\": 69,\n        \"success\": true\n      },\n      {\n        \"index\": 70,\n        \"success\": true\n      },\n      {\n        \"index\": 71,\n        \"success\": true\n      },\n      {\n        \"index\": 72,\n        \"success\": true\n      },\n      {\n        \"index\": 73,\n        \"success\": true\n      },\n      {\n        \"index\": 74,\n        \"success\": true\n      },\n      {\n        \"index\": 75,\n        \"success\": true\n      },\n      {\n        \"index\": 76,\n        \"success\": true\n      },\n      {\n        \"index\": 77,\n        \"success\": true\n      },\n      {\n        \"index\": 78,\n        \"success\": true\n      },\n      {\n        \"index\": 79,\n        \"success\": true\n      },\n      {\n        \"index\": 80,\n        \"success\": true\n      },\n      {\n        \"index\": 81,\n        \"success\": true\n      },\n      {\n        \"index\": 82,\n        \"success\": true\n      },\n      {\n        \"index\": 83,\n        \"success\": true\n      },\n      {\n        \"index\": 84,\n        \"success\": true\n      },\n      {\n        \"index\": 85,\n        \"success\": true\n      },\n      {\n        \"index\": 86,\n        \"success\": true\n      },\n      {\n        \"index\": 87,\n        \"success\": true\n      },\n      {\n        \"index\": 88,\n        \"success\": true\n      },\n      {\n        \"index\": 89,\n        \"success\": true\n      },\n      {\n        \"index\": 90,\n        \"success\": true\n      },\n      {\n        \"index\": 91,\n        \"success\": true\n      },\n      {\n        \"index\": 92,\n        \"success\": true\n      },\n      {\n        \"index\": 93,\n        \"success\": true\n      },\n      {\n        \"index\": 94,\n        \"success\": true\n      },\n      {\n        \"index\": 95,\n        \"success\": true\n      },\n      {\n        \"index\": 96,\n        \"success\": true\n      },\n      {\n        \"index\": 97,\n        \"success\": true\n      },\n      {\n        \"index\": 98,\n        \"success\": true\n      },\n      {\n        \"index\": 99,\n        \"success\": true\n      },\n      {\n        \"index\": 100,\n        \"success\": true\n      },\n      {\n        \"index\": 101,\n        \"success\": true\n      },\n      {\n        \"index\": 102,\n        \"success\": true\n      },\n      {\n        \"index\": 103,\n        \"success\": true\n      },\n      {\n        \"index\": 104,\n        \"success\": true\n      },\n      {\n        \"index\": 105,\n        \"success\": true\n      },\n      {\n        \"index\": 106,\n        \"success\": true\n      },\n      {\n        \"index\": 107,\n        \"success\": true\n      },\n      {\n        \"index\": 108,\n        \"success\": true\n      },\n      {\n        \"index\": 109,\n        \"success\": true\n      },\n      {\n        \"index\": 110,\n        \"success\": true\n      },\n      {\n        \"index\": 111,\n        \"success\": true\n      },\n      {\n        \"index\": 112,\n        \"success\": true\n      },\n      {\n        \"index\": 113,\n        \"success\": true\n      },\n      {\n        \"index\": 114,\n        \"success\": true\n      },\n      {\n        \"index\": 115,\n        \"success\": true\n      },\n      {\n        \"index\": 116,\n        \"success\": true\n      },\n      {\n        \"index\": 117,\n        \"success\": true\n      },\n      {\n        \"index\": 118,\n        \"success\": true\n      },\n      {\n        \"index\": 119,\n        \"success\": true\n      },\n      {\n        \"index\": 120,\n        \"success\": true\n      },\n      {\n        \"index\": 121,\n        \"success\": true\n      },\n      {\n        \"index\": 122,\n        \"success\": true\n      },\n      {\n        \"index\": 123,\n        \"success\": true\n      },\n      {\n        \"index\": 124,\n        \"success\": true\n      },\n      {\n        \"index\": 125,\n        \"success\": true\n      },\n      {\n        \"index\": 126,\n        \"success\": true\n      },\n      {\n        \"index\": 127,\n        \"success\": true\n      },\n      {\n        \"index\": 128,\n        \"success\": true\n      },\n      {\n        \"index\": 129,\n        \"success\": true\n      },\n      {\n        \"index\": 130,\n        \"success\": true\n      },\n      {\n        \"index\": 131,\n        \"success\": true\n      },\n      {\n        \"index\": 132,\n        \"success\": true\n      },\n      {\n        \"index\": 133,\n        \"success\": true\n      },\n      {\n        \"index\": 134,\n        \"success\": true\n      },\n      {\n        \"index\": 135,\n        \"success\": true\n      },\n      {\n        \"index\": 136,\n        \"success\": true\n      },\n      {\n        \"index\": 137,\n        \"success\": true\n      },\n      {\n        \"index\": 138,\n        \"success\": true\n      },\n      {\n        \"index\": 139,\n        \"success\": true\n      },\n      {\n        \"index\": 140,\n        \"success\": true\n      },\n      {\n        \"index\": 141,\n        \"success\": true\n      },\n      {\n        \"index\": 142,\n        \"success\": true\n      },\n      {\n        \"index\": 143,\n        \"success\": true\n      },\n      {\n        \"index\": 144,\n        \"success\": true\n      },\n      {\n        \"index\": 145,\n        \"success\": true\n      },\n      {\n        \"index\": 146,\n        \"success\": true\n      },\n      {\n        \"index\": 147,\n        \"success\": true\n      },\n      {\n        \"index\": 148,\n        \"success\": true\n      },\n      {\n        \"index\": 149,\n        \"success\": true\n      },\n      {\n        \"index\": 150,\n        \"success\": true\n      },\n      {\n        \"index\": 151,\n        \"success\": true\n      },\n      {\n        \"index\": 152,\n        \"success\": true\n      },\n      {\n        \"index\": 153,\n        \"success\": true\n      },\n      {\n        \"index\": 154,\n        \"success\": true\n      },\n      {\n        \"index\": 155,\n        \"success\": true\n      },\n      {\n        \"index\": 156,\n        \"success\": true\n      },\n      {\n        \"index\": 157,\n        \"success\": true\n      },\n      {\n        \"index\": 158,\n        \"success\": true\n      },\n      {\n        \"index\": 159,\n        \"success\": true\n      },\n      {\n        \"index\": 160,\n        \"success\": true\n      },\n      {\n        \"index\": 161,\n        \"success\": true\n      },\n      {\n        \"index\": 162,\n        \"success\": true\n      },\n      {\n        \"index\": 163,\n        \"success\": true\n      },\n      {\n        \"index\": 164,\n        \"success\": true\n      },\n      {\n        \"index\": 165,\n        \"success\": true\n      },\n      {\n        \"index\": 166,\n        \"success\": true\n      },\n      {\n        \"index\": 167,\n        \"success\": true\n      },\n      {\n        \"index\": 168,\n        \"success\": true\n      },\n      {\n        \"index\": 169,\n        \"success\": true\n      },\n      {\n        \"index\": 170,\n        \"success\": true\n      },\n      {\n        \"index\": 171,\n        \"success\": true\n      },\n      {\n        \"index\": 172,\n        \"success\": true\n      },\n      {\n        \"index\": 173,\n        \"success\": true\n      },\n      {\n        \"index\": 174,\n        \"success\": true\n      },\n      {\n        \"index\": 175,\n        \"success\": true\n      },\n      {\n        \"index\": 176,\n        \"success\": true\n      },\n      {\n        \"index\": 177,\n        \"success\": true\n      },\n      {\n        \"index\": 178,\n        \"success\": true\n      },\n      {\n        \"index\": 179,\n        \"success\": true\n      },\n      {\n        \"index\": 180,\n        \"success\": true\n      },\n      {\n        \"index\": 181,\n        \"success\": true\n      },\n      {\n        \"index\": 182,\n        \"success\": true\n      },\n      {\n        \"index\": 183,\n        \"success\": true\n      },\n      {\n        \"index\": 184,\n        \"success\": true\n      },\n      {\n        \"index\": 185,\n        \"success\": true\n      },\n      {\n        \"index\": 186,\n        \"success\": true\n      },\n      {\n        \"index\": 187,\n        \"success\": true\n      },\n      {\n        \"index\": 188,\n        \"success\": true\n      },\n      {\n        \"index\": 189,\n        \"success\": true\n      },\n      {\n        \"index\": 190,\n        \"success\": true\n      },\n      {\n        \"index\": 191,\n        \"success\": true\n      },\n      {\n        \"index\": 192,\n        \"success\": true\n      },\n      {\n        \"index\": 193,\n        \"success\": true\n      },\n      {\n        \"index\": 194,\n        \"success\": true\n      },\n      {\n        \"index\": 195,\n        \"success\": true\n      },\n      {\n        \"index\": 196,\n        \"success\": true\n      },\n      {\n        \"index\": 197,\n        \"success\": true\n      },\n      {\n        \"index\": 198,\n        \"success\": true\n      },\n      {\n        \"index\": 199,\n        \"success\": true\n      },\n      {\n        \"index\": 200,\n        \"success\": true\n      },\n      {\n        \"index\": 201,\n        \"success\": true\n      },\n      {\n        \"index\": 202,\n        \"success\": true\n      },\n      {\n        \"index\": 203,\n        \"success\": true\n      },\n      {\n        \"index\": 204,\n        \"success\": true\n      },\n      {\n        \"index\": 205,\n        \"success\": true\n      },\n      {\n        \"index\": 206,\n        \"success\": true\n      },\n      {\n        \"index\": 207,\n        \"success\": true\n      },\n      {\n        \"index\": 208,\n        \"success\": true\n      },\n      {\n        \"index\": 209,\n        \"success\": true\n      },\n      {\n        \"index\": 210,\n        \"success\": true\n      },\n      {\n        \"index\": 211,\n        \"success\": true\n      },\n      {\n        \"index\": 212,\n        \"success\": true\n      },\n      {\n        \"index\": 213,\n        \"success\": true\n      },\n      {\n        \"index\": 214,\n        \"success\": true\n      },\n      {\n        \"index\": 215,\n        \"success\": true\n      },\n      {\n        \"index\": 216,\n        \"success\": true\n      },\n      {\n        \"index\": 217,\n        \"success\": true\n      },\n      {\n        \"index\": 218,\n        \"success\": true\n      },\n      {\n        \"index\": 219,\n        \"success\": true\n      },\n      {\n        \"index\": 220,\n        \"success\": true\n      },\n      {\n        \"index\": 221,\n        \"success\": true\n      },\n      {\n        \"index\": 222,\n        \"success\": true\n      },\n      {\n        \"index\": 223,\n        \"success\": true\n      },\n      {\n        \"index\": 224,\n        \"success\": true\n      },\n      {\n        \"index\": 225,\n        \"success\": true\n      },\n      {\n        \"index\": 226,\n        \"success\": true\n      },\n      {\n        \"index\": 227,\n        \"success\": true\n      },\n      {\n        \"index\": 228,\n        \"success\": true\n      },\n      {\n        \"index\": 229,\n        \"success\": true\n      },\n      {\n        \"index\": 230,\n        \"success\": true\n      },\n      {\n        \"index\": 231,\n        \"success\": true\n      },\n      {\n        \"index\": 232,\n        \"success\": true\n      },\n      {\n        \"index\": 233,\n        \"success\": true\n      },\n      {\n        \"index\": 234,\n        \"success\": true\n      },\n      {\n        \"index\": 235,\n        \"success\": true\n      },\n      {\n        \"index\": 236,\n        \"success\": true\n      },\n      {\n        \"index\": 237,\n        \"success\": true\n      },\n      {\n        \"index\": 238,\n        \"success\": true\n      },\n      {\n        \"index\": 239,\n        \"success\": true\n      },\n      {\n        \"index\": 240,\n        \"success\": true\n      },\n      {\n        \"index\": 241,\n        \"success\": true\n      },\n      {\n        \"index\": 242,\n        \"success\": true\n      },\n      {\n        \"index\": 243,\n        \"success\": true\n      },\n      {\n        \"index\": 244,\n        \"success\": true\n      },\n      {\n        \"index\": 245,\n        \"success\": true\n      },\n      {\n        \"index\": 246,\n        \"success\": true\n      },\n      {\n        \"index\": 247,\n        \"success\": true\n      },\n      {\n        \"index\": 248,\n        \"success\": true\n      },\n      {\n        \"index\": 249,\n        \"success\": true\n      },\n      {\n        \"index\": 250,\n        \"success\": true\n      },\n      {\n        \"index\": 251,\n        \"success\": true\n      },\n      {\n        \"index\": 252,\n        \"success\": true\n      },\n      {\n        \"index\": 253,\n        \"success\": true\n      },\n      {\n        \"index\": 254,\n        \"success\": true\n      },\n      {\n        \"index\": 255,\n        \"success\": true\n      },\n      {\n        \"index\": 256,\n        \"success\": true\n      },\n      {\n        \"index\": 257,\n        \"success\": true\n      },\n      {\n        \"index\": 258,\n        \"success\": true\n      },\n      {\n        \"index\": 259,\n        \"success\": true\n      },\n      {\n        \"index\": 260,\n        \"success\": true\n      },\n      {\n        \"index\": 261,\n        \"success\": true\n      },\n      {\n        \"index\": 262,\n        \"success\": true\n      },\n      {\n        \"index\": 263,\n        \"success\": true\n      },\n      {\n        \"index\": 264,\n        \"success\": true\n      },\n      {\n        \"index\": 265,\n        \"success\": true\n      },\n      {\n        \"index\": 266,\n        \"success\": true\n      },\n      {\n        \"index\": 267,\n        \"success\": true\n      },\n      {\n        \"index\": 268,\n        \"success\": true\n      },\n      {\n        \"index\": 269,\n        \"success\": true\n      },\n      {\n        \"index\": 270,\n        \"success\": true\n      },\n      {\n        \"index\": 271,\n        \"success\": true\n      },\n      {\n        \"index\": 272,\n        \"success\": true\n      },\n      {\n        \"index\": 273,\n        \"success\": true\n      },\n      {\n        \"index\": 274,\n        \"success\": true\n      },\n      {\n        \"index\": 275,\n        \"success\": true\n      },\n      {\n        \"index\": 276,\n        \"success\": true\n      },\n      {\n        \"index\": 277,\n        \"success\": true\n      },\n      {\n        \"index\": 278,\n        \"success\": true\n      },\n      {\n        \"index\": 279,\n        \"success\": true\n      },\n      {\n        \"index\": 280,\n        \"success\": true\n      },\n      {\n        \"index\": 281,\n        \"success\": true\n      },\n      {\n        \"index\": 282,\n        \"success\": true\n      },\n      {\n        \"index\": 283,\n        \"success\": true\n      },\n      {\n        \"index\": 284,\n        \"success\": true\n      },\n      {\n        \"index\": 285,\n        \"success\": true\n      },\n      {\n        \"index\": 286,\n        \"success\": true\n      },\n      {\n        \"index\": 287,\n        \"success\": true\n      },\n      {\n        \"index\": 288,\n        \"success\": true\n      },\n      {\n        \"index\": 289,\n        \"success\": true\n      },\n      {\n        \"index\": 290,\n        \"success\": true\n      },\n      {\n        \"index\": 291,\n        \"success\": true\n      },\n      {\n        \"index\": 292,\n        \"success\": true\n      },\n      {\n        \"index\": 293,\n        \"success\": true\n      },\n      {\n        \"index\": 294,\n        \"success\": true\n      },\n      {\n        \"index\": 295,\n        \"success\": true\n      },\n      {\n        \"index\": 296,\n        \"success\": true\n      },\n      {\n        \"index\": 297,\n        \"success\": true\n      },\n      {\n        \"index\": 298,\n        \"success\": true\n      },\n      {\n        \"index\": 299,\n        \"success\": true\n      },\n      {\n        \"index\": 300,\n        \"success\": true\n      },\n      {\n        \"index\": 301,\n        \"success\": true\n      },\n      {\n        \"index\": 302,\n        \"success\": true\n      },\n      {\n        \"index\": 303,\n        \"success\": true\n      },\n      {\n        \"index\": 304,\n        \"success\": true\n      },\n      {\n        \"index\": 305,\n        \"success\": true\n      },\n      {\n        \"index\": 306,\n        \"success\": true\n      },\n      {\n        \"index\": 307,\n        \"success\": true\n      },\n      {\n        \"index\": 308,\n        \"success\": true\n      },\n      {\n        \"index\": 309,\n        \"success\": true\n      },\n      {\n        \"index\": 310,\n        \"success\": true\n      },\n      {\n        \"index\": 311,\n        \"success\": true\n      },\n      {\n        \"index\": 312,\n        \"success\": true\n      },\n      {\n        \"index\": 313,\n        \"success\": true\n      },\n      {\n        \"index\": 314,\n        \"success\": true\n      },\n      {\n        \"index\": 315,\n        \"success\": true\n      },\n      {\n        \"index\": 316,\n        \"success\": true\n      },\n      {\n        \"index\": 317,\n        \"success\": true\n      },\n      {\n        \"index\": 318,\n        \"success\": true\n      },\n      {\n        \"index\": 319,\n        \"success\": true\n      },\n      {\n        \"index\": 320,\n        \"success\": true\n      },\n      {\n        \"index\": 321,\n        \"success\": true\n      },\n      {\n        \"index\": 322,\n        \"success\": true\n      },\n      {\n        \"index\": 323,\n        \"success\": true\n      },\n      {\n        \"index\": 324,\n        \"success\": true\n      },\n      {\n        \"index\": 325,\n        \"success\": true\n      },\n      {\n        \"index\": 326,\n        \"success\": true\n      },\n      {\n        \"index\": 327,\n        \"success\": true\n      },\n      {\n        \"index\": 328,\n        \"success\": true\n      },\n      {\n        \"index\": 329,\n        \"success\": true\n      },\n      {\n        \"index\": 330,\n        \"success\": true\n      },\n      {\n        \"index\": 331,\n        \"success\": true\n      },\n      {\n        \"index\": 332,\n        \"success\": true\n      },\n      {\n        \"index\": 333,\n        \"success\": true\n      },\n      {\n        \"index\": 334,\n        \"success\": true\n      },\n      {\n        \"index\": 335,\n        \"success\": true\n      },\n      {\n        \"index\": 336,\n        \"success\": true\n      },\n      {\n        \"index\": 337,\n        \"success\": true\n      },\n      {\n        \"index\": 338,\n        \"success\": true\n      },\n      {\n        \"index\": 339,\n        \"success\": true\n      },\n      {\n        \"index\": 340,\n        \"success\": true\n      },\n      {\n        \"index\": 341,\n        \"success\": true\n      },\n      {\n        \"index\": 342,\n        \"success\": true\n      },\n      {\n        \"index\": 343,\n        \"success\": true\n      },\n      {\n        \"index\": 344,\n        \"success\": true\n      },\n      {\n        \"index\": 345,\n        \"success\": true\n      },\n      {\n        \"index\": 346,\n        \"success\": true\n      },\n      {\n        \"index\": 347,\n        \"success\": true\n      },\n      {\n        \"index\": 348,\n        \"success\": true\n      },\n      {\n        \"index\": 349,\n        \"success\": true\n      },\n      {\n        \"index\": 350,\n        \"success\": true\n      },\n      {\n        \"index\": 351,\n        \"success\": true\n      },\n      {\n        \"index\": 352,\n        \"success\": true\n      },\n      {\n        \"index\": 353,\n        \"success\": true\n      },\n      {\n        \"index\": 354,\n        \"success\": true\n      },\n      {\n        \"index\": 355,\n        \"success\": true\n      },\n      {\n        \"index\": 356,\n        \"success\": true\n      },\n      {\n        \"index\": 357,\n        \"success\": true\n      },\n      {\n        \"index\": 358,\n        \"success\": true\n      },\n      {\n        \"index\": 359,\n        \"success\": true\n      },\n      {\n        \"index\": 360,\n        \"success\": true\n      },\n      {\n        \"index\": 361,\n        \"success\": true\n      },\n      {\n        \"index\": 362,\n        \"success\": true\n      },\n      {\n        \"index\": 363,\n        \"success\": true\n      },\n      {\n        \"index\": 364,\n        \"success\": true\n      },\n      {\n        \"index\": 365,\n        \"success\": true\n      },\n      {\n        \"index\": 366,\n        \"success\": true\n      },\n      {\n        \"index\": 367,\n        \"success\": true\n      },\n      {\n        \"index\": 368,\n        \"success\": true\n      },\n      {\n        \"index\": 369,\n        \"success\": true\n      },\n      {\n        \"index\": 370,\n        \"success\": true\n      },\n      {\n        \"index\": 371,\n        \"success\": true\n      },\n      {\n        \"index\": 372,\n        \"success\": true\n      },\n      {\n        \"index\": 373,\n        \"success\": true\n      },\n      {\n        \"index\": 374,\n        \"success\": true\n      },\n      {\n        \"index\": 375,\n        \"success\": true\n      },\n      {\n        \"index\": 376,\n        \"success\": true\n      },\n      {\n        \"index\": 377,\n        \"success\": true\n      },\n      {\n        \"index\": 378,\n        \"success\": true\n      },\n      {\n        \"index\": 379,\n        \"success\": true\n      },\n      {\n        \"index\": 380,\n        \"success\": true\n      },\n      {\n        \"index\": 381,\n        \"success\": true\n      },\n      {\n        \"index\": 382,\n        \"success\": true\n      },\n      {\n        \"index\": 383,\n        \"success\": true\n      },\n      {\n        \"index\": 384,\n        \"success\": true\n      },\n      {\n        \"index\": 385,\n        \"success\": true\n      },\n      {\n        \"index\": 386,\n        \"success\": true\n      },\n      {\n        \"index\": 387,\n        \"success\": true\n      },\n      {\n        \"index\": 388,\n        \"success\": true\n      },\n      {\n        \"index\": 389,\n        \"success\": true\n      },\n      {\n        \"index\": 390,\n        \"success\": true\n      },\n      {\n        \"index\": 391,\n        \"success\": true\n      },\n      {\n        \"index\": 392,\n        \"success\": true\n      },\n      {\n        \"index\": 393,\n        \"success\": true\n      },\n      {\n        \"index\": 394,\n        \"success\": true\n      },\n      {\n        \"index\": 395,\n        \"success\": true\n      },\n      {\n        \"index\": 396,\n        \"success\": true\n      },\n      {\n        \"index\": 397,\n        \"success\": true\n      },\n      {\n        \"index\": 398,\n        \"success\": true\n      },\n      {\n        \"index\": 399,\n        \"success\": true\n      },\n      {\n        \"index\": 400,\n        \"success\": true\n      },\n      {\n        \"index\": 401,\n        \"success\": true\n      },\n      {\n        \"index\": 402,\n        \"success\": true\n      },\n      {\n        \"index\": 403,\n        \"success\": true\n      },\n      {\n        \"index\": 404,\n        \"success\": true\n      },\n      {\n        \"index\": 405,\n        \"success\": true\n      },\n      {\n        \"index\": 406,\n        \"success\": true\n      },\n      {\n        \"index\": 407,\n        \"success\": true\n      },\n      {\n        \"index\": 408,\n        \"success\": true\n      },\n      {\n        \"index\": 409,\n        \"success\": true\n      },\n      {\n        \"index\": 410,\n        \"success\": true\n      },\n      {\n        \"index\": 411,\n        \"success\": true\n      },\n      {\n        \"index\": 412,\n        \"success\": true\n      },\n      {\n        \"index\": 413,\n        \"success\": true\n      },\n      {\n        \"index\": 414,\n        \"success\": true\n      },\n      {\n        \"index\": 415,\n        \"success\": true\n      }\n    ],\n    \"summary\": {\n      \"total\": 416,\n      \"executed\": 416,\n      \"succeeded\": 416,\n      \"failed\": 0,\n      \"skipped\": 0\n    }\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "status": "passed"
+        },
+        {
+          "arguments": [
+            "validate",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2026-01-15 - SunnySemi LLC - FY 2025 Operating Economics.xlsx"
+          ],
+          "operation": "validate",
+          "started_at": "2026-10-15T16:46:19.964884+00:00",
+          "ended_at": "2026-10-15T16:46:21.687436+00:00",
+          "active_seconds": 1.7225547999842092,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"errors\": []\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "repeat_success": true,
+          "artifact_sha256": "9dcd4cf568800d547c8b570d38aba244113a7ae42d48c655cb13793073f9d537",
+          "status": "passed",
+          "evidence": "Checked complete OfficeCLI result without errors/caveats"
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2026-01-15 - SunnySemi LLC - FY 2025 Operating Economics.xlsx",
+            "issues"
+          ],
+          "operation": "issues",
+          "started_at": "2026-10-15T16:46:21.785430+00:00",
+          "ended_at": "2026-10-15T16:46:23.235967+00:00",
+          "active_seconds": 1.4505368000245653,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"issues\": []\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "repeat_success": true,
+          "artifact_sha256": "9dcd4cf568800d547c8b570d38aba244113a7ae42d48c655cb13793073f9d537",
+          "status": "passed",
+          "evidence": "Checked complete OfficeCLI result without errors/caveats"
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2026-01-15 - SunnySemi LLC - FY 2025 Operating Economics.xlsx",
+            "text"
+          ],
+          "operation": "extract",
+          "started_at": "2026-10-15T16:46:23.311139+00:00",
+          "ended_at": "2026-10-15T16:46:24.568266+00:00",
+          "active_seconds": 1.2571225999854505,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"sheets\": [\n      {\n        \"name\": \"Inputs\",\n        \"rows\": [\n          {\n            \"row\": 1,\n            \"cells\": {\n              \"A1\": \"SunnySemi LLC - FY 2025 Operating Economics\"\n            }\n          },\n          {\n            \"row\": 2,\n            \"cells\": {}\n          },\n          {\n            \"row\": 3,\n            \"cells\": {\n              \"A3\": \"USD unless noted; headcount is point-in-time.\"\n            }\n          },\n          {\n            \"row\": 4,\n            \"cells\": {\n              \"B4\": \"Q1 2025\",\n              \"C4\": \"Q2 2025\",\n              \"D4\": \"Q3 2025\",\n              \"E4\": \"Q4 2025\"\n            }\n          },\n          {\n            \"row\": 5,\n            \"cells\": {\n              \"A5\": \"Recognized revenue\",\n              \"B5\": \"4600000000\",\n              \"C5\": \"5290000000\",\n              \"D5\": \"5980000000\",\n              \"E5\": \"7130000000\"\n            }\n          },\n          {\n            \"row\": 6,\n            \"cells\": {\n              \"A6\": \"Cost of goods sold\",\n              \"B6\": \"1656000000\",\n              \"C6\": \"1904400000\",\n              \"D6\": \"2152800000\",\n              \"E6\": \"2566800000\"\n            }\n          },\n          {\n            \"row\": 7,\n            \"cells\": {\n              \"A7\": \"Operating expense\",\n              \"B7\": \"1058000000\",\n              \"C7\": \"1216700000\",\n              \"D7\": \"1375400000\",\n              \"E7\": \"1639900000\"\n            }\n          },\n          {\n            \"row\": 8,\n            \"cells\": {\n              \"A8\": \"Operating income\",\n              \"B8\": \"1886000000\",\n              \"C8\": \"2168900000\",\n              \"D8\": \"2451800000\",\n              \"E8\": \"2923300000\"\n            }\n          },\n          {\n            \"row\": 9,\n            \"cells\": {\n              \"A9\": \"SunCore revenue\",\n              \"B9\": \"3220000000\",\n              \"C9\": \"3703000000\",\n              \"D9\": \"4186000000\",\n              \"E9\": \"4991000000\"\n            }\n          },\n          {\n            \"row\": 10,\n            \"cells\": {\n              \"A10\": \"GulfSwitch revenue\",\n              \"B10\": \"1380000000\",\n              \"C10\": \"1587000000\",\n              \"D10\": \"1794000000\",\n              \"E10\": \"2139000000\"\n            }\n          },\n          {\n            \"row\": 11,\n            \"cells\": {\n              \"A11\": \"Wafer cost\",\n              \"B11\": \"1076400000\",\n              \"C11\": \"1237860000\",\n              \"D11\": \"1399320000\",\n              \"E11\": \"1668420000\"\n            }\n          },\n          {\n            \"row\": 12,\n            \"cells\": {\n              \"A12\": \"Package and test cost\",\n              \"B12\": \"414000000\",\n              \"C12\": \"476100000\",\n              \"D12\": \"538200000\",\n              \"E12\": \"641700000\"\n            }\n          },\n          {\n            \"row\": 13,\n            \"cells\": {\n              \"A13\": \"Logistics cost\",\n              \"B13\": \"165600000\",\n              \"C13\": \"190440000\",\n              \"D13\": \"215280000\",\n              \"E13\": \"256680000\"\n            }\n          },\n          {\n            \"row\": 14,\n            \"cells\": {\n              \"A14\": \"Engineering opex\",\n              \"B14\": \"740600000\",\n              \"C14\": \"851690000\",\n              \"D14\": \"962780000\",\n              \"E14\": \"1147930000\"\n            }\n          },\n          {\n            \"row\": 15,\n            \"cells\": {\n              \"A15\": \"Commercial/admin opex\",\n              \"B15\": \"317400000\",\n              \"C15\": \"365010000\",\n              \"D15\": \"412620000\",\n              \"E15\": \"491970000\"\n            }\n          },\n          {\n            \"row\": 16,\n            \"cells\": {\n              \"A16\": \"Ending headcount\",\n              \"B16\": \"4990\",\n              \"C16\": \"5060\",\n              \"D16\": \"5130\",\n              \"E16\": \"5200\"\n            }\n          },\n          {\n            \"row\": 17,\n            \"cells\": {}\n          },\n          {\n            \"row\": 18,\n            \"cells\": {}\n          },\n          {\n            \"row\": 19,\n            \"cells\": {}\n          },\n          {\n            \"row\": 20,\n            \"cells\": {}\n          },\n          {\n            \"row\": 21,\n            \"cells\": {}\n          },\n          {\n            \"row\": 22,\n            \"cells\": {}\n          },\n          {\n            \"row\": 23,\n            \"cells\": {}\n          },\n          {\n            \"row\": 24,\n            \"cells\": {}\n          },\n          {\n            \"row\": 25,\n            \"cells\": {}\n          },\n          {\n            \"row\": 26,\n            \"cells\": {}\n          },\n          {\n            \"row\": 27,\n            \"cells\": {}\n          },\n          {\n            \"row\": 28,\n            \"cells\": {}\n          },\n          {\n            \"row\": 29,\n            \"cells\": {}\n          },\n          {\n            \"row\": 30,\n            \"cells\": {}\n          },\n          {\n            \"row\": 31,\n            \"cells\": {}\n          },\n          {\n            \"row\": 32,\n            \"cells\": {}\n          },\n          {\n            \"row\": 33,\n            \"cells\": {}\n          },\n          {\n            \"row\": 34,\n            \"cells\": {}\n          },\n          {\n            \"row\": 35,\n            \"cells\": {}\n          },\n          {\n            \"row\": 36,\n            \"cells\": {}\n          }\n        ]\n      },\n      {\n        \"name\": \"Calc\",\n        \"rows\": [\n          {\n            \"row\": 1,\n            \"cells\": {\n              \"A1\": \"Operating economics | formula-linked actuals\"\n            }\n          },\n          {\n            \"row\": 2,\n            \"cells\": {}\n          },\n          {\n            \"row\": 3,\n            \"cells\": {\n              \"B3\": \"Q1 2025\",\n              \"C3\": \"Q2 2025\",\n              \"D3\": \"Q3 2025\",\n              \"E3\": \"Q4 2025\"\n            }\n          },\n          {\n            \"row\": 4,\n            \"cells\": {\n              \"A4\": \"1 | Income reconciliation\"\n            }\n          },\n          {\n            \"row\": 5,\n            \"cells\": {\n              \"A5\": \"Gross profit\",\n              \"B5\": \"2944000000\",\n              \"C5\": \"3385600000\",\n              \"D5\": \"3827200000\",\n              \"E5\": \"4563200000\"\n            }\n          },\n          {\n            \"row\": 6,\n            \"cells\": {\n              \"A6\": \"Calculated operating income\",\n              \"B6\": \"1886000000\",\n              \"C6\": \"2168900000\",\n              \"D6\": \"2451800000\",\n              \"E6\": \"2923300000\"\n            }\n          },\n          {\n            \"row\": 7,\n            \"cells\": {\n              \"A7\": \"Income reconciliation difference\",\n              \"B7\": \"0\",\n              \"C7\": \"0\",\n              \"D7\": \"0\",\n              \"E7\": \"0\"\n            }\n          },\n          {\n            \"row\": 8,\n            \"cells\": {\n              \"A8\": \"2 | Margins\"\n            }\n          },\n          {\n            \"row\": 9,\n            \"cells\": {\n              \"A9\": \"Gross margin (ratio)\",\n              \"B9\": \"0.64\",\n              \"C9\": \"0.64\",\n              \"D9\": \"0.64\",\n              \"E9\": \"0.64\"\n            }\n          },\n          {\n            \"row\": 10,\n            \"cells\": {\n              \"A10\": \"Operating margin (ratio)\",\n              \"B10\": \"0.41\",\n              \"C10\": \"0.41\",\n              \"D10\": \"0.41\",\n              \"E10\": \"0.41\"\n            }\n          },\n          {\n            \"row\": 11,\n            \"cells\": {\n              \"A11\": \"3 | Product mix\"\n            }\n          },\n          {\n            \"row\": 12,\n            \"cells\": {\n              \"A12\": \"Combined product revenue\",\n              \"B12\": \"4600000000\",\n              \"C12\": \"5290000000\",\n              \"D12\": \"5980000000\",\n              \"E12\": \"7130000000\"\n            }\n          },\n          {\n            \"row\": 13,\n            \"cells\": {\n              \"A13\": \"Revenue mix difference\",\n              \"B13\": \"0\",\n              \"C13\": \"0\",\n              \"D13\": \"0\",\n              \"E13\": \"0\"\n            }\n          },\n          {\n            \"row\": 14,\n            \"cells\": {\n              \"A14\": \"SunCore share (ratio)\",\n              \"B14\": \"0.7\",\n              \"C14\": \"0.7\",\n              \"D14\": \"0.7\",\n              \"E14\": \"0.7\"\n            }\n          },\n          {\n            \"row\": 15,\n            \"cells\": {\n              \"A15\": \"4 | Manufacturing costs\"\n            }\n          },\n          {\n            \"row\": 16,\n            \"cells\": {\n              \"A16\": \"Combined manufacturing costs\",\n              \"B16\": \"1656000000\",\n              \"C16\": \"1904400000\",\n              \"D16\": \"2152800000\",\n              \"E16\": \"2566800000\"\n            }\n          },\n          {\n            \"row\": 17,\n            \"cells\": {\n              \"A17\": \"Manufacturing cost difference\",\n              \"B17\": \"0\",\n              \"C17\": \"0\",\n              \"D17\": \"0\",\n              \"E17\": \"0\"\n            }\n          },\n          {\n            \"row\": 18,\n            \"cells\": {\n              \"A18\": \"Wafer share (ratio)\",\n              \"B18\": \"0.65\",\n              \"C18\": \"0.65\",\n              \"D18\": \"0.65\",\n              \"E18\": \"0.65\"\n            }\n          },\n          {\n            \"row\": 19,\n            \"cells\": {\n              \"A19\": \"5 | Operating investment\"\n            }\n          },\n          {\n            \"row\": 20,\n            \"cells\": {\n              \"A20\": \"Combined operating expenses\",\n              \"B20\": \"1058000000\",\n              \"C20\": \"1216700000\",\n              \"D20\": \"1375400000\",\n              \"E20\": \"1639900000\"\n            }\n          },\n          {\n            \"row\": 21,\n            \"cells\": {\n              \"A21\": \"Opex difference\",\n              \"B21\": \"0\",\n              \"C21\": \"0\",\n              \"D21\": \"0\",\n              \"E21\": \"0\"\n            }\n          },\n          {\n            \"row\": 22,\n            \"cells\": {\n              \"A22\": \"Engineering share (ratio)\",\n              \"B22\": \"0.7\",\n              \"C22\": \"0.7\",\n              \"D22\": \"0.7\",\n              \"E22\": \"0.7\"\n            }\n          },\n          {\n            \"row\": 23,\n            \"cells\": {\n              \"A23\": \"6 | Sequential actuals\"\n            }\n          },\n          {\n            \"row\": 24,\n            \"cells\": {\n              \"A24\": \"Revenue change vs prior quarter\",\n              \"B24\": \"No prior quarter in scope\",\n              \"C24\": \"690000000\",\n              \"D24\": \"690000000\",\n              \"E24\": \"1150000000\"\n            }\n          },\n          {\n            \"row\": 25,\n            \"cells\": {\n              \"A25\": \"Operating-income change\",\n              \"B25\": \"No prior quarter in scope\",\n              \"C25\": \"282900000\",\n              \"D25\": \"282900000\",\n              \"E25\": \"471500000\"\n            }\n          },\n          {\n            \"row\": 26,\n            \"cells\": {\n              \"A26\": \"Ending headcount change\",\n              \"B26\": \"No prior quarter in scope\",\n              \"C26\": \"70\",\n              \"D26\": \"70\",\n              \"E26\": \"70\"\n            }\n          },\n          {\n            \"row\": 27,\n            \"cells\": {}\n          },\n          {\n            \"row\": 28,\n            \"cells\": {}\n          },\n          {\n            \"row\": 29,\n            \"cells\": {}\n          },\n          {\n            \"row\": 30,\n            \"cells\": {}\n          },\n          {\n            \"row\": 31,\n            \"cells\": {}\n          },\n          {\n            \"row\": 32,\n            \"cells\": {}\n          },\n          {\n            \"row\": 33,\n            \"cells\": {}\n          },\n          {\n            \"row\": 34,\n            \"cells\": {}\n          },\n          {\n            \"row\": 35,\n            \"cells\": {}\n          },\n          {\n            \"row\": 36,\n            \"cells\": {}\n          }\n        ]\n      },\n      {\n        \"name\": \"Summary\",\n        \"rows\": [\n          {\n            \"row\": 1,\n            \"cells\": {\n              \"A1\": \"Management view | available-period actuals\"\n            }\n          },\n          {\n            \"row\": 2,\n            \"cells\": {}\n          },\n          {\n            \"row\": 3,\n            \"cells\": {}\n          },\n          {\n            \"row\": 4,\n            \"cells\": {\n              \"A4\": \"Recognized revenue\",\n              \"B4\": \"23000000000\"\n            }\n          },\n          {\n            \"row\": 5,\n            \"cells\": {\n              \"A5\": \"COGS\",\n              \"B5\": \"8280000000\"\n            }\n          },\n          {\n            \"row\": 6,\n            \"cells\": {\n              \"A6\": \"Operating expense\",\n              \"B6\": \"5290000000\"\n            }\n          },\n          {\n            \"row\": 7,\n            \"cells\": {\n              \"A7\": \"Operating income\",\n              \"B7\": \"9430000000\"\n            }\n          },\n          {\n            \"row\": 8,\n            \"cells\": {\n              \"A8\": \"SunCore revenue\",\n              \"B8\": \"16100000000\"\n            }\n          },\n          {\n            \"row\": 9,\n            \"cells\": {\n              \"A9\": \"GulfSwitch revenue\",\n              \"B9\": \"6900000000\"\n            }\n          },\n          {\n            \"row\": 10,\n            \"cells\": {}\n          },\n          {\n            \"row\": 11,\n            \"cells\": {\n              \"A11\": \"Operating margin (ratio)\",\n              \"B11\": \"0.41\"\n            }\n          },\n          {\n            \"row\": 12,\n            \"cells\": {}\n          },\n          {\n            \"row\": 13,\n            \"cells\": {}\n          },\n          {\n            \"row\": 14,\n            \"cells\": {\n              \"A14\": \"Income\",\n              \"B14\": \"Reconciliation differences on Calc must be zero; investigate any divergence.\"\n            }\n          },\n          {\n            \"row\": 15,\n            \"cells\": {\n              \"A15\": \"Margins\",\n              \"B15\": \"Gross margin excludes operating expense; operating margin includes it.\"\n            }\n          },\n          {\n            \"row\": 16,\n            \"cells\": {\n              \"A16\": \"Product mix\",\n              \"B16\": \"Product totals reconcile to revenue; a mix shift is not a customer-count measure.\"\n            }\n          },\n          {\n            \"row\": 17,\n            \"cells\": {\n              \"A17\": \"Manufacturing\",\n              \"B17\": \"Wafer, package/test and logistics are separate cost drivers; do not double count.\"\n            }\n          },\n          {\n            \"row\": 18,\n            \"cells\": {\n              \"A18\": \"Investment\",\n              \"B18\": \"Engineering is an operating expense here, not a capital expenditure or cash-flow proxy.\"\n            }\n          },\n          {\n            \"row\": 19,\n            \"cells\": {\n              \"A19\": \"Trend\",\n              \"B19\": \"Sequential changes are absolute movements, not forecasts or annualized growth rates.\"\n            }\n          },\n          {\n            \"row\": 20,\n            \"cells\": {}\n          },\n          {\n            \"row\": 21,\n            \"cells\": {}\n          },\n          {\n            \"row\": 22,\n            \"cells\": {}\n          },\n          {\n            \"row\": 23,\n            \"cells\": {}\n          },\n          {\n            \"row\": 24,\n            \"cells\": {}\n          },\n          {\n            \"row\": 25,\n            \"cells\": {}\n          },\n          {\n            \"row\": 26,\n            \"cells\": {}\n          },\n          {\n            \"row\": 27,\n            \"cells\": {}\n          },\n          {\n            \"row\": 28,\n            \"cells\": {}\n          },\n          {\n            \"row\": 29,\n            \"cells\": {}\n          },\n          {\n            \"row\": 30,\n            \"cells\": {}\n          },\n          {\n            \"row\": 31,\n            \"cells\": {}\n          },\n          {\n            \"row\": 32,\n            \"cells\": {}\n          },\n          {\n            \"row\": 33,\n            \"cells\": {}\n          },\n          {\n            \"row\": 34,\n            \"cells\": {}\n          },\n          {\n            \"row\": 35,\n            \"cells\": {}\n          },\n          {\n            \"row\": 36,\n            \"cells\": {}\n          }\n        ]\n      },\n      {\n        \"name\": \"Notes\",\n        \"rows\": [\n          {\n            \"row\": 1,\n            \"cells\": {\n              \"A1\": \"Sources, methodology and limitations\"\n            }\n          },\n          {\n            \"row\": 2,\n            \"cells\": {}\n          },\n          {\n            \"row\": 3,\n            \"cells\": {}\n          },\n          {\n            \"row\": 4,\n            \"cells\": {\n              \"A4\": \"Basis\",\n              \"B4\": \"USD; calendar fiscal years; recognized revenue, not bookings; operating income excludes no additional adjustments and is not net income or cash flow.\"\n            }\n          },\n          {\n            \"row\": 5,\n            \"cells\": {\n              \"A5\": \"Operating emphasis\",\n              \"B5\": \"Profitable scale\"\n            }\n          },\n          {\n            \"row\": 6,\n            \"cells\": {\n              \"A6\": \"Risk\",\n              \"B6\": \"working-capital exposure from accelerated production commitments\"\n            }\n          },\n          {\n            \"row\": 7,\n            \"cells\": {\n              \"A7\": \"Mitigation\",\n              \"B7\": \"stage capacity commitments against qualification and accepted schedules\"\n            }\n          },\n          {\n            \"row\": 8,\n            \"cells\": {\n              \"A8\": \"Strategy\",\n              \"B8\": \"Own differentiated silicon architecture and application validation; use external manufacturing rather than build a wafer fab.\"\n            }\n          },\n          {\n            \"row\": 9,\n            \"cells\": {\n              \"A9\": \"Liquidity\",\n              \"B9\": \"No cash balance, debt balance, free-cash-flow measure or forecast is included.\"\n            }\n          },\n          {\n            \"row\": 10,\n            \"cells\": {\n              \"A10\": \"Availability\",\n              \"B10\": \"Only quarters knowable on the publication date are included.\"\n            }\n          },\n          {\n            \"row\": 11,\n            \"cells\": {\n              \"A11\": \"Formula controls\",\n              \"B11\": \"Inputs precede formulas; saved formula values are checked after reopening.\"\n            }\n          },\n          {\n            \"row\": 12,\n            \"cells\": {\n              \"A12\": \"Color convention\",\n              \"B12\": \"Blue numbers are source inputs. Green numbers are formula-linked outputs.\"\n            }\n          },\n          {\n            \"row\": 13,\n            \"cells\": {\n              \"A13\": \"Scope\",\n              \"B13\": \"This is an operating-economics workbook, not a balance sheet or cash-flow model.\"\n            }\n          },\n          {\n            \"row\": 14,\n            \"cells\": {}\n          },\n          {\n            \"row\": 15,\n            \"cells\": {}\n          },\n          {\n            \"row\": 16,\n            \"cells\": {}\n          },\n          {\n            \"row\": 17,\n            \"cells\": {}\n          },\n          {\n            \"row\": 18,\n            \"cells\": {}\n          },\n          {\n            \"row\": 19,\n            \"cells\": {}\n          },\n          {\n            \"row\": 20,\n            \"cells\": {}\n          },\n          {\n            \"row\": 21,\n            \"cells\": {}\n          },\n          {\n            \"row\": 22,\n            \"cells\": {}\n          },\n          {\n            \"row\": 23,\n            \"cells\": {}\n          },\n          {\n            \"row\": 24,\n            \"cells\": {}\n          },\n          {\n            \"row\": 25,\n            \"cells\": {}\n          },\n          {\n            \"row\": 26,\n            \"cells\": {}\n          },\n          {\n            \"row\": 27,\n            \"cells\": {}\n          },\n          {\n            \"row\": 28,\n            \"cells\": {}\n          },\n          {\n            \"row\": 29,\n            \"cells\": {}\n          },\n          {\n            \"row\": 30,\n            \"cells\": {}\n          },\n          {\n            \"row\": 31,\n            \"cells\": {}\n          },\n          {\n            \"row\": 32,\n            \"cells\": {}\n          },\n          {\n            \"row\": 33,\n            \"cells\": {}\n          },\n          {\n            \"row\": 34,\n            \"cells\": {}\n          },\n          {\n            \"row\": 35,\n            \"cells\": {}\n          },\n          {\n            \"row\": 36,\n            \"cells\": {}\n          }\n        ]\n      }\n    ]\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "repeat_success": true,
+          "artifact_sha256": "9dcd4cf568800d547c8b570d38aba244113a7ae42d48c655cb13793073f9d537",
+          "status": "passed",
+          "evidence": "Checked complete OfficeCLI result without errors/caveats"
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2026-01-15 - SunnySemi LLC - FY 2025 Operating Economics.xlsx",
+            "issues",
+            "--type",
+            "chart_cache_stale"
+          ],
+          "operation": "chart_cache_stale",
+          "started_at": "2026-10-15T16:46:24.649546+00:00",
+          "ended_at": "2026-10-15T16:46:25.866109+00:00",
+          "active_seconds": 1.2165672999690287,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"issues\": []\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "repeat_success": true,
+          "artifact_sha256": "9dcd4cf568800d547c8b570d38aba244113a7ae42d48c655cb13793073f9d537",
+          "status": "passed",
+          "evidence": "Complete chart-cache issue scan"
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\documents\\2026-01-15 - SunnySemi LLC - FY 2025 Operating Economics.xlsx",
+            "html",
+            "--out",
+            "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\build\\renders\\doc-0042\\export.html"
+          ],
+          "operation": "html_export",
+          "started_at": "2026-10-15T16:46:25.971056+00:00",
+          "ended_at": "2026-10-15T16:46:27.348134+00:00",
+          "active_seconds": 1.3770811000140384,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\"success\": true, \"data\": \"C:\\\\Users\\\\jolan\\\\repos\\\\synthetic-content-generator\\\\examples\\\\semiconductor-company\\\\build\\\\renders\\\\doc-0042\\\\export.html\"}",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          },
+          "corrective": false,
+          "pass": "generation",
+          "repeat_success": true,
+          "artifact_sha256": "9dcd4cf568800d547c8b570d38aba244113a7ae42d48c655cb13793073f9d537",
+          "status": "passed",
+          "evidence": "Checked complete OfficeCLI result without errors/caveats"
+        }
+      ],
+      "attempts": {
+        "create": 1,
+        "author": 1,
+        "validate": 1,
+        "issues": 1,
+        "extract": 1,
+        "chart_cache_stale": 1,
+        "html_export": 1
+      },
+      "retry_reasons": {},
+      "artifact_sha256": "9dcd4cf568800d547c8b570d38aba244113a7ae42d48c655cb13793073f9d537",
+      "author_tool": {
+        "version": "1.0.157",
+        "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+      },
+      "captures": [
+        {
+          "operation": "capture",
+          "status": "passed",
+          "started_at": "2026-10-15T16:46:27.410604+00:00",
+          "pass": "generation",
+          "artifact_sha256": "9dcd4cf568800d547c8b570d38aba244113a7ae42d48c655cb13793073f9d537",
+          "corrective": false,
+          "active_seconds": 2.8985349999857135,
+          "ended_at": "2026-10-15T16:46:30.312940+00:00",
+          "tool": {
+            "engine": "playwright-chromium",
+            "playwright_version": "1.63.0",
+            "channel": "chromium",
+            "headless": true,
+            "chromium_sandbox": true,
+            "browser_version": "153.0.8010.12",
+            "executable_path": "C:\\Users\\jolan\\AppData\\Local\\ms-playwright\\chromium-1243\\chrome-win64\\chrome.exe",
+            "executable_sha256": "9b07943f834485b43c9d54caea2951c78715f9f07070a80ab6658465ebd3e711"
+          },
+          "source_html_sha256": "3e82dc563c14d9869b936f5b1da31e63513ad46d8cc2f41102d9dd54a196f084",
+          "unit": "region",
+          "image_sha256": "ada6a37d8276cd0c6dcbca9fad7b5eac5ae7f11970d7b17e11409a011eb0353a",
+          "lane_timing": {
+            "waiting_seconds": 0.0003453000099398196,
+            "active_seconds": 2.8985349999857135
+          },
+          "elapsed_seconds": 2.9024258000426926,
+          "waiting_seconds": 0.0003453000099398196,
+          "start_cell": "A1",
+          "end_cell": "E16",
+          "clip": {
+            "x": 40.5,
+            "y": 62.5,
+            "width": 952.1875,
+            "height": 576.0
+          },
+          "viewport": {
+            "width": 1600,
+            "height": 1200
+          },
+          "image_count": 1
+        },
+        {
+          "operation": "render-calc-top",
+          "status": "blocked",
+          "started_at": "2026-10-15T16:46:30.343720+00:00",
+          "pass": "generation",
+          "artifact_sha256": "9dcd4cf568800d547c8b570d38aba244113a7ae42d48c655cb13793073f9d537",
+          "corrective": false,
+          "active_seconds": 0,
+          "blocker": "xlsx region /Calc/A1:E14 not rendered",
+          "ended_at": "2026-10-15T16:46:31.154721+00:00",
+          "elapsed_seconds": 0.8063195999711752
+        }
+      ]
+    }
+  },
+  "generation_sha256": "b73d793ad90c9e6b0eb7b67f0250ff7202452acf2b0612bde0f74f34269b59b9",
+  "execution_sha256": "d5ea78a43358d2bb5b967b2995bb19992ff6db945768599f31096c8775257bd3",
+  "execution_revision": 1,
+  "effective_workers": 4,
+  "last_checkpoint_at": "2026-10-15T16:46:31.185076+00:00",
+  "active_wall_seconds": 21.783726699999534,
+  "validation_counts": {
+    "plan_computations": 1,
+    "plan_worker_seconds": 0.17200769996270537,
+    "plan_hits": 8,
+    "drafts_computations": 1,
+    "drafts_worker_seconds": 0.6248017000034451,
+    "artifact_computations": 3,
+    "artifact_worker_seconds": 0.12815700011560693,
+    "artifact_hits": 3
+  },
+  "phases": [
+    {
+      "id": "635d827e-408c-43aa-bbd2-2ade2b2949ec",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0030",
+      "started_at": "2026-10-15T16:46:10.363593+00:00",
+      "status": "blocked",
+      "active_seconds": 4.538838600041345,
+      "family": [
+        "product_spec",
+        "docx",
+        "1",
+        "96621fe2b6f7e707128aaff0278abac97c6731c81b24016fada8125a27a50f02"
+      ],
+      "queued_at": "2026-10-15T16:46:10.363277+00:00",
+      "queue_seconds": 0.000316,
+      "ended_at": "2026-10-15T16:46:14.902431+00:00"
+    },
+    {
+      "id": "54edd74b-f718-40e4-a2e5-59dff7aac741",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0047",
+      "started_at": "2026-10-15T16:46:10.364696+00:00",
+      "status": "blocked",
+      "active_seconds": 4.565139000013005,
+      "family": [
+        "press_release",
+        "docx",
+        "1",
+        "00532f19aacdbb2f364d247186b0262d4ebce06f2623443ea4e4884ae90f406f"
+      ],
+      "queued_at": "2026-10-15T16:46:10.364421+00:00",
+      "queue_seconds": 0.000275,
+      "ended_at": "2026-10-15T16:46:14.929836+00:00"
+    },
+    {
+      "id": "e512cb0b-f813-48df-950b-b5ee9b0b749f",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0012",
+      "started_at": "2026-10-15T16:46:10.364305+00:00",
+      "status": "blocked",
+      "active_seconds": 4.928131599968765,
+      "family": [
+        "meeting_transcript",
+        "docx",
+        "1",
+        "d75560c39ad778e3dde2de1b417098d268548e9894625b391a80c4f978f1e12d"
+      ],
+      "queued_at": "2026-10-15T16:46:10.364034+00:00",
+      "queue_seconds": 0.000271,
+      "ended_at": "2026-10-15T16:46:15.292434+00:00"
+    },
+    {
+      "id": "947bfaa6-7f91-4863-b619-682a2783c70d",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0036",
+      "started_at": "2026-10-15T16:46:10.363935+00:00",
+      "status": "blocked",
+      "active_seconds": 8.898916400037706,
+      "family": [
+        "board_deck",
+        "pptx",
+        "1",
+        "3eae2728ca8e0b68513959c8853dd2258bfe84acc941b6c5b5923a301a62fd7b"
+      ],
+      "queued_at": "2026-10-15T16:46:10.363686+00:00",
+      "queue_seconds": 0.000249,
+      "ended_at": "2026-10-15T16:46:19.262853+00:00"
+    },
+    {
+      "id": "7f44660e-982e-4ed8-8954-550edc4c0744",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0048",
+      "started_at": "2026-10-15T16:46:14.927404+00:00",
+      "status": "blocked",
+      "active_seconds": 8.098452800011728,
+      "family": [
+        "product_presentation",
+        "pptx",
+        "1",
+        "672d3bddab87c64bbd48671f5dfee716f646095c326e0749428e287fd37820ef"
+      ],
+      "queued_at": "2026-10-15T16:46:14.926266+00:00",
+      "queue_seconds": 0.001138,
+      "ended_at": "2026-10-15T16:46:23.025869+00:00"
+    },
+    {
+      "id": "a12cc131-e418-41d0-8ddd-ad54a8abb240",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0042",
+      "started_at": "2026-10-15T16:46:14.969436+00:00",
+      "status": "blocked",
+      "active_seconds": 16.19072309997864,
+      "family": [
+        "financial_model",
+        "xlsx",
+        "1",
+        "eaa0c5c0bb506cdf19e6dc0bc71fc907bdf385da1b9d38f3cef0666d30675f38"
+      ],
+      "queued_at": "2026-10-15T16:46:14.968476+00:00",
+      "queue_seconds": 0.00096,
+      "ended_at": "2026-10-15T16:46:31.160261+00:00"
+    }
+  ],
+  "last_result": {
+    "status": "blocked",
+    "pass": "generation",
+    "workers": 4,
+    "completed_this_invocation": [],
+    "failures": {
+      "doc-0030": "author: unresolved caveat/truncation: warnings",
+      "doc-0047": "author: unresolved caveat/truncation: warnings",
+      "doc-0012": "author: unresolved caveat/truncation: warnings",
+      "doc-0036": "issues: issues or incomplete scan: {'count': 31, 'issues': [{'id': 'O1', 'type': 0, 'severity': 1, 'path': '/slide[1]/shape[@id=100000]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O2', 'type': 0, 'severity': 1, 'path': '/slide[1]/shape[@id=100009]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O3', 'type': 0, 'severity': 1, 'path': '/slide[2]/shape[@id=100010]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O4', 'type': 0, 'severity': 1, 'path': '/slide[2]/shape[@id=100013]', 'message': 'text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm'}, {'id': 'O5', 'type': 0, 'severity': 1, 'path': '/slide[2]/shape[@id=100015]', 'message': 'text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm'}, {'id': 'O6', 'type': 0, 'severity': 1, 'path': '/slide[2]/shape[@id=100018]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O7', 'type': 0, 'severity': 1, 'path': '/slide[3]/shape[@id=100019]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O8', 'type': 0, 'severity': 1, 'path': '/slide[3]/shape[@id=100022]', 'message': 'text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm'}, {'id': 'O9', 'type': 0, 'severity': 1, 'path': '/slide[3]/shape[@id=100024]', 'message': 'text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm'}, {'id': 'O10', 'type': 0, 'severity': 1, 'path': '/slide[3]/shape[@id=100026]', 'message': 'text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm'}, {'id': 'O11', 'type': 0, 'severity': 1, 'path': '/slide[3]/shape[@id=100028]', 'message': 'text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm'}, {'id': 'O12', 'type': 0, 'severity': 1, 'path': '/slide[3]/shape[@id=100031]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O13', 'type': 0, 'severity': 1, 'path': '/slide[4]/shape[@id=100032]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O14', 'type': 0, 'severity': 1, 'path': '/slide[4]/shape[@id=100035]', 'message': 'text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm'}, {'id': 'O15', 'type': 0, 'severity': 1, 'path': '/slide[4]/shape[@id=100037]', 'message': 'text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm'}, {'id': 'O16', 'type': 0, 'severity': 1, 'path': '/slide[4]/shape[@id=100040]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O17', 'type': 0, 'severity': 1, 'path': '/slide[5]/shape[@id=100041]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O18', 'type': 0, 'severity': 1, 'path': '/slide[5]/shape[@id=100044]', 'message': 'text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm'}, {'id': 'O19', 'type': 0, 'severity': 1, 'path': '/slide[5]/shape[@id=100046]', 'message': 'text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm'}, {'id': 'O20', 'type': 0, 'severity': 1, 'path': '/slide[5]/shape[@id=100048]', 'message': 'text overflow: 1 lines at 14.0pt need 17pt, usable 15pt. suggest.height=0.9cm'}, {'id': 'O21', 'type': 0, 'severity': 1, 'path': '/slide[5]/shape[@id=100051]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O22', 'type': 0, 'severity': 1, 'path': '/slide[6]/shape[@id=100052]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O23', 'type': 0, 'severity': 1, 'path': '/slide[6]/shape[@id=100061]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O24', 'type': 0, 'severity': 1, 'path': '/slide[7]/shape[@id=100062]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O25', 'type': 0, 'severity': 1, 'path': '/slide[7]/shape[@id=100071]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O26', 'type': 0, 'severity': 1, 'path': '/slide[8]/shape[@id=100072]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O27', 'type': 0, 'severity': 1, 'path': '/slide[8]/shape[@id=100081]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O28', 'type': 0, 'severity': 1, 'path': '/slide[9]/shape[@id=100082]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O29', 'type': 0, 'severity': 1, 'path': '/slide[9]/shape[@id=100089]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O30', 'type': 0, 'severity': 1, 'path': '/slide[10]/shape[@id=100090]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O31', 'type': 0, 'severity': 1, 'path': '/slide[10]/shape[@id=100099]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}]}",
+      "doc-0048": "issues: issues or incomplete scan: {'count': 20, 'issues': [{'id': 'O1', 'type': 0, 'severity': 1, 'path': '/slide[1]/shape[@id=100000]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O2', 'type': 0, 'severity': 1, 'path': '/slide[1]/shape[@id=100009]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O3', 'type': 0, 'severity': 1, 'path': '/slide[2]/shape[@id=100010]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O4', 'type': 0, 'severity': 1, 'path': '/slide[2]/shape[@id=100019]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O5', 'type': 0, 'severity': 1, 'path': '/slide[3]/shape[@id=100020]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O6', 'type': 0, 'severity': 1, 'path': '/slide[3]/shape[@id=100029]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O7', 'type': 0, 'severity': 1, 'path': '/slide[4]/shape[@id=100030]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O8', 'type': 0, 'severity': 1, 'path': '/slide[4]/shape[@id=100037]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O9', 'type': 0, 'severity': 1, 'path': '/slide[5]/shape[@id=100038]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O10', 'type': 0, 'severity': 1, 'path': '/slide[5]/shape[@id=100047]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O11', 'type': 0, 'severity': 1, 'path': '/slide[6]/shape[@id=100048]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O12', 'type': 0, 'severity': 1, 'path': '/slide[6]/shape[@id=100057]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O13', 'type': 0, 'severity': 1, 'path': '/slide[7]/shape[@id=100058]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O14', 'type': 0, 'severity': 1, 'path': '/slide[7]/shape[@id=100067]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O15', 'type': 0, 'severity': 1, 'path': '/slide[8]/shape[@id=100068]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O16', 'type': 0, 'severity': 1, 'path': '/slide[8]/shape[@id=100077]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O17', 'type': 0, 'severity': 1, 'path': '/slide[9]/shape[@id=100078]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O18', 'type': 0, 'severity': 1, 'path': '/slide[9]/shape[@id=100087]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}, {'id': 'O19', 'type': 0, 'severity': 1, 'path': '/slide[10]/shape[@id=100088]', 'message': 'text overflow: 1 lines at 11.0pt need 13pt, usable 13pt. suggest.height=0.75cm'}, {'id': 'O20', 'type': 0, 'severity': 1, 'path': '/slide[10]/shape[@id=100097]', 'message': 'text overflow: 1 lines at 10.0pt need 12pt, usable 10pt. suggest.height=0.7cm'}]}",
+      "doc-0042": "xlsx region /Calc/A1:E14 not rendered"
+    },
+    "generation_completed_total": 0,
+    "planned_total": 50,
+    "family_summary": {
+      "scope": "generation_pilots",
+      "families": 6,
+      "family_sizes": [
+        6,
+        6,
+        6,
+        8,
+        12,
+        12
+      ],
+      "pilots": 6,
+      "content_selected": 6,
+      "visual_selected": 6,
+      "warnings": []
+    },
+    "awaiting_pilot_or_corrective_reviews": [],
+    "awaiting_corrections": [],
+    "remaining": []
+  }
+}

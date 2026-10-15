@@ -1,0 +1,711 @@
+[
+  {
+    "command": "set",
+    "path": "/",
+    "props": {
+      "title": "SunnySemi LLC - SunCore 4.0 Product Specification",
+      "author": "SunnySemi LLC",
+      "docDefaults.font": "Calibri",
+      "docDefaults.fontSize": "11pt"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/section[1]",
+    "props": {
+      "pageWidth": "8.5in",
+      "pageHeight": "11in",
+      "marginTop": "0.7in",
+      "marginBottom": "0.7in",
+      "marginLeft": "0.8in",
+      "marginRight": "0.8in"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/styles",
+    "type": "style",
+    "props": {
+      "id": "Title",
+      "name": "Title",
+      "type": "paragraph",
+      "font": "Calibri",
+      "size": "21pt",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/styles",
+    "type": "style",
+    "props": {
+      "id": "Heading1",
+      "name": "Heading1",
+      "type": "paragraph",
+      "font": "Calibri",
+      "size": "15pt",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/styles",
+    "type": "style",
+    "props": {
+      "id": "Heading2",
+      "name": "Heading2",
+      "type": "paragraph",
+      "font": "Calibri",
+      "size": "14pt",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SUNNYSEMI LLC | INTERNAL",
+      "font": "Calibri",
+      "size": "10pt",
+      "color": "087E8B",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SunnySemi LLC - SunCore 4.0 Product Specification",
+      "font": "Calibri",
+      "size": "21pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Title"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "2023-02-01 | Tampa, Florida",
+      "font": "Calibri",
+      "size": "10pt",
+      "color": "087E8B",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Product scope and release basis",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SunCore 4.0 is a 7 nm inference ASIC with PCIe Gen3 x4 host interface. This specification supports the planned release targeted for 2023-08-15; it is not evidence that production release has already occurred. The design envelope is 96 INT8 TOPS with a 22 W board design budget. Peak INT8 throughput is not sustained application throughput. Customers must validate their model, host bandwidth and thermal design. Engineering must retain the acceptance evidence for the exact silicon, firmware, driver and compiler configuration being released. Interface compatibility is evaluated against that configuration, not inferred from a shared product family name. This document controls the requirements and verification path; commercial allocation remains a separate process.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Interfaces, dependencies and use boundaries",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Capture frames on the host, prepare tensors, submit inference over PCIe, and return results to the host application. The qualification sequence is: Evaluate the reference board, confirm interface behavior, complete workload and thermal validation, then approve the production configuration. Agree the target workload, host interface, thermal boundary and qualification evidence before scheduling production adoption. The host owns capture, tensor preparation and the application response to inference results. The accelerator interface must reject malformed inputs rather than permit unbounded device activity. Customer model coverage is limited by the release operator list. A model that compiles successfully still needs application-level verification. Reference-board results do not establish customer-enclosure thermal performance. Production configuration changes must be reviewed for their effect on compatibility, power and the existing verification evidence.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Verification ownership and document navigation",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Riley Arden, VP Engineering owns engineering evidence; Quinn Mercer, Product Director owns the product acceptance boundary. The following requirements are grouped into host and compute behavior, fault handling and observability, then release and compatibility control. Each numbered requirement includes a concrete acceptance condition. The release checklist must identify the method, configuration and result for every control; a missing result is not an implied pass. Failures require corrective evidence before the release gate can close. Technical exclusions remain explicit: No regulatory certification, customer benchmark or customer endorsement is asserted.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SunnySemi LLC | 01 | Host link",
+      "font": "Calibri",
+      "size": "15pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "pageBreakBefore": "true",
+      "style": "Heading1"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SC-4-01: Enumerate as a PCIe Gen3 x4 endpoint. Acceptance: Complete cold-boot enumeration on the reference host in 100 consecutive boots. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "02 | Arithmetic",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SC-4-02: Support signed INT8 multiply-accumulate inference. Acceptance: Match the published INT8 golden vectors exactly for supported operators. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "03 | Peak compute",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SC-4-03: Expose a peak of 96 INT8 TOPS at the rated clock. Acceptance: Check the architectural operation-count model against the rated configuration. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "04 | Power envelope",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SC-4-04: Use a 22 W reference-board design budget. Acceptance: Measure board input power on the release workload without exceeding the budget. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "05 | Model interface",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SC-4-05: Accept the release compiler's versioned binary model package. Acceptance: Load a package built with the matching toolchain and reject an incompatible major version. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "06 | Unsupported operators",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SC-4-06: Reject models containing operators outside the supported list. Acceptance: Return an operator diagnostic before device execution for every negative test. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SunnySemi LLC | 07 | Tensor validation",
+      "font": "Calibri",
+      "size": "15pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "pageBreakBefore": "true",
+      "style": "Heading1"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SC-4-07: Validate tensor shape, element type and buffer bounds. Acceptance: Reject malformed dimensions and undersized buffers without DMA outside the allocation. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "08 | DMA protection",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SC-4-08: Limit DMA transactions to driver-registered buffers. Acceptance: Run the invalid-buffer suite with no unauthorized host-memory access. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "09 | Reset recovery",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SC-4-09: Recover the command interface after a host-issued device reset. Acceptance: Execute the release smoke workload after 100 repeated reset cycles. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "10 | Telemetry",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SC-4-10: Report device temperature and command completion status. Acceptance: Compare temperature readout with the calibrated reference within 3 degrees Celsius. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "11 | Thermal response",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SC-4-11: Throttle work admission before the board's configured thermal limit. Acceptance: Raise ambient temperature and verify throttling and recovery at configured thresholds. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "12 | Error reporting",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SC-4-12: Return distinct invalid-model, timeout and device-fault status codes. Acceptance: Inject each documented fault and check the driver status and recovery path. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SunnySemi LLC | 13 | Driver package",
+      "font": "Calibri",
+      "size": "15pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "pageBreakBefore": "true",
+      "style": "Heading1"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SC-4-13: Deliver a Linux x86-64 reference driver with a version manifest. Acceptance: Install on the supported reference image and run the complete release smoke suite. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "14 | Reproducibility",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SC-4-14: Identify silicon revision, firmware and compiler in each diagnostic bundle. Acceptance: Recreate an issue report using only the recorded release identifiers and input tensor. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "15 | Release evidence",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SC-4-15: Retain functional, power and thermal verification results. Acceptance: Block production release when any required acceptance result is absent or failing. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "16 | Change control",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "SC-4-16: Review interface-affecting changes before issuing revised packages. Acceptance: Record compatibility impact and obtain Product and Engineering sign-off. Method: Reference-board verification. Evidence must identify the tested configuration and show the observed outcome, including any exception that prevents acceptance.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Release gate and change control",
+      "font": "Calibri",
+      "size": "14pt",
+      "color": "123B4A",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440",
+      "bold": "true",
+      "style": "Heading2"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "Acceptance requires all numbered controls to pass for the version-matched configuration. A functional pass cannot compensate for missing power or thermal evidence. Negative-path results must be retained alongside nominal-path results so that failure containment is auditable. Engineering and Product review interface-affecting changes before distributing a revised package. An unresolved compatibility issue blocks acceptance of the affected configuration rather than being carried silently into customer qualification. Customer-specific constraints remain outside a component-level claim of universal suitability. Request the version-matched evaluation kit and interface pack from applications@sunnysemi.example.",
+      "font": "Calibri",
+      "size": "11pt",
+      "color": "172F38",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.15x",
+      "firstLineIndent": "440"
+    }
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "document_id": "doc-0024",
+  "artifact_sha256": "d58fb2bee93bd8f18f64c80420818aa739abff85c23fbe4c17e2282ac15e88f1",
+  "draft_sha256": "5c1bd06ba5447d7343822263a3dc955a0761180a61f9814abc9f2d96a3e892f3",
+  "machine_sha256": "f999a65fdb79b70fa67fac3b7818debe9f54ef26fabd5facc87c0451a8617c79",
+  "semantic_review": {
+    "status": "passed",
+    "evidence": "SunnySemi LLC - GulfSwitch 3.0 - Power Stage Adoption: Reviewed all ten slides and notes against the released version, customer problem, operating envelope, interface workflow, three use cases, adoption responsibilities, constraints and evaluation next steps. No unsupported customer benchmark, certification or performance guarantee."
+  },
+  "genre_review": {
+    "status": "passed",
+    "evidence": "Reviewed complete delivered content in its business genre: Reviewed all ten slides and notes against the released version, customer problem, operating envelope, interface workflow, three use cases, adoption responsibilities, constraints and evaluation next steps. No unsupported customer benchmark, certification or performance guarantee. Ordinary company voice; no placeholders or generation self-labels."
+  },
+  "depth_review": {
+    "status": "passed",
+    "content_depth": "medium",
+    "evidence": "Ten meaningful customer-adoption slides cover problem, value, capabilities, workflow, multiple use cases, integration responsibilities, limits, availability and next steps. Saved-content measurement: 10 delivered_slides; draft measures {'document_id': 'doc-0024', 'type': 'product_presentation', 'draft_words': 280, 'discussion_words': 0, 'requirements': None, 'analysis_modules': None}."
+  },
+  "visual_review": {
+    "status": "passed",
+    "images_delivered": true,
+    "render_ids": [
+      "all"
+    ],
+    "evidence": "All ten slide images inspected: wrapped headings, numbered capability/use-case groups, operating limits and evaluation contact remain readable. No title/body collisions or cut text within the slide. HTML captures are not native presentation fidelity certification. Inspected 10 complete unit images.",
+    "inspected_images": [
+      "build\\renders\\doc-0024\\all\\slide-1.png",
+      "build\\renders\\doc-0024\\all\\slide-2.png",
+      "build\\renders\\doc-0024\\all\\slide-3.png",
+      "build\\renders\\doc-0024\\all\\slide-4.png",
+      "build\\renders\\doc-0024\\all\\slide-5.png",
+      "build\\renders\\doc-0024\\all\\slide-6.png",
+      "build\\renders\\doc-0024\\all\\slide-7.png",
+      "build\\renders\\doc-0024\\all\\slide-8.png",
+      "build\\renders\\doc-0024\\all\\slide-9.png",
+      "build\\renders\\doc-0024\\all\\slide-10.png"
+    ]
+  },
+  "condition_review": {
+    "status": "not_selected"
+  }
+}

@@ -1,0 +1,552 @@
+{
+  "preflight_version": 2,
+  "engine": "OfficeCLI",
+  "tool": {
+    "version": "1.0.157",
+    "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+  },
+  "formats": [
+    "docx",
+    "pptx",
+    "xlsx"
+  ],
+  "status": "passed",
+  "started_at": "2026-10-15T16:34:44.799110+00:00",
+  "source": "https://github.com/iOfficeAI/OfficeCLI",
+  "probes": [
+    {
+      "format": "docx",
+      "logs": [
+        {
+          "arguments": [
+            "create",
+            "C:\\Users\\jolan\\.copilot\\session-state\\5a0a956f-6540-4749-90f6-45f33732644d\\files\\officecli-probe-24acgdos\\probe.docx"
+          ],
+          "operation": "create",
+          "started_at": "2026-10-15T16:34:44.899736+00:00",
+          "ended_at": "2026-10-15T16:34:46.197477+00:00",
+          "active_seconds": 1.2977418000227772,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": \"Created: C:\\\\Users\\\\jolan\\\\.copilot\\\\session-state\\\\5a0a956f-6540-4749-90f6-45f33732644d\\\\files\\\\officecli-probe-24acgdos\\\\probe.docx\",\n  \"message\": \"Created: C:\\\\Users\\\\jolan\\\\.copilot\\\\session-state\\\\5a0a956f-6540-4749-90f6-45f33732644d\\\\files\\\\officecli-probe-24acgdos\\\\probe.docx\"\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          }
+        },
+        {
+          "arguments": [
+            "batch",
+            "C:\\Users\\jolan\\.copilot\\session-state\\5a0a956f-6540-4749-90f6-45f33732644d\\files\\officecli-probe-24acgdos\\probe.docx",
+            "--commands",
+            "[{\"command\": \"add\", \"parent\": \"/body\", \"type\": \"paragraph\", \"props\": {\"text\": \"OfficeCLI capability probe: long title and -2.148\", \"font\": \"Arial\", \"size\": \"16pt\", \"bold\": \"true\", \"firstLineIndent\": \"0.5cm\"}}]",
+            "--stop-on-error"
+          ],
+          "operation": "author",
+          "started_at": "2026-10-15T16:34:46.238543+00:00",
+          "ended_at": "2026-10-15T16:34:47.777752+00:00",
+          "active_seconds": 1.5392297999933362,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"results\": [\n      {\n        \"index\": 0,\n        \"success\": true,\n        \"output\": \"Added paragraph at /body/p[@paraId=00100000]\"\n      }\n    ],\n    \"summary\": {\n      \"total\": 1,\n      \"executed\": 1,\n      \"succeeded\": 1,\n      \"failed\": 0,\n      \"skipped\": 0\n    }\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          }
+        },
+        {
+          "arguments": [
+            "validate",
+            "C:\\Users\\jolan\\.copilot\\session-state\\5a0a956f-6540-4749-90f6-45f33732644d\\files\\officecli-probe-24acgdos\\probe.docx"
+          ],
+          "operation": "validate",
+          "started_at": "2026-10-15T16:34:47.820081+00:00",
+          "ended_at": "2026-10-15T16:34:49.018830+00:00",
+          "active_seconds": 1.1987826999975368,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"errors\": []\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          }
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\.copilot\\session-state\\5a0a956f-6540-4749-90f6-45f33732644d\\files\\officecli-probe-24acgdos\\probe.docx",
+            "issues"
+          ],
+          "operation": "issues",
+          "started_at": "2026-10-15T16:34:49.064858+00:00",
+          "ended_at": "2026-10-15T16:34:50.082479+00:00",
+          "active_seconds": 1.0176124999998137,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"issues\": []\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          }
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\.copilot\\session-state\\5a0a956f-6540-4749-90f6-45f33732644d\\files\\officecli-probe-24acgdos\\probe.docx",
+            "text"
+          ],
+          "operation": "extract",
+          "started_at": "2026-10-15T16:34:50.122075+00:00",
+          "ended_at": "2026-10-15T16:34:51.075195+00:00",
+          "active_seconds": 0.9531252000015229,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"totalElements\": 2,\n    \"elements\": [\n      {\n        \"path\": \"/body/p[@paraId=00100000]\",\n        \"type\": \"paragraph\",\n        \"text\": \"OfficeCLI capability probe: long title and -2.148\"\n      }\n    ]\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          }
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\.copilot\\session-state\\5a0a956f-6540-4749-90f6-45f33732644d\\files\\officecli-probe-24acgdos\\probe.docx",
+            "html",
+            "--out",
+            "C:\\Users\\jolan\\.copilot\\session-state\\5a0a956f-6540-4749-90f6-45f33732644d\\files\\officecli-probe-24acgdos\\probe-docx.html"
+          ],
+          "operation": "html_export",
+          "started_at": "2026-10-15T16:34:51.112080+00:00",
+          "ended_at": "2026-10-15T16:34:52.734236+00:00",
+          "active_seconds": 1.6221349999541417,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\"success\": true, \"data\": \"C:\\\\Users\\\\jolan\\\\.copilot\\\\session-state\\\\5a0a956f-6540-4749-90f6-45f33732644d\\\\files\\\\officecli-probe-24acgdos\\\\probe-docx.html\"}",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          }
+        }
+      ],
+      "formula_count": 0,
+      "image": "officecli-preflight-docx.png",
+      "features": [
+        "basic",
+        "html_screenshots"
+      ],
+      "capture": {
+        "operation": "capture",
+        "status": "passed",
+        "started_at": "2026-10-15T16:34:54.188903+00:00",
+        "ended_at": "2026-10-15T16:34:55.374741+00:00",
+        "active_seconds": 1.1858355000149459,
+        "tool": {
+          "engine": "playwright-chromium",
+          "playwright_version": "1.63.0",
+          "channel": "chromium",
+          "headless": true,
+          "chromium_sandbox": true,
+          "browser_version": "153.0.8010.12",
+          "executable_path": "C:\\Users\\jolan\\AppData\\Local\\ms-playwright\\chromium-1243\\chrome-win64\\chrome.exe",
+          "executable_sha256": "9b07943f834485b43c9d54caea2951c78715f9f07070a80ab6658465ebd3e711"
+        },
+        "source_html_sha256": "2e35fd3930e921eb05e10db81573430f741bfa2e363e2982bc08effe19d3b9ca",
+        "unit": "pages",
+        "image_sha256": "1daba08050af617cadde02859f61a8963bebbc32589d6141f81d9b98835f439b",
+        "rendered_count": 1
+      },
+      "image_sha256": "1daba08050af617cadde02859f61a8963bebbc32589d6141f81d9b98835f439b"
+    },
+    {
+      "format": "pptx",
+      "logs": [
+        {
+          "arguments": [
+            "create",
+            "C:\\Users\\jolan\\.copilot\\session-state\\5a0a956f-6540-4749-90f6-45f33732644d\\files\\officecli-probe-24acgdos\\probe.pptx"
+          ],
+          "operation": "create",
+          "started_at": "2026-10-15T16:34:55.423593+00:00",
+          "ended_at": "2026-10-15T16:34:56.492800+00:00",
+          "active_seconds": 1.0692063000169583,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": \"Created: C:\\\\Users\\\\jolan\\\\.copilot\\\\session-state\\\\5a0a956f-6540-4749-90f6-45f33732644d\\\\files\\\\officecli-probe-24acgdos\\\\probe.pptx\",\n  \"message\": \"Created: C:\\\\Users\\\\jolan\\\\.copilot\\\\session-state\\\\5a0a956f-6540-4749-90f6-45f33732644d\\\\files\\\\officecli-probe-24acgdos\\\\probe.pptx\"\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          }
+        },
+        {
+          "arguments": [
+            "batch",
+            "C:\\Users\\jolan\\.copilot\\session-state\\5a0a956f-6540-4749-90f6-45f33732644d\\files\\officecli-probe-24acgdos\\probe.pptx",
+            "--commands",
+            "[{\"command\": \"add\", \"parent\": \"/\", \"type\": \"slide\", \"props\": {\"title\": \"Capability probe\"}}, {\"command\": \"add\", \"parent\": \"/slide[1]\", \"type\": \"shape\", \"props\": {\"text\": \"Long title and -2.148\", \"x\": \"2cm\", \"y\": \"4cm\", \"size\": \"20pt\"}}]",
+            "--stop-on-error"
+          ],
+          "operation": "author",
+          "started_at": "2026-10-15T16:34:56.532999+00:00",
+          "ended_at": "2026-10-15T16:34:57.801234+00:00",
+          "active_seconds": 1.2682391999987885,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"results\": [\n      {\n        \"index\": 0,\n        \"success\": true,\n        \"output\": \"Added slide at /slide[1]\"\n      },\n      {\n        \"index\": 1,\n        \"success\": true,\n        \"output\": \"Added shape at /slide[1]/shape[@id=100000]\"\n      }\n    ],\n    \"summary\": {\n      \"total\": 2,\n      \"executed\": 2,\n      \"succeeded\": 2,\n      \"failed\": 0,\n      \"skipped\": 0\n    }\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          }
+        },
+        {
+          "arguments": [
+            "validate",
+            "C:\\Users\\jolan\\.copilot\\session-state\\5a0a956f-6540-4749-90f6-45f33732644d\\files\\officecli-probe-24acgdos\\probe.pptx"
+          ],
+          "operation": "validate",
+          "started_at": "2026-10-15T16:34:57.839853+00:00",
+          "ended_at": "2026-10-15T16:34:59.298326+00:00",
+          "active_seconds": 1.4584433000418358,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"errors\": []\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          }
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\.copilot\\session-state\\5a0a956f-6540-4749-90f6-45f33732644d\\files\\officecli-probe-24acgdos\\probe.pptx",
+            "issues"
+          ],
+          "operation": "issues",
+          "started_at": "2026-10-15T16:34:59.340937+00:00",
+          "ended_at": "2026-10-15T16:35:01.253960+00:00",
+          "active_seconds": 1.9130133999860846,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"issues\": []\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          }
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\.copilot\\session-state\\5a0a956f-6540-4749-90f6-45f33732644d\\files\\officecli-probe-24acgdos\\probe.pptx",
+            "text"
+          ],
+          "operation": "extract",
+          "started_at": "2026-10-15T16:35:01.294539+00:00",
+          "ended_at": "2026-10-15T16:35:02.468520+00:00",
+          "active_seconds": 1.1739855000050738,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"totalSlides\": 1,\n    \"slides\": [\n      {\n        \"index\": 1,\n        \"path\": \"/slide[1]\",\n        \"texts\": [\n          \"Capability probe\",\n          \"Long title and -2.148\"\n        ]\n      }\n    ]\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          }
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\.copilot\\session-state\\5a0a956f-6540-4749-90f6-45f33732644d\\files\\officecli-probe-24acgdos\\probe.pptx",
+            "html",
+            "--out",
+            "C:\\Users\\jolan\\.copilot\\session-state\\5a0a956f-6540-4749-90f6-45f33732644d\\files\\officecli-probe-24acgdos\\probe-pptx.html"
+          ],
+          "operation": "html_export",
+          "started_at": "2026-10-15T16:35:02.509640+00:00",
+          "ended_at": "2026-10-15T16:35:03.691008+00:00",
+          "active_seconds": 1.1813979999860749,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\"success\": true, \"data\": \"C:\\\\Users\\\\jolan\\\\.copilot\\\\session-state\\\\5a0a956f-6540-4749-90f6-45f33732644d\\\\files\\\\officecli-probe-24acgdos\\\\probe-pptx.html\"}",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          }
+        }
+      ],
+      "formula_count": 0,
+      "image": "officecli-preflight-pptx.png",
+      "features": [
+        "basic",
+        "html_screenshots"
+      ],
+      "capture": {
+        "operation": "capture",
+        "status": "passed",
+        "started_at": "2026-10-15T16:35:03.776670+00:00",
+        "ended_at": "2026-10-15T16:35:04.678130+00:00",
+        "active_seconds": 0.9014659999520518,
+        "tool": {
+          "engine": "playwright-chromium",
+          "playwright_version": "1.63.0",
+          "channel": "chromium",
+          "headless": true,
+          "chromium_sandbox": true,
+          "browser_version": "153.0.8010.12",
+          "executable_path": "C:\\Users\\jolan\\AppData\\Local\\ms-playwright\\chromium-1243\\chrome-win64\\chrome.exe",
+          "executable_sha256": "9b07943f834485b43c9d54caea2951c78715f9f07070a80ab6658465ebd3e711"
+        },
+        "source_html_sha256": "60204685d9ba2858009c482f4f55365df1a47d29da01d7176e7ab2f998dc27c5",
+        "unit": "slides",
+        "image_sha256": "cccce134a050ccca0b5b432611f1a1a875678f95b9bde9ffc8f2028778632a52",
+        "rendered_count": 1
+      },
+      "image_sha256": "cccce134a050ccca0b5b432611f1a1a875678f95b9bde9ffc8f2028778632a52"
+    },
+    {
+      "format": "xlsx",
+      "logs": [
+        {
+          "arguments": [
+            "create",
+            "C:\\Users\\jolan\\.copilot\\session-state\\5a0a956f-6540-4749-90f6-45f33732644d\\files\\officecli-probe-24acgdos\\probe.xlsx"
+          ],
+          "operation": "create",
+          "started_at": "2026-10-15T16:35:04.721822+00:00",
+          "ended_at": "2026-10-15T16:35:05.762731+00:00",
+          "active_seconds": 1.0409160999697633,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": \"Created: C:\\\\Users\\\\jolan\\\\.copilot\\\\session-state\\\\5a0a956f-6540-4749-90f6-45f33732644d\\\\files\\\\officecli-probe-24acgdos\\\\probe.xlsx\",\n  \"message\": \"Created: C:\\\\Users\\\\jolan\\\\.copilot\\\\session-state\\\\5a0a956f-6540-4749-90f6-45f33732644d\\\\files\\\\officecli-probe-24acgdos\\\\probe.xlsx\"\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          }
+        },
+        {
+          "arguments": [
+            "batch",
+            "C:\\Users\\jolan\\.copilot\\session-state\\5a0a956f-6540-4749-90f6-45f33732644d\\files\\officecli-probe-24acgdos\\probe.xlsx",
+            "--commands",
+            "[{\"command\": \"add\", \"parent\": \"/\", \"type\": \"sheet\", \"props\": {\"name\": \"Results\"}}, {\"command\": \"set\", \"path\": \"/Sheet1/A1\", \"props\": {\"value\": \"-2.148\"}}, {\"command\": \"set\", \"path\": \"/Sheet1/A2\", \"props\": {\"formula\": \"A1*2\"}}, {\"command\": \"set\", \"path\": \"/Results/A1\", \"props\": {\"formula\": \"Sheet1!A2*2\"}}, {\"command\": \"set\", \"path\": \"/Sheet1/C1\", \"props\": {\"value\": \"Q1\"}}, {\"command\": \"set\", \"path\": \"/Sheet1/D1\", \"props\": {\"value\": \"10\"}}, {\"command\": \"set\", \"path\": \"/Sheet1/C2\", \"props\": {\"value\": \"Q2\"}}, {\"command\": \"set\", \"path\": \"/Sheet1/D2\", \"props\": {\"value\": \"20\"}}, {\"command\": \"add\", \"parent\": \"/Sheet1\", \"type\": \"chart\", \"props\": {\"dataRange\": \"Sheet1!D1:D2\", \"categories\": \"Sheet1!C1:C2\", \"chartType\": \"column\", \"anchor\": \"F2:L18\", \"title\": \"Capability Probe Column\"}}, {\"command\": \"add\", \"parent\": \"/Sheet1\", \"type\": \"chart\", \"props\": {\"dataRange\": \"Sheet1!D1:D2\", \"categories\": \"Sheet1!C1:C2\", \"chartType\": \"line\", \"anchor\": \"F20:L36\", \"title\": \"Capability Probe Line\"}}]",
+            "--stop-on-error"
+          ],
+          "operation": "author",
+          "started_at": "2026-10-15T16:35:05.805941+00:00",
+          "ended_at": "2026-10-15T16:35:07.368583+00:00",
+          "active_seconds": 1.5626414999715053,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"results\": [\n      {\n        \"index\": 0,\n        \"success\": true,\n        \"output\": \"Added sheet at /Results\"\n      },\n      {\n        \"index\": 1,\n        \"success\": true,\n        \"output\": \"Updated /Sheet1/A1: value=-2.148\"\n      },\n      {\n        \"index\": 2,\n        \"success\": true,\n        \"output\": \"Updated /Sheet1/A2: formula=A1*2\"\n      },\n      {\n        \"index\": 3,\n        \"success\": true,\n        \"output\": \"Updated /Results/A1: formula=Sheet1!A2*2\"\n      },\n      {\n        \"index\": 4,\n        \"success\": true,\n        \"output\": \"Updated /Sheet1/C1: value=Q1\"\n      },\n      {\n        \"index\": 5,\n        \"success\": true,\n        \"output\": \"Updated /Sheet1/D1: value=10\"\n      },\n      {\n        \"index\": 6,\n        \"success\": true,\n        \"output\": \"Updated /Sheet1/C2: value=Q2\"\n      },\n      {\n        \"index\": 7,\n        \"success\": true,\n        \"output\": \"Updated /Sheet1/D2: value=20\"\n      },\n      {\n        \"index\": 8,\n        \"success\": true,\n        \"output\": \"Added chart at /Sheet1/chart[1]\"\n      },\n      {\n        \"index\": 9,\n        \"success\": true,\n        \"output\": \"Added chart at /Sheet1/chart[2]\"\n      }\n    ],\n    \"summary\": {\n      \"total\": 10,\n      \"executed\": 10,\n      \"succeeded\": 10,\n      \"failed\": 0,\n      \"skipped\": 0\n    }\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          }
+        },
+        {
+          "arguments": [
+            "validate",
+            "C:\\Users\\jolan\\.copilot\\session-state\\5a0a956f-6540-4749-90f6-45f33732644d\\files\\officecli-probe-24acgdos\\probe.xlsx"
+          ],
+          "operation": "validate",
+          "started_at": "2026-10-15T16:35:07.407645+00:00",
+          "ended_at": "2026-10-15T16:35:08.672796+00:00",
+          "active_seconds": 1.265121900010854,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"errors\": []\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          }
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\.copilot\\session-state\\5a0a956f-6540-4749-90f6-45f33732644d\\files\\officecli-probe-24acgdos\\probe.xlsx",
+            "issues"
+          ],
+          "operation": "issues",
+          "started_at": "2026-10-15T16:35:08.708620+00:00",
+          "ended_at": "2026-10-15T16:35:09.945192+00:00",
+          "active_seconds": 1.2365804000291973,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"issues\": []\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          }
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\.copilot\\session-state\\5a0a956f-6540-4749-90f6-45f33732644d\\files\\officecli-probe-24acgdos\\probe.xlsx",
+            "text"
+          ],
+          "operation": "extract",
+          "started_at": "2026-10-15T16:35:09.991677+00:00",
+          "ended_at": "2026-10-15T16:35:10.996614+00:00",
+          "active_seconds": 1.0049292999901809,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"sheets\": [\n      {\n        \"name\": \"Sheet1\",\n        \"rows\": [\n          {\n            \"row\": 1,\n            \"cells\": {\n              \"A1\": \"-2.148\",\n              \"C1\": \"Q1\",\n              \"D1\": \"10\"\n            }\n          },\n          {\n            \"row\": 2,\n            \"cells\": {\n              \"A2\": \"-4.296\",\n              \"C2\": \"Q2\",\n              \"D2\": \"20\"\n            }\n          }\n        ]\n      },\n      {\n        \"name\": \"Results\",\n        \"rows\": [\n          {\n            \"row\": 1,\n            \"cells\": {\n              \"A1\": \"-8.592\"\n            }\n          }\n        ]\n      }\n    ]\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          }
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\.copilot\\session-state\\5a0a956f-6540-4749-90f6-45f33732644d\\files\\officecli-probe-24acgdos\\probe.xlsx",
+            "issues",
+            "--type",
+            "chart_cache_stale"
+          ],
+          "operation": "chart_cache_stale",
+          "started_at": "2026-10-15T16:35:11.056163+00:00",
+          "ended_at": "2026-10-15T16:35:12.148043+00:00",
+          "active_seconds": 1.0918706999509595,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\n  \"success\": true,\n  \"data\": {\n    \"count\": 0,\n    \"issues\": []\n  }\n}\n",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          }
+        },
+        {
+          "arguments": [
+            "view",
+            "C:\\Users\\jolan\\.copilot\\session-state\\5a0a956f-6540-4749-90f6-45f33732644d\\files\\officecli-probe-24acgdos\\probe.xlsx",
+            "html",
+            "--out",
+            "C:\\Users\\jolan\\.copilot\\session-state\\5a0a956f-6540-4749-90f6-45f33732644d\\files\\officecli-probe-24acgdos\\probe-xlsx.html"
+          ],
+          "operation": "html_export",
+          "started_at": "2026-10-15T16:35:12.194512+00:00",
+          "ended_at": "2026-10-15T16:35:13.540151+00:00",
+          "active_seconds": 1.3456421000300907,
+          "waiting_seconds": 0,
+          "returncode": 0,
+          "stdout": "{\"success\": true, \"data\": \"C:\\\\Users\\\\jolan\\\\.copilot\\\\session-state\\\\5a0a956f-6540-4749-90f6-45f33732644d\\\\files\\\\officecli-probe-24acgdos\\\\probe-xlsx.html\"}",
+          "stderr": "",
+          "tool": {
+            "version": "1.0.157",
+            "sha256": "bd64eba587e56cc71709cdd1f38ae9ac77cd65a9c8ea744b0996897c0557e343"
+          }
+        }
+      ],
+      "formula_count": 2,
+      "image": "officecli-preflight-xlsx.png",
+      "features": [
+        "basic",
+        "html_screenshots",
+        "ordered_cross_sheet_formulas",
+        "chart"
+      ],
+      "capture": {
+        "operation": "capture",
+        "status": "passed",
+        "started_at": "2026-10-15T16:35:13.564035+00:00",
+        "ended_at": "2026-10-15T16:35:14.442131+00:00",
+        "active_seconds": 0.8780960000003688,
+        "tool": {
+          "engine": "playwright-chromium",
+          "playwright_version": "1.63.0",
+          "channel": "chromium",
+          "headless": true,
+          "chromium_sandbox": true,
+          "browser_version": "153.0.8010.12",
+          "executable_path": "C:\\Users\\jolan\\AppData\\Local\\ms-playwright\\chromium-1243\\chrome-win64\\chrome.exe",
+          "executable_sha256": "9b07943f834485b43c9d54caea2951c78715f9f07070a80ab6658465ebd3e711"
+        },
+        "source_html_sha256": "f7e6777846b1ab1cfe11a561865af995133d04334a288523ab4e423965b4201c",
+        "unit": "region",
+        "image_sha256": "f4b6cca319c07394b4e73681838549ac7867ca8cf9cff4864f1e2443d5e54925"
+      },
+      "image_sha256": "f4b6cca319c07394b4e73681838549ac7867ca8cf9cff4864f1e2443d5e54925",
+      "chart_capture": [
+        {
+          "chart_type": "column",
+          "sheet": "Sheet1",
+          "shape_id": "2",
+          "dom_path": "/Sheet1/chart[1]",
+          "image_sha256": "ec3fa766673a7cdc859105d997e4a9466cb3371553999bcf4deec424effbc3ff",
+          "bounds": {
+            "x": 335.109375,
+            "y": 87,
+            "width": 354.140625,
+            "height": 320
+          },
+          "clipped": false,
+          "occluded": false,
+          "tool": {
+            "engine": "playwright-chromium",
+            "playwright_version": "1.63.0",
+            "channel": "chromium",
+            "headless": true,
+            "chromium_sandbox": true,
+            "browser_version": "153.0.8010.12",
+            "executable_path": "C:\\Users\\jolan\\AppData\\Local\\ms-playwright\\chromium-1243\\chrome-win64\\chrome.exe",
+            "executable_sha256": "9b07943f834485b43c9d54caea2951c78715f9f07070a80ab6658465ebd3e711"
+          },
+          "image": "officecli-preflight-xlsx-chart-column.png"
+        },
+        {
+          "chart_type": "line",
+          "sheet": "Sheet1",
+          "shape_id": "3",
+          "dom_path": "/Sheet1/chart[2]",
+          "image_sha256": "a16f04c22b484f2b3b4059a24f095c3c2e98f85c8bbdf4b3a8890ad977a8d7fc",
+          "bounds": {
+            "x": 335.109375,
+            "y": 447,
+            "width": 354.140625,
+            "height": 320
+          },
+          "clipped": false,
+          "occluded": false,
+          "tool": {
+            "engine": "playwright-chromium",
+            "playwright_version": "1.63.0",
+            "channel": "chromium",
+            "headless": true,
+            "chromium_sandbox": true,
+            "browser_version": "153.0.8010.12",
+            "executable_path": "C:\\Users\\jolan\\AppData\\Local\\ms-playwright\\chromium-1243\\chrome-win64\\chrome.exe",
+            "executable_sha256": "9b07943f834485b43c9d54caea2951c78715f9f07070a80ab6658465ebd3e711"
+          },
+          "image": "officecli-preflight-xlsx-chart-line.png"
+        }
+      ]
+    }
+  ],
+  "capture_tool": {
+    "engine": "playwright-chromium",
+    "playwright_version": "1.63.0",
+    "channel": "chromium",
+    "headless": true,
+    "chromium_sandbox": true,
+    "browser_version": "153.0.8010.12",
+    "executable_path": "C:\\Users\\jolan\\AppData\\Local\\ms-playwright\\chromium-1243\\chrome-win64\\chrome.exe",
+    "executable_sha256": "9b07943f834485b43c9d54caea2951c78715f9f07070a80ab6658465ebd3e711"
+  },
+  "ended_at": "2026-10-15T16:35:16.905028+00:00"
+}

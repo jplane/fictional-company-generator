@@ -1,0 +1,4055 @@
+[
+  {
+    "command": "set",
+    "path": "/",
+    "props": {
+      "title": "SunnySemi LLC - FY 2020 Operating Economics",
+      "author": "SunnySemi LLC"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Sheet1",
+    "props": {
+      "name": "Inputs"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "sheet",
+    "props": {
+      "name": "Calc"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "sheet",
+    "props": {
+      "name": "Summary"
+    }
+  },
+  {
+    "command": "add",
+    "path": "/",
+    "type": "sheet",
+    "props": {
+      "name": "Notes"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/col[A]",
+    "props": {
+      "width": "40"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/col[B]",
+    "props": {
+      "width": "24"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/col[C]",
+    "props": {
+      "width": "24"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/col[D]",
+    "props": {
+      "width": "24"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/col[E]",
+    "props": {
+      "width": "24"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[1]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[2]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[3]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[4]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[5]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[6]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[7]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[8]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[9]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[10]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[11]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[12]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[13]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[14]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[15]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[16]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[17]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[18]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[19]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[20]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[21]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[22]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[23]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[24]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[25]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[26]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[27]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[28]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[29]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[30]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[31]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[32]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[33]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[34]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[35]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/row[36]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/col[A]",
+    "props": {
+      "width": "40"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/col[B]",
+    "props": {
+      "width": "24"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/col[C]",
+    "props": {
+      "width": "24"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/col[D]",
+    "props": {
+      "width": "24"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/col[E]",
+    "props": {
+      "width": "24"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[1]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[2]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[3]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[4]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[5]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[6]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[7]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[8]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[9]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[10]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[11]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[12]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[13]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[14]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[15]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[16]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[17]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[18]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[19]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[20]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[21]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[22]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[23]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[24]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[25]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[26]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[27]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[28]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[29]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[30]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[31]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[32]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[33]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[34]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[35]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/row[36]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/col[A]",
+    "props": {
+      "width": "40"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/col[B]",
+    "props": {
+      "width": "24"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/col[C]",
+    "props": {
+      "width": "24"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/col[D]",
+    "props": {
+      "width": "24"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/col[E]",
+    "props": {
+      "width": "24"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[1]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[2]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[3]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[4]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[5]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[6]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[7]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[8]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[9]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[10]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[11]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[12]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[13]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[14]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[15]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[16]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[17]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[18]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[19]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[20]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[21]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[22]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[23]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[24]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[25]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[26]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[27]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[28]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[29]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[30]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[31]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[32]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[33]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[34]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[35]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[36]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/col[A]",
+    "props": {
+      "width": "40"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/col[B]",
+    "props": {
+      "width": "24"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/col[C]",
+    "props": {
+      "width": "24"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/col[D]",
+    "props": {
+      "width": "24"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/col[E]",
+    "props": {
+      "width": "24"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[1]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[2]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[3]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[4]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[5]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[6]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[7]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[8]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[9]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[10]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[11]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[12]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[13]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[14]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[15]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[16]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[17]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[18]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[19]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[20]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[21]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[22]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[23]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[24]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[25]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[26]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[27]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[28]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[29]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[30]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[31]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[32]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[33]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[34]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[35]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[36]",
+    "props": {
+      "height": "27"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/A1",
+    "props": {
+      "value": "SunnySemi LLC - FY 2020 Operating Economics",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "fill": "123B4A",
+      "font.color": "FFFFFF",
+      "font.bold": "true"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/A1",
+    "props": {
+      "merge": "A1:E2"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/A3",
+    "props": {
+      "value": "USD unless noted; headcount is point-in-time.",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "fill": "123B4A",
+      "font.color": "FFFFFF",
+      "font.bold": "true"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/A3",
+    "props": {
+      "merge": "A3:E3"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/B4",
+    "props": {
+      "value": "Q1 2020",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "fill": "123B4A",
+      "font.color": "FFFFFF",
+      "font.bold": "true"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/C4",
+    "props": {
+      "value": "Q2 2020",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "fill": "123B4A",
+      "font.color": "FFFFFF",
+      "font.bold": "true"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/D4",
+    "props": {
+      "value": "Q3 2020",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "fill": "123B4A",
+      "font.color": "FFFFFF",
+      "font.bold": "true"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/E4",
+    "props": {
+      "value": "Q4 2020",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "fill": "123B4A",
+      "font.color": "FFFFFF",
+      "font.bold": "true"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/A5",
+    "props": {
+      "value": "Recognized revenue",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/B5",
+    "props": {
+      "value": "240000000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/C5",
+    "props": {
+      "value": "276000000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/D5",
+    "props": {
+      "value": "312000000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/E5",
+    "props": {
+      "value": "372000000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/A6",
+    "props": {
+      "value": "Cost of goods sold",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/B6",
+    "props": {
+      "value": "110400000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/C6",
+    "props": {
+      "value": "126960000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/D6",
+    "props": {
+      "value": "143520000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/E6",
+    "props": {
+      "value": "171120000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/A7",
+    "props": {
+      "value": "Operating expense",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/B7",
+    "props": {
+      "value": "67200000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/C7",
+    "props": {
+      "value": "77280000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/D7",
+    "props": {
+      "value": "87360000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/E7",
+    "props": {
+      "value": "104160000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/A8",
+    "props": {
+      "value": "Operating income",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/B8",
+    "props": {
+      "value": "62400000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/C8",
+    "props": {
+      "value": "71760000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/D8",
+    "props": {
+      "value": "81120000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/E8",
+    "props": {
+      "value": "96720000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/A9",
+    "props": {
+      "value": "SunCore revenue",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/B9",
+    "props": {
+      "value": "144000000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/C9",
+    "props": {
+      "value": "165600000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/D9",
+    "props": {
+      "value": "187200000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/E9",
+    "props": {
+      "value": "223200000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/A10",
+    "props": {
+      "value": "GulfSwitch revenue",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/B10",
+    "props": {
+      "value": "96000000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/C10",
+    "props": {
+      "value": "110400000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/D10",
+    "props": {
+      "value": "124800000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/E10",
+    "props": {
+      "value": "148800000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/A11",
+    "props": {
+      "value": "Wafer cost",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/B11",
+    "props": {
+      "value": "71760000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/C11",
+    "props": {
+      "value": "82524000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/D11",
+    "props": {
+      "value": "93288000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/E11",
+    "props": {
+      "value": "111228000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/A12",
+    "props": {
+      "value": "Package and test cost",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/B12",
+    "props": {
+      "value": "27600000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/C12",
+    "props": {
+      "value": "31740000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/D12",
+    "props": {
+      "value": "35880000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/E12",
+    "props": {
+      "value": "42780000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/A13",
+    "props": {
+      "value": "Logistics cost",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/B13",
+    "props": {
+      "value": "11040000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/C13",
+    "props": {
+      "value": "12696000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/D13",
+    "props": {
+      "value": "14352000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/E13",
+    "props": {
+      "value": "17112000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/A14",
+    "props": {
+      "value": "Engineering opex",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/B14",
+    "props": {
+      "value": "47040000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/C14",
+    "props": {
+      "value": "54096000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/D14",
+    "props": {
+      "value": "61152000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/E14",
+    "props": {
+      "value": "72912000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/A15",
+    "props": {
+      "value": "Commercial/admin opex",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/B15",
+    "props": {
+      "value": "20160000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/C15",
+    "props": {
+      "value": "23184000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/D15",
+    "props": {
+      "value": "26208000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/E15",
+    "props": {
+      "value": "31248000",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/A16",
+    "props": {
+      "value": "Ending headcount",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/B16",
+    "props": {
+      "value": "560",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/C16",
+    "props": {
+      "value": "580",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/D16",
+    "props": {
+      "value": "600",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Inputs/E16",
+    "props": {
+      "value": "620",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "font.color": "0000FF",
+      "numberformat": "#,##0;(#,##0);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A1",
+    "props": {
+      "value": "Operating economics | formula-linked actuals",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "fill": "123B4A",
+      "font.color": "FFFFFF",
+      "font.bold": "true"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A1",
+    "props": {
+      "merge": "A1:E2"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A4",
+    "props": {
+      "value": "1 | Income reconciliation",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "fill": "123B4A",
+      "font.color": "FFFFFF",
+      "font.bold": "true"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A5",
+    "props": {
+      "value": "Gross profit",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A6",
+    "props": {
+      "value": "Calculated operating income",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A7",
+    "props": {
+      "value": "Income reconciliation difference",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A8",
+    "props": {
+      "value": "2 | Margins",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "fill": "123B4A",
+      "font.color": "FFFFFF",
+      "font.bold": "true"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A9",
+    "props": {
+      "value": "Gross margin (ratio)",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A10",
+    "props": {
+      "value": "Operating margin (ratio)",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A11",
+    "props": {
+      "value": "3 | Product mix",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "fill": "123B4A",
+      "font.color": "FFFFFF",
+      "font.bold": "true"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A12",
+    "props": {
+      "value": "Combined product revenue",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A13",
+    "props": {
+      "value": "Revenue mix difference",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A14",
+    "props": {
+      "value": "SunCore share (ratio)",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A15",
+    "props": {
+      "value": "4 | Manufacturing costs",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "fill": "123B4A",
+      "font.color": "FFFFFF",
+      "font.bold": "true"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A16",
+    "props": {
+      "value": "Combined manufacturing costs",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A17",
+    "props": {
+      "value": "Manufacturing cost difference",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A18",
+    "props": {
+      "value": "Wafer share (ratio)",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A19",
+    "props": {
+      "value": "5 | Operating investment",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "fill": "123B4A",
+      "font.color": "FFFFFF",
+      "font.bold": "true"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A20",
+    "props": {
+      "value": "Combined operating expenses",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A21",
+    "props": {
+      "value": "Opex difference",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A22",
+    "props": {
+      "value": "Engineering share (ratio)",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A23",
+    "props": {
+      "value": "6 | Sequential actuals",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "fill": "123B4A",
+      "font.color": "FFFFFF",
+      "font.bold": "true"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A24",
+    "props": {
+      "value": "Revenue change vs prior quarter",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A25",
+    "props": {
+      "value": "Operating-income change",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/A26",
+    "props": {
+      "value": "Ending headcount change",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/B3",
+    "props": {
+      "value": "Q1 2020",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "fill": "123B4A",
+      "font.color": "FFFFFF",
+      "font.bold": "true"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/B5",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!B5-Inputs!B6",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/B6",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "B5-Inputs!B7",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/B7",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "B6-Inputs!B8",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/B9",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "B5/Inputs!B5",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/B10",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "B6/Inputs!B5",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/B12",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!B9+Inputs!B10",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/B13",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "B12-Inputs!B5",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/B14",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!B9/Inputs!B5",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/B16",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!B11+Inputs!B12+Inputs!B13",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/B17",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "B16-Inputs!B6",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/B18",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!B11/Inputs!B6",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/B20",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!B14+Inputs!B15",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/B21",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "B20-Inputs!B7",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/B22",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!B14/Inputs!B7",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/B24",
+    "props": {
+      "value": "No prior quarter in scope",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/B25",
+    "props": {
+      "value": "No prior quarter in scope",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/B26",
+    "props": {
+      "value": "No prior quarter in scope",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/C3",
+    "props": {
+      "value": "Q2 2020",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "fill": "123B4A",
+      "font.color": "FFFFFF",
+      "font.bold": "true"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/C5",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!C5-Inputs!C6",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/C6",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "C5-Inputs!C7",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/C7",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "C6-Inputs!C8",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/C9",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "C5/Inputs!C5",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/C10",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "C6/Inputs!C5",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/C12",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!C9+Inputs!C10",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/C13",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "C12-Inputs!C5",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/C14",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!C9/Inputs!C5",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/C16",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!C11+Inputs!C12+Inputs!C13",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/C17",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "C16-Inputs!C6",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/C18",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!C11/Inputs!C6",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/C20",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!C14+Inputs!C15",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/C21",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "C20-Inputs!C7",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/C22",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!C14/Inputs!C7",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/C24",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!C5-Inputs!B5",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/C25",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!C8-Inputs!B8",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/C26",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!C16-Inputs!B16",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/D3",
+    "props": {
+      "value": "Q3 2020",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "fill": "123B4A",
+      "font.color": "FFFFFF",
+      "font.bold": "true"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/D5",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!D5-Inputs!D6",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/D6",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "D5-Inputs!D7",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/D7",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "D6-Inputs!D8",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/D9",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "D5/Inputs!D5",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/D10",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "D6/Inputs!D5",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/D12",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!D9+Inputs!D10",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/D13",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "D12-Inputs!D5",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/D14",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!D9/Inputs!D5",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/D16",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!D11+Inputs!D12+Inputs!D13",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/D17",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "D16-Inputs!D6",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/D18",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!D11/Inputs!D6",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/D20",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!D14+Inputs!D15",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/D21",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "D20-Inputs!D7",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/D22",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!D14/Inputs!D7",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/D24",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!D5-Inputs!C5",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/D25",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!D8-Inputs!C8",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/D26",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!D16-Inputs!C16",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/E3",
+    "props": {
+      "value": "Q4 2020",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "fill": "123B4A",
+      "font.color": "FFFFFF",
+      "font.bold": "true"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/E5",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!E5-Inputs!E6",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/E6",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "E5-Inputs!E7",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/E7",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "E6-Inputs!E8",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/E9",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "E5/Inputs!E5",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/E10",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "E6/Inputs!E5",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/E12",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!E9+Inputs!E10",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/E13",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "E12-Inputs!E5",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/E14",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!E9/Inputs!E5",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/E16",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!E11+Inputs!E12+Inputs!E13",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/E17",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "E16-Inputs!E6",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/E18",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!E11/Inputs!E6",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/E20",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!E14+Inputs!E15",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/E21",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "E20-Inputs!E7",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/E22",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!E14/Inputs!E7",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/E24",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!E5-Inputs!D5",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/E25",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!E8-Inputs!D8",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Calc/E26",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!E16-Inputs!D16",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/A1",
+    "props": {
+      "value": "Management view | available-period actuals",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "fill": "123B4A",
+      "font.color": "FFFFFF",
+      "font.bold": "true"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/A1",
+    "props": {
+      "merge": "A1:E2"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/A4",
+    "props": {
+      "value": "Recognized revenue",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/B4",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!B5+Inputs!C5+Inputs!D5+Inputs!E5",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/A5",
+    "props": {
+      "value": "COGS",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/B5",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!B6+Inputs!C6+Inputs!D6+Inputs!E6",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/A6",
+    "props": {
+      "value": "Operating expense",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/B6",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!B7+Inputs!C7+Inputs!D7+Inputs!E7",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/A7",
+    "props": {
+      "value": "Operating income",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/B7",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!B8+Inputs!C8+Inputs!D8+Inputs!E8",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/A8",
+    "props": {
+      "value": "SunCore revenue",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/B8",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!B9+Inputs!C9+Inputs!D9+Inputs!E9",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/A9",
+    "props": {
+      "value": "GulfSwitch revenue",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/B9",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "Inputs!B10+Inputs!C10+Inputs!D10+Inputs!E10",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/A11",
+    "props": {
+      "value": "Operating margin (ratio)",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/B11",
+    "props": {
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "formula": "B7/B4",
+      "font.color": "008000",
+      "numberformat": "#,##0.00;(#,##0.00);-"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/A14",
+    "props": {
+      "value": "Income",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/B14",
+    "props": {
+      "value": "Reconciliation differences on Calc must be zero; investigate any divergence.",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/B14",
+    "props": {
+      "merge": "B14:E14"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[14]",
+    "props": {
+      "height": "42"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/A15",
+    "props": {
+      "value": "Margins",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/B15",
+    "props": {
+      "value": "Gross margin excludes operating expense; operating margin includes it.",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/B15",
+    "props": {
+      "merge": "B15:E15"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[15]",
+    "props": {
+      "height": "42"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/A16",
+    "props": {
+      "value": "Product mix",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/B16",
+    "props": {
+      "value": "Product totals reconcile to revenue; a mix shift is not a customer-count measure.",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/B16",
+    "props": {
+      "merge": "B16:E16"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[16]",
+    "props": {
+      "height": "42"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/A17",
+    "props": {
+      "value": "Manufacturing",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/B17",
+    "props": {
+      "value": "Wafer, package/test and logistics are separate cost drivers; do not double count.",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/B17",
+    "props": {
+      "merge": "B17:E17"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[17]",
+    "props": {
+      "height": "42"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/A18",
+    "props": {
+      "value": "Investment",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/B18",
+    "props": {
+      "value": "Engineering is an operating expense here, not a capital expenditure or cash-flow proxy.",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/B18",
+    "props": {
+      "merge": "B18:E18"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[18]",
+    "props": {
+      "height": "42"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/A19",
+    "props": {
+      "value": "Trend",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/B19",
+    "props": {
+      "value": "Sequential changes are absolute movements, not forecasts or annualized growth rates.",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/B19",
+    "props": {
+      "merge": "B19:E19"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Summary/row[19]",
+    "props": {
+      "height": "42"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/A1",
+    "props": {
+      "value": "Sources, methodology and limitations",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center",
+      "fill": "123B4A",
+      "font.color": "FFFFFF",
+      "font.bold": "true"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/A1",
+    "props": {
+      "merge": "A1:E2"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/A4",
+    "props": {
+      "value": "Basis",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/B4",
+    "props": {
+      "value": "USD; calendar fiscal years; recognized revenue, not bookings; operating income excludes no additional adjustments and is not net income or cash flow.",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/B4",
+    "props": {
+      "merge": "B4:E4"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[4]",
+    "props": {
+      "height": "48"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/A5",
+    "props": {
+      "value": "Operating emphasis",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/B5",
+    "props": {
+      "value": "Launch discipline",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/B5",
+    "props": {
+      "merge": "B5:E5"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[5]",
+    "props": {
+      "height": "48"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/A6",
+    "props": {
+      "value": "Risk",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/B6",
+    "props": {
+      "value": "a single qualified substrate route",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/B6",
+    "props": {
+      "merge": "B6:E6"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[6]",
+    "props": {
+      "height": "48"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/A7",
+    "props": {
+      "value": "Mitigation",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/B7",
+    "props": {
+      "value": "qualify a second substrate route before increasing release allocations",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/B7",
+    "props": {
+      "merge": "B7:E7"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[7]",
+    "props": {
+      "height": "48"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/A8",
+    "props": {
+      "value": "Strategy",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/B8",
+    "props": {
+      "value": "Own differentiated silicon architecture and application validation; use external manufacturing rather than build a wafer fab.",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/B8",
+    "props": {
+      "merge": "B8:E8"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[8]",
+    "props": {
+      "height": "48"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/A9",
+    "props": {
+      "value": "Liquidity",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/B9",
+    "props": {
+      "value": "No cash balance, debt balance, free-cash-flow measure or forecast is included.",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/B9",
+    "props": {
+      "merge": "B9:E9"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[9]",
+    "props": {
+      "height": "48"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/A10",
+    "props": {
+      "value": "Availability",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/B10",
+    "props": {
+      "value": "Only quarters knowable on the publication date are included.",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/B10",
+    "props": {
+      "merge": "B10:E10"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[10]",
+    "props": {
+      "height": "48"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/A11",
+    "props": {
+      "value": "Formula controls",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/B11",
+    "props": {
+      "value": "Inputs precede formulas; saved formula values are checked after reopening.",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/B11",
+    "props": {
+      "merge": "B11:E11"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[11]",
+    "props": {
+      "height": "48"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/A12",
+    "props": {
+      "value": "Color convention",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/B12",
+    "props": {
+      "value": "Blue numbers are source inputs. Green numbers are formula-linked outputs.",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/B12",
+    "props": {
+      "merge": "B12:E12"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[12]",
+    "props": {
+      "height": "48"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/A13",
+    "props": {
+      "value": "Scope",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/B13",
+    "props": {
+      "value": "This is an operating-economics workbook, not a balance sheet or cash-flow model.",
+      "font.name": "Calibri",
+      "font.size": "11pt",
+      "alignment.wrapText": "true",
+      "alignment.vertical": "center"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/B13",
+    "props": {
+      "merge": "B13:E13"
+    }
+  },
+  {
+    "command": "set",
+    "path": "/Notes/row[13]",
+    "props": {
+      "height": "48"
+    }
+  }
+]

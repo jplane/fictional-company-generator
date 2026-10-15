@@ -1,0 +1,1162 @@
+{
+  "timing_version": 1,
+  "runner_active_wall_seconds": 265.5396976999473,
+  "between_invocations_seconds": 453.21391600000004,
+  "subprocess_worker_active_seconds": 624.8083727998892,
+  "subprocess_operations": {
+    "create": {
+      "attempts": 50,
+      "worker_active_seconds": 79.79607599967858
+    },
+    "author": {
+      "attempts": 50,
+      "worker_active_seconds": 141.89604529977078
+    },
+    "validate": {
+      "attempts": 50,
+      "worker_active_seconds": 101.43407910020323
+    },
+    "issues": {
+      "attempts": 50,
+      "worker_active_seconds": 90.84136920020683
+    },
+    "extract": {
+      "attempts": 50,
+      "worker_active_seconds": 80.59298579982715
+    },
+    "html_export": {
+      "attempts": 50,
+      "worker_active_seconds": 108.14548910019221
+    },
+    "chart_cache_stale": {
+      "attempts": 12,
+      "worker_active_seconds": 22.102328300010413
+    }
+  },
+  "capture_elapsed_worker_seconds": 212.62914819910657,
+  "capture_worker_active_seconds": 144.30074300040724,
+  "capture_queue_seconds": 67.46343909937423,
+  "unseparated_capture_attempts": 0,
+  "captured_images": 284,
+  "inspection_cache_hits": 0,
+  "validation_counts": {
+    "plan_computations": 3,
+    "plan_worker_seconds": 0.6206887000589631,
+    "plan_hits": 62,
+    "drafts_computations": 3,
+    "drafts_worker_seconds": 2.414941399998497,
+    "artifact_computations": 106,
+    "artifact_worker_seconds": 3.179156200378202,
+    "artifact_hits": 304,
+    "preflight_computations": 2,
+    "preflight_worker_seconds": 0.030560199869796634,
+    "preflight_hits": 105
+  },
+  "runner_measurements": [
+    {
+      "phase": "generation_verification",
+      "pass": "generation",
+      "started_at": "2026-10-15T17:27:40.841071+00:00",
+      "ended_at": "2026-10-15T17:27:56.616311+00:00",
+      "status": "passed",
+      "worker_active_seconds": 15.775260799913667
+    }
+  ],
+  "document_spans": [
+    {
+      "id": "cf9ffa6d-16a3-4e9b-94f3-6ef0376d4376",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0036",
+      "started_at": "2026-10-15T17:15:59.053931+00:00",
+      "status": "passed",
+      "active_seconds": 13.927543099969625,
+      "family": [
+        "board_deck",
+        "pptx",
+        "1",
+        "3eae2728ca8e0b68513959c8853dd2258bfe84acc941b6c5b5923a301a62fd7b"
+      ],
+      "queued_at": "2026-10-15T17:15:59.053649+00:00",
+      "queue_seconds": 0.000282,
+      "ended_at": "2026-10-15T17:16:12.981474+00:00"
+    },
+    {
+      "id": "478f9f0a-9eee-428f-8f3b-dd69cb5231c7",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0047",
+      "started_at": "2026-10-15T17:15:59.054709+00:00",
+      "status": "passed",
+      "active_seconds": 15.006599599961191,
+      "family": [
+        "press_release",
+        "docx",
+        "1",
+        "00532f19aacdbb2f364d247186b0262d4ebce06f2623443ea4e4884ae90f406f"
+      ],
+      "queued_at": "2026-10-15T17:15:59.054433+00:00",
+      "queue_seconds": 0.000276,
+      "ended_at": "2026-10-15T17:16:14.061264+00:00"
+    },
+    {
+      "id": "382e7266-56a6-4a5b-80a7-215e1355150f",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0030",
+      "started_at": "2026-10-15T17:15:59.053509+00:00",
+      "status": "passed",
+      "active_seconds": 17.16202109999722,
+      "family": [
+        "product_spec",
+        "docx",
+        "1",
+        "96621fe2b6f7e707128aaff0278abac97c6731c81b24016fada8125a27a50f02"
+      ],
+      "queued_at": "2026-10-15T17:15:59.053090+00:00",
+      "queue_seconds": 0.000419,
+      "ended_at": "2026-10-15T17:16:16.215540+00:00"
+    },
+    {
+      "id": "779fce09-e0d9-491f-89bc-53086665d1fd",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0012",
+      "started_at": "2026-10-15T17:15:59.054347+00:00",
+      "status": "passed",
+      "active_seconds": 19.12137150001945,
+      "family": [
+        "meeting_transcript",
+        "docx",
+        "1",
+        "d75560c39ad778e3dde2de1b417098d268548e9894625b391a80c4f978f1e12d"
+      ],
+      "queued_at": "2026-10-15T17:15:59.054097+00:00",
+      "queue_seconds": 0.00025,
+      "ended_at": "2026-10-15T17:16:18.175714+00:00"
+    },
+    {
+      "id": "e48062a5-6f4d-4ee3-93dc-be51741ee282",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0048",
+      "started_at": "2026-10-15T17:16:12.996448+00:00",
+      "status": "passed",
+      "active_seconds": 13.13967559998855,
+      "family": [
+        "product_presentation",
+        "pptx",
+        "1",
+        "672d3bddab87c64bbd48671f5dfee716f646095c326e0749428e287fd37820ef"
+      ],
+      "queued_at": "2026-10-15T17:16:12.996147+00:00",
+      "queue_seconds": 0.000301,
+      "ended_at": "2026-10-15T17:16:26.136125+00:00"
+    },
+    {
+      "id": "d6cb1773-9908-47db-beea-9bd72f562a40",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0042",
+      "started_at": "2026-10-15T17:16:14.079707+00:00",
+      "status": "passed",
+      "active_seconds": 16.972932200005744,
+      "family": [
+        "financial_model",
+        "xlsx",
+        "1",
+        "eaa0c5c0bb506cdf19e6dc0bc71fc907bdf385da1b9d38f3cef0666d30675f38"
+      ],
+      "queued_at": "2026-10-15T17:16:14.079484+00:00",
+      "queue_seconds": 0.000223,
+      "ended_at": "2026-10-15T17:16:31.052653+00:00"
+    },
+    {
+      "id": "ea7b644f-4105-4078-873f-99622cc5f4f1",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0047",
+      "started_at": "2026-10-15T17:18:04.175515+00:00",
+      "status": "passed",
+      "active_seconds": 0.33502979995682836,
+      "family": [
+        "press_release",
+        "docx",
+        "1",
+        "00532f19aacdbb2f364d247186b0262d4ebce06f2623443ea4e4884ae90f406f"
+      ],
+      "queued_at": "2026-10-15T17:18:04.174821+00:00",
+      "queue_seconds": 0.000694,
+      "ended_at": "2026-10-15T17:18:04.510545+00:00"
+    },
+    {
+      "id": "0dcec451-5c72-44fe-a4f1-119591dd5bf7",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0030",
+      "started_at": "2026-10-15T17:18:04.173239+00:00",
+      "status": "passed",
+      "active_seconds": 0.38100829999893904,
+      "family": [
+        "product_spec",
+        "docx",
+        "1",
+        "96621fe2b6f7e707128aaff0278abac97c6731c81b24016fada8125a27a50f02"
+      ],
+      "queued_at": "2026-10-15T17:18:04.172793+00:00",
+      "queue_seconds": 0.000446,
+      "ended_at": "2026-10-15T17:18:04.554252+00:00"
+    },
+    {
+      "id": "2de613ae-f076-478d-97a6-903e89f571b6",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0012",
+      "started_at": "2026-10-15T17:18:04.174638+00:00",
+      "status": "passed",
+      "active_seconds": 0.4418077999725938,
+      "family": [
+        "meeting_transcript",
+        "docx",
+        "1",
+        "d75560c39ad778e3dde2de1b417098d268548e9894625b391a80c4f978f1e12d"
+      ],
+      "queued_at": "2026-10-15T17:18:04.173999+00:00",
+      "queue_seconds": 0.000639,
+      "ended_at": "2026-10-15T17:18:04.616460+00:00"
+    },
+    {
+      "id": "bf64b28d-2dff-409f-9c0a-3db067909460",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0036",
+      "started_at": "2026-10-15T17:18:04.173895+00:00",
+      "status": "passed",
+      "active_seconds": 0.5513000999344513,
+      "family": [
+        "board_deck",
+        "pptx",
+        "1",
+        "3eae2728ca8e0b68513959c8853dd2258bfe84acc941b6c5b5923a301a62fd7b"
+      ],
+      "queued_at": "2026-10-15T17:18:04.173337+00:00",
+      "queue_seconds": 0.000558,
+      "ended_at": "2026-10-15T17:18:04.725197+00:00"
+    },
+    {
+      "id": "cdccda62-078d-4136-84eb-143069cdff3d",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0042",
+      "started_at": "2026-10-15T17:18:04.568368+00:00",
+      "status": "passed",
+      "active_seconds": 0.3390245999908075,
+      "family": [
+        "financial_model",
+        "xlsx",
+        "1",
+        "eaa0c5c0bb506cdf19e6dc0bc71fc907bdf385da1b9d38f3cef0666d30675f38"
+      ],
+      "queued_at": "2026-10-15T17:18:04.567653+00:00",
+      "queue_seconds": 0.000715,
+      "ended_at": "2026-10-15T17:18:04.907396+00:00"
+    },
+    {
+      "id": "87d77730-a184-46eb-81dd-37789a939e8b",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0048",
+      "started_at": "2026-10-15T17:18:04.526096+00:00",
+      "status": "passed",
+      "active_seconds": 0.37357659998815507,
+      "family": [
+        "product_presentation",
+        "pptx",
+        "1",
+        "672d3bddab87c64bbd48671f5dfee716f646095c326e0749428e287fd37820ef"
+      ],
+      "queued_at": "2026-10-15T17:18:04.525693+00:00",
+      "queue_seconds": 0.000403,
+      "ended_at": "2026-10-15T17:18:04.899680+00:00"
+    },
+    {
+      "id": "1c4dbfac-2059-4007-b9d3-6806df9d0cc7",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0019",
+      "started_at": "2026-10-15T17:18:05.127544+00:00",
+      "status": "passed",
+      "active_seconds": 13.479702300042845,
+      "family": [
+        "board_deck",
+        "pptx",
+        "1",
+        "3eae2728ca8e0b68513959c8853dd2258bfe84acc941b6c5b5923a301a62fd7b"
+      ],
+      "queued_at": "2026-10-15T17:18:05.127387+00:00",
+      "queue_seconds": 0.000157,
+      "ended_at": "2026-10-15T17:18:18.607249+00:00"
+    },
+    {
+      "id": "39a0a345-d8ee-4fff-bf44-6d399842880e",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0044",
+      "started_at": "2026-10-15T17:18:04.783223+00:00",
+      "status": "passed",
+      "active_seconds": 15.238427700009197,
+      "family": [
+        "product_spec",
+        "docx",
+        "1",
+        "96621fe2b6f7e707128aaff0278abac97c6731c81b24016fada8125a27a50f02"
+      ],
+      "queued_at": "2026-10-15T17:18:04.782619+00:00",
+      "queue_seconds": 0.000604,
+      "ended_at": "2026-10-15T17:18:20.021664+00:00"
+    },
+    {
+      "id": "d581c57f-2034-4c93-8140-d1faa43d5d06",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0013",
+      "started_at": "2026-10-15T17:18:05.228970+00:00",
+      "status": "passed",
+      "active_seconds": 16.599188000080176,
+      "family": [
+        "meeting_transcript",
+        "docx",
+        "1",
+        "d75560c39ad778e3dde2de1b417098d268548e9894625b391a80c4f978f1e12d"
+      ],
+      "queued_at": "2026-10-15T17:18:05.228756+00:00",
+      "queue_seconds": 0.000214,
+      "ended_at": "2026-10-15T17:18:21.828163+00:00"
+    },
+    {
+      "id": "5d5d6c54-4403-4da7-9cb5-b39f2f271538",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0025",
+      "started_at": "2026-10-15T17:18:04.978872+00:00",
+      "status": "passed",
+      "active_seconds": 22.06821649998892,
+      "family": [
+        "financial_model",
+        "xlsx",
+        "1",
+        "eaa0c5c0bb506cdf19e6dc0bc71fc907bdf385da1b9d38f3cef0666d30675f38"
+      ],
+      "queued_at": "2026-10-15T17:18:04.978643+00:00",
+      "queue_seconds": 0.000229,
+      "ended_at": "2026-10-15T17:18:27.047099+00:00"
+    },
+    {
+      "id": "16645ca8-71d2-44fa-ac75-848822558c03",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0001",
+      "started_at": "2026-10-15T17:18:18.713948+00:00",
+      "status": "passed",
+      "active_seconds": 11.902355999918655,
+      "family": [
+        "press_release",
+        "docx",
+        "1",
+        "00532f19aacdbb2f364d247186b0262d4ebce06f2623443ea4e4884ae90f406f"
+      ],
+      "queued_at": "2026-10-15T17:18:18.713617+00:00",
+      "queue_seconds": 0.000331,
+      "ended_at": "2026-10-15T17:18:30.616312+00:00"
+    },
+    {
+      "id": "e49e7294-a75f-406d-bb2f-b5bf281c9d18",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0007",
+      "started_at": "2026-10-15T17:18:20.042224+00:00",
+      "status": "passed",
+      "active_seconds": 13.004832300008275,
+      "family": [
+        "press_release",
+        "docx",
+        "1",
+        "00532f19aacdbb2f364d247186b0262d4ebce06f2623443ea4e4884ae90f406f"
+      ],
+      "queued_at": "2026-10-15T17:18:20.041937+00:00",
+      "queue_seconds": 0.000287,
+      "ended_at": "2026-10-15T17:18:33.047057+00:00"
+    },
+    {
+      "id": "2b1d766a-f966-418f-9f62-9781cf1c54b8",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0038",
+      "started_at": "2026-10-15T17:18:22.069054+00:00",
+      "status": "passed",
+      "active_seconds": 14.206477699917741,
+      "family": [
+        "product_presentation",
+        "pptx",
+        "1",
+        "672d3bddab87c64bbd48671f5dfee716f646095c326e0749428e287fd37820ef"
+      ],
+      "queued_at": "2026-10-15T17:18:22.068763+00:00",
+      "queue_seconds": 0.000291,
+      "ended_at": "2026-10-15T17:18:36.275541+00:00"
+    },
+    {
+      "id": "6a79c78c-4513-4764-bcc6-f5bd0ef32887",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0027",
+      "started_at": "2026-10-15T17:18:30.637458+00:00",
+      "status": "passed",
+      "active_seconds": 14.108119899989106,
+      "family": [
+        "product_spec",
+        "docx",
+        "1",
+        "96621fe2b6f7e707128aaff0278abac97c6731c81b24016fada8125a27a50f02"
+      ],
+      "queued_at": "2026-10-15T17:18:30.637136+00:00",
+      "queue_seconds": 0.000322,
+      "ended_at": "2026-10-15T17:18:44.745594+00:00"
+    },
+    {
+      "id": "8cf2ff58-96bb-4222-86e2-0136638c0708",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0050",
+      "started_at": "2026-10-15T17:18:27.063098+00:00",
+      "status": "passed",
+      "active_seconds": 21.13092260004487,
+      "family": [
+        "financial_model",
+        "xlsx",
+        "1",
+        "eaa0c5c0bb506cdf19e6dc0bc71fc907bdf385da1b9d38f3cef0666d30675f38"
+      ],
+      "queued_at": "2026-10-15T17:18:27.062864+00:00",
+      "queue_seconds": 0.000234,
+      "ended_at": "2026-10-15T17:18:48.194019+00:00"
+    },
+    {
+      "id": "8e88e9b8-e0f1-4143-9480-c05efbbd3af9",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0037",
+      "started_at": "2026-10-15T17:18:36.298113+00:00",
+      "status": "passed",
+      "active_seconds": 14.43055980000645,
+      "family": [
+        "board_deck",
+        "pptx",
+        "1",
+        "3eae2728ca8e0b68513959c8853dd2258bfe84acc941b6c5b5923a301a62fd7b"
+      ],
+      "queued_at": "2026-10-15T17:18:36.297894+00:00",
+      "queue_seconds": 0.000219,
+      "ended_at": "2026-10-15T17:18:50.728687+00:00"
+    },
+    {
+      "id": "475b5713-a0d8-40ac-856d-44e3626013c9",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0043",
+      "started_at": "2026-10-15T17:18:33.072949+00:00",
+      "status": "passed",
+      "active_seconds": 22.224307700060308,
+      "family": [
+        "financial_model",
+        "xlsx",
+        "1",
+        "eaa0c5c0bb506cdf19e6dc0bc71fc907bdf385da1b9d38f3cef0666d30675f38"
+      ],
+      "queued_at": "2026-10-15T17:18:33.072670+00:00",
+      "queue_seconds": 0.000279,
+      "ended_at": "2026-10-15T17:18:55.297261+00:00"
+    },
+    {
+      "id": "fc6be3a2-ac0d-4a26-b6f3-fb44811f77c7",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0033",
+      "started_at": "2026-10-15T17:18:44.776660+00:00",
+      "status": "passed",
+      "active_seconds": 15.464637500001118,
+      "family": [
+        "meeting_transcript",
+        "docx",
+        "1",
+        "d75560c39ad778e3dde2de1b417098d268548e9894625b391a80c4f978f1e12d"
+      ],
+      "queued_at": "2026-10-15T17:18:44.776364+00:00",
+      "queue_seconds": 0.000296,
+      "ended_at": "2026-10-15T17:19:00.241304+00:00"
+    },
+    {
+      "id": "982d8a80-7dbe-4766-b0a3-a8d58a9a0e1d",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0002",
+      "started_at": "2026-10-15T17:18:48.329576+00:00",
+      "status": "passed",
+      "active_seconds": 13.563380800071172,
+      "family": [
+        "press_release",
+        "docx",
+        "1",
+        "00532f19aacdbb2f364d247186b0262d4ebce06f2623443ea4e4884ae90f406f"
+      ],
+      "queued_at": "2026-10-15T17:18:48.329347+00:00",
+      "queue_seconds": 0.000229,
+      "ended_at": "2026-10-15T17:19:01.892964+00:00"
+    },
+    {
+      "id": "ba1e4b52-b9d8-432e-9cae-7548c721da1b",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0031",
+      "started_at": "2026-10-15T17:18:50.771749+00:00",
+      "status": "passed",
+      "active_seconds": 13.905044700019062,
+      "family": [
+        "press_release",
+        "docx",
+        "1",
+        "00532f19aacdbb2f364d247186b0262d4ebce06f2623443ea4e4884ae90f406f"
+      ],
+      "queued_at": "2026-10-15T17:18:50.771489+00:00",
+      "queue_seconds": 0.00026,
+      "ended_at": "2026-10-15T17:19:04.676804+00:00"
+    },
+    {
+      "id": "e3ec7d66-6434-464e-9420-23d4f6309f29",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0008",
+      "started_at": "2026-10-15T17:18:55.325565+00:00",
+      "status": "passed",
+      "active_seconds": 14.579910499975085,
+      "family": [
+        "product_presentation",
+        "pptx",
+        "1",
+        "672d3bddab87c64bbd48671f5dfee716f646095c326e0749428e287fd37820ef"
+      ],
+      "queued_at": "2026-10-15T17:18:55.325344+00:00",
+      "queue_seconds": 0.000221,
+      "ended_at": "2026-10-15T17:19:09.905493+00:00"
+    },
+    {
+      "id": "ca96d72a-335e-4479-bd38-9e30187677c8",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0009",
+      "started_at": "2026-10-15T17:19:01.924713+00:00",
+      "status": "passed",
+      "active_seconds": 15.035832999972627,
+      "family": [
+        "product_spec",
+        "docx",
+        "1",
+        "96621fe2b6f7e707128aaff0278abac97c6731c81b24016fada8125a27a50f02"
+      ],
+      "queued_at": "2026-10-15T17:19:01.924482+00:00",
+      "queue_seconds": 0.000231,
+      "ended_at": "2026-10-15T17:19:16.960558+00:00"
+    },
+    {
+      "id": "290fd716-3ea7-4c25-bdb9-49e40f8368ba",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0014",
+      "started_at": "2026-10-15T17:19:00.273535+00:00",
+      "status": "passed",
+      "active_seconds": 24.40708429994993,
+      "family": [
+        "financial_model",
+        "xlsx",
+        "1",
+        "eaa0c5c0bb506cdf19e6dc0bc71fc907bdf385da1b9d38f3cef0666d30675f38"
+      ],
+      "queued_at": "2026-10-15T17:19:00.273256+00:00",
+      "queue_seconds": 0.000279,
+      "ended_at": "2026-10-15T17:19:24.680629+00:00"
+    },
+    {
+      "id": "2e411f35-79fe-4439-a64b-968f382df84b",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0032",
+      "started_at": "2026-10-15T17:19:09.959834+00:00",
+      "status": "passed",
+      "active_seconds": 18.656276399968192,
+      "family": [
+        "board_deck",
+        "pptx",
+        "1",
+        "3eae2728ca8e0b68513959c8853dd2258bfe84acc941b6c5b5923a301a62fd7b"
+      ],
+      "queued_at": "2026-10-15T17:19:09.959540+00:00",
+      "queue_seconds": 0.000294,
+      "ended_at": "2026-10-15T17:19:28.615580+00:00"
+    },
+    {
+      "id": "01a34a19-cf19-4949-a1ba-2b557f12ffb5",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0040",
+      "started_at": "2026-10-15T17:19:04.709560+00:00",
+      "status": "passed",
+      "active_seconds": 26.248673499911092,
+      "family": [
+        "financial_model",
+        "xlsx",
+        "1",
+        "eaa0c5c0bb506cdf19e6dc0bc71fc907bdf385da1b9d38f3cef0666d30675f38"
+      ],
+      "queued_at": "2026-10-15T17:19:04.709270+00:00",
+      "queue_seconds": 0.00029,
+      "ended_at": "2026-10-15T17:19:30.958235+00:00"
+    },
+    {
+      "id": "61a00e32-a515-493c-98b4-ece4aa84c4e7",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0026",
+      "started_at": "2026-10-15T17:19:17.090626+00:00",
+      "status": "passed",
+      "active_seconds": 17.61812760005705,
+      "family": [
+        "meeting_transcript",
+        "docx",
+        "1",
+        "d75560c39ad778e3dde2de1b417098d268548e9894625b391a80c4f978f1e12d"
+      ],
+      "queued_at": "2026-10-15T17:19:17.090409+00:00",
+      "queue_seconds": 0.000217,
+      "ended_at": "2026-10-15T17:19:34.708720+00:00"
+    },
+    {
+      "id": "230435f2-52be-416d-a6ed-1b729fc5d379",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0020",
+      "started_at": "2026-10-15T17:19:24.736274+00:00",
+      "status": "passed",
+      "active_seconds": 16.557902200031094,
+      "family": [
+        "press_release",
+        "docx",
+        "1",
+        "00532f19aacdbb2f364d247186b0262d4ebce06f2623443ea4e4884ae90f406f"
+      ],
+      "queued_at": "2026-10-15T17:19:24.735785+00:00",
+      "queue_seconds": 0.000489,
+      "ended_at": "2026-10-15T17:19:41.294188+00:00"
+    },
+    {
+      "id": "37f95d88-82b1-4e88-820f-091cb0b470f1",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0049",
+      "started_at": "2026-10-15T17:19:28.682917+00:00",
+      "status": "passed",
+      "active_seconds": 16.86574269994162,
+      "family": [
+        "press_release",
+        "docx",
+        "1",
+        "00532f19aacdbb2f364d247186b0262d4ebce06f2623443ea4e4884ae90f406f"
+      ],
+      "queued_at": "2026-10-15T17:19:28.682177+00:00",
+      "queue_seconds": 0.00074,
+      "ended_at": "2026-10-15T17:19:45.548665+00:00"
+    },
+    {
+      "id": "965bbd8f-ff92-4ab9-8a94-b2ce82ec879d",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0003",
+      "started_at": "2026-10-15T17:19:31.056431+00:00",
+      "status": "passed",
+      "active_seconds": 17.647150499979034,
+      "family": [
+        "product_presentation",
+        "pptx",
+        "1",
+        "672d3bddab87c64bbd48671f5dfee716f646095c326e0749428e287fd37820ef"
+      ],
+      "queued_at": "2026-10-15T17:19:31.050585+00:00",
+      "queue_seconds": 0.005846,
+      "ended_at": "2026-10-15T17:19:48.703616+00:00"
+    },
+    {
+      "id": "0dc9d1bd-d602-4665-9bb4-22a40d4fe32f",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0024",
+      "started_at": "2026-10-15T17:19:34.787795+00:00",
+      "status": "passed",
+      "active_seconds": 16.80373220006004,
+      "family": [
+        "product_presentation",
+        "pptx",
+        "1",
+        "672d3bddab87c64bbd48671f5dfee716f646095c326e0749428e287fd37820ef"
+      ],
+      "queued_at": "2026-10-15T17:19:34.787566+00:00",
+      "queue_seconds": 0.000229,
+      "ended_at": "2026-10-15T17:19:51.591532+00:00"
+    },
+    {
+      "id": "459087ef-f8af-479e-a0d7-372a3a762e33",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0010",
+      "started_at": "2026-10-15T17:19:45.589925+00:00",
+      "status": "passed",
+      "active_seconds": 14.699628000031225,
+      "family": [
+        "product_spec",
+        "docx",
+        "1",
+        "96621fe2b6f7e707128aaff0278abac97c6731c81b24016fada8125a27a50f02"
+      ],
+      "queued_at": "2026-10-15T17:19:45.589683+00:00",
+      "queue_seconds": 0.000242,
+      "ended_at": "2026-10-15T17:20:00.289559+00:00"
+    },
+    {
+      "id": "898be19b-be57-48dd-b1cf-aef1114e8d99",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0046",
+      "started_at": "2026-10-15T17:19:41.375383+00:00",
+      "status": "passed",
+      "active_seconds": 22.21293310006149,
+      "family": [
+        "financial_model",
+        "xlsx",
+        "1",
+        "eaa0c5c0bb506cdf19e6dc0bc71fc907bdf385da1b9d38f3cef0666d30675f38"
+      ],
+      "queued_at": "2026-10-15T17:19:41.375068+00:00",
+      "queue_seconds": 0.000315,
+      "ended_at": "2026-10-15T17:20:03.588341+00:00"
+    },
+    {
+      "id": "245ea3bd-032f-4921-a4c9-39cfe9e362c1",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0045",
+      "started_at": "2026-10-15T17:19:51.637565+00:00",
+      "status": "passed",
+      "active_seconds": 15.620965200010687,
+      "family": [
+        "board_deck",
+        "pptx",
+        "1",
+        "3eae2728ca8e0b68513959c8853dd2258bfe84acc941b6c5b5923a301a62fd7b"
+      ],
+      "queued_at": "2026-10-15T17:19:51.637320+00:00",
+      "queue_seconds": 0.000245,
+      "ended_at": "2026-10-15T17:20:07.258537+00:00"
+    },
+    {
+      "id": "e7f66637-5d16-4a84-984f-94e52b06fa09",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0016",
+      "started_at": "2026-10-15T17:19:48.746564+00:00",
+      "status": "passed",
+      "active_seconds": 22.625304399989545,
+      "family": [
+        "financial_model",
+        "xlsx",
+        "1",
+        "eaa0c5c0bb506cdf19e6dc0bc71fc907bdf385da1b9d38f3cef0666d30675f38"
+      ],
+      "queued_at": "2026-10-15T17:19:48.746333+00:00",
+      "queue_seconds": 0.000231,
+      "ended_at": "2026-10-15T17:20:11.371880+00:00"
+    },
+    {
+      "id": "cba345f8-73ad-4941-a23a-09b9525973c7",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0039",
+      "started_at": "2026-10-15T17:20:00.357750+00:00",
+      "status": "passed",
+      "active_seconds": 14.783339299960062,
+      "family": [
+        "meeting_transcript",
+        "docx",
+        "1",
+        "d75560c39ad778e3dde2de1b417098d268548e9894625b391a80c4f978f1e12d"
+      ],
+      "queued_at": "2026-10-15T17:20:00.357514+00:00",
+      "queue_seconds": 0.000236,
+      "ended_at": "2026-10-15T17:20:15.141097+00:00"
+    },
+    {
+      "id": "33d1875f-6fa4-4e68-bdea-0b43d468fb34",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0015",
+      "started_at": "2026-10-15T17:20:03.645086+00:00",
+      "status": "passed",
+      "active_seconds": 13.082429100060835,
+      "family": [
+        "press_release",
+        "docx",
+        "1",
+        "00532f19aacdbb2f364d247186b0262d4ebce06f2623443ea4e4884ae90f406f"
+      ],
+      "queued_at": "2026-10-15T17:20:03.644840+00:00",
+      "queue_seconds": 0.000246,
+      "ended_at": "2026-10-15T17:20:16.727531+00:00"
+    },
+    {
+      "id": "001d2382-a084-428e-9eed-35a8152d8a23",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0021",
+      "started_at": "2026-10-15T17:20:07.320160+00:00",
+      "status": "passed",
+      "active_seconds": 13.639972100034356,
+      "family": [
+        "press_release",
+        "docx",
+        "1",
+        "00532f19aacdbb2f364d247186b0262d4ebce06f2623443ea4e4884ae90f406f"
+      ],
+      "queued_at": "2026-10-15T17:20:07.319940+00:00",
+      "queue_seconds": 0.00022,
+      "ended_at": "2026-10-15T17:20:20.960148+00:00"
+    },
+    {
+      "id": "a5a9abf0-14a2-4124-bb0e-00f2b79d522a",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0004",
+      "started_at": "2026-10-15T17:20:11.411165+00:00",
+      "status": "passed",
+      "active_seconds": 13.84732159995474,
+      "family": [
+        "product_presentation",
+        "pptx",
+        "1",
+        "672d3bddab87c64bbd48671f5dfee716f646095c326e0749428e287fd37820ef"
+      ],
+      "queued_at": "2026-10-15T17:20:11.410929+00:00",
+      "queue_seconds": 0.000236,
+      "ended_at": "2026-10-15T17:20:25.258489+00:00"
+    },
+    {
+      "id": "05de2a3c-a298-400c-b577-6dc3995884eb",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0011",
+      "started_at": "2026-10-15T17:20:16.803195+00:00",
+      "status": "passed",
+      "active_seconds": 14.011274200049229,
+      "family": [
+        "product_spec",
+        "docx",
+        "1",
+        "96621fe2b6f7e707128aaff0278abac97c6731c81b24016fada8125a27a50f02"
+      ],
+      "queued_at": "2026-10-15T17:20:16.802958+00:00",
+      "queue_seconds": 0.000237,
+      "ended_at": "2026-10-15T17:20:30.814474+00:00"
+    },
+    {
+      "id": "049b69b2-26a7-4e60-ac7a-dde3f24605c6",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0022",
+      "started_at": "2026-10-15T17:20:15.191258+00:00",
+      "status": "passed",
+      "active_seconds": 21.698595499969088,
+      "family": [
+        "financial_model",
+        "xlsx",
+        "1",
+        "eaa0c5c0bb506cdf19e6dc0bc71fc907bdf385da1b9d38f3cef0666d30675f38"
+      ],
+      "queued_at": "2026-10-15T17:20:15.190891+00:00",
+      "queue_seconds": 0.000367,
+      "ended_at": "2026-10-15T17:20:36.889852+00:00"
+    },
+    {
+      "id": "6bc528da-b272-4acb-9093-f3e1937a2c4f",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0023",
+      "started_at": "2026-10-15T17:20:25.309716+00:00",
+      "status": "passed",
+      "active_seconds": 16.705570599995553,
+      "family": [
+        "board_deck",
+        "pptx",
+        "1",
+        "3eae2728ca8e0b68513959c8853dd2258bfe84acc941b6c5b5923a301a62fd7b"
+      ],
+      "queued_at": "2026-10-15T17:20:25.309463+00:00",
+      "queue_seconds": 0.000253,
+      "ended_at": "2026-10-15T17:20:42.015289+00:00"
+    },
+    {
+      "id": "04403345-b63c-4fa3-b1a9-0300f82d9163",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0029",
+      "started_at": "2026-10-15T17:20:21.007545+00:00",
+      "status": "passed",
+      "active_seconds": 23.849653400015086,
+      "family": [
+        "financial_model",
+        "xlsx",
+        "1",
+        "eaa0c5c0bb506cdf19e6dc0bc71fc907bdf385da1b9d38f3cef0666d30675f38"
+      ],
+      "queued_at": "2026-10-15T17:20:21.007330+00:00",
+      "queue_seconds": 0.000215,
+      "ended_at": "2026-10-15T17:20:44.857201+00:00"
+    },
+    {
+      "id": "5c705513-c150-4a6f-b458-8c2a983a6019",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0017",
+      "started_at": "2026-10-15T17:20:30.895239+00:00",
+      "status": "passed",
+      "active_seconds": 22.70463000005111,
+      "family": [
+        "meeting_transcript",
+        "docx",
+        "1",
+        "d75560c39ad778e3dde2de1b417098d268548e9894625b391a80c4f978f1e12d"
+      ],
+      "queued_at": "2026-10-15T17:20:30.894316+00:00",
+      "queue_seconds": 0.000923,
+      "ended_at": "2026-10-15T17:20:53.599874+00:00"
+    },
+    {
+      "id": "37d0ca0d-ef87-4a6e-8685-f786200c440e",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0028",
+      "started_at": "2026-10-15T17:20:36.971445+00:00",
+      "status": "passed",
+      "active_seconds": 22.637378999963403,
+      "family": [
+        "press_release",
+        "docx",
+        "1",
+        "00532f19aacdbb2f364d247186b0262d4ebce06f2623443ea4e4884ae90f406f"
+      ],
+      "queued_at": "2026-10-15T17:20:36.971171+00:00",
+      "queue_seconds": 0.000274,
+      "ended_at": "2026-10-15T17:20:59.608831+00:00"
+    },
+    {
+      "id": "018f86b5-d89a-4137-860c-6134661e6bbb",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0034",
+      "started_at": "2026-10-15T17:20:42.149499+00:00",
+      "status": "passed",
+      "active_seconds": 21.29726160003338,
+      "family": [
+        "press_release",
+        "docx",
+        "1",
+        "00532f19aacdbb2f364d247186b0262d4ebce06f2623443ea4e4884ae90f406f"
+      ],
+      "queued_at": "2026-10-15T17:20:42.148671+00:00",
+      "queue_seconds": 0.000828,
+      "ended_at": "2026-10-15T17:21:03.446901+00:00"
+    },
+    {
+      "id": "5c3fb13b-5fc8-484a-80aa-72acad2d0bb1",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0005",
+      "started_at": "2026-10-15T17:20:44.998595+00:00",
+      "status": "passed",
+      "active_seconds": 23.866215899935924,
+      "family": [
+        "product_presentation",
+        "pptx",
+        "1",
+        "672d3bddab87c64bbd48671f5dfee716f646095c326e0749428e287fd37820ef"
+      ],
+      "queued_at": "2026-10-15T17:20:44.998345+00:00",
+      "queue_seconds": 0.00025,
+      "ended_at": "2026-10-15T17:21:08.864821+00:00"
+    },
+    {
+      "id": "d93ebb06-cf51-4e69-afd2-a58173c289bb",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0041",
+      "started_at": "2026-10-15T17:21:03.563563+00:00",
+      "status": "passed",
+      "active_seconds": 22.33087089995388,
+      "family": [
+        "press_release",
+        "docx",
+        "1",
+        "00532f19aacdbb2f364d247186b0262d4ebce06f2623443ea4e4884ae90f406f"
+      ],
+      "queued_at": "2026-10-15T17:21:03.563267+00:00",
+      "queue_seconds": 0.000296,
+      "ended_at": "2026-10-15T17:21:25.894435+00:00"
+    },
+    {
+      "id": "0f0dc656-e89f-4a4a-8173-81e04a82f0d1",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0035",
+      "started_at": "2026-10-15T17:20:53.662686+00:00",
+      "status": "passed",
+      "active_seconds": 33.33938150003087,
+      "family": [
+        "financial_model",
+        "xlsx",
+        "1",
+        "eaa0c5c0bb506cdf19e6dc0bc71fc907bdf385da1b9d38f3cef0666d30675f38"
+      ],
+      "queued_at": "2026-10-15T17:20:53.662405+00:00",
+      "queue_seconds": 0.000281,
+      "ended_at": "2026-10-15T17:21:27.002071+00:00"
+    },
+    {
+      "id": "3f3893ae-3c44-4c06-a1c5-523f6c67b78d",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0006",
+      "started_at": "2026-10-15T17:21:08.999840+00:00",
+      "status": "passed",
+      "active_seconds": 24.057618199964054,
+      "family": [
+        "product_presentation",
+        "pptx",
+        "1",
+        "672d3bddab87c64bbd48671f5dfee716f646095c326e0749428e287fd37820ef"
+      ],
+      "queued_at": "2026-10-15T17:21:08.999562+00:00",
+      "queue_seconds": 0.000278,
+      "ended_at": "2026-10-15T17:21:33.057466+00:00"
+    },
+    {
+      "id": "98de83ad-de4f-4ab2-a693-fff0406fab2e",
+      "phase": "document",
+      "pass": "generation",
+      "document_id": "doc-0018",
+      "started_at": "2026-10-15T17:20:59.773785+00:00",
+      "status": "passed",
+      "active_seconds": 37.24521259998437,
+      "family": [
+        "financial_model",
+        "xlsx",
+        "1",
+        "eaa0c5c0bb506cdf19e6dc0bc71fc907bdf385da1b9d38f3cef0666d30675f38"
+      ],
+      "queued_at": "2026-10-15T17:20:59.773526+00:00",
+      "queue_seconds": 0.000259,
+      "ended_at": "2026-10-15T17:21:37.019010+00:00"
+    },
+    {
+      "id": "30bc1d6d-db9e-4d54-8df6-4a4a2342227c",
+      "phase": "assemble",
+      "pass": "generation",
+      "document_id": null,
+      "started_at": "2026-10-15T17:27:39.418450+00:00",
+      "status": "passed",
+      "active_seconds": 17.259078900096938,
+      "ended_at": "2026-10-15T17:27:56.677532+00:00"
+    }
+  ],
+  "leaf_agent_spans": [
+    {
+      "id": "5a26fed0-4c68-48ce-ae79-1a3d8fbbb58e",
+      "name": "corrective-export",
+      "parent": null,
+      "pass": "generation",
+      "document_id": null,
+      "started_at": "2026-10-15T17:15:54.635085+00:00",
+      "status": "passed",
+      "ended_at": "2026-10-15T17:27:33.924162+00:00",
+      "elapsed_seconds": 699.289077
+    },
+    {
+      "id": "20de325e-e6c2-4134-8d5c-7737937034f8",
+      "name": "pilot-editorial-visual-review",
+      "parent": null,
+      "pass": "generation",
+      "document_id": null,
+      "started_at": "2026-10-15T17:16:39.854005+00:00",
+      "status": "passed",
+      "ended_at": "2026-10-15T17:18:01.074865+00:00",
+      "elapsed_seconds": 81.22086
+    },
+    {
+      "id": "d7099bee-72cd-448a-aeda-cb0448a18028",
+      "name": "corrective-content-and-visual-review",
+      "parent": null,
+      "pass": "generation",
+      "document_id": null,
+      "started_at": "2026-10-15T17:22:32.635658+00:00",
+      "status": "passed",
+      "ended_at": "2026-10-15T17:27:33.587944+00:00",
+      "elapsed_seconds": 300.952286
+    }
+  ],
+  "unknown_agent_phases": false,
+  "milestones": {
+    "generation": {
+      "generation_status": "complete",
+      "documents": 50,
+      "counts": {
+        "formats": {
+          "docx": 24,
+          "xlsx": 12,
+          "pptx": 14
+        },
+        "types": {
+          "product_spec": 6,
+          "financial_model": 12,
+          "board_deck": 6,
+          "meeting_transcript": 6,
+          "press_release": 12,
+          "product_presentation": 8
+        },
+        "publication_years": {
+          "2020": 7,
+          "2021": 8,
+          "2022": 9,
+          "2023": 8,
+          "2024": 8,
+          "2025": 9,
+          "2026": 1
+        }
+      },
+      "qa_status": "not_requested",
+      "qa_policy": null,
+      "pilot_and_corrective_reviews": 50,
+      "validation": "generation checks and pilot/corrective reviews; corpus QA/provenance not certified",
+      "schema_version": 2,
+      "corpus_id": "corpus-76ce98a12405018fd1e8c2e5",
+      "canon_sha256": "caaf762e72fb012b38e89626490ab0988233f06da57675c45f8792fce3796186",
+      "plan_sha256": "647b92bb093e0638d541a8f268fd3c50035a754aa58c5be14676e52f5e7007a9",
+      "generation_sha256": "fa58b323f157f623c4cecccd342414725168b9bcde95830696be712024bd7324",
+      "completed_at": "2026-10-15T17:27:56.666238+00:00"
+    }
+  },
+  "limitations": "Agent spans are elapsed observations, not inferred active time. Worker totals may overlap; never add them to wall time or parent spans."
+}

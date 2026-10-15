@@ -43,8 +43,8 @@ CONDITION_KINDS = ("unknown", "undocumented", "omitted_source", "conflict", "noi
 PRIVATE_KINDS = {"condition", "access_group", "knowledge_grant", "release", "viewpoint"}
 CONTENT_DEPTHS = ("light", "medium", "deep")
 DEFAULT_CONTENT_DEPTH = "medium"
-QA_POLICIES = ("Sampled", "FullContentSampledVisual", "Full")
-DEFAULT_QA_POLICY = "FullContentSampledVisual"
+QA_POLICIES = ("Sampled", "Balanced", "Full")
+DEFAULT_QA_POLICY = "Balanced"
 EXECUTION_VERSION = 1
 GENERATION_EXECUTION_VERSION = 2
 _validation_cache = ContextVar("company_validation_cache", default=None)

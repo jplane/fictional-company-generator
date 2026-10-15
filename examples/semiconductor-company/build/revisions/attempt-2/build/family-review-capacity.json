@@ -1,0 +1,38 @@
+{
+  "families": [
+    {
+      "type": "press_release",
+      "documents": 12,
+      "pilot_id": "doc-0047"
+    },
+    {
+      "type": "product_presentation",
+      "documents": 8,
+      "pilot_id": "doc-0048"
+    },
+    {
+      "type": "meeting_transcript",
+      "documents": 6,
+      "pilot_id": "doc-0012"
+    },
+    {
+      "type": "product_spec",
+      "documents": 6,
+      "pilot_id": "doc-0030"
+    },
+    {
+      "type": "board_deck",
+      "documents": 6,
+      "pilot_id": "doc-0036"
+    },
+    {
+      "type": "financial_model",
+      "documents": 12,
+      "pilot_id": "doc-0042"
+    }
+  ],
+  "pilot_image_capacity": "All per-page, per-slide and per-range pilot images will be delivered and inspected.",
+  "additional_qa": "not_requested",
+  "singleton_families": [],
+  "all_selected_warning": false
+}

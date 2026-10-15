@@ -1,0 +1,33 @@
+{
+  "rendered_pages": 4,
+  "pages": [
+    {
+      "page": 1,
+      "path": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\build\\docx-correction-probes\\doc-0030\\page-1.png",
+      "selector": "div.page[data-page='1']",
+      "overflow": false,
+      "sha256": "75462da08db44c76b7fe09f9157052e704dd609627f7a82d16f2354801cff991"
+    },
+    {
+      "page": 2,
+      "path": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\build\\docx-correction-probes\\doc-0030\\page-2.png",
+      "selector": "div.page[data-page='2']",
+      "overflow": false,
+      "sha256": "a2e1cb2cdbec6917916990d544934c24d3453b25a235811719fd42d6ee4a5bf9"
+    },
+    {
+      "page": 3,
+      "path": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\build\\docx-correction-probes\\doc-0030\\page-3.png",
+      "selector": "div.page[data-page='3']",
+      "overflow": false,
+      "sha256": "cd04e919d9de79d4a0d7e206e64e65aab5ad6ae556e5532e96373dfad50b1b4a"
+    },
+    {
+      "page": 4,
+      "path": "C:\\Users\\jolan\\repos\\synthetic-content-generator\\examples\\semiconductor-company\\build\\docx-correction-probes\\doc-0030\\page-4.png",
+      "selector": "div.page[data-page='4']",
+      "overflow": false,
+      "sha256": "e0f70dcd1880bdaa55cfc47ce530e350d444d9724a89b535dd3522b8c6d6bc41"
+    }
+  ]
+}
