@@ -4,6 +4,7 @@ import json
 import subprocess
 import sys
 import tempfile
+import unicodedata
 import unittest
 import zipfile
 from pathlib import Path
@@ -341,6 +342,105 @@ class CompanyTests(unittest.TestCase):
         self.assertEqual(len(filenames), len(set(filenames)))
         self.assertTrue(any("Edition 2" in d["filename"] for d in plan["documents"]))
         self.assertEqual(plan, company.create_plan(self.canon))
+
+    def test_portable_unicode_filename_budgets(self):
+        for title in ("Plain ASCII " * 100, "\u754c" * 200, "Cafe\u0301 " * 100):
+            for revision, edition in ((1, 1), (22, 123)):
+                with self.subTest(title=title[:12], revision=revision, edition=edition):
+                    filename = company.document_filename(title, "2022-02-01", "docx", revision, edition)
+                    self.assertLessEqual(len(filename), company.MAX_FILENAME_LENGTH)
+                    self.assertLessEqual(len(filename.encode("utf-8")), company.MAX_COMPONENT_BYTES)
+                    self.assertEqual(filename, company.document_filename(
+                        title, "2022-02-01", "docx", revision, edition))
+                    self.assertTrue(filename.endswith(".docx"))
+                    if edition > 1:
+                        self.assertTrue(filename.endswith(" - v22 - Edition 123.docx"))
+        self.assertEqual(company.document_filename("Launch Plan", "2022-02-01", "docx"),
+                         "2022-02-01 - Launch Plan.docx")
+        doc = copy.deepcopy(self.plan["documents"][0])
+        doc["filename"] = doc["publication_date"] + " - " + "\u754c" * 110 + "." + doc["format"]
+        with self.assertRaisesRegex(company.Invalid, "nonportable"):
+            company.validate_document_name(doc)
+
+    def test_portable_ids_reject_reserved_names_and_collisions(self):
+        for identifier in ("CON", "nul", "LPT1", "COM\u00b9", "A" * 250):
+            plan = copy.deepcopy(self.plan)
+            plan["documents"][0]["id"] = identifier
+            with self.subTest(identifier=identifier), self.assertRaises(company.Invalid):
+                company.validate_plan(self.canon, plan)
+        for first, second in (("CASEID", "caseid"), ("caf\u00e9", "cafe\u0301")):
+            plan = copy.deepcopy(self.plan)
+            plan["documents"][0]["id"], plan["documents"][1]["id"] = first, second
+            with self.subTest(first=first), self.assertRaisesRegex(company.Invalid, "ignoring case/Unicode"):
+                company.validate_plan(self.canon, plan)
+        for component in ("CON.json", "aux.txt", "LPT9.more.json", "trailing.", "trailing "):
+            with self.subTest(component=component), self.assertRaises(company.Invalid):
+                company.portable_component(component)
+        self.assertEqual(company.name_key("caf\u00e9.docx"), company.name_key("cafe\u0301.docx"))
+
+    def test_stored_paths_reject_foreign_absolute_and_traversal(self):
+        for value in ("", ".", "/etc/passwd", "\\rooted", "C:\\file", "C:file",
+                      "\\\\host\\share\\file", "\\\\?\\C:\\file", "build/../file",
+                      "build\\..\\file", "build/..\\file", "file\0.json"):
+            with self.subTest(value=value), self.assertRaises(company.Invalid):
+                company.relative_parts(value)
+
+    def test_stored_paths_preserve_distinct_unicode_files(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            decomposed = root / "cafe\u0301.json"
+            decomposed.write_bytes(b"first")
+            resolved = company.stored_path(root, "caf\u00e9.json")
+            self.assertEqual(resolved.read_bytes(), b"first")
+            composed = root / "caf\u00e9.json"
+            if not composed.exists():
+                composed.write_bytes(b"second")
+                self.assertNotEqual(company.stored_path(root, composed.name),
+                                    company.stored_path(root, decomposed.name))
+                self.assertEqual(company.stored_path(root, composed.name).read_bytes(), b"second")
+            self.assertEqual(unicodedata.normalize("NFC", resolved.name), "caf\u00e9.json")
+
+    def test_stored_paths_reject_escaping_symlink(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory) / "root"
+            root.mkdir()
+            outside = Path(directory) / "outside"
+            outside.mkdir()
+            link = root / "link"
+            try:
+                link.symlink_to(outside, target_is_directory=True)
+            except (OSError, NotImplementedError) as exc:
+                self.skipTest(f"Host cannot create test symlink: {exc}")
+            for value in ("link/file.json", "link\\file.json"):
+                with self.subTest(value=value), self.assertRaisesRegex(company.Invalid, "escapes"):
+                    company.stored_path(root, value)
+
+    def test_included_windows_manifest_resolves_without_rewriting(self):
+        root = ROOT / "examples" / "semiconductor-company"
+        path = root / "build" / "manifest.json"
+        before = path.read_bytes()
+        canon, plan, manifest = company.load(root / "canon.json"), company.load(root / "build" / "plan.json"), company.load(path)
+        self.assertEqual(len(company.manifest_files(canon, plan, manifest, root)), 50)
+        self.assertEqual(path.read_bytes(), before)
+
+    def test_manifest_accepts_unicode_normalization_without_conflating_files(self):
+        self.canon = company.seed_canon(dict(self.request, documents=3))
+        self.plan = company.create_plan(self.canon)
+        doc = self.plan["documents"][0]
+        doc["filename"] = f"{doc['publication_date']} - Caf\u00e9 launch.{doc['format']}"
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            manifest, _ = self.create_audit_fixture(root, root / "build" / "drafts")
+            source = root / "documents" / doc["filename"]
+            decomposed = source.with_name(unicodedata.normalize("NFD", source.name))
+            if source.name != decomposed.name:
+                source.rename(decomposed)
+            files = company.manifest_files(self.canon, self.plan, manifest, root)
+            self.assertEqual(company.file_hash(files[doc["id"]]), manifest["documents"][0]["sha256"])
+            if not source.exists():
+                source.write_bytes(decomposed.read_bytes())
+                with self.assertRaisesRegex(company.Invalid, "only the manifested"):
+                    company.manifest_files(self.canon, self.plan, manifest, root)
 
     def test_reject_generic_or_unsafe_names(self):
         for field, value in (
@@ -752,7 +852,7 @@ class CompanyTests(unittest.TestCase):
                     package.writestr(part, content)
             digest = company.file_hash(path)
             manifest["documents"].append({
-                "document_id": doc["id"], "path": str(path.relative_to(root)), "sha256": digest})
+                "document_id": doc["id"], "path": path.relative_to(root).as_posix(), "sha256": digest})
             review = {
                 "document_id": doc["id"], "artifact_sha256": digest,
                 "draft_sha256": company.file_hash(draft_path),
@@ -794,7 +894,7 @@ class CompanyTests(unittest.TestCase):
             root = Path(directory)
             manifest, _ = self.create_audit_fixture(root, root / "build" / "drafts")
             manifest["documents"][0]["path"] = "../escaped.docx"
-            with self.assertRaisesRegex(company.Invalid, "escaping artifact path"):
+            with self.assertRaisesRegex(company.Invalid, "relative without traversal"):
                 company.audit(self.canon, self.plan, root / "build" / "drafts", manifest, root)
 
     def test_audit_rejects_generic_artifact_filename(self):
@@ -805,7 +905,7 @@ class CompanyTests(unittest.TestCase):
             manifest, _ = self.create_audit_fixture(root, root / "build" / "drafts")
             entry = manifest["documents"][0]
             original = root / entry["path"]
-            entry["path"] = str(Path("documents") / f"{entry['document_id']}{original.suffix}")
+            entry["path"] = (Path("documents") / f"{entry['document_id']}{original.suffix}").as_posix()
             original.rename(root / entry["path"])
             with self.assertRaisesRegex(company.Invalid, "descriptive planned filename"):
                 company.audit(self.canon, self.plan, root / "build" / "drafts", manifest, root)
@@ -937,7 +1037,7 @@ class CompanyTests(unittest.TestCase):
             original = root / entry["path"]
             moved = root / "build" / original.name
             original.rename(moved)
-            entry["path"] = str(moved.relative_to(root))
+            entry["path"] = moved.relative_to(root).as_posix()
             with self.assertRaisesRegex(company.Invalid, "final artifacts must be in documents"):
                 company.audit(self.canon, self.plan, drafts, manifest, root)
 

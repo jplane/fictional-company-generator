@@ -8,6 +8,15 @@ canon/plan fingerprints. Physical paths live in the manifest or optional resourc
 bindings, not canonical business facts. Moving unchanged artifacts and rebinding
 storage does not change their logical provenance.
 
+New filesystem references use `/` on every host. Legacy Windows separators are
+interpreted only while resolving references, never by rewriting source JSON or
+recalculating its hash-bound identity. This permits unchanged artifacts and
+relative evidence to be located after a move, but does not bypass changed
+checker-script or tool identities, missing evidence, or required actual reviews.
+See `contracts.md` for path containment and portable-name rules. Native absolute
+paths recorded in historical raw logs are observations, not portable storage
+references or instructions to access another machine.
+
 Record exporter associations during authoring; resolve exact mappings in the
 explicit QA pass **after the final OfficeCLI save and saved-cache verification**.
 Reopening and saving, changing prose, rearranging slides, editing formulas, or
@@ -18,7 +27,7 @@ write artifact hashes back into the frozen canon.
 ## Exporter handoff
 
 For new execution-version-2 runs, generation persists private associations under
-`build\export-bindings` and completes with a manifest/generation receipt. It does
+`build/export-bindings` and completes with a manifest/generation receipt. It does
 not require detailed corpus occurrence mapping or certify complete provenance.
 `officecli_runner.py qa` resolves and verifies those associations, creates the
 index/mappings/provenance/coverage, and prepares additional reviews.
@@ -30,13 +39,13 @@ Existing version-1 execution and direct provenance commands retain the sequence:
 2. Author/save with OfficeCLI, using checked standalone batches or flushing
    run-owned residents. Reopen/check saved formulas and capture required HTML
    renders. Index only final saved bytes; no Microsoft Office step is required.
-3. Record actual final artifact hashes in `build\manifest.json`.
+3. Record actual final artifact hashes in `build/manifest.json`.
 4. Run `index-artifacts` with canon, plan, manifest, root, and an explicit
-   `build\artifact-index.json` output path.
+   `build/artifact-index.json` output path.
 5. Associate **every `(section_index, claim_id)` use** with an exact occurrence
    in the indexed final content. Export-time tracking can help, but final bytes
    must still be verified. Never choose the first matching token blindly.
-6. Save the associations as `build\claim-locations.json`; run
+6. Save the associations as `build/claim-locations.json`; run
    `verify-provenance` and `coverage`, then the complete `audit`.
 
 The CLI calls appear in `SKILL.md`. Complete-corpus commands require the entire
@@ -225,7 +234,7 @@ rejects stale, incomplete, ambiguous, reused, or forged evidence.
 
 ## Optional storage bindings
 
-`build\resource-bindings.json` has `schema_version: 2`, `corpus_id`, and a
+`build/resource-bindings.json` has `schema_version: 2`, `corpus_id`, and a
 `bindings` list. Each entry identifies document, revision, artifact hash,
 and exactly one storage kind:
 

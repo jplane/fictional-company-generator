@@ -49,12 +49,12 @@ the helper never initiates AI calls or spawns workers.
 
 `content_depth` is optional and accepts exactly `light`, `medium`, or `deep`.
 Omission resolves to `medium`; `init` writes that resolved value into the
-canonical request and `build\request.json` without mutating the input config.
+canonical request and `build/request.json` without mutating the input config.
 Depth applies to every requested document, not the document count or format mix.
 Depth does not enable imperfections, change access rules, or weaken provenance.
-`references\content-types.md` defines substantive coverage and measurable
+`references/content-types.md` defines substantive coverage and measurable
 planning targets for each genre. Record run-specific targets and justified
-adaptations in `build\depth-targets.json` before drafting. The helper validates
+adaptations in `build/depth-targets.json` before drafting. The helper validates
 the setting and its propagation, not word counts, sheet counts, or analytical
 quality; those require an honest depth review of delivered content.
 
@@ -116,7 +116,7 @@ an explicit error rather than a fallback to another content type.
 The output root has exactly `canon.json`, `documents`, and `build`.
 `canon.json` is the single core info set on which content is grounded.
 `init` writes it, creates both directories, and puts the resolved request at
-`build\request.json`. Organization records (`person`, `department`, `role`) and
+`build/request.json`. Organization records (`person`, `department`, `role`) and
 term definitions (`glossary`) remain in the canon's `records`; they are not
 removed or flattened. No standalone org-chart or glossary files are generated.
 Writer contexts derive both views directly from date-filtered canon records.
@@ -400,7 +400,7 @@ otherwise known information. These IDs and all other scaffolding stay private.
 
 ## Drafts and grounded claims
 
-Each draft file under `build\drafts` is named `<document-id>.json`. Required fields:
+Each draft file under `build/drafts` is named `<document-id>.json`. Required fields:
 
 ```json
 {
@@ -485,7 +485,7 @@ manual semantic/genre review must check the entire document and its properties.
 
 ## Manifest and QA
 
-The manifest lives at `build\manifest.json`. Paths are relative to `--root`, and may
+The manifest lives at `build/manifest.json`. Paths are relative to `--root`, and may
 not escape that directory, including through symbolic links.
 
 ```json
@@ -504,7 +504,40 @@ not escape that directory, including through symbolic links.
 }
 ```
 
-JSON paths may use `/` portably; Windows shell commands use `\`.
+New persisted relative filesystem references **must use `/`**, including
+manifests, job inputs, capability references, checks, screenshots, and capture
+results. Serialize Python paths with `.as_posix()`, not `str(path)`. Readers
+accept legacy backslashes (including mixed separators) without modifying
+recorded data or the fingerprints computed from it. Backslashes in this storage
+contract mean separators, not literal POSIX filename characters.
+
+Stored paths reject absolute/rooted paths, Windows drives (including `C:file`),
+UNC/device paths, NULs, and `..` components on every OS. Resolved files must stay
+inside the permitted subtree, including through symlinks/junctions. Jobs live
+under `build` but their stored paths are **corpus-root-relative**, such as
+`build/layouts/family.json`. Preflight image names are relative to `build`.
+Local resource bindings follow the relative-path syntax contract, without
+requiring their target to exist in the current corpus.
+
+Native CLI arguments such as `--root`, `--out`, and `--officecli` are not stored
+path references. `--jobs` also accepts a native absolute path inside the corpus
+`build` directory. Do not normalize executable identities, raw tool output,
+OfficeCLI DOM paths, URLs, or OOXML part names as filesystem references.
+
+Document/render IDs use letters, digits, combining marks, hyphens, or underscores;
+they must be unique ignoring case and canonical Unicode normalization in their
+namespace. Windows device names such as `CON`, `NUL`, `COM1`, and `LPT1` are
+rejected on every host. Complete derived filename components must fit 255 UTF-8
+bytes. Final document filenames additionally retain their 140-character limit;
+new generated names are shortened deterministically within both budgets while
+preserving date, extension, revision, and edition suffixes. Existing invalid
+inputs fail explicitly rather than being silently renamed. Case/Unicode-equivalent
+final filenames cannot coexist in a plan. Filesystem normalization differences
+on macOS do not change a frozen plan's names or hashes.
+
+Legacy path reading is not receipt migration. Strict checker-script and tool
+identity checks still apply; a changed checker requires an explicit affected
+revision. Do not rewrite published evidence or recertify it automatically.
 Only primary Office files count toward the requested target. The manifest must
 contain exactly one entry per plan document. Package audit verifies CRCs,
 parsable XML, and mandatory parts, not full OOXML schema conformance.
@@ -546,24 +579,24 @@ it is not the new generation-only entry point.
 **Generation completion** requires complete verified files, automatic checks and
 actual full pilot/corrective reviews, not corpus QA. `run` prepares pilots, then
 awaits their reviews before scheduling siblings. `assemble` writes the manifest
-and `build\generation.json` after `audit_generation`; `company.py
+and `build/generation.json` after `audit_generation`; `company.py
 audit-generation` is the standalone recheck. Generation checks retain canonical
 claims/date/access/sections, package integrity/self-description, title/filename,
 depth measurements, OfficeCLI validation/issues/extraction, saved formulas and
 chart-cache scans. Declare and structurally verify all render targets even for
 uncaptured documents. All unproven fields/drawings/charts/formulas still block.
 
-`machine_version: 2` generation receipts stay under `build\machine`. They bind
+`machine_version: 2` generation receipts stay under `build/machine`. They bind
 `generation_sha256`, `job_sha256`, private `export_bindings_sha256`, actual bytes,
 drafts, capability identities, declared targets and completed mechanical work.
 They also bind the helper/runner/capture-adapter source hashes; changed checkers
 require an explicit affected revision, not silent receipt reuse.
-Private authoring associations live under `build\export-bindings`. Generation
+Private authoring associations live under `build/export-bindings`. Generation
 does not certify every sibling's rendered layout or exact final-file claim
 locations. Capture complete pilots and explicit corrective review documents;
 do not silently perform bulk policy-selected captures when QA is disabled.
 
-`build\generation.json` reports `generation_status: "complete"`, actual count,
+`build/generation.json` reports `generation_status: "complete"`, actual count,
 the generation fingerprint, completion timestamp, pilot/corrective-review count
 and the QA state at that milestone (`not_requested` or `pending`).
 Missing/failed generation must be reported as partial/blocked, not completed.
@@ -574,24 +607,30 @@ rewrite an accepted generation milestone merely to update its historical label.
 
 ```powershell
 python .github\skills\company-content-generator\scripts\officecli_runner.py qa --root "$outputRoot" --jobs build\jobs.json
+```
+
+macOS/Linux (bash/zsh; active virtual environment):
+
+```sh
+python .github/skills/company-content-generator/scripts/officecli_runner.py qa --root "$outputRoot" --jobs build/jobs.json
 # A later explicit choice can add --policy Sampled, Balanced, or Full.
 ```
 
 Invoke it automatically after generation if intake selected QA; do not invoke it
 otherwise. It first verifies generation, then prepares missing selected renders
-and separate `build\qa-machine` evidence without reauthoring files. Selection can
+and separate `build/qa-machine` evidence without reauthoring files. Selection can
 be computed before renders exist; final `make_review_plan` binding still requires
 actual selected renders. Exact mappings, index, verified provenance and coverage
 are assembled in this pass. `review_version: 2` binds the execution fingerprint,
 preflight file, draft/artifact hashes, QA machine hashes and required gates.
 
-`build\review-work.json` holds pending required gates and any reusable actual
+`build/review-work.json` holds pending required gates and any reusable actual
 reviews, never invented passes. Reviewers save actual per-document entries under
-`build\reviews`. Entries bind document/artifact/draft, current QA `machine_sha256`
+`build/reviews`. Entries bind document/artifact/draft, current QA `machine_sha256`
 and stable `generation_machine_sha256`. Unchanged content evidence can be reused
 when only visual scope expands; visuals additionally require their current
 machine binding. The original accepted generation pilot review is preserved at
-`build\pilot-reviews\<id>.json` when additional QA starts, so replacing a combined
+`build/pilot-reviews/<id>.json` when additional QA starts, so replacing a combined
 QA review cannot invalidate the pilot gate.
 
 `finalize-qa` collects and validates reviews, writes `qa.json` with
@@ -610,7 +649,7 @@ are never waived by choosing no additional QA. An editorial/visual sample failur
 must be retained and its family explicitly flagged before resuming QA.
 
 **Resume and concurrency:** `runner_version: 2` aggregates document-owned durable
-records under `build\document-state`. QA work has a distinct nested `qa_state`;
+records under `build/document-state`. QA work has a distinct nested `qa_state`;
 it never consumes generation's successful-state evidence or rewrites generation
 machine receipts. Persist attempts before side effects, including captures.
 One concrete corrective retry is allowed across resume; a second failure stops.
@@ -645,7 +684,7 @@ mtime-only trust is permitted.
 
 Business `schema_version` stays **2**. Existing execution sidecars separately use
 `execution_version: 1` / `review_version: 1`. Their original builder is
-`build\execution-plan.json` through `company.execution_plan(canon, plan, layouts,
+`build/execution-plan.json` through `company.execution_plan(canon, plan, layouts,
 pilot_ids, qa_policy="Balanced", revision=1, flagged_ids=[],
 budget_seconds=None)`. Its header is `receipt_header(canon, plan)`; every layout
 entry contains `document_id`, nonempty `layout_revision`, and `layout_sha256`
@@ -677,14 +716,14 @@ required genre sections, measurable depth, structure/self-labeling, schema/issue
 title/filename/hash, supported saved formula values, provenance and coverage.
 These mechanical guards do not certify semantic entailment or substantive depth.
 
-`make_review_plan` recomputes `build\review-plan.json`, bound to canon/plan,
+`make_review_plan` recomputes `build/review-plan.json`, bound to canon/plan,
 execution fingerprint, preflight file hash, per-document draft/artifact/machine
 hashes, normalized sizes, selection reasons, and `content_required` /
 `visual_required`. Audit recomputes and compares the entire plan, not policy
 strings or claimed counts. Nonselected gates must be exactly
 `{"status": "not_selected"}`, not successful reviews.
 
-The runner writes `build\machine\<document-id>.json` for complete mechanical
+The runner writes `build/machine/<document-id>.json` for complete mechanical
 checks. It binds final artifact/draft hashes, OfficeCLI identity, the
 Playwright-Chromium capture-tool identity, a hash-bound capability snapshot,
 tool-result files, measured depth targets, and actual HTML-export +
@@ -699,7 +738,7 @@ expand review by themselves. Failed, timed-out, and interrupted inspection
 attempts remain counted across resume and hash changes; a second failure
 blocks further attempts. Mutating operations retain their two-attempt limit.
 
-`build\qa.json` records honest review evidence. For new runs it adds
+`build/qa.json` records honest review evidence. For new runs it adds
 `execution_version: 1`, `execution_sha256` (execution object's fingerprint),
 `review_plan_sha256` (review-plan object's fingerprint), and `qa_policy`.
 Every document also binds `machine_sha256`; this example is for a selected
@@ -752,7 +791,7 @@ recalculation-on-open flag. Selected visuals bind every render ID and require
 `images_delivered: true`; missing/undisplayed/unreadable images never count.
 Every selected content review requires `depth_review` with passed status, nonempty evidence,
 and `content_depth` equal to the plan. Evidence should cite actual delivered
-coverage, measurements, and useful analyses against `build\depth-targets.json`;
+coverage, measurements, and useful analyses against `build/depth-targets.json`;
 length alone or a larger collection of sheets is not evidence of depth.
 Changing a plan, draft, or output invalidates its QA receipt. The audit checks receipt
 presence and hashes; it cannot independently establish that a human or AI
@@ -760,8 +799,8 @@ actually performed the claimed review.
 
 Configured carrier documents also require passed `condition_review` with
 nonempty evidence describing actual gap/conflict/noise/staleness inspection.
-Final audit recomputes `build\provenance.json` from `claim-locations.json` and
-final files, and recomputes `build\coverage.json`. Merely setting a passed flag
+Final audit recomputes `build/provenance.json` from `claim-locations.json` and
+final files, and recomputes `build/coverage.json`. Merely setting a passed flag
 cannot satisfy these checks. See `provenance.md` for the mapping/binding schemas.
 All per-section claim uses require distinct final-artifact occurrences.
 
@@ -782,7 +821,7 @@ report that distinction separately.
 `access-view` first audits the corpus and returns only eligible document
 identities, revisions/hashes, filenames, and filtered occurrence metadata at
 the requested date/principal. Future/restricted documents and private build
-annotations are omitted. Its output belongs under `build\views`; it does not
+annotations are omitted. Its output belongs under `build/views`; it does not
 copy artifacts, enforce ACLs, or upload content. Distribute selected evidence,
 not the entire canon/build tree, through a separate deployment tool.
 
@@ -800,7 +839,7 @@ rewrite the authoring engine for accepted historical bytes.
 
 ### Thin OfficeCLI runner job contract
 
-The standard-library `scripts\officecli_runner.py` is a mechanical runner, not
+The standard-library `scripts/officecli_runner.py` is a mechanical runner, not
 an authoring framework. Store a JSON array of jobs under `build`; each job has:
 
 - `document_id` and `layout_file` (a build-relative frozen layout/template file).
@@ -836,7 +875,7 @@ an authoring framework. Store a JSON array of jobs under `build`; each job has:
   retain this original required field.
 
 Run pilots first with a subset job file. After actually reviewing each pilot,
-write its hash-bound review entry to `build\reviews\<document-id>.json`; all five
+write its hash-bound review entry to `build/reviews/<document-id>.json`; all five
 review gates are present (`condition_review` is `not_selected` if no carrier).
 Only then run family siblings. Draft validation/sample sizing requires the
 complete frozen draft set; it does not give writers unfiltered canonical data.
@@ -860,7 +899,7 @@ Phase logs distinguish active execution from between-invocation waits.
 
 ## Depth targets
 
-`build\depth-targets.json` is a planning/review sidecar, not an additional source
+`build/depth-targets.json` is a planning/review sidecar, not an additional source
 of business facts. Set targets after planning but before drafting and pilot
 review. Cover every planned document, including custom types:
 

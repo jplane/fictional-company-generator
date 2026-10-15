@@ -436,9 +436,9 @@ def preflight(cli, formats, out):
     return receipt
 
 
-def local_input(root, relative):
+def local_input(root, relative, *, native_cli=False):
     company.require(company.text(relative), "Missing runner input path")
-    path = Path(root) / relative
+    path = Path(relative).resolve() if native_cli and Path(relative).is_absolute() else company.stored_path(root, relative)
     company.require_build_path(path, root)
     company.require(path.is_file(), f"Missing runner input: {relative}")
     return path
@@ -593,7 +593,7 @@ class Runner:
             company.require(company.load(capability_path) == self.capability, "Changed pinned capability snapshot")
         else:
             company.save(capability_path, self.capability)
-        self.capability_ref = {"path": str(capability_path.relative_to(self.root)),
+        self.capability_ref = {"path": capability_path.relative_to(self.root).as_posix(),
                                "sha256": company.file_hash(capability_path)}
         if self.state.get("last_checkpoint_at"):
             wait = (datetime.now(timezone.utc) -
@@ -803,6 +803,12 @@ class Runner:
         identifier = job.get("document_id")
         company.require(identifier in self.docs, "Unplanned runner job")
         doc = self.docs[identifier]
+        targets = job.get("render_targets", [])
+        company.require(isinstance(targets, list) and all(isinstance(t, dict) for t in targets),
+                        "Invalid render targets")
+        company.validate_file_ids([t.get("id") for t in targets], "render ID")
+        for target in targets:
+            company.portable_component(f"{identifier}-render-{target['id']}.json")
         draft_path = self.build / "drafts" / f"{identifier}.json"
         draft = company.load(draft_path)
         company.require(company.file_hash(draft_path) == self.base_selection[identifier]["draft_sha256"],
@@ -924,7 +930,7 @@ class Runner:
                         "evidence": "Checked package/self-label scans and planned visible/core business title"}
         document_path = self.build / "tool-results" / f"{identifier}-document.json"
         write_json(document_path, document_log)
-        checks.append({"operation": "document", "path": str(document_path.relative_to(self.root)),
+        checks.append({"operation": "document", "path": document_path.relative_to(self.root).as_posix(),
                        "sha256": company.file_hash(document_path)})
         for operation, arguments in (("validate", ["validate", str(path)]),
                                      ("issues", ["view", str(path), "issues"]),
@@ -932,7 +938,7 @@ class Runner:
             log = self.inspection(state, arguments, operation, digest)
             log_path = self.build / "tool-results" / f"{identifier}-{operation}.json"
             write_json(log_path, log)
-            checks.append({"operation": operation, "path": str(log_path.relative_to(self.root)),
+            checks.append({"operation": operation, "path": log_path.relative_to(self.root).as_posix(),
                            "sha256": company.file_hash(log_path)})
         if doc["format"] == "xlsx":
             self.boundary()
@@ -941,16 +947,13 @@ class Runner:
             log.update(status="passed", artifact_sha256=digest, evidence="Complete chart-cache issue scan")
             log_path = self.build / "tool-results" / f"{identifier}-chart-cache.json"
             write_json(log_path, log)
-            checks.append({"operation": "chart_cache_stale", "path": str(log_path.relative_to(self.root)),
+            checks.append({"operation": "chart_cache_stale", "path": log_path.relative_to(self.root).as_posix(),
                            "sha256": company.file_hash(log_path)})
             expected.update(status="passed", artifact_sha256=digest)
             expected_path = self.build / "tool-results" / f"{identifier}-formulas.json"
             write_json(expected_path, expected)
-            checks.append({"operation": "formulas", "path": str(expected_path.relative_to(self.root)),
+            checks.append({"operation": "formulas", "path": expected_path.relative_to(self.root).as_posix(),
                            "sha256": company.file_hash(expected_path)})
-        targets = job.get("render_targets", [])
-        company.require(isinstance(targets, list) and len({t["id"] for t in targets}) == len(targets),
-                        "Invalid/duplicate render targets")
         renders = []
         selected = self.selection_for(identifier)
         if self.modern:
@@ -975,12 +978,11 @@ class Runner:
                             "OfficeCLI HTML export missing/empty")
             html_log_path = self.build / "tool-results" / f"{identifier}-html_export.json"
             write_json(html_log_path, html_log)
-            checks.append({"operation": "html_export", "path": str(html_log_path.relative_to(self.root)),
+            checks.append({"operation": "html_export", "path": html_log_path.relative_to(self.root).as_posix(),
                            "sha256": company.file_hash(html_log_path)})
             source_html_sha256 = company.file_hash(html_path)
             for target in targets:
                 self.boundary()
-                company.require(target["id"].replace("-", "").replace("_", "").isalnum(), "Unsafe render ID")
                 out_dir = self.build / "renders" / identifier / target["id"]
                 operation = f"render-{target['id']}"
                 images, capture_log = self.capture_images(state, html_path, doc, target,
@@ -998,7 +1000,7 @@ class Runner:
                     company.require(image_path.is_file()
                                     and image_path.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"),
                                     "Missing/unreadable Playwright screenshot")
-                    ref = {"path": str(image_path.relative_to(self.root)), "sha256": image_entry["sha256"]}
+                    ref = {"path": image_path.relative_to(self.root).as_posix(), "sha256": image_entry["sha256"]}
                     if "page" in image_entry:
                         ref["page"] = image_entry["page"]
                         ref["overflow"] = image_entry["overflow"]
@@ -1007,7 +1009,7 @@ class Runner:
                     image_refs.append(ref)
                 renders.append({"id": target["id"], "images": image_refs,
                     "renderer": "OfficeCLI-HTML+Playwright-Chromium", "artifact_sha256": digest,
-                    "result": {"path": str(capture_log_path.relative_to(self.root)),
+                    "result": {"path": capture_log_path.relative_to(self.root).as_posix(),
                               "sha256": company.file_hash(capture_log_path)}})
         depth = company.load(self.build / "depth-targets.json")
         company.require(depth.get("plan_sha256") == company.fingerprint(self.plan), "Stale depth targets")
@@ -1023,7 +1025,7 @@ class Runner:
                      "evidence": "Measured delivered content against frozen targets; not substantive certification"}
         depth_path = self.build / "tool-results" / f"{identifier}-depth.json"
         write_json(depth_path, depth_log)
-        checks.append({"operation": "depth", "path": str(depth_path.relative_to(self.root)),
+        checks.append({"operation": "depth", "path": depth_path.relative_to(self.root).as_posix(),
                        "sha256": company.file_hash(depth_path)})
         machine = dict(company.receipt_header(self.canon, self.plan), document_id=identifier,
             engine="OfficeCLI", tool=self.cli.tool, author_tool=state["author_tool"],
@@ -1084,7 +1086,7 @@ class Runner:
             path = self.root / "documents" / self.docs[identifier]["filename"]
             company.require(company.file_hash(path) == state["artifact_sha256"], "Changed final artifact")
             manifest["documents"].append({"document_id": identifier,
-                "path": str(path.relative_to(self.root)), "sha256": state["artifact_sha256"]})
+                "path": path.relative_to(self.root).as_posix(), "sha256": state["artifact_sha256"]})
             occurrences = job.get("occurrences")
             if self.modern:
                 binding = company.load(self.build / "export-bindings" / f"{identifier}.json")
@@ -1182,9 +1184,13 @@ class GenerationRunner(Runner):
             checkpoint = company.load(path)
             company.require(checkpoint.get("generation_sha256") == self.state["generation_sha256"],
                             "Stale document checkpoint; create an affected revision")
-            company.require(set(checkpoint.get("documents", {})) == {path.stem} and path.stem in self.docs,
+            records = checkpoint.get("documents", {})
+            company.require(isinstance(records, dict) and len(records) == 1,
                             "Invalid document checkpoint identity")
-            self.state["documents"][path.stem] = checkpoint["documents"][path.stem]
+            identifier = next(iter(records))
+            company.require(identifier in self.docs and company.same_filename(identifier, path.stem),
+                            "Invalid document checkpoint identity")
+            self.state["documents"][identifier] = records[identifier]
             for event in checkpoint.get("phases", []):
                 if event.get("status") == "running":
                     event["status"] = "interrupted"
@@ -1425,7 +1431,7 @@ class GenerationRunner(Runner):
                                 self.root, job, self.canon, self.plan, True),
                             f"{identifier}: incomplete/changed generation job")
             manifest["documents"].append({"document_id": identifier,
-                "path": str(Path("documents") / self.docs[identifier]["filename"]),
+                "path": (Path("documents") / self.docs[identifier]["filename"]).as_posix(),
                 "sha256": state["artifact_sha256"]})
         result = self.measured("generation_verification", company.audit_generation,
                                self.canon, self.plan, self.build / "drafts", manifest, self.root)
@@ -1490,7 +1496,7 @@ class GenerationRunner(Runner):
                               review_plan_sha256=company.fingerprint(review_plan), prepared_at=timestamp())
                 write_json(self.build / "qa-state.json", status)
                 return {"qa_status": status["qa_status"], "review_plan": review_plan,
-                        "review_work": "build\\review-work.json"}
+                        "review_work": "build/review-work.json"}
             except (company.Invalid, OSError, subprocess.SubprocessError,
                     ArithmeticError, playwright_capture.CaptureError) as exc:
                 status.update(qa_status="blocked", blocker=str(exc), ended_at=timestamp())
@@ -1651,7 +1657,7 @@ def main(argv=None):
                 result = runner.finalize_qa()
                 print(json.dumps(result, indent=2))
                 return 0
-            jobs = company.load(local_input(runner.root, args.jobs))
+            jobs = company.load(local_input(runner.root, args.jobs, native_cli=True))
             company.require(isinstance(jobs, list) and len({j["document_id"] for j in jobs}) == len(jobs),
                             "Runner jobs must have unique document IDs")
             if args.command == "run":

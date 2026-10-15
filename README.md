@@ -34,15 +34,15 @@ not require a decision question or produce an independent evaluation answer key.
 ## Install
 
 In this repository, the skill is already project-scoped at
-`.github\skills\company-content-generator`.
+`.github/skills/company-content-generator`.
 
 To use it elsewhere, copy that **entire folder**, including `references` and
 `scripts`, to one of these locations:
 
 | Scope | Destination |
 |---|---|
-| Another project | `<project>\.github\skills\company-content-generator` |
-| Your Copilot CLI sessions | `$HOME\.copilot\skills\company-content-generator` |
+| Another project | `<project>/.github/skills/company-content-generator` |
+| Your Copilot CLI sessions | `$HOME/.copilot/skills/company-content-generator` |
 
 Do not overwrite an existing installation without reviewing it. Start a new
 Copilot session in the target project after installation.
@@ -56,7 +56,7 @@ post-update capability probes. No tools are installed automatically. Missing
 required capabilities stop the workflow; native Office and alternative
 document-engine fallbacks are not used.
 
-See `.github\skills\company-content-generator\references\dependencies.md` for
+See `.github/skills/company-content-generator/references/dependencies.md` for
 setup/update, capability checks and limitations. These tools are not bundled.
 OfficeCLI's HTML export plus Playwright-Chromium capture does not certify
 native Office layout fidelity; unsupported fields/formulas/drawing objects
@@ -97,7 +97,7 @@ or migrated.
 > covering 2020 through 2025. Include press releases, product presentations,
 > meeting transcripts, product specifications, board decks, and financial
 > workbooks. Use DOCX, PPTX, and XLSX, medium depth, and seed 42. Generate
-> the output in C:\CompanyContent\SunnySemi-2020-2025. No additional QA.
+> the output in /company-content/sunnysemi-2020-2025. No additional QA.
 
 This describes the example's scope, not a byte-for-byte reproduction command.
 Use a new output directory rather than overwriting the included corpus.
@@ -149,9 +149,9 @@ Use a new output directory rather than overwriting the included corpus.
 **Additional QA and a simulated public view of an existing corpus**
 
 > Use company-content-generator to run Full additional QA on the existing
-> corpus at examples\semiconductor-company without regenerating accepted
+> corpus at examples/semiconductor-company without regenerating accepted
 > documents. After QA and its strict audit pass, create a simulated public
-> recipient-view manifest as of 2025-12-31 under build\views. Do not treat
+> recipient-view manifest as of 2025-12-31 under build/views. Do not treat
 > the manifest as real ACL enforcement or include the private canon/build
 > tree as recipient-visible content.
 
@@ -191,11 +191,23 @@ performed. Automated structural checks do not replace editorial/visual review.
 
 For a new-contract corpus, the runner supports:
 
+**Windows PowerShell**
+
 ```powershell
 python .github\skills\company-content-generator\scripts\officecli_runner.py qa --root "C:\CompanyContent\SunnySemi-2020-2025" --jobs build\jobs.json --policy Sampled
 # Complete the required actual reviews under build\reviews, then:
 python .github\skills\company-content-generator\scripts\officecli_runner.py finalize-qa --root "C:\CompanyContent\SunnySemi-2020-2025"
 python .github\skills\company-content-generator\scripts\officecli_runner.py summary --root "C:\CompanyContent\SunnySemi-2020-2025"
+```
+
+**macOS/Linux (bash/zsh; active virtual environment)**
+
+```sh
+outputRoot="$HOME/CompanyContent/SunnySemi-2020-2025"
+python .github/skills/company-content-generator/scripts/officecli_runner.py qa --root "$outputRoot" --jobs build/jobs.json --policy Sampled
+# Complete the required actual reviews under build/reviews, then:
+python .github/skills/company-content-generator/scripts/officecli_runner.py finalize-qa --root "$outputRoot"
+python .github/skills/company-content-generator/scripts/officecli_runner.py summary --root "$outputRoot"
 ```
 
 The skill records agent-owned planning/drafting/review spans using the runner's
@@ -205,7 +217,7 @@ not zero. No throughput guarantee is inferred from synthetic tests.
 
 ## Included example
 
-[`examples\semiconductor-company`](examples/semiconductor-company) showcases
+[`examples/semiconductor-company`](examples/semiconductor-company) showcases
 **SunnySemi LLC**, a fictional, wildly successful Florida semiconductor company
 headquartered in Tampa with an engineering site in Sarasota. Its history follows
 SunCore inference ASICs, GulfSwitch power controllers, an acquisition, leadership
@@ -226,8 +238,8 @@ The example contains **50 medium-depth documents**:
 Publication dates extend through **2026-01-15** for the FY2025 financial
 workbook.
 
-`canon.json` holds the shared company facts; `documents\` contains the final
-Office files. `build\` preserves the request, accepted plan, drafts, generation
+`canon.json` holds the shared company facts; `documents/` contains the final
+Office files. `build/` preserves the request, accepted plan, drafts, generation
 scripts, exporter bindings, reviews, and machine evidence. Its `manifest.json`
 and `generation.json` record completed schema-version-2 generation.
 All 50 documents received mandatory pilot/corrective content and visual reviews
@@ -242,10 +254,20 @@ configuration for new runs.
 ## Detailed guidance
 
 The skill's `SKILL.md` contains the generation workflow and output conventions.
-Its `references\content-types.md` covers genres and depth; `references\contracts.md`
-covers structured inputs and helper usage. `references\provenance.md` explains
-portable artifact locations and storage bindings; `references\use-case-layering.md`
+Its `references/content-types.md` covers genres and depth; `references/contracts.md`
+covers structured inputs and helper usage. `references/provenance.md` explains
+portable artifact locations and storage bindings; `references/use-case-layering.md`
 shows how customer-specific decision/evaluation features can be layered above
 the general-purpose generator without implementing them in the core.
 Those files are the authoritative
 instructions rather than duplicated documentation here.
+
+## Maintenance
+
+`python -m unittest discover -s tests -q` runs the standard-library tests from
+an active virtual environment without installing OfficeCLI or Playwright.
+The `Cross-platform Python tests` GitHub Actions workflow runs the same command
+on Windows, macOS, and Ubuntu with Python 3.10 and 3.14 for pushes, pull requests,
+and manual dispatch. Its optional real-tool integrations are deliberately
+skipped: a green Python matrix does not certify document rendering.
+See `references/dependencies.md` inside the skill for opt-in real-tool checks.

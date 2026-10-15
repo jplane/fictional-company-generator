@@ -15,14 +15,25 @@ make it an objective fact. This is a general-purpose content generator, not a
 decision or agent-evaluation engine.
 Writers know only what was available at their publication date.
 
-Read `references\contracts.md` and `references\content-types.md` before generating.
-Read `references\dependencies.md` for external sources, installation, and preflight.
-Read `references\provenance.md` before preparing exporter bindings and optional QA.
-Read `references\use-case-layering.md` only when discussing an optional
+Read `references/contracts.md` and `references/content-types.md` before generating.
+Read `references/dependencies.md` for external sources, installation, and preflight.
+Read `references/provenance.md` before preparing exporter bindings and optional QA.
+Read `references/use-case-layering.md` only when discussing an optional
 customer/use-case layer; do not implement or invoke its illustrative evaluator.
-The Python helper at `scripts\company.py` uses only the standard library. Resolve
+The Python helper at `scripts/company.py` uses only the standard library. Resolve
 paths relative to this skill's directory; commands below assume the project root.
 When installed elsewhere, use the resolved absolute script path.
+
+Documentation paths and new persisted relative filesystem paths use `/` on every
+OS. Readers accept legacy `\` separators without modifying stored evidence.
+Never globally replace separators in JSON: OfficeCLI DOM paths, URLs, raw logs,
+and executable identities are different contracts. Keep native paths for CLI
+arguments and subprocess execution. Absolute CLI inputs must belong to the host;
+stored references must be relative and may not traverse `..` or escape their
+permitted subtree through links. See `references/contracts.md` for naming rules.
+See `references/dependencies.md` for PowerShell and bash/zsh venv setup, Linux
+browser prerequisites, and available fonts. Do not assume Windows paths, shell
+syntax, or Arial/Calibri are available on macOS/Linux.
 
 ## Dependencies and preflight
 
@@ -31,19 +42,19 @@ authoring/HTML-export/formula engine. Microsoft Office is not required.**
 Python 3.10+ provides business, claim, package/hash, provenance, and coverage
 checks, not document authoring. Screenshot pixels never come from OfficeCLI
 itself: a small pinned **Playwright-for-Python + matching managed Chromium**
-adapter (`scripts\playwright_capture.py`) turns OfficeCLI's own static HTML
+adapter (`scripts/playwright_capture.py`) turns OfficeCLI's own static HTML
 export into bound, checked images. OfficeCLI never does screenshotting; the
 browser adapter never authors, edits, or exports Office documents.
 
 Before creating the output directory, canon, plan, or drafts, follow
-`references\dependencies.md`: detect OfficeCLI/skill versions, check official
+`references/dependencies.md`: detect OfficeCLI/skill versions, check official
 releases once, perform authorized installation/update when missing or required,
 verify versioned release checksums and installed version, then run tiny actual
 save/reopen/check/HTML-export/Playwright-capture probes for selected formats.
 Configure only authorized skill/MCP targets. Preserve usable prior binaries;
 do not execute downloaded installers through Invoke-Expression or silently
 update mid-run. Pin OfficeCLI executable/version/hash **and** Playwright
-version/managed-Chromium executable/version/hash in `build\preflight.json`
+version/managed-Chromium executable/version/hash in `build/preflight.json`
 (`capture_tool` identity); revalidate changed capabilities on resume.
 Maintaining this skill and running helper tests do not require Microsoft
 Office or generation intake.
@@ -134,11 +145,11 @@ Do not access real employee/customer/internal-company data to fill gaps.
 The chosen output root must contain exactly:
 
 ```text
-<output>\
+<output>/
   canon.json
-  documents\
+  documents/
     <realistically named final Office documents>
-  build\
+  build/
     request.json
     plan.json
     manifest.json
@@ -150,25 +161,25 @@ The chosen output root must contain exactly:
     review-plan.json        (additional QA)
     review-work.json        (additional QA; pending gates are not passes)
     runner-state.json
-    machine\
-    qa-machine\            (additional QA; generation receipts stay unchanged)
-    document-state\
-    export-bindings\
+    machine/
+    qa-machine/            (additional QA; generation receipts stay unchanged)
+    document-state/
+    export-bindings/
     timings.json           (agent-recorded phase spans)
-    tool-results\
-    reviews\
-    pilot-reviews\         (preserved generation reviews when additional QA starts)
+    tool-results/
+    reviews/
+    pilot-reviews/         (preserved generation reviews when additional QA starts)
     depth-targets.json
     artifact-index.json    (additional QA)
     claim-locations.json   (additional QA)
     provenance.json        (additional QA)
     coverage.json          (additional QA)
     resource-bindings.json  (optional)
-    views\                 (requested simulated delivery manifests)
-    drafts\
-    contexts\
-    scripts\
-    renders\
+    views/                 (requested simulated delivery manifests)
+    drafts/
+    contexts/
+    scripts/
+    renders/
 ```
 
 `canon.json` is the entire **core info set** and the only root-level file. It
@@ -288,7 +299,7 @@ have an explicitly requested disagreement.
 | **Deep** | Detailed working/reference document: richer source granularity, reconciled analyses, alternatives, dependencies, detailed examples, implementation controls, and appendices where useful. |
 
 Follow the genre-specific coverage and measurable targets in
-`references\content-types.md`. Before freezing, expand the canon with enough
+`references/content-types.md`. Before freezing, expand the canon with enough
 public-safe details, approved quotes, requirements, meeting positions, financial
 breakdowns, historical comparisons, and assumptions to support the selected depth.
 The seeded baseline is not sufficient merely because it validates. More depth
@@ -300,7 +311,7 @@ inventing actuals, forecasts, certifications, customer results, or legal claims.
 When requested analysis requires unavailable facts, enrich the canon before
 freeze or report a blocker; never silently downgrade depth.
 
-Set concrete per-document genre targets in `build\depth-targets.json` before drafting,
+Set concrete per-document genre targets in `build/depth-targets.json` before drafting,
 using the playbook's ranges and useful analysis modules. Justify any adaptation
 to industry/audience/format there rather than silently weakening the targets.
 Pilots must meet those targets before bulk export. Review both substantive
@@ -310,7 +321,7 @@ not in the company's document prose.
 
 ## Authentic business content
 
-Follow `references\content-types.md` for each genre's structure, voice, detail,
+Follow `references/content-types.md` for each genre's structure, voice, detail,
 and acceptance criteria. Write complete business content, not descriptions of
 what a document would contain, outlines, canonical record dumps, generic
 summaries, or the same prose wrapped in three Office formats. A press release
@@ -375,12 +386,23 @@ Commands below use `$outputRoot`, the resolved path explicitly supplied by the
 user, and `request.json`, the bootstrap input in the session workspace. Substitute
 the resolved absolute script path when the skill is installed outside this
 project. Do not run examples with an unset path or assume the example is intake.
+Use the active virtual environment's `python`. Each step includes Windows
+PowerShell and macOS/Linux bash/zsh forms. For example, define
+`$outputRoot = "C:\CompanyContent\NewRun"` in PowerShell or
+`outputRoot="$HOME/CompanyContent/NewRun"` in bash/zsh, using the user's actual
+new directory instead of these placeholders.
 
 1. **Create the core info set before prose.** Write `request.json` using the documented
    contract, then initialize a new, dedicated output directory:
 
    ```powershell
    python .github\skills\company-content-generator\scripts\company.py init --config request.json --out "$outputRoot"
+   ```
+
+   macOS/Linux:
+
+   ```sh
+   python .github/skills/company-content-generator/scripts/company.py init --config request.json --out "$outputRoot"
    ```
 
    This produces a seeded baseline, not an industry-complete simulation. Adapt
@@ -401,13 +423,20 @@ project. Do not run examples with an unset path or assume the example is intake.
    python .github\skills\company-content-generator\scripts\company.py plan --canon "$outputRoot\canon.json" --out "$outputRoot\build\plan.json"
    ```
 
+   macOS/Linux:
+
+   ```sh
+   python .github/skills/company-content-generator/scripts/company.py validate --canon "$outputRoot/canon.json"
+   python .github/skills/company-content-generator/scripts/company.py plan --canon "$outputRoot/canon.json" --out "$outputRoot/build/plan.json"
+   ```
+
    Once any prose is generated, never change the canon or plan in place.
    A correction requires a new revision and regeneration of affected documents.
    The plan contains the canon's SHA-256 fingerprint, covering the source records
    of the single core artifact, including organization, glossary, and depth setting.
 
 3. **Freeze execution scope; draft in bounded batches.** For new runs, set
-   `build\execution-plan.json` using `generation_execution_plan` (execution version 2)
+   `build/execution-plan.json` using `generation_execution_plan` (execution version 2)
    and the contract reference. Supply the explicit `post_generation_qa` answer.
    Bind layout revisions/hashes, family pilots, flagged exceptions,
    and a runtime budget only if supplied. Estimate content/visual review counts
@@ -425,6 +454,12 @@ project. Do not run examples with an unset path or assume the example is intake.
    python .github\skills\company-content-generator\scripts\company.py contexts --canon "$outputRoot\canon.json" --plan "$outputRoot\build\plan.json" --out "$outputRoot\build\contexts"
    ```
 
+   macOS/Linux:
+
+   ```sh
+   python .github/skills/company-content-generator/scripts/company.py contexts --canon "$outputRoot/canon.json" --plan "$outputRoot/build/plan.json" --out "$outputRoot/build/contexts"
+   ```
+
    Each writer uses only its document's context as factual input. Never give a writer the unfiltered
    canon: it includes future actuals, launches, promotions, and acquisitions.
    The context includes date-filtered `org_chart` and `glossary` views.
@@ -433,8 +468,8 @@ project. Do not run examples with an unset path or assume the example is intake.
    from publication date. If a document needs a new substantive fact, stop,
    extend the canon, and replan before writing.
 
-4. **Write grounded drafts.** Save one JSON draft per document under `build\drafts`,
-   using the contract in `references\contracts.md`. Each factual statement has
+4. **Write grounded drafts.** Save one JSON draft per document under `build/drafts`,
+   using the contract in `references/contracts.md`. Each factual statement has
    an exact record/path/value claim; each claim ID occurs in the section's
    `claim_ids`. Specific numbers, people, dates, policy obligations, named
    initiatives, decisions, owners, and deadlines all need canonical provenance.
@@ -464,7 +499,7 @@ project. Do not run examples with an unset path or assume the example is intake.
    long titles/text, historical comparisons and numeric/formula/layout edge cases.
    A missing required capability blocks; separate backend development from
    generation rather than improvising an unbounded replacement pipeline.
-   See `references\content-types.md` for layouts and format expectations.
+   See `references/content-types.md` for layouts and format expectations.
    Put deliverables under `documents` using the exact planned filenames. Use
    normal company branding, a business title, appropriate publication/effective
    dates, and business confidentiality marks only where applicable. Opaque IDs,
@@ -488,7 +523,16 @@ project. Do not run examples with an unset path or assume the example is intake.
    python .github\skills\company-content-generator\scripts\officecli_runner.py assemble --root "$outputRoot" --jobs build\jobs.json
    ```
 
-   Persist actual pilot reviews under `build\reviews`; the runner never writes
+   macOS/Linux:
+
+   ```sh
+   python .github/skills/company-content-generator/scripts/officecli_runner.py run --root "$outputRoot" --jobs build/jobs-pilots.json
+   # Review and record the actual pilot gates before running siblings:
+   python .github/skills/company-content-generator/scripts/officecli_runner.py run --root "$outputRoot" --jobs build/jobs.json
+   python .github/skills/company-content-generator/scripts/officecli_runner.py assemble --root "$outputRoot" --jobs build/jobs.json
+   ```
+
+   Persist actual pilot reviews under `build/reviews`; the runner never writes
    editorial/visual passed receipts. Use one grouped review per document.
    A failed sample blocks the family and requires explicit flagged-family
    expansion. Undelivered/unreadable images cannot be accepted. Contact sheets
@@ -505,11 +549,17 @@ project. Do not run examples with an unset path or assume the example is intake.
 
 6. **Complete generation independently.** `assemble` verifies the entire planned
    set, generation machine evidence and actual pilot/corrective reviews, then
-   writes `build\manifest.json` and `build\generation.json`. It does not require
+   writes `build/manifest.json` and `build/generation.json`. It does not require
    full provenance/coverage, corpus renders, or `qa.json`. For a standalone recheck:
 
    ```powershell
    python .github\skills\company-content-generator\scripts\company.py audit-generation --canon "$outputRoot\canon.json" --plan "$outputRoot\build\plan.json" --drafts "$outputRoot\build\drafts" --manifest "$outputRoot\build\manifest.json" --root "$outputRoot"
+   ```
+
+   macOS/Linux:
+
+   ```sh
+   python .github/skills/company-content-generator/scripts/company.py audit-generation --canon "$outputRoot/canon.json" --plan "$outputRoot/build/plan.json" --drafts "$outputRoot/build/drafts" --manifest "$outputRoot/build/manifest.json" --root "$outputRoot"
    ```
 
    If intake declined additional QA, deliver now: **generation complete;
@@ -527,12 +577,20 @@ project. Do not run examples with an unset path or assume the example is intake.
    python .github\skills\company-content-generator\scripts\officecli_runner.py finalize-qa --root "$outputRoot"
    ```
 
+   macOS/Linux:
+
+   ```sh
+   python .github/skills/company-content-generator/scripts/officecli_runner.py qa --root "$outputRoot" --jobs build/jobs.json
+   # Complete actual required reviews before finalizing:
+   python .github/skills/company-content-generator/scripts/officecli_runner.py finalize-qa --root "$outputRoot"
+   ```
+
    `qa` verifies accepted bytes, resolves private exporter bindings, writes exact
    mappings/provenance/coverage, determines review scope, and creates only missing
    selected captures. It writes separate `qa-machine` evidence and a bound
    `review-plan.json`; `review-work.json` preserves verified existing reviews
    and marks missing gates pending. Complete actual grouped reviews under
-   `build\reviews`; `finalize-qa` collects them and performs the independent strict
+   `build/reviews`; `finalize-qa` collects them and performs the independent strict
    audit before marking QA complete. Do not rerun separate indexing, provenance,
    coverage or audit commands redundantly when this orchestrated pass did them.
    Required content reviews need
@@ -609,7 +667,7 @@ If a recipient view is
 requested, generate it with `access-view --principal <canonical-person-id-or-public>
 --as-of <YYYY-MM-DD>` and the normal canon/plan/draft/manifest/root arguments.
 Completed strict QA/audit is a prerequisite; generation-only output cannot
-produce a certified recipient view. The output must be an explicit path under `build\views`. These manifests are
+produce a certified recipient view. The output must be an explicit path under `build/views`. These manifests are
 simulated selections, not ACLs. Do not distribute the full canon or private
 build tree as an agent-visible corpus.
 

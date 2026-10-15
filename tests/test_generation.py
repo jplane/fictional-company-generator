@@ -1,11 +1,13 @@
 import copy
 import json
 import os
+import shutil
 import subprocess
 import sys
 import tempfile
 import threading
 import unittest
+import unicodedata
 from pathlib import Path
 from unittest.mock import patch
 
@@ -16,7 +18,7 @@ runner = execution.runner
 
 
 class GenerationFixture:
-    def __init__(self, root, count=6, policy=None):
+    def __init__(self, root, count=6, policy=None, document_id=None):
         self.root = Path(root)
         self.build = self.root / "build"
         baseline = execution.baseline.CompanyTests()
@@ -24,6 +26,8 @@ class GenerationFixture:
         baseline.canon = company.seed_canon(dict(baseline.request, documents=count,
             document_types=["press_release"], formats=["docx"]))
         baseline.plan = company.create_plan(baseline.canon)
+        if document_id is not None:
+            baseline.plan["documents"][0]["id"] = document_id
         self.canon, self.plan = baseline.canon, baseline.plan
         company.save(self.root / "canon.json", self.canon)
         company.save(self.build / "plan.json", self.plan)
@@ -52,8 +56,8 @@ class GenerationFixture:
                           "props": {"text": s["text"]}} for s in draft["sections"]]
             batch_name = f"{doc['id']}-batch.json"
             company.save(self.build / batch_name, commands)
-            self.jobs.append({"document_id": doc["id"], "layout_file": "build\\layout.json",
-                "batch_file": str(Path("build") / batch_name),
+            self.jobs.append({"document_id": doc["id"], "layout_file": "build/layout.json",
+                "batch_file": (Path("build") / batch_name).as_posix(),
                 "render_targets": [{"id": "all", "pages": 1}],
                 "export_bindings": [{"claim_id": ref, "section_index": i,
                     "locator": {"kind": "paragraph", "part": "word/document.xml", "index": i + 1}}
@@ -111,6 +115,101 @@ class GenerationTests(unittest.TestCase):
         self.capture = patch.object(runner.playwright_capture, "CaptureEngine", execution.FakeCaptureEngine)
         self.capture.start()
         self.addCleanup(self.capture.stop)
+
+    def test_portable_references_and_legacy_hash_bound_reading(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory) / "corpus space & \u00e9"
+            fixture = GenerationFixture(root, count=1)
+            fixture.jobs[0]["layout_file"] = "build\\layout.json"
+            fixture.jobs[0]["batch_file"] = fixture.jobs[0]["batch_file"].replace("/", "\\")
+            before_job = copy.deepcopy(fixture.jobs[0])
+            identity = runner.job_identity(root, before_job, fixture.canon, fixture.plan, True)
+            fixture.generate()
+            machine_path = fixture.build / "machine" / f"{fixture.pilot}.json"
+            machine = company.load(machine_path)
+            references = [machine["capability"], *machine["checks"]]
+            references += [r["result"] for r in machine["renders"]]
+            references += [i for r in machine["renders"] for i in r["images"]]
+            manifest_path = fixture.build / "manifest.json"
+            manifest = company.load(manifest_path)
+            for entry in references + manifest["documents"]:
+                self.assertNotIn("\\", entry["path"])
+                self.assertIn("/", entry["path"])
+            for entry in references:
+                entry["path"] = entry["path"].replace("/", "\\")
+            runner.write_json(machine_path, machine)
+            fixture.review(fixture.pilot)
+            for entry in manifest["documents"]:
+                entry["path"] = entry["path"].replace("/", "\\")
+            runner.write_json(manifest_path, manifest)
+            original_bytes = {p.relative_to(root).as_posix(): p.read_bytes()
+                              for p in root.rglob("*") if p.is_file()}
+            moved = Path(directory) / "moved \u00e9 & corpus"
+            shutil.move(str(root), moved)
+            result = company.audit_generation(fixture.canon, fixture.plan, moved / "build" / "drafts",
+                                              manifest, moved)
+            self.assertEqual(result["documents"], 1)
+            self.assertEqual(fixture.jobs[0], before_job)
+            self.assertEqual(runner.job_identity(moved, before_job, fixture.canon, fixture.plan, True), identity)
+            self.assertEqual(original_bytes, {p.relative_to(moved).as_posix(): p.read_bytes()
+                                             for p in moved.rglob("*") if p.is_file()})
+            self.assertEqual(runner.local_input(moved, str(moved / "build" / "layout.json"), native_cli=True),
+                             (moved / "build" / "layout.json").resolve())
+            self.assertEqual(runner.local_input(moved, "build\\./layout.json"),
+                             (moved / "build" / "layout.json").resolve())
+            with self.assertRaises(company.Invalid):
+                runner.local_input(moved, str(moved / "build" / "layout.json"))
+            with self.assertRaises(company.Invalid):
+                runner.local_input(moved, str(moved / "canon.json"), native_cli=True)
+            tampered = company.stored_path(moved, references[1]["path"])
+            tampered.write_bytes(b"tampered")
+            with self.assertRaisesRegex(company.Invalid, "Stale/missing"):
+                company.bound_evidence(moved, references[1], "check")
+
+    def test_render_ids_are_portable_even_before_selected_capture(self):
+        for targets in ([{"id": "CON", "pages": 1}],
+                        [{"id": "case", "pages": 1}, {"id": "CASE", "pages": 1}],
+                        [{"id": "caf\u00e9", "pages": 1}, {"id": "cafe\u0301", "pages": 1}]):
+            with self.subTest(targets=targets), tempfile.TemporaryDirectory() as directory:
+                fixture = GenerationFixture(directory, count=1)
+                fixture.jobs[0]["render_targets"] = targets
+                engine = fixture.engine()
+                try:
+                    with self.assertRaises(company.Invalid):
+                        engine.run_job(fixture.jobs[0])
+                    self.assertFalse((fixture.root / "documents").exists())
+                finally:
+                    engine.close()
+
+    def test_checker_drift_still_blocks_legacy_path_evidence(self):
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = GenerationFixture(directory, count=1)
+            fixture.generate()
+            path = fixture.build / "machine" / f"{fixture.pilot}.json"
+            machine = company.load(path)
+            machine["capability"]["path"] = machine["capability"]["path"].replace("/", "\\")
+            machine["checker"]["company.py"] = "0" * 64
+            runner.write_json(path, machine)
+            with self.assertRaisesRegex(company.Invalid, "changed checker implementation"):
+                company.audit_generation(fixture.canon, fixture.plan, fixture.build / "drafts",
+                                         company.load(fixture.build / "manifest.json"), fixture.root)
+
+    def test_unicode_draft_and_checkpoint_filesystem_round_trip(self):
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = GenerationFixture(directory, count=1, document_id="caf\u00e9")
+            fixture.generate()
+            draft = fixture.build / "drafts" / f"{fixture.pilot}.json"
+            decomposed = draft.with_name(unicodedata.normalize("NFD", draft.name))
+            draft.rename(decomposed)
+            self.assertEqual(company.check_drafts(fixture.canon, fixture.plan, fixture.build / "drafts"), 1)
+            decomposed.rename(draft)
+            checkpoint = fixture.build / "document-state" / draft.name
+            checkpoint.rename(checkpoint.with_name(unicodedata.normalize("NFD", checkpoint.name)))
+            engine = fixture.engine()
+            try:
+                self.assertIn(fixture.pilot, engine.state["documents"])
+            finally:
+                engine.close()
 
     def test_generation_only_then_later_qa_all_policies_and_unchanged_bytes(self):
         with tempfile.TemporaryDirectory() as directory:

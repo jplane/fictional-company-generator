@@ -9,7 +9,7 @@ Python 3.10+ performs business/claim validation, read-only package inspection,
 hashing, provenance, coverage, and orchestration; it is not a second authoring
 or calculation engine. Screenshot pixels never come from OfficeCLI: a thin
 pinned **Playwright-for-Python 1.63.0** adapter
-(`scripts\playwright_capture.py`) drives a matching **managed Chromium** build
+(`scripts/playwright_capture.py`) drives a matching **managed Chromium** build
 to capture OfficeCLI's own HTML export. OfficeCLI does not bundle that browser
 and no longer performs the screenshotting itself. Probe actual image
 production; an executable/version check is not sufficient.
@@ -59,10 +59,55 @@ local; do not upload drafts/canon or retrieve real workplace data. Additional
 acquisition requires approval. Shared tools may remain outside the corpus;
 run-specific inputs, logs, scripts, and dependencies belong under `build`.
 
+Choose the official asset for both **OS and architecture**, not just its name.
+OfficeCLI publishes separate Windows x64/arm64, macOS x64/arm64 (Apple Silicon),
+and Linux x64/arm64 assets, with separate Alpine/musl variants. Asset availability
+is release-specific: check the chosen version's release and `SHA256SUMS`. A Linux
+OfficeCLI asset alone does not establish that the managed Chromium adapter
+supports that distribution. Keep executable permission, PATH, and macOS
+Gatekeeper/quarantine troubleshooting explicit and scoped; do not disable
+platform protections or substitute an unverified binary.
+
+## Python environment and native paths
+
+Use Python **3.10+** and the current host's native paths. The following creates a
+local environment only when one is needed; reuse an existing active venv.
+Commands run from the project root. For a copied skill, resolve its actual
+absolute script location rather than assuming this repository layout.
+
+**Windows PowerShell**
+
+```powershell
+py -3 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python --version
+```
+
+`py` is the Windows launcher, if installed; otherwise use the verified Python
+3.10+ executable's `-m venv`. Do not change machine-wide execution policy to
+activate a venv: `.\.venv\Scripts\python.exe` can run commands directly.
+
+**macOS/Linux (bash/zsh)**
+
+```sh
+python3 -m venv .venv
+. .venv/bin/activate
+python --version
+```
+
+Outside a venv, `python` may not exist or may select the wrong interpreter.
+Inside one, use its `python` (or the venv interpreter's explicit native path) for
+both packages and scripts. Never assume a Windows drive path is meaningful on
+POSIX or that backslashes in bash/zsh are directory separators. Quote paths and
+variables containing spaces. The helper does not expand a literal `~` in JSON.
+Choose a short output root; complete-path limits and external-tool long-path
+support remain filesystem/host-specific. Do not change registry or global Git
+settings as a workaround.
+
 ## Playwright capture adapter setup
 
 The adapter is a thin, **optional** dependency: importing
-`scripts\playwright_capture.py` and running the default unit suite never
+`scripts/playwright_capture.py` and running the default unit suite never
 require Playwright to be installed (the import is lazy, inside
 `CaptureEngine.__init__`). It is only required to actually capture pixels
 (preflight probes and real renders).
@@ -72,7 +117,7 @@ require Playwright to be installed (the import is lazy, inside
    additional install is required** — reuse it as-is.
 2. Otherwise, install the pinned `playwright==1.63.0` package with `pip`
    scoped to the active virtual environment (never into a global/system
-   interpreter), then run `playwright install chromium` to fetch the matching
+   interpreter), then run `python -m playwright install chromium` to fetch the matching
    managed build from the official Playwright CDN. Do not hardcode the
    current user's name, session ID, or any machine-specific path into this
    repository; `PLAYWRIGHT_BROWSERS_PATH` (if set at all) is a per-process
@@ -90,6 +135,48 @@ require Playwright to be installed (the import is lazy, inside
    executable/version/checksum above. Treat drift in either identity as a
    capability change requiring revalidation, not a silent pass-through.
 
+After authorization and only when dependencies are genuinely missing, both
+shells use these commands with the active venv interpreter:
+
+```text
+python -m pip install playwright==1.63.0
+python -m playwright install chromium
+```
+
+### Linux libraries, sandboxing, and fonts
+
+Consult Playwright's official
+[system requirements](https://playwright.dev/python/docs/intro#system-requirements)
+and [browser setup](https://playwright.dev/python/docs/browsers#install-system-dependencies)
+for the pinned release. The current upstream guide lists Windows 11+/Server
+2019+/WSL, macOS 14+, Debian 12/13, and Ubuntu 22.04/24.04/26.04 (Linux x64 or
+arm64); this is upstream guidance, **not** certification of every host by this
+skill or a promise that a future platform is supported by the pinned version.
+Minimal Linux/container images can lack Chromium's shared libraries even after
+the Python package and browser download succeed.
+
+`python -m playwright install-deps chromium` installs host system packages and
+may require elevated privileges. It is a **separate, explicitly authorized
+machine change**, not an automatic generation or unit-test step. Review the
+needed packages and the host administrator's approved installation procedure.
+Do not blindly use `--with-deps` or assume all Linux distributions are supported.
+
+The adapter launches sandboxed Chromium. Use an appropriate non-root account
+and a host/container configuration that permits Chromium's sandbox; inspect
+actual launch errors and follow upstream/admin guidance. Do not add
+`--no-sandbox`, disable sandboxing, or weaken host protections to make a probe
+appear successful. An unavailable sandbox/browser is an explicit blocker.
+
+Arial and Calibri are not guaranteed on Windows, macOS, or Linux. For **new**
+layouts, select fonts actually available to Chromium on that host with suitable
+licenses, and record the chosen typography in the frozen layout. A font request
+in HTML and `document.fonts.ready` do not prove the requested font was installed;
+fallback fonts can alter wrapping, overflow, and slide geometry. Check actual
+preflight images and representative/long-title family pilots. Host, font, or
+browser changes require fresh capability/layout review; do not silently install
+fonts, substitute them in historical outputs, or claim identical pixels.
+Font inventory is not currently enforced or fingerprinted by the adapter.
+
 ## Preflight, once per capability identity
 
 
@@ -98,6 +185,12 @@ and perform tiny session-owned probes for the selected formats with the runner:
 
 ```powershell
 python .github\skills\company-content-generator\scripts\officecli_runner.py preflight --formats docx pptx xlsx --out "$sessionWorkspace\officecli-preflight.json"
+```
+
+macOS/Linux (bash/zsh; active virtual environment):
+
+```sh
+python .github/skills/company-content-generator/scripts/officecli_runner.py preflight --formats docx pptx xlsx --out "$sessionWorkspace/officecli-preflight.json"
 ```
 
 Resolve `$sessionWorkspace` explicitly; select only the requested formats.
@@ -233,7 +326,7 @@ A failed sample
 blocks its family; record the exception and expand affected-sibling review.
 Missing/undelivered/unreadable images cannot count as reviewed.
 
-Use `scripts\officecli_runner.py` for mechanics, bounded stages, durable
+Use `scripts/officecli_runner.py` for mechanics, bounded stages, durable
 checkpoints, pinned tool identity, phase timing, and at most one concrete
 corrective retry per logical operation. A user-supplied runtime budget stops at
 a safe checkpoint; no invented budget or completion promise. Preserve verified
@@ -276,3 +369,24 @@ Microsoft Office. `RUN_OFFICECLI_TESTS=1` enables actual OfficeCLI integrations.
 Missing tools skip optional maintenance tests explicitly; skips never count as
 passed generation preflight. Tiny fixtures are not a new company corpus or
 editorial/visual certification.
+
+Use the active venv interpreter for the same maintenance command on every OS.
+The repository's `Cross-platform Python tests` GitHub Actions workflow runs it
+on Windows, macOS, and Ubuntu with Python 3.10/3.14. It installs no application
+dependencies and deliberately skips real OfficeCLI/browser integrations.
+
+To opt in locally **after** authorized setup and actual tool availability:
+
+```powershell
+$env:RUN_OFFICECLI_TESTS = "1"
+python -m unittest discover -s tests -q
+Remove-Item Env:RUN_OFFICECLI_TESTS
+```
+
+```sh
+RUN_OFFICECLI_TESTS=1 python -m unittest discover -s tests -q
+```
+
+The included render proof remains Windows-pinned-version-only. A green Python
+CI matrix is not real macOS/Linux capture proof, native Office fidelity, or
+cross-platform pixel identity. New hosts still need real preflight and pilots.

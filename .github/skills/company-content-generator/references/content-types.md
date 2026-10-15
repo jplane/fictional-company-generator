@@ -82,7 +82,7 @@ accidental authoring error and verifies that added depth did not undo a gap.
 ### Measurable planning targets
 
 Use these ranges to set concrete per-document targets in
-`build\depth-targets.json` before drafting. They are editorial targets, not
+`build/depth-targets.json` before drafting. They are editorial targets, not
 automatic proof of quality. Record and justify adaptations to the real scope,
 industry, audience, or format before writing; do not rationalize thin documents
 after export. Measure delivered content, excluding repeated headers, boilerplate
@@ -253,7 +253,7 @@ planning. Extension anchors with unfamiliar kinds need a human-readable
 
 Before drafting an additional type, define its purpose, reader, voice, normal
 structure, expected depth, source-fact needs, and editorial acceptance criteria
-in `build\type-profiles.json`. Examples include integration plans, sales
+in `build/type-profiles.json`. Examples include integration plans, sales
 enablement, incident postmortems, onboarding packs, and customer support reports.
 Validate business-specific invariants manually or with a reviewed build helper.
 Never introduce financial totals, entities, or decisions in a type template.

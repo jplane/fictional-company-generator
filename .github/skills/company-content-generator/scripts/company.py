@@ -11,6 +11,7 @@ import random
 import re
 import sys
 import time
+import unicodedata
 import zipfile
 from collections import Counter
 from contextlib import contextmanager
@@ -18,7 +19,7 @@ from contextvars import ContextVar
 from datetime import date, timedelta
 from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
 from functools import wraps
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
 from threading import RLock
 from xml.etree import ElementTree
 
@@ -49,6 +50,7 @@ EXECUTION_VERSION = 1
 GENERATION_EXECUTION_VERSION = 2
 _validation_cache = ContextVar("company_validation_cache", default=None)
 MAX_FILENAME_LENGTH = 140
+MAX_COMPONENT_BYTES = 255
 CONTENT_SECTIONS = {
     "meeting_transcript": ["participants", "discussion", "decisions", "actions"],
     "press_release": ["dateline_and_lead", "announcement_details", "attributed_quote",
@@ -451,6 +453,69 @@ def initialize_output(canon, out):
 def require_build_path(path, root):
     require(Path(path).resolve().is_relative_to((Path(root) / "build").resolve()),
             f"{path}: derived files must be inside the output build directory")
+
+
+def relative_parts(value):
+    require(text(value) and "\0" not in value, "Stored path must be nonempty relative text")
+    windows = PureWindowsPath(value)
+    normalized = value.replace("\\", "/")
+    require(not windows.drive and not windows.root and not PurePosixPath(normalized).is_absolute()
+            and ".." not in normalized.split("/") and ":" not in normalized,
+            f"Stored path must be relative without traversal: {value}")
+    parts = PurePosixPath(normalized).parts
+    require(parts, "Stored path must name a file")
+    return parts
+
+
+def stored_path(root, value):
+    """Resolve legacy separators without changing hash-bound source values."""
+    base = Path(root).resolve()
+    path = base
+    for part in relative_parts(value):
+        if not part.isascii() and path.is_dir():
+            matches = [p for p in path.iterdir()
+                       if unicodedata.normalize("NFC", p.name) == unicodedata.normalize("NFC", part)]
+            exact = [p for p in matches if p.name == part]
+            require(exact or len(matches) <= 1, f"Ambiguous Unicode filesystem name: {part}")
+            path = exact[0] if exact else matches[0] if matches else path / part
+        else:
+            path = path / part
+        require(path.resolve().is_relative_to(base), f"Stored path escapes its root: {value}")
+    path = path.resolve()
+    require(path.is_relative_to(base), f"Stored path escapes its root: {value}")
+    return path
+
+
+def name_key(value):
+    return unicodedata.normalize("NFC", unicodedata.normalize("NFC", value).casefold())
+
+
+def same_filename(first, second):
+    return unicodedata.normalize("NFC", first) == unicodedata.normalize("NFC", second)
+
+
+def name_character(character):
+    return character.isalnum() or unicodedata.category(character).startswith("M")
+
+
+def portable_component(value):
+    require(text(value) and value not in (".", "..") and value == value.strip(" .")
+            and all(name_character(c) or c in " -_." for c in value)
+            and len(value.encode("utf-8")) <= MAX_COMPONENT_BYTES
+            and re.fullmatch(r"(?i:con|prn|aux|nul|conin\$|conout\$|com[1-9\u00b9\u00b2\u00b3]|lpt[1-9\u00b9\u00b2\u00b3])",
+                             value.split(".")[0]) is None,
+            f"Unsafe or nonportable filename component: {value}")
+
+
+def validate_file_ids(values, label, suffixes=(".json",)):
+    seen = set()
+    for value in values:
+        portable_component(value)
+        require(all(name_character(c) or c in "-_" for c in value), f"Unsafe {label}: {value}")
+        require(name_key(value) not in seen, f"Duplicate {label} ignoring case/Unicode: {value}")
+        seen.add(name_key(value))
+        for suffix in suffixes:
+            portable_component(value + suffix)
 
 
 def validate_output_layout(canon, root):
@@ -951,7 +1016,7 @@ def document_title(company_name, kind, anchor, index, follow_up=0):
 
 
 def document_filename(title, publication_date, fmt, revision=1, edition=1):
-    cleaned = "".join(c if c.isalnum() or c in " -_." else "-" for c in title)
+    cleaned = "".join(c if name_character(c) or c in " -_." else "-" for c in title)
     cleaned = " ".join(cleaned.split()).strip(" .-")
     require(text(cleaned), "Title has no usable filename characters")
     prefix = f"{publication_date} - "
@@ -964,7 +1029,26 @@ def document_filename(title, publication_date, fmt, revision=1, edition=1):
     if len(cleaned) > limit:
         left = (limit - 3) // 2
         cleaned = cleaned[:left].rstrip(" .-") + " - " + cleaned[-(limit - left - 3):].lstrip(" .-")
-    return prefix + cleaned.rstrip(" .-") + suffix + extension
+    byte_limit = MAX_COMPONENT_BYTES - len((prefix + suffix + extension).encode("utf-8"))
+    require(byte_limit > 3, "Filename suffix exceeds the byte budget")
+    if len(cleaned.encode("utf-8")) > byte_limit:
+        # Preserve both ends of the subject while reserving the middle separator.
+        left, right = 0, len(cleaned)
+        budget = byte_limit - 3
+        while left < right:
+            index = left if len(cleaned[:left].encode("utf-8")) <= len(cleaned[right:].encode("utf-8")) else right - 1
+            cost = len(cleaned[index].encode("utf-8"))
+            if cost > budget:
+                break
+            budget -= cost
+            if index == left:
+                left += 1
+            else:
+                right -= 1
+        cleaned = cleaned[:left].rstrip(" .-") + " - " + cleaned[right:].lstrip(" .-")
+    filename = prefix + cleaned.rstrip(" .-") + suffix + extension
+    portable_component(filename)
+    return filename
 
 
 def validate_document_name(doc):
@@ -977,8 +1061,9 @@ def validate_document_name(doc):
             and not any(ref.casefold() in title.casefold() for ref in doc["anchor_ids"]),
             f"{doc['id']}: title must be descriptive, not a placeholder or internal ID")
     require(text(filename), f"{doc['id']}: missing filename; replan with realistic document names")
+    portable_component(filename)
     require(len(filename) <= MAX_FILENAME_LENGTH
-            and all(c.isalnum() or c in " -_." for c in filename)
+            and all(name_character(c) or c in " -_." for c in filename)
             and filename == filename.strip(" .")
             and filename.startswith(doc["publication_date"] + " - ")
             and filename.endswith("." + doc["format"]),
@@ -1149,10 +1234,10 @@ def create_plan(canon):
         title = document_title(request["company_name"], kind, anchor, index, cycle)
         filename = document_filename(title, publication.isoformat(), fmt)
         edition = 1
-        while filename.casefold() in used_filenames:
+        while name_key(filename) in used_filenames:
             edition += 1
             filename = document_filename(title, publication.isoformat(), fmt, edition=edition)
-        used_filenames.add(filename.casefold())
+        used_filenames.add(name_key(filename))
         author, audience, viewpoint_id = document_profile(canon, anchor, viewpoint_id)
         audience = audience or registry[kind][2]
         groups = document_access_groups(anchor, audience)
@@ -1210,13 +1295,15 @@ def validate_plan(canon, plan):
     documents = plan.get("documents")
     require(isinstance(documents, list) and len(documents) == canon["request"]["documents"],
             "Plan count does not match requested target")
+    require(all(isinstance(doc, dict) and text(doc.get("id")) for doc in documents), "Invalid plan item")
+    validate_file_ids([doc["id"] for doc in documents], "document ID",
+                      (".json", "-html_export.json", "-chart-cache.json"))
     first, _, tail = period_bounds(canon["request"])
     by_id, filenames = {}, set()
     for doc in documents:
         require(isinstance(doc, dict) and text(doc.get("id")), "Invalid plan item")
         identifier = doc["id"]
         require(identifier not in by_id, f"Duplicate document ID: {identifier}")
-        require(all(c.isalnum() or c in "-_" for c in identifier), f"Unsafe document ID: {identifier}")
         kind = doc.get("type")
         require(kind in types, f"{identifier}: unsupported type")
         require(doc.get("format") in registry[kind][0]
@@ -1278,8 +1365,8 @@ def validate_plan(canon, plan):
         require(doc.get("required_statement_ids") == expected_statements,
                 f"{identifier}: wrong required_statement_ids")
         validate_document_name(doc)
-        require(doc["filename"].casefold() not in filenames, f"{identifier}: duplicate filename")
-        filenames.add(doc["filename"].casefold())
+        require(name_key(doc["filename"]) not in filenames, f"{identifier}: duplicate filename")
+        filenames.add(name_key(doc["filename"]))
         by_id[identifier] = doc
     require({d["format"] for d in documents} == formats,
         "Plan must contain every selected format")
@@ -1534,10 +1621,14 @@ def check_drafts(canon, plan, directory):
     index = {record["id"]: record for record in canon["records"]}
     canon_sha256, plan_sha256 = fingerprint(canon), fingerprint(plan)
     files = list(Path(directory).glob("*.json"))
-    require({p.stem for p in files} == documents.keys(), "Draft IDs do not exactly match plan")
+    require(len(files) == len(documents)
+            and {unicodedata.normalize("NFC", p.stem) for p in files}
+            == {unicodedata.normalize("NFC", identifier) for identifier in documents},
+            "Draft IDs do not exactly match plan")
     for path in files:
         draft = load(path)
-        require(isinstance(draft, dict) and draft.get("document_id") == path.stem,
+        require(isinstance(draft, dict) and text(draft.get("document_id"))
+                and same_filename(draft["document_id"], path.stem),
                 f"{path}: filename does not match document_id")
         _check_draft(documents, index, canon_sha256, plan_sha256, draft, canon["corpus_id"])
     return len(files)
@@ -1980,15 +2071,15 @@ def manifest_files(canon, plan, manifest, root):
         require(identifier in documents and identifier not in files,
                 f"Invalid/duplicate manifest document: {identifier}")
         relative = entry.get("path")
-        require(text(relative) and not Path(relative).is_absolute(), f"{identifier}: path must be relative")
-        path = (root / relative).resolve()
+        path = stored_path(root, relative)
         require(path.is_relative_to(root) and path not in paths,
                 f"{identifier}: duplicate or escaping artifact path")
         require(path.is_relative_to(root / "documents"), f"{identifier}: final artifacts must be in documents")
         require(path.is_file(), f"{identifier}: missing artifact {path}")
         doc = documents[identifier]
         require(path.suffix == "." + doc["format"], f"{identifier}: wrong extension")
-        require(path.name == doc["filename"], f"{identifier}: artifact filename does not match the descriptive planned filename")
+        require(same_filename(path.name, doc["filename"]),
+                f"{identifier}: artifact filename does not match the descriptive planned filename")
         require(entry.get("sha256") == file_hash(path), f"{identifier}: artifact hash mismatch")
         files[identifier] = path
         paths.add(path)
@@ -2296,9 +2387,7 @@ def validate_bindings(canon, plan, manifest, bindings):
         require((identifier, kind) not in seen, "Duplicate binding kind for document")
         seen.add((identifier, kind))
         if kind == "local":
-            require(text(entry.get("path")) and not Path(entry["path"]).is_absolute()
-                    and ".." not in entry["path"].replace("\\", "/").split("/"),
-                    "Local binding requires a safe relative path")
+            relative_parts(entry.get("path"))
             require("drive_id" not in entry and "item_id" not in entry, "Mixed binding kinds")
         else:
             require(text(entry.get("drive_id")) and text(entry.get("item_id")) and "path" not in entry,
@@ -2615,7 +2704,7 @@ def family_summary(canon, plan, drafts, execution, machines=None):
 
 def bound_evidence(root, entry, label):
     require(isinstance(entry, dict) and text(entry.get("path")), f"Missing {label} evidence")
-    path = Path(root) / entry["path"]
+    path = stored_path(root, entry["path"])
     require_build_path(path, root)
     require(path.is_file() and entry.get("sha256") == file_hash(path), f"Stale/missing {label} evidence")
     return path
@@ -2760,6 +2849,7 @@ def verify_document_title(path, doc):
 def verify_render_targets(path, targets):
     require(isinstance(targets, list) and targets and all(isinstance(t, dict) and text(t.get("id"))
             for t in targets) and len({t["id"] for t in targets}) == len(targets), "Invalid render targets")
+    validate_file_ids([t["id"] for t in targets], "render ID")
     suffix = Path(path).suffix.lower()
     if suffix != ".xlsx":
         require(len(targets) == 1 and targets[0]["id"] == "all", "Full document capture required")
@@ -2843,7 +2933,7 @@ def validate_preflight(preflight, root):
         require(isinstance(probe.get("features"), list)
                 and all(text(f) for f in probe["features"])
                 and {"basic", "html_screenshots"} <= set(probe["features"]), "Incomplete capability features")
-        image = Path(root) / "build" / probe["image"]
+        image = stored_path(Path(root) / "build", probe["image"])
         require_build_path(image, root)
         require(image.is_file() and file_hash(image) == probe["image_sha256"]
                 and image.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"), "Stale/missing capability image")
@@ -2876,7 +2966,7 @@ def validate_preflight(preflight, root):
                         and entry.get("clipped") is False and entry.get("occluded") is False
                         and text(entry.get("dom_path")) and text(entry.get("sheet")) and text(entry.get("shape_id")),
                         "Incomplete/degraded chart capability capture evidence")
-                chart_image = Path(root) / "build" / entry.get("image", "")
+                chart_image = stored_path(Path(root) / "build", entry.get("image", ""))
                 require_build_path(chart_image, root)
                 require(chart_image.is_file() and file_hash(chart_image) == entry.get("image_sha256")
                         and chart_image.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"),

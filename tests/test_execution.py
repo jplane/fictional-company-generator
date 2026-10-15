@@ -83,6 +83,31 @@ class ExecutionTests(unittest.TestCase):
         self.plan = company.create_plan(self.canon)
         self.fixture.canon, self.fixture.plan = self.canon, self.plan
 
+    def test_legacy_preflight_images_and_local_inputs_remain_hash_bound(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            receipt = capability(root, {"xlsx"})
+            folder = root / "build" / "probe images"
+            folder.mkdir()
+            image = folder / "probe.png"
+            (root / "build" / "probe.png").rename(image)
+            probe = receipt["probes"][0]
+            probe["image"] = "probe images\\probe.png"
+            probe["features"].append("chart")
+            probe["chart_capture"] = [
+                {"chart_type": kind, "tool": CAPTURE_TOOL, "clipped": False, "occluded": False,
+                 "sheet": "Results", "shape_id": str(i), "dom_path": f"/Results/chart[{i}]",
+                 "image": "probe images\\probe.png", "image_sha256": company.file_hash(image)}
+                for i, kind in enumerate(("column", "line"), 1)]
+            snapshot = copy.deepcopy(receipt)
+            company.validate_preflight(receipt, root)
+            self.assertEqual(receipt, snapshot)
+            for value in ("probe images/probe.png", "probe images\\probe.png"):
+                self.assertEqual(runner.local_input(root, "build/" + value), image.resolve())
+            image.write_bytes(b"wrong")
+            with self.assertRaisesRegex(company.Invalid, "Stale/missing capability image"):
+                company.validate_preflight(receipt, root)
+
     def execution(self, policy=company.DEFAULT_QA_POLICY):
         layouts = [{"document_id": d["id"], "layout_revision": "v1", "layout_sha256": "a" * 64}
                    for d in self.plan["documents"]]
@@ -123,16 +148,16 @@ class ExecutionTests(unittest.TestCase):
                                                        "delivered_words"))
                 result_path = root / "build" / "tool-results" / f"{identifier}-{op}.json"
                 runner.write_json(result_path, result)
-                checks.append({"operation": op, "path": str(result_path.relative_to(root)),
+                checks.append({"operation": op, "path": result_path.relative_to(root).as_posix(),
                                "sha256": company.file_hash(result_path)})
             html_result_path = root / "build" / "tool-results" / f"{identifier}-html_export.json"
             runner.write_json(html_result_path, dict(log("html_export"), artifact_sha256=digest))
-            checks.append({"operation": "html_export", "path": str(html_result_path.relative_to(root)),
+            checks.append({"operation": "html_export", "path": html_result_path.relative_to(root).as_posix(),
                            "sha256": company.file_hash(html_result_path)})
             image = root / "build" / "renders" / f"{identifier}.png"
             image.parent.mkdir(exist_ok=True)
             image.write_bytes(PNG)
-            image_ref = {"path": str(image.relative_to(root)), "sha256": company.file_hash(image)}
+            image_ref = {"path": image.relative_to(root).as_posix(), "sha256": company.file_hash(image)}
             if doc["format"] == "xlsx":
                 region = f"Results!A1:A{len(self.fixture.draft(doc)['sections'])}"
                 definitions = [{"id": "all", "range": region}]
@@ -150,10 +175,10 @@ class ExecutionTests(unittest.TestCase):
             machine = dict(company.receipt_header(self.canon, self.plan), engine="OfficeCLI", tool=TOOL,
                 document_id=identifier, artifact_sha256=digest, draft_sha256=company.file_hash(drafts / f"{identifier}.json"),
                 status="passed", checks=checks, render_targets=["all"], target_definitions=definitions,
-                capability={"path": str(cap_path.relative_to(root)), "sha256": company.file_hash(cap_path)},
+                capability={"path": cap_path.relative_to(root).as_posix(), "sha256": company.file_hash(cap_path)},
                 renders=[{"id": "all", "images": [image_ref],
                     "renderer": "OfficeCLI-HTML+Playwright-Chromium", "artifact_sha256": digest,
-                    "result": {"path": str(result_path.relative_to(root)), "sha256": company.file_hash(result_path)}}])
+                    "result": {"path": result_path.relative_to(root).as_posix(), "sha256": company.file_hash(result_path)}}])
             runner.write_json(root / "build" / "machine" / f"{identifier}.json", machine)
         runner.write_json(root / "build" / "execution-plan.json", execution)
         selection = company.make_review_plan(self.canon, self.plan, drafts, execution, root, files)
@@ -659,8 +684,8 @@ class RunnerFlowTests(unittest.TestCase):
                          for s in draft["sections"]]
             company.save(build / "batch.json", commands)
             value = company.display_value(draft["claims"][0])
-            job = {"document_id": doc["id"], "layout_file": str(Path("build") / "layout.json"),
-                   "batch_file": str(Path("build") / "batch.json"), "render_targets": [{"id": "all", "pages": 1}],
+            job = {"document_id": doc["id"], "layout_file": "build/layout.json",
+                   "batch_file": "build/batch.json", "render_targets": [{"id": "all", "pages": 1}],
                    "occurrences": [
                        {"claim_id": "c1", "section_index": i, "start": 0, "end": len(value), "expected_text": value,
                         "locator": {"kind": "paragraph", "part": "word/document.xml", "index": i + 1}}
@@ -673,6 +698,8 @@ class RunnerFlowTests(unittest.TestCase):
                 runner.Runner(root, cli).run_job(job)
                 self.assertEqual(len(cli.calls), count)
                 selection = engine.assemble([job])
+            manifest = company.load(build / "manifest.json")
+            self.assertNotIn("\\", manifest["documents"][0]["path"])
             self.assertFalse((build / "qa.json").exists())
             review = {"document_id": doc["id"], "artifact_sha256": machine["artifact_sha256"],
                       "draft_sha256": machine["draft_sha256"],

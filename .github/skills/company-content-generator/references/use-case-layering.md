@@ -9,7 +9,7 @@ management, training, document workflows, analytics, and evaluation.
 This guide describes a **separate application layer**. The snippets are
 illustrative Markdown examples, not implemented schemas or generated customer
 documents. Keep the wrapper and evaluator outside the core corpus root;
-the core layout remains `canon.json`, `documents\`, and `build\`.
+the core layout remains `canon.json`, `documents/`, and `build/`.
 Never give independent answers or evaluation partitions to corpus writers.
 
 ## Fictional customer example
