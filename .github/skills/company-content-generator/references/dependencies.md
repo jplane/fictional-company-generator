@@ -144,7 +144,10 @@ and running helper tests are not corpus generation.
   contact sheets are an optional triage aid only, never a replacement for
   viewing the full page/slide image. XLSX ranges must cover all relevant
   cells and layouts, including merged-anchor cells and non-default/active
-  sheets (activate the sheet tab before capturing it). XLSX chart objects
+  sheets (activate the sheet tab before capturing it). The adapter scrolls
+  offscreen ranges into view and enlarges the viewport when a declared range
+  exceeds it, preserving font sizes and rejecting partial range captures.
+  XLSX chart objects
   (standard column and line charts anchored with a `twoCellAnchor`) are a
   supported, independently proven capture path: `chart_object_inventory()`
   enumerates every chart-bearing graphic frame in the same document order as

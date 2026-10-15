@@ -407,6 +407,10 @@ def capture_target(engine, html_path, fmt, target, out_dir, source_html_sha256, 
         images = [{"path": captured["path"], "sha256": captured["sha256"]}]
         unit, rendered_count = "region", None
         extra = {"start_cell": start_cell, "end_cell": end_cell}
+        if "clip" in captured:
+            extra["clip"] = captured["clip"]
+        if "viewport" in captured:
+            extra["viewport"] = captured["viewport"]
     log = {"operation": "capture", "status": "passed", "started_at": started, "ended_at": timestamp(),
            "active_seconds": time.monotonic() - begin, "tool": engine.identity,
            "source_html_sha256": source_html_sha256, "unit": unit, "image_sha256": images[0]["sha256"]}
@@ -497,10 +501,17 @@ class Runner:
         company.require(budget is None or elapsed < budget,
                         "Runtime budget reached at a safe checkpoint; run remains partial")
 
-    def operation(self, state, arguments, operation, corrective=None):
+    def operation(self, state, arguments, operation, corrective=None, repeat_success=False,
+                  artifact_sha256=None):
         attempts = state.setdefault("attempts", {}).get(operation, 0)
-        company.require(attempts < 2, f"{operation}: corrective retry already consumed")
-        if attempts:
+        history = [entry for entry in state.get("operations", [])
+                   if entry.get("operation") == operation]
+        budget_attempts = (max(0, attempts - sum(entry.get("status") == "passed" for entry in history))
+                           if repeat_success else attempts)
+        company.require(budget_attempts < 2, f"{operation}: corrective retry already consumed")
+        retry = bool(budget_attempts) and (not repeat_success or not history
+                                         or history[-1].get("status") != "passed")
+        if retry:
             reason = state.get("retry_reasons", {}).get(operation)
             company.require(corrective or company.text(reason),
                             f"{operation}: initial attempt failed; supply a concrete correction")
@@ -512,11 +523,14 @@ class Runner:
         except subprocess.TimeoutExpired as exc:
             state.setdefault("operations", []).append({"operation": operation, "status": "timeout",
                 "ended_at": timestamp(), "active_seconds": self.cli.timeout,
-                "reason": str(exc), "corrective": bool(attempts)})
+                "reason": str(exc), "corrective": retry,
+                "artifact_sha256": artifact_sha256, "repeat_success": repeat_success})
             self.checkpoint()
             raise company.Invalid(f"{operation}: timed out; checkpoint preserved") from exc
-        log["corrective"] = bool(attempts)
-        if attempts:
+        log["corrective"] = retry
+        if repeat_success:
+            log.update(repeat_success=True, artifact_sha256=artifact_sha256)
+        if retry:
             log["retry_reason"] = state.get("retry_reasons", {}).get(operation) or state.get("correction_reason")
         state.setdefault("operations", []).append(log)
         self.checkpoint()
@@ -538,7 +552,8 @@ class Runner:
             checked(previous[-1])
             return previous[-1]
         self.boundary()
-        log = self.operation(state, arguments, operation)
+        log = self.operation(state, arguments, operation, repeat_success=True,
+                             artifact_sha256=digest)
         log.update(status="passed", artifact_sha256=digest,
                    evidence="Checked complete OfficeCLI result without errors/caveats")
         self.checkpoint()
@@ -573,11 +588,20 @@ class Runner:
     def selection_for(self, identifier):
         selected = dict(self.base_selection[identifier])
         affected = {self.families[i] for i, state in self.state["documents"].items()
-                    if state.get("formula_retry") or any(c > 1 for c in state["attempts"].values())}
+                    if self.corrected_failure(state)}
         if self.families[identifier] in affected:
             selected.update(content_required=True, visual_required=True,
                             reasons=sorted(set(selected["reasons"]) | {"affected_family"}))
         return selected
+
+    @staticmethod
+    def corrected_failure(state):
+        repeatable = {entry["operation"] for entry in state.get("operations", [])
+                      if entry.get("repeat_success")}
+        return bool(state.get("formula_retry")) or any(
+            entry.get("corrective") for entry in state.get("operations", [])) or any(
+            count > 1 for operation, count in state.get("attempts", {}).items()
+            if operation not in repeatable)
 
     @recorded_phase("document")
     def run_job(self, job):
@@ -711,7 +735,7 @@ class Runner:
         company.require(isinstance(targets, list) and len({t["id"] for t in targets}) == len(targets),
                         "Invalid/duplicate render targets")
         renders = []
-        corrected = bool(state.get("formula_retry")) or any(count > 1 for count in state["attempts"].values())
+        corrected = self.corrected_failure(state)
         selected = self.selection_for(identifier)
         if selected["visual_required"]:
             chart_inventory = verify_regions(path, targets)

@@ -461,6 +461,76 @@ class RunnerPrimitiveTests(unittest.TestCase):
             with self.assertRaisesRegex(company.Invalid, "budget reached"):
                 engine.boundary()
 
+    def test_successful_inspections_recheck_new_hashes_without_retry_or_expansion(self):
+        with tempfile.TemporaryDirectory() as directory:
+            engine = object.__new__(runner.Runner)
+            engine.state = {"documents": {}}
+            engine.state_path = Path(directory) / "state.json"
+            engine.execution = {}
+            engine.cli = type("FakeCLI", (), {"tool": TOOL})()
+            with patch.object(engine.cli, "run", create=True,
+                              side_effect=lambda args, op: log(op)) as run:
+                state = {"attempts": {}, "operations": []}
+                for digest in ("a" * 64, "b" * 64, "c" * 64):
+                    result = engine.inspection(state, [], "validate", digest)
+                    self.assertEqual(result["artifact_sha256"], digest)
+                    self.assertFalse(result["corrective"])
+                engine.inspection(state, [], "validate", "c" * 64)
+                self.assertEqual(run.call_count, 3)
+                self.assertEqual(state["attempts"]["validate"], 3)
+                self.assertFalse(engine.corrected_failure(state))
+                state["attempts"]["author"] = 2
+                self.assertTrue(engine.corrected_failure(state))
+
+    def test_inspection_failures_remain_bounded_across_hashes_and_resume(self):
+        with tempfile.TemporaryDirectory() as directory:
+            engine = object.__new__(runner.Runner)
+            engine.state_path = Path(directory) / "state.json"
+            engine.state = {"documents": {"doc": {"attempts": {}, "operations": []}}}
+            engine.execution = {}
+            engine.cli = type("FakeCLI", (), {"tool": TOOL})()
+            failure = dict(log("issues"), returncode=1, stderr="Failure")
+            with patch.object(engine.cli, "run", create=True, return_value=failure) as run:
+                state = engine.state["documents"]["doc"]
+                with self.assertRaises(company.Invalid):
+                    engine.inspection(state, [], "issues", "a" * 64)
+                self.assertEqual(state["operations"][-1]["artifact_sha256"], "a" * 64)
+                with self.assertRaisesRegex(company.Invalid, "concrete correction"):
+                    engine.inspection(state, [], "issues", "b" * 64)
+                self.assertEqual(run.call_count, 1)
+                state["retry_reasons"] = {"issues": "Corrected explicit layout"}
+                with self.assertRaises(company.Invalid):
+                    engine.inspection(state, [], "issues", "b" * 64)
+                engine.state = company.load(engine.state_path)
+                state = engine.state["documents"]["doc"]
+                with self.assertRaisesRegex(company.Invalid, "already consumed"):
+                    engine.inspection(state, [], "issues", "c" * 64)
+                self.assertEqual(run.call_count, 2)
+                self.assertTrue(engine.corrected_failure(state))
+
+    def test_successful_rechecks_do_not_erase_an_earlier_failed_inspection(self):
+        with tempfile.TemporaryDirectory() as directory:
+            engine = object.__new__(runner.Runner)
+            engine.state_path = Path(directory) / "state.json"
+            engine.state = {"documents": {}}
+            engine.execution = {}
+            engine.cli = type("FakeCLI", (), {"tool": TOOL})()
+            state = {"attempts": {}, "operations": [],
+                     "retry_reasons": {"issues": "Corrected explicit layout"}}
+            failure = dict(log("issues"), returncode=1, stderr="Failure")
+            results = [failure, log("issues"), log("issues"), failure]
+            with patch.object(engine.cli, "run", create=True, side_effect=results) as run:
+                with self.assertRaises(company.Invalid):
+                    engine.inspection(state, [], "issues", "a" * 64)
+                self.assertTrue(engine.inspection(state, [], "issues", "b" * 64)["corrective"])
+                self.assertFalse(engine.inspection(state, [], "issues", "c" * 64)["corrective"])
+                with self.assertRaises(company.Invalid):
+                    engine.inspection(state, [], "issues", "d" * 64)
+                with self.assertRaisesRegex(company.Invalid, "already consumed"):
+                    engine.inspection(state, [], "issues", "e" * 64)
+                self.assertEqual(run.call_count, 4)
+                self.assertTrue(engine.corrected_failure(state))
+
     def test_cache_correction_is_grounded_ordered_and_only_once(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "cache.xlsx"

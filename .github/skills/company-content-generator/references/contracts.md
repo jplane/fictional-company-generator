@@ -563,6 +563,12 @@ covers all pages/slides or all populated worksheet regions; cropped or
 partial replacement is not a full review. Content/condition review evidence
 and visual evidence must be written by an actual reviewer, not the runner.
 
+Successful read-only inspections may run again when an explicitly revised
+artifact has a new hash. These rechecks do not consume corrective retries or
+expand review by themselves. Failed, timed-out, and interrupted inspection
+attempts remain counted across resume and hash changes; a second failure
+blocks further attempts. Mutating operations retain their two-attempt limit.
+
 `build\qa.json` records honest review evidence. For new runs it adds
 `execution_version: 1`, `execution_sha256` (execution object's fingerprint),
 `review_plan_sha256` (review-plan object's fingerprint), and `qa_policy`.

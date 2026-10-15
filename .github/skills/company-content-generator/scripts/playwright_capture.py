@@ -15,6 +15,7 @@ probe has been explicitly requested.
 """
 
 import hashlib
+import math
 from pathlib import Path
 
 
@@ -181,6 +182,19 @@ class CaptureEngine:
             start_box = start.first.bounding_box()
             end_box = end.first.bounding_box()
             _require(start_box and end_box, f"xlsx region {prefix}/{start_cell}:{end_cell} not rendered")
+            region_width = (max(start_box["x"] + start_box["width"], end_box["x"] + end_box["width"])
+                            - min(start_box["x"], end_box["x"]))
+            region_height = (max(start_box["y"] + start_box["height"], end_box["y"] + end_box["height"])
+                             - min(start_box["y"], end_box["y"]))
+            current_viewport = page.viewport_size
+            page.set_viewport_size({
+                "width": max(current_viewport["width"], math.ceil(region_width) + 100),
+                "height": max(current_viewport["height"], math.ceil(region_height) + 160),
+            })
+            end.first.evaluate("el => el.scrollIntoView({block: 'end', inline: 'end'})")
+            start_box = start.first.bounding_box()
+            end_box = end.first.bounding_box()
+            _require(start_box and end_box, "XLSX region disappeared after scrolling")
             clip = {
                 "x": min(start_box["x"], end_box["x"]),
                 "y": min(start_box["y"], end_box["y"]),
@@ -189,11 +203,17 @@ class CaptureEngine:
                 "height": max(start_box["y"] + start_box["height"], end_box["y"] + end_box["height"])
                           - min(start_box["y"], end_box["y"]),
             }
+            viewport_size = page.viewport_size
+            _require(clip["x"] >= 0 and clip["y"] >= 0
+                     and clip["x"] + clip["width"] <= viewport_size["width"]
+                     and clip["y"] + clip["height"] <= viewport_size["height"],
+                     "XLSX region does not fit the capture viewport; partial screenshots are rejected")
             out_png = Path(out_png)
             out_png.parent.mkdir(parents=True, exist_ok=True)
             page.screenshot(path=str(out_png), clip=clip)
             return {"sheet": sheet_name, "start_cell": start_cell, "end_cell": end_cell,
-                    "clip": clip, "path": str(out_png), "sha256": file_sha256(out_png)}
+                    "clip": clip, "viewport": viewport_size,
+                    "path": str(out_png), "sha256": file_sha256(out_png)}
         finally:
             context.close()
 

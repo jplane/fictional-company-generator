@@ -105,6 +105,19 @@ def _xlsx_chart_matrix_commands():
     ]
 
 
+def _xlsx_offscreen_regions_commands():
+    commands = [
+        {"command": "set", "path": "/Sheet1/A40", "props": {"value": "Tall region start"}},
+        {"command": "set", "path": "/Sheet1/M70", "props": {"value": "Tall region end"}},
+        {"command": "set", "path": "/Sheet1/A50", "props": {"value": "Offscreen start"}},
+        {"command": "set", "path": "/Sheet1/M56", "props": {"value": "Offscreen end"}},
+        {"command": "set", "path": "/Sheet1/AZ40", "props": {"value": "Wide region end"}},
+    ]
+    commands.extend({"command": "set", "path": f"/Sheet1/row[{row}]",
+                     "props": {"height": "60"}} for row in range(40, 71))
+    return commands
+
+
 def _xlsx_overlapping_charts_commands():
     """Two charts sharing the identical start/end anchor: identity must stay
     correct and distinct, but the capture must report the resulting occlusion
@@ -245,6 +258,8 @@ class PlaywrightCaptureIntegrationTests(unittest.TestCase):
                                     _pptx_four_slides_commands())
         cls.xlsx_regions = _build(cls.cli, cls.fixtures / "xlsx1_regions.xlsx",
                                   _xlsx_five_regions_commands())
+        cls.xlsx_offscreen_regions = _build(cls.cli, cls.fixtures / "xlsx4_offscreen_regions.xlsx",
+                                            _xlsx_offscreen_regions_commands())
         cls.xlsx_chart_matrix = _build(cls.cli, cls.fixtures / "xlsx2_chart_matrix.xlsx",
                                        _xlsx_chart_matrix_commands())
         cls.xlsx_overlap = _build(cls.cli, cls.fixtures / "xlsx3_overlap.xlsx",
@@ -309,6 +324,28 @@ class PlaywrightCaptureIntegrationTests(unittest.TestCase):
                 self.assertTrue(out_png.is_file(), f"{name}: missing region image")
                 self.assertGreater(region["clip"]["width"], 0, f"{name}: zero-width region")
                 self.assertGreater(region["clip"]["height"], 0, f"{name}: zero-height region")
+
+    def test_xlsx_offscreen_tall_and_wide_regions_are_not_cropped(self):
+        import struct
+        with tempfile.TemporaryDirectory(prefix="xlsx-offscreen-") as tmp:
+            html = self._export_html(self.xlsx_offscreen_regions, tmp)
+            for name, start, end in (
+                ("offscreen", "A50", "M56"),
+                ("tall", "A40", "M70"),
+                ("wide", "A40", "AZ40"),
+            ):
+                with self.subTest(name=name):
+                    image = Path(tmp) / f"{name}.png"
+                    result = self.engine.capture_xlsx_region(html, image, "Sheet1", start, end)
+                    width, height = struct.unpack(">II", image.read_bytes()[16:24])
+                    self.assertLessEqual(abs(width - result["clip"]["width"]), 1)
+                    self.assertLessEqual(abs(height - result["clip"]["height"]), 1)
+                    self.assertGreaterEqual(result["clip"]["x"], 0)
+                    self.assertGreaterEqual(result["clip"]["y"], 0)
+                    if name == "tall":
+                        self.assertGreater(height, 1200)
+                    if name == "wide":
+                        self.assertGreater(width, 1600)
 
     def test_xlsx_chart_matrix_standard_duplicate_titles_beyond_grid_offscreen_and_second_sheet(self):
         """Positive capability matrix: standard column+line charts, duplicate
