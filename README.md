@@ -107,7 +107,6 @@ Use a new output directory rather than overwriting the included corpus.
 > Use company-content-generator to create 8 DOCX press releases for Northstar
 > Marine, a struggling, fictional sailboat manufacturer, covering 2023 through 2024.
 > Use light depth and focus on product launches and company announcements.
-> Generate the output in C:\CompanyContent\Northstar-press-releases.
 > No additional QA.
 
 **Custom types and richer analysis**
@@ -130,8 +129,7 @@ Use a new output directory rather than overwriting the included corpus.
 > assumptions and a later source that corrects an earlier estimate.
 > Keep actual financial results consistent and distinguish assumptions
 > from approved decisions. Preserve the source history without giving
-> earlier authors future knowledge. Generate the output in
-> C:\CompanyContent\GulfLight-source-history. Run Sampled additional QA.
+> earlier authors future knowledge. Run Sampled additional QA.
 
 **Explicit gaps and stale material**
 
@@ -143,7 +141,7 @@ Use a new output directory rather than overwriting the included corpus.
 > and include an older planning deck that is stale as of 2025-12-31 relative
 > to a newer approved source. Keep the total at 12 documents, preserve
 > canonical actuals, and do not label these conditions in the business prose.
-> Generate the output in C:\CompanyContent\Pelican-2024-2025.
+> Generate the output in ~/repos/pelican-2024-2025.
 > Run Full additional QA.
 
 **Additional QA and a simulated public view of an existing corpus**
