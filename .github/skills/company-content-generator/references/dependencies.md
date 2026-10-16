@@ -68,38 +68,38 @@ supports that distribution. Keep executable permission, PATH, and macOS
 Gatekeeper/quarantine troubleshooting explicit and scoped; do not disable
 platform protections or substitute an unverified binary.
 
-## Python environment and native paths
+## uv environment and native paths
 
-Use Python **3.10+** and the current host's native paths. The following creates a
-local environment only when one is needed; reuse an existing active venv.
-Commands run from the project root. For a copied skill, resolve its actual
-absolute script location rather than assuming this repository layout.
+Use **[uv](https://docs.astral.sh/uv/)** and Python **3.10+**. Resolve the installed
+skill directory containing `pyproject.toml` and `uv.lock`; run generation examples
+from that directory. uv creates and manages its `.venv` automatically, without
+manual creation or activation. Do not use `--active` to modify an unrelated
+environment. For a read-only installation, set process-local
+`UV_PROJECT_ENVIRONMENT` to an approved, dedicated writable directory (under
+session storage before initialization or `build` afterward), then keep that
+environment selection consistent for setup and execution.
 
-**Windows PowerShell**
+Obtain authorization before installing uv, Python, packages, or browsers.
+Set process-local `UV_PYTHON_DOWNLOADS=never` unless a Python download was
+explicitly authorized; use `--python` with an approved installed interpreter
+when needed. uv does not replace OfficeCLI or install Chromium/system libraries
+as part of ordinary helper execution.
 
-```powershell
-py -3 -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python --version
-```
+The base project has no dependencies. The `capture` extra pins
+`playwright==1.63.0`; its transitive dependencies are fixed by `uv.lock`.
+Use `--locked` to reject stale metadata rather than changing the lock during
+generation. Update the lock explicitly with `uv lock` only as authorized
+maintenance, and revalidate changed package/browser identities and capabilities.
+Once setup is complete, reuse that environment and avoid downloads in the
+document loop; `--offline` can enforce cached-only uv execution.
 
-`py` is the Windows launcher, if installed; otherwise use the verified Python
-3.10+ executable's `-m venv`. Do not change machine-wide execution policy to
-activate a venv: `.\.venv\Scripts\python.exe` can run commands directly.
-
-**macOS/Linux (bash/zsh)**
-
-```sh
-python3 -m venv .venv
-. .venv/bin/activate
-python --version
-```
-
-Outside a venv, `python` may not exist or may select the wrong interpreter.
-Inside one, use its `python` (or the venv interpreter's explicit native path) for
-both packages and scripts. Never assume a Windows drive path is meaningful on
-POSIX or that backslashes in bash/zsh are directory separators. Quote paths and
-variables containing spaces. The helper does not expand a literal `~` in JSON.
+Examples are command recipes using `/` and quoted `<placeholders>`, not a
+universal shell script. Replace placeholders with resolved absolute paths,
+use OS-specific separators for native CLI arguments, and adapt variable,
+quoting, and environment-assignment syntax to the actual shell. New persisted
+corpus-relative references still use `/` on every OS; do not rewrite stored
+evidence. Never assume a Windows drive path is meaningful on POSIX. The helper
+does not expand a literal `~` in JSON.
 Choose a short output root; complete-path limits and external-tool long-path
 support remain filesystem/host-specific. Do not change registry or global Git
 settings as a workaround.
@@ -112,35 +112,35 @@ require Playwright to be installed (the import is lazy, inside
 `CaptureEngine.__init__`). It is only required to actually capture pixels
 (preflight probes and real renders).
 
-1. If an existing testing/session venv already has the pinned Playwright
-   dependency and its matching managed Chromium build working, **no
-   additional install is required** — reuse it as-is.
-2. Otherwise, install the pinned `playwright==1.63.0` package with `pip`
-   scoped to the active virtual environment (never into a global/system
-   interpreter), then run `python -m playwright install chromium` to fetch the matching
-   managed build from the official Playwright CDN. Do not hardcode the
-   current user's name, session ID, or any machine-specific path into this
-   repository; `PLAYWRIGHT_BROWSERS_PATH` (if set at all) is a per-process
-   environment variable for a run, never a committed/global setting.
-3. Honor whatever package index/feed is already configured for the active
-   Python environment (`pip config`, `PIP_INDEX_URL`, a `pip.ini`/`pip.conf`,
-   etc.). Only when a genuinely missing dependency actually requires a fresh
-   install and no feed is otherwise configured does the current user's
-   preferred feed, `https://packagefeedproxy.microsoft.io/pypi/simple/`,
-   apply — this is a personal preference for this consumer, not a value to
-   force on every generic consumer of this skill.
+1. If the selected uv environment already has the locked capture dependencies
+   and matching managed Chromium working, **no additional install is required**.
+2. Otherwise, synchronize the locked `capture` extra, then use that same
+   environment to fetch the matching managed build from the official Playwright
+   CDN. Do not hardcode a user name, session ID, or machine-specific path.
+   `PLAYWRIGHT_BROWSERS_PATH`, if needed, is process-local, never a global setting.
+3. Honor the consumer's approved package feed through uv configuration or
+   `UV_DEFAULT_INDEX`. uv does not read `pip.ini`, `pip.conf`, or `PIP_INDEX_URL`;
+   translate an approved pip-only feed explicitly rather than silently switching
+   indexes. Never commit credentials or force a consumer-specific feed into the
+   portable project. The distributed lock uses public PyPI artifact URLs;
+   changing the registry can invalidate `--locked` even when versions match.
+   If policy requires a different registry, obtain approval to regenerate a
+   mirror-specific lock in a dedicated writable copy of the skill before
+   preflight; do not silently rewrite a shared installation or use `--frozen`
+   to bypass an inconsistent lock. Keep that selected copy and feed consistent
+   for the run, and review its resolved versions and registry URLs.
 4. Record the resulting identity in the capability receipt: Playwright
    version, browser channel, managed Chromium version, its executable path,
    and its SHA-256 — the same evidentiary treatment as the OfficeCLI
    executable/version/checksum above. Treat drift in either identity as a
    capability change requiring revalidation, not a silent pass-through.
 
-After authorization and only when dependencies are genuinely missing, both
-shells use these commands with the active venv interpreter:
+After authorization and only when dependencies are genuinely missing, run from
+the installed skill directory:
 
 ```text
-python -m pip install playwright==1.63.0
-python -m playwright install chromium
+uv sync --locked --extra capture
+uv run --locked --extra capture python -m playwright install chromium
 ```
 
 ### Linux libraries, sandboxing, and fonts
@@ -155,7 +155,8 @@ skill or a promise that a future platform is supported by the pinned version.
 Minimal Linux/container images can lack Chromium's shared libraries even after
 the Python package and browser download succeed.
 
-`python -m playwright install-deps chromium` installs host system packages and
+`uv run --locked --extra capture python -m playwright install-deps chromium`
+installs host system packages and
 may require elevated privileges. It is a **separate, explicitly authorized
 machine change**, not an automatic generation or unit-test step. Review the
 needed packages and the host administrator's approved installation procedure.
@@ -183,17 +184,11 @@ Font inventory is not currently enforced or fingerprinted by the adapter.
 **Before creating the output directory, canon, plan, or drafts**, verify Python
 and perform tiny session-owned probes for the selected formats with the runner:
 
-```powershell
-python .github\skills\company-content-generator\scripts\officecli_runner.py preflight --formats docx pptx xlsx --out "$sessionWorkspace\officecli-preflight.json"
+```text
+uv run --locked --extra capture scripts/officecli_runner.py preflight --formats docx pptx xlsx --out "<session-workspace>/officecli-preflight.json"
 ```
 
-macOS/Linux (bash/zsh; active virtual environment):
-
-```sh
-python .github/skills/company-content-generator/scripts/officecli_runner.py preflight --formats docx pptx xlsx --out "$sessionWorkspace/officecli-preflight.json"
-```
-
-Resolve `$sessionWorkspace` explicitly; select only the requested formats.
+Resolve `<session-workspace>` explicitly; select only the requested formats.
 Copy the verified receipt and referenced probe images into `build` after
 initialization. Never mark preflight passed from a missing tool, skipped test,
 capture-adapter-presence claim, or undisplayed image. The automatic probe
@@ -364,28 +359,42 @@ rewrite historical engine evidence.
 
 ## Maintenance checks
 
-`python -m unittest discover -s tests -q` runs standard-library tests without
-Microsoft Office. `RUN_OFFICECLI_TESTS=1` enables actual OfficeCLI integrations.
+From the repository root, select the skill's locked base project:
+
+```text
+uv run --locked --project .github/skills/company-content-generator python -m unittest discover -s tests -q
+```
+
+This runs standard-library tests without Microsoft Office or capture packages.
+`RUN_OFFICECLI_TESTS=1` enables actual OfficeCLI integrations.
 Missing tools skip optional maintenance tests explicitly; skips never count as
 passed generation preflight. Tiny fixtures are not a new company corpus or
 editorial/visual certification.
 
-Use the active venv interpreter for the same maintenance command on every OS.
 The repository's `Cross-platform Python tests` GitHub Actions workflow runs it
 on Windows, macOS, and Ubuntu with Python 3.10/3.14. It installs no application
 dependencies and deliberately skips real OfficeCLI/browser integrations.
 
-To opt in locally **after** authorized setup and actual tool availability:
+To opt in locally **after** authorized setup and actual tool availability, set
+`RUN_OFFICECLI_TESTS=1` for that process using the current shell's syntax, run:
 
-```powershell
-$env:RUN_OFFICECLI_TESTS = "1"
-python -m unittest discover -s tests -q
-Remove-Item Env:RUN_OFFICECLI_TESTS
+```text
+uv run --locked --extra capture --project .github/skills/company-content-generator python -m unittest discover -s tests -q
 ```
 
-```sh
-RUN_OFFICECLI_TESTS=1 python -m unittest discover -s tests -q
-```
+Then restore the prior environment setting. `--project` selects the environment
+without changing the repository working directory used for test discovery.
+From another directory, use absolute project and test-directory paths. Plain
+Python remains supported for callers managing their own compatible environment;
+uv is the primary documented setup and execution workflow.
+
+The separate `SkillSpector static scan` workflow scans the distributable skill
+with a pinned scanner and its upstream lockfile, `--no-llm`, and
+`--fail-on-incomplete`. It preserves the native risk-score threshold (>50) and
+errors rather than accepting all findings into a baseline. JSON reports and
+revision metadata are retained even on failure. Tracing and model calls are
+disabled; OSV.dev may receive dependency names/versions, not source contents.
+Scanner dependencies are separate from this skill's runtime.
 
 The included render proof remains Windows-pinned-version-only. A green Python
 CI matrix is not real macOS/Linux capture proof, native Office fidelity, or

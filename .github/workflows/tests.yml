@@ -20,12 +20,19 @@ jobs:
     env:
       RUN_OFFICECLI_TESTS: '0'
       PYTHONDONTWRITEBYTECODE: '1'
+      UV_PYTHON_DOWNLOADS: never
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: ${{ matrix.python }}
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
+        with:
+          version: '0.12.10'
+          enable-cache: false
       - name: Show runtime and scope
         run: python -c "import platform, sys; print(sys.version); print(platform.platform()); print('Standard-library checks only; real OfficeCLI/Chromium integrations are skipped.')"
       - name: Run standard-library tests
-        run: python -m unittest discover -s tests -q
+        run: uv run --locked --project .github/skills/company-content-generator --python "${{ matrix.python }}" python -m unittest discover -s tests -q

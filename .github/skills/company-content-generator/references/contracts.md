@@ -605,16 +605,15 @@ rewrite an accepted generation milestone merely to update its historical label.
 
 **Optional QA** is a separate runner command:
 
-```powershell
-python .github\skills\company-content-generator\scripts\officecli_runner.py qa --root "$outputRoot" --jobs build\jobs.json
+From the installed skill directory, using the uv setup and shell/path adaptation
+convention in `dependencies.md`, replace `<output>` with the approved absolute
+corpus path:
+
+```text
+uv run --locked --extra capture scripts/officecli_runner.py qa --root "<output>" --jobs build/jobs.json
 ```
 
-macOS/Linux (bash/zsh; active virtual environment):
-
-```sh
-python .github/skills/company-content-generator/scripts/officecli_runner.py qa --root "$outputRoot" --jobs build/jobs.json
-# A later explicit choice can add --policy Sampled, Balanced, or Full.
-```
+A later explicit choice can add `--policy Sampled`, `Balanced`, or `Full`.
 
 Invoke it automatically after generation if intake selected QA; do not invoke it
 otherwise. It first verifies generation, then prepares missing selected renders

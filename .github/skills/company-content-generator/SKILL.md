@@ -21,19 +21,20 @@ Read `references/provenance.md` before preparing exporter bindings and optional 
 Read `references/use-case-layering.md` only when discussing an optional
 customer/use-case layer; do not implement or invoke its illustrative evaluator.
 The Python helper at `scripts/company.py` uses only the standard library. Resolve
-paths relative to this skill's directory; commands below assume the project root.
-When installed elsewhere, use the resolved absolute script path.
+this skill's installed directory, including its `pyproject.toml` and `uv.lock`;
+commands below run from that directory, not the consumer's repository root.
 
-Documentation paths and new persisted relative filesystem paths use `/` on every
-OS. Readers accept legacy `\` separators without modifying stored evidence.
+Examples use `/`; adapt CLI paths to OS-specific separators and adapt quoting,
+variables, and environment assignments to the current shell. New persisted
+relative filesystem paths always use `/`, regardless of OS. Never rewrite
+existing stored evidence.
 Never globally replace separators in JSON: OfficeCLI DOM paths, URLs, raw logs,
 and executable identities are different contracts. Keep native paths for CLI
 arguments and subprocess execution. Absolute CLI inputs must belong to the host;
 stored references must be relative and may not traverse `..` or escape their
 permitted subtree through links. See `references/contracts.md` for naming rules.
-See `references/dependencies.md` for PowerShell and bash/zsh venv setup, Linux
-browser prerequisites, and available fonts. Do not assume Windows paths, shell
-syntax, or Arial/Calibri are available on macOS/Linux.
+Do not assume Windows paths, shell syntax, or Arial/Calibri are available on
+macOS/Linux. The dependency reference covers uv setup and native prerequisites.
 
 ## Dependencies and preflight
 
@@ -382,27 +383,20 @@ Draft JSON may still use stable ID-based filenames for machine bookkeeping.
 
 ## Workflow
 
-Commands below use `$outputRoot`, the resolved path explicitly supplied by the
-user, and `request.json`, the bootstrap input in the session workspace. Substitute
-the resolved absolute script path when the skill is installed outside this
-project. Do not run examples with an unset path or assume the example is intake.
-Use the active virtual environment's `python`. Each step includes Windows
-PowerShell and macOS/Linux bash/zsh forms. For example, define
-`$outputRoot = "C:\CompanyContent\NewRun"` in PowerShell or
-`outputRoot="$HOME/CompanyContent/NewRun"` in bash/zsh, using the user's actual
-new directory instead of these placeholders.
+Run commands from the resolved installed skill directory after authorized uv and
+capture setup in the dependency reference. uv manages the environment; no manual
+venv activation is needed. Each command uses the locked `capture` extra so browser
+setup, preflight, and generation share the same pinned packages.
+Examples are shell-adaptable command recipes: replace `<output>` with the
+user-approved absolute output path and `<request>` with the absolute bootstrap
+request path in the session workspace. Adapt paths and shell syntax as described
+above; never execute literal placeholders or infer intake values from them.
 
 1. **Create the core info set before prose.** Write `request.json` using the documented
    contract, then initialize a new, dedicated output directory:
 
-   ```powershell
-   python .github\skills\company-content-generator\scripts\company.py init --config request.json --out "$outputRoot"
-   ```
-
-   macOS/Linux:
-
-   ```sh
-   python .github/skills/company-content-generator/scripts/company.py init --config request.json --out "$outputRoot"
+   ```text
+   uv run --locked --extra capture scripts/company.py init --config "<request>" --out "<output>"
    ```
 
    This produces a seeded baseline, not an industry-complete simulation. Adapt
@@ -418,16 +412,9 @@ new directory instead of these placeholders.
    follow-ups, not duplicated text. Review the descriptive titles and filenames
    against their anchors before freezing. A small target may not cover every year.
 
-   ```powershell
-   python .github\skills\company-content-generator\scripts\company.py validate --canon "$outputRoot\canon.json"
-   python .github\skills\company-content-generator\scripts\company.py plan --canon "$outputRoot\canon.json" --out "$outputRoot\build\plan.json"
-   ```
-
-   macOS/Linux:
-
-   ```sh
-   python .github/skills/company-content-generator/scripts/company.py validate --canon "$outputRoot/canon.json"
-   python .github/skills/company-content-generator/scripts/company.py plan --canon "$outputRoot/canon.json" --out "$outputRoot/build/plan.json"
+   ```text
+   uv run --locked --extra capture scripts/company.py validate --canon "<output>/canon.json"
+   uv run --locked --extra capture scripts/company.py plan --canon "<output>/canon.json" --out "<output>/build/plan.json"
    ```
 
    Once any prose is generated, never change the canon or plan in place.
@@ -450,14 +437,8 @@ new directory instead of these placeholders.
    singleton/all-selected warnings; never fake layout reuse to shrink sampling.
    Prepare the bounded date-filtered contexts together:
 
-   ```powershell
-   python .github\skills\company-content-generator\scripts\company.py contexts --canon "$outputRoot\canon.json" --plan "$outputRoot\build\plan.json" --out "$outputRoot\build\contexts"
-   ```
-
-   macOS/Linux:
-
-   ```sh
-   python .github/skills/company-content-generator/scripts/company.py contexts --canon "$outputRoot/canon.json" --plan "$outputRoot/build/plan.json" --out "$outputRoot/build/contexts"
+   ```text
+   uv run --locked --extra capture scripts/company.py contexts --canon "<output>/canon.json" --plan "<output>/build/plan.json" --out "<output>/build/contexts"
    ```
 
    Each writer uses only its document's context as factual input. Never give a writer the unfiltered
@@ -516,20 +497,15 @@ new directory instead of these placeholders.
    Check all schema/issues and explicit chart caches. Hash/index final saved
    bytes; later edits invalidate affected renders, mappings and reviews.
 
-   ```powershell
-   python .github\skills\company-content-generator\scripts\officecli_runner.py run --root "$outputRoot" --jobs build\jobs-pilots.json
-   # Inspect every pilot and persist actual reviews before the bulk command.
-   python .github\skills\company-content-generator\scripts\officecli_runner.py run --root "$outputRoot" --jobs build\jobs.json
-   python .github\skills\company-content-generator\scripts\officecli_runner.py assemble --root "$outputRoot" --jobs build\jobs.json
+   ```text
+   uv run --locked --extra capture scripts/officecli_runner.py run --root "<output>" --jobs build/jobs-pilots.json
    ```
 
-   macOS/Linux:
+   Inspect every pilot and persist actual reviews before the bulk commands:
 
-   ```sh
-   python .github/skills/company-content-generator/scripts/officecli_runner.py run --root "$outputRoot" --jobs build/jobs-pilots.json
-   # Review and record the actual pilot gates before running siblings:
-   python .github/skills/company-content-generator/scripts/officecli_runner.py run --root "$outputRoot" --jobs build/jobs.json
-   python .github/skills/company-content-generator/scripts/officecli_runner.py assemble --root "$outputRoot" --jobs build/jobs.json
+   ```text
+   uv run --locked --extra capture scripts/officecli_runner.py run --root "<output>" --jobs build/jobs.json
+   uv run --locked --extra capture scripts/officecli_runner.py assemble --root "<output>" --jobs build/jobs.json
    ```
 
    Persist actual pilot reviews under `build/reviews`; the runner never writes
@@ -552,14 +528,8 @@ new directory instead of these placeholders.
    writes `build/manifest.json` and `build/generation.json`. It does not require
    full provenance/coverage, corpus renders, or `qa.json`. For a standalone recheck:
 
-   ```powershell
-   python .github\skills\company-content-generator\scripts\company.py audit-generation --canon "$outputRoot\canon.json" --plan "$outputRoot\build\plan.json" --drafts "$outputRoot\build\drafts" --manifest "$outputRoot\build\manifest.json" --root "$outputRoot"
-   ```
-
-   macOS/Linux:
-
-   ```sh
-   python .github/skills/company-content-generator/scripts/company.py audit-generation --canon "$outputRoot/canon.json" --plan "$outputRoot/build/plan.json" --drafts "$outputRoot/build/drafts" --manifest "$outputRoot/build/manifest.json" --root "$outputRoot"
+   ```text
+   uv run --locked --extra capture scripts/company.py audit-generation --canon "<output>/canon.json" --plan "<output>/build/plan.json" --drafts "<output>/build/drafts" --manifest "<output>/build/manifest.json" --root "<output>"
    ```
 
    If intake declined additional QA, deliver now: **generation complete;
@@ -571,18 +541,15 @@ new directory instead of these placeholders.
    explicit request may use `--policy Sampled`, `--policy Balanced`
    or `--policy Full` without changing canon/drafts/Office files:
 
-   ```powershell
-   python .github\skills\company-content-generator\scripts\officecli_runner.py qa --root "$outputRoot" --jobs build\jobs.json
-   # Perform required reviews in review-work.json; persist actual per-document reviews.
-   python .github\skills\company-content-generator\scripts\officecli_runner.py finalize-qa --root "$outputRoot"
+   ```text
+   uv run --locked --extra capture scripts/officecli_runner.py qa --root "<output>" --jobs build/jobs.json
    ```
 
-   macOS/Linux:
+   Complete required reviews in `review-work.json` and persist actual
+   per-document reviews before finalizing:
 
-   ```sh
-   python .github/skills/company-content-generator/scripts/officecli_runner.py qa --root "$outputRoot" --jobs build/jobs.json
-   # Complete actual required reviews before finalizing:
-   python .github/skills/company-content-generator/scripts/officecli_runner.py finalize-qa --root "$outputRoot"
+   ```text
+   uv run --locked --extra capture scripts/officecli_runner.py finalize-qa --root "<output>"
    ```
 
    `qa` verifies accepted bytes, resolves private exporter bindings, writes exact
@@ -611,7 +578,7 @@ new directory instead of these placeholders.
    canon/planning, drafting, editorial and visual work (`--pass qa` for QA).
    Use `--parent` for nested spans and `--document` for document-specific work.
    End parent spans only after children. Omitted work is unknown, not zero.
-   `summary --root "$outputRoot"` reports wall time separately from overlapping
+   `summary --root "<output>"` reports wall time separately from overlapping
    worker/subprocess/capture activity, queue spans, reuse counters, gaps and
    generation/QA milestones. Never infer where hours went without measurements.
 

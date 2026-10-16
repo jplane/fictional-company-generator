@@ -1,0 +1,65 @@
+name: SkillSpector static scan
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    env:
+      UV_PYTHON_DOWNLOADS: never
+      LANGSMITH_TRACING: 'false'
+      LANGCHAIN_TRACING: 'false'
+      LANGCHAIN_TRACING_V2: 'false'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check out pinned scanner
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: NVIDIA/SkillSpector
+          ref: c7958a3268d9498644b22edb75d0f051bbc8cbfc # v2.12.0
+          path: .ci-tools/skillspector
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
+        with:
+          version: '0.12.10'
+          enable-cache: false
+      - name: Record scan revisions
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/skillspector-report"
+          {
+            printf 'source_revision='
+            git rev-parse HEAD
+            printf 'scanner_revision='
+            git -C .ci-tools/skillspector rev-parse HEAD
+            printf 'scope=.github/skills/company-content-generator\n'
+            printf 'policy=static-only; risk_score>50; fail-on-incomplete\n'
+            uv --version
+            python --version
+          } > "$RUNNER_TEMP/skillspector-report/revisions.txt"
+      - name: Scan distributable skill without LLM analysis
+        shell: bash
+        run: |
+          uv run --locked --no-dev --python 3.12 \
+            --project .ci-tools/skillspector --no-env-file \
+            skillspector scan .github/skills/company-content-generator \
+            --no-llm --fail-on-incomplete --format json \
+            --output "$RUNNER_TEMP/skillspector-report/report.json"
+      - name: Retain scan report and revisions
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: skillspector-report
+          path: ${{ runner.temp }}/skillspector-report/
+          if-no-files-found: error

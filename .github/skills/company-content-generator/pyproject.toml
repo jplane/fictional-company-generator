@@ -1,0 +1,11 @@
+[project]
+name = "company-content-generator"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+capture = ["playwright==1.63.0"]
+
+[tool.uv]
+package = false
