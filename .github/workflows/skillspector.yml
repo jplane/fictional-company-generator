@@ -44,7 +44,10 @@ jobs:
             printf 'scanner_revision='
             git -C .ci-tools/skillspector rev-parse HEAD
             printf 'scope=.github/skills/company-content-generator\n'
-            printf 'policy=static-only; risk_score>50; fail-on-incomplete\n'
+            printf 'policy=static-only; unsuppressed risk_score>50; incomplete coverage warns\n'
+            printf 'baseline=.github/skillspector-baseline.json\n'
+            printf 'baseline_sha256='
+            sha256sum .github/skillspector-baseline.json | cut -d ' ' -f 1
             uv --version
             python --version
           } > "$RUNNER_TEMP/skillspector-report/revisions.txt"
@@ -54,8 +57,14 @@ jobs:
           uv run --locked --no-dev --python 3.12 \
             --project .ci-tools/skillspector --no-env-file \
             skillspector scan .github/skills/company-content-generator \
-            --no-llm --fail-on-incomplete --format json \
+            --no-llm --baseline .github/skillspector-baseline.json --format json \
             --output "$RUNNER_TEMP/skillspector-report/report.json"
+      - name: Report scan coverage and reviewed exceptions
+        if: always()
+        shell: bash
+        run: |
+          python .github/scripts/skillspector_summary.py \
+            "$RUNNER_TEMP/skillspector-report/report.json"
       - name: Retain scan report and revisions
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2

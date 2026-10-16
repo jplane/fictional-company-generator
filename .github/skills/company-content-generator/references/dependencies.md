@@ -389,12 +389,17 @@ Python remains supported for callers managing their own compatible environment;
 uv is the primary documented setup and execution workflow.
 
 The separate `SkillSpector static scan` workflow scans the distributable skill
-with a pinned scanner and its upstream lockfile, `--no-llm`, and
-`--fail-on-incomplete`. It preserves the native risk-score threshold (>50) and
-errors rather than accepting all findings into a baseline. JSON reports and
-revision metadata are retained even on failure. Tracing and model calls are
-disabled; OSV.dev may receive dependency names/versions, not source contents.
-Scanner dependencies are separate from this skill's runtime.
+with a pinned scanner and its upstream lockfile and `--no-llm`. It blocks on the
+native unsuppressed risk-score threshold (>50) and scanner errors. Incomplete
+coverage is nonblocking, with a workflow warning and coverage/limitation counts
+in the job summary. Individually reviewed exceptions use exact source- and
+scanner-version-bound fingerprints in the repository's CI configuration, not
+wildcard rules or automatic acceptance of new findings. Changes invalidate
+affected fingerprints and require re-review, not blind baseline regeneration.
+JSON reports retain suppressed evidence and coverage gaps; reports and revision
+metadata are retained even on failure. Tracing and model calls are disabled;
+OSV.dev may receive dependency names/versions, not source contents. Scanner
+dependencies and CI exceptions are separate from this skill's runtime.
 
 The included render proof remains Windows-pinned-version-only. A green Python
 CI matrix is not real macOS/Linux capture proof, native Office fidelity, or

@@ -49,9 +49,6 @@ generated `.venv` environments or caches.
 | Claude Code / project | `<project>/.claude/skills/company-content-generator` |
 | Claude Code / personal | `~/.claude/skills/company-content-generator` |
 
-In Claude Code, invoke `/company-content-generator` or describe a matching task.
-Keep one authoritative source folder rather than maintaining separate skill copies.
-
 **Requirements:**
 
 - [Python](https://www.python.org/downloads/) 3.10 or later.
@@ -60,11 +57,6 @@ Keep one authoritative source folder rather than maintaining separate skill copi
 - An [OfficeCLI](https://github.com/iOfficeAI/OfficeCLI) installation you have reviewed.
 - [Playwright](https://playwright.dev/python/) 1.63.0 with the matching managed
   [Chromium browser](https://playwright.dev/python/docs/browsers) capture adapter.
-
-The skill's locked uv project has no base dependencies; its optional `capture`
-extra supplies the pinned Playwright package. Chromium and OfficeCLI still need
-separate setup. The agent resolves the installed skill location and adapts
-example paths and shell syntax to your OS; stored corpus references remain portable.
 
 Required tools are not bundled. The skill can help install or update them with
 your approval.
@@ -233,23 +225,3 @@ generation using schema version 2.
 
 In this run, the required sample and follow-up reviews covered the content and
 appearance of all 50 documents. **Additional corpus QA was not requested**.
-
-## Repository checks
-
-CI runs standard-library tests across Windows, macOS, and Ubuntu with Python
-3.10 and 3.14, using the locked uv base environment without OfficeCLI or browser
-integrations. See the skill's [maintenance instructions](.github/skills/company-content-generator/references/dependencies.md#maintenance-checks)
-for local commands.
-
-A separate SkillSpector job scans the complete skill with **static analysis only**
-(`--no-llm`), without provider credentials or tracing. It fails on the scanner's
-default aggregate risk score **greater than 50**, incomplete analysis, or scanner
-errors, and retains its JSON report and revision information as workflow artifacts.
-Dependency names and versions may be sent to OSV.dev for vulnerability lookups;
-source contents are not sent to an LLM. This bounded scan is not security
-certification. No blanket finding baseline is applied.
-
-The initial pinned scan blocks on findings and incomplete-analysis warnings also
-present in the pre-change skill, including bounded-parser limits and references
-to runtime-generated files. Findings require triage; the gate is not suppressed
-to make CI green.

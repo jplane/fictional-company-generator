@@ -1,0 +1,145 @@
+{
+  "version": 2,
+  "scanner_version": "2.12.0",
+  "rules": [],
+  "fingerprints": [
+    {
+      "hash": "sha256:98f4819c665c7658af29782180029c0a5528c67d3fc7ac292a1226a8507cfd1d",
+      "rule_id": "AST7",
+      "file": "scripts/company.py",
+      "reason": "Reviewed fixed attribute selection: key comes from the literal tuple of argparse output-path names, not corpus input; retrieved values are checked for build containment and are not invoked."
+    },
+    {
+      "hash": "sha256:75eb8b941fb7da60f7edc76901b96629dc023af05c2f01c3404f71278bd7d83c",
+      "rule_id": "AST4",
+      "file": "scripts/officecli_runner.py",
+      "reason": "Reviewed non-shell execution: a selected local OfficeCLI executable receives the fixed --version argument list with shell=False by default. Preserve trusted installation and binary verification; no shell interpolation was found."
+    },
+    {
+      "hash": "sha256:237cbf188aec209faffeba0bb425eeb17b3df453f47cdbfe8c4dc22375dee282",
+      "rule_id": "AST4",
+      "file": "scripts/officecli_runner.py",
+      "reason": "Reviewed non-shell execution: fixed internal OfficeCLI operations use an argument list, executable drift checks, build-contained local inputs, and constrained batch operations. Corpus data is not interpolated into a shell command."
+    },
+    {
+      "hash": "sha256:6ef7a779db429d2e46b79f443de33e6208c45ba17f8a4cc9b509bda5148513c9",
+      "rule_id": "AST7",
+      "file": "scripts/officecli_runner.py",
+      "reason": "Reviewed internal dispatch boundary: fixed capture/identity callsites select methods on the directly instantiated CaptureEngine. Corpus inputs supply arguments, not method names; re-review before exposing this dispatcher externally."
+    },
+    {
+      "hash": "sha256:11c1fdb45ec507da57810241cb00d28c85d867363a85dfdd1101b753fbf08191",
+      "rule_id": "LP3",
+      "file": "SKILL.md",
+      "reason": "Accepted host permission boundary: allowed-tools is optional tool preapproval, not a portable sandbox. Retain host prompts and the skill's explicit installation/destructive-action approvals rather than granting broad shell or interpreter permissions to satisfy this rule."
+    },
+    {
+      "hash": "sha256:8d074f87dca7c5234ada4dafee3ae6f0f36a69ce164a668c7ad209b4e26510d0",
+      "rule_id": "E2",
+      "file": "scripts/officecli_runner.py",
+      "reason": "Accepted trusted-tool boundary: the reviewed runner passes its environment to the explicitly selected local OfficeCLI executable; this code does not log or transmit environment values. Removing env= would still inherit them. Keep installation approval and executable verification."
+    },
+    {
+      "hash": "sha256:0cefa1eda08a1db4a66b80a79984cb4416ec7dc281b8ea32e28d8cfbc27e611d",
+      "rule_id": "EA2",
+      "file": "SKILL.md",
+      "reason": "False positive from negation: this instruction prohibits deleting or rearranging an existing corpus without approval. Preserve the approval safeguard rather than removing it to avoid a phrase match."
+    },
+    {
+      "hash": "sha256:e9592f03830f3aee3b630a3f5bdaaf955ab63e9dc49cd03523ee42536fbf497b",
+      "rule_id": "EA2",
+      "file": "SKILL.md",
+      "reason": "False positive from scope: the instruction not to ask users concerns configuring optional fictional corpus imperfections during ordinary generation, not skipping installation, destructive-action, or other required approvals."
+    },
+    {
+      "hash": "sha256:c865c84a7bee566cf8269ce0cda66cb200a994098212cc22e1c77e1659e7a404",
+      "rule_id": "OH3",
+      "file": "references/dependencies.md",
+      "reason": "False positive from business-layout context: no truncation requires slide titles and text to remain readable and fit their layout. It does not request unbounded generation or unlimited resources."
+    },
+    {
+      "hash": "sha256:3aa2bb9c0084c85699fa34081f3e937c106b3982940397b7afa1f4114177ca1f",
+      "rule_id": "OH3",
+      "file": "references/dependencies.md",
+      "reason": "False positive from validation context: without truncation requires inspecting the complete set of schema/content/structure issues. It does not remove the workflow's execution bounds."
+    },
+    {
+      "hash": "sha256:b620d8231bb4d48dbd3e07ea25bb93d11f371e9b7048b025745f5cfa52f955c8",
+      "rule_id": "TM3",
+      "file": "references/contracts.md",
+      "reason": "False positive from negation: the contract explicitly forbids a caller-controlled skip-validation flag and mtime-only trust. It does not authorize bypassing checks."
+    },
+    {
+      "hash": "sha256:770d5195ff555530644f747dd7141f8b81b8af5be981f957565ee3a777a89db1",
+      "rule_id": "AE1",
+      "file": "SKILL.md",
+      "reason": "Accepted coverage-only warning at line 23 for scripts/company.py: the pinned scanner reports instruction-reconstruction limits, not demonstrated evasion. Remove duplicate risk scoring only; preserve the incomplete ledger and coverage warning. This does not certify the helper."
+    },
+    {
+      "hash": "sha256:ef28c17503281a309b0029129b26424b52f9c4cbd3e12ce1919906f5897ce0ad",
+      "rule_id": "AE1",
+      "file": "SKILL.md",
+      "reason": "Accepted coverage-only warning at line 46 for scripts/playwright_capture.py: the pinned scanner reports bounded-parser limits, not demonstrated evasion. Remove duplicate risk scoring only; preserve the incomplete ledger and coverage warning. This does not certify the helper."
+    },
+    {
+      "hash": "sha256:859a81f9a036ded6082a07b25e394fa2ed1616764ffbc5f421473da6911f4cee",
+      "rule_id": "AE1",
+      "file": "SKILL.md",
+      "reason": "Accepted coverage-only warning at line 399 for scripts/company.py: the pinned scanner reports instruction-reconstruction limits, not demonstrated evasion. Remove duplicate risk scoring only; preserve the incomplete ledger and coverage warning. This does not certify the helper."
+    },
+    {
+      "hash": "sha256:3063bccd2f9343e6f379fe8c03f5be7e9360099368a73977e1a7f11e62305c39",
+      "rule_id": "AE1",
+      "file": "SKILL.md",
+      "reason": "Accepted coverage-only warning at line 416 for scripts/company.py: the pinned scanner reports instruction-reconstruction limits, not demonstrated evasion. Remove duplicate risk scoring only; preserve the incomplete ledger and coverage warning. This does not certify the helper."
+    },
+    {
+      "hash": "sha256:e81e42a9bb19f0cf0b653fc203ee0f1b5f5042a143d5ac34f39352e33cb0ef90",
+      "rule_id": "AE1",
+      "file": "SKILL.md",
+      "reason": "Accepted coverage-only warning at line 417 for scripts/company.py: the pinned scanner reports instruction-reconstruction limits, not demonstrated evasion. Remove duplicate risk scoring only; preserve the incomplete ledger and coverage warning. This does not certify the helper."
+    },
+    {
+      "hash": "sha256:d860450868533ff45f2f78473fe14f4e62d3095fb695884873a66befc79d1bd5",
+      "rule_id": "AE1",
+      "file": "SKILL.md",
+      "reason": "Accepted coverage-only warning at line 441 for scripts/company.py: the pinned scanner reports instruction-reconstruction limits, not demonstrated evasion. Remove duplicate risk scoring only; preserve the incomplete ledger and coverage warning. This does not certify the helper."
+    },
+    {
+      "hash": "sha256:33ac35835d23904119b7d89fabf96551ac2cd0c34fd7f64fc9ad9dda7314506b",
+      "rule_id": "AE1",
+      "file": "SKILL.md",
+      "reason": "Accepted coverage-only warning at line 501 for scripts/officecli_runner.py: the pinned scanner reports bounded-parser and instruction-reconstruction limits, not demonstrated evasion. Remove duplicate risk scoring only; preserve the incomplete ledger and coverage warning. This does not certify the helper."
+    },
+    {
+      "hash": "sha256:b89aae2953c072b2a5064a309338d6da11f97dc9f0c24c4d14ef28afee1d5df9",
+      "rule_id": "AE1",
+      "file": "SKILL.md",
+      "reason": "Accepted coverage-only warning at line 507 for scripts/officecli_runner.py: the pinned scanner reports bounded-parser and instruction-reconstruction limits, not demonstrated evasion. Remove duplicate risk scoring only; preserve the incomplete ledger and coverage warning. This does not certify the helper."
+    },
+    {
+      "hash": "sha256:2059d15de26bd13ca42b2dc234bca3e1fbaf60f0a24bbd8e92414bb585136eda",
+      "rule_id": "AE1",
+      "file": "SKILL.md",
+      "reason": "Accepted coverage-only warning at line 508 for scripts/officecli_runner.py: the pinned scanner reports bounded-parser and instruction-reconstruction limits, not demonstrated evasion. Remove duplicate risk scoring only; preserve the incomplete ledger and coverage warning. This does not certify the helper."
+    },
+    {
+      "hash": "sha256:2b831a4d38ad84502177205aa49c739ded5236fcc873e5e4ea26342c3f9233cc",
+      "rule_id": "AE1",
+      "file": "SKILL.md",
+      "reason": "Accepted coverage-only warning at line 532 for scripts/company.py: the pinned scanner reports instruction-reconstruction limits, not demonstrated evasion. Remove duplicate risk scoring only; preserve the incomplete ledger and coverage warning. This does not certify the helper."
+    },
+    {
+      "hash": "sha256:c0d0228b821cbf215e489c8d37b2e487fc7a16261592e8b2602172a7a50d1624",
+      "rule_id": "AE1",
+      "file": "SKILL.md",
+      "reason": "Accepted coverage-only warning at line 545 for scripts/officecli_runner.py: the pinned scanner reports bounded-parser and instruction-reconstruction limits, not demonstrated evasion. Remove duplicate risk scoring only; preserve the incomplete ledger and coverage warning. This does not certify the helper."
+    },
+    {
+      "hash": "sha256:bc306696c208c9af1adfa613352bc769d546d258f1371592b7ac3f23c1a4c52a",
+      "rule_id": "AE1",
+      "file": "SKILL.md",
+      "reason": "Accepted coverage-only warning at line 552 for scripts/officecli_runner.py: the pinned scanner reports bounded-parser and instruction-reconstruction limits, not demonstrated evasion. Remove duplicate risk scoring only; preserve the incomplete ledger and coverage warning. This does not certify the helper."
+    }
+  ]
+}

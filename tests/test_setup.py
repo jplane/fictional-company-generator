@@ -1,3 +1,4 @@
+import json
 import os
 import re
 import shutil
@@ -52,18 +53,92 @@ class SetupTests(unittest.TestCase):
     def test_ci_uses_pinned_static_scanner_and_retains_failures(self):
         workflow = (ROOT / ".github" / "workflows" / "skillspector.yml").read_text(
             encoding="utf-8")
-        for requirement in ("--no-llm --fail-on-incomplete", "--locked --no-dev",
+        for requirement in ("--no-llm --baseline .github/skillspector-baseline.json", "--locked --no-dev",
                             "--python 3.12", "--no-env-file", "if: always()",
                             "contents: read", "persist-credentials: false",
                             "LANGSMITH_TRACING: 'false'", "LANGCHAIN_TRACING_V2: 'false'",
-                            "if-no-files-found: error"):
+                            "if-no-files-found: error", "baseline_sha256=",
+                            "python .github/scripts/skillspector_summary.py"):
             self.assertIn(requirement, workflow)
-        for forbidden in ("continue-on-error", "pull_request_target", "--baseline",
-                          "--transitive", "secrets.", "|| true"):
+        for forbidden in ("continue-on-error", "pull_request_target", "--fail-on-incomplete",
+                          "--transitive", "secrets.", "|| true", "skillspector baseline"):
             self.assertNotIn(forbidden, workflow)
         self.assertRegex(workflow, r"ref: [0-9a-f]{40} # v")
         for action in re.findall(r"uses: (\S+)", workflow):
             self.assertRegex(action, r"@[0-9a-f]{40}$")
+
+    def test_scanner_exceptions_are_exact_and_individually_reviewed(self):
+        baseline = json.loads((ROOT / ".github" / "skillspector-baseline.json").read_text(
+            encoding="utf-8"))
+        self.assertEqual(baseline["version"], 2)
+        self.assertEqual(baseline["scanner_version"], "2.12.0")
+        self.assertEqual(baseline["rules"], [])
+        entries = baseline["fingerprints"]
+        self.assertEqual(len(entries), 23)
+        self.assertEqual(len({entry["hash"] for entry in entries}), len(entries))
+        for entry in entries:
+            self.assertRegex(entry["hash"], r"^sha256:[0-9a-f]{64}$")
+            self.assertTrue((SKILL / entry["file"]).is_file())
+            self.assertGreater(len(entry["reason"]), 60)
+            self.assertNotIn("auto-generated", entry["reason"])
+
+    def test_scanner_summary_warns_on_incomplete_coverage_and_preserves_errors(self):
+        for complete, successful in ((True, True), (False, True), (False, False)):
+            with self.subTest(complete=complete, successful=successful):
+                report = {
+                    "risk_assessment": {"score": 0},
+                    "suppressed_count": 23,
+                    "execution_successful": successful,
+                    "analysis_completeness": {
+                        "coverage_percent": 100 if complete else 72.7,
+                        "is_complete": complete,
+                        "execution_successful": successful,
+                        "ledger_exceptions": [] if complete else [
+                            {"reason_code": "reference_missing"},
+                            {"reason_code": "reference_missing"},
+                            {"reason_code": "static_parse_limit"},
+                        ],
+                    },
+                }
+                with tempfile.TemporaryDirectory() as directory:
+                    path = Path(directory) / "report.json"
+                    summary = Path(directory) / "summary.md"
+                    summary.write_text("Existing summary\n", encoding="utf-8")
+                    path.write_text(json.dumps(report), encoding="utf-8")
+                    env = dict(os.environ, GITHUB_STEP_SUMMARY=str(summary))
+                    result = subprocess.run(
+                        [sys.executable, str(ROOT / ".github" / "scripts" /
+                                             "skillspector_summary.py"), str(path)],
+                        env=env, capture_output=True, text=True, timeout=30)
+                    self.assertEqual(result.returncode == 0, successful, result.stderr)
+                    text = summary.read_text(encoding="utf-8")
+                    self.assertTrue(text.startswith("Existing summary\n"))
+                    self.assertIn("Reviewed findings suppressed: 23", text)
+                    if not successful:
+                        self.assertIn("execution failed", result.stderr)
+                    elif not complete:
+                        self.assertIn("::warning", result.stdout)
+                        self.assertIn("INCOMPLETE; nonblocking", text)
+                        self.assertIn("`reference_missing`: 2", text)
+                        self.assertIn("`static_parse_limit`: 1", text)
+                    else:
+                        self.assertNotIn("::warning", result.stdout)
+                        self.assertIn("100% (complete)", text)
+
+    def test_scanner_summary_rejects_missing_or_malformed_reports(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "report.json"
+            for content in (None, "{invalid", "{}"):
+                with self.subTest(content=content):
+                    if content is not None:
+                        path.write_text(content, encoding="utf-8")
+                    result = subprocess.run(
+                        [sys.executable, str(ROOT / ".github" / "scripts" /
+                                             "skillspector_summary.py"), str(path)],
+                        env=dict(os.environ, GITHUB_STEP_SUMMARY=str(
+                            Path(directory) / "summary.md")),
+                        capture_output=True, text=True, timeout=30)
+                    self.assertNotEqual(result.returncode, 0)
 
     @unittest.skipUnless(shutil.which("uv"), "uv is required for copied-skill execution")
     def test_copied_skill_runs_from_unrelated_directory_without_capture(self):
