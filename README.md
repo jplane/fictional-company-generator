@@ -150,9 +150,11 @@ Choose a new output directory.
    canon. It holds the facts, finances, events, people, and terminology used by
    all documents.
 2. **Set depth and plan.** Depth level (light/medium/deep) controls how much substance
-   each document covers, not just its length. Add the needed detail to the
-   company record, then finalize a plan with dates, realistic titles, and
-   targets for each document.
+   each document covers, not just its length, and the supporting detail required
+   in the canon. Shared company facts remain consistent across depths; deeper
+   content may require enriching the canon before drafting. Add the needed
+   detail, then finalize a plan with dates, realistic titles, and targets for
+   each document.
 3. **Draft and export.** Use only facts available on each document's date.
    Check statements, then create the files with the shared OfficeCLI runner.
    It checks all-or-nothing batches and template merges, verifies saved formula
