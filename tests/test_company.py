@@ -1178,7 +1178,9 @@ class CompanyTests(unittest.TestCase):
                             "import openpyxl", "require.resolve('pptxgenjs')"):
             self.assertNotIn(old_command, guide)
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
-        self.assertIn("No tools are installed automatically", readme)
+        readme = " ".join(readme.split())
+        self.assertIn("Required tools are not bundled.", readme)
+        self.assertIn("The skill can help install or update them with your approval.", readme)
 
     def test_skill_bounds_execution_and_independent_review_scope(self):
         instructions = (SCRIPT.parents[1] / "SKILL.md").read_text(encoding="utf-8")
